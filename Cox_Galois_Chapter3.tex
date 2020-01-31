@@ -1,0 +1,486 @@
+%&LaTeX
+\documentclass[11pt,a4paper]{article}
+\usepackage[frenchb,english]{babel}
+\usepackage[applemac]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage[]{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+%\input{8bitdefs}
+
+% marges
+\topmargin 10pt
+\headsep 10pt
+\headheight 10pt
+\marginparwidth 30pt
+\oddsidemargin 40pt
+\evensidemargin 40pt
+\footskip 30pt
+\textheight 670pt
+\textwidth 420pt
+
+\def\imp{\Rightarrow}
+\def\gcro{\mbox{[\hspace{-.15em}[}}% intervalles d'entiers 
+\def\dcro{\mbox{]\hspace{-.15em}]}}
+
+\newcommand{\be} {\begin{enumerate}}
+\newcommand{\ee} {\end{enumerate}}
+\newcommand{\deb}{\begin{eqnarray*}}
+\newcommand{\fin}{\end{eqnarray*}}
+\newcommand{\ssi} {si et seulement si }
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\re}{\,\mathrm{Re}\,}
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+
+\title{Solutions to David A.Cox  "Galois Theory''}
+\author{Richard Ganaye}
+\refstepcounter{section} \refstepcounter{section}
+
+
+\begin{document}
+
+\maketitle
+
+
+\section{Chapter 3}
+
+\subsection{THE EXISTENCE OF ROOTS}
+
+\paragraph{Ex. 3.1.1}
+
+{\it This exercise is concerned with the proof of Proposition 3.1.1. Suppose that $f,g,h \in F[x]$ are polynomials such that $f$ is nonzero and $f=gh$. Also let $I = \langle g \rangle$.
+\begin{enumerate}
+\item[(a)] Prove that $g$ constant if and only if $I = F[x]$.
+\item[(b)] Prove that $h$ constant if and only if $I = \langle f \rangle$.
+\end{enumerate}
+}
+
+\begin{proof}
+Let $f,g,h \in F[x], f\neq 0, f=gh, I = \langle g \rangle$.
+\begin{enumerate}
+\item[(a)]
+
+$\bullet$ Suppose that  $g = \lambda \in F$ is a constant. As $f \neq 0$ and $f = gh$, then $g\ne 0$, so $\lambda \neq 0$. 
+
+Let $p \in F[x]$ any polynomial. Then $p = \lambda (\frac{1}{\lambda} p ) = (\frac{1}{\lambda} p )  g \in \langle g \rangle$, thus $F[x] \subset \langle g \rangle$. Moreover $\langle g \rangle \subset F[x]$, so $$F[x] = \langle g \rangle = I.$$
+
+$\bullet$ Reciprocally, if $F[x] = I = \langle g \rangle$, then $ 1 \in \langle g \rangle$, so $1 = g u, u \in F[x]$, hence $0 = \deg(g)+\deg(u)$, therefore $\deg(g) = 0$, so $g \in F$ is a nonzero constant.
+
+
+$$g \in F^* \iff \langle g \rangle = F[x].$$
+
+\item[(b)] $\bullet$ If $h = \mu \in F$ is a constant, then $\mu\neq 0$ (since $f\ne 0$), and $f =\mu g, \mu \in F^*$.
+
+If $p \in \langle f \rangle$, then $p = u f, u \in F[x]$, thus  $p = \mu u g \in \langle g \rangle$, so $\langle f \rangle \subset \langle g \rangle$.
+
+If $p \in \langle g \rangle$, then $p = q g, q \in F[x]$, thus $p = \mu^{-1} q f \in \langle f \rangle$, so $\langle g \rangle \subset \langle f \rangle$.
+$$\langle f \rangle = \langle g \rangle = I.$$
+
+$\bullet$ Reciprocally, if $\langle f \rangle = \langle g \rangle,$  then $g \in \langle f \rangle$ , $g = v f, v \in k[x]$, thus $g = v gh$. As $f = gh\neq 0, g \neq 0$, thus $1 = vh$, therefore $h \in F^*$ is a constant.
+
+$$h \in F^* \iff I =\langle f \rangle$$
+
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 3.1.2}
+
+{\it Let $F$ and $L$ be fields, and let $\varphi : F \to L$ be a ring homomorphism. Prove that $\varphi$ is one-to-one and that we get an isomorphism $\varphi : F \simeq \varphi(F)$.
+}
+
+\begin{proof}
+Let $x \in F$. If $x\ne 0$, then $x.x^{-1} = 1$, thus $\varphi(x) \varphi(x^{-1}) = 1$, so $\varphi(x) \ne 0$.
+For all $x\in F$, $x \ne 0 \Rightarrow \varphi(x) \ne 0$, therefore $\varphi(x) = 0 \Rightarrow x =0$, so $\ker(\varphi) = \{0\}$ and $\varphi$ is injective.
+
+Consequently, the corestriction $F \to \varphi(F), x \mapsto \varphi(x)$ is a bijection, so it is an ring isomorphism : $\varphi : F \simeq \varphi(F)$.
+\end{proof}
+
+\paragraph{Ex. 3.1.3}
+
+{\it Let $I \subset F[x]$ be an ideal, and define $\varphi : F \to F[x]/I$ by $\varphi(a) = a + I$. Prove carefully that $\varphi$ is a ring homomorphism.
+}
+
+\begin{proof}
+Let $a,b \in A = F[x]$. Suppose that $a+I = a'+I$ et $b+I = b'+I$.
+
+Then $a' =a + u, u \in I, b' = b+v, v\in I$, so $a'+b' = a+b + u+v$, where $u+v \in I$, thus $a+b+I = a'+b'+I$.
+
+$a'b' = ab+ bu+av + uv$, where $bu+av + uv \in I$, so $ab+ I = a'b'+I$.
+
+The equivalence relation $\sim$ defined on $A$ as $a \sim a' \iff a+ I = a'+ I (\iff a' - a \in I)$ is so compatible with addition and multiplication in $A$, and the class of an element $a \in A$ is $a+I$. We can so define sum and product of two classes by
+\begin{align}
+(a+I) +(b+I) &= a+b+I  \label{eq3.1.3:1}\\
+(a+I) (b+I) &= ab+I \label{eq3.1.3:2}
+\end{align}
+If $\varphi : A \to A/I$ is defined by $\varphi(a) = a+I$, then \eqref{eq3.1.3:1} and \eqref{eq3.1.3:2} are written
+
+$$\varphi(a)+ \varphi(b) = \varphi(a+b) , \varphi(a) \varphi(b) = \varphi(ab)$$
+Moreover $\varphi(1) = 1+I$ is the neutral element of $A/I$.
+
+$\varphi : A \to A/I$ is a ring homomorphism. 
+\end{proof}
+
+\paragraph{Ex. 3.1.4}
+
+{\it In your abstract algebra text, review the definition of the field of fractions of an integral domain and verify that (3.3) is the correct definition of $a/b$ for $a,b \in \Z, b\ne 0$.
+}
+
+\begin{proof}
+The relation $\sim$ on $\mathbb{Z} \times \mathbb{Z}^*$ defined by
+$$(a,b) \sim (c,d) \iff ad = bc$$
+is an equivalence relation.
+The class of $(a,b)$, written $\frac{a}{b}$ is so the set
+$$\frac{a}{b} = \{(c,d)\in \mathbb{Z} \times \mathbb{Z}^* \ \vert \ ad = bc \}.$$
+\end{proof}
+
+\paragraph{Ex. 3.1.5}
+
+{\it Let $f \in F[x]$ be irrducible, and let $g+\langle f \rangle$ be a nonzero coset in the quotient ring $L = F[x]/\langle f \rangle$.
+\begin{enumerate}
+\item[(a)] Show that $f$ and $g$ are relatively prime and conclude that $Af+Bg=1$, where $A,B$ are polynomials in $F[x]$.
+\item[(b)] Show that $B + \langle f \rangle$ is the multiplicative inverse of $g + \langle f \rangle $ in $L$.
+\end{enumerate}
+}
+
+\begin{proof}
+Supposons $f \in F[x]$ irrŽductible, et soit $L =F[x]/\langle f \rangle$ l'anneau quotient.
+\begin{enumerate}
+\item[(a)]  Let  $\overline{g} \in L, \overline{g} \neq \overline{0}$, that is to say $g + \langle f \rangle \neq 0 + \langle f \rangle$, which is equivalent to $ g \not \in \langle f \rangle$, or  $f \nmid g$ (in $F[x]$).
+
+Let $h$ a common divisor of $f$ et $g$. Since $f$ is irreducible, either $u$ is a nonzero constant, or $u = k f, k \in F^*$ is associate to $f$. But in this last case, $f = k^{-1} u$ divides u, which divides $g$, so $f \mid g$, in contradiction with the hypothesis.
+
+So the only common divisors of $f,g$ are the $nonzero constants$, so $f \wedge g = 1$.
+
+By  BŽzout theorem, there exists polynomials $A,B \in k[x]$ such that
+$$1 = A f + B g.$$
+
+\item[(b)]  
+As $\overline{f} = f + \langle f \rangle = \overline{0}$, $\overline{1} = \overline{A}\,  \overline{f} + \overline{B} \overline{g} = \overline{B} \overline{g}$, which we can write
+$$1 + \langle f \rangle  =  (B + \langle f \rangle )(g+ \langle f \rangle).$$
+
+So $B+\langle f \rangle$ is the inverse of $g+ \langle f \rangle$ in  $L =F[x]/\langle f \rangle$.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 3.1.6}
+
+{\it Apply the method of Exercise 5 to find the multiplicative inverse of the coset $1+x+\langle x^2+x+1\rangle$ in the field $\Q[x]/\langle x^2+x+1 \rangle$.
+}
+
+\begin{proof}
+$-x(x+1) + (x^2+x+1) = 1$ is a BŽzout's relation between $x+1$ est $x^2+x+1$.
+
+$f = x^2+x+1$has no root in $\mathbb{Q}$ is has degrre 2 : it is so irreducible on $\mathbb{Q}$, and 
+$$(-x + \langle f \rangle) (x+1+\langle f \rangle) +  (x^2+x+1) + \langle f \rangle = 1 + \langle f \rangle,$$
+so
+$$(-x + \langle f \rangle) (x+1+\langle f \rangle)  = 1 + \langle f \rangle.$$
+
+$-x + \langle f \rangle$ is the iinverse of $x+1+\langle f \rangle$ in $F[x]/\langle f \rangle$.
+\end{proof}
+
+\subsection{THE FUNDAMENTAL THEOREM OF ALGEBRA}
+\paragraph{Ex. 3.2.1}
+
+{\it For $f \in \C[x]$, define $\overline{f}$ as in (3.5).
+\begin{enumerate}
+\item[(a)] Show carefully that $\overline{fg} = \overline{f}\, \overline{g}$ for $f,g \in \C[x]$.
+\item[(b)] Let $\alpha \in \C$. Show that $\overline{f}(\alpha) = 0$ implies that $f(\overline{\alpha} )= 0$.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]
+Let $f = \sum\limits_{i=0}^n{a_ix^i},  g = \sum\limits_{j=0}^m{b_jx^i} \in \mathbb{C}[x]$.
+
+By definition of the product of polynomials,
+$$fg = \sum_{k=0}^{n+m}c_kx^{k}, \ \mathrm{with} \ c_k =\sum_{i+j = k}a_ib_j = \sum_{i=0}^k a_i b_{k-i}$$
+
+
+Then, using the fact that conjugation is a field automorphism in  $\mathbb{C}$,
+\begin{align*}
+\overline{fg} &= \sum_{k=0}^{n+m}\overline{c_k}x^{k}\\
+&=\sum_{k=0}^{n+m}\overline{\sum_{i+j = k}a_ib_j} x^k\\
+&=\sum_{k=0}^{n+m}\sum_{i+j = k}\overline{a_i} \overline{b_j} x^k\\
+&=\sum\limits_{i=0}^n{\overline{a_i}x^i}  \sum\limits_{j=0}^n\overline{b_j}x^i\\
+&=\overline{f} \overline{g}
+\end{align*}
+
+\item[(b)]
+\begin{align*}
+\overline{f}(\alpha) = 0 &\Rightarrow \sum\limits_{i=0}^n\overline{a_i}\alpha^i= 0\\
+&\Rightarrow \overline{\sum\limits_{i=0}^n\overline{a_i}\alpha^i} = \overline{0}=0\\
+&\Rightarrow \sum\limits_{i=0}^n a_i \overline{\alpha}^i=0\\
+&\Rightarrow f(\overline{\alpha}) = 0
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 3.2.2}
+
+{\it In Section A.2, we use polar coordinates to construct square (and higher) roots of complex numbers. In this exercise, you will give an elementary argument that every complex number has a square root. The only fact you will use (besides standard algebra) is that every positive real number has a real square root.
+\begin{enumerate}
+\item[(a)] First explain why every real number has a square root in $\C$.
+\item[(b)] Now fix $a+bi \in \C$ with $b \ne 0$. For $x,y \in \R$, show that the equation $(x+iy)^2 = a+bi$ is equivalent to the equations
+$$x^2-y^2 = a, \qquad 2xy = b.$$
+\item[(c)] Show that the equation of part (b) are equivalent to
+$$x^2 =\frac{a\pm \sqrt{a^2+b^2}}{2}, \qquad y = \frac{b}{2x}.$$
+Also show that $x\ne 0$ and that $a\pm \sqrt{a^2+b^2}$ is positive when we choose the $+$ sign in the formula for $x^2$.
+\item[(d)] Conlude that $a+bi$ has a square root in $\C$.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)] 
+We know that the equation $x^2 = a$ has a real solution if $a\geq 0$ (see Ex. 3.2.3).
+Therefore, if $a \in \mathbb{R}^-_*$, there exists $b\in \mathbb{R}^+$ such that $b^2 = -a = \vert a \vert$.
+Thus $(ib)^2 = a$.
+
+Conclusion : every $a \in \mathbb{R}$ has a square root in $\mathbb{C}$.
+
+\item[(b,c,d)] Let $z = a+ib,\ a,b \in \mathbb{R}$, and $Z = x+iy,\ x,y \in \mathbb{R}$ two complex numbers.
+
+\begin{align*}
+z^2 = Z &\iff (a+ ib)^2 = x+iy\\
+&\iff (a+ ib)^2 = x+iy \ \mathrm{et} \ \vert a+ ib\vert ^2 = \vert x+iy\vert \\
+&\iff a^2 - b^2 +2abi = x+iy\ \mathrm{et} \ a^2+b^2 = \sqrt{x^2+y^2}\\
+&\iff a^2 - b^2 = x, a^2 + b^2 =\sqrt{x^2+y^2}, 2ab = y.
+\end{align*}
+
+The system of equations
+$
+\left\{
+\begin{array}{ccc}
+a^2 - b^2 &=& x   \\
+a^2 + b^2 &=&\sqrt{x^2+y^2} 
+\end{array}
+\right.
+$
+is equivalent to
+$$
+\left\{
+\begin{array}{ccc}
+a^2  &=&\frac{1}{2}\left(  \sqrt{x^2+y^2}  + x\right)  \\
+ b^2 &=&\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right) 
+\end{array}
+\right.
+$$
+Therefore $$z^2 = Z \Rightarrow 
+\left\{
+\begin{array}{ccc}
+a^2  &=&\frac{1}{2}\left(  \sqrt{x^2+y^2}  + x\right)  \\
+ b^2 &=&\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right) \\
+ \mathrm{sgn}(ab) &= & \mathrm{sgn}(y)
+\end{array}
+\right.
+.$$
+
+The reciprocal is true, since these last equations imply
+$$4a^2 b^2 = \left(  \sqrt{x^2+y^2}  + x\right) \left( \sqrt{x^2+y^2} -x\right) = x^2+y^2-x^2 = y^2,$$
+and as  $\mathrm{sgn}(ab) =  \mathrm{sgn}(y)$, we conclude $2ab=y$. So we have proved the equivalence
+
+$$z^2 = Z \iff
+\left\{
+\begin{array}{ccc}
+a^2  &=&\frac{1}{2}\left(  \sqrt{x^2+y^2}  + x\right)  \\
+ b^2 &=&\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right) \\
+ \mathrm{sgn}(ab) &= & \mathrm{sgn}(y)
+\end{array}
+\right. 
+$$
+
+As $x^2+y^2 \geq x^2, \sqrt{x^2+y^2} \geq \vert x \vert $, and $\vert x \vert \geq x, \vert x \vert \geq -x$, so
+\begin{align*}z^2 = Z &\iff
+\left\{
+\begin{array}{ccl}
+a  &=&\varepsilon \sqrt{\frac{1}{2}\left ( \sqrt{x^2+y^2}  + x\right)}  \\
+ b &=&\varepsilon\ \mathrm{sgn}(y)\sqrt{\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right)},\qquad  \varepsilon \in \{-1,1\} \\
+\end{array}
+\right.\\
+&\iff z \in \{ z_0, - z_0   \},
+\end{align*}
+where $$z_0 = \sqrt{\frac{1}{2}\left ( \sqrt{x^2+y^2}  + x\right)} + i \ \mathrm{sgn}(y)\sqrt{\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right)}.$$
+Conclusion : every $z \in \mathbb{C}$ has a square root in $\C$.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 3.2.3}
+
+{\it Use the IVT to prove that every positive real number $a$ has a real square root.
+}
+
+\begin{proof}
+Suppose that $a \in \mathbb{R}^+$.
+
+Let $u:\mathbb{R} \to \mathbb{R}, x\mapsto u(x) = x^2 -a$.
+
+Then  $u$ is continuous,  $u$ is strictly increasing, and
+
+$u(0) = -a \leq 0, \lim\limits_{x\to \infty} u(x) = + \infty$ (so there exists $A \in \R^{+}$ such that $u(A)>0$).
+
+By the Intermediate Value Theorem, there exists a unique $b\in \mathbb{R}^+$ such that $b^2 = a$ : $a$ has a real square root.
+\end{proof}
+
+\paragraph{Ex. 3.2.4}
+
+{\it A field $F$ is an ordered field if there is a subset $P \subset F$ such that:
+\begin{enumerate}
+\item[(a)] $P$ is closed under addition and multiplication.
+\item[(b)] For any $a\in F$, exactly one of the following is true: $a \in P, a = 0$, or $-a\in P$.
+\end{enumerate}
+One then defines $a>b$ to mean $a-b\in P$ (so that $P$ becomes the set of positive elements). From this, one can prove all the typical properties of $>$. Now let $F$ be an ordered field. Prove that $-1$ is not a square in $F$.
+}
+
+\begin{proof}
+Let $F$ an ordered field. 
+
+Since  $P$is closed under multiplication by (a), if $a \in P$, then $a^2 \in P$.
+
+If $-a \in P$, $a^2 = (-a)(-a) \in P$. By (b), every $a\in F$ verifies $a\in P$, or $a=0$, or $-a\in P$, we can conclude that 
+\begin{align}
+\forall  a,  a \in F^* \Rightarrow \ a^2 \in P. \label{eq3.2.4:1}
+\end{align}
+So $P$ contains all squares in $F$, $0$ excluded.
+By definition of fields, we know that $1\neq 0$, so $1 = 1^2 \in P$.
+
+By (b) , les trois cas $a\in P$,  $a=0$, $-a\in P$ are mutually exclusive, thus $-1 \not \in P$.
+Therefore  $-1$ is not a square in $F$, otherwise $-1 = a^2 \in P$ by \eqref{eq3.2.4:1}.
+
+Conclusion : $-1$ is not a square in the ordered field $F$.
+\end{proof}
+
+\paragraph{Ex. 3.2.5}
+
+{\it Let $F$ be a real closed field. As in the text, this means that $F$ is an ordered field (see Exercise 4) such that every positive element of $F$ has a square root in $F$ and every $f\in F[x]$ of odd degree has a root in $F$.
+\begin{enumerate}
+\item[(a)] Use Exercise 4 to show that $x^2 + 1$ is irreducible over $F$. Then define $F(i)$ to be the field $F[x]/\langle x^2+1\rangle$. By the Cauchy construction described in Section 3.1, elements of $F(i)$ can be written $a+bi$ for $a,b\in F$.
+\item[(b)] Show that every quadratic polynomial in $F(i)$ splits completely over $F(i)$.
+\item[(c)] Prove that $F(i)$ is algebraically closed.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]
+Since $-1$ is not a square in $F$ by Exercise 4, the polynomial $x^2+1$ has no root in $F$, and it has degree 2, thus it is irreducible over $F$.
+
+Therefore $F(i) = F[x]/\langle x^2+1\rangle$ is a field, where $i = \dot{x}$, by Proposition 3.1.1.
+
+The division of any polynomial $f$ by $x^2+1$ gives $$f= q (x^2+1) + bx+a,$$ so every $y \in F(i)$ is of the form $y = a+ ib$
+
+ \item[(b)] Let $ax^2+bx+c,\  a,b,c \in F(i), a\neq 0$, any quadratic polynomial.
+ 
+ \begin{align*}
+ a x^2+bx+c &= a\left(x^2+ \frac{b}{a}x + \frac{c}{a}\right)\\
+ &=a\left[\left(x+\frac{b}{2a}\right)^2 -\frac{b^2}{4a^2} + \frac{c}{a}\right]\\
+ &=a\left[\left(x+\frac{b}{2a}\right)^2 -\frac{\Delta}{4a^2}\right] , \Delta = b^2-4ac\\
+ \end{align*}
+ 
+If $\Delta >0$,
+ $\Delta$ has a square root in $F$, by the definition of a real closed field (and the root 0 if $\Delta =0$).
+If $\Delta <0$, $\Delta = (i\sqrt{-\Delta})^2$ has a square root in $F(i)$.
+We will write $\sqrt{\Delta}$ one of these square roots. Then
+ \begin{align*}
+ ax^2+bx+c &= a\left[\left(x+\frac{b}{2a}\right)^2 -\left (\frac{\sqrt{\Delta}}{2a}\right)^2\right]\\
+ &=a(x-x_1)(x-x_2), x_1 = \frac{-b+\sqrt{\Delta}}{2} \in F(i), x_2 = \frac{-b+\sqrt{\Delta}}{2} \in F(i)
+ \end{align*}
+ splits completely over $F(i)$.
+  
+ \item[(c)]
+By definition of a real closed field, and by (b),
+ 
+ $\bullet$ every  polynomial of odd degree in $F[x]$ has a root in $F$,
+ 
+ $\bullet$ every elemen $a \in F(i)$ has a square root in $F(i)$,
+ 
+ $\bullet$ every quadratic polynomial  $f \in F(i)[x] $ splits completely over $F(i)$.
+ 
+The Proposition 3.2.2 and the Lemme 3.2.3 are so satisfied if we replace $\R$ by $F$ and $\C$ by $F(i)$.
+ 
+Theorem 3.2.4 for $F(i)$ follows, with the same proof : $F(i)$ is an algebraically closed field.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 3.2.6}
+
+{\it Here is yet another way to state the Fundamental Theorem of Algebra.
+\begin{enumerate}
+\item[(a)] Suppose that $f(\alpha) = 0$, where $f\in \R[x]$ and $\alpha \in \C$. Prove that $f(\overline{\alpha}) = 0$.
+\item[(b)] Prove that the Fundamental Theorem of Algebra is equivalent to the assertion that every nonconstant polynomial in $\R[x]$ is a product of linear and quadratic factors with real coefficients.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)] Let $f \in \mathbb{R}[x]$, and suppose that $f(\alpha)=0$. Then $\overline{f} = f$, and $\overline{f}(\alpha)=0$.
+By Ex. 3.3.1(b), this implies $f(\overline{\alpha}) =0$.
+
+Conclusion : if $f \in \mathbb{R}[x]$, $$f(\alpha)=0 \Rightarrow f(\overline{\alpha})=0.$$ 
+\item[(b)]
+$\bullet$ Suppose that every polynomial in $\mathbb{C}[x]$ has a root in $\mathbb{C}$.
+
+Name $x_1,\cdots, x_r$ the real roots of $f$ : $f = a(x-x_1)^{k_1}\cdots(x-x_r)^{k_r}g$, where $a \in \mathbb{R}$, and  $g \in \mathbb{R}[x]$ is monic and has no real root.
+We show by induction on  $d$ that every polynomial $g \in \mathbb{R}[x]$ without real root, monic, of degree $d$, is product of monic quadratic real polynomials.
+
+If $d=0$, $g=1$ is the empty product.
+
+We suppose $d>0$, and put the induction hypothesis that  every polynomial  in $ \mathbb{R}[x]$ without real root, monic, of degree less than $d$, is product of monic quadratic real polynomials.
+
+Let $g \in \R[x]$ a polynomial of degree $d$ without real root. $g$ has by hypothesis a complex root $\alpha$. Then $g = (x-\alpha)g_1, g_1\in \mathbb{C}[X]$.
+
+By (a), $\overline{\alpha}$ is a root of $g$. $0 = g(\overline{\alpha}) = (\overline{\alpha} - \alpha) g_1(\alpha)$, and $\overline{\alpha} \neq  \alpha$, thus $g_1(\overline{\alpha})=0$, $g_1 = (x- \overline{\alpha}) h, h \in \mathbb{C}[x]$, therefore
+
+$$g = (x-\alpha)(x-\overline{\alpha}) h, \ h \in \mathbb{C}[x].$$
+
+$u = (x-\alpha)(x-\overline{\alpha}) = x^2 +sx+t$, where $s = \alpha+ \overline{\alpha} \in \mathbb{R}, t=\alpha\overline{\alpha} \in \mathbb{R}$, thus $u \in \mathbb{R}[x]$, and also $h\in \mathbb{R}[x]$, since $h$ is the quotient of the Euclidean division of $g$ by $u$.
+
+$g = (x^2 - s x + t) h$, where $h \in \mathbb{R}[x]$ is monic, of degree less than $d$, without real root. By the induction hypothesis, $h$ is product of monic real quadratic polynomials, thus it is the same for $g$, and the induction is done.
+
+Consequently, $f$ is product of linear or quadratic factors with real coefficients.
+
+$\bullet$ Reciprocally, suppose that every polynomial in $\R[x]$ is product of linear or quadratic factors with real coefficients.
+
+Let $f \in \C[x]$, with $\deg(f) \geq 1$. We will show that $f$ has a complex root. 
+
+By hypothesis $f$ has a linear or a quadratic factor.
+
+If $f$ has a linear factor $ax+b$, then $-b/a$ is a (real) root of $f$, and if $f$ has a factor $ax^2+bx+c, \ a \ne 0$, then Lemma 3.2.3 and Exercise 3.2.2 show that $f$ has a complex root. In both cases, $f$ has a complex root, so every non constant polynomial in $\C[x]$ has a complex root.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 3.2.7}
+
+{\it Prove that a field $F$ is algebraically closed if and only if every nonconstant polynomial in $F[x]$ has a root in $F$.
+}
+
+\begin{proof}
+By definition, a field $F$ is algebraically closed if every nonconstant polynomial is product of linear factors in $F[x]$.
+
+$\bullet$ If $F$ is algebraically closed, and if $f\in F[x]$ is not a constant, this product of linear factors is not empty, so $f$ is divisible by a linear factor $ax+b, a,b \in F$. Hence $f$ has a root $\alpha = -b/a$ in $F$.
+
+$\bullet$ Suppose that every nonconstant polynomial has a root in $F$
+
+We show by induction on $d$ that every polynomial $f \in F[x], d = \deg(f) >0$ is product of linear factors in $F[x]$
+
+If $d=1$, $f = ax+b, \ a\ne 0$, is product of one linear factor.
+
+Let $f \in F[x], d = \deg(f) >1$. Then $f$ has by hypothesis a root $\alpha \in F$, so $f = (x-a)g$, where $\deg(g)<d$. By the induction hypothesis, $g$ is a constant or is product of linear factors, so it is the same for $f$, and the induction is done.
+
+Conclusion :if $F$ is a field, the two following propositions are equivalent :
+\begin{enumerate}
+\item[(i)] Every nonconstant polynomial in $F[x]$ is product of linear factors.
+\item[(ii)] Every nonconstant polynomial in $F[x]$ has a root in $F$
+\end{enumerate}
+\end{proof}
+
+\end{document}
