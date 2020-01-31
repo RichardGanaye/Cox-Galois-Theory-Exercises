@@ -1,0 +1,1408 @@
+%&LaTeX
+\documentclass[11pt,a4paper]{article}
+\usepackage[frenchb,english]{babel}
+\usepackage[applemac]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage[]{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{tikz}
+%\input{8bitdefs}
+
+% marges
+\topmargin 10pt
+\headsep 10pt
+\headheight 10pt
+\marginparwidth 30pt
+\oddsidemargin 40pt
+\evensidemargin 40pt
+\footskip 30pt
+\textheight 670pt
+\textwidth 420pt
+
+\def\imp{\Rightarrow}
+\def\gcro{\mbox{[\hspace{-.15em}[}}% intervalles d'entiers 
+\def\dcro{\mbox{]\hspace{-.15em}]}}
+
+\newcommand{\be} {\begin{enumerate}}
+\newcommand{\ee} {\end{enumerate}}
+\newcommand{\deb}{\begin{eqnarray*}}
+\newcommand{\fin}{\end{eqnarray*}}
+\newcommand{\ssi} {si et seulement si }
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\re}{\,\mathrm{Re}\,}
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+
+\title{Solutions to David A.Cox  "Galois Theory''}
+\author{Richard Ganaye}
+
+\refstepcounter{section} \refstepcounter{section} \refstepcounter{section} \refstepcounter{section}
+
+\begin{document}
+
+\maketitle
+
+\section{Chapter 5}
+
+\subsection{NORMAL AND SEPARABLE EXTENSIONS}
+
+\paragraph{Ex. 5.1.1}
+
+{\it Show that a splitting field of $x^3-2$ over $\Q$ is $\Q(\omega,\sqrt[3]{2}), \omega = e^{2\pi i/3}$.
+}
+
+\begin{proof}
+The roots of $x^3-2$ are $\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}$. A splitting field of $x^3-2$ over $\Q$ is thus $\Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}) \subset \C$.
+
+As $\omega,\sqrt[3]{2} \in \Q(\omega,\sqrt[3]{2})$, and as $\Q(\omega,\sqrt[3]{2})$ is a field, $\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}$ are elements of $\Q(\omega,\sqrt[3]{2})$. Since $\Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}) $ is the smallest subfield of $\C$ containing $\Q$ and $\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}$,
+$$\Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}) \subset \Q(\omega,\sqrt[3]{2}).$$
+Moreover  $ \omega = \omega\sqrt[3]{2} / \sqrt[3]{2} \in \Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2})$ et $\sqrt[3]{2} \in \Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2})$. As $\Q(\omega,\sqrt[3]{2})$ is the smallest subfield of $\C$ containing thes two elements, 
+ $$\Q(\omega,\sqrt[3]{2}) \subset \Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}).$$
+ 
+These two subfields are identical.
+ 
+ Conclusion : a splitting field of $x^3-2$ over $\Q$ is $\Q(\omega,\sqrt[3]{2})$.
+\end{proof}
+
+\paragraph{Ex. 5.1.2}
+
+{\it Prove that $f\in F[x]$ splits completely over $F$ if and only if $F$ is the splitting field of $f$ over $F$.
+}
+
+\begin{proof}
+Suppose that $f \in F[x]$ splits completely over $F$ :
+$$f = a(x-x_1)\cdots(x-x_n), \ x_i \in F,i=1,\ldots,n.$$
+The roots of $f$ are so $x_1,\ldots, x_n$, with possibly some repetition.
+The splitting field of $f$ over $F$ is so $F(x_1,\ldots,x_n)$. As $x_i \in F,\ i=1,\ldots,n$, $F(x_1,\ldots,x_n) = F$.
+
+The splitting field of $f$, which splits completely over $F$, is $F$.
+
+Reciprocally, suppose that the splitting field of $f$ over $F$ is $F$. Let $x_1,\ldots,x_n$ the roots of $f$ in the splitting field of $f$. As this field is $F$, $x_1,\ldots ,x_n \in F$, thus
+$$f = a(x-x_1)\cdots(x-x_n), \ x_i \in F,\ i=1,\ldots,n.$$
+So $f$ splits completely over $F$.
+\end{proof}
+
+\paragraph{Ex. 5.1.3}
+
+{\it Prove that an extension $F\subset L$ of degree 2 is a splitting field.
+}
+
+\begin{proof}
+Suppose that $[L:F]=2$. Then $F\subsetneq L$, so there exists $\alpha \in L$  such that $\alpha \not \in F$.
+
+As $\alpha \not \in F$, $F \subsetneq F(\alpha)$, thus $[F(\alpha):F]>1$. Since $F(\alpha) \subset L$, $[F(\alpha):F]\leq 2$, hence $[F(\alpha):F] =  2$, so $F(\alpha) = L$.
+Let $f$ the minimal polynomial of $\alpha$ over $F$. Then $\deg(f) =[F(\alpha):F] =  2$, so $f = x^2+ax+b,\ a,b\in F$.
+
+In an extension $K$ of $L$, $f$ splits completely, and $\alpha \in L \subset K$ is a root of $f$, so there exists $\beta \in K$ such that
+$$f = x^2+ax+b = (x-\alpha)(x-\beta) = x^2 - (\alpha+ \beta)x + \alpha \beta.$$
+
+Thus $\alpha + \beta = a \in L$, with $a\in F \subset L$, so $\beta = a -\alpha \in L$. Hence the splitting field of $f$ over $F$ is $F(\alpha,\beta) = L(\beta) = L$.
+
+Conclusion : every quadratic extension $L$ of a field $F$ is a splitting field (so is a normal extension).
+\end{proof}
+
+
+\paragraph{Ex. 5.1.4}
+
+{\it Find the splitting field of $x^6-1 \in \Q[x]$.
+}
+
+\begin{proof}
+The set of roots of $x^6-1$ in $\C$  is $S = \{1,\zeta,\zeta^2,\zeta^3,\zeta^4,\zeta^5\}$, where ${\zeta = e^{2i\pi/6} = e^{i\pi/3} = -\omega^2}$.
+As $\omega^3=1$, 
+$$S = \{1, -\omega^2, \omega,-1,\omega^2,-\omega\}.$$
+the splitting field of $x^6-1$ over $\Q$ (included in $\C$) is so $\Q(1, -\omega^2, \omega,-1,\omega^2,-\omega) = \Q(S)$.
+
+As $S \subset \Q(\omega)$, $\Q(S) \subset \Q(\omega)$.
+Reciprocally, $\omega \in S$, thus $\Q(\omega) \subset \Q(S)$.
+
+Conclusion : the splitting field of $x^6-1$ over $\Q$ is $\Q(\omega)$.
+\end{proof}
+
+\paragraph{Ex. 5.1.5}
+
+{\it We showed in Section 4.1 that $f =x^4-10x^2+1$ is irreducible over $\Q$. Show that $L = \Q(\sqrt{2}+ \sqrt{3})$ is the splitting field of $f$ over $\Q$.
+}
+
+\begin{proof}
+Recall the computing of Exercise 4.1.8(b) : 
+\begin{align*}
+ f&= (x-\sqrt{2} - \sqrt{3})(x+\sqrt{2} -\sqrt{3}) (x-\sqrt{2} + \sqrt{3})(x+\sqrt{2} + \sqrt{3})\\
+&=[(x-\sqrt{3})^2-2][(x+\sqrt{3})^2-2]\\
+&= (x^2 -2\sqrt{3} x +1)(x^2 -2\sqrt{3} x +1)\\
+&= (x^2+1)^2 - (2\sqrt{3}x)^2\\
+&=x^4 -10x^2 +1
+\end{align*}
+
+The splitting field of $f$ over $\Q$ is thus $$K = \Q(\sqrt{2} + \sqrt{3},\sqrt{2} - \sqrt{3},-\sqrt{2} + \sqrt{3},-\sqrt{2} + \sqrt{3}).$$
+
+As  $\sqrt{2} + \sqrt{3},\sqrt{2} - \sqrt{3},-\sqrt{2} + \sqrt{3},-\sqrt{2} + \sqrt{3} \in  \Q(\sqrt{2},\sqrt{3})$, then $$K \subset \Q(\sqrt{2},\sqrt{3}).$$
+
+Moreover, 
+\begin{align*}
+\sqrt{2} &= \frac{1}{2}\left[(\sqrt{2}+\sqrt{3}) - (-\sqrt{2}+\sqrt{3})\right] \in K,\\
+ \sqrt{3} &= \frac{1}{2}\left[(\sqrt{2}+\sqrt{3}) - (\sqrt{2}-\sqrt{3}) \right]\in K,
+ \end{align*}
+thus $$\Q(\sqrt{2},\sqrt{3}) \subset K.$$
+
+So $K = \Q(\sqrt{2},\sqrt{3})$. Moreover, the Example 4.3.9 shows that $\Q(\sqrt{2},\sqrt{3}) = \Q(\sqrt{2}+\sqrt{3})$.
+
+(Or a direct proof is given in  section 4.2, since $\sqrt{2} = \frac{1}{2}(\alpha^3 - 9 \alpha)$, where $\alpha = \sqrt{2}+\sqrt{3}$, and $\sqrt{3} = \alpha - \sqrt{2}$, so $\sqrt{2},\sqrt{3} \in \Q(\sqrt{2}+\sqrt{3})$.)
+
+Conclusion : the splitting field of $x^4-10x^2+1$ over $\Q$ is $\Q(\sqrt{2}+\sqrt{3})$.
+\end{proof}
+
+\paragraph{Ex. 5.1.6}
+
+{\it Let $f\in \Q[x]$ be the minimal polynomial of $\alpha = \sqrt{2+\sqrt{2}}$
+\begin{enumerate}
+\item[(a)] Show that $f = x^4-4x^2+2$. Thus $[\Q(\alpha) : \Q]=4$.
+\item[(b)] Show that $\Q(\alpha)$ is the splitting field of $f$ over $\Q$.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]
+Let $\alpha= \sqrt{2+\sqrt{2}}$. 
+
+Then $\alpha^2 = 2 + \sqrt{2}, \alpha^2-2 = \sqrt{2}, (\alpha^2-2)^2 - 2= 0, \alpha^4 - 4 \alpha^2 + 2 = 0$.
+
+ So $\alpha$ is a root of
+$$f= x^4-4x^2+2.$$
+The computing of the roots in $\C$ of $f$ gives (cf Ex. 4.3.2) : 
+\begin{align*}
+f(\beta) = 0 &\iff (\beta^2-2)^2 = 2\\
+&\iff \beta^2 = 2 +\varepsilon \sqrt{2}, \ \varepsilon \in \{-1,1\}\\
+&\iff \beta =\varepsilon' \sqrt{2 +\varepsilon \sqrt{2}},\  \varepsilon, \varepsilon' \in \{-1,1\}\\
+&\iff \beta \in \left\{   \sqrt{2+\sqrt{2}}, -\sqrt{2+\sqrt{2}}, \sqrt{2-\sqrt{2}},-\sqrt{2-\sqrt{2}}\right\}.
+\end{align*}
+Thus 
+\begin{align}
+f = \left(x-\sqrt{2+\sqrt{2}}\right)\left(x+\sqrt{2+\sqrt{2}}\right)\left(x-\sqrt{2-\sqrt{2}}\right)\left(x+\sqrt{2-\sqrt{2}}\right).
+\end{align}
+
+We show that $f$ is irreducible over $\Q$.
+The Schönemann-Eisenstein Criterion,  with $p=2$ applies to the polynomial $f= x^4-4x^2+2 = a_4x^4+a_3x^3+a_2x^2+a_1x+a_0$ 
+($2 \nmid a_4 =1, 2 \mid a_3=0,2\mid a_2=-4, 2 \mid a_1=0,2 \mid a_0=2,  2^2 \nmid a_0 = 2$). $f$ is so irreducible over $\mathbb{Q}$.
+
+Consequently, $f$ of degree 4, is the minimal polynomial of $\alpha=  \sqrt{2+\sqrt{2}}$ over $\Q$, so,
+$$\left[\Q\left(\sqrt{2+\sqrt{2}}\right):\Q\right] = 4.$$
+
+\item[(b)]
+The splitting field of $f$ over $\Q$ is $$K=\Q\left( \sqrt{2+\sqrt{2}}, -\sqrt{2+\sqrt{2}}, \sqrt{2-\sqrt{2}},-\sqrt{2-\sqrt{2}}\right) = \Q\left( \sqrt{2+\sqrt{2}} , \sqrt{2-\sqrt{2}}\right).$$
+
+Let $\alpha= \sqrt{2+\sqrt{2}}, \gamma= \sqrt{2-\sqrt{2}}$. Then $K=\Q(\alpha,\gamma)$.
+
+Note that $\alpha \gamma = \sqrt{4-2} = \sqrt{2}$
+
+Moreover $\alpha^2 = 2+\sqrt{2}, \gamma^2 = 2 - \sqrt{2}$, thus $\alpha^2 - \gamma^2 = 2\sqrt{2} = 2 \alpha \gamma$.
+$$\alpha^2 - \frac{2}{\alpha^2} = 2 \alpha \gamma.$$
+So
+$$\gamma = \frac{1}{2}\left( \alpha - \frac{2}{\alpha^3}\right) \in \Q(\alpha).$$
+Consequently $\Q(\alpha) = \Q(\alpha,\gamma)$ is the splitting field of $f$ over $\Q$.
+The splitting field of $x^4-4x^2+2$ over $\Q$ is $\Q(\sqrt{2+\sqrt{2}})$, of degree 4 over $\Q$.
+
+Note : with Sage, we obtain $\gamma = \frac{1}{2}\left( \alpha - \frac{2}{\alpha^3}\right) = \alpha^3 - 3 \alpha$, and the factorization
+$$x^4 - 4 x^2+2 = (x - \alpha)  (x + \alpha)  (x - \alpha^3 + 3\alpha)  (x + \alpha^3 - 3\alpha).$$
+
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.1.7}
+
+{\it Let $f = x^3-x+1 \in \F_3[x]$.
+\begin{enumerate}
+\item[(a)] Show that $f$ is irreducible over $\F_3$.
+\item[(b)] Let $L$ be the splitting field of $f$ over $\F_3$. Prove that $[L:\F_3] = 3$.
+\item[(c)] Explain why $L$ is a field with $27$ elements.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]
+Let $f = x^3-x+1 \in \F_3[x]$.
+
+As $\deg(f) = 3$, it is suffisant to prove the irreducibility of$f$ to show that $f$ has no root in $\F_3$.
+This is the case, since every element $\alpha$ of $\F_3$ is a root of $x^3-x$ (little Fermat's theorem), so $\alpha^3 - \alpha + 1 = 1 \ne 0$ : $f(0) = f(1)=f(2) = 1$.
+
+$f = x^3-x+1$ is irreducible over $\F_3$.
+
+\item[(b)]
+Let $L$ the splitting  of $f$ over $\F_3$, and $\alpha$ a root of $f$ in $L$.
+As the characteristic of $\F_3$ is 3,
+\begin{align*}
+f(x+1) &= (x+1)^3 -(x+1)+1\\
+&= (x^3+1)-(x+1)+1\\
+&= x^3-x+1\\
+&=f(x)
+\end{align*}
+Consequently, $\alpha, \alpha+1,\alpha+2$ are the distinct roots of $f$, since $0,1,2$ are distinct in $\F_3$ : 
+$$f(x) = (x-\alpha)(x-\alpha-1)(x-\alpha-2).$$
+As $\alpha+1,\alpha+2 \in \F_3(\alpha)$, 
+$$L = \F_3(\alpha,\alpha+1,\alpha+2) = \F_3(\alpha).$$
+$f=x^3-x+1$ being the minimal polynomial of $\alpha$, $[\F_3(\alpha) : \F_3] = \deg(f) = 3$.
+
+In conclusion, $L = \F_3(\alpha)$ is the splitting field of $x^3-x+1$ over $\F_3$. Its degree is 3 over $\F_3$. As a vector space over $\F_3$, its dimension is 3, so  $L \simeq \F_3^3$ : its cardinality is so $3^3=27$.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.1.8}
+
+{\it Let n be a positive integer. Then the polynomial $f = x^n-2$ is irreducible over $\Q$ by the Schönemann-Eisenstein Criterion for the prime 2.
+\begin{enumerate}
+\item[(a)] Determine the splitting field $L$ of $f$ over $\Q$.
+\item[(b)] Show that $[L:\Q] = n(n-1)$ when $n$ is prime.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]
+The set of the roots of $x^n-2 \in \Q[x]$ is $S = \{\zeta^k \sqrt[n]{2},\  k = 0,\cdots,n-1\}$, where $\zeta = e^{2i\pi/n}$ : the splitting field $L$ of $x^n-2$ over $\Q$ is so $\Q(S)$.
+
+As $\zeta = \zeta \sqrt[n]{2}/\sqrt[n]{2} \in \Q(S)$, $L = \Q(\zeta, \sqrt[n]{2})$.
+
+\item[(b)]
+Suppose that $n$ is prime.
+
+As $f=x^n-2$ is irreducible over $\Q$, $f$ is the minimal polynomial of $\sqrt[n]{2}$ over $\Q$, so $[\Q(\sqrt[n]{2}) : \Q] = \deg(f)=n$.
+
+As $n$ is prime, $1+x+\cdots+x^{n-1}$ is irreducible over $\Q$, thus $[\Q(\zeta):\Q] = n-1$.
+\begin{center}
+\begin{tikzpicture}
+    \node (L) at (3,4) {$L = \Q(\sqrt[n]{2},\zeta)$};
+    \node (R) at (1,2) {$\Q(\sqrt[n]{2})$};
+    \node (S) at (5,2) {$\Q(\zeta)$};
+    \node (Q) at (3,0) {$\Q$};
+    \draw[<-] (L) edge (R) edge (S);
+    \draw[->] (Q) edge node [left]{$n\ $} (R)   ;
+     \draw[->] (Q) edge node [right]{$\ n-1$} (S) ;
+\end{tikzpicture}
+\end{center}
+From the tower Theorem,
+\begin{align}
+[L : \Q] &= [L : \Q(\sqrt[n]{2})] [\Q(\sqrt[n]{2} ): \Q] = n\,  [L : \Q(\sqrt[n]{2})]   \notag\\
+[L : \Q] &=[L:\Q(\zeta)][Q(\zeta):\Q] = (n-1) [L:\Q(\zeta)] \label{eq5.1.8:1}
+\end{align}
+Thus $n \mid [L : \Q]$ and $n-1 \mid [L : \Q] $.
+
+As $n,n-1$ are relatively prime, 
+\begin{align}
+n(n-1) \mid [L : \Q].\label{eq5.1.8:2}
+\end{align}
+
+Moreover, the minimal polynomial $p$ of $\sqrt[n]{2}$ over  $\Q(\zeta)$ divides $x^n-2 \in \Q[x] \subset \Q(\zeta)[x]$, thus $[L:\Q(\zeta)] = \deg(p) \leq n$. By \eqref{eq5.1.8:1}, $[L:\Q] \leq n(n-1)$, and by \eqref{eq5.1.8:2} $n(n-1) \mid [L:\Q]$, thus
+$$[L:\Q] = n(n-1).$$
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.1.9}
+
+{\it Let $f \in F[x]$ have degree $n>0$, and let $L$ be the splitting field of $f$ over $F$.
+\begin{enumerate}
+\item[(a)] Suppose that $[L:F] = n!$. Prove that $f$ is irreducible over $F$.
+\item[(b)] Show that the converse of part (a) is false.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]
+Let $f \in F[x], \deg(f)=n>0$, and $L$ the splitting field of $f$ over $F$.
+
+Suppose that $f$ is reducible over $F$, and we show then that $[L:F]<n!$.
+
+$f =gh$, where $1\leq k = \deg(g) \leq n-1$ (then $\deg(h)=n-k$).
+
+The roots $\alpha_1,\cdots,\alpha_k$ of $g$, and the roots $\beta_1,\cdots,\beta_{n-k}$ of $h$, are the roots of $f$. They are thus in $L$, and
+$$L = F(\alpha_1,\cdots,\alpha_k,\beta_1,\cdots,\beta_k).$$
+
+Let $K =  F(\alpha_1,\cdots,\alpha_k)$. This is the splitting field of $g$ over $F$ : Theorem 5.1.5 shows that $[K:F] \leq k!$.
+
+As $L = K(\beta_1,\cdots,\beta_{n-k})$ is the splitting field of $h$ over $K$, the same theorem shows that $[L : K] \leq (n-k)!$.
+
+Hence
+$$[L : F] = [L : K ]\ [K : F] \leq k!(n-k)!.$$
+If $1\leq k \leq n-1$, $$\binom{n}{k} = \frac{n!}{k!(n-k)!} = \prod\limits_{i=0}^{k-1} \frac{n-i}{k-i} > 1,$$
+thus, for the same values of $k$,
+$$k!(n-k)! < n!.$$
+Consequently $[L : F] < n!$. In particular $[L : F] \neq  n!$. The contraposition gives thus
+\begin{center}
+$[L : F] = n!\  \Rightarrow$ $f$ is irreducible over $F$.
+\end{center}
+\vspace{0.5cm}
+\item[(b)]
+We give a counterexample of the converse : by Exercise 5, $L = \Q(\sqrt{2}+\sqrt{3})$ is the splitting field of the irreducible polynomial $f = x^4-10x^2+1$, but 
+
+$[L : \Q] = [\Q(\sqrt{2},\sqrt{3}):\Q] = 4 \neq 4! = 24$.
+
+\end{enumerate}
+\end{proof}
+
+
+\paragraph{Ex. 5.1.10}
+
+{\it Let $F \subset L$ be the splitting field of $f \in F[x]$, and let $K$ be a field such that $F \subset K \subset L$. Prove that $K\subset L$ is the splitting field of some polynomial in $K[x]$.
+}
+
+\begin{proof}
+If $F \subset K \subset L$, and if $L$ is the splitting field of $f$ over $K$, then $L$ is the splitting field of the same polynomial $f$ over $K$.
+
+Indeed, $L$ contains the roots $\alpha_1,\ldots,\alpha_n$ of $f$, and $L = F(\alpha_1,\ldots\alpha_n)$. Moreover $f = c(x-\alpha_1)\cdots(x-\alpha_n), c\in F$.
+
+$F \subset K \subset L$ and $\alpha_1,\ldots,\alpha_n \in L$, thus $K(\alpha_1,\ldots,\alpha_n) \subset L = F(\alpha_1,\ldots,\alpha_n) \subset K(\alpha_1,\ldots,\alpha_n)$. Consequently, $L = K(\alpha_1,\ldots,\alpha_n)$, and $f$ splits completely over $K$ since $c \in F \subset K$. $L$ is the splitting field of $f$ over $K$.
+
+Note : so, if $F\subset K \subset L$, and if $F \subset L$ is a normal extension, so is $K \subset L$.
+\end{proof}
+
+\paragraph{Ex. 5.1.11}
+
+{\it Suppose that $f \in F[x]$ is irreducible of degree $n>0$, and let $L$ be the splitting field of $f$ over $F$.
+\begin{enumerate}
+\item[(a)] Prove that $n \mid [L:F]$.
+\item[(b)] Give an example to show that $n = [L:F]$ can occur in part (a).
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]
+Let $\alpha \in L$ a root of $f$. Then $F \subset F(\alpha) \subset L$, thus
+$$[L:F] = [L:F(\alpha)]\ [F(\alpha) : F].$$ 
+As $f$ is the minimal polynomial of $\alpha$, $[F(\alpha):F] = \deg(f) = n$, thus
+$n \mid [L:F]$.
+
+\item[(b)]
+In Exercise 6, we have seen that $f = x^4-4x^2+2$,of degree $n=4$,  has for splitting field $L  = \Q(\sqrt{2}+ \sqrt{3}) = \Q(\sqrt{2},\sqrt{3})$, of degree 4 over $\Q$.
+Here $[L : \Q] = 4 = \deg(f)$, the equality in relation (a) is so a possibility.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.1.12}
+
+{\it In the situation of Theorem 5.1.6, explain why $[L_1:F_1] = [L_2:F_2]$.
+}
+
+\begin{proof}
+$\overline{\varphi} : L_1\to L_2$ is a field isomorphism, whose restriction to  $F_1$ (and co-restriction to $F_2$) is the field isomorphism $\varphi : F_1\mapsto F_2$.
+
+$[L_1:F_1] < \infty$. Let $(f_1,\ldots,f_d)$ a basis of $L_1/F_1$. We show that $(\overline{\varphi}(f_1), \ldots,\overline{\varphi}(f_d))$ is a basis of $L_2/F_2$.
+
+{\medskip}
+
+$\bullet$ If \ $\sum_{i=1}^d b_i \overline{\varphi}(f_i) = 0$, where $b_i \in F_2$, then, since $\varphi : F_1\to F_2$ is surjective, ${b_i = \varphi(a_i)}, \ a_i \in F_1, \ i=1,\ldots d$.
+
+As the restriction of $\overline{\varphi}$ to $F_1$ is $\varphi$, $b_i = \overline{\varphi}(a_i)$. $\overline{\varphi}$ being a ring homomorphism,
+$$0= \sum_{i=1}^d b_i \overline{\varphi}(f_i) = \sum_{i=1}^d \overline{\varphi}(a_i) \overline{\varphi}(f_i) = \overline{\varphi}\left (\sum_{i=0}^d a_i f_i\right).$$
+As the kernel of $\overline{\varphi}$ is $0$, $\sum_{i=0}^d a_i f_i =0$, where the family $(f_i)_{0\leq i \leq d}$ is free, thus $a_1=\cdots=a_d=0$, and since $b_i = \varphi(a_i)$, $b_1=\cdots=b_d=0$. So the family $(\overline{\varphi}(f_i))_{1\leq i \leq d}$ is free.
+
+{\medskip}
+
+ $\bullet$ Let $y $ any element in $L_2$. As $\overline{\varphi}$ is surjective, there exists $x\in L_1$such that $y =\overline{\varphi}(x)$.
+ $(f_1,\cdots,f_d)$ being a basis, there exists $(a_0,\cdots,a_d) \in F_1^d$ such that  $x = \sum_{i=0}^d a_i f_i$.
+ 
+ Then $$y = \overline{\varphi}(x) = \sum_{i=0}^d \overline{\varphi}(a_i) \overline{\varphi}(f_i) =  \sum_{i=0}^d \varphi(a_i) \overline{\varphi}(f_i) =  \sum_{i=0}^d b_i\overline{\varphi}(f_i),$$
+where $b_i = \varphi(a_i) \in F_2$. Consequently $(\overline{\varphi}(f_i))_{1\leq i \leq d}$ is a basis of $L_2/F_2$, and so
+ 
+$$[L_2:F_2] = d =[L_1:F_1].$$
+\end{proof}
+
+\paragraph{Ex. 5.1.13}
+
+{\it Let $L = \Q(\sqrt{2},\sqrt{3})$. Use Proposition 5.1.8 to prove that there is an isomorphism $\sigma : L \simeq L$ such that $\sigma(\sqrt{2}) = \sqrt{2}$ and $\sigma(\sqrt{3}) = - \sqrt{3}$.
+}
+
+\begin{proof}
+$\Q \subset \Q(\sqrt{2}) \subset L = \Q(\sqrt{2},\sqrt{3})$.
+
+$f=x^2 - 3$ is irreducible over $\Q(\sqrt{2})$. Indeed $\deg(f) = 2$, and $f$ has no root in  $\Q(\sqrt{2})$,otherwise $\sqrt{3}  = a + b \sqrt{2}, \ a,b \in \Q$. But then $3 = a^2+2b^2 + 2ab \sqrt{2}$. If $ab \neq 0$, then $\sqrt{2} = (3-a^2-2b^2)/(2ab) \in \Q$, which is false, thus $ab = 0$. If $b=0$, then $\sqrt{3} \in \Q$, and if  $a = 0$, $\sqrt{3/2} \in \Q$ : the two cases are impossible. Consequently $f=x^2 - 3$ is irreducible over $\Q(\sqrt{2})$.
+
+(This gives an alternative proof of $ [\Q(\sqrt{2},\sqrt{3}):\Q] = 4$.)
+
+
+As $\Q(\sqrt{2},\sqrt{3})$ is the splitting field of $x^2-3$ over $\mathbb{Q}(\sqrt{2})$, by Proposition 5.1.8 there exists a field isomorphism $\sigma : L\to L$ which is the identity on $\Q(\sqrt{2})$ and which takes $\sqrt{3}$ to $-\sqrt{3}$. As $\sigma$ is the identity on $\Q(\sqrt{2})$, we have also $\sigma(\sqrt{2}) = \sqrt{2}$.
+\end{proof}
+
+\subsection{NORMAL EXTENSIONS}
+\paragraph{Ex. 5.2.1}
+
+{\it Prove that $\Q(\sqrt[4]{2})$ is not the splitting field of any polynomial in $\Q[x]$.
+}
+
+\begin{proof}
+This is equivalent to show that $\Q(\sqrt[4]{2})$ is not a normal extension of $\Q$.
+
+$x^4 - 2$ is an irreducible polynomial over $\Q$ $\Q$ by Schönemann-Eisenstein Criterion with $p=2$.
+
+The roots of the minimal polynomial of $\sqrt[4]{2}$ over $\Q$ are $\sqrt[4]{2}, i \sqrt[4]{2},-\sqrt[4]{2},-i\sqrt[4]{2}$.
+
+As the root $i \sqrt[4]{2}$ is a non real complex, it is not in $\Q(\sqrt[4]{2})\subset \R$. So $\Q \subset \Q(\sqrt[4]{2})$ is not a normal extension, thus $\Q(\sqrt[4]{2})$ is not the splitting field of any polynomial in $\Q[x]$.
+\end{proof}
+
+\paragraph{Ex. 5.2.2}
+
+{\it Prove that an algebraic extension $F\subset L$ is normal if and only if for every $\alpha \in L$, the minimal polynomial of $\alpha$ over $F$ splits completely over $L$.
+}
+
+\begin{proof}
+Let $F\subset L $ a normal extension. Let $\alpha \in L$. Its minimal polynomial $f \in F[x]$ is irreducible, thus this polynomial splits completely over $F$ by definition of a normal extension.
+
+Reciprocally, suppose that every $\alpha \in L$ is such that its minimal polynomial splits completely over $F$.
+
+Let $g \in F[x]$ any irreducible polynomial, and $\alpha$ a root of $g$ in $L$. Then $g$ is the minimal polynomial of $\alpha$ over $L$. So $g$ splits completely over $L$ by hypothesis. Hence every irreducible polynomial  $g$ which has a root in $L$ splits completely over $F$. So the extension  $F\subset L$ is normal.
+\end{proof}
+
+\paragraph{Ex. 5.2.3}
+
+{\it Determine wether the following extensions are normal. Justify your answers.
+\begin{enumerate}
+\item[(a)] $\Q \subset \Q(\zeta_n)$, where $\zeta_n = e^{2\pi i/n}$.
+\item[(b)] $\Q \subset \Q(\sqrt{2},\sqrt[3]{2})$.
+\item[(c)] $F = \F_3(t) \subset F(\alpha)$, where $t$ is a variable and $\alpha$ is a root of $x^3-t$ in a splitting field.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]
+As $\Q(\zeta_n)$ contient $\zeta_n^k$ pour tout $k \in \Z$, 
+$$\Q(\zeta_n) = \Q(1,\zeta_n,\zeta_n^2,\cdots,\zeta_n^{n-1}).$$
+$\Q(1,\zeta_n,\zeta_n^2,\cdots,\zeta_n^{n-1}) = \Q(\zeta_n)$ is the splitting field of $x^n-1$ over $\Q$. 
+
+Conclusion :  $\Q \subset \Q(\zeta_n)$ is a normal extension.
+
+\item[(b)]
+The minimal polynomial of $\sqrt[3]{2} \in \Q(\sqrt{2}, \sqrt[3]{2} ) = L $ over $\Q$ is $f = x^3-2$. The roots of $f$ are $\sqrt[3]{2}, \omega \sqrt[3]{2}, \omega^2 \sqrt[3]{2}$. But $\omega \sqrt[3]{2} \not \in \R$, and $L \subset \R$, thus $\omega \sqrt[3]{2} \not \in L$. So  $\Q \subset  \Q(\sqrt{2}, \sqrt[3]{2} )$ is not a normal extension.
+
+\item[(c)]
+By Exercise 4.2.9, the polynomial $f = x^3-t$ is irreducible over $\F_3(t)$. Let $\alpha$ a root of $f$ in the spitting field $L$ of $x^3-t$ over $F$.
+
+As the characteristic of $F$ is 3, $f = x^3-t = (x-\alpha)^3$, where $\alpha \in L$. The splitting field of $f$ over $F$ is so $F(\alpha)$, thus $F\subset F(\alpha)$ is a normal extension.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.2.4}
+
+{\it Give an example of a normal extension of $\Q$ that is not finite.
+}
+
+\begin{proof}
+$\overline{\Q}$ is by definition the set of all complex algebraic numbers over $\Q$. Theorem 4.4.10 shows that $\overline{\Q}$ is an algebraically closed field. If $f \in \Q[x]$ is an irreducible polynomial over $\Q$, a fortiori $f \in \overline{\Q}[x]$, and by definition of an algebraically closed field, $f$ splits completely over $\overline{\Q}$. Thus $\Q \subset \overline{\Q}$ is a normal extension.
+In Exercise 4.4.1, we showed that $[\overline{\Q} : \Q] = \infty$. This extension is so an example of a normal extension of $\Q$ that is not finite.
+\end{proof}
+
+\subsection{SEPARABLE EXTENSION}
+
+\paragraph{Ex. 5.3.1}
+
+{\it Prove (5.6) :
+\begin{align*}
+(ag+bh)' &= ag'+bh'\\
+(gh)'&= g'h+gh'
+\end{align*}
+where $f,g\in F[x],\ a,b \in F$.
+}
+
+\begin{proof}
+Write 
+\begin{align}
+g = \sum_{i=0}^n a_i x^i,\qquad h= \sum_{j=0}^m b_j x^j \in F[x]. \label{eq5.3.1:1}
+\end{align}
+(We suppose $a_i=0$ if $i>m$ or $i<0$, $b_j=0$ if $j>m$ or $j<0$.)
+\begin{enumerate}
+\item[(a)]
+Write $N = \max(n,m)$ : then $$g= \sum_{i=0}^N a_i x^i,\qquad h= \sum_{i=0}^N b_i x^i.$$
+\begin{align*}
+g' = \sum_{i=1}^N ia_i x^{i-1},\qquad h' = \sum_{i=1}^N ib_i x^{i-1}
+\end{align*}
+If $a,b\in F$, then
+$$ ag'+bh' = \sum_{i=1}^N i(aa_i+bb_i) x^{i-1}$$
+Moreover
+\begin{align*}
+ag+bh &= \sum_{i=0}^N(aa_i+bb_i) x^i\\
+(ag+bh)'&= \sum_{i=1}^Ni(aa_i+bb_i) x^{i-1}
+\end{align*}
+thus
+\begin{align*}
+(ag+bh)'=ag'+bh'
+\end{align*}
+
+\item[(b)]
+By \eqref{eq5.3.1:1}, lthe definition of the product of two polynomials gives
+$$gh = \sum_{k=0}^{m+n} \left(\sum_{i=0}^k a_i b_{k-i} \right)x^k .$$
+Thus 
+$$(gh)'= \sum_{k=1}^{m+n} k\left(\sum_{i=0}^k a_i b_{k-i} \right)x^{k-1}=\sum_{k=0}^{m+n-1} (k+1)\left(\sum_{i=0}^{k+1} a_i b_{k+1-i} \right)x^{k}.$$
+As
+\begin{align*}
+g' &= \sum_{i=1}^n ia_i x^{i-1} =\sum_{i=0}^{n-1} (i+1)a_{i+1} x^{i},\\
+h' &= \sum_{j=1}^m jb_jx^{j-1} =\sum_{j=0}^{m-1} (j+1)b_{j+1} x^{j},
+\end{align*}
+we obtain
+\begin{align*}
+g'h&= \sum_{k=0}^{m+n-1}\left( \sum_{i=0}^k (i+1)a_{i+1} b_{k-i}\right)x^k\\
+&= \sum_{k=0}^{m+n-1} \left(\sum_{i=1}^{k+1} i a_{i} b_{k+1-i}\right)x^k\\
+&= \sum_{k=0}^{m+n-1} \left(\sum_{i=0}^{k+1} i a_{i} b_{k+1-i}\right)x^k,\\
+\end{align*}
+and also
+\begin{align*}
+gh'&=\sum_{k=0}^{m+n-1}\left( \sum_{i=0}^k (k+1-i)a_{i} b_{k+1-i}\right)x^k\\
+&=\sum_{k=0}^{m+n-1}\left( \sum_{i=0}^{k+1} (k+1-i)a_{i} b_{k+1-i}\right)x^k.
+\end{align*}
+Thus
+\begin{align*}
+g'h+gh' &= \sum_{k=0}^{m+n-1} \left(\sum_{i=0}^{k+1} i a_{i} b_{k+1-i}+ \sum_{i=0}^{k+1} (k+1-i)a_{i} b_{k+1-i} \right)x^k\\
+&=\sum_{k=0}^{m+n-1}\left( \sum_{i=0}^k (i+k+1-i)a_{i} b_{k+1-i}\right)x^k\\
+&=\sum_{k=0}^{m+n-1} (k+1)\left(\sum_{i=0}^{k+1} a_i b_{k+1-i} \right)x^{k}\\
+&=(gh)'
+\end{align*}
+We have proved the equations 5.6 : 
+\begin{align*}
+(ag+bh)' &= ag'+bh'\\
+(gh)'&= g'h+gh'
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.3.2}
+
+{\it Let $F$ have characteristic $p$, and suppose that $\alpha,\beta \in F$. Lemma 5.3.10 shows that $(\alpha + \beta)^p = \alpha^p+\beta^p$.
+\begin{enumerate}
+\item[(a)] Prove that $(\alpha -\beta)^p = \alpha^p - \beta^p$ if $\alpha, \beta \in F$.
+\item[(b)] Prove that $(\alpha + \beta)^{p^e} = \alpha^{p^e} + \beta^{p^e}$ for all $e\geq 0$.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]
+Let $F$ have characteristic $p$, $p\neq 0$. Then $p$ is prime. Let $\alpha,\beta\in F$.
+
+If  $p$ is an odd prime,
+$$(\alpha- \beta)^p = \alpha+(-\beta)^p = \alpha^p +(-1)^p \beta^p = \alpha^p - \beta^p.$$
+In the remaining case $p=2$, then  $1=-1$, thus
+$$(\alpha- \beta)^p = (\alpha+ \beta)^p=\alpha^p + \beta^p=\alpha^p - \beta^p.$$
+
+\item[(b)]
+Let $H : F \to F, x \mapsto x^p$ the Frobenius homomorphism of $F$.
+By induction, we show that $H^n (x) = x^{p^n}$ for all  $x\in F$ : 
+
+$H^0(x) = x = x^{p^0}$, et 
+
+$H^n(x) = x^{p^n} \Rightarrow H^{n+1}(x) = H(H^n(x)) = (x^{p^n})^p = x^{p.p^n} = x^{p^{n+1}}$.
+
+If $e \in \N$, as $H^e$, power of a homomorphism, is a homomorphism, so $$H^e(\alpha+\beta) = H^e(\alpha)+H^e(\beta),$$ namely
+$$(\alpha+\beta)^{p^e} = \alpha^{p^e}+\beta^{p^e}.$$
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.3.3}
+
+{\it Let $F$ be a field of characteristic $p$. The $n$th roots of unity are defined to be the roots of $x^n-1$ in the splitting field $F\subset L$ of $x^n-1$.
+\begin{enumerate}
+\item[(a)] If $p \nmid n$, show that there are $n$ distinct $n$th roots of unity in $L$.
+\item[(b)] Show that there is only one $p$th root of unity, namely $1\in F$.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)] Here $n \geq 1$.
+
+ As $f = x^n-1$, then $f'=nx^{n-1}$.
+ 
+ If $p \nmid n$, then $n\neq 0$ in the field $F$ of characteristic $p$, thus $n$ is a unit in $F[x]$.
+ 
+ $x(nx^{n-1}) - n(x^n-1) = n = xf'-nf$ is a Bézout's relation  between $f$ and $f'$, which proves that $f\wedge f'=1$. So $f$ is a separable polynomial, so the $n$ roots of $f$ in its splitting field, which are the $n$th roots of unity, are distinct.
+ 
+ \item[(b)]
+If the characteristic of $F$ is $p$, by Exercise 2,
+ $$x^p-1 = (x-1)^p.$$
+The only $p$th root of unity is thus 1.
+ \end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.3.4}
+
+{\it Let $f \in \Z[x]$ be monic and nonconstant and have discriminant $\Delta(f)$. Then let $f_p \in \F_p[x]$ be obtained from $f$ by reducing modulo $p$. Prove that $\Delta(f_p) \in \F_p$ is the congurence class of $\Delta(f)$.
+}
+
+\begin{proof}
+Let $\Delta = \Delta(\sigma_1,\cdots,\sigma_n) \in F(\sigma_1,\cdots,\sigma_n) \subset F(x_1,\cdots,x_n)$ the discriminant.
+
+Let $f =x^n + a_1 x^{n-1}+ \cdots+a_0 \in \Z[x]$a monic nonconstant polynomial.
+
+In the section 2.4, $\Delta(f)$ is defined by 
+$$\Delta(f) = \Delta(-a_1,\cdots,(-1)^i a_i, \cdots,(-1)^n a_n).$$
+obtained with the evaluation homomorphism defined by $\sigma_i \mapsto (-1)^ia_i$, which sends $\tilde{f} = x^n-\sigma_1 x^{n-1}+\cdots+(-1)^n \sigma_n$ on $f$, and $\Delta$ sur $\Delta(f)$.
+
+Write $f_p$ the reduction of $f$ modulo $p$ : 
+
+$f_p = x^n+\overline{a}_1x^{n-1}+\cdots+\overline{a}_0$, where we write $\overline{k} = [k]_p$ the class of $k \in \Z$ modulo $p$.
+
+By definition, 
+$$\Delta(f_p) = \Delta(-\overline{a}_1,\cdots,(-1)^i \overline{a}_i, \cdots,(-1)^n \overline{a}_n).$$
+ $\Delta$ is a polynomial with coefficients in $\Z$ of $\sigma_1,\cdots,\sigma_n$, thus
+$\Delta(-\overline{a}_1,\cdots,(-1)^i \overline{a}_i, \cdots,(-1)^n \overline {a}_n)$ is the reduction modulo $p$ of $\Delta(-a_1,\cdots,(-1)^i a_i, \cdots,(-1)^n a_n)$, that is $\Delta(f_p)$ is the reduction modulo $p$ of $\Delta(f)$ : $$\Delta(f_p) = [\Delta(f)]_p.$$
+\end{proof}
+
+\paragraph{Ex. 5.3.5}
+
+{\it For $f = x^7+x+1$, find all primes for which $f_p$ is not separable, and compute $\mathrm{gcd}(f_p,f'_p)$ as in (5.14).
+}
+
+\begin{proof}
+The following Sage instructions give the wanted factorisation of the discriminant of $f$:
+\begin{verbatim}
+ P.<x> = PolynomialRing(QQ)
+ f = x^7+x+1
+ g = diff(f(x),x)
+ d = f.resultant(g);d
+\end{verbatim}
+\begin{center}
+870199
+\end{center}
+\begin{verbatim}
+f.discriminant()
+\end{verbatim}
+\begin{center}
+-870199
+\end{center}
+\begin{verbatim}
+ d.factor()
+\end{verbatim}
+\begin{center}
+$11 \cdot 239 \cdot 331$
+\end{center}
+
+\begin{verbatim}
+P.<x> = PolynomialRing(GF(11))
+f = x^7 + x + 1; df = diff(f(x),x)
+gcd(f,df)
+\end{verbatim}
+\begin{center}
+$x+3$
+\end{center}
+\begin{verbatim}
+factor(f)
+\end{verbatim}
+\begin{center}
+$(x + 3)^{2} \cdot (x^{5} + 5 x^{4} + 5 x^{3} + 2 x^{2} + 9 x + 5)$
+\end{center}
+
+\begin{verbatim}
+P.<x> = PolynomialRing(GF(239))
+f = x^7 + x + 1; df = diff(f(x),x)
+gcd(f,df)
+\end{verbatim}
+\begin{center}
+$x+41$
+\end{center}
+\begin{verbatim}
+factor(f)
+\end{verbatim}
+\begin{center}
+$(x + 41)^{2} \cdot (x^{5} + 157 x^{4} + 24 x^{3} + 122 x^{2} + 81 x + 30)$
+\end{center}
+
+\begin{verbatim}
+P.<x> = PolynomialRing(GF(331))
+f = x^7 + x + 1; df = diff(f(x),x)
+gcd(f,df)
+\end{verbatim}
+\begin{center}
+$x+277$
+\end{center}
+\begin{verbatim}
+factor(f)
+\end{verbatim}
+\begin{center}
+$(x + 277)^{2} \cdot (x^{2} + 188 x + 203) \cdot (x^{3} + 251 x^{2} + 84x + 80)$
+\end{center}
+
+\bigskip
+
+So
+$$
+\mathrm{gcd}(f_p,f'_p) = 
+\left\{
+\begin{array}{ll}
+  x+3,      & p = 11    \\
+  x + 41,  & p = 239   \\
+  x + 277, &  p = 331  \\ 
+  1,  & \mathrm{otherwise.}
+\end{array}
+\right.
+$$
+\end{proof}
+
+\paragraph{Ex. 5.3.6}
+
+{\it Use part (a) of Theorem 5.3.15 to show that the splitting field of a separable polynomial gives a separable extension.
+}
+
+\begin{proof}
+Let $F\subset L$ the splitting field of a separable polynomial $f \in F[x]$ : $L=F(\alpha_1,\ldots,\alpha_n)$, where $\alpha_1,\ldots,\alpha_n$ are the roots of $f$, and
+$$f = c(x-\alpha_1)\cdots(x-\alpha_n).$$
+
+Let $f_i$ be the minimal polynomial of $\alpha_i$ over $F$. Then $f_i$ divides $f$, thus $f_i \in F[x]$ is a separable polynomial, since the unicity of the decomposition in irreducible factors in $L[x]$ shows that the only irreducible factors of $f_i$ in $L[x]$ are associate to $x-\alpha_j$. Consequently the $\alpha_i$ are separable for all $i,\ 1\leq i \leq n$. Part (a) of Theorem 5.3.15 shows then that $F\subset L$ is a separable extension.
+\end{proof}
+
+\paragraph{Ex. 5.3.7}
+
+{\it Suppose that $F$ is a field of characteristic $p$. The goal of this exercise is to prove Proposition 5.3.16. To begin the proof, let $f \in F[x]$ be irreducible.
+\begin{enumerate}
+\item[(a)] Assume that $f'$ is not identically zero. Then use the argument of Lemma 5.3.5 to show that $f$ is separable.
+\item[(b)] Now assume that $f'$ is identically zero. Show that there is a polynomial $g_1 \in F[x]$ such that $f(x) = g_1(x^p)$.
+\item[(c)] Show that the polynomial of part (b) is irreducible.
+\item[(d)] Now apply parts (a)-(c) to $g_1$ repeatedly until you get a separable polynomial $g$, and conclude that $f(x) = g(x^{p^e})$ where $e\geq 0$ and $g\in F[x]$ is irreducible and separable.
+\end{enumerate}
+}
+
+\begin{proof}
+Soit $F$ un corps de caractéristique $p$, et $f \in F[x]$ irréductible sur $F$, de degré $n\geq 1$.
+\begin{enumerate}
+\item[(a)]
+We suppose first that $f'\neq 0$.
+
+Let $d = f\wedge f'$. Then $d$ divides  $f$ (and $d$ is monic), and $f$ is irreducible over $F$, thus $d=1$ or $d = \lambda f,\lambda \in F^*$.
+If $d = \lambda f$, then $f =\lambda^{-1} d$ divides $f'$. As $f' \neq 0$, $f' = qf$ implies that $\deg(f) = n \leq \deg(f') \leq n-1$ : this is a contradiction.
+
+Thus $d= f\wedge f' = 1$, and then Proposition 5.3.2 shows that $f$ is separable.
+
+\item[(b)]
+Suppose now that $f'=0$, where $f = \sum\limits_{i=0}^n a_i x^i$.
+Then $0 = f' = \sum\limits_{i=1}^{n} ia_{i} x^{i-1}$, and consequently $ia_i = 0, \ i=1,\cdots,n$. If $p\nmid i, a_i = 0$, thus 
+$$f = \sum\limits_{0\leq i \leq n,\ p\mid i} a_i x^i = \sum\limits_{k=0}^{\lfloor n/p \rfloor} a_{kp} x^{kp}.$$
+
+If we write $g_1 = \sum\limits_{k=0}^{\lfloor n/p \rfloor} a_{kp} x^{k}$, then $f = g_1(x^p)$.
+
+\item[(c)]
+By reductio ad absurdum, if $g_1$ was reducible, $$g_1 = u v,\ g_1,g_2 \in F[x], 1\leq \deg(u), 1\leq deg(v) .$$
+
+But then $f = g_1(x^p) = u(x^p)v(x^p)$, where $\deg(u(x^p)) = p \deg(u) \geq 1, \deg(v(x^p)) \geq 1$, and so  $f$ would be reducible, which contradicts the hypothesis on $f$.
+
+\item[(d)]
+If $g_1'\neq 0$, part (a) shows that $g_1$ is separable, and then the wanted conclusion is obtained with $e=1$.
+Otherwise the arguments of parts (b) and (c) shows that there exits an irreducible polynomial $g_2 \in F[x]$ such that $g_1 = g_2(x^p)$, so $f = g_2(x^{p^2})$, and so on. While $g'_i \neq 0$, we can build a sequence $g_1,\cdots,g_k$ such that $g_i = g_{i+1}(x^p)$, where $g_i$ irreducible over $F$.
+
+This sequence is necessarily finite, since $\deg(g_{i+1}) = \deg(g_i)/p < \deg(g_i)$. 
+
+Thus there exists an integer $e \geq 1$ such that $f = g_1(x^p), g_1 = g_2(x^p), \cdots, g_{e-1} = g_{e}(x^p)$, and $g'_{e} \ne 0$, and so $g = g_e$ is separable.
+
+If we take the induction hypothesis $f = g_k(x^{p^k})$, for $k<e$, (verified for $k=1$) then $f = g_{k+1}((x^{p^k})^p) =  g_{k+1}(x^{p \cdot p^k}) = g_{k+1}(x^{p^{k+1}})$.
+
+Hence $f = g_{e}(x^{p^{e}}) = g(x^{p^e})$.
+
+Conclusion :  if $F$ is a field of characteristic $p$, and if $f \in F[x]$ is irreducible over $F$, then there exists an integer $e\geq 1$ and an irreducible separable polynomial $g \in k[x]$ such that $f = g(x^{p^e})$.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.3.8}
+
+{\it Let $F = k(t,u)$ and $f = (x^2 - t)(x^3 -u)$ be as in Example 5.3.17. Then the splitting field of $f$ contains elements $\alpha,\beta$ such that $\alpha^2 = t$ and $\beta^3 = u$.
+\begin{enumerate}
+\item[(a)] Prove that $x^2 -t$ is the minimal polynomial of $\alpha$ over $F$. Also show that $x^2 -t$ is separable.
+\item[(b)] Similarly, prove that $x^3 -u$ is the minimal polynomial of $\beta$ over $F$, and show that $x^3 - u$ is not separable.
+\end{enumerate}
+}
+
+\begin{proof}
+Here $k$ is a field of characteristic 3.
+
+Let $F = k(t,u)$, where $t,u$ are two variables,  $f = (x^2-t)(x^3-u)$, and $\alpha, \beta$ in a splitting field  $L$ of $f$ such that $\alpha^2 =t, \beta^3=u$.
+
+\begin{enumerate}
+\item[(a)]
+The Exercice 4.2.9, applied to the field $k(u)$,  shows that $x^2-t$  has no root in $F  = k(t,u) = k(u) (t)$, so it is irreducible over $F$. So $x^2 -t$ is the minimal polynomial of $\alpha$ over $F$. 
+
+In $L$, $x^2 - u = (x-\alpha)(x+\alpha)$, and $\alpha \neq -\alpha$, otherwise $2 \alpha = 0$, with $2=-1\neq 0$ in $k$, and $\alpha \neq 0$ since $\alpha^2 = t \ne 0$.
+
+Thus the minimal polynomial $x^2 - u \in F[x]$ of $\alpha$ over $F$ is separable, so $\alpha$ is separable.
+
+\item[(b)]
+Similarly, $x^3 - u$ has no root in $F=k(t,u) = k(t)(u)$, and its degree is 3 : thus it is irreducible over $F$: $x^3-u$ is the minimal polynomial of $\beta$ over $F$.
+
+As the characteristic is 3, $x^3 - u = (x-\beta)^3$, so this polynomial is not separable : $\beta$ is not separable.
+
+\end{enumerate}
+So $F\subset L$ is not a separable extension, and is not a purely inseparable extension.
+\end{proof}
+
+\paragraph{Ex. 5.3.9}
+
+{\it Let $F$ be a field of characteristic $p$, and consider $f = x^p -a \in F[x]$. We will assume that $f$ has no roots in $F$, so that $f$ is irreducible by Proposition 4.2.6. Let $\alpha$ be a root of $f$ in some extension of $F$.
+\begin{enumerate}
+\item[(a)] Argue as in Example 5.3.11 that $F(\alpha)$ is the splitting field of $f$ and that ${[F(\alpha):F]=p}$.
+\item[(b)] Let $\beta \in F(\alpha) \setminus F$. Use Lemma 5.3.10 to show that $\beta^p \in F$.
+\item[(c)] Use parts (a) and (b) to show that the minimal polynomial of $\beta$ over $F$ is $x^p - \beta^p$.
+\item[(d)] Conclude that $F\subset F(\alpha)$ is purely inseparable.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]
+As the characteristic is $p$, $f =x^p -a = (x -\alpha)^p$ has only one root $\alpha$. lThe splitting field of $f$ over $F$ is so $F(\alpha)$, and $f$ being the minimal polynomial of  $\alpha$ over $F$, $[F(\alpha):F] = \deg(f) = p$.
+
+\item[(b)]
+Let $\beta \in F(\alpha) \setminus F$. As $\alpha$ is algebraic over $F$, $F(\alpha) = F[\alpha]$ : there exists so a polynomial $p = \sum_{i=0}^d a_i x^i \in F[x]$ such that
+$$\beta = p(\alpha) = \sum_{i=0}^d a_i \alpha^i.$$
+Then  (by Lemma 5.3.10), $$\beta^p =  \sum_{i=0}^d a_i^p \alpha^{ip} =  \sum_{i=0}^d a_i^p a^{i} \in F .$$
+
+\item[(c)]
+Write $b = \beta^p \in F$. $\beta$ is a root of $x^p -b \in F[x]$.
+
+As$x^p-b = (x-\beta)^p$, with $\beta \not \in F$, $x^p -b$ has no root in $F$ : by Proposition 4.2.6 $x^p - b$ is irreducible over $F$. Thus $x^p -b = x^p -\beta^p$ is so the minimal polynomial of $\beta$ over $F$.
+
+\item[(d)] Every element $\beta \in F(\alpha) \setminus F$ has so a inseparable minimal polynomial, thus every $\beta\in F(\alpha) \setminus F$ is inseparable. By definition, the extension $F\subset F(\alpha)$ is purely inseparable.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.3.10}
+
+{\it Suppose that $F$ has characteristic $p$ and $F \subset L$ is a finite extension.
+\begin{enumerate}
+\item[(a)] Use Proposition 5.3.16 to prove that $F\subset L$ is purely inseparable if and only if the minimal polynomial of every $\alpha \in L$ is of the form $x^{p^e} -a$ for some $e\geq 0$ and $a\in F$.
+\item[(b)] Now suppose that $F \subset L$ is purely inseparable. Prove that $[L:F]$ is a power of $p$.
+\end{enumerate}
+}
+
+\begin{proof}
+Suppose that $F$ has characteristic $p$ and $F \subset L$ is a finite extension.
+\begin{enumerate}
+\item[(a)] :
+
+$\bullet$ Suppose that the extension $F \subset L$ is purely inseparable. Let $\alpha$ any element in $L$. $\alpha$ is algebraic over $F$ since $[L : F] < \infty$.
+
+If  $\alpha \in F$, the minimal polynomial of $\alpha$ over $F$ is $x-\alpha = x^{p^0} - a$, where $a = \alpha \in F$. 
+
+Suppose now that $\alpha \not \in F$. By definition of a purely inseparable extension, the minimal polynomial $f$ of $\alpha$ over $F$ is not separable. 
+
+By Proposition 5.3.16 (see Ex. 7),  $${f = g(x^{p^e})}, g \in F[x], e\geq 1,$$where $g$ is a separable irreducible polynomial.
+
+If $\deg(g)>1$, then $g$ has the root $\beta = \alpha^{p^e} \in L$, and $\beta \not \in F$, otherwise $g$ would be divisible by $x-\beta$ and would so be reducible over $F$. As $g$ is irreducible, the minimal polynomial of $\beta$ over $F$ is $g$, which is separable. Thus $\beta$ is separable, and $\beta \not \in F$, in contradiction with the hypothesis "$F \subset L$ is purely inseparable". Hence $\deg(g) = 1$. As $f$ is monic, $g$ is also monic, thus $g = x-a, a \in F$, and $f = x^{p^e} -a$.
+
+So the minimal polynomial over $F$ of every $\alpha \in L$ is of the form $x^{p^e} -a,\  a\in F, e\geq 0$.
+
+$\bullet$ Reciprocally, suppose that the minimal polynomial over $F$ of every $\alpha \in L$ is of the form $f=x^{p^e} -a, a\in F, e\geq 0$.
+
+If $\alpha \in L \setminus F$, then $e\geq 1$, otherwise $\alpha = a \in F$.
+
+Consequently, $f' = p^e x^{p^e-1} =0$, since $p \mid p^e, e\geq 1$. So $f \wedge f' = f \neq 1$,  thus $f$ is not separable. No element of $L \setminus F$ is separable, so the extension $F \subset L$ is purely inseparable.
+
+Conclusion : $F \subset L$ is purely inseparable if and only if the minimal polynomial of every $\alpha \in L$ is of the form $x^{p^e} -a$ for some $e\geq 0$ and $a\in F$.
+
+\item[(b)]
+{\bf Lemma : } {\it If $F \subset L$ is a finite purely inseparable extension,  and if $L \subset K \subset L$, then $K \subset L$ is purely inseparable.}
+
+{\it Proof (of Lemma)} : Let $\beta \in L\setminus K$, and  $f\in F[x]$ the minimal polynomial of $\beta$ over $F$, and $f_K \in K[x]$ the minimal polynomial of $\beta$ over $K$. As $f \in F[x] \subset K[x]$ and $f(\beta) = 0$, $f_K$ divides $f$.
+
+By part (a), $f$ is of the form $f = x^{p^e} -a, a\in F, e\geq 1$. As $f = x^{p^e} - a = x^{p^e} - \beta^{p^e} = (x-\beta)^{p^e}$, $x-\beta$ is the only monic irreducible factor of $f$. Since $f_K \mid f$, $f_K = (x- \beta)^k,\ k\geq 1$. As $\beta \not \in K$, $k\geq 2$, thus $\beta$ is not separable over $K$, and this is true for every $\beta \in L \setminus K$, so $K \subset L$ is a purely inseparable extension.$\qed$.
+
+\bigskip 
+
+Suppose now that $F \subset L$ is a purely inseparable extension. As $F \subset L$ is finite, there exists $\alpha_1,\ldots,\alpha_n \in L$ such that $L = F(\alpha_1,\ldots,\alpha_n)$. Let $F_0 = F$ and $F_i = F(\alpha_1, \ldots,\alpha_i),\ 1\leq i \leq n$
+
+Reasoning by induction, suppose that $[F_i : F]$ is a power of $p$. This is true for $i=0$ since $[F_0:F] = [F:F] = 1 = p^0$.
+
+By the preceding Lemma, $L$ is purely inseparable over $F_i$. By part (a) applied to $F_i$, we know that the minimal polynomial $f_{i+1}$ of $\alpha_{i+1}$ over $F_i$ is of the form $f = x^{p^e} -a, a\in F_i, e\geq 0$. Thus $[F_{i+1} : F_i] = [F_{i}(\alpha_{i+1}) : F_i] = \deg(f_{i+1}) = p^e$. Consequently, $[F_{i+1}:F] = [F_{i+1}:F_i][F_i:F] $ is a power of $p$, which conclude the induction.
+
+Finally, $[L:F] = [F(\alpha_1,\ldots,\alpha_n) : F]$ is a power of $p$.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.3.11}
+
+{\it Let $f \in F[x]$ be nonconstant. We say that $f$ is {\bf squarefree} if $f$ is not divisible by the square of a non constant polynomial in $F[x]$.
+\begin{enumerate}
+\item[(a)] Prove that $f$ is squarefree if and only if $f$ is a product of irreducible polynomials, no two of which are multiples of each other.
+\item[(b)] Assume that $F$ has characteristic $0$. Prove that $f$ is separable if and only if $f$ is squarefree.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]
+Suppose that $f$ is squarefree.
+
+Let $f = f_1\cdots f_r$ a decomposition of $f$ in irreducible factors in $k[x]$.
+
+If two irreducible factors $f_i,f_j, i\neq j$ in this decomposition are associate (i.e. $f_i \mid f_j, f_j \mid f_i$), then $f_j = \lambda f_i, \lambda \in F^*$. Then $f_i^2$ divides $f_if_j$ which divides $f$, and $f$ is not squarefree. 
+
+Reciprocally, suppose that $f$ is not squarefree. Then $f$ is divisible by a square factor $g^2$. Let $f_1$ an irreducible factor of $g$. The unicity of the decomposition in irreducible factors shows that any decomposition in irreducible factors contains two factors $g_1,g_2$ associate to $f_1$, so $g_1 \mid g_2, g_2 \mid g_1$.
+
+Conclusion : $f$ is squarefree if and only if $f$ is product of irreducible factors, no two of which are associate.
+
+\item[(b)]
+Assume that $F$ has characteristic $0$.
+
+Proposition 5.3.7(c) shows that $f$ is separable if and only if $f$ is product of irreducible factors, no two of which are associate.
+
+By part (a), this is equivalent to $f$ is squarefree.
+
+\end{enumerate}
+
+\bigskip
+
+Note : this equivalence remains true in a finite field. 
+
+Counterexample in $F = \F_3(t)$ : the polynomial $f= x^3 - t \in \F_3(t)[x]$ is irreducible over $F$, so is squarefree, but if $\alpha$ is a root of $f$ in a splitting field $L$, $x^3 - t = x- \alpha^3  = (x-\alpha)^3$ is not separable. This is due to the fact that  "squarefree" is a notion which depends of the field : $f$ is squarefree over $F$, not over $L$.
+\end{proof}
+
+\paragraph{Ex. 5.3.12}
+
+{\it Prove that $f \in F[x]$ is separable if and only if $f$ is nonconstant and $f$ and $f'$ have no common roots in any extension of $F$.
+}
+
+\begin{proof}
+By Proposition 5.3.2(c), $f \in F[x]$ is separable if and only if $f$ is nonconstant and  $f\wedge f' = 1$.
+
+If $f, f'$ have a common root $\alpha$ in an extension  $L$ of $F$, then $x-\alpha$ divides $f$ dans $L[x]$, and also $f'$, so divides their gcd in  $L[x]$, and so $\mathrm{gcd}(f,f') \ne 1$ (we know that the gcd is the same in $·[x]$ and in $L[x]$).
+
+We have proved that if $f\wedge f' = 1$, then $f,f'$ have no common root in any extension of $F$.
+
+Reciprocally, if $f \wedge f' \neq 1$, then $f,f'$ have a common nonconstant factor  $g \in F[x]$. 
+Let $L$ an extension of $F$ such that  $g$ has a root $\alpha \in F$. Then $\alpha \in L$ is a root of $f$and $f'$.
+
+Conclusion : $f \in F[x]$ is separable if and only if $f$ is nonconstant and $f$ and $f'$ have no common roots in any extension of $F$.
+\end{proof}
+
+\paragraph{Ex. 5.3.13}
+
+{\it Let $F$ have characteristic $p$, and let $F\subset L$ be a finite extension with $p \nmid [L:F]$. Prove that $F \subset L$ is separable.
+}
+
+\begin{proof}
+
+Let $\alpha \in L$, and  $f$ its minimal polynomial over $F$. Then $F \subset F(\alpha) \subset L$, thus $[F(\alpha) : F] = \deg(f)$ divides $[L:F]$. Consequently $p \nmid \deg(f)$. By Lemma 5.3.6, this implies that $f$ is separable. Hence every $\alpha \in L$ is separable over $F$. The extension $F \subset L$ is so separable.
+\end{proof}
+
+\paragraph{Ex. 5.3.14}
+
+{\it Let $F \subset K \subset L$ be field extensions, and assume that $L$ is separable over $F$. Prove that $F \subset K$ and $K \subset L$ are separable extensions.
+}
+
+\begin{proof}
+By hypothesis, $F\subset K \subset L$, and $L$ is separable over $F$.
+
+$\bullet$ Every element of $L$ is separable over $F$. A fortiori every element of  $K$ is separable over $F$, thus $F \subset K$ is separable.
+
+$\bullet$ Let $\alpha$  any element of $L$. As $\alpha$ is separable over $F$, the minimal polynomial $f \in F[x]$ of  $\alpha$ over $F$ is separable, thus $f$ has only simple roots in a splitting field $R$ of $f$ over $L$ (which is also a splitting field of $f$ over $F$ or over  $K$). The minimal polynomial $f_K$ of $\alpha$ over $K$ divides $f$ (since $f(\alpha) = 0$ and $f\in F[x] \subset K[x]$). As $f_K \mid f$, the order of multiplicity of a root of $f_K$ is at most the order of multiplicity of this root in $f$, thus all the roots of $f_K$ in the splitting field $R$ are simple, thus $\alpha$ is separable over $K$. Therefore the extension $K \subset L$ is separable.
+\end{proof}
+
+\paragraph{Ex. 5.3.15}
+
+{\it Let $f$ be the polynomial considered in Example 5.3.9. Use Maple or Mathematica to factor $f$ and to verify that the product of the distinct irreducible factors of $f$ is the polynomial given in (5.10).
+}
+
+\begin{proof}
+ Sage instructions:
+
+\begin{verbatim}
+f = x^11-x^10+2*x^8-4*x^7+3*x^5-3*x^4+x^3+3*x^2-x-1; f
+\end{verbatim}
+\begin{center}     	
+$x^{11} - x^{10} + 2 \, x^{8} - 4 \, x^{7} + 3 \, x^{5} - 3 \, x^{4} + x^{3} + 3 \, x^{2} - x - 1$
+\end{center}
+
+\begin{verbatim}
+f1 = f.derivative(); f1
+\end{verbatim}
+\begin{center}     	
+$11 \, x^{10} - 10 \, x^{9} + 16 \, x^{7} - 28 \, x^{6} + 15 \, x^{4} -12 \, x^{3} + 3 \, x^{2} + 6 \, x - 1$
+\end{center}
+
+\begin{verbatim}
+d = gcd(f,f1); d
+\end{verbatim}
+\begin{center}     	
+$x^{6} - x^{5} + x^{3} - 2 \, x^{2} + 1$
+\end{center}
+
+\begin{verbatim}
+p=(f/d).simplify_rational(); p
+\end{verbatim}
+\begin{center}     	
+$x^{5} + x^{2} - x - 1$
+\end{center}
+
+\begin{verbatim}
+u = (d*p).expand(); u
+\end{verbatim}
+\begin{center}     	
+$x^{11} - x^{10} + 2 \, x^{8} - 4 \, x^{7} + 3 \, x^{5} - 3 \, x^{4} +x^{3} + 3 \, x^{2} - x - 1$
+\end{center}
+
+\begin{verbatim}
+bool(u==f)
+\end{verbatim}
+\begin{center}     	
+True
+\end{center}
+\end{proof}
+
+\paragraph{Ex. 5.3.16}
+
+{\it Let $F$ have characteristic $p$ and consider $f = x^p-x+a \in F[x]$.
+\begin{enumerate}
+\item[(a)] Show that $f$ is separable.
+\item[(b)] Let $\alpha$ be a root of $f$ in some extension of $F$. Show that $\alpha +1$ is also a root.
+\item[(c)] Use part (b) to show that $f$ splits completely over $F(\alpha)$.
+\item[(d)] Use part (a) of Theorem 5.3.15 to show that $F \subset F(\alpha)$ is separable and normal.
+\end{enumerate}
+}
+
+\begin{proof}
+Let $F$ have characteristic $p$ and consider $f = x^p-x+a \in F[x]$.
+\begin{enumerate}
+\item[(a)]
+$f' = -1$, thus $f\wedge f'=1$, so $f$ is separable.
+
+
+\item[(b)]
+Let $\alpha$  be a root of $f$ in some extension $L$ of $F$. Then $f(\alpha) = \alpha^p - \alpha+a =0$, thus
+\begin{align*}
+f(\alpha+1) &= (\alpha+1)^p - (\alpha+1) +a\\
+&= \alpha^p+ 1 -\alpha - 1 +a\\
+&=0
+\end{align*}
+$\alpha+1 \in L$ is also a root of $f$.
+
+
+\item[(c)] So $\alpha, \alpha+1,\ldots,\alpha+p-1$ are roots of $f$. These roots are distinct since  $0,1,\ldots,p-1$ are the $p$ distinct elements of the prime subfield of  $F$, isomorphic to $\F_p$, and identified with $\F_p$.
+
+ Thus $f$ is divisible by $(x-\alpha)\cdots(x-\alpha- p+1)$, of degree $p = \deg(f)$ : as both polynomials are monic,
+\begin{align}
+f = (x-\alpha)(x-\alpha-1)\cdots(x-\alpha- p+1) \label{eq5.3.16:1}
+\end{align}
+
+
+\item[(d)]
+$\bullet$ $F(\alpha)$ contains $F$ and thus contains also $\F_p$. So $ F(\alpha)$ contains $\alpha, \alpha+1, \ldots, \alpha+p-1$, thus $F(\alpha) = F(\alpha, \alpha+1, \ldots, \alpha+p-1)$. 
+
+$F(\alpha)$ is so the splitting field of $f$ by $\eqref{eq5.3.16:1}$. $F \subset F(\alpha)$ is a normal extension.
+
+$\bullet$ The minimal polynomial $g$ of $\alpha$ over $F$ divides $f$, which has only simple roots, thus $g$ has only simple roots. So $\alpha$ is separable over $F$. By Theorem 5.3.15(a), $F \subset F(\alpha)$ is a separable extension.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.3.17}
+
+{\it Let $\beta$ be a root of a polynomial $f$.
+\begin{enumerate}
+\item[(a)]  Assume that $f(x) = (x-\beta)^m h(x)$ for some polynomial $h(x)$, and let $f^{(m)}$ denote the $m$th derivative of $f$. Prove that $f^{(m)}(\beta) = m!h(\beta)$.
+\item[(b)] Assume that we are in characteristic 0. Prove that $\beta$ has multiplicity $m$ as a root of $f$ if and only if $f(\beta) = f'(\beta)=\cdots = f^{(m-1)}(\beta) = 0$ and $f^{(m)}(\beta) \neq 0$.
+\item[(c)] Assume that we are in characteristic $p$. How big does $p$ need to be relative to $m$ in order for the equivalence of part (b) to be still valid?
+\end{enumerate}
+}
+
+\begin{enumerate}
+\item[(a)]
+\begin{align*}
+f(x) &=(x-\beta)^m h(x)\\
+f'(x) &=m(x-\beta)^{m-1} h(x) +(x-\beta)^m H'(x)\\
+&=(x-\beta)^{m-1} [mh(x)+(x-\beta) h'(x)]
+\end{align*}
+Thus $f'(x) = (x-\beta)^{m-1} h_1(x)$, where $h_1(x) = mh(x)+(x-\beta) h'(x)$, $h_1(\beta) = mh(\beta)$.
+
+By induction, suppose that there exists $h_k \in F[x]$, for $k<m$, such that 
+
+$$f^{(k)}(x) = (x-\beta)^{m-k} h_k(x)\ \mathrm{and}\ h_k(\beta) = \frac{m!}{(m-k)!} h(\beta).$$
+Then
+\begin{align*}
+f^{(k+1)}(x) &= (m-k) (x-\beta)^{m-k-1} h_k(x) +(x-\beta)^{m-k}h'_k(x)\\
+&=(x-\beta)^{m-k-1}[(m-k) h_k(x) + (x-\beta) h'_k(x)]\\
+&= (x-\beta)^{m-k-1} h_{k+1}(x)
+\end{align*}
+where $h_{k+1}(x) = (m-k) h_k(x) + (x-\beta) h'_k(x)$, thus $$h_{k+1}(\beta) = (m-k)h_k(\beta) = (m-k)  \frac{m!}{(m-k)!} h(\beta) =  \frac{m!}{(m-k-1)!} h(\beta),$$
+and the induction is done.The property is so true up to rank $k=m$, so
+$$f^{(m)}(x) = h_m(x),\qquad f^{(m)}(\beta) = h_m(\beta) = m! h(\beta).$$
+Conclusion : if $f(x) =(x-\beta)^m h(x)$, then $f^{(m)}(\beta) = m! h(\beta)$.
+
+\item[(b)] Let $f\in F[x]$, where the characteristic of $F$ is 0. The multiplicity of  $\beta$ in $f$, written  $\mathrm{ord}_f(\beta)$, is defined by
+$$\mathrm{ord}_f(\beta) = m \iff (x-\beta)^m \mid f , \ (x-\beta)^{m+1} \nmid f.$$
+
+$\bullet$ Suppose that $\mathrm{ord}_f(\beta)=m$. Then $f(x) = (x-\beta)^m h(x) , h \in F[x]$, and $h(\beta) \neq 0$, otherwise $(x-\beta) \mid h$, and so $(x-\beta)^{m+1} \mid f$.
+
+By part (a), for all integer $k, 0 \leq k \leq m-1$, $f^{(k)}(x) = (x-\beta)^{m-k} h_k(x), h_k \in F[x]$, thus $f(\beta) = f'(\beta) = \cdots = f^{(m-1)}(\beta) = 0$.
+
+Moreover, $f^{(m)}(\beta) = m! h(\beta) \neq 0$, since $h(\beta) \neq 0$, and since the characteristic is 0, so $m!\neq 0$ in $F$.
+
+We have proved $f(\beta) = f'(\beta) = \cdots = f^{(m-1)}(\beta) = 0, f^{(m)}(\beta)\neq 0$.
+
+$\bullet$ Reciprocally, suppose that $$f(\beta) = f'(\beta) = \cdots = f^{(m-1)}(\beta) = 0, f^{(m)}(\beta)\neq 0.$$
+
+As $f(\beta) = 0$, $x-\beta$ divides $f$. We take as induction hypothesis,  for $k<m$, that $(x-\beta)^k \mid f(x)$.
+
+Then $f(x) = (x-\beta)^k h_k(x)$, and part (a) shows that $f^{(k)}(\beta) = k!h_k(\beta)=0$, since $k<m$. As the characteristic of $F$ is 0, $k!\neq 0$, thus $h_k(\beta)=0$, therefore $(x-\beta) \mid h_k(x)$, so $(x-\beta)^{k+1} \mid f$. 
+
+This induction proves that $(x-\beta)^{m} \mid f(x)$. 
+
+Using again part (a), $f(x) = (x-\beta)^{m} h(x)$, gives $h(\beta) = \frac{f^{(m)}}{m!} \neq 0$, thus $(x-\beta) \nmid h_k(x)$, so  $(x-\beta)^{m+1} \nmid f(x)$. 
+Consequently $\mathrm{ord}_f(\beta) = m$.
+
+Conclusion : if the characteristic of $f$ is 0, $$\mathrm{ord}_f(\beta)=m \iff f(\beta) = f'(\beta) = \cdots = f^{(m-1)}(\beta) = 0, f^{(m)}(\beta)\neq 0.$$
+
+
+\item[(c)] If the characteristic of $F$ is $p$,the preceding argumentation remains valid if $m!\neq 0$ in $F$ : then $k!\neq 0$ for all $k=0,1,\ldots,m$.
+
+Moreover $m!\neq 0$ is equivalent to $p>m$.
+
+We can so  state :
+
+{\it if the characteristic of $F$ is $p$, and if $m<p$, $$\mathrm{ord}_f(\beta)=m \iff f(\beta) = f'(\beta) = \cdots = f^{(m-1)}(\beta) = 0, f^{(m)}(\beta)\neq 0.$$}
+\end{enumerate}
+
+\subsection{THEOREM OF THE PRIMITIVE ELEMENT}
+\paragraph{Ex. 5.4.1}
+
+{\it Use the hints given in the text to prove that (5.18) has coefficients in $F$.
+}
+
+\begin{proof}
+$s(x)$ is defined in (5.18) by
+ $$s(x) =\prod_{j=1}^m f(x-\lambda \gamma_j).$$
+
+Let $g= \prod\limits_{j=1}^m f(x-\lambda x_j) \in F[x_1,\ldots,x_m][x]$.
+
+If $u = u(x_1,\ldots,x_m) \in F[x_1,\ldots,x_m]$, and $\sigma \in S_m$, we define $\sigma \cdot u =u(x_{\sigma(1)},\ldots,x_{\sigma(m)})$. If $v =u(x_1,\ldots,x_m,x) \in F[x_1,\ldots,x_m][x]$, where $v = \sum\limits_{i=0}^d p_i x^i, p_i \in F[x_1,\ldots,x_m]$, we write $\sigma \cdot v = \sum (\sigma \cdot p_i) x^i$. 
+
+Then $\sigma\cdot(\tau \cdot  v )= (\sigma \tau) \cdot v$, and $\sigma\cdot (vw) = (\sigma\cdot v) (\sigma\cdot w)$, for all $\sigma,\tau \in S_n, v,w \in F[x_1,\ldots,x_m][x]$.
+
+For every permutation $\sigma \in S_n$, 
+\begin{align*}
+\sigma \cdot g &= \sigma \cdot  \prod_{j=1}^m f(x-\lambda x_j)\\
+&= \prod_{j=1}^m \sigma \cdot f(x-\lambda x_j)\\
+&=\prod_{j=1}^m f(x-\lambda x_{\sigma(j)})\\
+&=\prod_{j=1}^m f(x-\lambda x_j)\\
+&=g
+\end{align*}
+As $g = \sum\limits_{i=0}^d p_i(x_1,\ldots,x_m) x^i$ ($d = lm$), and $g = \sigma \cdot g = \sum\limits_{i=0}^d \sigma \cdot p_i(x_1,\cdots,x_m) x^i$, every coefficient $p_i(x_1,\ldots,x_m)\in F[x_1,\ldots,x_m]$ is a symmetric polynomial. 
+
+The evaluation homomorphism $\varphi$ defined by $x_1\mapsto \gamma_1,\ldots, x_m \mapsto \gamma_m$, where $\gamma_1,\ldots,\gamma_m$ are the roots of $g \in F[x]$ sends the coefficients of $g$ on the coefficients of $s$. Corollary 2.2.5 show that $p_i(\gamma_1,\dots,\gamma_m) \in F,\  i=0,\ldots d$, thus $$s(x) =\sum\limits_{i=0}^d p_i(\gamma_1,\ldots,\gamma_m) x^i \in F[x].$$
+\end{proof}
+
+\paragraph{Ex. 5.4.2}
+
+{\it Let $F$ be a finite field, and let $F \subset L$ be a finite extension. We claim that there is $\alpha \in L$ such that $L = F(\alpha)$ and $\alpha$ is separable over $F$.
+\begin{enumerate}
+\item[(a)] Show that $L$ is a finite field.
+\item[(b)] The set $L^* = L \setminus \{0\}$ is a finite group under multiplication and hence is cyclic by Proposition A.5.3. Let $\alpha \in L^*$ be a generator. Prove that $L = F(\alpha)$.
+\item[(c)] Let $m = |L| - 1$. Show that $\alpha^i$ is a root of $x^m-1$ for all $0\leq i\leq m-1$, and conclude that
+$$x^m-1 = (x-1)(x-\alpha)(x-\alpha^2)\cdots(x-\alpha^{m-1}).$$
+\item[(d)] Use part (c) to show that $\alpha$ is separable over $F$.
+\end{enumerate}
+}
+
+\begin{proof}
+Let $F$ a finite field, and $F\subset L$ a finite extension.
+\begin{enumerate}
+\item[(a)]
+As $n = [L:F]<\infty$, there exists a basis $(l_1,\cdots,l_n)$ of $L$  over $F$, thus every element $\alpha \in L$ is of the form $\alpha = \gamma_1 l_1+\cdots +\gamma_n l_n$,  with a unique $(\gamma_1,\ldots,\gamma_n) \in F^n$. Therefore $L$ is isomorphic to $F^n$ as vector space, thus $\vert L \vert = \vert F \vert^n <\infty$. $L$ is so a finite field.
+
+\item[(b)] $L^*$ being the finite multiplicative group of a field is cyclic (Proposition A.5.3), with a generator $\alpha \in L$: 
+$$L^* = \{1,\alpha,\alpha^2,\cdots,\alpha^{m-1}\}.$$
+Every $\gamma$ in $L^*$ is so of the form $\gamma = \alpha^k, k\in \mathbb{N}$, thus $L^* \subset F(\alpha)$, and $0 \in F[\alpha]$, so $L \subset F(\alpha)$. Moreover $F\subset L$, and $\alpha \in L$, thus $F(\alpha) \subset L$.
+
+$$L = F(\alpha).$$ 
+
+\item[(c)]
+As $(L^*,\times)$ is a group of cardinality $m = \vert L \vert - 1$, the Lagrange's Theorem show that the order of every $\gamma  \in L^* = \{1,\alpha,\alpha^2,\cdots,\alpha^{m-1}\}$ satisfies $\gamma^m =1$, and so is a root of $x^m-1$.
+
+Since the order of $\alpha$ is $m$,  $\alpha^i \neq \alpha^j$ if $0 \leq i <j \leq m-1$, thus  the polynomial $p =  (x-1)(x-\alpha)\cdots(x-\alpha^{m-1})$ divides $x^m-1$. The degree of the quotient is 0, so this quotient is a constant $c\in F^*$. Since  $p$ and $x^m-1$ are monic, $c=1$.
+$$x^m - 1 = (x-1)(x-\alpha)\cdots(x-\alpha^{m-1}).$$
+
+\item[(d)]
+The minimal polynomial $f$ of $\alpha$ over $F$ divides  $x^m-1$, which is separable by part (c). Thus $f$ is also separable. Therefore $\alpha$ is separable, and $L = F(\alpha)$ : the Theorem of the Primitive Element is proved in the case of a finite extension of a finite field.
+
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.4.3}
+
+{\it In the equation $\alpha = t_1\alpha_1+\cdots+t_n \alpha_n$ in part (b) of Corollary 5.4.2, show that we can assume that $t_1,\cdots,t_n \in \Z$.
+}
+
+\begin{proof}
+Here we suppose that $F$ has characteristic 0. So $F$ has $\Q$ as subfield, and $\Z$ as subring.
+
+As $\Z$ is infinite, we can find in $\Z$ an integer $\lambda$ which satisfies (5.16):
+$$\beta_r + \lambda \gamma_s \neq \beta_i + \lambda \gamma_j\ \mathrm{pour}\ (r,s) \neq(i,j).$$
+
+The remainder of of the proof is unchanged, and at each step of the induction, we choose such a  $\lambda \in \Z$, so the primitive element $\alpha = t_1\alpha_1+\cdots+t_n\alpha_n$ satisfies $t_i \in \Z$.
+\end{proof}
+
+\paragraph{Ex. 5.4.4}
+
+{\it In the extension $F \subset L$ of example 5.4.4, we have $F=k(t,u)$, where $k$ has characteristic $p$ and $L$ is the splitting field of $(x^p-t)(x^p-u) \in F[x]$. We also have $\alpha,\beta \in L$ satisfying $\alpha^p=y, \beta^p=u$. Prove the following properties of $F \subset L$:
+\begin{enumerate}
+\item[(a)] $L = F(\alpha,\beta)$ and $[L:F] = p^2$.
+\item[(b)] $F(\gamma):F] = p$ for all $\gamma \in L \setminus F$.
+\item[(c)] $F \subset L$ is purely inseparable.
+\end{enumerate}
+}
+
+\begin{proof}
+
+\begin{enumerate}
+\item[(a)]
+As $\alpha,\beta\in L$, and as $F\subset L$, $F(\alpha,\beta)\subset L$.
+
+Since $F$ has characteristic $p$, $f=(x^p-t)(x^p-u)  = (x-\alpha)^p(x-\beta)^p$ has only the roots $\alpha,\beta$. The splitting field of $f$ over $F$ is so $F(\alpha,\beta)$.
+$$L = F(\alpha,\beta).$$
+
+The polynomial $x^p -u$ has no root in  $k(t,u,\alpha) = F(\alpha)$ by Exercise 4.2.9. applied to the field $k(t,\alpha)$. Moreover, $p$ is prime, so Proposition 4.2.6 shows that $h=x^p-u$ is irreducible over $F(\alpha)$. $h$ is so the minimal polynomial of $\beta$ sur $F(\alpha)$. Consequently, 
+ $$[L : F(\alpha)] = [F(\alpha,\beta):F(\alpha)] = \deg(x^p-u) = p.$$
+ With the same argument, $x^p - t$ has no root in  $F(t)$ and is irreducible. $x^p-t$ is the minimal polynomial of $\alpha$ over $F$, thus $[F(\alpha):F] = p$.
+ 
+Finally
+ $$[L:F] = [L : F(\alpha)]\, [F(\alpha):F] = p^2.$$
+ 
+\item[(b)]
+Let $\gamma \in L\setminus F$.
+
+We have proved in Example 5.3.4 that the extension $F \subset L$ has no primitive element, thus $F(\gamma) \neq L$ :
+$$F \subsetneq F(\gamma)\subsetneq L.$$
+
+So $d= [F(\gamma) : F]$ divides $p^2 = [L:F]$. Moreover $d\ne 1$, otherwise $F(\gamma) = F, \gamma \in F$, and $d \ne p^2$, otherwise $F(\gamma) = L$, thus
+$$[F(\gamma) : F] = p$$.
+
+\item[(c)]
+By part (b), the minimal polynomial $g$ of  $\gamma$ over $F$ has degree $p$. Moreover $b = \gamma^p \in F$ by Example 5.4.4, so $\gamma$ is a root of $x^p -b \in F[x]$. Thus $g \mid x^p-b$. As $\deg(g) = \deg(x^p-b)$, and as $g$ and  $x^p-b$ are monic, $x^p-b =g$ is the minimal polynomial of $\gamma$ over $F$. Since $g = (x-\gamma)^p$, this polynomial is not separable. Consequently every $\gamma \in L\setminus F$ is inseparable, so the extension $F \subset L $ is purely inseparable.
+
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.4.5}
+
+{\it Let $F \subset L = F(\alpha,\beta)$ be as in Exercise 4, and consider the intermediate fields $F \subset F(\alpha + \lambda \beta) \subset L$ as $\lambda$ varies over all elements of $F$. Suppose that $\lambda \ne \mu$ are two elements of $F$ such that $F(\alpha + \lambda \beta) = F(\alpha + \mu \beta)$.
+\begin{enumerate}
+\item[(a)] Show that $\alpha, \beta \in F(\alpha + \lambda \beta)$.
+\item[(b)] Conclude that $F(\alpha + \lambda \beta) = F(\alpha,\beta)$ , and explain why this contradicts Example 5.4.4.
+
+It follow that the fields $F(\alpha + \lambda \beta),\  \lambda \in F$, are all distinct. Since $F$ is infinite, we see that there are infinitely many fields between $F$ and $L$.
+\end{enumerate}
+}
+
+\begin{proof}
+As in Exercise 4,  $F\subset L=F(\alpha,\beta)$.
+
+Suppose that $F(\alpha+\lambda \beta) = F(\alpha+\mu \beta),\  \lambda \neq \mu$.
+\begin{enumerate}
+\item[(a)]
+Then
+\begin{align*}
+\alpha + \mu \beta &\in F(\alpha+\lambda \beta)\\
+\alpha + \lambda \beta &\in F(\alpha+\lambda \beta)\\
+\end{align*}
+Consequently their difference is also in the subfield $F(\alpha+\lambda \beta)$:
+$$(\mu-\lambda) \beta\in F(\alpha+\lambda \beta).$$
+As $\mu - \lambda \in F, \mu- \lambda \neq 0$, $$\beta \in F(\alpha+\lambda \beta).$$
+Since $\alpha = (\alpha+\lambda \beta) - \lambda \beta$, with $\alpha+\lambda \beta,\beta \in F(\alpha+\lambda \beta)$, and $\lambda \in F$, then
+$$\alpha \in F(\alpha+\lambda \beta).$$
+
+\item[(b)]
+$\alpha + \lambda \beta \in F(\alpha,\beta)$, thus $F(\alpha + \lambda \beta) \subset F(\alpha,\beta)$.
+Moreover, by part (a),  $\alpha,\beta \in F(\alpha+\lambda \beta)$, thus $F(\alpha,\beta) \subset F(\alpha+\lambda \beta)$.
+$$F(\alpha,\beta) = F(\alpha+\lambda \beta).$$
+But Example 5.4.4 shows that $F(\alpha,\beta)$ has no primitive element : this is a contradiction. 
+
+This reductio ad absurdum shows that all the fields $F(\alpha+\lambda \beta)$, where $\lambda$ varies over all elements of $F$, are distinct. $F$ being infinite, there exists infinitely many intermediate fields between $F$ and $L$.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 5.4.6}
+
+{\it Explain why the proof of Theorem 5.4.1 implies that $F(\beta + \lambda \gamma) = F(\beta, \gamma)$ when $\gamma$ is separable over $F$, $\beta$ is algebraic over $F$, and $\lambda$ satisfies (5.17).
+}
+
+\begin{proof}
+The proof of $F(\alpha,\beta) = F(\alpha+\lambda \beta)$ ises only 5.17 (5.16 is used only to prove the separability of $\alpha+\lambda \beta$).
+The separability of $\gamma$ (thus of $g$) is used only to prove that another root of $h$, which is also a root of $g$, is one of the $\gamma_j, j\geq 2$.
+The separability of $\beta$ is not used, only the algebraic nature of $\beta,\gamma$, to define their minimal polynomials.
+\end{proof}
+
+\paragraph{Ex. 5.4.7}
+
+{\it Let $F \subset L = F(\alpha_1,\ldots,\alpha_n)$ be a finite extension, and suppose that $\alpha_1,\ldots,\alpha_{n-1}$ are separable over $F$. Prove that $F \subset L$ has a primitive element.
+}
+
+\begin{proof}
+Let a finite extension $F\subset L = F(\alpha_1,\cdots,\alpha_n)$, where $\alpha_1,\cdots,\alpha_{n-1}$ are separable over $F$ (but not $\alpha_n$). The Primitive Element Theorem 5.4.1shows that $F(\alpha_1,\cdots,\alpha_{n-1})$ has a primitive element $\beta$ separable over $F$.
+
+The extension $F\subset L=F(\beta,\alpha_n)$ is such that $\beta$ is algebraic separable over $F$, and $\alpha_n$ algebraic over $F$. 
+
+If $F$ is infinite, by Exercise 6 this is sufficient to prove the existence of a primitive element of $F \subset L$ (but perhaps not separable).
+
+If $F$ is a finite field, then  $L$ also, and it has a primitive element by Exercise 2(b).
+\end{proof}
+
+\paragraph{Ex. 5.4.8}
+
+{\it Use Exercise 7 to find an explicit primitive element for $F = k(t,u) \subset L$, where $k$ has characteristic 3 and $L$ is the splitting field of $(x^2-t)(x^3-u)$. Note that this extension is not separable, by Exercise 8 of Section 5.3.
+}
+
+\begin{proof}
+Here $F=k(t,u)\subset L$, where the characteristic of $k$ is 3, and $L$ lis the splitting field of $(x^2-t)(x^3-u)$, and $\alpha,\beta \in L$ such that $\alpha^2 = t, \beta^3 = u$.
+
+
+$\alpha$ is separable, but not $\beta$ (cf Exercise 5.3.8).
+
+We know (by Exercice 5.3.8) that 
+\begin{align*}
+f(x)&=x^3-u\\
+g(x) &= x^2-t
+\end{align*}
+are the respective minimal polynomials of $\beta$ and $\alpha$ over $F$.
+
+The two polynomials 
+\begin{align*}
+g(x) &= x^2-t \in F[x] \subset F(\alpha+\beta)[x]\\
+f(\alpha+\beta-x) &= -x^3 +(\alpha+\beta)^3 - u \in F(\alpha+\beta)[x]
+\end{align*}
+have the root $\alpha$, since $g(\alpha) = 0, f(\beta) = 0$, and are both in ${F(\alpha+\beta)[x]}$.
+
+Thus $x-\alpha \mid h(x) = \mathrm{gcd}(g(x),f(\alpha+\beta -x)$.
+
+$1\leq \deg(h) \leq 2$. If $\deg(h) = 2$, as $h\mid g$, we would have $h=g = (x-\alpha)(x+\alpha)$, and then $x+\alpha  \mid h \mid f(\alpha+\beta-x)$.
+
+As $f(x) = (x-\beta)^3$, then $f(\alpha+\beta-x) = -(x-\alpha)^3$, which is not divisible by $x+\alpha$, since $-\alpha \neq \alpha$.
+
+Therefore $\deg(h) = 1$, and $h(x) =\mathrm{pgcd}(g(x),f(\alpha+\beta - x)) = x-\alpha$.
+
+Thus there exists a Bézout's relation 
+$$A(x) g(x) + B(x) f(\alpha+\beta - x) = x- \alpha, \ A,B \in F(\alpha+\beta)[x].$$
+
+This proves that $\alpha \in F(\alpha+\beta)$, thus also $\beta = (\alpha+ \beta) - \alpha \in F(\alpha+\beta)$, which implies that $L = F(\alpha,\beta) = F(\alpha+\beta)$ : $\alpha+\beta$ is a primitive element of$L/F$.
+
+We compute explicitly the gcd of the polynomials  $f(\alpha+\beta -x), g(x)$  :
+
+The first Euclidean division of $f(\alpha+\beta -x)$ by $g(x)$ gives 
+\begin{align*}
+-x^3+(\alpha+\beta)^3-u + x(x^2-t) &= -tx +(\alpha+\beta)^3 - u\\
+&= -t\left(x-\frac{(\alpha+\beta)^3 - u}{t} \right)
+\end{align*}
+
+We must then have 
+$$\alpha = \frac{(\alpha+\beta)^3 - u}{t} \in F(\alpha+\beta).$$
+
+We compute a direct proof of this equality :
+\begin{align*}
+\frac{(\alpha+\beta)^3 - u}{t} &=\frac{\alpha^3+\beta^3 - u}{t} =\frac{\alpha^3}{t} =\frac{\alpha^3}{\alpha^2}=\alpha
+\end{align*}
+
+This equality proves also that $\alpha + \beta$ is a primitive element of $F \subset L$
+\end{proof}
+
+\end{document}
