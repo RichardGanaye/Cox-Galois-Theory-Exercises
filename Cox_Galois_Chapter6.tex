@@ -90,7 +90,7 @@ As $L = \Q(\sqrt{2},\sqrt{3})$ is the splitting field of $x^2-3$ over $\mathbb{Q
 
 Similarly $\Q(\sqrt{2},\sqrt{3})$ is the splitting field of $x^2-2$ over $\mathbb{Q}(\sqrt{3})$, and $x^2 - 2$ is irreducible over $\Q(\sqrt{3})$ by the Reciprocity Theorem (see Exercise 4.3.6), so there exists by Proposition 5.1.8 a field isomorphism $\tau : L\to L$ which is identity on $\Q(\sqrt{3})$ and which takes $\sqrt{2}$ on $-\sqrt{2}$. As $\tau$ is identity on  $\Q(\sqrt{3})$, we have also $\sigma(\sqrt{3}) = \sqrt{3}$, and $\tau \in \mathrm{Gal}(L/\Q)$.
 
-Moreover $1_L(\sqrt{2})=\sqrt{2}, 1_L(\sqrt{3})=\sqrt{3}$, avec $1_L\in \mathrm{Gal}(L/\Q)$.
+Moreover $1_L(\sqrt{2})=\sqrt{2}, 1_L(\sqrt{3})=\sqrt{3}$, with $1_L\in \mathrm{Gal}(L/\Q)$.
 
 Finally $\sigma \tau = \sigma \circ \tau \in \mathrm{Gal}(L/\Q)$ satisfies $(\sigma  \tau) (\sqrt{2}) = -\sqrt{2}, (\sigma  \tau) (\sqrt{3}) = -\sqrt{3}$.
 
@@ -101,9 +101,9 @@ $$  \mathrm{Gal}(\Q(\sqrt{2},\sqrt{3})/\Q) =\{1_L, \sigma, \tau, \sigma \tau\}.$
 
 \paragraph{Ex. 6.1.3}
 
-{\it This exercise will prove a generalizes form of Proposition 6.1.11.
+{\it This exercise will prove a generalized form of Proposition 6.1.11.
 \begin{enumerate}
-\item[(a)] Let $\varphi:L_1\to L_2$ be an isomorphism of fields. Given a subfield $F_1 \subset L_1$, set $F_2 = \varphi(F_1)$, which is a subfield of $L_2$. Prove that the map sending $\sigma \in \Gal(L_1/F_1)$ to $\varphi \circ \sigma \circ \varphi^{-1}$ induces an isomorphism $\Gal(L_1/F_1) \simeq \Gal(L_1/F_2)$.
+\item[(a)] Let $\varphi:L_1\to L_2$ be an isomorphism of fields. Given a subfield $F_1 \subset L_1$, set $F_2 = \varphi(F_1)$, which is a subfield of $L_2$. Prove that the map sending $\sigma \in \Gal(L_1/F_1)$ to $\varphi \circ \sigma \circ \varphi^{-1}$ induces an isomorphism $\Gal(L_1/F_1) \simeq \Gal(L_2/F_2)$.
 \item[(b)] Explain why Proposition 6.1.11 follows from part (a).
 \end{enumerate}
 }
@@ -130,7 +130,7 @@ $$
 If $\sigma,\tau \in  \mathrm{Gal}(L_1/F_1)$, $$\chi(\sigma) \chi(\tau) = \varphi \circ \sigma \circ \varphi^{-1} \circ \varphi \circ \tau  \circ \varphi^{-1} =  \varphi \circ \sigma \circ \tau  \circ \varphi^{-1} = \chi(\sigma \circ \tau).$$
 $\chi$ is so a group homomorphism.
 
-Moreover, if $\chi(\sigma) = \mathrm{id}$, alors $\varphi \circ \sigma \circ \varphi^{-1} = \mathrm{id}$, 
+Moreover, if $\chi(\sigma) = \mathrm{id}$, then $\varphi \circ \sigma \circ \varphi^{-1} = \mathrm{id}$, 
 then $\sigma = \varphi^{-1} \circ \varphi = \mathrm{id}$ : $\ker(\chi) = \{\mathrm{id}\}$, so $\chi$ is injective.
 
 If $\tau \in  \mathrm{Gal}(L_2/F_2)$, let $\sigma = \varphi^{-1} \circ \tau \circ \varphi$, then $\sigma \in  \mathrm{Gal}(L_1/F_1)$ with the same arguments, and $\chi(\sigma) = \tau$, thus $\chi$ is surjective.
@@ -170,7 +170,7 @@ $\varphi$ is so a ring homomorphism between two fields.
 \item[(b)]
 We show that $\varphi$ is injective: 
 
-If $a \neq 0$, there exists an iverse $b$ of $a$ : $ab=1$, thus $\varphi(a) \varphi(b) = \varphi(ab) = \varphi(1) = 1$, therefore $\varphi(a) \neq 0$. The kernel of $\varphi$ is null, thus $\varphi$ is injective.
+If $a \neq 0$, there exists an inverse $b$ of $a$ : $ab=1$, thus $\varphi(a) \varphi(b) = \varphi(ab) = \varphi(1) = 1$, therefore $\varphi(a) \neq 0$. The kernel of $\varphi$ is null, thus $\varphi$ is injective.
 
 As $\Omega' = \{\varphi(\alpha) , \alpha \in \Omega\}$, $\varphi$ is surjective. So $\varphi : \Omega \to \Omega'$ is a field isomorphism.
 \end{enumerate}
@@ -210,11 +210,11 @@ $L = \Q(\sqrt{6},\sqrt{10}, \sqrt{15})$.
 
 $\sqrt{15} = \sqrt{3\cdot 5} = 3 \frac{\sqrt{10}}{\sqrt{6}} \in \Q(\sqrt{6},\sqrt{10})$, therefore
 $$L = \Q(\sqrt{6},\sqrt{10}, \sqrt{15}) = \Q(\sqrt{6},\sqrt{10}).$$
-Then Exercise 1 shows that $$|\Gal(L/\Q)| \leq 4$$.
+Then Exercise 1 shows that $$|\Gal(L/\Q)| \leq 4.$$
 
 Note : moreover, $x^2-10$ is irreducible over $\Q(\sqrt{6})$, otherwise the roots $\pm\sqrt{10}$ of $f$ would be in $\Q(\sqrt{6})$, and then
 $$\sqrt{10} = a+b\sqrt{6}, \ a,b \in \Q(\sqrt{6}).$$
-By squaring, we obtain $10  = a^2 + 6 b^2 + 2ab \sqrt{6}$. The irrationality of$\sqrt{6}$ shows that $ab=0, a^2+6b^2=10$. Since $\sqrt{10}$ and $\sqrt{\frac{5}{3}}$ are irrational, this system has no solution in $\Q \times \Q$.
+By squaring, we obtain $10  = a^2 + 6 b^2 + 2ab \sqrt{6}$. The irrationality of $\sqrt{6}$ shows that $ab=0, a^2+6b^2=10$. Since $\sqrt{10}$ and $\sqrt{\frac{5}{3}}$ are irrational, this system has no solution in $\Q \times \Q$.
 
 $x^2-10$ is irreducible over $\Q(\sqrt{6})$, thus 
 $$ [\Q(\sqrt{6},\sqrt{10}):\Q] = [\Q(\sqrt{6},\sqrt{10}):\Q(\sqrt{6}]\cdot[\Q(\sqrt{6}):\Q] = 4.$$
@@ -238,7 +238,7 @@ Let $a \in L, a\neq 0$. Then $a$ has an inverse $b$ in the field $L$, so $ab=1$,
 $\sigma : L \to L$ is an injective field homomorphism.
 
 \item[(b)]
-As $K \subset L$ is a finite extension, $L$ is a finite dimensional vector space over $F$. As $\sigma$ ris identity on $F$, $\sigma : L \to L$ is an injective linear application on a finite dimensional vector space, thus $\sigma$ is also surjective :   $$\sigma \in \mathrm{Gal}(L/F).$$
+As $K \subset L$ is a finite extension, $L$ is a finite dimensional vector space over $F$. As $\sigma$ is identity on $F$, $\sigma : L \to L$ is an injective linear application on a finite dimensional vector space, thus $\sigma$ is also surjective :   $$\sigma \in \mathrm{Gal}(L/F).$$
 \end{enumerate}
 \end{proof}
 
@@ -253,7 +253,7 @@ $\Gal(L/\Q)\simeq \Z/2\Z \times \Z/2\Z.$
 We proved in Exercise 6.1.2 that $$ G:= \mathrm{Gal}(\Q(\sqrt{2},\sqrt{3})/\Q) =\{1_L, \sigma, \tau, \sigma \tau\}.$$
 Every group of order 4 is abelian, and isomorphic to $\Z/4\Z$ or $\Z/2\Z \times \Z/2\Z$.
 
-As $G$ as at least 2 elements of order d'ordre 2, since $\sigma^2 = \tau^2 = 1_L$. This is not the case in  $\Z/4\Z$. Thus 
+As $G$ has at least 2 elements of order 2, since $\sigma^2 = \tau^2 = 1_L$. This is not the case in  $\Z/4\Z$. Thus 
 $$\mathrm{Gal}(\Q(\sqrt{2},\sqrt{3})/\Q) \simeq \Z/2\Z \times \Z/2\Z.$$
 \end{proof}
 
@@ -277,7 +277,7 @@ Moreover, by theorem 6.1.4 (a), $\sigma(\omega)$ is a root of $f = x^2+x+1$, who
 Then Exercise 6.1.1 shows that $$\vert \mathrm{Gal}(L/\Q)\vert \leq \deg(f)\deg(g)=6.$$
 
 \item[(b)]
-$L$ is the splitting field of the separable irreducible polynomial $g = x^3-2\in \Q[x]$. Indeed, $g$ is irreducible over $\Q$ since $\deg(g) = 3$ and $g$ has no root in $\Q$,and separable since its roots in $\C$ are $\sqrt[3]{2}, \omega\sqrt[3]{2},\omega^2\sqrt[3]{2}$ which are distinct.
+$L$ is the splitting field of the separable irreducible polynomial $g = x^3-2\in \Q[x]$. Indeed, $g$ is irreducible over $\Q$ since $\deg(g) = 3$ and $g$ has no root in $\Q$. Moreover $g$ is separable since its roots in $\C$ are $\sqrt[3]{2}, \omega\sqrt[3]{2},\omega^2\sqrt[3]{2}$ which are distinct.
 
 By theorem 6.2.1, $\vert \mathrm{Gal}(L/\Q)\vert = [L:\Q]$, and by Exercise 5.1.8, $[L:\Q] = 2 \times 3 = 6$, therefore
 
@@ -327,7 +327,7 @@ $$\vert \mathrm{Gal}(L/\Q)\vert = [L:\Q]=20.$$
 \item[(e)] The order of $(\Z/n\Z)^*$ is $\vert (\Z/n\Z)^* \vert = \phi(n)$, where $\phi(n)$ is the Euler $\phi$-function from number theory. Prove that the homomorphism of part (d) is an isomorphism if and only if $[\Q(\zeta_n) : \Q ] = \phi(n)$.
 \item[(f)] Let $p$ be prime. Use part (e) and Proposition 4.2.5 to show that $\Gal(\Q(\zeta_p)/\Q) \simeq (\Z/p\Z)^*$.
 \ee
-In chapter 9 we will prove that $[Q(\zeta_n):\Q] = \phi(n)$. By part (e), this will imply that there is an isomorphism $\Gal(\Q(\zeta_n)/\Q) \simeq (\Z/n\Z)^*$ for all $n$.
+In chapter 9 we will prove that $[\Q(\zeta_n):\Q] = \phi(n)$. By part (e), this will imply that there is an isomorphism $\Gal(\Q(\zeta_n)/\Q) \simeq (\Z/n\Z)^*$ for all $n$.
 }
 
 \begin{proof}
@@ -341,7 +341,7 @@ $\Q(\zeta,\ldots, \zeta^{n-1}) = \Q(\zeta)$
 Conclusion : $\Q(\zeta_n)$ is the splitting field of the separable polynomial $x^n-1\in \Q[x]$ over $\Q$.
 
 \item[(b)]
-Soit $\sigma \in \Gal(\Q(\zeta_n):\Q)$.
+Let $\sigma \in \Gal(\Q(\zeta_n):\Q)$.
 
 As $\zeta_n$ is a root of $x^n - 1 \in \Q[x]$, by Proposition 6.1.4(a) $\sigma(\zeta_n) $ is a root of $x^n-1$, thus  $\sigma(\zeta_n)  \in \U_n$, so
 $$\sigma(\zeta_n) = \zeta_n^i,\  i \in \N.$$
@@ -362,7 +362,7 @@ Indeed for all $k\in \Z$,
 
 $(\zeta^j)^k = 1 \iff n \mid jk \iff \frac{n}{n\wedge j} \mid \frac{j}{n\wedge j} k \iff \frac{n}{n\wedge j} \mid k$ (since $\frac{n}{n\wedge j} \wedge \frac{j}{n\wedge j}=1$).
 
-If we apply this result to $\zeta_n^i =\sigma(\zeta_n)$, on obtient
+If we apply this result to $\zeta_n^i =\sigma(\zeta_n)$, we obtain
 
   $$\frac{n}{n\wedge i} = | \zeta_n^i |= | \sigma(\zeta_n |= n,$$ thus $$n\wedge i = 1.$$
                                                  
@@ -393,7 +393,7 @@ $$\varphi : \Gal(\Q(\zeta_n)/\Q)   \to   ( \Z/n\Z)^*.$$
 
 
 \item[(e)]
-As $\Q(\zeta_n)$ is the splitting field of a separabel polynomial over  $\Q$, $$\vert  \Gal(\Q(\zeta_n)/\Q)\vert = [\Q(\zeta_n):\Q].$$
+As $\Q(\zeta_n)$ is the splitting field of a separable polynomial over  $\Q$, $$\vert  \Gal(\Q(\zeta_n)/\Q)\vert = [\Q(\zeta_n):\Q].$$
 
 If we suppose that $ [\Q(\zeta_n):\Q]= \phi(n)$,  $\varphi$is an injection between two set of same cardinality, thus $\varphi$ is a bijection, and so$\varphi$ is a group isomorphism. Reciprocally, if $\varphi$ is a group isomorphism, then $ [\Q(\zeta_n):\Q] = \Gal(\Q(\zeta_n)/\Q)\vert = \phi(n)$
 
@@ -512,7 +512,7 @@ As $S_3$ is generated by $\tilde{\sigma}, \tilde{\tau}$, $ \Gal(L/\Q)$ is genera
 {\it For each of the following Galois groups, find an explicit subgroup of $S_4$ that is isomorphic to the group. Also, the Galois group is isomorphic to which known group? 
 \be
 \item[(a)] $\Gal(\Q(i,\sqrt{2})/\Q)$.
-\item[(b)] $\Gal(\Q(i,\sqrt[4]{2}/\Q)$.
+\item[(b)] $\Gal(\Q(i,\sqrt[4]{2})/\Q)$.
 \ee
 }
 
@@ -524,13 +524,11 @@ $$\sigma(i) = -i, \sigma(\sqrt{2}) = \sqrt{2},$$
 $$\tau(i) = i, \tau(\sqrt{2}) = -\sqrt(2).$$
 As every  $g \in \Gal(\Q(i,\sqrt{2})/\Q)$  satisfies $g^2 = 1_{\Q}$, 
 $$\Gal(\Q(i,\sqrt{2})/\Q) \simeq \Z/2\Z \times \Z/2\Z$$
-(ViertelGruppe de Klein : cf Exercise 6.2.1 and example 6.2.2 for more details).
+(Klein's ViertelGruppe: cf Exercise 6.2.1 and example 6.2.2 for more details).
 
 If we number the roots by $\alpha_1 = i, \alpha_2 = -i, \alpha_3 = \sqrt{2}, \alpha_4 = -\sqrt{2}$, then $(1,2)$ corresponds to $\sigma$, and $(3,4)$ to $\tau$.
 
 As subgroup of $S_4$, $\Gal(Q(i,\sqrt{2})/\Q)$ is represented by $$\{ (), (1,2), (3,4), (1,2)(3,4)\} = \langle (1,2),(3,4) \rangle \simeq \Gal(\Q(i,\sqrt{2})/\Q).$$
-
-
 
 \item[(b)]
  \begin{align*}
@@ -538,10 +536,10 @@ As subgroup of $S_4$, $\Gal(Q(i,\sqrt{2})/\Q)$ is represented by $$\{ (), (1,2),
  &=(x^2-\sqrt{2})(x^2+\sqrt{2})\\
  &=(x-\sqrt[4]{2})(x+\sqrt[4]{2})(x+i\sqrt[4]{2})(x-i\sqrt[4]{2})
 \end{align*}
-The splitting root of $f$ over $\Q$ is so $L = \Q(i,i\sqrt[4]{2}) = \Q(i,\sqrt[4]{2})$.   $f$ is separable, since $f$ has simple roots in its splitting field. $L$ is so the splitting field over $\Q$ of a separable  polynomial, therefore by Theorem 6.2.1,$$\vert \Gal(L:\Q) \vert= [L:\Q].$$
+The splitting root of $f$ over $\Q$ is so $L = \Q(i,i\sqrt[4]{2}) = \Q(i,\sqrt[4]{2})$. $f$ is separable, since $f$ has simple roots in its splitting field. $L$ is so the splitting field over $\Q$ of a separable  polynomial, therefore by Theorem 6.2.1,$$\vert \Gal(L:\Q) \vert= [L:\Q].$$
 
 $f$ is irreducible over $\Q$ by the Schšnemann-Eisenstein Criterion with $p=2$.
-As $f$ is irreducible over $\Q$, $$[\Q(\sqrt[4]{2}) : \Q] = \deg(f) = 4,$$ and $x^2+1$ is irreducible over $\Q(\sqrt[4]{2})$, since it is of degree 2 , without root in $\Q(\sqrt[4]{2}) \subset \R$, thus $${[\Q(i,\sqrt[4]{2}) : \Q(\sqrt[4]{2})] = 2}.$$
+As $f$ is irreducible over $\Q$, $$[\Q(\sqrt[4]{2}) : \Q] = \deg(f) = 4,$$ and $x^2+1$ is irreducible over $\Q(\sqrt[4]{2})$, since it is of degree 2, without root in $\Q(\sqrt[4]{2}) \subset \R$, thus $${[\Q(i,\sqrt[4]{2}) : \Q(\sqrt[4]{2})] = 2}.$$
 
 Consequently, 
 $$[\Q(i,\sqrt[4]{2}) : \Q] = [\Q(i,\sqrt[4]{2}) : \Q(\sqrt[4]{2})] \ [\Q(\sqrt[4]{2}) : \Q]  = 8,$$
@@ -573,12 +571,11 @@ As the index of  $H = \langle \sigma \rangle$ in $G$ is 2, and $\tau \not \in H$
 If we number the roots of $f$ by  $\alpha_k=  i^{k-1} \sqrt[4]{2}$, for $k=1,2,3,4$, then $\tau$ corresponds to the transposition $(2,4)$, and $\sigma$ to the cycle $(1,2,3,4)$ :
 $$G\simeq \langle(1,2,3,4),(2,4)\rangle \subset S_4.$$
 
-
 If we number the 4 summits of a square by 1,2,3,4 in the direct orientation, then $\sigma$ corresponds to a rotation of angle $\pi/2$, and $\tau$ to a symmetry with respect to the diagonal $[1,3]$. They generate the group of isometry of the square, which is the dihedral group $D_8$, defined also by generators and relations :
 
 $$G = \langle \sigma, \tau \rangle, \sigma^4 = \tau^2 = e, \tau \sigma = \sigma^{-1} \tau.$$
 
-(En effet, $\tilde{\sigma}^{-1} \tilde{\tau} = (1,4,3,2) (2,4)  = (4,3,2,1) =(2,4) (1,2,3,4)= \tilde{\tau} \tilde{\sigma}$.)
+(Since $\tilde{\sigma}^{-1} \tilde{\tau} = (1,4,3,2) (2,4)  = (4,3,2,1) =(2,4) (1,2,3,4)= \tilde{\tau} \tilde{\sigma}$.)
 
 As a verification, the following GAP instruction confirm the result $D_8$ : 
 \begin{verbatim}
@@ -732,7 +729,7 @@ Let $M=F(\alpha_1,\cdots,\alpha_r), N = F(\beta_1,\cdots,\beta_{s})$, then $M$ i
 
 Write $A$ the set of the roots of $g$ in $L$, $B$ the set of roots of $h$ in $L$ : $\vert A \vert = r, \vert B \vert = s$, and write $S(A)$ the set of bijections of $A$ (and the same for $B$) : $S(A)\simeq S_r, S(B) \simeq S_s$.
 
-Let $\sigma \in \Gal(L/F)$. As $g,h \in F[x]$, $\sigma$ induce a permutation of the roots of $g$ and of the roots of $h$, so the maps
+Let $\sigma \in \Gal(L/F)$. As $g,h \in F[x]$, $\sigma$ induces a permutation of the roots of $g$ and of the roots of $h$, so the maps
 \begin{center}
 $\sigma_1 : 
 \left\{
@@ -774,7 +771,7 @@ $\varphi(\sigma \circ \tau) = \varphi(\eta) = (\eta_1,\eta_2) = (\sigma_1  \tau_
 
 $\varphi$ is injective : if $\varphi(\sigma) = (\sigma_1,\sigma_2) = (1_A,1_B)$, then $$\sigma(\alpha_i) = \alpha_i,\ i=1,\cdots r \ \mathrm{et}\ \sigma(\beta_j) = \beta_j,\ j=1,\cdots s.$$
 
-Comme $L=F(\alpha_1,\cdots,\alpha_{r}, \beta_1,\cdots,\beta_{s})$, $\sigma = 1_L$.
+As $L=F(\alpha_1,\cdots,\alpha_{r}, \beta_1,\cdots,\beta_{s})$, $\sigma = 1_L$.
 
  $\Gal(L/F)$ is isomorphic to a subgroup of $S(A) \times S(B)$, and as $S(A)\times S(B) \simeq S_r\times S_s$,  $\Gal(L/F)$ is isomorphic to a subgroup of $S_r\times S_s$.
 
@@ -835,7 +832,7 @@ Let $a,b\in \mathbb{F}_p$, and $\gamma_{a,b} : \F_p\to \F_p, u\mapsto \gamma_{a,
 
 Suppose that $a\neq 0$. Then , for all $u,v \in \F_p$, 
 $$v=au+b \iff u = a^{-1}v - a^{-1} b.$$
-So every $v \in \F_p$ has a unique antecedent, therefore $\gamma_{a,b}$ est bijective.
+So every $v \in \F_p$ has a unique antecedent, therefore $\gamma_{a,b}$ is bijective.
 
 \item[(b)]
 If $a\neq 0$, by part (a),$\gamma_{a,b}$ is bijective, and the unique antecedent $u$ of any $v\in \F_p$ is given by $u = a^{-1}v - a^{-1} b = \gamma_{a^{-1}, -a^{-1}b}(v)$.
