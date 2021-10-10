@@ -73,7 +73,7 @@ $\bullet$ Suppose that  $g = \lambda \in F$ is a constant. As $f \neq 0$ and $f 
 
 Let $p \in F[x]$ any polynomial. Then $p = \lambda (\frac{1}{\lambda} p ) = (\frac{1}{\lambda} p )  g \in \langle g \rangle$, thus $F[x] \subset \langle g \rangle$. Moreover $\langle g \rangle \subset F[x]$, so $$F[x] = \langle g \rangle = I.$$
 
-$\bullet$ Reciprocally, if $F[x] = I = \langle g \rangle$, then $ 1 \in \langle g \rangle$, so $1 = g u, u \in F[x]$, hence $0 = \deg(g)+\deg(u)$, therefore $\deg(g) = 0$, so $g \in F$ is a nonzero constant.
+$\bullet$ Conversely, if $F[x] = I = \langle g \rangle$, then $ 1 \in \langle g \rangle$, so $1 = g u, u \in F[x]$, hence $0 = \deg(g)+\deg(u)$, therefore $\deg(g) = 0$, so $g \in F$ is a nonzero constant.
 
 
 $$g \in F^* \iff \langle g \rangle = F[x].$$
@@ -85,9 +85,9 @@ If $p \in \langle f \rangle$, then $p = u f, u \in F[x]$, thus  $p = \mu u g \in
 If $p \in \langle g \rangle$, then $p = q g, q \in F[x]$, thus $p = \mu^{-1} q f \in \langle f \rangle$, so $\langle g \rangle \subset \langle f \rangle$.
 $$\langle f \rangle = \langle g \rangle = I.$$
 
-$\bullet$ Reciprocally, if $\langle f \rangle = \langle g \rangle,$  then $g \in \langle f \rangle$ , $g = v f, v \in k[x]$, thus $g = v gh$. As $f = gh\neq 0, g \neq 0$, thus $1 = vh$, therefore $h \in F^*$ is a constant.
+$\bullet$ Conversely, if $\langle f \rangle = \langle g \rangle,$  then $g \in \langle f \rangle$ , $g = v f, v \in k[x]$, thus $g = v gh$. As $f = gh\neq 0, g \neq 0$, thus $1 = vh$, therefore $h \in F^*$ is a constant.
 
-$$h \in F^* \iff I =\langle f \rangle$$
+$$h \in F^* \iff I =\langle f \rangle.$$
 
 \end{enumerate}
 \end{proof}
@@ -101,7 +101,7 @@ $$h \in F^* \iff I =\langle f \rangle$$
 Let $x \in F$. If $x\ne 0$, then $x.x^{-1} = 1$, thus $\varphi(x) \varphi(x^{-1}) = 1$, so $\varphi(x) \ne 0$.
 For all $x\in F$, $x \ne 0 \Rightarrow \varphi(x) \ne 0$, therefore $\varphi(x) = 0 \Rightarrow x =0$, so $\ker(\varphi) = \{0\}$ and $\varphi$ is injective.
 
-Consequently, the corestriction $F \to \varphi(F), x \mapsto \varphi(x)$ is a bijection, so it is an ring isomorphism : $\varphi : F \simeq \varphi(F)$.
+Consequently, the corestriction $F \to \varphi(F), x \mapsto \varphi(x)$ is a bijection, so it is a ring isomorphism $\varphi : F \simeq \varphi(F)$.
 \end{proof}
 
 \paragraph{Ex. 3.1.3}
@@ -118,13 +118,13 @@ $a'b' = ab+ bu+av + uv$, where $bu+av + uv \in I$, so $ab+ I = a'b'+I$.
 
 The equivalence relation $\sim$ defined on $A$ as $a \sim a' \iff a+ I = a'+ I (\iff a' - a \in I)$ is so compatible with addition and multiplication in $A$, and the class of an element $a \in A$ is $a+I$. We can so define sum and product of two classes by
 \begin{align}
-(a+I) +(b+I) &= a+b+I  \label{eq3.1.3:1}\\
-(a+I) (b+I) &= ab+I \label{eq3.1.3:2}
+(a+I) +(b+I) &= a+b+I,  \label{eq3.1.3:1}\\
+(a+I) (b+I) &= ab+I.\label{eq3.1.3:2}
 \end{align}
 If $\varphi : A \to A/I$ is defined by $\varphi(a) = a+I$, then \eqref{eq3.1.3:1} and \eqref{eq3.1.3:2} are written
 
 $$\varphi(a)+ \varphi(b) = \varphi(a+b) , \varphi(a) \varphi(b) = \varphi(ab)$$
-Moreover $\varphi(1) = 1+I$ is the neutral element of $A/I$.
+Moreover $\varphi(1) = 1+I$ is the multiplicative identity of $A/I$.
 
 $\varphi : A \to A/I$ is a ring homomorphism. 
 \end{proof}
@@ -144,7 +144,7 @@ $$\frac{a}{b} = \{(c,d)\in \mathbb{Z} \times \mathbb{Z}^* \ \vert \ ad = bc \}.$
 
 \paragraph{Ex. 3.1.5}
 
-{\it Let $f \in F[x]$ be irrducible, and let $g+\langle f \rangle$ be a nonzero coset in the quotient ring $L = F[x]/\langle f \rangle$.
+{\it Let $f \in F[x]$ be irreducible, and let $g+\langle f \rangle$ be a nonzero coset in the quotient ring $L = F[x]/\langle f \rangle$.
 \begin{enumerate}
 \item[(a)] Show that $f$ and $g$ are relatively prime and conclude that $Af+Bg=1$, where $A,B$ are polynomials in $F[x]$.
 \item[(b)] Show that $B + \langle f \rangle$ is the multiplicative inverse of $g + \langle f \rangle $ in $L$.
@@ -152,15 +152,15 @@ $$\frac{a}{b} = \{(c,d)\in \mathbb{Z} \times \mathbb{Z}^* \ \vert \ ad = bc \}.$
 }
 
 \begin{proof}
-Supposons $f \in F[x]$ irrŽductible, et soit $L =F[x]/\langle f \rangle$ l'anneau quotient.
+Let $f \in F[x]$ be irreducible, and let $L =F[x]/\langle f \rangle$ the quotient ring.
 \begin{enumerate}
 \item[(a)]  Let  $\overline{g} \in L, \overline{g} \neq \overline{0}$, that is to say $g + \langle f \rangle \neq 0 + \langle f \rangle$, which is equivalent to $ g \not \in \langle f \rangle$, or  $f \nmid g$ (in $F[x]$).
 
 Let $h$ a common divisor of $f$ et $g$. Since $f$ is irreducible, either $u$ is a nonzero constant, or $u = k f, k \in F^*$ is associate to $f$. But in this last case, $f = k^{-1} u$ divides u, which divides $g$, so $f \mid g$, in contradiction with the hypothesis.
 
-So the only common divisors of $f,g$ are the $nonzero constants$, so $f \wedge g = 1$.
+So the only common divisors of $f,g$ are the nonzero constants, thus $f \wedge g = 1$.
 
-By  BŽzout theorem, there exists polynomials $A,B \in k[x]$ such that
+By  BŽzout theorem, there exist polynomials $A,B \in k[x]$ such that
 $$1 = A f + B g.$$
 
 \item[(b)]  
@@ -177,14 +177,15 @@ So $B+\langle f \rangle$ is the inverse of $g+ \langle f \rangle$ in  $L =F[x]/\
 }
 
 \begin{proof}
-$-x(x+1) + (x^2+x+1) = 1$ is a BŽzout's relation between $x+1$ est $x^2+x+1$.
 
-$f = x^2+x+1$has no root in $\mathbb{Q}$ is has degrre 2 : it is so irreducible on $\mathbb{Q}$, and 
+$f = x^2+x+1$ has no root in $\mathbb{Q}$ is has degree 2, therefore $f$ is irreducible on $\mathbb{Q}$, and consequently $\Q[x]/\langle f \rangle$ is a field.
+
+ Moreover $-x(x+1) + (x^2+x+1) = 1$ is a BŽzout's relation between $x+1$ and $x^2+x+1$. This gives the following equality in $\Q[x]/\langle f \rangle$:
 $$(-x + \langle f \rangle) (x+1+\langle f \rangle) +  (x^2+x+1) + \langle f \rangle = 1 + \langle f \rangle,$$
 so
 $$(-x + \langle f \rangle) (x+1+\langle f \rangle)  = 1 + \langle f \rangle.$$
 
-$-x + \langle f \rangle$ is the iinverse of $x+1+\langle f \rangle$ in $F[x]/\langle f \rangle$.
+$-x + \langle f \rangle$ is the inverse of $x+1+\langle f \rangle$ in $\Q[x]/\langle f \rangle$.
 \end{proof}
 
 \subsection{THE FUNDAMENTAL THEOREM OF ALGEBRA}
@@ -211,16 +212,16 @@ Then, using the fact that conjugation is a field automorphism in  $\mathbb{C}$,
 \overline{fg} &= \sum_{k=0}^{n+m}\overline{c_k}x^{k}\\
 &=\sum_{k=0}^{n+m}\overline{\sum_{i+j = k}a_ib_j} x^k\\
 &=\sum_{k=0}^{n+m}\sum_{i+j = k}\overline{a_i} \overline{b_j} x^k\\
-&=\sum\limits_{i=0}^n{\overline{a_i}x^i}  \sum\limits_{j=0}^n\overline{b_j}x^i\\
-&=\overline{f} \overline{g}
+&=\sum\limits_{i=0}^n{\overline{a_i}x^i}  \sum\limits_{j=0}^n\overline{b_j}x^j\\
+&=\overline{f} \overline{g}.
 \end{align*}
 
-\item[(b)]
+\item[(b)] If $f \in \C[x]$ and $\alpha \in \C$,
 \begin{align*}
 \overline{f}(\alpha) = 0 &\Rightarrow \sum\limits_{i=0}^n\overline{a_i}\alpha^i= 0\\
 &\Rightarrow \overline{\sum\limits_{i=0}^n\overline{a_i}\alpha^i} = \overline{0}=0\\
 &\Rightarrow \sum\limits_{i=0}^n a_i \overline{\alpha}^i=0\\
-&\Rightarrow f(\overline{\alpha}) = 0
+&\Rightarrow f(\overline{\alpha}) = 0.
 \end{align*}
 \end{enumerate}
 \end{proof}
@@ -235,7 +236,7 @@ $$x^2-y^2 = a, \qquad 2xy = b.$$
 \item[(c)] Show that the equation of part (b) are equivalent to
 $$x^2 =\frac{a\pm \sqrt{a^2+b^2}}{2}, \qquad y = \frac{b}{2x}.$$
 Also show that $x\ne 0$ and that $a\pm \sqrt{a^2+b^2}$ is positive when we choose the $+$ sign in the formula for $x^2$.
-\item[(d)] Conlude that $a+bi$ has a square root in $\C$.
+\item[(d)] Conclude that $a+bi$ has a square root in $\C$.
 \end{enumerate}
 }
 
@@ -246,14 +247,14 @@ We know that the equation $x^2 = a$ has a real solution if $a\geq 0$ (see Ex. 3.
 Therefore, if $a \in \mathbb{R}^-_*$, there exists $b\in \mathbb{R}^+$ such that $b^2 = -a = \vert a \vert$.
 Thus $(ib)^2 = a$.
 
-Conclusion : every $a \in \mathbb{R}$ has a square root in $\mathbb{C}$.
+Conclusion: Every $a \in \mathbb{R}$ has a square root in $\mathbb{C}$.
 
 \item[(b,c,d)] Let $z = a+ib,\ a,b \in \mathbb{R}$, and $Z = x+iy,\ x,y \in \mathbb{R}$ two complex numbers.
 
 \begin{align*}
 z^2 = Z &\iff (a+ ib)^2 = x+iy\\
-&\iff (a+ ib)^2 = x+iy \ \mathrm{et} \ \vert a+ ib\vert ^2 = \vert x+iy\vert \\
-&\iff a^2 - b^2 +2abi = x+iy\ \mathrm{et} \ a^2+b^2 = \sqrt{x^2+y^2}\\
+&\iff (a+ ib)^2 = x+iy \ \mathrm{and} \ \vert a+ ib\vert ^2 = \vert x+iy\vert \\
+&\iff a^2 - b^2 +2abi = x+iy\ \mathrm{and} \ a^2+b^2 = \sqrt{x^2+y^2}\\
 &\iff a^2 - b^2 = x, a^2 + b^2 =\sqrt{x^2+y^2}, 2ab = y.
 \end{align*}
 
@@ -261,8 +262,8 @@ The system of equations
 $
 \left\{
 \begin{array}{ccc}
-a^2 - b^2 &=& x   \\
-a^2 + b^2 &=&\sqrt{x^2+y^2} 
+a^2 - b^2 &=& x,   \\
+a^2 + b^2 &=&\sqrt{x^2+y^2}, 
 \end{array}
 \right.
 $
@@ -270,31 +271,31 @@ is equivalent to
 $$
 \left\{
 \begin{array}{ccc}
-a^2  &=&\frac{1}{2}\left(  \sqrt{x^2+y^2}  + x\right)  \\
- b^2 &=&\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right) 
+a^2  &=&\frac{1}{2}\left(  \sqrt{x^2+y^2}  + x\right),  \\
+ b^2 &=&\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right).
 \end{array}
 \right.
 $$
 Therefore $$z^2 = Z \Rightarrow 
 \left\{
 \begin{array}{ccc}
-a^2  &=&\frac{1}{2}\left(  \sqrt{x^2+y^2}  + x\right)  \\
- b^2 &=&\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right) \\
- \mathrm{sgn}(ab) &= & \mathrm{sgn}(y)
+a^2  &=&\frac{1}{2}\left(  \sqrt{x^2+y^2}  + x\right),  \\
+ b^2 &=&\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right), \\
+ \mathrm{sgn}(ab) &= & \mathrm{sgn}(y).
 \end{array}
 \right.
-.$$
+$$
 
-The reciprocal is true, since these last equations imply
+The converse is true, since these last equations imply
 $$4a^2 b^2 = \left(  \sqrt{x^2+y^2}  + x\right) \left( \sqrt{x^2+y^2} -x\right) = x^2+y^2-x^2 = y^2,$$
-and as  $\mathrm{sgn}(ab) =  \mathrm{sgn}(y)$, we conclude $2ab=y$. So we have proved the equivalence
+and since $\mathrm{sgn}(ab) =  \mathrm{sgn}(y)$, we conclude $2ab=y$. So we have proved the equivalence
 
 $$z^2 = Z \iff
 \left\{
 \begin{array}{ccc}
-a^2  &=&\frac{1}{2}\left(  \sqrt{x^2+y^2}  + x\right)  \\
- b^2 &=&\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right) \\
- \mathrm{sgn}(ab) &= & \mathrm{sgn}(y)
+a^2  &=&\frac{1}{2}\left(  \sqrt{x^2+y^2}  + x\right),  \\
+ b^2 &=&\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right), \\
+ \mathrm{sgn}(ab) &= & \mathrm{sgn}(y).
 \end{array}
 \right. 
 $$
@@ -310,7 +311,7 @@ a  &=&\varepsilon \sqrt{\frac{1}{2}\left ( \sqrt{x^2+y^2}  + x\right)}  \\
 &\iff z \in \{ z_0, - z_0   \},
 \end{align*}
 where $$z_0 = \sqrt{\frac{1}{2}\left ( \sqrt{x^2+y^2}  + x\right)} + i \ \mathrm{sgn}(y)\sqrt{\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right)}.$$
-Conclusion : every $z \in \mathbb{C}$ has a square root in $\C$.
+Conclusion: Every $z \in \mathbb{C}$ has a square root in $\C$.
 \end{enumerate}
 \end{proof}
 
@@ -322,13 +323,13 @@ Conclusion : every $z \in \mathbb{C}$ has a square root in $\C$.
 \begin{proof}
 Suppose that $a \in \mathbb{R}^+$.
 
-Let $u:\mathbb{R} \to \mathbb{R}, x\mapsto u(x) = x^2 -a$.
+Let $u:\mathbb{R} \to \mathbb{R}$ defined by $x\mapsto u(x) = x^2 -a$.
 
 Then  $u$ is continuous,  $u$ is strictly increasing, and
 
 $u(0) = -a \leq 0, \lim\limits_{x\to \infty} u(x) = + \infty$ (so there exists $A \in \R^{+}$ such that $u(A)>0$).
 
-By the Intermediate Value Theorem, there exists a unique $b\in \mathbb{R}^+$ such that $b^2 = a$ : $a$ has a real square root.
+By the Intermediate Value Theorem, there exists a unique $b\in \mathbb{R}^+$ such that $b^2 = a$, so $a$ has a real square root.
 \end{proof}
 
 \paragraph{Ex. 3.2.4}
@@ -344,19 +345,19 @@ One then defines $a>b$ to mean $a-b\in P$ (so that $P$ becomes the set of positi
 \begin{proof}
 Let $F$ an ordered field. 
 
-Since  $P$is closed under multiplication by (a), if $a \in P$, then $a^2 \in P$.
+Since  $P$ is closed under multiplication by (a), if $a \in P$, then $a^2 \in P$.
 
-If $-a \in P$, $a^2 = (-a)(-a) \in P$. By (b), every $a\in F$ verifies $a\in P$, or $a=0$, or $-a\in P$, we can conclude that 
+If $-a \in P$, $a^2 = (-a)(-a) \in P$. By (b), every $a\in F$ verifies $a\in P$, or $a=0$, or $-a\in P$, so we can conclude that 
 \begin{align}
-\forall  a,  a \in F^* \Rightarrow \ a^2 \in P. \label{eq3.2.4:1}
+\forall  a,\  a \in F^* \Rightarrow \ a^2 \in P. \label{eq3.2.4:1}
 \end{align}
 So $P$ contains all squares in $F$, $0$ excluded.
 By definition of fields, we know that $1\neq 0$, so $1 = 1^2 \in P$.
 
-By (b) , les trois cas $a\in P$,  $a=0$, $-a\in P$ are mutually exclusive, thus $-1 \not \in P$.
+By (b), the three cases $a\in P$,  $a=0$, $-a\in P$ are mutually exclusive, thus $-1 \not \in P$.
 Therefore  $-1$ is not a square in $F$, otherwise $-1 = a^2 \in P$ by \eqref{eq3.2.4:1}.
 
-Conclusion : $-1$ is not a square in the ordered field $F$.
+Conclusion: $-1$ is not a square in the ordered field $F$.
 \end{proof}
 
 \paragraph{Ex. 3.2.5}
@@ -374,9 +375,9 @@ Conclusion : $-1$ is not a square in the ordered field $F$.
 \item[(a)]
 Since $-1$ is not a square in $F$ by Exercise 4, the polynomial $x^2+1$ has no root in $F$, and it has degree 2, thus it is irreducible over $F$.
 
-Therefore $F(i) = F[x]/\langle x^2+1\rangle$ is a field, where $i = \dot{x}$, by Proposition 3.1.1.
+Therefore $F(i) = F[x]/\langle x^2+1\rangle$ is a field, where $i = x + \langle x^2 + 1 \rangle$, by Proposition 3.1.1.
 
-The division of any polynomial $f$ by $x^2+1$ gives $$f= q (x^2+1) + bx+a,$$ so every $y \in F(i)$ is of the form $y = a+ ib$
+The division of any polynomial $f$ by $x^2+1$ gives $$f= q (x^2+1) + bx+a,$$ so every $y \in F(i)$ is of the form $y = a+ ib$.
 
  \item[(b)] Let $ax^2+bx+c,\  a,b,c \in F(i), a\neq 0$, any quadratic polynomial.
  
@@ -386,10 +387,9 @@ The division of any polynomial $f$ by $x^2+1$ gives $$f= q (x^2+1) + bx+a,$$ so 
  &=a\left[\left(x+\frac{b}{2a}\right)^2 -\frac{\Delta}{4a^2}\right] , \Delta = b^2-4ac\\
  \end{align*}
  
-If $\Delta >0$,
- $\Delta$ has a square root in $F$, by the definition of a real closed field (and the root 0 if $\Delta =0$).
-If $\Delta <0$, $\Delta = (i\sqrt{-\Delta})^2$ has a square root in $F(i)$.
-We will write $\sqrt{\Delta}$ one of these square roots. Then
+By definition of a real closed field, every positive element of $F$ has a square root in $F$. With the same proof as in Ex 3.2.2, we can prove that every $z \in F(i)$ has a square root. One square root of $z = x + iy,\  x,y \in F,$ is given by 
+$$z_0 = \sqrt{\frac{1}{2}\left ( \sqrt{x^2+y^2}  + x\right)} + i \ \mathrm{sgn}(y)\sqrt{\frac{1}{2}\left( \sqrt{x^2+y^2} -x\right)}.$$
+We will write $\sqrt{\Delta}$ one of the square roots of $\Delta$. Then
  \begin{align*}
  ax^2+bx+c &= a\left[\left(x+\frac{b}{2a}\right)^2 -\left (\frac{\sqrt{\Delta}}{2a}\right)^2\right]\\
  &=a(x-x_1)(x-x_2), x_1 = \frac{-b+\sqrt{\Delta}}{2} \in F(i), x_2 = \frac{-b+\sqrt{\Delta}}{2} \in F(i)
@@ -401,13 +401,13 @@ By definition of a real closed field, and by (b),
  
  $\bullet$ every  polynomial of odd degree in $F[x]$ has a root in $F$,
  
- $\bullet$ every elemen $a \in F(i)$ has a square root in $F(i)$,
+ $\bullet$ every element $a \in F(i)$ has a square root in $F(i)$,
  
  $\bullet$ every quadratic polynomial  $f \in F(i)[x] $ splits completely over $F(i)$.
  
 The Proposition 3.2.2 and the Lemme 3.2.3 are so satisfied if we replace $\R$ by $F$ and $\C$ by $F(i)$.
  
-Theorem 3.2.4 for $F(i)$ follows, with the same proof : $F(i)$ is an algebraically closed field.
+Theorem 3.2.4 for $F(i)$ follows, with the same proof: $F(i)$ is an algebraically closed field.
 \end{enumerate}
 \end{proof}
 
@@ -427,7 +427,7 @@ By Ex. 3.3.1(b), this implies $f(\overline{\alpha}) =0$.
 
 Conclusion : if $f \in \mathbb{R}[x]$, $$f(\alpha)=0 \Rightarrow f(\overline{\alpha})=0.$$ 
 \item[(b)]
-$\bullet$ Suppose that every polynomial in $\mathbb{C}[x]$ has a root in $\mathbb{C}$.
+$\bullet$ Suppose that every nonconstant polynomial in $\mathbb{C}[x]$ has a root in $\mathbb{C}$.
 
 Name $x_1,\cdots, x_r$ the real roots of $f$ : $f = a(x-x_1)^{k_1}\cdots(x-x_r)^{k_r}g$, where $a \in \mathbb{R}$, and  $g \in \mathbb{R}[x]$ is monic and has no real root.
 We show by induction on  $d$ that every polynomial $g \in \mathbb{R}[x]$ without real root, monic, of degree $d$, is product of monic quadratic real polynomials.
@@ -448,7 +448,7 @@ $g = (x^2 - s x + t) h$, where $h \in \mathbb{R}[x]$ is monic, of degree less th
 
 Consequently, $f$ is product of linear or quadratic factors with real coefficients.
 
-$\bullet$ Reciprocally, suppose that every polynomial in $\R[x]$ is product of linear or quadratic factors with real coefficients.
+$\bullet$ Conversely, suppose that every polynomial in $\R[x]$ is product of linear or quadratic factors with real coefficients.
 
 Let $f \in \C[x]$, with $\deg(f) \geq 1$. We will show that $f$ has a complex root. 
 
@@ -476,7 +476,7 @@ If $d=1$, $f = ax+b, \ a\ne 0$, is product of one linear factor.
 
 Let $f \in F[x], d = \deg(f) >1$. Then $f$ has by hypothesis a root $\alpha \in F$, so $f = (x-a)g$, where $\deg(g)<d$. By the induction hypothesis, $g$ is a constant or is product of linear factors, so it is the same for $f$, and the induction is done.
 
-Conclusion :if $F$ is a field, the two following propositions are equivalent :
+Conclusion: If $F$ is a field, the two following propositions are equivalent,
 \begin{enumerate}
 \item[(i)] Every nonconstant polynomial in $F[x]$ is product of linear factors.
 \item[(ii)] Every nonconstant polynomial in $F[x]$ has a root in $F$
