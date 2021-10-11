@@ -61,7 +61,7 @@
 }
 
 \begin{proof}
-Suppose that $\alpha \in L \setminus \{0\}$ be algebraic over a subfield $F$ of $L$. Then there exists a polynomial $p = \sum\limits_{k=0}^d a_k x^k \in F[x]$, with $a_d \neq 0$, whose $\alpha$ is a root :
+Suppose that $\alpha \in L \setminus \{0\}$ be algebraic over a subfield $F$ of $L$. Then there exists a polynomial $p = \sum\limits_{k=0}^d a_k x^k \in F[x]$, with $a_d \neq 0$, whose $\alpha$ is a root:
 $$\sum\limits_{k=0}^d a_k \alpha^k = 0.$$
 Dividing by $\alpha^d$, we obtain $\sum\limits_{k=0}^d a_k\left(\frac{1}{\alpha}\right)^{d-k} = 0$, which we can write
 $\sum\limits_{i=0}^d a_{d-i}\left(\frac{1}{\alpha}\right)^{i} = 0$.
@@ -159,7 +159,7 @@ $$F[\alpha_1,\ldots,\alpha_n] \subset F[\alpha_1,\ldots,\alpha_{n-1}][\alpha_n]$
 is proved, and so 
 $$F[\alpha_1,\ldots,\alpha_n] =F[\alpha_1,\ldots,\alpha_{n-1}][\alpha_n].$$
 
-Note: in an alternative way, we could write a lemma analogous to Lemma 4.1.9 and show that $F[\alpha_1,\ldots,\alpha_n]$ is the smallest subring of $L$ containing $ \alpha_1,\ldots,\alpha_n$ (where $L$ is a ring containing $F$ and $\alpha_1,\ldots,\alpha_n$), and prove as in Exercise 4 that :
+Note: in an alternative way, we could write a lemma analogous to Lemma 4.1.9 and show that $F[\alpha_1,\ldots,\alpha_n]$ is the smallest subring of $L$ containing $ \alpha_1,\ldots,\alpha_n$ (where $L$ is a ring containing $F$ and $\alpha_1,\ldots,\alpha_n$), and prove as in Exercise 4 that
 $$F[\alpha_1,\ldots,\alpha_r][\alpha_{r+1},\ldots,\alpha_n] = F[\alpha_1,\ldots,\alpha_n].$$
 \end{proof}
 
@@ -183,7 +183,7 @@ $\varphi$ is a ring homomorphism.
 
 By definition of $F(\alpha_1,\ldots,\alpha_n)$, $\varphi$ is surjective.
 
-Let $f = p/q \in F(x_1,\ldots,x_n)$, with $p,q \in F[x_1,\ldots,x_n], q\neq 0$. If $f \in \ker(\varphi)$, then $p(\alpha_1,\ldots,\alpha_n)/q(\alpha_1,\ldots,\alpha_n) =0$, thus $p(\alpha_1,\ldots,\alpha_n)=0$. Since $\alpha_1,\ldots,\alpha_n$ are algebraically independent, $p=0$. Consequently $\ker(\varphi) = \{0\}$, and so $\varphi$ is a ring isomorphism between two fields : it is a field isomorphism.
+Let $f = p/q \in F(x_1,\ldots,x_n)$, with $p,q \in F[x_1,\ldots,x_n], q\neq 0$. If $f \in \ker(\varphi)$, then $p(\alpha_1,\ldots,\alpha_n)/q(\alpha_1,\ldots,\alpha_n) =0$, thus $p(\alpha_1,\ldots,\alpha_n)=0$. Since $\alpha_1,\ldots,\alpha_n$ are algebraically independent, $p=0$. Consequently $\ker(\varphi) = \{0\}$, and so $\varphi$ is a ring isomorphism between two fields: it is a field isomorphism.
 
 Conclusion: If $\alpha_1,\ldots,\alpha_n \in L$ are algebraically independent over $F$,then
 $$F(\alpha_1,\ldots,\alpha_n) \simeq  F(x_1,\ldots,x_n).$$
@@ -212,13 +212,13 @@ $p = uq,\ q\in F[x]$, and since $p$ is irreducible over $F$,  $u$ or $q$ is a co
 
 If $q =\lambda \in F^*$, then $p = \lambda^{-1} u $ divides $u$, which divides $g$, thus $p$ divides $g$. In this case, since $p(\alpha) = 0$, $\beta = g(\alpha) = 0$, in contradiction with the hypothesis $\beta \neq 0$.
 
-So $u = \mu \in F^*$ , $u \mid 1$. Consequently, for all $u \in F[x]$, $(u \mid p, u \mid g) \Rightarrow u\mid 1$ : $p,g$ are relatively prime.
+So $u = \mu \in F^*$ , $u \mid 1$. Consequently, for all $u \in F[x]$, $(u \mid p, u \mid g) \Rightarrow u\mid 1$: $p,g$ are relatively prime.
 
-\item[(b)]  Then there exists a BŽzout's relation between these two polynomials :
+\item[(b)]  Then there exists a BŽzout's relation between these two polynomials:
 $$Ap + Bg = 1, \ A,B \in F[x].$$
 The evaluation of these polynomials in $\alpha$, since $p(\alpha)=0$, gives
 $$B(\alpha) g(\alpha) = 1, B(\alpha) \in F[\alpha]$$
-So $B(\alpha)$ is the multiplicative inverse of $\beta = g(\alpha)\neq 0$ in $F[\alpha]$ : $F[\alpha]$ is a field.
+So $B(\alpha)$ is the multiplicative inverse of $\beta = g(\alpha)\neq 0$ in $F[\alpha]$: $F[\alpha]$ is a field.
 
 Note: We have proved in Exercice 3.5.1 that $F[x]/\langle f\rangle$, where $f$ is irreducible over $F$,  is a field with the same argumentation. Here $f = p$ is the minimal polynomial  of $\alpha$ over $F$, so it is irreducible over $f$.
 \end{enumerate}
@@ -237,7 +237,7 @@ Note: We have proved in Exercice 3.5.1 that $F[x]/\langle f\rangle$, where $f$ i
 \begin{enumerate}
 \item[(a)]$x^2-3$ is irreducible over $\mathbb{Q}$. We show that it remains irreducible over $\mathbb{Q}[\sqrt{2}]$.
 
-Suppose on the contrary that $f$ is reducible over $F$ :  $f = x^2 - 3 = u v,\ u v \in \mathbb{Q}[\sqrt{2}][x]$, where $u,v$ are nonconstant polynomials. Then $\deg(u)\geq 1, \deg(v) \geq 1$, and as $\deg(u) + \deg(v) = \deg(f) = 2$, $\deg(u) = \deg(v)=1$ : 
+Suppose on the contrary that $f$ is reducible over $F$:  $f = x^2 - 3 = u v,\ u v \in \mathbb{Q}[\sqrt{2}][x]$, where $u,v$ are nonconstant polynomials. Then $\deg(u)\geq 1, \deg(v) \geq 1$, and as $\deg(u) + \deg(v) = \deg(f) = 2$, $\deg(u) = \deg(v)=1$, 
 
 $$u = ax+b, a,b\in \mathbb{Q}[\sqrt{2}], a\neq 0.$$
 
@@ -248,7 +248,7 @@ Alors $$\alpha^2 = c^2+2d^2  +2cd\sqrt{2}=3.$$
 
 If $cd\neq 0$, $\sqrt{2} = (c^2+2d^2 -3)/(2cd) \in \mathbb{Q}$, in contradiction with the irrationality of $\sqrt{2}$. Thus $c=0$ ou $d=0$.
 
-$d=0$ gives $\sqrt{3} = \pm c \in \mathbb{Q}$  : this is in contradiction with the irrationality of $\sqrt{3}$.
+$d=0$ gives $\sqrt{3} = \pm c \in \mathbb{Q}$: this is in contradiction with the irrationality of $\sqrt{3}$.
 
 $c=0$ implies $\sqrt{\frac{3}{2}} = \pm d \in \mathbb{Q}$. But then $\sqrt{\frac{3}{2}} =\frac{p}{q}, (p,q) \in \mathbb{Z} \times \mathbb{N}^*, p\wedge q=1$.
 
@@ -270,7 +270,7 @@ The equality $f = x^4 -10x^2 +1 = (x^2 -2\sqrt{3} x +1)(x^2 -2\sqrt{3} x +1)$ sh
 
 {\bigskip}
 
-Factorisation with Sage :
+Factorisation with Sage:
 \begin{verbatim}
 K = NumberField(x^2-3, 'a');L.<X> = PolynomialRing(K)
 p = X^4-10*X^2+1
@@ -298,7 +298,7 @@ Then $g(x) = \sum\limits_{i=0}^d c_i p_i(x)$.
 
 \begin{enumerate}
 \item[(a)]
-$p_i$ is product of $d$ linear polynomials, thus $\deg(p_i) = d$. Consequently $\deg(g) \leq \max(\deg(p_0), \ldots, \deg(p_d))=d$ : 
+$p_i$ is product of $d$ linear polynomials, thus $\deg(p_i) = d$. Consequently $\deg(g) \leq \max(\deg(p_0), \ldots, \deg(p_d))=d$: 
 $$\deg(g)\leq d.$$
 
 This inequality can be a strict inequality: We show such an example for $d=2$.
@@ -470,7 +470,7 @@ K = NumberField(x^3-2, 'a'); L.<X> = PolynomialRing(K)
 p =  3*x^6 + 6*x^5 + 9*x^4 + 2*x^3 + 3*x^2 + 1
 u = factor(p)
 \end{verbatim}
-give the following decomposition, where $a=\sqrt[3]{2}$ :
+give the following decomposition, where $a=\sqrt[3]{2}$:
 
 $3x^6+6x^5+9x^4+2x^3+3x^2+1 =$ 
 
@@ -511,7 +511,7 @@ Thus $\zeta _{24} = e^{2i \pi}/24$ is a root of $x^8-x^{4}+1$, irreducible over 
 
 $x^8 - x^4+1$ is so the minimal polynomial over $\mathbb{Q}$ of $\zeta_{24}$.
 
-Verification : $\zeta_{24}^8 - \zeta_{24}^4+1 = e^{2i\pi/3}-e^{i\pi/3}+1 = \omega+\omega^2+1 = 0$.
+Verification: $\zeta_{24}^8 - \zeta_{24}^4+1 = e^{2i\pi/3}-e^{i\pi/3}+1 = \omega+\omega^2+1 = 0$.
 
 
 Note: If we know the cyclotomic polynomials, since $3$ is prime:
@@ -560,7 +560,7 @@ $$q+q^2+\cdots q^r=  q\,\frac{q^{r}-1}{q-1}, \qquad r = \lfloor n/2 \rfloor.$$
 
 \begin{enumerate}
 \item[(a)]
-$f= x^3+x+1$ being of degree 3, it is reducible iff it has a linear factor (see Ex. 6), iff  it has a root in $\mathbb{F}_5$, which request 5 verifications :
+$f= x^3+x+1$ being of degree 3, it is reducible iff it has a linear factor (see Ex. 6), iff  it has a root in $\mathbb{F}_5$, which request 5 verifications:
 
 $f(0)=1, f(1)=3, f(2)=1, f(-2) = 1, f(-1) = -1$, all nonzero, so $f$ is irreducible over $\F_5$.
 
@@ -633,7 +633,7 @@ The easy part of Proposition 4.2.6 shows that $x^n-a, n\geq 2$ has no root in  $
 \begin{proof}
 If $f$ has a root in $k(t)$, then there exists a rational function $u/v,\ u,v \in k[t], u \wedge v = 1$ such that
 $$t =\left( \frac{u(t)}{v(t}\right)^p,$$
-which is equivalent to the equality in $k[t]$ :
+which is equivalent to the equality in $k[t]$:
 $$u(t)^p = t v(t)^p.$$
 As $u\wedge v=1$, then $u \wedge v^p=1$, and $u$ divides $t v^p$, thus $u$ divides $t$.
 
@@ -649,7 +649,7 @@ Conclusion: If $p$ is prime, $f =x^p -t$ is irreducible over $F= k(t)$.
 \subsection{THE DEGREE OF AN EXTENSION}
 \paragraph{Ex. 4.3.1}
 
-{\it In (4.9) we represented elements of $F(\alpha)$ uniquely using remainders on division by the minimal polynomial of $\alpha$. In the exercise you will adapt the proof of Proposition 4.3.4 to the case of quatient rings. Suppose that $f \in F[x]$ has degree $n>0$. Prove that every coset on $F[x]/\langle f \rangle$ can be written as
+{\it In (4.9) we represented elements of $F(\alpha)$ uniquely using remainders on division by the minimal polynomial of $\alpha$. In the exercise you will adapt the proof of Proposition 4.3.4 to the case of quotient rings. Suppose that $f \in F[x]$ has degree $n>0$. Prove that every coset on $F[x]/\langle f \rangle$ can be written as
 $$a_0+a_1x+\cdots+a_{n-1} x^{n-1} + \langle f \rangle,$$
 where $a_0,a_1,\ldots,a_{n-1} \in F$ are unique.
 }
@@ -870,7 +870,7 @@ As $g \in F[x] \subset F(\alpha)[x]$, and $g(\beta)=0$, then $G \mid g$, and $\d
 
 As $G$ is irreducible over $F(\alpha)$, $g$ is also irreducible over $F(\alpha)$.
 
-We have proved :
+We have proved:
 \begin{center}
 $f$ is irreducible over $F(\beta)$ $\Rightarrow$ $g$ is irreducible over $F(\alpha)$.
 \end{center}
@@ -968,7 +968,7 @@ Let $\alpha \in \C$ a root of
 $$f = x^{11}-(\sqrt{2}+\sqrt{5}) x^5+3\sqrt[4]{12}x^3+(1+3i) x +\sqrt[5]{17}.$$
 Let $L = \Q(\sqrt{2},\sqrt{5},\sqrt[4]{12},i,\sqrt[5]{17},\alpha)$, and $K = \Q(\sqrt{2},\sqrt{5},\sqrt[4]{12},i,\sqrt[5]{17})$.
 
-$f \in K[x]$, and $\alpha$ is a root of $f$. The minimal polynomial $p$ of $\alpha$ over $K$ divides $f$, thus  $[L : K] = [K(\alpha) : K] =\deg(p) \leq \deg(f)=11$ :
+$f \in K[x]$, and $\alpha$ is a root of $f$. The minimal polynomial $p$ of $\alpha$ over $K$ divides $f$, thus  $[L : K] = [K(\alpha) : K] =\deg(p) \leq \deg(f)=11$:
 $$[L : K]\leq 11.$$
 Moreover, if we write 
 
@@ -1116,7 +1116,7 @@ Since
 \end{align}
 $[L:\R]$ divides 2, thus  $[L:\R] =  1$ or $2$.
 
-Conclusion : Every algebraic extension of $\R$ is finite of degree at most 2.
+Conclusion: Every algebraic extension of $\R$ is finite of degree at most 2.
 
 By~\eqref{eq:4.4.8}, 
 \begin{align*}
