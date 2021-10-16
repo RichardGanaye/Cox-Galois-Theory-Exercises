@@ -76,9 +76,9 @@ $\bullet$ If $\alpha, \beta \in L_H$, then,  for all $\alpha \in F$,
 \end{align*}
 thus $\alpha-\beta, \alpha \beta \in L_H$.
 
-$\bullet$ If $\alpha \in L_H\setminus\{0\}$, $\sigma(\alpha) = \alpha$, thus $\sigma(\alpha^{-1}) = \sigma(\alpha)^{-1} = \alpha^{-1} : \alpha^{-1} \in L_H$.
+$\bullet$ If $\alpha \in L_H\setminus\{0\}$, $\sigma(\alpha) = \alpha$, thus $\sigma(\alpha^{-1}) = \sigma(\alpha)^{-1} = \alpha^{-1}: \alpha^{-1} \in L_H$.
 
-Conclusion : $L_H$ is a subfield of $L$ containing $F$.
+Conclusion: $L_H$ is a subfield of $L$ containing $F$.
 \end{proof}
 
 \paragraph{Ex. 7.1.2}
@@ -92,9 +92,9 @@ By hypothesis, the extension $F \subset L$ is finite, normal and separable. As $
 
 We show that $L$ is the splitting field of $f$ over $F$.
 
-As $q_j = p_i,1\leq i \leq n$ is the minimal polynomial of $\alpha_i \in L$ over $F$, and as $F \subset L$ is normal, then  all the roots of $p_i$ are in $L$, so $q_j$ splits completely over $L$, thus $f =\prod_{j=1}^r q_j$ splits completely over $L$. Write $\beta_1,\ldots,\beta_m \in L$ the roots of $f$, and $L'=F(\beta_1,\ldots,\beta_m) \subset L$ the splitting  field of $f$ over $F$. As $F \subset L$, and $\beta_1,\ldots,\beta_m \in L$, we know that $L' \subset L$.
+As $q_j = p_i$ for som $i,\ 1\leq i \leq n$ is the minimal polynomial of $\alpha_i \in L$ over $F$, and as $F \subset L$ is normal, then  all the roots of $p_i$ are in $L$, so $q_j$ splits completely over $L$, thus $f =\prod_{j=1}^r q_j$ splits completely over $L$. Write $\beta_1,\ldots,\beta_m \in L$ the roots of $f$, and $L'=F(\beta_1,\ldots,\beta_m) \subset L$ the splitting  field of $f$ over $F$. As $F \subset L$, and $\beta_1,\ldots,\beta_m \in L$, we know that $L' \subset L$.
 
-As every $\alpha_i,1\leq i \leq n$ is a root of a polynomial $p_i = q_j$, thus of $f$, $\alpha_i = \beta_k, 1\leq k \leq m$, thus $\alpha_i \in L'$. Consequently $\{\alpha_1,\ldots,\alpha_n\}\subset \{\beta_1,\ldots,\beta_m\}$ and 
+As every $\alpha_i,1\leq i \leq n$ is a root of a polynomial $p_i = q_j$, then $\alpha_i$ is a root of $f$, so $\alpha_i = \beta_k$ for some $k,\ 1\leq k \leq m$, thus $\alpha_i \in L'$. Consequently $\{\alpha_1,\ldots,\alpha_n\}\subset \{\beta_1,\ldots,\beta_m\}$ and 
 $$L = F(\alpha_1,\ldots,\alpha_n) \subset F(\beta_1,\ldots,\beta_m) = L' \subset  L :$$
 $L=L'$ is the splitting field of $f$ over $F$.
 
@@ -128,7 +128,7 @@ $F(\alpha,\beta)$ being a field,  $\alpha + \beta,\alpha \beta \in F(\alpha,\bet
 
 Let $F\subset L$ a finite extension, where $F$ has characteristic $p$, and let 
 \begin{center}
-$K = \{\alpha \in L \ \vert \ \alpha$ est séparable sur $F\}$.
+$K = \{\alpha \in L \ \vert \ \alpha$ is separable over $F\}$.
 \end{center}
 By Theorem 7.1.6 and Exercise 3 (and $1$, root of $x-1$ is in $K$), $K$ is a subfield of $L$. Moreover, every $\alpha\in F$ is root of the irreducible separable polynomial $x-\alpha \in F[x]$,  so $\alpha$ is separable , thus $F\subset K$, and $F \subset K$ is a separable extension. 
 
@@ -183,7 +183,7 @@ Therefore $M = F(\beta_1,\ldots,\beta_m)$ is the splitting field of $f$ over $F$
 
 Let $M' \supset L$ any normal extension of $F$. As $F \subset M'$ is normal, the $p_i$ splits completely over $M'$, thus also $f$. Let $\gamma_1,\ldots,\gamma_m \in M'$ the roots of $f$ dans $M'$, and $M'' = F(\gamma_1,\ldots,\gamma_m) \subset M'$. As $\alpha_i  \in L \subset M'$, the $\alpha_i$ are roots of $f$ in $M'$ : $\{\alpha_1,\ldots,\alpha_n\}\subset\{\gamma_1,\ldots,\gamma_m\}$, thus $L = F(\alpha_1,\ldots,\alpha_n) \subset F(\gamma_1,\ldots,\gamma_m) = M''$.
 
-$M''$ and $M$ are so two splitting fields of $f$ over $L$. By the unicity of the splitting field (Corollary 5.1.7), there exist a field isomorphism of $M$ dans $M''$  that is identity on $L$. Since $M'' \subset M'$, we can regard this isomorphism as an injective field homomorphism $\varphi : M \to M'$.
+$M''$ and $M$ are so two splitting fields of $f$ over $L$. By the unicity of the splitting field (Corollary 5.1.7), there exist a field isomorphism of $M$ in $M''$  that is identity on $L$. Since $M'' \subset M'$, we can regard this isomorphism as an injective field homomorphism $\varphi : M \to M'$.
 \end{proof}
 
 \paragraph{Ex. 7.1.7}
@@ -234,12 +234,12 @@ $$\vert G_\alpha \vert  = \vert \Gal(L/F(\alpha))\vert = [L:F(\alpha)] = [L:F]\,
 \bigskip
 
 Let $\sigma_1,\ldots,\sigma_r$ a complete system of representants of the left cosets $\sigma G_\alpha, \sigma \in G$. Then the $\sigma_i G$ form a partition of $G$ : 
-$$G = \bigcup_{i=1}^r \,\sigma_i G_\alpha,$$ $$i \neq j \Rightarrow \sigma_i G_\alpha \cap \sigma_j G_\alpha = \emptyset \ (1\leq i,j \leq r)$$
+$$G = \bigcup_{i=1}^r \,\sigma_i G_\alpha,$$ $$i \neq j \Rightarrow \sigma_i G_\alpha \cap \sigma_j G_\alpha = \emptyset \ (1\leq i,j \leq r).$$
 
 If $\sigma \in \sigma_iG_\alpha$, then $\sigma = \sigma_i \tau, \tau \in G_\alpha$, thus $\sigma(\alpha) =\sigma_i(\tau(\alpha)) = \sigma_i(\alpha)$. Let $\gamma_i =\sigma_i(\alpha)\in S$. The image of $\alpha$ by all the elements of the left coset $\sigma_iG_\alpha$ is a constant  equal to $\gamma_i = \sigma_i(\alpha)$. As $\vert \sigma_iG_\alpha \vert = \vert G_\alpha \vert= m$,
  $$g = \prod_{\sigma \in G} (x - \sigma.\alpha) = \prod_{i=1}^r \prod_{\sigma \in \sigma_i G_\alpha} (x - \sigma.\alpha) = \prod_{i=1}^r (x-\gamma_i)^m.$$
 
-De plus $T:=\{\gamma_1,\cdots,\gamma_r\} \subset \{\alpha_1,\cdots,\alpha_r\}$, and the $\gamma_i, 1\leq i \leq r,$ are distinct since
+Moreover $T:=\{\gamma_1,\cdots,\gamma_r\} \subset \{\alpha_1,\cdots,\alpha_r\}$, and the $\gamma_i, 1\leq i \leq r,$ are distinct since
 
 $$\sigma_i(\alpha) = \sigma_j(\alpha) \Rightarrow (\sigma_j^{-1} \sigma_i)(\alpha) = \alpha \Rightarrow \sigma_j^{-1} \sigma_i \in G_\alpha  \Rightarrow \sigma_i G_\alpha = \sigma_j G_\alpha \Rightarrow i=j.$$
 
@@ -278,7 +278,7 @@ The only root of $f$ is $t$, and $t \not \in \F_p(t^p)$, otherwise $t = u(t^p)/v
 
 Consequently, we would have $t= u(t)^p/v(t)^p,u\wedge v = 1$, which is impossible by Exercise 4.2.9.
 
-The equation $f = x^p - t^p$ has so no root in $\F(t^p)$, where $p =\deg(f)$ is prime. By Proposition 4.2.6, $f$ is irreducible over $\F(t^p)$ : $f = (x-t)^p$ is so the minimal polynomial of $t$ over $\F(t^p)$.
+The equation $f = x^p - t^p$ has so no root in $\F(t^p)$, where $p =\deg(f)$ is prime. By Proposition 4.2.6, $f$ is irreducible over $\F(t^p)$: $f = (x-t)^p$ is so the minimal polynomial of $t$ over $\F(t^p)$.
 
 The minimal polynomial of $t \in \F(t)$ is not separable, so $\F_p(t)/\F_p(t^p)$ is not a Galois extension.
 
@@ -291,7 +291,7 @@ $\C(t,t^{-1}) \subset \C(t)$ is a Galois extension.
 \item[(e)]
 $t$ is a root of $x^n-t^n = (x-t)(x-\zeta t)\cdots (x-\zeta^{n-1}t) \in \C(t^n)[x]$, où $\zeta = e^{2i\pi}/n$.
 
-As $\zeta^k t \in \C(t), 0\leq k \leq n-1$, $\C(t) = C(t,\zeta t, \ldots, \zeta^{m-1}t)$ is the splitting field of the polynomial $x^n-t^n \in \C(t^n)[x]$, so $\C(t^n)\subset \C(t)$ is a normal extension. As the characteristic of $\C(t^n)$ is zero, this extension is also separable.
+As $\zeta^k t \in \C(t), 0\leq k \leq n-1$, $\C(t) = \C(t,\zeta t, \ldots, \zeta^{m-1}t)$ is the splitting field of the polynomial $x^n-t^n \in \C(t^n)[x]$, so $\C(t^n)\subset \C(t)$ is a normal extension. As the characteristic of $\C(t^n)$ is zero, this extension is also separable.
 
 $\C(t^n)\subset \C(t)$ is a Galois extension.
 \end{enumerate}
@@ -304,13 +304,13 @@ $\C(t^n)\subset \C(t)$ is a Galois extension.
 
 \begin{proof}
 
-The minimal polynomial of  $\sqrt[3]{2}$ is $f = x^3 - 2$. By section 7.1.B, the Galois closure of the extension $\Q \subset \Q(\omega, \sqrt[3]{2})$ is the splitting field of $f = (x^3-2)$ over $\Q$ (in $\C$), that is $\Q(\sqrt[3]{2}, \omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}) = \Q(\omega, \sqrt[3]{2})$.
+The minimal polynomial of  $\sqrt[3]{2}$ over $\Q$ is $f = x^3 - 2$. By sections 7.1.B, 7.1.C, the Galois closure of the extension $\Q \subset \Q(\omega, \sqrt[3]{2})$ is the splitting field of $f = x^3-2$ over $\Q$ (in $\C$), that is $\Q(\sqrt[3]{2}, \omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}) = \Q(\omega, \sqrt[3]{2})$.
 \end{proof}
 
 Note: as a verification, note that the two parts of the definition of the Galois closure are satisfied.
 \be
 \item[$\bullet$] The extension $\Q \subset\Q(\omega, \sqrt[3]{2})$ is a Galois extension, since $\Q(\omega, \sqrt[3]{2})$ is the splitting field of the separable polynomial $x^3-2$.
-\item[$\bullet$] Let $M \supset \Q(\omega, \sqrt[3]{2})$ an extension such that $M$ is a Galois extension of $\Q$. As $\sqrt[3]{2} \in M$ and as $\Q \subset M$ is normal, $x^3 -2$ splits completely over $M$:
+\item[$\bullet$] Let $M \supset \Q(\sqrt[3]{2})$ an extension such that $M$ is a Galois extension of $\Q$. As $\sqrt[3]{2} \in M$ and as $\Q \subset M$ is normal, $x^3 -2$ splits completely over $M$:
 $$x^3 - 2 =(x-\alpha)(x-\beta)(x-\gamma),\qquad \alpha,\beta,\gamma \in M,$$
 where $\alpha = \sqrt[3]{2} \in M$.
 
@@ -326,7 +326,7 @@ $x^2+x+1$ has degree 2 and has no real root, so has no root in $\Q(\sqrt[3]{2})$
 }
 
 \begin{proof}
-By sections 7.1.B,7.1.C, as  the minimal polynomial of $\sqrt[4]{2}$ is $x^4 -2$, the Galois closure of $\Q \subset \Q(\sqrt[4]{2})$ is the splitting field of $x^4 -2$ over $\Q$, that is
+By sections 7.1.B,7.1.C, as  the minimal polynomial of $\sqrt[4]{2}$ is $x^4 -2$, a Galois closure of $\Q \subset \Q(\sqrt[4]{2})$ is the splitting field of $x^4 -2$ over $\Q$, that is
 $$\Q(\sqrt[4]{2},i\sqrt[4]{2}, i^2\sqrt[4]{2}, i^3\sqrt[4]{2}) = \Q(i,\sqrt[4]{2}).$$
 \end{proof}
 
@@ -365,9 +365,9 @@ As $\beta = a - \alpha, a \in F$, $\beta \in F(\alpha)$, thus $L = F(\alpha)= F(
 
 $f$ being irreducible, there exists (Prop. 5.1.8) an isomorphism  $\sigma : L \to L$ such that $\sigma(\alpha) = \beta$ and $\sigma$ is the identity on $F$, so $\sigma \in \Gal(L/F)$.
 
-(Explicitely, $\sigma : u+v\alpha \mapsto u+v \beta, \ u,v \in F$: we can verify directly that it is an isomorphism.)
+(Explicitly, $\sigma : u+v\alpha \mapsto u+v \beta, \ u,v \in F$: we can verify directly that it is an isomorphism.)
 
-Every $\tau \in \Gal(L/F)$ sends the root $\alpha$ of $f\in F[x]$ on a root of $f$, so $\tau(\alpha) = \alpha=1_K(\alpha)$ or $\tau(\beta) = \beta\sigma(\alpha)$. As $L = F(\alpha)$, this $F$-automorphisme is uniquely determined by the image of $\alpha$. Thus $\tau = \sigma$ or $\tau = 1_K = e$. Moreover $\sigma \ne e$, otherwise $\sigma(\alpha) = e(\alpha$, so $\beta = \alpha$, which is false by part (b). Consequently $G = \{e,\sigma\}$.
+Every $\tau \in \Gal(L/F)$ sends the root $\alpha$ of $f\in F[x]$ on a root of $f$, so $\tau(\alpha) = \alpha=1_K(\alpha)$ or $\tau(\beta) = \beta = \sigma(\alpha)$. As $L = F(\alpha)$, this $F$-automorphisme is uniquely determined by the image of $\alpha$. Thus $\tau = \sigma$ or $\tau = 1_K = e$. Moreover $\sigma \ne e$, otherwise $\sigma(\alpha) = \alpha$, so $\beta = \alpha$, which is false by part (b). Consequently $G = \{e,\sigma\}$.
 
 Every group of order 2 is isomorphic to  $\Z/2\Z$, thus
 
@@ -380,7 +380,7 @@ $$0 = \alpha^2 - a\alpha - b = \left(\alpha - \frac{a}{2}\right)^2 -\frac{a^2}{4
 
 Therefore $\gamma = \alpha - \frac{a}{2}$ satisfies $\gamma^2 = \frac{a^2+4b^2}{4} \in F$.
 
-As $\gamma = \alpha - \frac{a}{2}$ with  $a\in F$,  $F(\gamma) =F(\alpha) = L$.
+As $\gamma = \alpha - \frac{a}{2}$ with  $a\in F$,  $F(\gamma) =F(\alpha) = L$. Write $c = \gamma^2 \in F$, and $\sqrt{c} = \gamma$, then
 
 $$L = F(\gamma), \gamma^2 \in F , \qquad  L = F(\sqrt{c}) , c \in F$$
 \end{enumerate}
@@ -408,13 +408,13 @@ By Section 6.4.A (or Exercises 6.2.2 and 6.3.1), there exists $\sigma,\tau \in \
  
 Let  $K = \Q(\sqrt[3]{2})$. We show that $\sigma K = \Q(\omega \sqrt[3]{2})$.
 
-If $\beta \in \sigma K, \beta = \sigma (\alpha), \alpha \in K = \Q[\sqrt[3]{2}]$, thus $\alpha =p(\sqrt[3]{2}), p \in \Q[x]$,  $\beta = \sigma(p(\sqrt[3]{2})) = p(\sigma(\sqrt[3]{2})) =p(\omega \sqrt[3]{2}) \in \Q(\omega \sqrt[3]{2})$ , consequently $\sigma K \subset \Q(\omega \sqrt[3]{2})$.
+If $\beta \in \sigma K, \beta = \sigma (\alpha), \alpha \in K = \Q[\sqrt[3]{2}]$, thus $\alpha =p(\sqrt[3]{2}), p \in \Q[x]$,  $\beta = \sigma(p(\sqrt[3]{2})) = p(\sigma(\sqrt[3]{2})) =p(\omega \sqrt[3]{2}) \in \Q(\omega \sqrt[3]{2})$, consequently $\sigma K \subset \Q(\omega \sqrt[3]{2})$.
 
-Conversely, if $\beta \in \Q(\omega \sqrt[3]{2}) =\Q[\omega \sqrt[3]{2}]$ , $\beta = p(\omega \sqrt[3]{2}), p \in \Q[x]$, donc $\beta = \sigma(p(\sqrt[3]{2})) =\sigma(\alpha)$, where $\alpha = p(\sqrt[3]{2}) \in \Q(\sqrt[3]{2})$, consequently $  \Q(\omega \sqrt[3]{2})\subset \sigma K$.
+Conversely, if $\beta \in \Q(\omega \sqrt[3]{2}) =\Q[\omega \sqrt[3]{2}]$, $\beta = p(\omega \sqrt[3]{2}),\ p \in \Q[x]$, then $\beta = \sigma(p(\sqrt[3]{2})) =\sigma(\alpha)$, where $\alpha = p(\sqrt[3]{2}) \in \Q(\sqrt[3]{2})$, consequently $  \Q(\omega \sqrt[3]{2})\subset \sigma K$.
 $$\sigma K = \Q(\omega \sqrt[3]{2}).$$
 As $\sigma^2( \sqrt[3]{2}) = \omega^2  \sqrt[3]{2}$, we obtain similarly
 $$\sigma^2 K = \Q(\omega^2 \sqrt[3]{2}),$$
-and of course, $eK = K$ : $\Q(\sqrt[3]{2}),  \Q(\omega \sqrt[3]{2}),\Q(\omega^2 \sqrt[3]{2})$ are so conjugates fields of $K$ over $\Q$.
+and of course, $eK = K$. So $\Q(\sqrt[3]{2}),  \Q(\omega \sqrt[3]{2}),\Q(\omega^2 \sqrt[3]{2})$ are conjugates fields of $K$ over $\Q$.
 
 As $\tau K = K$, and $G = \langle \sigma, \tau\rangle$, they are the only ones.
 
@@ -423,12 +423,12 @@ Conclusion:
 the conjugate fields of $\Q(\sqrt[3]{2})$ in the extension $\Q \subset \Q(\sqrt[3]{2})$ are $\Q(\sqrt[3]{2}),  \Q(\omega \sqrt[3]{2}),\Q(\omega^2 \sqrt[3]{2})$.
 
 \item[(b)]
-As $\sigma(\omega) = \omega$ and as $\sigma$ is the identiy on $\Q$, $\sigma \Q(\omega) = \Q(\omega)$. Moreover $\tau \Q(\omega) = \Q(\omega^2)$. Comme $\omega^2 = -1 - \omega, \Q(\omega^2) = \Q(\omega)$.
+As $\sigma(\omega) = \omega$ and as $\sigma$ is the identity on $\Q$, $\sigma \Q(\omega) = \Q(\omega)$. Moreover $\tau \Q(\omega) = \Q(\omega^2)$. Since $\omega^2 = -1 - \omega$, $\Q(\omega^2) = \Q(\omega)$.
 As $\sigma \Q(\omega) = \Q(\omega),\tau  \Q(\omega) = \Q(\omega)$, and as $G =  \langle \sigma, \tau\rangle$,  $\lambda \Q(\omega)  = \Q(\omega) $ for all $\lambda \in \Gal(L/F)$.
 
 The only conjugate field of $\Q(\omega)$ is so $\Q(\omega)$.
 
-Note : As $\Q \subset \Q(\omega)$ is a quadratic extension,  thus a normal extension (Ex. 7.1.12), by Theorem 7.2.5, $K = \sigma K$ for all $\sigma \in \Gal(\Q(\omega, \sqrt[3]{2})/\Q)$. We find again that the only conjugate field of $\Q(\omega)$ is $\Q(\omega)$.
+Note: As $\Q \subset \Q(\omega)$ is a quadratic extension,  thus a normal extension (Ex. 7.1.12), by Theorem 7.2.5, $K = \sigma K$ for all $\sigma \in \Gal(\Q(\omega, \sqrt[3]{2})/\Q)$. We find again that the only conjugate field of $\Q(\omega)$ is $\Q(\omega)$.
 
 \end{enumerate}
 \end{proof}
@@ -497,7 +497,7 @@ Suppose that $K_1 \subset K_2 \subset L$. Let $\sigma \in \Gal(L/K_2)$. Then  $\
 
 \bigskip
 
-$\sigma, \tau$ are  the elements of $G = \Gal(L/\Q)$, where $L = \Q(\omega,\sqrt[3]{2})$, determined by
+Here $\sigma, \tau$ are  the elements of $G = \Gal(L/\Q)$, where $L = \Q(\omega,\sqrt[3]{2})$, determined by
  $$\sigma(\omega) = \omega, \ \sigma(\sqrt[3]{2}) = \omega \sqrt[3]{2},$$
  $$\tau(\omega) = \omega^2, \sigma(\sqrt[3]{2}) =  \sqrt[3]{2}.$$
 We show that the map $K \mapsto \Gal(L/\Q)$ applies the left diagram on the right diagram, the inclusion arrows are opposite by Exercise 3.
@@ -506,7 +506,7 @@ $\bullet$ If $K = L$, $\Gal(L/L) = \{e\}$, and if $K = \Q$, $\Gal(L/K) = \Gal(L/
 
 $\bullet$ If $K = \Q(\omega)$, note that $\sigma(\omega) = \omega$, thus $\sigma(\alpha) = \alpha$ for all $\alpha \in \Q(\omega)$, so $\sigma \in \Gal(L/\Q(\omega))$. Therefore
 $$\langle \sigma \rangle = \{e,\sigma,\sigma^2\} \subset \Gal(L/\Q(\omega)).$$
-Moreover, as $\Q \subset L$ is a Galois extension, then $K \subset L$ is also Galois for all intermediate fields $K$, therefore $\vert \Gal(L/\Q(\omega)) \vert  =  [L : \Q(\omega)] = 3$, consequently
+Moreover, as $\Q \subset L$ is a Galois extension, then $K \subset L$ is also Galois for all intermediate fields $K$, therefore $\vert \Gal(L/\Q(\omega)) \vert  =  [L : \Q(\omega)] = 3$. Consequently
 $$\langle \sigma \rangle = \{e,\sigma,\sigma^2\} =\Gal(L/\Q(\omega)).$$
 
 $\bullet$ If $K = \Q(\sqrt[3]{2})$, then $[L:K] = 2 = \vert \Gal(L/K) \vert $, and $\tau \in  \Gal(L/K)$, thus
@@ -515,7 +515,7 @@ $$\langle \tau \rangle = \{e,\tau\} = \Gal(L/\Q(\sqrt[3]{2})).$$
 $\bullet$ If $K = \Q(\omega\sqrt[3]{2})$, with the same reasoning, as $\sigma^2 \tau$ has order 2 and $(\sigma^2 \tau)(\omega \sqrt[3]{2}) = \sigma^2(\omega^2 \sqrt[3]{2}) = \omega^4 \sqrt[3]{2}=\omega \sqrt[3]{2} $,
 $$\langle\sigma ^2  \tau \rangle = \{e,\sigma^2\tau\} = \Gal(L/\Q(\omega \sqrt[3]{2})).$$
 
-$\bullet$ If $K = \Q(\omega\sqrt[3]{2})$, we have a similar result,by exchanging $\omega$ with $\overline{\omega} = \omega^2$:
+$\bullet$ If $K = \Q(\omega\sqrt[3]{2})$, we have a similar result, by exchanging $\omega$ with $\overline{\omega} = \omega^2$:
 $$\langle \sigma\tau \rangle = \{e,\sigma \tau\} = \Gal(L/\Q(\omega^2 \sqrt[3]{2})).$$
 \end{proof}
 
@@ -529,7 +529,7 @@ In the context of the proof of Theorem 7.2.7, $F \subset K \subset L$, $L/F$ and
 
 $\sigma K = K$ by Theorem 7.2.5, thus for all $\alpha \in K$, $\sigma(\alpha)  \in K$.
 
-We write here $\sigma\vert_K : K \to K$ the restriction ( and corestriction) of $\sigma$ to $K$, defined by $\sigma\vert_K(\alpha) = \sigma(\alpha)$. 
+We write here $\sigma\vert_K : K \to K$ the restriction (and corestriction) of $\sigma$ to $K$, defined by $\sigma\vert_K(\alpha) = \sigma(\alpha)$. 
 
 For all $\alpha \in K$, 
 $$(\sigma\vert_{K} \circ \tau\vert_{K})(\alpha) =\sigma\vert_K( \tau\vert_K(\alpha))  = \sigma(\tau(\alpha)) =(\sigma \circ \tau)(\alpha) =( \sigma\circ \tau)\vert_K(\alpha) .$$
@@ -554,7 +554,7 @@ is a group homomorphism.
 \begin{proof}
  $\langle \sigma \rangle, \langle \tau \rangle,\langle \sigma \tau \rangle, \langle \sigma^2 \tau \rangle, \{e\}, G$ are subgroups of $G=\Gal(\Q(\omega,\sqrt[3]{2})/\Q) \simeq S_3$, corresponding to the subgroups of $S_3$ given by $\langle(1,2,3)\rangle,\langle(1,2)\rangle,\langle(2,3)\rangle,\langle(1,3)\rangle,\{()\}, S_3$. We show that $S_3$ has no other subgroup.
  
-The order of a subgroup $H$ of $S_3$ divides 6. If $\vert H \vert = 1, H = \{()\}$, if $\vert H \vert = 6, H = S_3$. If $\vert H \vert = 3$,$H$ is cyclic of order 3. 
+The order of a subgroup $H$ of $S_3$ divides 6. If $\vert H \vert = 1, H = \{()\}$, if $\vert H \vert = 6, H = S_3$. If $\vert H \vert = 3$, $H$ is cyclic of order 3. 
 As the only elements of order 3 of $S_3$ are $\tilde{\sigma} = (1,2,3)$ et $(1,3,2) = \tilde{\sigma}^{-1}$, $H =\langle \tilde{\sigma} \rangle$.
  
 If $\vert H \vert = 2$, is  cyclic of order 2. The only elements of $S_3$ of order 2 are the three transpositions $(1,2),(2,3),(1,3)$. $S_3$, so $H \in \{\langle(1,2)\rangle,\langle(2,3)\rangle,\langle(1,3)\rangle\}$. $S_3$ has exactly 6 subgroups, therefore  $\Gal(\Q(\omega,\sqrt[3]{2})/\Q) \simeq S_3$ has exactly six subgroups given in diagram (7.7).
@@ -563,13 +563,13 @@ If $\vert H \vert = 2$, is  cyclic of order 2. The only elements of $S_3$ of ord
 \paragraph{Ex. 7.2.7}
 
 {\it Suppose that $F \subset K \subset L$, where $L$ is Galois over $F$, and let $\sigma \in \Gal(L/F)$. Show that
-$$K = \sigma K \iff \Gal(L/K) = \sigma \Gal(L/K) \sigma^{-1} \ \mathrm{in}\ \Gal(L/F).$$
+$$K = \sigma K \iff \Gal(L/K) = \sigma \Gal(L/K) \sigma^{-1},\ \sigma\ \mathrm{ in }\  \Gal(L/F).$$
 }
 
 \begin{proof}
 If $\sigma \in \Gal(L/F)$ satisfies $K = \sigma K$, then by Lemma 7.2.4,
 $$\sigma \Gal(L/K)\sigma^{-1} = \Gal(L/\sigma K) = \Gal(L/K).$$
-Conversely if $\sigma \in \Gal(L/F)$ satisfies $\sigma \Gal(L/K)\sigma^{-1} = \Gal(L/K)$, then by the same Lemma, $\Gal(L/K) = \Gal(L/\sigma K)$.
+Conversely, if $\sigma \in \Gal(L/F)$ satisfies $\sigma \Gal(L/K)\sigma^{-1} = \Gal(L/K)$, then by the same Lemma, $\Gal(L/K) = \Gal(L/\sigma K)$.
 As $F\subset L$ is a Galois extension, so are $K \subset L$ and $\sigma K \subset L$, the fixed field of  $\Gal(L/K)$ is $K$, and the fixed field of $\Gal(L/\sigma K)$ is $\sigma K$. As these two groups are identical, $K = \sigma K$.
 
 $$\forall \sigma \in \Gal(L/F),\ (K = \sigma K \iff \Gal(L/K) = \sigma \Gal(L/K) \sigma^{-1}).$$
@@ -590,7 +590,7 @@ $$(\forall \sigma \in \Gal(L/F), \sigma K = K) \iff \Gal(L/K) \lhd \Gal(L/F)).$$
 
 \begin{proof}
 \begin{enumerate}
-\item[(a)] :
+\item[(a)] If $x \in H, x H x^{-1} = H$, so $H \subset N_G(H)$.
 
 \be
 \item[$\bullet$] $e H e^{-1} = H$, thus $e \in N_G(H)\neq \emptyset$.
@@ -603,10 +603,10 @@ $$(\forall \sigma \in \Gal(L/F), \sigma K = K) \iff \Gal(L/K) \lhd \Gal(L/F)).$$
 $N_G(H)$ is a subgroup of $G$. 
 
 \item[(b)]
-Pour tout $g \in N_G(H)$, $g H g^{-1} = H$, so $H \lhd N_G(H)$.
+For all $g \in N_G(H)$, $g H g^{-1} = H$, so $H \lhd N_G(H)$.
 
 \item[(c)]
-Let $N$ a subgroup of $G$, $H \subset N \subset G$.
+Let $N$ be a subgroup of $G$, $H \subset N \subset G$.
 
  $ H \lhd N \iff \forall g\in N,\ gHg^{-1} = H \iff \forall g\in N, g \in N_G(H) \iff N \subset N_G(H).$
 $H$ is normal in $N_G(H)$, and every subgroup $G$ in which $H$ is normal is contained in $N_G(H)$, so $N_G(H)$ is the largest subgroup of $G$ in which $H$ is normal.
@@ -614,7 +614,7 @@ $H$ is normal in $N_G(H)$, and every subgroup $G$ in which $H$ is normal is cont
 \item[(d)] :
 \be
 \item[$\bullet$]  If $H$ is normal in $G$, then every element of $G$ is in the normalizer of  $H$ in $G$, therefore $G \subset N_G(H)$. As $N_G(H) \subset G$, $N_G(H) = G$.
-\item[$\bullet$]  Si $G = N_G(H)$, then every element $g \in G$ is in $N_G(H)$, and so satisfies $gH g^{-1} = H$, so $H$ is a normal subgroup of $G$.
+\item[$\bullet$]  If $G = N_G(H)$, then every element $g \in G$ is in $N_G(H)$, and so satisfies $gH g^{-1} = H$, so $H$ is a normal subgroup of $G$.
 $$ G = N_G(H) \iff H \lhd G.$$
 \ee
 \end{enumerate}
@@ -656,7 +656,7 @@ $$\sigma K = K \iff \Gal(L/K) = \sigma \Gal(L/K) \sigma^{-1} \iff \sigma \in N.$
 Thus $G_K = N$.
 
 \item[(c)]
-The orbit ${\cal O}_K$ of $K$ for the action of $G = \Gal(L/F)$ on $O$ is  the whole $O$, since $O$ is by definition the set of conjugate fields of $K$ : ${\cal O}_K = O$. the Fundamental Theorem of Group Actions gives then the equality
+The orbit ${\cal O}_K$ of $K$ for the action of $G = \Gal(L/F)$ on $O$ is  the whole $O$, since $O$ is by definition the set of conjugate fields of $K$: ${\cal O}_K = O$. the Fundamental Theorem of Group Actions gives then the equality
 $$r = \vert {\cal O}_K \vert = [G : G_K] = [\Gal(L/F) : N].$$
 The number of distinct conjugate fields of $K$ is so the index $[G : N_G(H)]$ of the normalizer of $H = \Gal(L/K)$ in $G= \Gal(L/F)$.
 
@@ -673,7 +673,7 @@ Let $L = \Q(\omega, \sqrt[3]{2})$.
 
 $\tau$ is the unique $\Q$-automorphism of $G = \Gal(L/\Q)$ such as $$\tau(\omega) = \omega^2, \tau(\sqrt[3]{2}) = \sqrt[3]{2}.$$
 If $z\in \C$ is element of $L$, then $z = p(\omega, \sqrt[3]{2})$, where $p(x,y) \in \Q[x,y]$, thus $\overline{z} = p(\overline{\omega}, \sqrt[3]{2}) = p(-1-\omega,\sqrt[3]{2}) \in L$.
-Let $\lambda : L \to L, z \mapsto \overline{z}$  the restriction (and corestriction) of the conjugation in $\C$. Then $\lambda$ is an involutive ring homomorphism, thus an automorphism of the field $L$, which is the identity on $\Q$ : $\lambda \in \Gal(L/\Q)$.
+Let $\lambda : L \to L, z \mapsto \overline{z}$  the restriction (and corestriction) of the conjugation in $\C$. Then $\lambda$ is an involutive ring homomorphism, thus an automorphism of the field $L$, which is the identity on $\Q$: $\lambda \in \Gal(L/\Q)$.
 As 
 $$\lambda(\omega) = \omega^2, \lambda(\sqrt[3]{2}) = \sqrt[3]{2},$$
 and as a $\Q$-automorphism of $L = \Q(\omega, \sqrt[3]{2})$ is uniquely determined by the images of $\omega,\sqrt[3]{2}$, $\tau = \lambda$, so $\tau$ is the complex conjugation restricted  to $\Q(\omega, \sqrt[3]{2})$.
@@ -752,7 +752,7 @@ Then
 \end{align*}
 thus $L_{\langle \sigma \rangle} = \Q(\sqrt{2})$. We verify similarly  $L_{\langle \tau \rangle} = \Q(\sqrt{3})$.
 
-We compute $L_{\langle \sigma \tau \rangle}$ :
+We compute $L_{\langle \sigma \tau \rangle}$:
 \begin{align*}
 (\sigma\tau)(\alpha) = \alpha &\iff a-b\sqrt{2} - c\sqrt{3}+d \sqrt{6} = a+b\sqrt{2} + c\sqrt{3}+d \sqrt{6}\\
 &\iff b=c=0\\
@@ -772,7 +772,7 @@ This implies (Theorem 7.2.5) that $\Q(\sqrt{2})$ equals all of its conjugates an
 
 \paragraph{Ex. 7.3.1}
 
-{\it Complete the proof of Theorem 7.3.1 by showing that $[\Gal(L/F) : H] = [L_K:F]$ for all subgroups of $H \subset \Gal(L/F)$.
+{\it Complete the proof of Theorem 7.3.1 by showing that $[\Gal(L/F) : H] = [L_H:F]$ for all subgroups $H \subset \Gal(L/F)$.
 }
 
 \begin{proof}
@@ -879,18 +879,18 @@ inclusions :
 \end{verbatim}
 This corresponds to the lattice of subgroups of $G$ written in the first diagram (the node (1) corresponding to the subgroup generated by $\sigma^2 = (1,3)(2,4)$).
 
-We find again these results directly without computer in $$D_8 = \langle \sigma, \tau  \rangle = \{e, \sigma, \sigma^2, \sigma^3, \tau, \sigma \tau, \sigma^2 \tau, \sigma^3 \tau\}\simeq G,$$ where $\sigma = (1,2,3,4), \tau = (1,3)$ (cf Ex. 6.3.2(b)). 
+We find again these results directly without computer in $$D_8 = \langle \sigma, \tau  \rangle = \{e, \sigma, \sigma^2, \sigma^3, \tau, \sigma \tau, \sigma^2 \tau, \sigma^3 \tau\}\simeq G,$$ where $\sigma = (1,2,3,4), \tau = (1,3)$ (cf Ex. 6.3.2(b)).  Here the numbering of the roots is $$z_1 = i\sqrt[4]{2},z_2 =  - i\sqrt[4]{2}, z_3 = -i  \sqrt[4]{2}, z_4 = i\sqrt[4]{2}, $$so $\tau$, which exchanges $z_1,z_3$ corresponds to the transposition $(1,3)$, and $\sigma$ to the $4$-cycle $(1,2,3,4)$.
 
 $\sigma$ is of order 4 and generates $H =\langle  \sigma \rangle =\{e,\sigma, \sigma^2,\sigma^3\}$, $\tau$ is of order 2, and $\sigma \tau = \tau \sigma^{-1} =(1,4)(2,3)$ :
 $$\sigma^4 = \tau ^2 = e,\qquad \sigma \tau = \tau \sigma^{-1}.$$
 
-Note that $\tau \sigma = \sigma^{-1} \tau$ and $\tau \sigma^k = \sigma^{-k} \tau \Rightarrow \tau \sigma^{k+1} = \sigma^{-k} \tau \sigma = \sigma^{-k-1} \tau$. This induction proves that $\tau \sigma^k = \sigma^k \tau$ for all $k \in \N$. Moreover $(\sigma^k \tau)^2 = \sigma^k \tau \sigma^k \tau = \sigma^k \sigma^{-k} \tau \tau =e$, so all the elements of the right coset $H\tau$ are of order 2.
+Note that $\tau \sigma = \sigma^{-1} \tau$ and $\tau \sigma^k = \sigma^{-k} \tau \Rightarrow \tau \sigma^{k+1} = \sigma^{-k} \tau \sigma = \sigma^{-k-1} \tau$. This induction proves that $\tau \sigma^k = \sigma^{-k} \tau$ for all $k \in \N$. Moreover $(\sigma^k \tau)^2 = \sigma^k \tau \sigma^k \tau = \sigma^k \sigma^{-k} \tau \tau =e$, so all the elements of the right coset $H\tau$ are of order 2.
 
-We find all the subgroups of order 2 by checking the elements of order 2 in $D_8$. They are the elements of $H.\tau = \{\tau, \sigma \tau, \sigma^2 \tau, \sigma^3 \tau\}$, and also $\sigma^2 \in H$ : this gives all the subgroups of level 2 in the first diagram.
+We find all the subgroups of order 2 by checking the elements of order 2 in $D_8$. They are the elements of $H.\tau = \{\tau, \sigma \tau, \sigma^2 \tau, \sigma^3 \tau\}$, and also $\sigma^2 \in H$: this gives all the subgroups of level 2 in the first diagram.
 
 We know a subgroup of $G$ of order 4,  the subgroup $H = \langle \sigma \rangle$.
 
-Let $M$ any subgroup of $G$ of order 4 $G$. If $M$ is cyclic, it is generated by an element of order 4, so $M = H = \langle \sigma \rangle = \langle \sigma^3 \rangle$.
+Let $M$ any subgroup of $G$ of order 4. If $M$ is cyclic, it is generated by an element of order 4, so $M = H = \langle \sigma \rangle = \langle \sigma^3 \rangle$.
 
 Otherwise $M$ is isomorphic to $\Z/2\Z \times \Z/2\Z$, generated by to distinct elements of order 2 in $D_8 \simeq G$.
 If one of these elements is $\sigma^2$, we obtain the two subgroups
@@ -916,11 +916,11 @@ $${\cal B} = (1,\alpha, \beta, \gamma, \alpha \beta, \alpha \gamma, \beta \gamma
 is a basis of $L$ over $\Q$. 
 
 Recall that (see Ex. 6.3.2(b)) 
-$$\sigma(i)=i, \sigma(\sqrt[4]{2}) = i \sqrt[4]{2}$$
+$$\sigma(i)=i, \sigma(\sqrt[4]{2}) = i \sqrt[4]{2},$$
 $$ \tau(i) = -i, \tau(\sqrt[4]{2}) = \sqrt[4]{2}.$$
 Consequently, $\sigma(\sqrt{2}) = (\sigma(\sqrt[4]{2}))^2 = - \sqrt{2}$, 
 \begin{align*}
-\sigma(\alpha) &=- \alpha,\sigma(\beta)  = \gamma, \sigma(\gamma) = -\beta\\
+\sigma(\alpha) &=- \alpha,\sigma(\beta)  = \gamma, \sigma(\gamma) = -\beta,\\
 \tau(\alpha) &= \alpha, \tau(\beta) =- \beta, \tau(\gamma) = \gamma.
 \end{align*}
 
@@ -1041,7 +1041,7 @@ $$L_{\langle \sigma^3 \tau \rangle} \subset \Q(\beta+\gamma).$$
 
 Conversely $L_{\langle \sigma^3 \tau \rangle}$ is a field (fixed field of $\langle \sigma^3 \tau \rangle$), extension of $\Q$ containing $\beta+\gamma$. So it contains also $\Q(\beta+\gamma)$.
 $$L_{\langle \sigma^3 \tau \rangle} \supset \Q(\beta+\gamma).$$
-Conclusion :
+Conclusion:
 
 $$L_{\langle \sigma^3 \tau \rangle} = \Q(\beta+\gamma) = \Q((1-i)\sqrt[4]{2}).$$
 
@@ -1063,7 +1063,7 @@ z \in L_{\langle \sigma \tau \rangle} &\iff 0 = z -(\sigma \tau)(z)\\
 \end{align*}
 (with a similar justification, by exchanging $\gamma$ and $-\gamma$)
  
-Conclusion :
+Conclusion:
 
 $$L_{\langle \sigma \tau \rangle} = \Q(\beta-\gamma) = \Q((1-i)\sqrt[4]{2})$$
 
@@ -1090,7 +1090,7 @@ The subgroup $H = \langle \sigma^2 \rangle$ is normal in $G = \langle \sigma, \t
 $$\tilde \tau \tilde{\sigma}^2 \tilde{\tau}^{-1} = (2,4)(1,3)(2,4)(2,4) = (2,4)(1,3) = (1,3)(2,4) = \tilde{\sigma}^2,$$ thus $\tau \sigma^2 \tau^{-1} = \sigma^2 \in H$ (and of course $\sigma \sigma^2 \sigma^{-1} = \sigma^2 \in H$). $H$ corresponds with $\Q(i,\sqrt{2})$, which is so a Galois extension of $\Q$. $\Q(i,\sqrt{2})$ is the splitting field of the irreducible polynomial $$x^4-2x^2+9 = (x-i-\sqrt{2})(x-i+\sqrt{2})(x+i-\sqrt{2})(x+i+\sqrt{2})$$
  (or of the reducible polynomial $(x^2-2)(x^2+1)$).
  
- These are the only norma subgroups of $G$, as we will see in part (d). 
+ These are the only normal subgroups of $G$, as we will see in part (d). 
  
 
 \item[(d)] 
@@ -1165,8 +1165,8 @@ $f = x^4 - t^4$ is so irreducible over $\C(t^4)$.
 
 \item[(c)]
 $\deg(f) = 4$, and $f$ is monic irreducible, so is the minimal polynomial of $t$ over $F$. Therefore
-$$\vert \Gal(L/F) \vert= [L:F] = =[\C(t^4,t):\C(t^4)] = \deg(f) = 4.$$
-Let $\sigma \in G = \Gal(L/F)$. As $t$ is a root of $f \in F[x]$, $\sigma(t)$ is a root of $f$, thus $\sigma(t) \in \{t,it,i^2t,i^3t\}$. Moreover $L = \C(t) = \C(t^4)(t)$, so $\sigma$ is uniquely determined by the image of $t$. As $\vert G \vert =4$, these four possibilities occur and correspond to an element of $G$: if $0 \leq k \leq 3$,there exists one and only one $\sigma_k \in G$ such that 
+$$\vert \Gal(L/F) \vert= [L:F] = [\C(t^4,t):\C(t^4)] = \deg(f) = 4.$$
+Let $\sigma \in G = \Gal(L/F)$. As $t$ is a root of $f \in F[x]$, $\sigma(t)$ is a root of $f$, thus $\sigma(t) \in \{t,it,i^2t,i^3t\}$. Moreover $L = \C(t) = \C(t^4)(t)$, so $\sigma$ is uniquely determined by the image of $t$. As $\vert G \vert =4$, these four possibilities occur and correspond to an element of $G$: if $0 \leq k \leq 3$, there exists one and only one $\sigma_k \in G$ such that 
 $$\sigma_k(t) = i^k t.$$
 Let $\sigma = \sigma_1 : t \mapsto i t$. Then $\sigma^k(t) = i^kt = \sigma_k(t)$, so $\sigma^k = \sigma_k$, and $G = \langle \sigma \rangle$ is cyclic.
 $$G = \{e,\sigma,\sigma^2,\sigma^3\} \simeq \Z/4\Z.$$
@@ -1198,7 +1198,7 @@ $\zeta = \zeta_7 = e^{2i\pi/7}$ being a root of $\Phi_7 = (x^7-1)/(x-1)$, $f=\Ph
 
 The roots of $f$ are the roots of $x^7-1$ distinct of $1$, they are $\zeta, \zeta^2,\cdots,\zeta^6$. The splitting field of $f$ is so $\Q(\zeta, \zeta^2,\cdots,\zeta^6) = \Q(\zeta)$, since $\zeta^k \in \Q(\zeta)$ for all integers $k$.
 
-Conclusion : 
+Conclusion: 
 $L = \Q(\zeta)$, where $\zeta =  e^{2i\pi/7}$, is the splitting field of $f = x^6+x^5+x^4+x^3+x^2+x+1$, and $f$ is the minimal polynomial of $\zeta$.
 
 Therefore $\Q \subset \Q(\zeta)$ is a Galois extension, and
@@ -1220,7 +1220,7 @@ $
 Let $\tilde{H} = \{-\overline{1},+\overline{1}\} \subset (\Z/7\Z)^*$, and $H \subset G$ the corresponding subgroup.  We compute its fixed field $L_H$.
 
 Write $\tau$ the unique element of $G$ such that $\sigma(\zeta) = \zeta^{-1}$. We prove that $H = \{e,\tau\}$.
-As $\overline{\zeta} = \zeta^6 = \zeta^{-1} \in \Q(\zeta)$, the complex conjugation is identity over $L = \Q(\zeta)$ , and $\chi : L \to L, z \mapsto \overline{z}$ is an automorphism ofe de $L$ which is the identity on $\Q$, consequently $\chi \in \Gal(L/\Q)$. Since $\chi(\zeta) = \overline{\zeta} = \zeta^{-1} = \tau(\zeta)$, $\tau = \chi$ is the complex conjugation restricted to $L$, and $H = \{e, \tau\}$.
+As $\overline{\zeta} = \zeta^6 = \zeta^{-1} \in \Q(\zeta)$, then  $\chi : L \to L, z \mapsto \overline{z}$ is an automorphism of $L$ which is the identity on $\Q$, consequently $\chi \in \Gal(L/\Q)$. Since $\chi(\zeta) = \overline{\zeta} = \zeta^{-1} = \tau(\zeta)$, $\tau = \chi$ is the complex conjugation restricted to $L$, $\varphi(\tau) = [-1]$, and $H = \{e, \tau\}$.
 
 For all $z \in L$,
 $$z \in L_H \iff \overline{z} = z \iff z\in L\cap \R$$ 
@@ -1281,20 +1281,20 @@ Thus
  
  We could verify directly the irreducibility of $p$, but it is more simple to proceed so:
  
-$\bullet$ As $p(\alpha)=0$, the minimal polynomial of $q$ of $\alpha$over $\mathbb{Q}$ divides $p$: $q \mid p$,
+$\bullet$ As $p(\alpha)=0$, the minimal polynomial of $q$ of $\alpha$ over $\mathbb{Q}$ divides $p$: $q \mid p$,
 
-$\bullet$  $\Q(\alpha) =L_H$ is the fixed field of $H = \{e,\sigma\}$ (Exercice 6). Then $\Gal(L/L_H) = H$, alors $[L:L_H] = \vert H \vert = 2$, and $$[\Q(\alpha) : \Q] = [L_H:\Q] = [L:\Q]/[L : L_H] = [L:\Q]/ \vert H \vert = 6/2 =3,$$ 
+$\bullet$  $\Q(\alpha) =L_H$ is the fixed field of $H = \{e,\sigma\}$ (Exercice 6). Then $\Gal(L/L_H) = H$, and $[L:L_H] = \vert H \vert = 2$, so $$[\Q(\alpha) : \Q] = [L_H:\Q] = [L:\Q]/[L : L_H] = [L:\Q]/ \vert H \vert = 6/2 =3,$$ 
 
 thus $\deg(q) = [\Q(\alpha) : \mathbb{Q}] = 3 = \deg(p)$,
 
 $\bullet$ Moreover  $p,q$ are monic. 
-Consequently$p=q$, and so $p$ is irreducible over $\Q$,and $\alpha$ is a root of $p$.
+Consequently $p=q$, and so $p$ is irreducible over $\Q$, and $\alpha$ is a root of $p$.
 
-Conclusion : $p=x^3+x^2-2x-1$ is the minimal polynomial of $\alpha = \zeta+\zeta^{-1}$ over $\Q$.
+Conclusion: $p=x^3+x^2-2x-1$ is the minimal polynomial of $\alpha = \zeta+\zeta^{-1}$ over $\Q$.
 
-Note: as an alternative method, to find the minimal polynomial of $\alpha$, we can use the Lagrange's construction described in the proof of Theorem 7.1.1.
+Note: as an alternative method, to find the minimal polynomial of $\alpha$, we can use the Lagrange's construction described in the proof of Theorem 7.1.1:
 
-$3$ generates the cyclic group $(\Z/7\Z)^*$ ($3^2 = 2,3^3 = -1$), so  $\Gal(L/\Q) = \{e,\sigma, \sigma^2,\sigma^3 ,\sigma^4, \sigma^5\}$, where $\sigma$ is characterized by $\sigma(\zeta) = \zeta^3$ (then $\sigma^k(\zeta) = \zeta^{3^k} = \zeta,\zeta^3,\zeta^2,\zeta^{-1},\zeta^{-3}, \zeta^{-2}$ for $k = 0,1,2,3,4,5$). The {\it distinct} images of $\alpha$ by the automorphisms of $G$ are so $\zeta + \zeta^{-1}, \zeta^2+\zeta^{-2},\zeta^3+\zeta^{-3}$, so the minimal polynomial of $\alpha$ over $\Q$ is (see the proof of Th. 7.1.1)
+$3$ is a generator of the cyclic group $(\Z/7\Z)^*$ ($3^2 = 2,3^3 = -1$), so  $\Gal(L/\Q) = \{e,\sigma, \sigma^2,\sigma^3 ,\sigma^4, \sigma^5\}$, where $\sigma$ is characterized by $\sigma(\zeta) = \zeta^3$ (then $\sigma^k(\zeta) = \zeta^{3^k} = \zeta,\zeta^3,\zeta^2,\zeta^{-1},\zeta^{-3}, \zeta^{-2}$ for $k = 0,1,2,3,4,5$). The {\it distinct} images of $\alpha$ by the automorphisms of $G$ are so $\zeta + \zeta^{-1}, \zeta^2+\zeta^{-2},\zeta^3+\zeta^{-3}$, so the minimal polynomial of $\alpha$ over $\Q$ is (see the proof of Th. 7.1.1)
 $$(x-\zeta- \zeta^{-1})(x-\zeta ^{2} - \zeta^{-2})(x-\zeta^3 - \zeta^{-3}).$$
 To expand this polynomial, we use the following Sage instructions:
 \begin{verbatim}
@@ -1310,15 +1310,15 @@ p &= x^3+x^2 -2x-1\\
 &=(x - 2 \cos(2\pi/7))(x- 2 \cos(4\pi/7))(x-2 \cos(6 \pi/7))
 \end{align*}
 \item[(b)]
-By Exercise 6, $\Q(\alpha) = L_H $ is associate with $H$ of order 2 in the Galois correspondence.
+By Exercise 6, $\Q(\alpha) = L_H $ is associate to $H$ of order 2 in the Galois correspondence.
 
-As $G =\Gal(L/F) \simeq (\Z/7\Z)^*$ is Abelian, $H$ is normal in $G$, so $Q \subset L_H$ is a Galois extension.
+As $G =\Gal(L/F) \simeq (\Z/7\Z)^*$ is Abelian, $H$ is normal in $G$, so $\Q \subset L_H$ is a Galois extension.
 
-Consequently all the roots $x_1 = \alpha,x_2,x_3$ of $p$ are in $\Q(\alpha)$, thus $ \mathbb{Q}(\alpha) = \mathbb{Q}(x_1,x_2,x_3)$ is the splitting field of $p$ over $\Q$.
+Consequently all the roots $\alpha,\beta, \gamma$ of $p$ are in $\Q(\alpha)$, thus $ \mathbb{Q}(\alpha) = \mathbb{Q}(\alpha,\beta,\gamma)$ is the splitting field of $p$ over $\Q$.
 
-(In fact the other roots of $p$ are $\sigma(\zeta+ \zeta^{-1}) = \zeta^3+\zeta^{-3}$, et $\sigma^2(\zeta+ \zeta^{-1}) = \zeta^2 + \zeta^{-2}$, and are all in $\Q(\zeta+\zeta^{-1})$.)
+(In fact, the other roots of $p$ are $\sigma(\zeta+ \zeta^{-1}) = \zeta^3+\zeta^{-3} = \alpha^3 - 3 \alpha$, and $\sigma^2(\zeta+ \zeta^{-1}) = \zeta^2 + \zeta^{-2}  = \alpha^2 - 2$, and are all in $\Q(\zeta+\zeta^{-1})$.)
 
-Conclusion:  the splitting field of $p=x^3+x^2-2x-1$ over $\Q$ is $E= \mathbb{Q}(\zeta_7) \cap \mathbb{R} = \mathbb{Q}(\zeta_7 + \zeta_7^{-1})$, et $\Q \subset E$ is a Galois extension of degree 3.
+Conclusion:  the splitting field of $p=x^3+x^2-2x-1$ over $\Q$ is $E= \mathbb{Q}(\zeta_7) \cap \mathbb{R} = \mathbb{Q}(\zeta_7 + \zeta_7^{-1})$, and $\Q \subset E$ is a Galois extension of degree 3.
 
 Moreover (Theorem 7.2.7), $\Gal(E/\Q) \simeq \Gal(L/\Q)/\Gal(L/E) = G/H$.
 
@@ -1329,7 +1329,7 @@ $$\Gal(\Q(\zeta_7+\zeta_7^{-1})/\Q) \simeq \Z/3\Z.$$
 
 \paragraph{Ex. 7.3.9}
 
-{\it Lef $F$ be a field of characteristic different from 2, and let $F\subset L$ be a finite extension. Prove that the following are equivalent:
+{\it Let $F$ be a field of characteristic different from 2, and let $F\subset L$ be a finite extension. Prove that the following are equivalent:
 \be
 \item[(a)] $L$ is a Galois extension of $F$ with $\Gal(L/F)\simeq \Z/2\Z\times \Z/2\Z$.
 \item[(b)] $L$ is the splitting field of a polynomial of the form $(x^2-a)(x^2-b)$, where $a,b \in F$ but $\sqrt{a},\sqrt{b},\sqrt{ab}$ do not lie in $F$.
@@ -1366,9 +1366,9 @@ $$\vert \Gal(L/F) = [L:F] = 4.$$
 
 If $\sigma \in G = \Gal(L/F)$, as $a$ is a root of $x^2 -a \in F[x]$, $\sigma(a)$ also, thus $\sigma(\sqrt{a}) =(-1)^k \sqrt{a},\  0 \leq k \leq 1$. Similarly $\sigma(\sqrt{b}) =(-1)^l \sqrt{b}, \ 0 \leq l \leq 1$. As $\sigma$ is uniquely determined by the images of $\sqrt{a}, \sqrt{b}$, there are at most 4 $F$-automorphisms of $L$.
 
-As $\vert \Gal(L/F) \vert = 4$,  these 4 possibilities occur, and give an element of the Galois group $\Gal(L/F)$,otherwise this group would have less than 4 elements. 
+As $\vert \Gal(L/F) \vert = 4$,  these 4 possibilities occur, and give an element of the Galois group $\Gal(L/F)$, otherwise this group would have less than 4 elements. 
 
-There
+Then
 $G = \{e, \sigma, \tau, \zeta\}$, where 
 \begin{align*}
 \sigma(\sqrt{a}) = -\sqrt{a}, \qquad&\sigma(\sqrt{b}) = \phantom{-}\sqrt{b},\\
@@ -1384,7 +1384,7 @@ $L/F$ is a Galois extension of $F$,  and $\Gal(L/F) \simeq \Z/2\Z \times \Z/2\Z$
 \end{center}
 Then $$[L:F] = \Gal(L/F) = 4.$$
 
-Write $e,\sigma, \tau,\zeta$ the element of $G =\Gal(L/F) $, where $e$ the identity of $G$. As $G  = \{e,\sigma,\tau, \zeta\} \simeq \Z/2\Z \times \Z/2\Z$, $\zeta = \sigma \circ \tau$ and all the elements differnet from $e$ are of order 2.
+Write $e,\sigma, \tau,\zeta$ the elements of $G =\Gal(L/F) $, where $e$ the identity of $G$. As $G  = \{e,\sigma,\tau, \zeta\} \simeq \Z/2\Z \times \Z/2\Z$, $\zeta = \sigma \circ \tau$ and all the elements different from $e$ are of order 2.
 
 The only non trivial subgroups have cardinality 2: they are $\langle \sigma \rangle = \{e,\sigma\}, \langle \tau \rangle = \{e,\tau\},\langle \zeta \rangle = \{e,\zeta\}$.
 
@@ -1413,7 +1413,7 @@ The only non trivial subgroups have cardinality 2: they are $\langle \sigma \ran
 
 The intermediate field corresponding with these subgroups are the fixed fields $$K_\sigma = L_{\langle \sigma\rangle},K_\tau=L_{\langle \tau\rangle},K_\zeta = L_{\langle\sigma \circ \tau\rangle}.$$
 
-As the index in $G$ rof these three subgroups ist 2, $K_\sigma,K_\tau,K_\zeta $ are quadratic extensions of $F$ (by Theorem 7.3.1$[L_H:F] = [\Gal(L/F) : H]$). Since $[L:F] = \Gal(L/F) = 4$, $L$ is a quadratic extension of each of them.
+As the index in $G$ of these three subgroups ist 2, $K_\sigma,K_\tau,K_\zeta $ are quadratic extensions of $F$ (by Theorem 7.3.1$[L_H:F] = [\Gal(L/F) : H]$). Since $[L:F] = \Gal(L/F) = 4$, $L$ is a quadratic extension of each of them.
 
 As the characteristic of $F$ is different from 2, the Exercise 7.1.12 shows that $K_\sigma = F(\alpha)$, where $a=\alpha^2 \in F,\alpha \not \in F$. Write $\alpha = \sqrt{a}$, then $K_\sigma = F(\sqrt{a}),a\in F,\sqrt{a} \not \in F$. Similarly $K_\tau = F(\sqrt{b}), b \in F,\beta = \sqrt{b} \not \in F$.
 
@@ -1428,13 +1428,13 @@ $$\sigma(\sqrt{a}) = \sqrt{a}, \qquad \tau(\sqrt{a}) = - \sqrt{a},$$
 and similarly$$\sigma(\sqrt{b}) = -\sqrt{b}, \qquad \tau(\sqrt{b}) = \sqrt{b}.$$
 As $(\alpha \beta)^2 = ab$, write $\alpha \beta = \sqrt{ab} = \sqrt{a} \sqrt{b}$. Then
 $$\sigma(\sqrt{ab}) = -\sqrt{ab}, \qquad \tau(\sqrt{ab}) = -\sqrt{ab}.$$
-Thus $\sqrt{ab}$ lie not in the fixed field of $G$, so $\sqrt{ab} \not \in F$.
+Thus $\sqrt{ab}$ lies not in the fixed field of $G$, so $\sqrt{ab} \not \in F$.
 
 The intermediate extension $E = F(\sqrt{a},\sqrt{b})$ contains $K_\sigma = F(\sqrt{a})$ and $K_\tau = F(\sqrt{b})$, so  $E \supset L_{\langle \sigma\rangle}, E \supset L_{\langle \tau\rangle}$. Therefore, by the Galois correspondence, $\Gal(L/E) \subset \Gal(L/ L_{\langle \sigma\rangle}) = \langle \sigma\rangle$ and $\Gal(L/E) \subset \langle \tau\rangle$, thus $\Gal(L/E) \subset \langle \sigma \rangle \cap \langle\tau\rangle = \{e\}$. Thus $\Gal(L/E) = \{e\}$, and so $E = L$.
 $$L = F(\sqrt{a}, \sqrt{b}).$$
 As $f =(x^2-a)(x^2-b) = (x-\sqrt{a})(x+\sqrt{a})(x-\sqrt{b})(x+\sqrt{b}) \in F[x]$ splits completely in $L$, the splitting field of $f$ is $F(\sqrt{a},\sqrt{b}) =L$.
 
-The equivalence (a)$\iff$(b) is so proven.
+The equivalence (a)$\iff$(b) is proved.
 \end{proof}
 
 \paragraph{Ex. 7.3.10}
@@ -1471,50 +1471,32 @@ $$\Q(\alpha) = \Q(\beta).$$
 
 $\delta = \alpha + \beta = a+(b+1) \beta \in \Q(\beta)$. Therefore the list $(1,\delta,\delta^2)$ of 3 vectors in a 2-dimensional vector space if linearly dependent over $\Q$, so there exist $(u,v,w) \in \Q^3 \setminus\{(0,0,0)\}$ such that $u\delta^2 + v\delta + w = 0$.
 
-Let $f(x) = u x^2+vx+w \in \Q[x]$. Then $f(\alpha + \beta) = 0$, with $f\neq 0, \deg(f) \leq 2$. If $deg(f)=2$, (c) is proven.
+Let $f(x) = u x^2+vx+w \in \Q[x]$. Then $f(\alpha + \beta) = 0$, with $f\neq 0, \deg(f) \leq 2$. If $\deg(f)=2$, (c) is proved.
 
-It is possible that $\deg(f)<2$, by example if $\beta = -\alpha$. As $f\neq 0$, then  $\deg(p)=0$  is in contradiction with $f(\delta) = 0$,  so in this case $\deg(f) = 1: f(x) = vx+w,\ v\neq 0$. Then $\delta=\alpha+ \beta$ is a root of the polynomial of degree 2 $x(vx+w)$. In both cases,
+But $\deg(f)<2$ is a possibility, for instance if $\beta = -\alpha$. As $f\neq 0$, then  $\deg(p)=0$  is in contradiction with $f(\delta) = 0$,  so in this case $\deg(f) = 1$: $f(x) = vx+w,\ v\neq 0$. Then $\delta=\alpha+ \beta$ is a root of the polynomial of degree 2 $x(vx+w)$. In both cases,
 
 $\alpha + \beta$ is the root of a quadratic polynomial in $\Q[x]$.
 
 \bigskip
 
 (c)$\Rightarrow$(a):
+Suppose that $\alpha + \beta$ is a root of a quadratic polynomial, and suppose on the contrary that $\Q(\alpha) \ne \Q(\beta)$.
+By assumption, $[\Q(\alpha) : \Q] = [\Q(\beta):\Q] = 2$. Therefore $[\Q(\alpha,\beta) : \Q(\beta)] \leq 2$. If $[\Q(\alpha,\beta) : \Q(\beta)] = 1$, then $\alpha \in \Q(\beta)$, so $\alpha = a + b \beta$ for some $a,b \in \Q$, and $b\ne 0$ otherwise $\alpha \in \Q$.
 
-Suppose that $\delta = \alpha + \beta$ is a root of $f= ux^2+vx+w,\ u,v,w\in \Q,\ u\neq 0$.
+ The implication (b) $\Rightarrow $ (a) shows that $\Q(\alpha) = \Q(\beta)$, and this is a contradiction. Therefore $[\Q(\alpha,\beta) : \Q(\beta)] = 2$, and
+$$[\Q(\alpha,\beta) : \Q] = [\Q(\alpha,\beta) : \Q(\beta)] [\Q(\beta) : \Q] = 4.$$
+Write $L = \Q(\alpha,\beta)$. Then $[L :\Q]=4$.
 
-The minimal polynomial of $\delta$ over $\Q$ divides $f$, thus $[\Q(\delta):\Q]\leq 2$. 
+Let $f = x^2 +rx+s,g = x^2+r'x+s'  \in \Q[x]$ be the minimal polynomials of $\alpha,\beta$ over $\Q$, and write $\alpha, \alpha'$ the roots of $f$, $\beta, \beta'$ the root of $g$.
 
-If $[\Q(\delta):\Q]=1$, then $\alpha + \beta = c \in \Q$, therefore $\Q(\alpha) = \Q(\beta)$.
-
-It remains only the case  $[\Q(\delta):\Q]=2$, which is now our hypothesis.
-
-With a reductio ad absurdum, suppose that $\Q(\alpha) \neq \Q(\beta)$. Then $\alpha \not \in \Q(\beta)$, otherwise $\alpha = a+b\beta, a,b \in \Q$, and $b\neq 0$,  otherwise the degree of $\alpha$ would be 1.
-
-But the implication (b)$\Rightarrow$(a) shows that $\Q(\alpha) = \Q(\beta)$, in contradiction with the hypothesis.
-
- Therefore $\alpha \not \in \Q(\beta)$. 
- Moreover
- \begin{align*}
- 0 &=u(\alpha+\beta)^2+v(\alpha+\beta)+w \\
- &=u\alpha^2 + (2u\beta + v) \alpha + (u\beta^2+v\beta^2+w)
- \end{align*}
- so $\alpha$ is a root of a polynomial $g \in \Q(\beta)[x]$, the degree of $\alpha$ over $\Q(\beta)$ is at most 2, and is different from 1 since $\alpha \not \in \Q(\beta)$.
-
-Consequently $[\Q(\alpha,\beta):\Q(\beta)] = [\Q(\beta)(\alpha):\Q(\beta)] = 2$, and
-$$[\Q(\alpha,\beta):\Q] = [\Q(\alpha,\beta):\Q(\beta)]\ [\Q(\beta):\Q] = 4.$$
-Write $L = \Q(\alpha,\beta)$. Then $[L/\Q]=4$.
-
-Soit $f = x^2 +rx+s,g = x^2+r'x+s'  \in \Q[x]$ les polynômes minimaux de $\alpha,\beta$ sur $\Q$, et notons $\alpha, \alpha'$ les racines de $f$, $\beta, \beta'$ les racines de $g$.
-
-As $\alpha+\alpha'= -r \in \Q$, $\alpha' \in \Q(\alpha)$, and similarly $\beta' \in \Q(\beta)$. Therefore the splitting field of $fg$ is $\Q(\alpha,\alpha',\beta,\beta') = \Q(\alpha,\beta)$.  This shows that $\Q \subset \Q(\alpha,\beta)/\Q$ is a normal extension, and also separable since the characteristic of $\Q$ is 0. So $\Q \subset L$ is a Galois extension, therefore
+As $\alpha+\alpha'= -r \in \Q$, $\alpha' \in \Q(\alpha)$, and similarly $\beta' \in \Q(\beta)$. Therefore the splitting field of $fg$ is $\Q(\alpha,\alpha',\beta,\beta') = \Q(\alpha,\beta)$.  This shows that $\Q \subset \Q(\alpha,\beta)$ is a normal extension, and also separable since the characteristic of $\Q$ is 0. So $\Q \subset L$ is a Galois extension, therefore
 $$ \vert \Gal(L/\Q) \vert = [L:\Q]=4.$$
-Par conséquent, en notant $G =  \Gal(L/\Q)$,
+Consequently, if we write $G =  \Gal(L/\Q)$,
 $$G \simeq \Z/4\Z \ \mathrm{or}\ G \simeq \Z/2\Z \times \Z/2\Z.$$
 
 $\bullet$ If $G \simeq \Z/4\Z$, as $ \Z/4\Z$ has a unique subgroup $H$ of index 2 in $G$, there exists a unique quadratic extension of $\Q$ included in $L$, and so $\Q(\alpha) = \Q(\beta) = L_H$, in contradiction with the hypothesis.
 
-$\bullet$ We suppose now that $G \simeq \Z/2\Z \times \Z/2\Z$. Then by the Galois correspondence, the extension $\Q(\alpha)$ correspond with a subgroup $H$ of index 2 in $G$, thus of order $4/2 =$ 2. So $H = \{e,\sigma\}$, and $\Q(\alpha) = L_H$ is the fixed field of $\sigma$. Similarly there exists $\tau \in G, \tau \neq \sigma$, such that $\Q(\beta)$ is the fixed field of $K = \{e ,\tau\}$.
+$\bullet$ We suppose now that $G \simeq \Z/2\Z \times \Z/2\Z$. Then by the Galois correspondence, the extension $\Q(\alpha)$ corresponds to a subgroup $H$ of index 2 in $G$, thus of order $4/2 =$ 2. So $H = \{e,\sigma\}$, and $\Q(\alpha) = L_H$ is the fixed field of $\sigma$. Similarly there exists $\tau \in G, \tau \neq \sigma$, such that $\Q(\beta)$ is the fixed field of $K = \{e ,\tau\}$.
 There exist exactly 3 subgroups of $G$ of index 2 : $\langle \sigma \rangle, \langle \tau \rangle,\langle \zeta \rangle$, where $\zeta = \sigma \tau = \tau \sigma$,  in correspondence with 3 quadratic sub-extensions of $\Q \subset L$,  two of them being $\Q(\alpha), \Q(\beta)$. As every quadratic extension of $\Q$, the third is of the form $\Q(\gamma), \gamma \in L$, fixed field of $\{e,\zeta\}$.
 
 \bigskip
@@ -1540,20 +1522,16 @@ There exist exactly 3 subgroups of $G$ of index 2 : $\langle \sigma \rangle, \la
 
 \bigskip
 
-We show that $\Q(\alpha+\beta) = \Q(\gamma)$. $\Q(\alpha+\beta)$ is a quadratic etension of $\Q$, so is equal to $\Q(\alpha), \Q(\beta)$ or $\Q(\gamma)$.
+We show that $\Q(\alpha+\beta) = \Q(\gamma)$. $\alpha + \beta \not \in \Q$, otherwise $\Q(\alpha) = \Q(\beta)$, so $\Q(\alpha+\beta)$ is a quadratic extension of $\Q$, therefore  is equal to $\Q(\alpha), \Q(\beta)$ or $\Q(\gamma)$.
 
-If $\Q(\alpha+\beta) = \Q(\alpha)$, then $\alpha+ \beta \in \Q(\alpha)$, thus $\alpha+\beta = a+b\alpha, \ a,b \in \Q$, with $b\neq 1$, otherwise $\beta = a \in \Q$.
-Then $\alpha = \frac{a-\beta}{1-b} \in \Q(\beta)$, which is false.
-
-If $\Q(\alpha+\beta) = \Q(\beta)$, $\alpha+ \beta = c+d \beta,\ c,d \in \Q$. Then $\alpha = c+ (d-1)\beta \in \Q(\beta)$: this is impossible.
-
-It remains only the possiblity $\Q(\alpha+ \beta) = \Q(\gamma)$, fixed field of $\zeta = \sigma \tau$.
+$\Q(\alpha+\beta) \ne \Q(\beta)$, otherwise $\beta \in \Q(\beta)$, and so $\Q(\alpha) = \Q(\beta)$. Similarly $\Q(\alpha+\beta) \ne \Q(\alpha)$.
+It remains only the possibility $\Q(\alpha+ \beta) = \Q(\gamma)$, fixed field of $\zeta = \sigma \circ \tau$.
 
 Note that $\tau(\alpha) \neq \alpha$, otherwise $\alpha \in L_{\langle \tau \rangle} = \Q(\beta)$, which is excluded. 
 
-As $\alpha + \beta \in \Q(\gamma) = L_{\langle \sigma \tau \rangle}$, $(\sigma \tau)(\alpha + \beta) = \alpha + \beta$.
+As $\alpha + \beta \in \Q(\gamma) = L_{\langle \sigma \tau \rangle}$, $$(\sigma \tau)(\alpha + \beta) = \alpha + \beta.$$
 
-But we have also $(\sigma \tau)(\alpha + \beta) = (\sigma \tau)(\alpha) + (\sigma \tau)(\beta )=( \tau \sigma)(\alpha) + (\sigma \tau)(\beta ) = \tau(\alpha)+ \sigma(\beta)$.
+But, since $G$ is commutative, we have also $$(\sigma \tau)(\alpha + \beta) = (\sigma \tau)(\alpha) + (\sigma \tau)(\beta )=( \tau \sigma)(\alpha) + (\sigma \tau)(\beta ) = \tau(\alpha)+ \sigma(\beta).$$
 
 Therefore $\alpha+ \beta = \tau(\alpha) + \sigma(\beta)$, thus $\alpha - \tau(\alpha) = \sigma(\beta) - \beta$.
 
@@ -1564,28 +1542,9 @@ Thus $\sigma(\beta) = \beta+c, \tau(\alpha) = \alpha-c, c\in \Q^*$.
 
 Then $(\sigma\tau)(\alpha+ \beta) = \alpha+\beta$, so the orbit of $\alpha + \beta$ under the action of $G = \{e,\sigma, \tau, \sigma \tau\}$ is ${\cal O}_{\alpha+\beta} =\{ \alpha+\beta, \alpha+\beta+c,\alpha+\beta-c\}$ has exactly 3 elements. As the cardinality of the orbit is the index of the stabilizer of $\alpha+ \beta$ in $G$, so divides the order of $G$, we would have $3 \mid 4 = \vert G \vert$: this is a contradiction, obtained under the hypothesis $\Q(\alpha) \neq \Q(\beta)$, so
 $$\Q(\alpha) = \Q(\beta).$$
-(c)$\Rightarrow$(a) is proven.
+(c)$\Rightarrow$(a) is proved.
 
-\bigskip
 
-Note : we give an alternative proof of the last part, in the case  where ${G \simeq \Z/2\Z \times \Z/2\Z}$:
-
-$\alpha$ is a root of $f = x^2+rx+s = (x+\frac{r}{2})^2 -\frac{r^2-4s}{4} \in \Q[x]$.
-Write $\alpha' = \alpha +\frac{r}{2}$, then $\Q(\alpha) = \Q(\alpha')$, and $\alpha' = \sqrt{a}$, where $a= \frac{u^2-4v}{4} \in \Q$.
-Similarly $\Q(\beta) = \Q(\beta')$, where $\beta' = \sqrt{b}, \ b \in \Q$.
-
-The hypothesis $\Q(\alpha) \neq \Q(\beta)$ becomes so $\Q(\sqrt{a}) \neq \Q(\sqrt{b})$. 
-
-Let $\sigma : \sqrt{a} \mapsto -\sqrt{a}, \sqrt{b} \mapsto \sqrt{b}, \tau : \sqrt{a} \mapsto \sqrt{a}, \sqrt{b} \mapsto -\sqrt{b}$. Then $G = \{e,\sigma,\tau ,\sigma \tau\}$. The fixed field of $\sigma \tau$ is a quadratic extension, of the form $\Q(\gamma')$.
-We have the same Galois correspondence, with $L = \Q(\sqrt{a},\sqrt{b})$, $\Q(\sqrt{a}) \neq \Q(\sqrt{b})$, and the third quadratic extension is then $\Q(\sqrt{ab}) = \Q(\gamma')$. Indeed this is a quadratic extension, and $\sqrt{ab}$ is fixed by neither $\sigma$, nor by $\tau$, thus $\Q(\sqrt{ab}) \neq \Q(\sqrt{a}), \Q(\sqrt{ab}) \neq \Q(\sqrt{b})$.
-
-$\Q(\alpha+\beta) = \Q(\sqrt{a}+\sqrt{b})$, since $(\alpha+\beta) - (\sqrt{a}+ \sqrt{b}) \in \Q$, therefore $\Q(\sqrt{a}+\sqrt{b})$ is a quadratic extension of $\Q$.
-
-$\sqrt{a} + \sqrt{b}$ is not fixed by $\sigma$,  thus doesn't lie in $\Q(\sigma)$, consequently  $\Q(\sqrt{a} + \sqrt{b}) \neq \Q(\sqrt{a})$. Similarly $\Q(\sqrt{a} + \sqrt{b}) \neq \Q(\sqrt{b})$, therefore $\Q(\sqrt{a} + \sqrt{b}) = \Q(\sqrt{ab})$.
-
-But then $\sqrt{a} + \sqrt{b} = c + d \sqrt{ab}, \ c,d \in \Q$. So $\sqrt{a}(1 - d\sqrt{b}) = c - \sqrt{b}$, with $1 -d \sqrt{b} \neq 0$, otherwise $\sqrt{b} = c \in \Q$. Then $\sqrt{a}  = \frac{c - \sqrt{b}}{1 - d\sqrt{b}} \in \Q(\sqrt{b})$, which is equivalent to $\alpha \in \Q(\beta)$: this is impossible.
-
-Conclusion : $\Q(\alpha) = \Q(\beta)$, under the hypothesis (c).
 \end{proof}
 
 \paragraph{Ex. 7.3.11}
@@ -1593,18 +1552,15 @@ Conclusion : $\Q(\alpha) = \Q(\beta)$, under the hypothesis (c).
 {\it Let $F\subset L$ be a Galois extension, and let $F\subset K \subset L$ be an intermediate field. Then let $N$ be the normalizer of $\Gal(L/K) \subset \Gal(L/F)$. Prove that the fixed field $L_N$ is the smallest subfield of $K$ such that $K$ is Galois over the subfield.
 }
 
-\begin{proof}
-$\bullet$   Let $\alpha \in L_N$. Then, for all $\sigma \in N,\ \sigma(\alpha) = \alpha$. As $H = \Gal(L/K) \subset N$, every $\sigma \in \Gal(L/K)$ satisfies $\sigma(\alpha) = \alpha$, which means that $\alpha$ is in the fixed field $L_H$ of $H$. Moreover the extension $K \subset L$ is Galois, so $L_H = L_{\Gal(L/K)} = K$. Therefore $\alpha \in K$, so
-$$L_N \subset K.$$
-As $L_N$ is a subfield of $L$ included in $K$, $L_N$ is a subfield of $K$.
+\begin{proof} As $N = N_G(H)$ is the largest subgroup of $G = \Gal(L/F)$ such that $H = \Gal(L/K)$ is normal in $N$, since the Galois correspondance reverse inclusions, $L_N$ is the smallest subfield of $K = L_H$ such that the extension $L_N \subset K$ is normal. We give the details.
 
+$\bullet$  Write $H = \Gal(L/K)$. Then $L_H = K$. Since $H \subset N$, then $L_H \supset L_N$, so $L_N$ is a subfield of $K$.
+$$L_N \subset K,$$
 
 $\bullet$ 
-Let $\sigma \in \Gal(L/L_N)$. As $L$ is Galois over every intermediate field, $L$ is Galois over $L_N$, so $\Gal(L/L_N) = N$. Therefore, $\sigma$ lies on the normalizer of $H = \Gal(L/K)$, thus $\sigma H \sigma^{-1} = H$. By the Exercise 7.2.7, $\sigma K = K$.
-
-$L_N \subset K \subset L$, and for every $\sigma \in \Gal(L/L_N),\  \sigma K = K$. By Theorem 7.2.5, this implies that 
+$H$ is a normal subgroup of $N = N_G(H)$. Therefore the extension $L_N \subset L_H = K$ is normal (Theorem 7.3.2).
 \begin{center}
-$K/L_N$ is a Galois extension.
+$L_N \subset K$ is a Galois extension.
 \end{center}
 
 $\bullet$ 
@@ -1612,16 +1568,12 @@ Let  $F \subset M \subset K$ an intermediate field,  such that $M \subset K$ is 
 
 Let $S = \Gal(L/M)$. $S$ is a subgroup of $G=\Gal(L/F)$ since $ F \subset M \subset K$.
 
-Then, for all $\sigma \in S =  \Gal(L/M), \sigma K = K$ (Theorem 7.2.5).
-
-Thus (Ex. 7.2.7), $\sigma \Gal(L/K) \sigma^{-1} = \Gal(L/K)$, namely $\sigma H \sigma^{-1} = H$, so $\sigma \in N$. 
-
-Consequently
+The extension $M \subset K$ is normal. Therefore the subgroup $H = \Gal(L/K)$ is normal in $S = \Gal(L/M)$ (Theorem 7.3.2). Since the normalizer $N = N_G(H)$ is the largest subgroup of $G$ with this property, we conclude 
 $S = \Gal(L/M) \subset N$, therefore $M = L_S \supset L_N$.
 
 \bigskip
 
-Conclusion : $L_N$ is the smallest subfield of $K$ such that $K$ is Galois over the subfield.
+Conclusion: $L_N$ is the smallest subfield of $K$ such that $K$ is Galois over the subfield.
 \end{proof}
 
 \paragraph{Ex. 7.3.12}
@@ -1645,7 +1597,7 @@ $H = eHe^{-1} \supset \bigcap\limits_{g\in G}gHg^{-1}=N$, so $ N \subset H \subs
 
 If any subgroup $M$ of $H$ is normal in G, then for all $g\in G$, $gMg^{-1} = M$, therefore $M = \bigcap\limits_{g\in G}gMg^{-1} \subset \bigcap\limits_{g\in G}gHg^{-1}=N$.
 
-Conclusion :  $\mathrm{Core}_G(H) = \bigcap\limits_{g\in G}gHg^{-1}$ is the largest subgroup of $H$ normal in $G$.
+Conclusion:  $\mathrm{Core}_G(H) = \bigcap\limits_{g\in G}gHg^{-1}$ is the largest subgroup of $H$ normal in $G$.
 \end{enumerate}
 \end{proof}
 
@@ -1663,9 +1615,9 @@ Since $N \subset H, L_N \supset L_H = K$, so $K$ is a subfield of $L_N$.
 \be
 \item[$\bullet$] As $N$ is normal in $G$, $M = L_N$ is a Galois extension of $F$.
 
-\item[$\bullet$] Let $M'$ an extension of $K$ such that $M'$ is Galois over $F$, and suppose first that $M'\subset L$. Posons alors $S = \Gal(L/M')$.
+\item[$\bullet$] Let $M'$ an extension of $K$ such that $M'$ is Galois over $F$, and suppose first that $M'\subset L$. We call $S = \Gal(L/M')$.
 
-As $F \subset M'$ is a Galois extension, $S = \Gal(L/M')$ is normal in $G$, and since $K \subset M'$, $H = \Gal(L/K) \supset \Gal(L/M') = S$. So $S$ is a normal subgroup of $H$ normal in $G$. By exercise 12, $S \subset N = \mathrm{Core}_G(H)$, thus $M = L_N \subset L_S = M'$.
+As $F \subset M'$ is a Galois extension, $S = \Gal(L/M')$ is normal in $G$, and since $K \subset M'$, $H = \Gal(L/K) \supset \Gal(L/M') = S$. So $S$ is a subgroup of $H$, and $S$ is normal in $G$. By exercise 12, $S \subset N = \mathrm{Core}_G(H)$, thus $M = L_N \subset L_S = M'$.
 
 $M=L_N$ is so the smallest intermediate field of the extension $F\subset L$ which contains $K$ and is a Galois extension of $F$.
 
@@ -1698,7 +1650,7 @@ $$
 \end{array}
 \right.
 $$
-Consequently $G =  \Gal(\Q(\zeta_n)/\Q)$ is isomorphic to a subgroup of  $(\Z/n\Z)^*$, so $G$ is Abelian. As all subgroups of an Abelian group are normal, $H = \Gal(\Q(\zeta_n)/L)$ is a normal subgroup of $G$, therefore (Theorem 7.2.5) $\Q \subset L$ is a Galois extension, a fortiori a normal extension, and $\Gal(L/\Q) \simeq \Gal(\Q(\zeta_n)/\Q) / \Gal(\Q(\zeta_n)/L)$ is isomorphic to a quotient group of an Abelian group, so is Abelian: the implication (b)$\Rightarrow$(a) of Theorem 6.5.5 is proven.
+Consequently $G =  \Gal(\Q(\zeta_n)/\Q)$ is isomorphic to a subgroup of  $(\Z/n\Z)^*$, so $G$ is Abelian. As all subgroups of an Abelian group are normal, $H = \Gal(\Q(\zeta_n)/L)$ is a normal subgroup of $G$, therefore (Theorem 7.2.5) $\Q \subset L$ is a Galois extension, a fortiori a normal extension, and $\Gal(L/\Q) \simeq \Gal(\Q(\zeta_n)/\Q) / \Gal(\Q(\zeta_n)/L)$ is isomorphic to a quotient group of an Abelian group, so is Abelian: the implication (b)$\Rightarrow$(a) of Theorem 6.5.5 is proved.
 \end{proof}
 
 \paragraph{Ex. 7.3.15}
@@ -1722,7 +1674,7 @@ $$\sigma_{a,b}(\zeta_p) = \zeta_p^a, \sigma_{a,b}(\sqrt[p]{2}) = \zeta_p^b \sqrt
 $T'$ is so the set of the $\sigma_{1,b},\  b \in \F_p$, where $\sigma_{1,b}(\zeta_p) = \zeta_p$. Therefore $$ \Q(\zeta_p) \subset L_{T'}.$$
  $T' = \Gal(L/L_{T'})$, thus $p = \vert T' \vert = [L:L_{T'}]$.
  
-Moreover, $[\Q(\zeta_p, \sqrt[p]{2}):\Q(\zeta_p)] = p$, since $p-1 = [\Q(\zeta_p) : \Q]$ and $[\Q(\sqrt[p]{2}:\Q] = p$ are relatively prime.
+Moreover, $[\Q(\zeta_p, \sqrt[p]{2}):\Q(\zeta_p)] = p$, since $p-1 = [\Q(\zeta_p) : \Q]$ and $[\Q(\sqrt[p]{2}):\Q] = p$ are relatively prime.
 
 Thus $[L:L_{T'}] = [L:\Q(\zeta_p)]$, so $[L_{T'}:\Q] = [\Q(\zeta_p):\Q]$, with $ \Q(\zeta_p) \subset L_{T'}$, therefore
 $$ \Q(\zeta_p) = L_{T'}.$$
@@ -1733,7 +1685,7 @@ $$\Q(\sqrt[p]{2}) \subset L_{D'}.$$
 By Theorem 7.3.1(b), $[L:L_{D'}] = \vert D' \vert = p-1 = [L : \Q(\sqrt[p]{2})]$, so we can conclude
 $$\Q(\sqrt[p]{2}) = L_{D'}.$$
 
-As $\sigma_{a,b} (\sqrt[p]{2}) = \sigma_p^b \sqrt[p]{2}$, the conjugate fields of $L_{D'}$ are the fields 
+As $\sigma_{a,b} (\sqrt[p]{2}) = \zeta_p^b \sqrt[p]{2}$, the conjugate fields of $L_{D'}$ are the fields 
 
 $$ \Q(\zeta_p^b\sqrt[p]{2}),\qquad b=0,\cdots,p-1.$$
 \end{enumerate}
@@ -2037,7 +1989,7 @@ $p \mid f, \deg(p) = \deg(f)$, and $f,p$ are monic, thus $f = p$. Therefore $f$ 
 }
 
 \begin{proof}
-By hypothesis, $P \in F[x]$ divides in $F[x,y]$ lthe polynomial 
+By hypothesis, $P \in F[x]$ divides in $F[x,y]$ the polynomial 
 $$Q = Q(x,y) = a_0(x)+a_1(x)y+\cdots+a_m(x)y^m,$$
 so $Q(x,y) = P(x)S(x,y) , S \in F[x,y]$. The evaluation $y \mapsto 0$ gives 
 $$a_0(x) = Q(x,0) = P(x)S(x,0),$$
@@ -2047,7 +1999,7 @@ By induction, we suppose that $P \mid a_i, \ 0 \leq i < k$, où $k\leq m$.
 
 Then $P$ divides $a_k(x)y^k+\cdots a_m(x)y^m = y^k(a_k(x)+ \cdots + a_m(x) y^{m-k}$.
 
-In the UFD $F[x,y]$, every factor of $y^k$ is associate to $y$, and $y$ doesn't divide $P(x)$. Therefore $P(x)$ et $y^k$ are relatively prime, so $P$ divides $a_k(x)+ \cdots + a_m(x) y^{m-k}$. The same evaluation $y\mapsto 0$ gives then $p \mid a_k$, so the induction is done. Consequently
+In the UFD $F[x,y]$, every irreducible factor of $y^k$ is associate to $y$, and $y$ doesn't divide $P(x)$. Therefore $P(x)$ et $y^k$ are relatively prime, so $P$ divides $a_k(x)+ \cdots + a_m(x) y^{m-k}$. The same evaluation $y\mapsto 0$ gives then $p \mid a_k$, so the induction is done. Consequently
 $$P \mid a_i,\  0 \leq i \leq m.$$
 \end{proof}
 
@@ -2064,7 +2016,7 @@ Suppose that $f(x,y) $ is irreducible $F[x,y]$.  We prove that it is irreducible
 
 In the context of the Exercise 7.5.2, take $R = F[y]$, whose field of fractions is $F(y)$.
 
-Suppose that $f = gh$, where $g,h \in F(y)[x]$. By Theorem A.5.8, there exists $\delta \in F(y),\delta \neq 0,$ such that $\tilde{g} = \delta g \in F[y][x] = F[x,y]$ and $\tilde{h} = \delta^{-1} h \in F[x,y]$. Then $f = \tilde{g} \tilde{h}$, où $f, \tilde{g},\tilde{h} \in F[x,y]$. As $f$ is irreducible in $F[x,y]$, $\tilde{g} \in F^*$ or $\tilde{f} \in F^*$. Then $g \in F(y)$ or $h\in F(y)$, the irreducibility of $f$ in $F(y)[x]$.
+Suppose that $f = gh$, where $g,h \in F(y)[x]$. By Theorem A.5.8, there exists $\delta \in F(y),\delta \neq 0,$ such that $\tilde{g} = \delta g \in F[y][x] = F[x,y]$ and $\tilde{h} = \delta^{-1} h \in F[x,y]$. Then $f = \tilde{g} \tilde{h}$, where $f, \tilde{g},\tilde{h} \in F[x,y]$. As $f$ is irreducible in $F[x,y]$, $\tilde{g} \in F^*$ or $\tilde{f} \in F^*$. Then $g \in F(y)$ or $h\in F(y)$, which proves the irreducibility of $f$ in $F(y)[x]$.
 
 In particular, $p(x) - y q(x)$, irreducible in $F[x,y]$, is so irreducible in $F(y)[x]$.
 \end{proof}
