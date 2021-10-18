@@ -1695,40 +1695,35 @@ $$ \Q(\zeta_p^b\sqrt[p]{2}),\qquad b=0,\cdots,p-1.$$
 
 \paragraph{Ex. 7.4.1}
 
-{\it Give a detailed proof of Proposition 7.4.2 :
+{\it Give a detailed proof of Proposition 7.4.2:
 
-Let $f\in F[x]$ be a monic irreducible separabel cubic, where $F$ has characteristic $\ne 2$. If $L$ is the splitting field of $f$ over $F$, then
+Let $f\in F[x]$ be a monic irreducible separable cubic, where $F$ has characteristic $\ne 2$. If $L$ is the splitting field of $f$ over $F$, then
 $$
 \Gal(L/F) \simeq 
 \left\{
 \begin{array}{ll}
- \Z/3\Z &   \mathrm{if}\ \Delta(f)\ \mathrm{is}\  \mathrm{a}\  \mathrm{square}\  \mathrm{in} \ F,   \\
-  S_3&        \mathrm{otherwise}
+ \Z/3\Z, &   \mathrm{if}\ \Delta(f)\ \mathrm{is}\  \mathrm{a}\  \mathrm{square}\  \mathrm{in} \ F,   \\
+  S_3,&        \mathrm{otherwise.}
 \end{array}
 \right.
 $$
 }
 
 \begin{proof}
-By Exercise 6.2.6, $f$ being irreducible and separable, $F \subset L$ is a Galois extension and so $n = \vert \Gal(L/F) \vert = [L:F]$ is a multiple of $3 = [F(\alpha) : F]$, where $\alpha$ is a root of $f$ in $L$. Moreover $\Gal(L/F)$ is isomorphic to a subgroup $H$ of $S_3$, so $n \mid 6$: $n=3$ or $n=6$. 
-\be
-\item[(a)] If $n=6$, $H = S_3$, so $\Gal(L/F) \simeq S_3$.
+Since $L$ is the splitting field of the separable polynomial $f$, $F \subset L$ is a Galois extension.
 
-\item[(b)] If $n=3$, $H$ is a subgroup of order 3 of $S_3$, so is cyclic : 
-$H = \langle \sigma \rangle, \sigma \in S_3$. 
-As $|\sigma| = 3$ in $S_3$,  $\sigma$ is a 3-cycle,
-so $\sigma =(1 2 3)$ or $\sigma = (1 3 2)$, thus $H = \langle \sigma \rangle = A_3$, and $\Gal(L/F) \simeq A_3$. By Theorem 7.4.1, $\Gal(L/F)  \simeq H \subset A_3$ if and only if $\sqrt{\Delta(f)} \in F$. $\Gal(L/F) \subset A_3$ is true only in case (b), so 
-
+By Exercise 6.2.6, $f$ being irreducible and separable, $n = \vert \Gal(L/F) \vert $ is a multiple of $3 = \deg(f)$. Moreover $\Gal(L/F)$ is isomorphic to a subgroup $H$ of $S_3$, so $n \mid 6$: $n=3$ or $n=6$. Since $S_3$ has a unique subgroup of cardinality 3, namely $A_3 \simeq \Z/3\Z$,
+$$\Gal(L/F) \simeq A_3 \text{ or } \Gal(L/F) \simeq S_3.$$ 
+By Theorem 7.4.1, since the characteristic of $F$ is different from 2, $\Gal(L/F) \simeq H \subset A_3$ if and only if $\sqrt{\Delta} \in F$, therefore
 $$
 \Gal(L/F) \simeq 
 \left\{
 \begin{array}{ll}
- \Z/3\Z &   \mathrm{if}\ \Delta(f)\ \mathrm{is}\  \mathrm{a}\  \mathrm{square}\  \mathrm{in} \ F,   \\
-  S_3&        \mathrm{otherwise}
+ \Z/3\Z, &   \mathrm{if}\ \Delta(f)\ \mathrm{is}\  \mathrm{a}\  \mathrm{square}\  \mathrm{in} \ F,   \\
+  S_3,&        \mathrm{otherwise.}
 \end{array}
 \right.
 $$
-\ee
 \end{proof}
 
 \paragraph{Ex. 7.4.2}
@@ -1748,9 +1743,9 @@ $$
 \item[(a)]
 $f= x^3-4x+2.$
 
-$f$ is irreducible by the Schönemann-Eisenstein Criterion with $p = 2$. Comme la caractéristique de $\Q$ est nulle, il est donc séparable : le théorème 7.4.2 s'applique.
+$f$ is irreducible by the Schönemann-Eisenstein Criterion with $p = 2$.
 $$ \Delta(f) = -4p^3-27q^2 = -4(-4)^3 - 27(2)^2 = 256 -108 = 148 = 2^2\times 37 .$$
-As $\Delta(f) \ne 0$, $f$ is separable, so Theorem 7.4.2 applies to $f$.
+As $\Delta(f) \ne 0$, $f$ is separable, so Proposition 7.4.2 applies to $f$.
 
 Recall that an integer $k\in \Z$ is a square in $\Q$ if and only if it is a square in $\Z$. As $37$ is not a square, $\Delta(f)$ is not a square in $\Q$, so
 
@@ -1762,7 +1757,7 @@ $$\Gal_{\Q(\sqrt{37})}( x^3-4x+2) = A_3.$$
 \item[(c)] $f=x^3-3x+1$.
 
 If $\alpha = p/q,\ p\wedge q=1$ is a root of $f$ dans $\Q$, then $p^3 - 3 pq^2+q^3 = 0$, thus $p \mid q, q\mid p$ with $p\wedge q = 1$, therefore $\alpha = \pm1$, but nor 1 neither $-1$ is a root of $f$, thus $f$ has no rational root. As $\deg(f) = 3$, $f$ is irreducible over $\Q$.
-$\Delta(f) = -4(-3)^3 - 27 = 81 = 9^2$, thus $\Delta (f) \ne 0$ and so $f$ is separable. Moreover $\Delta(f) = 9^2$ is a square in  $\Q$. By theorem 7.4.2,
+$\Delta(f) = -4(-3)^3 - 27 = 81 = 9^2$, thus $\Delta (f) \ne 0$ and so $f$ is separable. Moreover $\Delta(f) = 9^2$ is a square in  $\Q$. By Proposition 7.4.2,
 $$\Gal_{\Q}(x^3-3x+1) = A_3.$$
 
 \item[(d)]
@@ -1796,7 +1791,7 @@ $$\Gal_{\Q(t)}(x^3-t) = S_3.$$
 Let  $f = f(x_1,\cdots,x_n) \in F[x_1,\cdots,x_n]$ that is invariant under $A_n$.
 By Theorem 7.4.4, $f=A + B\sqrt{\Delta}, \ A,B \in F(\sigma_1,\cdots,\sigma_n)$.
 \begin{enumerate}
-\item[(a)] Soit $\tau = (1 2)$.
+\item[(a)] Let $\tau = (1 2)$.
 
 By (7.16),  $\tau \cdot\sqrt{\Delta} = \mathrm{sgn}(\tau) \sqrt{\Delta} = - \sqrt{\Delta}$.
 
@@ -1809,14 +1804,14 @@ $$f + \tau \cdot f = 2 A.$$
 
 Then $P = (B\sqrt{\Delta})(-B \sqrt{\Delta}) = -B^2 \Delta$.
 
-\item[(d)] Posons $B = u/v, \ u,v \in F[\sigma_1,\cdots,\sigma_n]$, $u,v$ premiers entre eux. Then $v^2 P = -u^2 \Delta$.
+\item[(d)] Posons $B = u/v, \ u,v \in F[\sigma_1,\cdots,\sigma_n]$, where $u,v$ are relatively prime. Then $v^2 P = -u^2 \Delta$.
 
 As $\tau \cdot P = (\tau\cdot(f-A))(\tau \cdot(\tau\cdot(f-A))) = (\tau\cdot(f-A))(f-A) = P$, $P$ is invariant under $A_n$ and also invariant under $\tau$, thus is invariant under $S_n$, and $P$ is a polynomial in $x_1,\cdots,x_n$, since $f, A \in F[x_1,\ldots,x_n]$. Therefore there exists a polynomial $g$ such that $P = g(\sigma_1, \cdots, \sigma_n)$, and 
 $v^2 g = -u^2 \Delta$ is an equality in $F[\sigma_1, \cdots \sigma_n]$: $u,v,g,\Delta \in F[\sigma_1,\cdots,\sigma_n]$.
 
 By Exercise 2.4.8, $\Delta$ is irreducible in $F[\sigma_1,\cdots, \sigma_n]$. Moreover $v^2$ divides $u^2 \Delta$ and is relatively prime with $u^2$, thus $v^2$ divides $\Delta$, where $\Delta$ is irreducible. This is impossible, unless $v$ is a constant $\lambda \in F^*$. Therefore $B = \lambda^{-1} u$ is a polynomial in $\sigma_1,\cdots,\sigma_n$.
 
-Conclusion : if  $f = f(x_1,\cdots,x_n) \in F[x_1,\cdots,x_n]$ is invariant under $A_n$, where the characteristic of $F$ is not 2,
+Conclusion: if  $f = f(x_1,\cdots,x_n) \in F[x_1,\cdots,x_n]$ is invariant under $A_n$, where the characteristic of $F$ is not 2,
 then  $$f=A + B\sqrt{\Delta}, \ A,B \in F[\sigma_1,\cdots,\sigma_n].$$
 
 \end{enumerate}
@@ -1850,27 +1845,27 @@ $\bullet$ $\varphi_g$ is injective: let $h,k \in G$.
 If $\varphi_g(h) = \varphi_g(k)$, then $gh = gk$, therefore $g^{-1} gh = g^{-1} gk$, $h=k$.
 $$\forall h \in G,\ \forall k \in G, \ \varphi_g(h) = \varphi_g(k) \Rightarrow h=k.$$
 
-$\bullet$ $\varphi_g$ is surjective: let $k$ any element of $G$.
+$\bullet$ $\varphi_g$ is surjective: let $k$ be any element in $G$.
 
 Put $h = g^{-1}k$. Then $\varphi_g(h) = g(g^{-1}k) = (g g^{-1}) k = ek =  k$.
 $$\forall k \in G, \ \exists h \in G, \varphi_g(h) = k.$$
 
 \item[(b)]
 
-A row of the Cayley table of  $G$ corresponding to the element $g\in G$ is the list of the $\varphi_g(g_i) = gg_i$, where $g_i$ traces the list of the elements of $G$ in an arbitrary fixed order. Comme $\varphi_g$ is bijective, we find all the elements of $G$ once and only once. This define a permutation of $G$.
+A row of the Cayley table of  $G$ corresponding to the element $g\in G$ is the list of the $\varphi_g(g_i) = gg_i$, where $g_i$ traces the list of the elements of $G$ in an arbitrary fixed order. Since $\varphi_g$ is bijective, we find all the elements of $G$ once and only once. This defines a permutation of $G$.
 
 \item[(c)]
-Write $S(G)$ the group of bijections of $G$ in $G$, and $S_n$ the group of bijections of $[1,n]$ in $[1,n]$ (where $[1,n] = \{1,2,\cdots,n\}$).
+Write $S(G)$ the group of bijections of $G$ in $G$, and $S_n$ the group of bijections of $\gcro 1,n \dcro$ in $\gcro 1,n \dcro$ (where $\gcro 1,n \dcro = \{1,2,\cdots,n\}$).
 
-The map $\varphi : G\to S(G), g\mapsto \varphi_g = \varphi(g)$ is an injective group homomorphism.
+The map $\varphi : G\to S(G),\  g\mapsto \varphi_g = \varphi(g)$ is an injective group homomorphism.
 
 Indeed, for all $g,h,k \in G$, 
 
 $(\varphi(g) \circ \varphi(h))(k) = \varphi_g(\varphi_h(k)) = g(hk) = (gh)k = \varphi(gh)(k)$, thus $$\varphi(g) \circ \varphi(h) =  \varphi(gh).$$
 
-If $\varphi(g) = 1_G$, $\varphi(g)(e) = ge=g$, therefore $g=e$  : $\ker(\varphi) = \{e\}$.
+If $\varphi(g) = 1_G$, $\varphi(g)(e) = ge=g$, therefore $g=e$: $\ker(\varphi) = \{e\}$.
 
-Moreover, if $f : [1,n] \to G, i \mapsto g_i$ is the bijection representing the chosen numbering of $G$, we can associate to it the isomorphism
+Moreover, if $f : \gcro 1,n \dcro \to G, i \mapsto g_i$ is the bijection representing the chosen numbering of $G$, we can associate to it the isomorphism
 $$
 \psi : 
 \left\{
@@ -1880,15 +1875,17 @@ $$
 \end{array}
 \right.
 $$
-where $\psi(u) = f^{-1}\circ u \circ f$ is indeed a permutation of $[1,n]$.
+where $\psi(u) = f^{-1}\circ u \circ f$ is indeed a permutation of $\gcro 1,n \dcro$.
 
-If $ u,v \in S(G)$, $\psi(u)\circ \psi(v) = f^{-1}\circ u \circ f \circ f^{-1} \circ v \circ f= f^{-1} \circ (u \circ v) \circ f = \psi(u\circ v)$,so $\psi$ is a group homomorphism.
+If $ u,v \in S(G)$, $\psi(u)\circ \psi(v) = f^{-1}\circ u \circ f \circ f^{-1} \circ v \circ f= f^{-1} \circ (u \circ v) \circ f = \psi(u\circ v)$, so $\psi$ is a group homomorphism.
 
-If $\psi(u) = e$, then $f^{-1} \circ u \circ f = e$, thus $u = f \circ f^{-1} = e$. Therefore $\ker(\psi) = e$.
+If $\psi(u) = e$, then $f^{-1} \circ u \circ f = e$, thus $u = f \circ f^{-1} = e$. Therefore $\ker(\psi) = \{e\}$.
 
-Let  $\sigma$ any permutation in $S_n$. Put  $u = f \circ \sigma \circ f^{-1}$. Then $\psi(u) = f^{-1} \circ f \circ \sigma \circ f^{-1} \circ f = \sigma$, thus $\psi$ is surjective. $\psi$ is a group isomorphism (depending of the chosen numbering).
+Let  $\sigma$ any permutation in $S_n$. Put  $u = f \circ \sigma \circ f^{-1}$. 
 
-Thus $\chi = \psi \circ \varphi : G \to S_n$ is an injetive group homomorphism.
+Then $\psi(u) = f^{-1} \circ f \circ \sigma \circ f^{-1} \circ f = \sigma$, thus $\psi$ is surjective. $\psi$ is a group isomorphism (depending of the chosen numbering).
+
+Thus $\chi = \psi \circ \varphi : G \to S_n$ is an injective group homomorphism.
 
 For each $g_i \in G$, we associate to it $\sigma_i = \chi(g_i)$.
 
@@ -1936,12 +1933,12 @@ where the element of the $i$th row, $j$th column is $g_i \circ g_j = g_i g_j =  
 
 Thus
 \begin{align*} 
-\sigma_1 &= ()\\
-\sigma_2 &= (1 2 3)(4 5 6)\\
-\sigma_3 &=(1 3 2)(4 6 5) = \sigma_2^2\\
-\sigma_4 &= (1 4)(2 6)(3 5)\\
-\sigma_5 &= (1 5)(2 4)(3 6)\\
-\sigma_6 &= (1 6)(2 5)(3 4)
+\sigma_1 &= (),\\
+\sigma_2 &= (1 2 3)(4 5 6),\\
+\sigma_3 &=(1 3 2)(4 6 5) = \sigma_2^2,\\
+\sigma_4 &= (1 4)(2 6)(3 5),\\
+\sigma_5 &= (1 5)(2 4)(3 6),\\
+\sigma_6 &= (1 6)(2 5)(3 4).
 \end{align*}
 \end{proof}
 
@@ -1967,16 +1964,16 @@ We have carefully proved in Exercise 4 that $\chi = \psi \circ \phi : G \to S_n,
 \begin{proof}
 By hypothesis, $f\in F[x]$ is a monic irreducible separable polynomial of degree 3, the characteristic of $F$ is not 2, and $L$ is the splitting field of $f$ over $F$.
 
-We suppose here that $\Delta = \Delta(f)$is note a square in $F$. Theorem 7.4.2 give then the result
+We suppose here that $\Delta = \Delta(f)$ is not a square in $F$. Theorem 7.4.2 give then the result
 $$\Gal(L/F) \simeq S_3.$$
 
 Therefore $[L:F] = \vert \Gal(L/F) \vert = 6$. Since $\sqrt{\Delta} \not \in F$, $[F(\sqrt{\Delta}) : F] = 2$, and so $[L : F(\sqrt{\Delta})] = 3$.
 
-By the Galois correspondence, the extension $F(\sqrt{\Delta})$ of degree 2 over $F$ corresponds to the subgroup $H = \Gal(L/F(\sqrt{\Delta})$ of $G = \Gal(L/F)$, of index 2 in $G\simeq S_3$. As $S_3$ has a unique subgroup of index 2, which is $A_3 \simeq \Z/3\Z$, we can conclude
+By the Galois correspondence, the extension $F(\sqrt{\Delta})$ of degree 2 over $F$ corresponds to the subgroup $H = \Gal(L/F(\sqrt{\Delta}))$ of $G = \Gal(L/F)$, of index 2 in $G\simeq S_3$. As $S_3$ has a unique subgroup of index 2, which is $A_3 \simeq \Z/3\Z$, we can conclude
 
 $$\Gal(L/F(\sqrt{\Delta})) \simeq \Z/3\Z.$$
 
-Let $\alpha \in L$ a root of $f$. Since $f$ is irreducible over $F$, $f$ is the minimal polynomial of $\alpha$ over $F$. Let $p \in F(\sqrt{\Delta})[x]$ the minimal polynomial of $\alpha$ over $F(\sqrt{\Delta})$. As $f \in F[x] \subset F(\sqrt{\Delta})$ has the root $\alpha$, $p$ divides $f$ in $F(\sqrt{\Delta})[x]$. Moreover $\deg(p) = [L:F(\sqrt{\Delta})] = 3 = \deg(f)$.
+Let $\alpha \in L$ a root of $f$. Since $f$ is irreducible over $F$, $f$ is the minimal polynomial of $\alpha$ over $F$. Let $p \in F(\sqrt{\Delta})[x]$ the minimal polynomial of $\alpha$ over $F(\sqrt{\Delta})$. As $\alpha$ is a root of $f \in F[x] \subset F(\sqrt{\Delta})[x]$, $p$ divides $f$ in $F(\sqrt{\Delta})[x]$. Moreover $\deg(p) = [L:F(\sqrt{\Delta})] = 3 = \deg(f)$.
 
 $p \mid f, \deg(p) = \deg(f)$, and $f,p$ are monic, thus $f = p$. Therefore $f$ is irreducible over $F(\sqrt{\Delta})$.
 \end{proof}
@@ -1995,9 +1992,9 @@ so $Q(x,y) = P(x)S(x,y) , S \in F[x,y]$. The evaluation $y \mapsto 0$ gives
 $$a_0(x) = Q(x,0) = P(x)S(x,0),$$
 thus $P \mid a_0$.
 
-By induction, we suppose that $P \mid a_i, \ 0 \leq i < k$, où $k\leq m$.
+By induction, we suppose that $P \mid a_i, \ 0 \leq i < k$, where $k\leq m$.
 
-Then $P$ divides $a_k(x)y^k+\cdots a_m(x)y^m = y^k(a_k(x)+ \cdots + a_m(x) y^{m-k}$.
+Then $P$ divides $a_k(x)y^k+\cdots a_m(x)y^m = y^k(a_k(x)+ \cdots + a_m(x) y^{m-k})$.
 
 In the UFD $F[x,y]$, every irreducible factor of $y^k$ is associate to $y$, and $y$ doesn't divide $P(x)$. Therefore $P(x)$ et $y^k$ are relatively prime, so $P$ divides $a_k(x)+ \cdots + a_m(x) y^{m-k}$. The same evaluation $y\mapsto 0$ gives then $p \mid a_k$, so the induction is done. Consequently
 $$P \mid a_i,\  0 \leq i \leq m.$$
@@ -2043,7 +2040,7 @@ implies $A \in F(y)$ or $B \in F(y)$.
 \item[(a)]
 $A$ is expressed by
 $$A(x,y) = \frac{a_0(y)}{b_0(y)} +  \frac{a_1(y)}{b_1(y)} x + \cdots+  \frac{a_m(y)}{b_m(y)} x^m.$$
-If we take $g(y) = b_0(y)\cdots b_m(y) \in F[y]$ the product of the $b_i$ (or the lcm of the $b_i$), then $g(y)  \frac{a_i(y)}{b_i(y)} \in F[y]$, thus $A_1 = g(y) A \in F[x,y]$. Similarly, there is  $h \in F[y]$ such that $B_1 = h(y)B \in F[x,y]$.
+If we take $g(y) = b_0(y)\cdots b_m(y) \in F[y]$ the product of the $b_i$ (or the lcm of the $b_i$), then $g(y)  \frac{a_i(y)}{b_i(y)} \in F[y]$, thus $A_1 = g(y)A \in F[x,y]$. Similarly, there is  $h \in F[y]$ such that $B_1 = h(y)B \in F[x,y]$.
 
 \item[(b)]
 Therefore, $g(y) h(y)(a(x) - y b(x)) = A_1 B_1 \in F[x,y]$, where $g,h,f,A_1,B_1$ are in $F[x,y]$.
@@ -2131,7 +2128,7 @@ $$[\Phi(\delta) \circ \Phi(\gamma)](\alpha) =( \alpha^{\gamma^{-1}}) ^{\delta^{-
 
 \paragraph{Ex. 7.5.5}
 
-{\it Prove (7.26) : 
+{\it Prove (7.26): 
 $\left(
 \begin{array}{cc}
  a &  b\\
@@ -2155,7 +2152,7 @@ Moreover $(c,d) \neq 0$, otherwise $B(t) =a t +b$ is zero, in contradiction with
 
 So there exists $\lambda \in F$ tel que $(a,b) = \lambda (c,d)$, and then $\sigma(t) = A(t)/B(t)  = \lambda \in F$. As $\sigma^{-1} \in \Gal(F(t)/F)$, $t = \sigma^{-1}(\lambda) = \lambda \in F$, which is impossible since $t$ is transcendental over $F$.
 
-Conclusion : $\left(
+Conclusion: $\left(
 \begin{array}{cc}
  a &  b\\
  c &   d  
@@ -2242,7 +2239,7 @@ The relation $\cal{R}$ defined on $F^2 \setminus \{(0,0)\}$ by $$
 
 If $(x,y)\,  {\cal R}\,  (x',y')$, then $M\cdot (x,y)\ {\cal R}\  M\cdot (x',y')$. Moreover  $M\cdot (x,y) \neq (0,0)$ if $(x,y)\neq (0,0)$, so we can define the action on a projective point $P=[x,y]$ by $M\cdot [x,y] = M \cdot(x,y)$, where $(x,y)$ is any representative of the class $P$. This is again an action of the group $GL(2,F)$ on the set $\mathbb{P}_1(F)$.
 
-L'application $f : \mathbb{P}_1(F) \to \hat{F} = F \cup \{\infty\}$, defined for $X =  [x,y] $ by $f([x,y]) = x/y$ if $y\neq 0$, $f([x,0])=\infty$ otherwise, is well defined, and this is a bijection, whose inverse $f^{-1}=g$ is defined by $g(x) =[x,1],
+The map $f : \mathbb{P}_1(F) \to \hat{F} = F \cup \{\infty\}$, defined for $X =  [x,y] $ by $f([x,y]) = x/y$ if $y\neq 0$, $f([x,0])=\infty$ otherwise, is well defined, and this is a bijection, whose inverse $f^{-1}=g$ is defined by $g(x) =[x,1],
 g(\infty) = [1,0]
 $.
 
@@ -2298,6 +2295,20 @@ for all  $z\in \hat{F }$, and for all  $ M,N\in GL(2,F)$,
 \item[(ii)] $M\cdot (N \cdot z) = (MN) \cdot z$
 \ee
 }
+\item[(b)]
+
+If $\lambda \in F^*$, and $Z \in F$, $(\lambda I) \cdot z = \frac{\lambda z +0}{0.z + \lambda} = z$, so $(\lambda I) \cdot \infty = \infty$. The elements of $C = F^* I_2$ act trivially on  $\hat{F}$.
+The quotient group $PGL(2,F) = GL(2,F)/C$, where $C =F^* I_2 =  \{\lambda I, \lambda \in F^*\}$, acts on $\hat{F}$.
+
+Indeed the action is well defined: two elements $M,N$ of a same class modulo $C$ satisty $M = \lambda N, \lambda \in F^*$, thus $M\cdot z = (\lambda N)\cdot z =N \cdot ((\lambda I_2) \cdot z) =  N \cdot z$. We can so define the action by $[M] \cdot z = M \cdot z$, where $[M]$ is the class of $M$ in $\mathrm{PGL}(2,F)$. Then the relations (i)(ii) are always true
+
+\be
+\item[(i)] $[I] \cdot z=z$
+\item[(ii)] $[M]\cdot ([N] \cdot z) = ([M][N]) \cdot z$
+\ee
+
+\end{enumerate}
+\end{proof}
 
 
 \paragraph{Ex. 7.5.7}
@@ -2353,7 +2364,7 @@ So $\eta$ fixes the three points $\infty, [\delta] \cdot \beta, [\delta] \cdot \
 \item[(c)]
 By parts (a) and (b), if $[\gamma]$ fixes three points of $\hat{F}$, then $[\gamma] = e$.
 
-If $\gamma, \gamma'$ satisfy $[\gamma]  \cdot \alpha_i  = [\gamma']\cdot \alpha_i, \ i=1,2,3$, then $[\gamma' \gamma^{-1}]$ fixes three points of $\hat{F}$. Therefore $[\gamma' \gamma^{-1}]=[\gamma'] [\gamma]^{-1} = e$, so $[\gamma'] = [\gamma]$: the uniqueness is proven.
+If $\gamma, \gamma'$ satisfy $[\gamma]  \cdot \alpha_i  = [\gamma']\cdot \alpha_i, \ i=1,2,3$, then $[\gamma' \gamma^{-1}]$ fixes three points of $\hat{F}$. Therefore $[\gamma' \gamma^{-1}]=[\gamma'] [\gamma]^{-1} = e$, so $[\gamma'] = [\gamma]$: the uniqueness is proved.
 
 \end{enumerate}
 \end{proof}
@@ -2399,18 +2410,18 @@ The rotation $r_2 = \mathrm{Rot}(\pi/2, \overrightarrow{e_3})$ satisfies
 \begin{align*}
 &r_2(\hat{\pi}^{-1}(\infty))  = r_2(N) = N = \hat{\pi}^{-1}(\infty), \\
 &r_2(\hat{\pi}^{-1}(i)) =r_2(0,1,0) = (-1,0,0) = \hat{\pi}^{-1}(-1),\\
- &r_2(\pi^{-1}(1))=r_2(1,0,0) = (0,1,0) = \hat{\pi}^{-1}(i)
- \end{align*} thus
+ &r_2(\pi^{-1}(1))=r_2(1,0,0) = (0,1,0) = \hat{\pi}^{-1}(i).
+ \end{align*} Thus
  \begin{align*}
- [\hat{\pi} \circ r_2 \circ \hat{\pi}^{-1}] \cdot \infty= \infty, \ [\hat{\pi} \circ r_2 \circ \hat{\pi}^{-1}]\cdot i = -1,\  [\hat{\pi} \circ r_2 \circ \hat{\pi}^{-1}]\cdot 1 = i\\
+ [\hat{\pi} \circ r_2 \circ \hat{\pi}^{-1}] \cdot \infty= \infty, \ [\hat{\pi} \circ r_2 \circ \hat{\pi}^{-1}]\cdot i = -1,\  [\hat{\pi} \circ r_2 \circ \hat{\pi}^{-1}]\cdot 1 = i.\\
  \end{align*}
-By the uniqueness proven in Exercise 8, $[\hat{\pi} \circ r_2 \circ \hat{\pi}^{-1}]  = [\gamma_2]$.
+By the uniqueness proved in Exercise 8, $[\hat{\pi} \circ r_2 \circ \hat{\pi}^{-1}]  = [\gamma_2]$.
  
 In other words, the isomorphism $r\mapsto [\gamma]$ sends $r_2 = \mathrm{Rot}(\pi/2, \overrightarrow{e_3})$ on $\gamma_2 $, where $$[\gamma_2]\cdot z = iz.$$
  
  \bigskip 
  
- $\bullet$ Soit 
+ $\bullet$ Let
 $\gamma_3 =
 \left(
 \begin{array}{cc}
@@ -2439,20 +2450,6 @@ In other words, the isomorphism $r\mapsto [\gamma]$ sends $r_3 = \mathrm{Rot}(\p
 \end{proof}
 
 
-\item[(b)]
-
-If $\lambda \in F^*$, and $Z \in F$, $(\lambda I) \cdot z = \frac{\lambda z +0}{0.z + \lambda} = z$, so $(\lambda I) \cdot \infty = \infty$. The elements of $C = F^* I_2$ act trivially on  $\hat{F}$.
-The quotient group $PGL(2,F) = GL(2,F)/C$, where $C =F^* I_2 =  \{\lambda I, \lambda \in F^*\}$, acts on $\hat{F}$.
-
-Indeed the action is well defined: two elements $M,N$ of a same class modulo $C$ satisty $M = \lambda N, \lambda \in F^*$, thus $M\cdot z = (\lambda N)\cdot z =N \cdot ((\lambda I_2) \cdot z) =  N \cdot z$. We can so define the action by $[M] \cdot z = M \cdot z$, where $[M]$ is the class of $M$ in $\mathrm{PGL}(2,F)$. Then the relations (i)(ii) are always true
-
-\be
-\item[(i)] $[I] \cdot z=z$
-\item[(ii)] $[M]\cdot ([N] \cdot z) = ([M][N]) \cdot z$
-\ee
-
-\end{enumerate}
-\end{proof}
 
 \paragraph{Ex. 7.5.10}
 
@@ -2712,7 +2709,7 @@ So $\mathrm{AGL}(1,F)$ is identified with the stabilizer of $\infty$ in $\mathrm
 {\it In this exercise, you will construct polyhedra whose symmetry groups are isomorphic to $C_n$ and $D_{2n}$. For $D_{2n}$, consider the polyhedron whose vertices are the north and south poles of $S^2$ together with the $n$th roots of unity along the equator (see picture in [D.Cox]). Note that to obtain a three dimensional object, we must assume $n\geq 3$.
 \be
 \item[(a)] Show that the symmetry group of this polyhedron is isomorphic to $D_{2n}$ when $n\neq 4$, and $S_4$ when $n = 4$.
-\item[(b)] Now take the vertices on the equator and move them up in $S_2$ so that they become the vertice of a regular $n$-gone lying in the plane $z=c$, where $c>0$ is small. Prove that the symmetry group of this polyhedron is isomorphic to $C_n$.
+\item[(b)] Now take the vertices on the equator and move them up in $S_2$ so that they become the vertices of a regular $n$-gone lying in the plane $z=c$, where $c>0$ is small. Prove that the symmetry group of this polyhedron is isomorphic to $C_n$.
 \item[(c)] Find polyhedra inscribed in $S^2$ whose symmetry groups are $C_1$ (the trivial group), $C_2,D_4$ (the Klein four-group), and $D_8$ respectively.
 \ee
 }
@@ -2755,7 +2752,7 @@ A'_0 A'_1 &= A_0A_1 = \vert \zeta_n-1 \vert =\vert e^{2i\pi/n} -1 \vert\\
 &= \sqrt{2\left(1-\cos  \frac{2\pi}{n}\right)}\\
 &=2 \sin  \frac{\pi}{n}
 \end{align*}
-(this can be proved geometrically).
+
 Note that $P A_k = S A_k = \sqrt{2}$.
 
 As $n\geq 3$,
@@ -2764,23 +2761,23 @@ $2 \sin \frac{\pi}{n} = 2$ is impossible since $\sin \frac{\pi}{n} \leq \sin \fr
 
 $2 \sin  \frac{\pi}{n} =  \sqrt{2} \iff  \sin \frac{\pi}{n}  = \sin  \frac{\pi}{4} \iff n=4  $
 
-Suppose that $n\neq 4$. With a reductio ad absurdum, if  $A'_0$ was a pole, then $A'_0A'_1 = \sqrt{2}$ (if $A'_1=A_k$) or $A'_0A'_1 = 2$ (if $A'_1$ is the opposite pole). In both cases, this is impossible, as previously proven.
+Suppose that $n\neq 4$. With a reductio ad absurdum, if  $A'_0$ was a pole, then $A'_0A'_1 = \sqrt{2}$ (if $A'_1=A_k$) or $A'_0A'_1 = 2$ (if $A'_1$ is the opposite pole). In both cases, this is impossible, as previously proved.
 
 Consequently $\rho(A_0) = A_k, \ k=0,1,\cdots,n-1$.
-The same argument proves that the image of $A_i$ is in the polygon $\{A_0,,\cdots,A_{n-1}\}$, so $\rho$ is a permutation of the vertices of this polygon, thus sends $\{P,S\}$ sur $\{P,S\}$. Therefore$\rho$ fixes these two poles, or exchanges them.
+The same argument proves that the image of $A_i$ is in the polygon $\{A_0,,\cdots,A_{n-1}\}$, so $\rho$ is a permutation of the vertices of this polygon, thus sends $\{P,S\}$ sur $\{P,S\}$. Therefore $\rho$ fixes these two poles, or exchanges them.
 
 \be
 \item[$\bullet$] case 1: if $\rho(P) = P$, then since $\rho(O) = O, \rho(A_0)= A_k$, 
 $\rho$ is the rotation $r^k = \mathrm{Rot}(\vec{e}_3,  2k\pi/n)$ of axis $OP$ ($1\leq k \leq n-1$), or the identity ($k=0$).
 
 
-\item[$\bullet$] case 2 : if $\rho(P) = S$, then $(\rho \circ s)(P) = P$, and by case 1, $\rho \circ s = r^j, j=0,\cdots,n-1$, that is $\rho = r^j \circ s$.
+\item[$\bullet$] case 2: if $\rho(P) = S$, then $(\rho \circ s)(P) = P$, and by case 1, $\rho \circ s = r^j, j=0,\cdots,n-1$, that is $\rho = r^j \circ s$.
 
 \ee
 In both cases, $\rho \in H$, therefore
 $$G = H = \{e,r,\cdots,r^{n-1}, s, rs,\cdots, r^{n-1}s\} \simeq D_{2n}.$$
 
-In the case $n=4$, we have proves in Exercise 10 that $G \simeq S_4$.
+In the case $n=4$, we have proved in Exercise 10 that $G \simeq S_4$.
 
 \item[(b)]
 The modification of the polyhedron given in the text (or more simply the suppression of the south pole $S$) implies then $\rho(N) = N$, so it remains only the case 1 in the preceding discussion, so  $G = \langle r \rangle \simeq C_n$.
@@ -2819,16 +2816,16 @@ For all $\alpha \in \C(t)$, for all $k \in \N$, $\sigma^k(\alpha(t)) =\alpha( \z
 
 By Theorem 7.5.3, the extension $L_G \subset \C(t)$ is a Galois extension of degree $n$, with Galois group $G = \langle \sigma \rangle$.
 
-We like to specify the group $L_G$.
+We like to specify the field $L_G$.
 
 $\sigma(t^n) = (\zeta_nt)^n=t^n$, thus $t^n\in L_G$ and so $\C(t^n) \subset L_G \subset \C(t)$.
 
 By Theorem 7.5.5(c), the extension $\C(t^n) \subset \C(t)$ has degree $n$, so
 $$n = [\C(t):\C(t^n)] = [\C(t):L_G]\ [L_G:\C(t^n)] = n\, [L_G:\C(t^n)],$$
-donc $[L_G:\C(t^n)]=1$ : 
+therefore $[L_G:\C(t^n)]=1$ : 
 $$L_G = \C(t^n).$$
 
-Conclusion :
+Conclusion:
 
 $\C(t^n)\subset \C(t)$ is a Galois extension whose Galois group $G$ is cyclic of order $n$.
 \end{proof}
@@ -2851,39 +2848,39 @@ is a Galois extension with Galois group $G \simeq S_3$.
 \begin{proof}
 Consider the automorphisms of $L = F(t)$ defined by
 \begin{align*}
-\sigma(\alpha(t))&=\alpha(t^{-1})\\
+\sigma(\alpha(t))&=\alpha(t^{-1}),\\
 \tau(\alpha(t)) &= \alpha(1-t),
 \end{align*}
 and $G =\langle \sigma,\tau \rangle$.
 \begin{enumerate}
 \item[(a)]
-Note that $\sigma^2 = \tau^2 = e$, $\sigma$ and  $\tau$ are of order 2. 
+Note that $\sigma^2 = \tau^2 = e$, $\sigma$ and  $\tau$ have order 2. 
 Let $\rho = \sigma \circ \tau = \sigma \tau$. For all $\alpha(t) \in F(t)$, 
 \begin{align*}
 \rho(\alpha(t))&= \sigma(\alpha(1-t))\\
-&=\alpha\left(1-\frac{1}{t}\right)\\
+&=\alpha\left(1-\frac{1}{t}\right),\\
 \rho^2(\alpha(t))&= \alpha\left(1 - \frac{1}{1-\frac{1}{t}}\right)\\
-&= \alpha\left(\frac{1}{1-t}\right)\\
+&= \alpha\left(\frac{1}{1-t}\right),\\
 \rho^3(\alpha(t))&= \alpha\left(\frac{1}{1-\left( 1 - \frac{1}{t} \right)}\right)\\
-&=\alpha(t)
+&=\alpha(t).
 \end{align*}
 Thus $\rho$ is of order 3, and as $\tau = \sigma \rho$, $G = \langle \sigma, \rho \rangle.$
 
 Moreover, for all $\alpha(t) \in F(t)$,
 \begin{align*}
 (\rho\sigma)(\alpha(t))&= \rho\left ( \alpha\left(\frac{1}{t}\right)\right)\\
-&=\alpha\left(\frac{t}{t-1}\right)\\
+&=\alpha\left(\frac{t}{t-1}\right),\\
 (\sigma \rho^{-1})(\alpha(t)&= (\sigma \rho^2)(\alpha(t))\\
 &=\sigma\left(\alpha\left(\frac{1}{1-t}\right)\right)\\
 &=\alpha\left(\frac{1}{1-\frac{1}{t}} \right)\\
-&=\alpha\left(\frac{t}{t-1}\right)\\
+&=\alpha\left(\frac{t}{t-1}\right).\\
 \end{align*}
 Thus $\rho \sigma = \sigma \rho^{-1}$.
 
 To summerise, $G = \langle \sigma,\rho \rangle$, with
 $\sigma^2 = \rho^3=e\ (\sigma \neq e, \rho\neq e), \rho \sigma = \sigma \rho^{-1}$, therefore 
 $$G \simeq D_6 \simeq S_3.$$
-\vspace{0.5cm}
+
 \item[(b)]
 By the isomorphism $\mathrm{PGL}(2,F) \simeq \Gal(F(t)/F)$ described in Section 7.5.C, $\sigma$ corresponds to $[\gamma] \in \mathrm{PGL}(2,F)$, where 
 $\gamma^{-1} = \gamma = 
@@ -2909,7 +2906,7 @@ $, and $\rho=\sigma \tau$ to $[\varepsilon], \varepsilon = (\gamma \delta)^{-1} 
 \end{array}
 \right),$
 
-so $[\varepsilon] \in  \mathrm{PGL}(2,F) $ is of order 3 (but not  $\varepsilon \in  \mathrm{GL}(2,F) : \varepsilon^3 = -I_2$).
+so $[\varepsilon] \in  \mathrm{PGL}(2,F) $ is of order 3 (but not  $\varepsilon \in  \mathrm{GL}(2,F): \varepsilon^3 = -I_2$).
 
 By  $[\gamma],[\delta]$ acting on $\hat{F}$, $$[\gamma] \cdot 0 = \infty,  [\gamma] \cdot  1 = 1, [\gamma] \cdot \infty = 0.$$
 $$[\delta] \cdot 0 = 1,  [\delta] \cdot  1 = 0, [\delta] \cdot \infty = \infty.$$
@@ -2927,18 +2924,18 @@ c  &   d
 We know by Exercise 7, which proves uniqueness in Theorem 7.5.8, that there exists at most an element in $\mathrm{PGL}(2,F)$ sending $0,1,\infty$ on three fixed points in $\hat{F}$.
 As the elements of $\hat{G}$ map $\{0,1,\infty\}$ on itself, the group homomorphism sending $G$ on the group $S_A$ of permutions of $A$ is injective by this uniqueness. Moreover $\vert \hat{G} \vert =6 = \vert S_A \vert$, so this is a group isomorphism, so the elements of $\hat{G}$ give the 6 possible permutations of $\{0,1,\infty\}$. As $[\xi]$ has the same images for the elements of $A$ that an element $[\zeta]$ of $\hat{G}$ and as $[\xi]$ is uniquely determined by these images, $[\xi] = [\zeta]$, so $[\xi] \in \hat{G}$.
 
-Conclusion : $G$ corresponds to the subgroup of $\mathrm{PGL}(2,F)$ consisting of all elements that map the subset $\{0,1,\infty\} \subset \hat{F}$ to itself.
+Conclusion: $G$ corresponds to the subgroup of $\mathrm{PGL}(2,F)$ consisting of all elements that map the subset $\{0,1,\infty\} \subset \hat{F}$ to itself.
 
 
 \item[(c)]
-We verify that $\alpha(t) = \frac{(t^2-t+1)^3}{t^2(t-1)^2} \in L_G$ :
+We verify that $\alpha(t) = \frac{(t^2-t+1)^3}{t^2(t-1)^2} \in L_G$:
 \begin{align*}
 \sigma(\alpha(t)) &= \frac{((\frac{1}{t})^2-(\frac{1}{t})+1)^3}{(\frac{1}{t})^2((\frac{1}{t})-1)^2}\\
 &=\frac{(1 -t -t^2)^3}{t^2(1-t)^2}\\
-&=\alpha(t)\\
+&=\alpha(t),\\
 \tau(\alpha(t) &=  \frac{((1-t)^2-(1-t)+1)^3}{(1-t)^2((1-t)-1)^2} \\
 &=\frac{(t^2-t+1)^3}{(t-1)^2 t^2}\\
-&=\alpha(t)
+&=\alpha(t).
 \end{align*}
 As $G = \langle \sigma,\tau\rangle, \alpha(t) \in L_G$, thus
 $$F\left(\frac{(t^2-t+1)^3}{t^2(t-1)^2} \right) \subset L_G \subset F(t).$$
