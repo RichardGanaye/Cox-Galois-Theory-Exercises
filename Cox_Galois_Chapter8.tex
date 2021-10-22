@@ -77,9 +77,9 @@ $$e' = (0,0) , a' = (1,0), b' = (0,1) , c' = (1,1).$$
 
 The mapping ($e\mapsto e', a\mapsto a',b\mapsto b',c\mapsto c'$)  is an isomorphism.
 
-If $\sigma \in S_4$, $\sigma  a \sigma^{-1} = \sigma [(1\,2)(3\,4))] \sigma^{-1}= (\sigma(1)\, \sigma(2)) (\sigma(3)\, \sigma(4)) \in K$, and the same is tur for $b$ and $c$, so $K$ is normal in $S_4$ (a fortiori in $A_4$).
+If $\sigma \in S_4$, $\sigma  a \sigma^{-1} = \sigma [(1\,2)(3\,4))] \sigma^{-1}= (\sigma(1)\, \sigma(2)) (\sigma(3)\, \sigma(4)) \in K$, and the same is true for $b$ and $c$, so $K$ is normal in $S_4$ (a fortiori in $A_4$).
 
-Conclusion : $K =  \{e,(1\, 2)(3\, 4), (1\, 3)(2\, 4), (1\, 4)(2\, 3)\}$ is a normal subgroup of $S_4$ included in $A_4$, isomorphic to $\mathbb{Z}/2 \mathbb{Z} \times \mathbb{Z}/2 \mathbb{Z}$.
+Conclusion: $K =  \{e,(1\, 2)(3\, 4), (1\, 3)(2\, 4), (1\, 4)(2\, 3)\}$ is a normal subgroup of $S_4$ included in $A_4$, and $K$ is isomorphic to $\mathbb{Z}/2 \mathbb{Z} \times \mathbb{Z}/2 \mathbb{Z}$.
 
 
 \item[(b)] So we obtain a chain $$S_4 \supset A_4 \supset K \supset \langle a \rangle\supset  \{e\},$$ 
@@ -95,7 +95,7 @@ $\bullet$ $K$ being Abelian, $\langle a \rangle$ is normal in $K$, and $K/ \lang
 
 $\bullet$ $ \langle a \rangle/\{e\} \simeq \mathbb{Z}/2 \mathbb{Z}$.
 
-Conclusion : $S_4$ is solvable (and also $A_4$).
+Conclusion: $S_4$ is solvable (and also $A_4$).
 \ee
 \end{proof}
 
@@ -122,7 +122,7 @@ $\bullet$ As $G_0 = G$, $\tilde{G}_0 = \pi(G) = G/H$ since $\pi$ is surjective.
 
 $\bullet$ As $G_n = \{e\}, \tilde{G}_n = \pi(\{e\}) = \{ eH\} = \{\overline{e}\}$, where we write $\overline{e}$ the identity of $G/H$.
 
-$\bullet$ We know that $G_i \lhd G_{i-1}$. We show that $\tilde{G}_i \lhd \tilde{G}_{i-1}$.
+$\bullet$ We know that $G_i \lhd G_{i-1}$. Then we show that $\tilde{G}_i \lhd \tilde{G}_{i-1}$.
 
 Let any $\overline{x} \in \tilde{G}_{i-1}$, and $\overline{y} \in \tilde{G}_{i}$, with $\overline{x} = xH, \overline{y} = yH, x \in G_{i-1},y\in G_i$.
 
@@ -130,7 +130,7 @@ $\overline{x}\, \overline{y} \, \overline{x}^{-1} = xH yH x^{-1} H = xyx^{-1} H 
 
 Therefore $\overline{x}\, \overline{y} \, \overline{x}^{-1} = \pi(z) \in \pi(G_i) = \tilde{G}_i$. So $\tilde{G}_i \lhd \tilde{G}_{i-1}$.
 
-$\bullet$ Let $\varphi$ the mapping 
+$\bullet$ Let $\varphi$ be the mapping 
 $$
 \varphi :
 \left\{
@@ -144,19 +144,19 @@ $$
 
 If $g \in G_i, \pi(g) = gH \in \tilde{G}_i$, thus $\varphi(g)=\pi(g)\tilde{G}_i = \tilde{G_i}$, which is the identity of $\tilde{G}_{i-1}/\tilde G_i$, so $g \in \ker(\varphi)$. This proves
 $$G_i \subset \ker(\varphi).$$
-As $G_i \subset \ker(\varphi)$,  if two elements $g,g'$ of $G_{i-1}$ are congruent modulo $G_i$,  $gG_i = g' G_i$ then $g^{-1} g' \in G_i \subset \ker(\varphi)$, so $g,g'$ have the same image by $\varphi$. Consequently $\varphi(g)$ depends only of the class $gG_i$ of $g$ in $G_{i-1}/G_{i}$.
+As $G_i \subset \ker(\varphi)$,  if two elements $g,g'$ of $G_{i-1}$ are congruent modulo $G_i$,  i.e. $gG_i = g' G_i$, then $g^{-1} g' \in G_i \subset \ker(\varphi)$, so $g,g'$ have the same image by $\varphi$. Consequently $\varphi(g)$ depends only of the class $gG_i$ of $g$ in $G_{i-1}/G_{i}$.
 
 The mapping $\overline{\varphi} : G_{i-1}/G_i \to \tilde{G}_{i-1}/\tilde{G}_i$ defined by $g G_i \mapsto \pi(g)\tilde{G}_i$ is so well defined, and is a group homomorphism.
 
-Let $y = v \tilde{G}_i$ any element of $\tilde{G}_{i-1}/\tilde{G}_i$, where $v \in \tilde{G}_{i-1}$, so $v = \pi(g)$ for some $g \in G_{i-1}$. Therefore $y = \pi(g) \tilde{G}_i = \varphi(g) = \overline{\varphi}(gG_{i})$, so $\overline{\varphi}$ is surjective.
+Let $y = v \tilde{G}_i$ be any element of $\tilde{G}_{i-1}/\tilde{G}_i$, where $v \in \tilde{G}_{i-1}$, so $v = \pi(g)$ for some $g \in G_{i-1}$. Therefore $y = \pi(g) \tilde{G}_i = \varphi(g) = \overline{\varphi}(gG_{i})$, so $\overline{\varphi}$ is surjective.
 
 
-\item[(b)] Let $\phi : M_1 \to M_2$ a surjective group homomorphism, and suppose that $\vert M_1 \vert = p$ is prime.
+\item[(b)] Let $\phi : M_1 \to M_2$ be a surjective group homomorphism, and suppose that $\vert M_1 \vert = p$ is prime.
 
 Then $M_2 \simeq M_1/\ker(\phi)$. The order of the subgroup $\ker(\phi)$ of $M_1$ divides $\vert M_1 \vert = p$, so $\vert \ker(\phi) \vert = 1$ or $p$, thus $\vert M_2 \vert = \vert M_1 \vert / \vert \ker(\phi) \vert = p$ or $1$.
 
 \item[(c)] 
-By hypothsis $|G_{i-1}/G_{i}\ = p$ is prime. By part (b) applied to the surjective group homomorphism $\phi = \varphi:G_{i-1}/G_i \to \tilde{G}_{i-1}/\tilde{G}_i$, we know that $\vert \tilde{G}_{i-1}/ \tilde{G}_{i} \vert = 1$ or $p$.
+By hypothesis $|G_{i-1}/G_{i}\ = p$ is prime. By part (b) applied to the surjective group homomorphism $\phi = \varphi:G_{i-1}/G_i \to \tilde{G}_{i-1}/\tilde{G}_i$, we know that $\vert \tilde{G}_{i-1}/ \tilde{G}_{i} \vert = 1$ or $p$.
  
  Therefore $\tilde{G}_{i-1}/ \tilde{G}_{i}$ is trivial, or of prime order.
  
@@ -204,12 +204,12 @@ $eH=H$ being the identity of $G/H$, by definition of the kernel, $H = \ker(\pi) 
 As $\tilde{G}_i \lhd \tilde{G}_{i-1}$, and as $\pi$ is a group homomorphism, then  $\pi^{-1} (\tilde{G}_i) \lhd \pi^{-1} (\tilde{G}_{i-1})$, so $G_{i} \lhd G_{i-1}$.
 
 Indeed, if $x \in G_{i-1}, y \in G_{i}$, then $x' = \pi(x) \in \tilde{G}_i,y' =\pi(y) \in \tilde{G}_{i-1}$, where $\tilde{G}_i \lhd \tilde{G}_{i-1}$, so $x' y' x'^{-1} \in \tilde{G}_i$, 
-so $\pi(xyx^{-1}) = \pi(x) \pi(y) \pi(x^{-1})  \in \tilde{G}_{i}$, so $xyx^{-1} \in \pi^{-1}(\tilde{G}_i) = G_i$.
+then $\pi(xyx^{-1}) = \pi(x) \pi(y) \pi(x)^{-1} \in \tilde{G}_{i}$, and $xyx^{-1} \in \pi^{-1}(\tilde{G}_i) = G_i$.
 
 
 As $\pi$ est surjective, $\pi(G_i) = \tilde{G}_i$, and the situation is the same as in Exercise 2, where we have proved that $\overline{\varphi} : G_{i-1}/G_{i} \to \tilde G_{i-1}/ \tilde G_{i}$ given by $gG_i \mapsto \pi(g) \tilde{G}_i$ is well defined, and is a surjective group homomorphism. It remains to verify that $\overline{\varphi}$ is injective.
 
-If $g G_i \in \ker(\overline{\varphi})$, then $\overline{\varphi}(gG_i) = \tilde G_i$, that is $\pi(g) \tilde G_i = \tilde G_i$, thus $\pi(g) \in \tilde G_i$, so  $g \in G_i$, and $gG_i =G_i$is the identity of $G/G_i$. Therefore $\overline{\varphi}$ is injective. $\overline{\varphi}$ is a group isomorphism:
+If $g G_i \in \ker(\overline{\varphi})$, then $\overline{\varphi}(gG_i) = \tilde G_i$, that is $\pi(g) \tilde G_i = \tilde G_i$, thus $\pi(g) \in \tilde G_i$, so  $g \in G_i$, and $gG_i =G_i$ is the identity of $G/G_i$. Therefore $\overline{\varphi}$ is injective. $\overline{\varphi}$ is a group isomorphism:
 
 $$ G_{i-1}/G_{i} \simeq \tilde G_{i-1}/ \tilde G_{i}$$
 \end{proof}
@@ -229,9 +229,9 @@ $$ G_{i-1}/G_{i} \simeq \tilde G_{i-1}/ \tilde G_{i}$$
 Consider the right action of $G$ on itself defined by conjugation with $x^g = g^{-1} x g$, then $G$ in the disjoint union of the associate orbits:
 
 $$G = \bigcup_{x \in S} O_x,$$
-where $S$ is a complete set of representative for the conjugacy classes : for all $y \in G$, $\vert O_y \cap S \vert = 1$.
+where $S$ is a complete set of representative for the conjugacy classes: for all $y \in G$, $\vert O_y \cap S \vert = 1$.
 
-The stabilizer of $x$ is the set of  $g \in G$ such that $g^{-1} x g = x$, soit $xg = gx$: this is the normalizer $C_x$ of $x$.
+The stabilizer of $x$ is the set of  $g \in G$ such that $g^{-1} x g = x$, so $xg = gx$: this is the normalizer $C_x$ of $x$.
 
 Consequently  $\vert O_x \vert = (G : C_x)$, and so
 
@@ -258,7 +258,7 @@ As $p$ divides also $\vert G \vert$, the class formula implies that $p$ divides 
 
 Using induction, suppose that all groups of order $p^k, k<n$ are solvable. Let $G$ a group of order $p^n$.
 
-Fix $g \in Z, g \neq e$. This is possible since $Z$ is not trivial. By part (b),  $H = \langle g \rangle$ is a normal cyclic subgroup $G$, so $H$ is solvable, and $G/H$ as for cardinality a factor of $p^n$,so   $|G/H| = p^k$, with $k<n$ since $\vert H \vert > 1$. The induction hypothesis implies that $G/H = G/\langle g \rangle$ is solvable.
+Fix $g \in Z, g \neq e$. This is possible since $Z$ is not trivial. By part (b),  $H = \langle g \rangle$ is a normal cyclic subgroup $G$, so $H$ is solvable, and $G/H$ as for cardinality a factor of $p^n$, so $|G/H| = p^k$, with $k<n$ since $\vert H \vert > 1$. The induction hypothesis implies that $G/H = G/\langle g \rangle$ is solvable.
 
 As $H$ and $G/H$ are solvable, by Theorem 8.1.4 $G$ is also solvable, and the induction is done.
 
@@ -279,11 +279,11 @@ Every finite $p$-group is solvable.
 
 \begin{proof}
 \be
-\item[(a)] Let $G$ a group of order 10, and $N$ the number of 5-Sylow subgroups of $G$. Then $N\equiv 1\pmod 5$ and $N\mid 10$. Therefore $N= 1$. A group of order 10 has a unique 5-Sylow $H$, and as all 5-Sylow subgroup are conjugate, $H$ is normal in $G$, since the conjugate of a 5-Silow is a 5-Sylow, . Then $\vert H \vert= 5$ and $\vert G/H\vert = 2$ are prime, so $H$ and $G/H$ are cyclic, which implies that $G$ is solvable.
+\item[(a)] Let $G$ be a group of order 10, and $N$ the number of 5-Sylow subgroups of $G$. Then $N\equiv 1\pmod 5$ and $N\mid 10$. Therefore $N= 1$. A group of order 10 has a unique 5-Sylow $H$, and as all 5-Sylow subgroup are conjugate, $H$ is normal in $G$, since the conjugate of a 5-Silow is a 5-Sylow. Then $\vert H \vert= 5$ and $\vert G/H\vert = 2$ are prime, so $H$ and $G/H$ are cyclic of prime order. This implies that $G$ is solvable.
 
 Same reasoning if $\vert G \vert = 15$: then $N \equiv 1 \pmod 5$, and $N \mid 15$, therefore $N=1$.
 
-\item[(b)] Let $G$ a group of order 30.
+\item[(b)] Let $G$ be a group of order 30.
 \be
 \item[$\bullet$] If $G$ is Abelian, a fortiori solvable, it contains a 5-Sylow  subgroup, necessarily normal in $G$.
 
@@ -306,7 +306,7 @@ A group of order 5 is cyclic, a fortiori solvable, and a group of order 6 est is
 If $q = 5$ ou $q=6$, $H$ et $G/H$ are both solvable, so $G$ is solvable.
 \ee
 
-Conclusion : a group $G$ of order 30 is solvable if and only if it contains a proper non trivial normal subgroup.
+Conclusion: a group $G$ of order 30 is solvable if and only if it contains a proper non trivial normal subgroup.
 
 
 \item[(c)] The number $N$ of 3-sylow subgroups of $G$ satisfies $N \equiv 1 \pmod 3$, and $N$ divides $30$, so $N = 1$ or $N = 10$.
@@ -314,9 +314,9 @@ Conclusion : a group $G$ of order 30 is solvable if and only if it contains a pr
 The number $N'$ of 5-sylow subgroups of $G$ satisfies $N \equiv 1 \pmod 5$, and $N'$ divisdes $30$, so $N' = 1$ or $N'=6$.
 
 
-\item[(d)] Using a reductio ad absurdum, suppose that  $G$ contains ten 3-Sylow subgroups of $G$ and six  5-Sylow subgroups.
+\item[(d)] Suppose that  $G$ contains ten 3-Sylow subgroups of $G$ and six  5-Sylow subgroups.
 
-Two distinct cyclic subgroups of order $p$, with $p$ prime, have a trivial intersection, otherwise any non trivial element in the intersection would be a generator of these two subgroups, which would be then identical.
+Two distinct cyclic subgroups of order $p$, with $p$ prime, have a trivial intersection, otherwise any non trivial element in the intersection would be a generator of these two subgroups, which would then be identical.
 
 Consequently, two  3-Sylow subgroups have an intersection reduced to the identity of $G$, and this is the same for the 5-Sylow.
 
@@ -353,7 +353,7 @@ with $G_i \lhd G_{i-1},\ i=1,\cdots,n$.
 \begin{enumerate}
 \item[(a)]
 Suppose that $G_{i-1}/G_i$ is Abelian for $i=1,\cdots,n$.
- Then $G_{i-1}/G_i$ is solvable (Proposition 8.1.5), so we can find a composition series $(\tilde{G}_{i,k})_{0\leq k \leq n_i}$ of $G_{i-1}/G_i$, with cyclic quotients of prime order. The proof of Theorem 8.1.4 (see Exercises 2,3,4) shows that the pre-images $G_{i,k} = \pi^{-1}(\tilde{G}_{i,k})$  of $(\tilde{G}_{i,k})$ by the canonical projection $\pi : G_{i-1} \to G_{i-1}/G_i$ form a composition series
+ Then $G_{i-1}/G_i$ is solvable (Proposition 8.1.5), so we can find a composition series $(\tilde{G}_{i,k})_{0\leq k \leq n_i}$ of $G_{i-1}/G_i$, with cyclic quotients of prime order. The proof of Theorem 8.1.4 (see Exercises 2,3,4) shows that the pre-images $G_{i,k} = \pi^{-1}(\tilde{G}_{i,k})$  of $\tilde{G}_{i,k}$ by the canonical projection $\pi : G_{i-1} \to G_{i-1}/G_i$ form a composition series
 $$G_i = G_{i,n_i} \subset G_{i,n_i-1}\subset \cdots \subset G_{i,k} \subset G_{i,k-1} \subset\cdots \subset G_{i,0} = G_{i-1},$$
 such that $G_{i,k} \lhd G_{i,k-1}, \ i=1,\cdots n_i$ and such that $(G_{i,k-1} :G_{i,k})$ is prime.
 
@@ -386,7 +386,7 @@ $$ \Phi_7(z) = 0 \iff \left(z^3 + \frac{1}{z^3}\right) + \left(z^2+\frac{1}{z^2}
 
 Writing $u = z + \frac{1}{z}$, we obtain $u^2 = z^2+\frac{1}{z^2} + 2$, that is  $z^2+\frac{1}{z^2} = u^2-2$.
 
-$u^3 = z^3 + \frac{1}{z^3} + 3(z + \frac{1}{z})$, donc $z^3 + \frac{1}{z^3} = u^3 - 3u$.
+$u^3 = z^3 + \frac{1}{z^3} + 3(z + \frac{1}{z})$, so $z^3 + \frac{1}{z^3} = u^3 - 3u$.
 
 Therefore
 \begin{align*}
@@ -396,7 +396,7 @@ Therefore
 
 Applying this equivalence to $z = e^{\frac{2ik\pi}{7}}, 1 \leq k \leq 3$, we obtain $$f(2\cos(2k\pi/7))=f(\zeta_7^k + \zeta_7^{-k})=0,\quad  k = 1,2,3.$$
 
-These 3 roots of $f$ are distinct, since $f$ sont the function $\cos$ is strictly decreasing on $[0,\pi]$.
+These 3 roots of $f$ are distinct, since the function $\cos$ is strictly decreasing on $[0,\pi]$.
 
 Therefore 
 \begin{align*}
@@ -408,9 +408,9 @@ f = x^3+x^2-2x-1 &= (x -2\cos(2\pi/7)) (x -2\cos(4\pi/7)) (x -2\cos(6\pi/7))\\
 
 Therefore $L\supset \mathbb{Q}$, and as the three roots of $f$ lie in $\mathbb{Q}[\zeta]$,
 
-$$\mathbb{Q} \subset L \subset \mathbb{Q}(\zeta).$$
+$$\mathbb{Q} \subset L \subset \mathbb{Q}(\zeta_7).$$
 
-As $\zeta_7^7 = 1 \in \mathbb{Q}, \mathbb{Q}(\zeta)$ is by defintion a radical extension of $\mathbb{Q}$, so $\Q \subset L$ is a solvable extension.
+As $\zeta_7^7 = 1 \in \mathbb{Q}, \mathbb{Q}(\zeta_7)$ is by defintion a radical extension of $\mathbb{Q}$, so $\Q \subset L$ is a solvable extension.
 \ee
 \end{proof}
 
@@ -420,7 +420,7 @@ As $\zeta_7^7 = 1 \in \mathbb{Q}, \mathbb{Q}(\zeta)$ is by defintion a radical e
 }
 
 \begin{proof}
-$f(x) = x^3+x^2-2x-1 \in \mathbb{Q}[x]$ : $\sigma_1=-1,\sigma_2=-2,\sigma_3=1$.
+$f(x) = x^3+x^2-2x-1 \in \mathbb{Q}[x]$: $\sigma_1=-1,\sigma_2=-2,\sigma_3=1$.
 
 Note that $f$ of degree 3 is irreducible over $\mathbb{Q}$, otherwise it would have a rational root  $\alpha =p/q \in \mathbb{Q}, p \wedge q = 1,q>0$. 
 
@@ -433,19 +433,19 @@ $\mathrm{discr}(f) = -4\sigma_2^3-27\sigma_3^2+\sigma_1^2\sigma_2^2-4\sigma_1^3\
 
 $\mathrm{discr}(f) =49$ is a square in $\mathbb{Q}$, so $\mathrm{Gal}(L/ \mathbb{Q})$ is the cyclic group $C_3 \simeq \mathbb{Z}/3\mathbb{Z}$ (Prop. 7.4.2), and so $[L : \mathbb{Q}] = 3$.
 
-Using a reductio ad absurdum, suppose that the extension $\mathbb{Q}\subset L$ is radical.
+Assume that the extension $\mathbb{Q}\subset L$ is radical.
 
 As  $[L : \mathbb{Q}] = 3$, it doesn't exists any strict sub-extension of $\mathbb{Q}\subset L$, so the definition of a radical extension imply the existence of $\gamma \in L$ and of an integer $m > 1$  such that $L = \mathbb{Q}(\gamma)$ and $\gamma^m \in \mathbb{Q}$. As the extension is of degree 3, it it not a quadratic extension, so $m\geq 3$.
 
-We conclude the reasoning (Example 8.2.3) :
+We conclude the reasoning (Example 8.2.3):
 
-Let $p$ the minimal polynomial of $\gamma$ over $\mathbb{Q}$. Then $\deg(p) = [L:\mathbb{Q}] = 3$.  As $\gamma$ is a root of $x^m - \gamma^m \in \mathbb{Q}[x]$, $p$ divides $x^m - \gamma^m$.
+Let $p$ be the minimal polynomial of $\gamma$ over $\mathbb{Q}$. Then $\deg(p) = [L:\mathbb{Q}] = 3$.  As $\gamma$ is a root of $x^m - \gamma^m \in \mathbb{Q}[x]$, $p$ divides $x^m - \gamma^m$.
 
 As the extension $\mathbb{Q} \subset L$ is a Galois extension, all the roots of $p$ are in $L$ so are real since $L \subset \R$. Thus the three real distinct roots of $p$ are among the roots of $x^m- \gamma^m$, that is $$\gamma, \zeta_m \gamma,\zeta_m^2 \gamma,\cdots,\zeta_m^{m-1} \gamma,\qquad \gamma \in \mathbb{R}.$$
 
 But this is impossible since at most two of these roots are real.
 
-Conclusion : $\mathbb{Q}\subset L$ is not a radical extension (but $\mathbb{Q} \subset L \subset \mathbb{Q}(\zeta_7)$, so $L/\mathbb{Q}$ is solvable).
+Conclusion: $\mathbb{Q}\subset L$ is not a radical extension (but $\mathbb{Q} \subset L \subset \mathbb{Q}(\zeta_7)$, so $\mathbb{Q} \subset L$ is solvable).
 \end{proof}
 
 
@@ -460,11 +460,11 @@ Conclusion : $\mathbb{Q}\subset L$ is not a radical extension (but $\mathbb{Q} \
 
 \begin{proof}
 \be
-\item[(a)] Let $A$ the set of the subfields of $L$ containing $K_1$ and $K_2$. Then $A \neq \emptyset$, since $L \in A$.
+\item[(a)] Let $A$ be the set of the subfields of $L$ containing $K_1$ and $K_2$. Then $A \neq \emptyset$, since $L \in A$.
 
 The intersection of the subfields of $L$ containing $K_1$ and $K_2$ is a subfield of $L$ containing $ K_1$ and $K_2$, so 
 
-$ \bigcap\limits_{X \in A} X$ is an element of $A$ , and this is the smallest element of $A$ for inclusion.
+$ \bigcap\limits_{X \in A} X$ is an element of $A$, and this is the smallest element of $A$ for inclusion.
 
 So there exists a smallest subfield of $L$ containing $K_1$ and $K_2$, that is $K_1K_2$.
 
@@ -472,9 +472,9 @@ So there exists a smallest subfield of $L$ containing $K_1$ and $K_2$, that is $
 
 $K = K_1K_2$ contains $K_1$ and $K_2$, so contains  $F$ , and also $\alpha_1,\alpha_2,\cdots,\alpha_n,\beta_1,\beta_2,\cdots,\beta_m$, therefore $K \supset F(\alpha_1,\alpha_2,\cdots,\alpha_n,\beta_1,\beta_2,\cdots,\beta_m)$.
 
-Conversally, as $K = F(\alpha_1,\alpha_2,\cdots,\alpha_n,\beta_1,\beta_2,\cdots,\beta_m)$ is a subfield of $L$ containing $K_1 = F(\alpha_1,\alpha_2,\cdots,\alpha_n)$ and $K_2 = F(\beta_1,\beta_2,\cdots,\beta_m)$, $K \in A$, so $K$ contains the smallest element of $A$, which is $K_1K_2$.
+Conversaly, as $K = F(\alpha_1,\alpha_2,\cdots,\alpha_n,\beta_1,\beta_2,\cdots,\beta_m)$ is a subfield of $L$ containing $K_1 = F(\alpha_1,\alpha_2,\cdots,\alpha_n)$ and $K_2 = F(\beta_1,\beta_2,\cdots,\beta_m)$, $K \in A$, so $K$ contains the smallest element of $A$, which is $K_1K_2$.
 
-Conclusion : $K_1K_2 =  F(\alpha_1,\alpha_2,\cdots,\alpha_n,\beta_1,\beta_2,\cdots,\beta_m)$.
+Conclusion: $K_1K_2 =  F(\alpha_1,\alpha_2,\cdots,\alpha_n,\beta_1,\beta_2,\cdots,\beta_m)$.
 \ee
 \end{proof}
 
@@ -499,11 +499,11 @@ $K = F(\alpha_1,\alpha_2,\cdots,\alpha_r)$ is a Galois extension of $F$ containi
 
 We show that $F\subset K$ is the Galois closure of $F \subset L$.
 
-$\bullet$  $F\subset K$ is a Galois extension (as previously proven) and $K \supset L$.
+$\bullet$  $F\subset K$ is a Galois extension (as previously proved) and $K \supset L$.
 
 $\bullet$ Suppose that $L \subset K'$ is another extension such that $K'$ is Galois over $F$.
 
-As $F\subset K'$ is normal, and $\alpha \in L \subset K'$, the polynomial $h \in F[x]$ with a root in $K'$ splits completely over $K'$ : 
+As $F\subset K'$ is normal, and $\alpha \in L \subset K'$, the polynomial $h \in F[x]$ with a root in $K'$ splits completely over $K'$: 
 
 $h(x) = (x-\beta_1)\cdots(x-\beta_r)$, where $\beta_1 = \alpha$, and $\beta_i \in K', 1 \leq i \leq r$.
 
@@ -523,7 +523,7 @@ Indeed, an element $u \in L$ is of the form $u = g(\alpha), g \in F[x]$, so $\si
 
 Conversely, an element $v \in F(\alpha_i)$ is of the form $v = g(\alpha_i)$. So $v$ is the image of $u = g(\alpha) \in L$ by $\sigma$, so $L' = \sigma(L) = F(\alpha_i)$, therefore the conjugates of $L$ are among the $F(\alpha_i), 1 \leq i \leq r$.
 
-Moreover, if $L'' = F(\alpha_i)$, for any $i=1,\ldots,r$, we know that there exists $\sigma \in \mathrm{Gal}(M/F)$ such that $\sigma(\alpha) = \alpha_i$ (Prop.5.1.8). As previously proven, $L'' =  F(\alpha_i) = \sigma(F(\alpha)) = \sigma(L)$.
+Moreover, if $L'' = F(\alpha_i)$, for any $i=1,\ldots,r$, we know that there exists $\sigma \in \mathrm{Gal}(M/F)$ such that $\sigma(\alpha) = \alpha_i$ (Prop.5.1.8). As previously proved, $L'' =  F(\alpha_i) = \sigma(F(\alpha)) = \sigma(L)$.
 
 The conjugate fields of $L$ in $M$ are the $r$ subfields $F(\alpha_i), 1 \leq i \leq r$.
 \ee
@@ -543,9 +543,9 @@ The conjugate fields of $L$ in $M$ are the $r$ subfields $F(\alpha_i), 1 \leq i 
 \item[(a)]
 By hypothesis, $F\subset K_2$, so $F_0=F \subset K_2 = F'_0$.
 
-Using an induction, if we suppose that $F_{i-1} \subset F'_{i-1}, 1\leq i < n$, then $F_{i-1}(\gamma_i) \subset F'_{i-1}(\gamma_i)$,  therefore $F_i \subset F'_i$.
+Using induction, if we suppose that $F_{i-1} \subset F'_{i-1}, 1\leq i < n$, then $F_{i-1}(\gamma_i) \subset F'_{i-1}(\gamma_i)$,  therefore $F_i \subset F'_i$.
 
-Conclusion : $\forall i, 0 \leq i \leq n, \ F_i \subset F'_i$.
+Conclusion: $\forall i, 0 \leq i \leq n, \ F_i \subset F'_i$.
 
 Consequently, $\gamma_i^{m_i} \in F_{i-1} \subset F'_{i-1}, \ i=1,\cdots,n$, so  $K_2 \subset F'_n$ is a radical extension.
 
@@ -558,8 +558,8 @@ Indeed, $F'_n =  K_2(\gamma_1,\cdots,\gamma_n)$ by construction, and
 \be
 \item[$\bullet$] 
 \begin{align*}
-& K_2(\gamma_1,\cdots,\gamma_n) \supset K_2\\
-& K_2(\gamma_1,\cdots,\gamma_n) \supset F(\gamma_1,\cdots,\gamma_n) = K_1
+& K_2(\gamma_1,\cdots,\gamma_n) \supset K_2,\\
+& K_2(\gamma_1,\cdots,\gamma_n) \supset F(\gamma_1,\cdots,\gamma_n) = K_1,
 \end{align*}
 therefore $F'_n \supset K_1, F'_n\supset K_2$.
 
@@ -571,7 +571,7 @@ therefore $K \supset  K_2(\gamma_1,\cdots,\gamma_n) = F'_n$.
 \ee
 So $F'_n$ is the smallest subfield of $L$ which contains $K_1$ and $K_2$,
 $$ K_1K_2 = F'_n.$$
-So we know that $K_1K_2$ is a radical extension of $K_2$.
+We conclude that $K_1K_2$ is a radical extension of $K_2$.
 
 \end{enumerate}
 \end{proof}
@@ -597,7 +597,7 @@ $$F = F'_0 \subset F'_1=F'_0(\gamma'_1) \subset \cdots \subset F'_i = F'_{i-1}(\
 
 Moreover, $(\gamma'_{i})^{m_i} = \sigma(\gamma_i)^{m_i} = \sigma(\gamma_i^{m_i}) \in \sigma(F_{i-1}) = F'_{i-1}$.
 
-Consequently $\sigma L/F$ is a radical extension.
+Consequently $F \subset \sigma L$ is a radical extension.
 \end{proof}
 
 \paragraph{Ex. 8.2.7}
@@ -606,9 +606,9 @@ Consequently $\sigma L/F$ is a radical extension.
 }
 
 \begin{proof}
-$F\subset K_1$ and $F \subset K_2$ are Galois extensions, so are separable extensions. By the Theorem of the Primitive Element, $K_1 = F(\alpha), K_2=F(\beta), \ \alpha \in K_1,\beta \in K_2$, with  $\alpha, \beta$ separable over $F$ , therefore $K_1K_2 = F(\alpha,\beta)$ is separable (Proposition 7.1.6).
+$F\subset K_1$ and $F \subset K_2$ are Galois extensions, so are separable extensions. By the Theorem of the Primitive Element, $K_1 = F(\alpha), K_2=F(\beta), \ \alpha \in K_1,\beta \in K_2$, with  $\alpha, \beta$ separable over $F$, therefore $K_1K_2 = F(\alpha,\beta)$ is separable (Proposition 7.1.6).
 
-So the Galois closure exists: let $M$ a Galois closure of $F \subset K_1K_2/F$ , and $\sigma$ any element of $\Gal(M/F)$.
+By Proposition 7.1.7, the Galois closure exists: let $M$ a Galois closure of $F \subset K_1K_2$, and $\sigma$ any element of $\Gal(M/F)$.
 
 
 Let  $\gamma \in K_1 K_2 = F(\alpha,\beta)$. Then $\sigma(\gamma)\in F(\sigma(\alpha),\sigma(\beta))$, and $\sigma(\alpha) \in K_1, \sigma(\beta)\in K_2$ since $F\subset K_1$ and $F \subset K_2$ are normal extensions. Therefore $\sigma(\gamma) \in K_1K_2$.
@@ -617,7 +617,7 @@ Consequently $$\sigma (K_1 K_2) \subset  K_1K_2.$$
 
 Applying this result to $\sigma^{-1}$, we obtain $\sigma^{-1}(K_1K_2) \subset K_1K_2$, therefore $K_1K_2 \subset \sigma(K_1K_2)$, and so
 $$\forall \sigma \in \Gal(M/F),\ \sigma (K_1K_2) = K_1 K_2.$$
-By Theorem 7.2.5, this is sufficient to $K_1K_2$ be a Galois extension of $F$.
+By Theorem 7.2.5, we conclude that $K_1K_2$ is a Galois extension of $F$.
 \end{proof}
 
 \subsection{SOLVABLE EXTENSIONS AND SOLVABLE GROUPS}
@@ -636,11 +636,11 @@ By Theorem 7.2.5, this is sufficient to $K_1K_2$ be a Galois extension of $F$.
 \item[(a)]
 Let $f=x^m-1,\ m\in \N^*$. Then $f'=m x^{m-1}$ is relatively prime with  $f$. Indeed $m\neq 0$ in $L$ since the characteristic of $L$ is not $0$, and $-f +m^{-1} x f'= -x^m+1 +1 x^m = 1$ is a BŽzout's relation between $f$ et $f'$. Therefore (Prop. 5.3.2), $f$ is a separable polynomial, and $x^m-1$ has so $m$ distinct roots in $M$,  the splitting field of $f$ over $L$.
 
-\item[(b)] We show that $\mathbb{U} = \{\alpha \in M\ \vert \ \alpha^m=1\}$, the set of the $m$ roots of $f$ in $M$, is a subgroup of $M^*$.
+\item[(b)] We show that $\mathbb{U}_m = \{\alpha \in M\ \vert \ \alpha^m=1\}$, the set of the $m$ roots of $f$ in $M$, is a subgroup of $M^*$.
 \be
-\item[$\bullet$] $1^m = 1$, donc $1\in \mathbb{U} \neq \emptyset$.
+\item[$\bullet$] $1^m = 1$, donc $1\in \mathbb{U}_m \neq \emptyset$.
 
-\item[$\bullet$] Si $\alpha, \beta \in \mathbb{U}$, alors $(\alpha \beta^{-1})^m = \alpha^m (\beta^m)^{-1} = 1$, donc $\alpha \beta^{-1} \in \mathbb{U}$.
+\item[$\bullet$] Si $\alpha, \beta \in \mathbb{U}_m$, alors $(\alpha \beta^{-1})^m = \alpha^m (\beta^m)^{-1} = 1$, donc $\alpha \beta^{-1} \in \mathbb{U}_m$.
 \ee
 The roots of $x^m-1$ in $M$ form a group under multiplication, subgroup of the multiplicative group of a field, so it is cyclic.
 
@@ -698,7 +698,7 @@ Such an $l$ is unique, since $ \zeta_i^l \gamma_i =  \zeta_i^{l'}\gamma_i, \ 1\l
 
 
 \item[(b)]
-Soit 
+Let
 $$
 \varphi :
 \left\{
@@ -714,9 +714,9 @@ $\bullet$ We verify that $\varphi$ is a group homomorphism.
 
 Let $\sigma,\tau \in \Gal(F_i/F_{i-1})$. Then $\sigma(\gamma_i) = \zeta_i^l \gamma_i, \tau(\gamma_i) = \zeta_i^k \gamma_i$.
 
-Thus $(\sigma \tau)(\gamma_i) = \sigma(\zeta_i^k \gamma_i) = \sigma(\zeta_i)^k \sigma(\gamma_i) = \zeta_i^k \sigma(\gamma_i)$, since $\zeta_i \in F$, therefore $\zeta_i \in F_i$.
+Thus $(\sigma \tau)(\gamma_i) = \sigma(\zeta_i^k \gamma_i) = \sigma(\zeta_i)^k \sigma(\gamma_i) = \zeta_i^k \sigma(\gamma_i)$, since $\zeta_i \in F$, therefore $\zeta_i \in F_{i-1}$.
  
-  $(\sigma \tau)(\gamma_i) =  \zeta_i^k   \zeta_i^l \gamma_i = \zeta_i^{l+k} \gamma_i$, donc $\varphi(\sigma \tau) = [l+k] = [l]+[k] = \varphi(\sigma) + \varphi(\tau)$.
+  $(\sigma \tau)(\gamma_i) =  \zeta_i^k   \zeta_i^l \gamma_i = \zeta_i^{l+k} \gamma_i$, so $\varphi(\sigma \tau) = [l+k] = [l]+[k] = \varphi(\sigma) + \varphi(\tau)$.
   
   $\bullet$ $\varphi$ is an injective homomorphism: 
   
@@ -756,7 +756,7 @@ $\vert \Gal(F_i/F_{i-1}) \vert$ divides $\vert \Gal(L/F)\vert $.
 
 \begin{proof}
 For all $k\in \Z$, 
-$$(\zeta^{m/n})^k = 1 \iff \zeta^{mk/n} = 1 \iff m \mid mk/n \iff n\mid k.$$  The order of $\zeta^{m/n}$ is so $n$. In other words ,$ \zeta^{m/n}$ is a  primitive $n$th root of unity.
+$$(\zeta^{m/n})^k = 1 \iff \zeta^{mk/n} = 1 \iff m \mid mk/n \iff n\mid k.$$  The order of $\zeta^{m/n}$ is so $n$. In other words, $ \zeta^{m/n}$ is a  primitive $n$th root of unity.
 \end{proof}
 
 \paragraph{Ex. 8.3.7}
@@ -794,7 +794,7 @@ The order of $ab$ is so $pq$. \qed
 \bigskip 
 {\bf Lemma 2.} {\it If $G$ is an Abelian group and $c_1, \cdots,c_r \in G$ are of respective order $p_1, \cdots, p_r$, where $p_1, \cdots,p_r$ are pairwise relatively prime, then the order of $c = c_1\cdots c_r$ is $p_1\cdots p_r$.}
 
-{\it Proof of Lemma 2:}   Using the induction hypothesis $\vert c_1\cdots c_k \vert = p_1\cdots p_k, \ k<r$, and applying Lemma 1 to $a=c_1\cdots c_k$ d'ordre  $p_1\cdots p_k$, and $b = c_{k+1}$ of order $p_{k+1}$, where $p_1\cdots p_k \wedge p_{k+1}=1$, then $\vert c_1\cdots c_{k+1} \vert  = p_1\cdots p_{k+1}$. \qed
+{\it Proof of Lemma 2:}   Using the induction hypothesis $\vert c_1\cdots c_k \vert = p_1\cdots p_k, \ k<r$, and applying Lemma 1 to $a=c_1\cdots c_k$ of order  $p_1\cdots p_k$, and $b = c_{k+1}$ of order $p_{k+1}$, where $p_1\cdots p_k \wedge p_{k+1}=1$, then $\vert c_1\cdots c_{k+1} \vert  = p_1\cdots p_{k+1}$. \qed
 
 $\bullet$ Suppose that $F$ contains a root of unity $c$ of order $n = p_1\cdots p_r$. Write $c_i = c^{n/p_i},\ i=1,\cdots r$. Then $c_i\in F$ and Exercise 6 proves that $c_i$ is of order $p_i$.
 
@@ -807,7 +807,7 @@ Conclusion: if $p_1,\cdots,p_r$ are distinct prime numbers, $F$ contains a primi
 \item[(b)]
 Suppose that $F$ contains a primitive $p_1\cdots p_r$th root of unity $\zeta_{p_1\cdots p_r}$. By part (a), $F$ contains also $p_i$th primitive roots of unity $\zeta_{p_i}$ for $ i=1,\cdots,r$. 
 
-So the condition 8.11 is satisfied: $F$ contains a  $p$th primitive root of unity for all $p$ dividing $\Gal(L/F) = [L:F]$. The part $(b)\Rightarrow(a)$ in the proof of Theorem 8.3.3 shows then that $F\subset L$ is a radical extension.
+So the condition 8.11 is satisfied: $F$ contains a  $p$th primitive root of unity for all $p$ dividing $\Gal(L/F) = [L:F]$. The part $(b)\Rightarrow(a)$ (special case) in the proof of Theorem 8.3.3 shows that $F\subset L$ is a radical extension.
 
 \item[(c)]
 
@@ -825,7 +825,7 @@ So $F(\zeta)$ contains a  $p$th primitive root of unity for all $p$ dividing $\v
 
 {\it This exercise concerns the details of our derivation of Cardan's formulas.
 \be
-\item[(a)] Use the comutational methods of Section 2.3 the formulas for $\alpha_1^3$ and $\beta_1$ stated in the text.
+\item[(a)] Use the computational methods of Section 2.3 the formulas for $\alpha_1^3$ and $\beta_1$ stated in the text.
 \item[(b)] Prove (8.15).
 \ee
 }
@@ -833,40 +833,40 @@ So $F(\zeta)$ contains a  $p$th primitive root of unity for all $p$ dividing $\v
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-$\alpha_1 = x_1+\omega^2 x_2+\omega x_3$
+We know that $\alpha_1 = x_1+\omega^2 x_2+\omega x_3$, so
 \begin{align*}
 \alpha_1^3 =&\ ( x_1+\omega^2 x_2+\omega x_3)^3\\
 =&\quad x_1^3+x_2^3+x_3^3\\
 &+3\omega\, (x_1^2x_3+x_2^2x_1+x_3^2x_2)\\
 &+3\omega^2(x_1^2x_2+x_2^2x_3+x_3^2x_1)\\
-&+6x_1x_2x_3,
+&+6x_1x_2x_3.
 \end{align*}
- thus  $\alpha_1$ is of the form
-$$\alpha_1 = p + 3\omega r + 3 \omega^2 s + 6q$$
+Thus  $\alpha_1^3$ is of the form
+$$\alpha_1^3 = p + 3\omega r + 3 \omega^2 s + 6q,$$
 where
 \begin{align*} 
-p &=x_1^3+x_2^3+x_3^3 = \sigma_1^3-3\sigma_1\sigma_2+3\sigma_3\\
-q &= x_1x_2x_3 = \sigma_3\\
-r&=x_1^2x_3+x_2^2x_1+x_3^2x_2\\
-s&=x_1^2x_2+x_2^2x_3+x_3^2x_1
+p &=x_1^3+x_2^3+x_3^3 = \sigma_1^3-3\sigma_1\sigma_2+3\sigma_3,\\
+q &= x_1x_2x_3 = \sigma_3,\\
+r&=x_1^2x_3+x_2^2x_1+x_3^2x_2,\\
+s&=x_1^2x_2+x_2^2x_3+x_3^2x_1.
 \end{align*}
-$r,s$ are fixed by the permutations of $A_3$ must be of the form $A+B\sqrt{\Delta}, \ A,B\in K = \Q(\sigma_1,\sigma_2,\sigma_3)$, where we choose
+Since $r,s$ are fixed by the permutations of $A_3$, they must be of the form $A+B\sqrt{\Delta}, \ A,B\in K = \Q(\sigma_1,\sigma_2,\sigma_3)$, where we choose
 \begin{align*}
 \sqrt{\Delta} &= (x_2-x_1)(x_3-x_2)(x_3-x_1)\\
 &=(x_1^2x_3+x_2^2x_1+x_3^2x_2) -(x_1^2x_3+x_2^2x_1+x_3^2x_2)\\
-&=r-s
+&=r-s.
 \end{align*}
 
 The pair $(r,s)$ is so the solution of the system
 \begin{align*}
-r-s&=\sqrt{\Delta}\\
-r+s &= \sigma_1\sigma_2 - 3 \sigma_3,
+r-s&=\sqrt{\Delta},\\
+r+s &= \sigma_1\sigma_2 - 3 \sigma_3.
 \end{align*}
 
-therefore
+Therefore
 \begin{align*}
-r &= \frac{1}{2}(\sigma_1 \sigma_2 - 3 \sigma_3 +\sqrt{\Delta})\\
-s &= \frac{1}{2}(\sigma_1 \sigma_2 - 3 \sigma_3 -\sqrt{\Delta})
+r &= \frac{1}{2}(\sigma_1 \sigma_2 - 3 \sigma_3 +\sqrt{\Delta}),\\
+s &= \frac{1}{2}(\sigma_1 \sigma_2 - 3 \sigma_3 -\sqrt{\Delta}).
 \end{align*}
 Then 
 \begin{align*}
@@ -888,7 +888,7 @@ $$q = -\frac{2}{27} \sigma_1^3 +\frac{1}{3} \sigma_1 \sigma_2 - \sigma_3.$$
 So
 \begin{align*}
 \alpha_1 &= x_1+\omega^2 x_2 + \omega x_3\\
-&= 3\  \sqrt[3]{\frac{1}{2}\left ( -q +\sqrt{\frac{-\Delta}{27} }\right)}
+&= 3\  \sqrt[3]{\frac{1}{2}\left ( -q +\sqrt{\frac{-\Delta}{27} }\right)},
 \end{align*}
 and
 \begin{align*}
@@ -897,7 +897,7 @@ and
 &= 3\  \sqrt[3]{\frac{1}{2}\left ( -q - \sqrt{\frac{-\Delta}{27} }\right)}.
 \end{align*}
 
-In deed the same calculation gives $\beta_1$, by exchanging $x_2$ with $x_3$, which transforms $\sqrt{\Delta}$ in  $- \sqrt{\Delta}$.
+Indeed the same calculation gives $\beta_1$, by the exchange of $x_2$ with $x_3$, which sends $\sqrt{\Delta}$ on $- \sqrt{\Delta}$.
 
 \item[(b)]
 The system of equations
@@ -929,9 +929,9 @@ Let $G$ be a non trivial finite Abelian group.
 \be
 \item[$\bullet$] If $G \simeq \Z/p\Z$, $G$ is cyclic of order $p$. Every subgroup $H$ of $G$ has a cardinality dividing $p$, so its order is 1 or $p$, therefore $H = \{e\}$ or $H = G$. The only subgroups of $G$, normal or not, are $\{e\}$ or $G$. So $G$ is simple.
 
-\item[$\bullet$] Suppose that $G$ is a non trivial finite Abelian simple group. As $G$ is Abelian, every subgroup of $G$ is normal in $G$, thus $G$ has no other subgroup that $\{e\}$ or $G$. As $G$ is not trivial, there exists $x \in G, x\neq e$. Then $\langle x \rangle$ is a subgroup of $G$ with cardinality greater than 1, therefore $G = \langle x \rangle$. $G$ being cyclic, it is isomorphic to $\Z/n\Z,\ n\in \N, n>1$. If  $n$ was not prime, $n$ would be divisible by $d, 1<d<n$. Then $\langle [d]_n \rangle$ is a subgroup of $\Z/nZ$ of order $n/d, 1<n/d<n$, so $\Z/nZ$ would have a non trivial subgroup, and also $G\simeq \Z/n\Z$. This is a contradiction, so $n=p$ is prime:
+\item[$\bullet$] Suppose that $G$ is a non trivial finite Abelian simple group. As $G$ is Abelian, every subgroup of $G$ is normal in $G$, thus $G$ has no other subgroup that $\{e\}$ or $G$. As $G$ is not trivial, there exists $x \in G, x\neq e$. Then $\langle x \rangle$ is a subgroup of $G$ with cardinality greater than 1, therefore $G = \langle x \rangle$. $G$ being cyclic, it is isomorphic to $\Z/n\Z,\ n\in \N, n>1$. If  $n$ was not prime, $n$ would be divisible by some integer $d, 1<d<n$. Then $\langle [d]_n \rangle$ is a subgroup of $\Z/n\Z$ of order $n/d, 1<n/d<n$, so $\Z/n\Z$ would have a non trivial subgroup. This is a contradiction, so $n=p$ is prime:
 \begin{center}
-$G\simeq \Z/p\Z$, $p$ premier. 
+$G\simeq \Z/p\Z$, $p$ prime. 
 \end{center}
 \ee
 \end{proof}
@@ -942,22 +942,23 @@ $G\simeq \Z/p\Z$, $p$ premier.
 }
 
 \begin{proof}
-As every permutation in  $A_n$ is the product of an even number of permutations, it is sufficient to prove that the product of $(i j)(k l), i\neq j, k \neq l$is a product of 3-cycles.
+As every permutation in  $A_n$ is the product of an even number of permutations, it is sufficient to prove that the product of $(i j)(k l), i\neq j, k \neq l$, is a product of 3-cycles.
 
 $\bullet$ If $\{i,j\} ,\{k,l\}$ are disjointed, then $i,j,k,l$ are distincts, so $$(i j)(k l) = (k i l) (i j k).$$ 
 Indeed, by applying first $(i j k)$, then $(k i l)$, we obtain
 \begin{align*}
-& i \mapsto j \mapsto j\\
-& j \mapsto k \mapsto i\\
-&k \mapsto i \mapsto l\\
-&l \mapsto l \mapsto k
+& i \mapsto j \mapsto j,\\
+& j \mapsto k \mapsto i,\\
+&k \mapsto i \mapsto l,\\
+&l \mapsto l \mapsto k,
 \end{align*}
+and the other elements are unchanged.
 
-$\bullet$ If $\{i,j\} ,\{k,l\}$ have one common element, say $i = k, i \neq l$, then $$(i j)(k l) = (i j)(i l) = (i l j)$$ is a  3-cycle.
+$\bullet$ If $\{i,j\} ,\{k,l\}$ have one common element, say $i = k, i \neq l$, then $$(i\, j)(k\, l) = (i\, j)(i \,l) = (i \,l \,j)$$ is a  3-cycle.
 
-$\bullet$ If $\{i,j\} = \{k, l\}$, alors $(i,j)(k,l) = (i j)^2 = ()= e$ is the empty product.
+$\bullet$ If $\{i,j\} = \{k, l\}$, alors $(i\,j)(k\,l) = (i \,j)^2 = ()= e$ is the empty product.
 
-Conclusion : $A_n$ is generated by 3-cycles.
+Conclusion: $A_n$ is generated by 3-cycles.
 \end{proof}
 
 \paragraph{Ex. 8.4.3}
@@ -971,7 +972,7 @@ Conclusion : $A_n$ is generated by 3-cycles.
 }
 
 
-{\bf Theorem.} {\it The alternating group $A_n$ is solvable for all $n\geq 5$.}
+{\bf Theorem.} {\it The alternating group $A_n$ is simple for all $n\geq 5$.}
 
 \begin{proof}
 Let $H \neq \{e\}$ a normal subgroup of $A_n$. It is sufficient to prove that $H = A_n$. We show first that $H$ contains a  3-cycle. As $H \neq \{e\}$, $H$ contains an even permutation $\sigma \neq e$. For any 3-cycle $(j_1 j_2  j_3)$,  $(j_1 j_2  j_3) \in A_n$, and $H \lhd A_n$, so
@@ -992,7 +993,7 @@ This proves that this commutator is a permutation in $H$ that move at most 6 ele
 
 \item[(b)] 
 \begin{enumerate}
-\item[$\bullet$] {\bf Cas 1. }  First suppose that one of the cycles in the cycle decomposition of $\sigma$ has a length $\geq 4$, say
+\item[$\bullet$] {\bf Case 1. }  First suppose that one of the cycles in the cycle decomposition of $\sigma$ has a length $\geq 4$, say
 $$\sigma = (i_1\,i_2\,i_3\,i_4 \cdots)(\cdots)\cdots.$$
 In this case we claim that
 $$\lambda = \sigma^{-1} (i_2\,i_3\,i_4)^{-1} \sigma\, (i_2\,i_3\,i_4) = (i_1\,i_3\,i_4).$$
@@ -1017,7 +1018,7 @@ $\forall k \in \{1,\ldots,n\},\  \lambda\cdot  k = (i_1\,i_3\,i_4)\cdot k$, so $
 
 In this case, $H$ contains the 3-cycle $(i_1\,i_3\,i_4)$.
 
-\item[$\bullet$] {\bf Cas 2. }
+\item[$\bullet$] {\bf Case 2. }
 Next suppose that $\sigma$ has a 3-cycle. If $\sigma$ is a 3-cycle, then we are done. Hence we may assume that
 $$\sigma = (i_1\, i_2\,i_3)(i_4 i_5\cdots)\cdots.$$
 We show that
@@ -1039,7 +1040,7 @@ Hence $\mu = (i_1\, i_4\, i_2 \,i_3\, i_5)$.
 
 As $H$ contains a 5-cycle, by case 1, it contains also a 3-cycle.
 
-\item[$\bullet$] {\bf Cas 3. }
+\item[$\bullet$] {\bf Case 3. }
 Finally suppose that $\sigma$ is a product of disjoint 2-cycles. There must be at least two since $\sigma \in H \subset A_n$ : 
 $$\sigma = (i_1\,i_2) (i_3\,i_4)(\cdots)(\cdots)\cdots.$$
 This time, we have
@@ -1072,7 +1073,7 @@ by computing the successive images of 1 2 3 4 5:
 &5\ 4\ 3\ 2\ 1  \qquad \mathrm{by}\ (1\, 3\, 5)^{-1} =(1\, 5\, 3) \\
 &5\ 2\ 1\ 4\ 3  \qquad \mathrm{by}\ ((1\, 3)( 2 \,4 ))^{-1} =(1\, 3)( 2 \,4 ) \\
 \end{align*}
-We obtain well the permutation $(1\, 5\, 3)$.
+This is the permutation $(1\, 5\, 3)$.
 
 Hence $H$ contains in this case the 3-cycle $ (i_1\, i_5\, i_3)$.
 \end{enumerate}
@@ -1107,7 +1108,7 @@ $H$ contains all 3-cycles, and the 3-cycles generate $A_n$ (Exercise 2), so $H =
 }
 
 \begin{proof}
-$H_1 \lhd G, H_2\subset G$.
+We assume that $H_1 \lhd G, H_2\subset G$.
 Let $x \in H_1 \cap H_2$.
 If $y \in H_2$, then $y \in G$. As $H_1 \lhd G$, $yxy^{-1} \in H_1$. Moreover  $x \in H_1 \cap H_2$, thus $x \in H_2$, and  by hypothesis $y\in H_2$, hence $yxy^{-1} \in H_2$. Consequently $yxy^{-1} \in H_1\cap H_2$.
 $$\forall x \in H_1\cap H_2,\ \forall y \in H_2, \ yxy^{-1} \in H_1\cap H_2.$$
@@ -1126,6 +1127,9 @@ otherwise $\sigma \in H\cap  A_n$, and then $ \sigma = e$.
 
 Let $\tau$ any permutation in $H \setminus \{e\}$. With the same reasoning, $\tau$ is an odd permutation, and so is $\sigma$. Hence $\sigma^{-1} \tau \in H \cap A_n$, hence $\sigma^{-1} \tau = e$, so $\tau = \sigma$. $H$ has no other element than $e,\sigma$.
 $$H = \{e,\sigma\},\ \sigma^2 = e.$$
+
+The order of $\sigma$ is 2, so in the decomposition of $\sigma$ in disjoint cycles, since the order of $\sigma$ is the lcm of the orders of these cycles, all the cycles have order 2.
+
 As $\sigma \not \in A_n$, $\sigma$ is a product of an odd number of disjoint 2-cycles.
 \end{proof}
 
@@ -1146,7 +1150,7 @@ Let $G$ be a finite group, and $H\neq G$ a normal subgroup of $G$ of maximal ord
  If $G/H$ was not simple, $G/H$ would have a normal  subgroup  $\overline{K}$,
  $$  \{\overline{e}\}  \subsetneq \overline{K} \subsetneq G/H ,$$
  where $\overline{e} = eH$ is the indentity of $G/H$.
- Let $\pi = G \to G/H, g \mapsto gH$ lthe canonical projection, and $K =\pi^{-1}(\overline{K})$.
+ Let $\pi = G \to G/H, g \mapsto gH$ the canonical projection, and $K =\pi^{-1}(\overline{K})$.
 
 As $\{\overline{e} \} \subsetneq \overline{K} \subsetneq G/H$, 
 then $\pi^{-1}(\{\overline{e}\}) \subsetneq \pi^{-1}(\overline{K}) \subsetneq  \pi^{-1}(G/H)$, so
@@ -1161,35 +1165,19 @@ $G/H$ is a simple group.
 
 \item[(b)]
 The trivial group $\{e\}$ has a composition series with a unique element.
-We suppose the induction hypothesis that every group with order less that $n$ has a composition series, and let $G$ be a group of order $n$.
+Reasoning by induction, we suppose that every group of order less that $n$ has a composition series, and let $G$ be a group of order $n$.
 
-If $G$ est simple, $\{e\} \subset G$ is a composition series for $G$. Otherwise $G$ has a subgroup $H$ such that 
-$$\{e\} \subsetneq  H  \subsetneq G, \qquad H \lhd G.$$
+$G$ has a normal subgroup $H$ of maximal order such that 
+$$\{e\} \subset  H  \subsetneq G, \qquad H \lhd G.$$
+By part (a), $G/H$ is simple.
 
-As $|G/H| < n$, the induction hypothesis applied to $G/H$ gives a composition series
+As $|H|<n$, the induction hypothesis gives a composition series for $H$, that we write
+$$\{e\} = G_l \subset G_{l-1} \subset \cdots \subset G_1=H,$$
+where $G_i \lhd G_{i-1}, \ 2 \leq i \leq l$, and $G_{i-1}/G_i$ is simple.
 
-$$\{\overline{e}\}=\overline{G}_{m} \subset \overline{G}_{m-1} \subset \cdots \subset \overline{G}_{1} \subset \overline{G}_{0} = G/H,$$
-with $\overline{G}_{i} \lhd \overline{G}_{i-1}, \ i=1,\cdots,m$ and $\overline{G}_{i-1}/\overline{G}_{i}$ simple.
-
-Call $G_i = \pi^{-1}(G_i), \ i=1,\cdots,m$. As $\pi$ is surjective, $\overline{G}_i = \pi(G_i)$. Then
-$$H = G_m \subset G_{m-1} \subset\cdots \subset G_1 \subset G_0 = G.$$
-
-Moreover, $\overline{G}_{i} \lhd \overline{G}_{i-1}$ implies that $G_i \lhd G_{i-1}$ with the same proof as in part (a): if  $y \in G_{i-1}, x \in G_i$, then $\overline{y} = yH \in\overline{G}_{i-1}$ and $\overline{x} = xH \in \overline{G}_i$, with $ G_{i} \lhd G_{i-1}$, hence $\pi(yxy^{-1}) = \overline{y}\,\overline{x}\,\overline{y}^{-1} \in \overline{G_i}$, 	nd $yxy^{-1} \in G_i = \pi^{-1}(\overline{G}_i)$.
-
-Moreover $$G_{i-1}/G_{i} \simeq \overline{G}_{i-1} / \overline{G}_{i}.$$
-Indeed, the mapping $\varphi : G_{i-1} \to \overline{G}_{i-1} / \overline{G}_{i}$ defined by $g \mapsto \varphi(g) = \pi(g) \overline{G}_i$ is a group homomorphism, and $\varphi$ is surjective: if $h \overline{G}_i,\ h\in \overline{G}_{i-1}$ is any element of $\overline{G}_{i-1} / \overline{G}_{i}$, then $h=\pi(g)$ for some $g \in G_{i-1}$, since $\overline{G}_{i-1} = \pi(G_{i-1})$, hence $h\overline{G}_i = \varphi(g)$.
-
-For all $g\in G_{i-1}$,
-$$g \in \ker(\varphi) \iff \pi(g) \overline{G}_i =  \overline{G}_i \iff \pi(g) \in \overline{G}_i \iff g \in \pi^{-1}(\overline{G}_i) = G_i,$$ hence $\ker(\varphi) = G_i$.
-
-By the first Isomorphism Theorem, $G_{i-1}/G_{i} \simeq \overline{G}_{i-1} / \overline{G}_{i}$, so $G_{i-1}/G_{i}$ is a simple group.
-
-As $|H|<n$ , the induction hypotheisis gives a composition series for $H$, that we write
-$$\{e\} = G_l \subset G_{l-1} \subset \cdots \subset G_m=H.$$
-
-If we glue together these two composition series, we obtain 
-$$\{e\} = G_l \subset G_{l-1} \subset \cdots \subset G_m=H  \subset G_{m-1} \subset\cdots \subset G_1 \subset G_0 = G$$
-which is a composition series for $G$, and the induction is done.
+Then 
+$$\{e\} = G_l \subset G_{l-1} \subset \cdots \subset G_1=H  \subset  G_0 = G$$
+is a composition series for $G$, and the induction is done.
 
 Every finite group has a composition series.
 \end{enumerate}
@@ -1209,7 +1197,7 @@ We show the equivalence between the two following properties:
 
 
 \be
-\item[(FT) $\Rightarrow$ (H): ]
+\item[(FT) $\Rightarrow$ (H)]
 
 Let $G$ a non Abelian finite simple group. If $G$ was solvable, it would have a normal subgroup $H \subsetneq G$, with $G/H$ cyclic of prime order. $G$ being simple, $H = \{e\}$, hence $G \simeq G/\{e\} = G/H$ would be cyclic, a fortiori Abelian, which is in contradiction with the hypothesis made on $G$.
 
@@ -1219,7 +1207,7 @@ If the order of $G$ was odd, $G$ would be solvable by (FT), hence $\vert G \vert
 
 
 
-\item[(H) $\Rightarrow$ (FT):]
+\item[(H) $\Rightarrow$ (FT)]
 
 Suppose (H). Let $G$ a group of odd order. By Exercise 6, as any finite group, it has a composition series
 $$\{e\} =G_m \subset G_{m-1}\subset \cdots \subset G_1 \subset G_0 = G,$$
@@ -1227,7 +1215,7 @@ with $G_{i-1}/G_i$ simple, $i=1,\cdots,m$.
 
 Then
 $$\vert G \vert = (G:\{e\}) = (G_0:G_1)(G_1:G_2)\cdots(G_{i-1} : G_i)\cdots (G_{m-1}:G_m).$$
-As $\vert G \vert$ is $(G_{i-1} : G_i)$ is odd for all $i,\ i=1,\cdots,m$.
+As $\vert G \vert$ is odd, $(G_{i-1} : G_i)$ is odd for all $i,\ i=1,\cdots,m$.
 
 So $G_{i-1}/G_i$ is a simple group of odd order. By hypothesis (H), it is then Abelian, and simple, therefore $G_{i-1}/G_i$ is cyclic of prime order (Exercise 8.1.8). So $G$ is solvable, and this shows that (H) $\Rightarrow$ (FT).
 \ee
