@@ -1250,15 +1250,15 @@ Suppose that $F \subset L_1$ is a solvable extension.
 
  As $L_1$ is a splitting field of $f$ over $F$, $F\subset L_1$ is a normal extension, and as the characteristic of $F$ is 0, this is a separable extension, so $F\subset L_1$ is a Galois extension.
 
-Let $\zeta$ be a $m$th primitive root of unity, where $m =[L_1:F]$. Write $M_1 = L_1(\zeta)$.  As $F \subset L_1$ is a solvable Galois extension, by Corollary 8.3.4,  $F \subset M_1$ is a radical extension, so there exist fiels $F_i, i=1,\cdots,m$ such that 
-$$F_0 = F \subset F_1\subset \cdots \subset F_{n-1} \subset F_m =M_1=L_1(\zeta), $$
+Let $\zeta$ be a $m$th primitive root of unity, where $m =[L_1:F]$. Write $M_1 = L_1(\zeta)$.  As $F \subset L_1$ is a solvable Galois extension, by Corollary 8.3.4,  $F \subset M_1$ is a radical extension, so there exist fields $F_i, i=1,\cdots,m$ such that 
+$$F_0 = F \subset F_1\subset \cdots \subset F_{m-1} \subset F_m =M_1=L_1(\zeta), $$
 and $F_i = F_{i-1}(\gamma_i), \gamma_i \in F_i, \gamma_i^{m_i} \in F_{i-1},m_i>0\  (i=1,\cdots,m)$.
 
-Moreover, $M_1 = L_1(\zeta)$ is the splitting field of $x^m-1$ over $L_1$. Let $M_2 = L_2(\zeta')$ the splitting field of $x^m-1$ over $L_2$. By theorem 5.1.6, there exists an isomorphism $\overline{\varphi} : M_1\to M_2$ such that $\varphi = \overline{\varphi}\vert_{L_1}$.
+Moreover, $M_1 = L_1(\zeta)$ is the splitting field of $x^m-1$ over $L_1$. Let $M_2 = L_2(\zeta')$ the splitting field of $x^m-1$ over $L_2$. By theorem 5.1.6, there exists an isomorphism $\overline{\varphi} : M_1\to M_2$ such that $\varphi = \overline{\varphi}\vert_{L_1}$. Then $M_2$  is such that $F \subset L_2 \subset M_2$. 
 
-Write $F'_i = \overline{\varphi}(F_i)$. Then $M_2$  is such that $F \subset L_2 \subset M_2$, and $M_2$ is an extension of $L_1$ such that $L_2$
-$$F'_0 = F \subset F'_1\subset \cdots \subset F'_{n-1} \subset F'_m =M_2,$$
-and $F'_i = F'_{i-1}(\gamma'_i)$, where $\gamma'_i = \varphi(\gamma_i) \in F'_{i}$ satisfies ${\gamma'_i}^{m_i} = \varphi(\gamma_i)^{m_i} = \varphi(\gamma_i^{m_i}) \in \varphi(F_{i-1}) = F'_{i-1}$.
+Write $F'_i = \overline{\varphi}(F_i)$. Then
+$$F'_0 = F \subset F'_1\subset \cdots \subset F'_{m-1} \subset F'_m =M_2,$$
+and $F'_i = F'_{i-1}(\gamma'_i)$, where $\gamma'_i = \overline{\varphi}(\gamma_i) \in F'_{i}$ satisfies ${\gamma'_i}^{m_i} = \overline{\varphi}(\gamma_i)^{m_i} = \overline{\varphi}(\gamma_i^{m_i}) \in \overline{\varphi}(F_{i-1}) = F'_{i-1}$.
 
 So $F \subset M_2$ is radical, and $ F \subset L_2$ is solvable.
 
@@ -1279,8 +1279,8 @@ where $\alpha_1=\alpha, \alpha_2,\cdots,\alpha_n$ are the roots of $f$ in $L$.
 
 $\bullet$ $L$ is a Galois extension of $F$, since $L$ is the splitting field of a separable polynomial $f \in F[x]$ (Theorem 7.1.1).
 
-$\bullet$ Let $M$ any extension of $F(\alpha)$such that $M$ is Galois over $F$. As $\alpha$ is a root of the irreducible polynomial $f\in F[x]$, and $\alpha \in M$, where $M$ is a normal extension of $F$, the polynomial $f$ splits completely over $f$ and its distinct roots $\beta_0 = \alpha = \alpha_0, \beta_1,\cdots,\beta_n$ are in $M$.
-Let $L'= F(\beta_0,\cdots,\beta_n)$. $L'$ is a splitting field of $f$  over $F$, hence there exists an isomorphism  $\varphi : L\to L'$ which is the identity on $F$, that is an embedding of $L$ in $M$ which is the identity on $F$.
+$\bullet$ Let $M$ be any extension of $F(\alpha)$ such that $M$ is Galois over $F$. As $\alpha$ is a root of the irreducible polynomial $f\in F[x]$, and $\alpha \in M$, where $M$ is a normal extension of $F$, the polynomial $f$ splits completely over $F$ and its distinct roots $\beta_1 = \alpha = \alpha_1, \beta_1,\cdots,\beta_n$ are in $M$.
+Let $L'= F(\beta_1,\cdots,\beta_n)$. $L'$ is a splitting field of $f$  over $F$, hence there exists an isomorphism  $\varphi : L\to L'$ which is the identity on $F$, that is an embedding of $L$ in $M$ which is the identity on $F$.
 
 So, by definition, $L$ is a Galois closure of $F\subset F(\alpha)$, unique up to isomorphism.
 \end{proof}
@@ -1326,7 +1326,7 @@ By hypothesis $F\subset K$ is solvable, so there exists a radical extension $F\s
 
 As $K \subset N$ is radical (and $K \subset M$), then  $M \subset MN$ is also radical by Lemma 8.2.7(b).
 
-So $F \subset M$ and $M \subset MN$ are radical extensions, so $F \subset MN$ is a radical extension (Lemma 8.3.7(c)).
+So $F \subset M$ and $M \subset MN$ are radical extensions, so $F \subset MN$ is a radical extension (Lemma 8.2.7(a)).
 
 As $\alpha \in N \subset MN$, with $F \subset MN$ radical, by definition $\alpha$ is expressible par radicals over $F$ and by Proposition 8.5.2, it minimal polynomial $f$ over $F$ is solvable by radicals over $F$.
 \end{proof}
@@ -1340,8 +1340,8 @@ As $\alpha \in N \subset MN$, with $F \subset MN$ radical, by definition $\alpha
 We show that $\R$ has no extension $L$ of odd degree $d = [L:\R]>1$, knowing that every polynomial with an odd degree has a real root by the Intermediate value Theorem.
 
 As $[L : \R] >1$, there exists $\alpha \in L , \alpha \not \in \R$. Let $p$ the minimal polynomial of $\alpha$ over $\R$. By the Tower Theorem,
-$$ [L : R] = [L : \R(\alpha)][\R(\alpha) : \R],$$ 
-hence $\deg(p) =  [\R(\alpha) : \R]$ divides the odd integer $d = [L:\R]$ , so $\deg(p)$ is odd . Therefore $p$ has a real root.
+$$ [L : \R] = [L : \R(\alpha)][\R(\alpha) : \R],$$ 
+hence $\deg(p) =  [\R(\alpha) : \R]$ divides the odd integer $d = [L:\R]$ , so $\deg(p)$ is odd. Therefore $p$ has a real root.
 As $p$ is irreducible over $\R$, its degree is $\deg(p) = 1$, which implies $ [\R(\alpha) : \R]=1$, so $\alpha \in \R$, in contradiction with the definition of $\alpha$.
 
 Conclusion: $\R$ has no extension of odd degree greater than 1.
@@ -1372,9 +1372,9 @@ and $M_i = M_{i-1}(\gamma_i), \gamma_i \in M_i, \gamma_i^{m_i} \in M_{i-1}, m_i>
 Let $L_0 = L, L_i = L(\gamma_1,\ldots, \gamma_i)$. Then $M_0=M  \subset L_0 = L$ and $M_i \subset L_i$. 
 
 
-$[L_0:M_0] = [L:M]=p$. Reasoning by induction, we suppose that $M_{i-1}\subset L_{i-1}$ is a Galois extension and $[L_{i-1} : M_{i-1}] = p$ (where $p$ is the odd prime  $[L:M]$). As $L_i = L_{i-1}(\gamma_i), M_i =M_{i-1}(\gamma_i),\ i=1,\cdots,n$, the Exercise 8.6.4(a) shows that $M_{i}\subset L_{i}$ is Galois, and the proof of Proposition 8.6.4 shows that $[L_i : M_i] = [L_{i-1}(\gamma_i) : M_{i-1}(\gamma_i)] = p, \ i=1,\ldots,n$, therefore 
+$[L_0:M_0] = [L:M]=p$. Reasoning by induction for $i =1,\ldots,n$, we suppose that $M_{i-1}\subset L_{i-1}$ is a Galois extension and $[L_{i-1} : M_{i-1}] = p$ (where $p$ is the odd prime  $[L:M]$). As $L_i = L_{i-1}(\gamma_i), M_i =M_{i-1}(\gamma_i),\ i=1,\cdots,n$, the Exercise 8.6.4(a) shows that $M_{i}\subset L_{i}$ is Galois, and the proof of Proposition 8.6.4 shows that $[L_i : M_i] = [L_{i-1}(\gamma_i) : M_{i-1}(\gamma_i)] = p$, and the induction is done. Therefore 
 $[L(\gamma_1,\ldots,\gamma_n):K] = [L_n:M_n] = [L_0:M_0] = [L:M]$, so
-$$[L(\gamma_1,\ldots,\gamma_n):K] = [L:M].$$
+$$[L(\gamma_1,\ldots,\gamma_n):K] = [L:M]=p.$$
 
 Moreover, $M\subset L$, and $K = M(\gamma_1,\cdots,\gamma_n)$, hence $KL = L(\gamma_1,\ldots, \gamma_n)$. Indeed $\R$ is a field which contains $K$ and $L$, and $L(\gamma_1,\cdots, \gamma_n)$ is the smallest subfield of $\R$ containing $K$ and $L$, so $KL = L(\gamma_1,\ldots, \gamma_n)$.
 $$[KL : K] = [L:M] = p.$$
@@ -1453,10 +1453,10 @@ diagram (8.24):
 \be 
 \item[(a)] We show that in the situation of diagram (8.24), where $M \subset L$ is Galois, and $[L:M] = n < \infty$, then $M(\gamma) \subset L(\gamma)$ is also a Galois extension.
 
-By the Theorem of the Primitive Element (Theorem 5.4.1), as $M \subset L$ is Galois, the exists a separable element $\delta \in L$ such that $L = M(\delta)$. Let $f$ be the minimal polynomial of $\delta$ over $M$. Then $f \in M[x]$ is a separable polynomial, and as $M \subset L$ is normal, $f$ splits completely over $L$. Write $\delta_1 = \delta, \delta_2,\ldots,\delta_n$ the roots of $f$ in $L$. 
+By the Theorem of the Primitive Element (Theorem 5.4.1), as $M \subset L$ is Galois, there exists a separable element $\delta \in L$ such that $L = M(\delta)$. Let $f$ be the minimal polynomial of $\delta$ over $M$. Then $f \in M[x]$ is a separable polynomial, and as $M \subset L$ is normal, $f$ splits completely over $L$. Write $\delta_1 = \delta, \delta_2,\ldots,\delta_n$ the roots of $f$ in $L$. 
 
 Then $$L(\gamma) = M(\delta,\gamma) = M(\gamma) (\delta).$$
-Moreover, as $\delta_i \in L \subset M$, with $\delta = \delta_1$, then $M(\gamma) (\delta) = M(\gamma)(\delta_1,\ldots \delta_n)$, so
+Moreover, as $\delta_i \in L \subset L(\gamma) = M(\gamma) (\delta)$, with $\delta = \delta_1$, then $M(\gamma) (\delta) = M(\gamma)(\delta_1,\ldots \delta_n)$, so
 $$M(\gamma) \subset L(\gamma) = M(\gamma)(\delta_1,\ldots \delta_n)$$
 is the splitting field of the separable polynomial $f\in M[x] \subset M(\gamma)[x]$ over $M(\gamma)$. 
 
@@ -1494,7 +1494,7 @@ It follows that $KL \ne K$, so $L \not \subset K$ (see Exercise 1). Since $M \su
 
 \begin{proof}
 \be
-\item[(a)] Already done in Exercise 5.3.16 : 
+\item[(a)] Already done in Exercise 5.3.16: 
 
 $M =k(t)$ has characteristic $p$ and  $f = x^p-x+t \in M[x]$.
 
@@ -1527,7 +1527,7 @@ Let $$\varphi :
 \right.
 $$
 
-Here $\Z/p\Z = \F_p$ is the prime field of $M$, so $ [i] \in \F_p \subset M$. $\varphi$ is well defined : if $\alpha +i = \alpha +j$, then $[i] = [j]$. Moreover $\varphi$ is a group homomorphism: if $\sigma, \tau \in \Gal(L/M)$, then $\sigma(\alpha) = \alpha + i, \tau(\alpha) = \alpha +j$ for integers $i,j$, and
+Here $\Z/p\Z = \F_p$ is the prime field of $M$, so $ [i] \in \F_p \subset M$. $\varphi$ is well defined: if $\alpha +i = \alpha +j$, then $[i] = [j]$. Moreover $\varphi$ is a group homomorphism: if $\sigma, \tau \in \Gal(L/M)$, then $\sigma(\alpha) = \alpha + i, \tau(\alpha) = \alpha +j$ for integers $i,j$, and
 $$(\sigma \tau)(\alpha)) = \sigma(\alpha +j) = \alpha + i + j .$$
 Hence
 $$\varphi(\sigma \tau) =[ i+j] = [i]+ [j] = \varphi(\sigma) + \varphi(\tau).$$
@@ -1544,11 +1544,13 @@ Moreover, if $\sigma \in \ker(\varphi)$, $\sigma(\alpha) = \alpha$. As $L = M(\a
 }
 
 \begin{proof}
-\item[(a)] $$\beta^n-\beta + t = 0, \qquad \beta = \frac{A}{B},$$
-so
+\item[(a)] We assume that
+$$\beta^n-\beta + t = 0, \qquad \beta = \frac{A}{B}, $$
+where $A,B \in k[t]$ are relatively prime polynomials.
+Then
 $$\frac{A^n}{B^n} - \frac{A}{B} + t = 0,$$
 $$A^n - A B^{n-1} + tB^n = 0.$$
-Hence $B \mid A^n$, and $B \wedge A = 1$, so $B \wedge A^n = 1$, therefore $B \wedge 1$, so $B$ is a constant, and $\beta = A/B$ is a polynomial.
+Hence $B \mid A^n$, and $B \wedge A = 1$, so $B \wedge A^n = 1$, therefore $B \mid 1$, so $B$ is a constant, and $\beta = A/B$ is a polynomial.
 
 \item[(b)] By part (a), if $\beta \in M$ satisfies $\beta^n-\beta + t= 0$, then $\beta \in k[t]$. Write $\beta = A \in k[t]$, then
 $$A^n - A +t = 0.$$
@@ -1558,9 +1560,9 @@ $A= \lambda $ or $A = \lambda t$, where $\lambda \in k^*$.
 \end{center}
 If $A = \lambda$ then $t \in k$, in contradiction with $\deg(t) = 1$. 
 
-If $A = \lambda t,\  \lambda \in k^*$, then $\lambda^n t^n + (1- \lambda) t = 0, \ n>1$ shows that $t$ is algebraic over $k$, in contradiction with the definition of $t$ as transcendental variable over $k$.
+If $A = \lambda t,\  \lambda \in k^*$, then $\lambda^n t^n + (1- \lambda) t = 0, \ n>1,$ shows that $t$ is algebraic over $k$, in contradiction with the definition of $t$ as a transcendental variable over $k$.
 
-Conclusion : $x^n - x + t, \ n>1$ has no root in $M = k(t)$.
+Conclusion: $x^n - x + t, \ n>1$ has no root in $M = k(t)$.
 \end{proof}
 
 \paragraph{Ex. 8.6.7}
