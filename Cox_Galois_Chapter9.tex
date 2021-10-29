@@ -66,7 +66,7 @@
 \begin{proof}
 If $[i]$ has a multiplicative inverse in the ring $\Z/n\Z$, then there exists $[j] \in \Z/n\Z$ such  that $[i][j] = [ij] = 1$, so $ij \equiv 1\ [n]$. Thus there exists $k\in \Z$ such that $ij - k n =1$. This BŽzout's relation between $i$ and $n$ shows that $i\wedge n=1$.
 
-Conversely, if $i\wedge n=1$, by  BŽzout's Theorem, there exists integers $j,k$ such that $ij-kn=1$, so $[i] [j] = [1]$, and $[i]$ has a multiplicative inverse $\Z/n\Z$.
+Conversely, if $i\wedge n=1$, by  BŽzout's Theorem, there exist integers $j,k$ such that $ij-kn=1$, so $[i] [j] = [1]$, and $[i]$ has a multiplicative inverse $\Z/n\Z$.
 
 $$[i] \in (\Z/n\Z)^* \iff i\wedge n=1.$$
 
@@ -79,7 +79,7 @@ $$
 \end{array}
 \right.
 $$
-obtained by restricting the bijection $\gcro 0, n \gcro \to\Z/n\Z ,\  i \mapsto [i]$,  is well defined, and this is a bijection.
+obtained by restriction of the bijection $\gcro 0, n \gcro \to\Z/n\Z ,\  i \mapsto [i]$,  is well defined, and this is a bijection.
 
 Therefore $$\vert (\Z/n\Z)^* \vert = \mathrm{Card} (\{i \in \N\  \vert \ 0\leq i <n, i \wedge n = 1\} = \phi(n).$$
 
@@ -103,7 +103,7 @@ Indeed, let $(a,b)\in A\times B$.
   &\iff (a,b)\in A^*\times B^*.
  \end{align*}
 Moreover, if $\varphi : A\to B$ is a ring isomorphism, then for all $a \in A$, $a \in A^* \Rightarrow \varphi(a) \in A^*$, since $ab = 1_A \Rightarrow \varphi(a) \varphi(b) = \varphi(1_A) = 1_B$. So we can define
-$\psi : A^* \to B^*$ by restriction with $a\mapsto \psi(a) = \phi(a)$.
+$\psi : A^* \to B^*$ by restriction with $a\mapsto \psi(a) = \varphi(a)$.
 
 $\psi$ is a group homomorphism: if $u,v \in A^*, \psi(uv) = \varphi(uv) = \varphi(u)\varphi(v) = \psi(u)\psi(v)$, and $\psi$ is bijective:
 
@@ -121,20 +121,20 @@ $$(\Z/nm\Z)^* \simeq (\Z/n\Z \times \\Z/m\Z)^* = (\Z/nZ)^* \times (\Z/m\Z)^*.$$
 }
 
 \begin{proof}
-Write $\U_n$ lthe group of $n$throots of unity in $\C$. Then $\U_n = \langle \zeta_n \rangle$, where $\zeta_n = e^{2i\pi/n}$. Write $|x|$ the order of an element $x\in G$. Then $|x|= \vert \langle x \rangle \vert$.
+Let $\U_n$ be the group of $n$throots of unity in $\C$. Then $\U_n = \langle \zeta_n \rangle$, where $\zeta_n = e^{2i\pi/n}$. Write $o(x)$ the order of an element $x\in G$. Then $o(x)= \vert \langle x \rangle \vert$.
 
-Recall that if $d>0$, $|x|= d \iff (\forall k \in \Z,\  x^k = e \iff d \mid k)$.
+Recall that if $d>0$, $o(x)= d \iff (\forall k \in \Z,\  x^k = e \iff d \mid k)$.
 
 For all $i \in \Z$,
-$$|\zeta_n^i|=\frac{n}{n\wedge i}.$$
+$$o(\zeta_n^i)=\frac{n}{n\wedge i}.$$
 Indeed, for all $k\in\Z$,
 $$(\zeta_n ^i)^k = 1 \iff \zeta_n^{ik} = 1 \iff n \mid ik \iff \frac{n}{n\wedge i} \mid \frac{i}{n\wedge i} k \iff  \frac{n}{n\wedge i} \mid k$$
 (since $\frac{n}{n\wedge i} \wedge \frac{i}{n\wedge i} = 1$).
-So $|\zeta_n^i|=\frac{n}{n\wedge i}$.
+So $o(\zeta_n^i)=\frac{n}{n\wedge i}$.
 
-By definition, $\zeta$ is a primitive $n$th root of unity if and only if $\zeta$ is a generator of $\U_n$, if and only if $|\zeta| = n$, so
+By definition, $\zeta$ is a primitive $n$th root of unity if and only if $\zeta$ is a generator of $\U_n$, if and only if $o(\zeta)= n$, so
 
-$$\U_n = \langle \zeta_n^i \rangle \iff |\zeta_n^i |= n \iff \frac{n}{n\wedge i} = n \iff n \wedge i = 1.$$
+$$\U_n = \langle \zeta_n^i \rangle \iff o(\zeta_n^i)= n \iff \frac{n}{n\wedge i} = n \iff n \wedge i = 1.$$
 \end{proof}
 
 \paragraph{Ex. 9.1.4}
@@ -150,7 +150,7 @@ $$\U_n = \langle \zeta_n^i \rangle \iff |\zeta_n^i |= n \iff \frac{n}{n\wedge i}
 \begin{enumerate}
 \item[(a)]
 $x^2 = (\frac{1}{2}x - \frac{1}{4})(2x+1)+\frac{1}{4}$.
-Le quotient $q(x) = \frac{1}{2}x - \frac{1}{4}$ n'appartient pas ˆ $\Z[x]$.
+The quotient $q(x) = \frac{1}{2}x - \frac{1}{4}$ is not in $\Z[x]$.
 
 \item[(b)]
 Let $f = x^m + b_{m-1}x^{m-1}+ \cdots+b_0$ be a fixed monic polynomial in  $R[x]$.
@@ -173,9 +173,9 @@ $g_1 =  q_1 f+r, q_1 \in R[x],\ r \in R[x],\ \deg(r) < \deg(f)$.
 
 Then $g = (a_n x^{n-m} + q_1) f+ r$.
 
-If we write$q = a_n x^{n-m} + q_1$, then $q \in \mathbb{Z}[x]$ and $g = fq+r,\ (q,r) \in\mathbb{Z}[x]^2, \deg(r) < \deg(f)$. The pair $(q,r)$ is an answer, and the induction is done.
+If we write $q = a_n x^{n-m} + q_1$, then $q \in \mathbb{Z}[x]$ and $g = fq+r,\ (q,r) \in\mathbb{Z}[x]^2, \deg(r) < \deg(f)$. The pair $(q,r)$ is an answer, and the induction is done.
 
-In particular, if $g,f \in \mathbb{Z}[x]$ , and $g = f q$, the uncity of the Euclidean division in $\mathbb{Q}[x]$ and the preceding result prouvŽ show that $q \in \mathbb{Z}[x]$.
+In particular, if $g,f \in \mathbb{Z}[x]$ , and $g = f q$, the unicity of the Euclidean division in $\mathbb{Q}[x]$ and the preceding result shows that $q \in \mathbb{Z}[x]$.
 
 \end{enumerate}
 \end{proof}
@@ -193,7 +193,7 @@ $$x^{105}-1 = (x^{35}-1)\Phi_{105}\, \Phi_{21}\, \Phi_{15}\, \Phi_3,$$
 that is
 $$x^{70} + x^{35}+1 = \Phi_{105}\,\Phi_{21}\, \Phi_{15}\, \Phi_3.$$
 
-Moreover $x^{21} - 1 = \Phi_{21}\,  \Phi_7\, \Phi_3\, \Phi_1$, donc
+Moreover $x^{21} - 1 = \Phi_{21}\,  \Phi_7\, \Phi_3\, \Phi_1$, so
 \begin{align*}
 \Phi_{21} &= (x^{21}-1)\, \frac{x-1}{x^7-1}\, \frac{x-1}{x^3-1}\, \frac{1}{x-1}\\
 &= \frac{x^{21}-1}{(x^7-1)(x^2+x+1)}\\
@@ -229,7 +229,7 @@ Therefore
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-The algorithm in the proof of Theorem 2.2.2 consists to replace the symmetric polynomial $f$, here with coefficients in $\Z$,  by $f_1 = f -c g, f_2 = f -c g -c_1g_1,\cdots$, until we obtain 0. The coefficient $c$ is the leading coefficient of $f$, so it is an integer, and $g=x_1^{a_1}\cdots x_n^{a_n} = \sigma_1^{a_1-a_2}\cdots\sigma_n^{a_n} \in \Z[\sigma_1,\ldots,\sigma_n]$, so  $f_1 \in \Z[x_1,\ldots,x_n]$. The same reasoning applied to $f_1$ and to the following terms shows that $c_i \in \Z$ for all $i$. Therefore $$f  = cg+c_1g_1+\cdots+c_{m-1} g_{m-1}\in \Z[\sigma_1,\cdots,\sigma_n].$$
+The algorithm in the proof of Theorem 2.2.2 consists to replace the symmetric polynomial $f$, here with coefficients in $\Z$,  by $f_1 = f -c g, f_2 = f -c g -c_1g_1,\cdots$, until we obtain 0. The coefficient $c$ is the leading coefficient of $f$, so it is an integer, and $g= \sigma_1^{a_1-a_2}\cdots \sigma_{n-1}^{a_{n-1}-a_n}\sigma_n^{a_n} \in \Z[\sigma_1,\ldots,\sigma_n]$, so  $f_1 \in \Z[x_1,\ldots,x_n]$. The same reasoning applied to $f_1$ and to the following terms shows that $c_i \in \Z$ for all $i$. Therefore $$f  = cg+c_1g_1+\cdots+c_{m-1} g_{m-1}\in \Z[\sigma_1,\cdots,\sigma_n].$$
 In particular, the symmetric polynomial $\sigma_i(x_1^p,\cdots,x_r^p) - \sigma_i(x_1,\cdots,x_r)^p$ is a polynomial in $\sigma_1,\ldots,\sigma_r$ with integer coefficients:
 $$\sigma_i(x_1^p,\cdots,x_r^p) - \sigma_i(x_1,\cdots,x_r)^p = S(\sigma_1,\cdots,\sigma_r) \in \Z[\sigma_1,\cdots,\sigma_r].$$
 
@@ -244,7 +244,7 @@ f(x_1,\ldots,x_n)^p &= \left( \sum_{(i_1,\ldots,i_n) \in A} a_{i_1,\ldots,i_n} x
 &=\sum_{(i_1,\ldots,i_n) \in A} a_{i_1,\ldots,i_n} x_1^{pi_1}\cdots x_n^{pi_n}\\
 &=f(x_1^p,\ldots,x_n^p)
 \end{align*}
-In particular, write $\overline{\sigma}_i$ the projection of $\sigma_i$ in $\F_p[x_1,\cdots,x_r]$.
+In particular, write $\overline{\sigma}_i$ the projection of $\sigma_i$ in $\F_p[x_1,\cdots,x_r]$, and $\overline{S}$ the projection of $S$.
 As the characteristic of the field $\F_p(x_1,\cdots,x_r)$ is $p$,
 
 \begin{align*}
@@ -252,7 +252,8 @@ As the characteristic of the field $\F_p(x_1,\cdots,x_r)$ is $p$,
 &=  \sum_{1\leq j_1 < j_2<\cdots<j_i\leq r} x_{j_1}^p\cdots x_{j_i}^p\\
 &=\overline{\sigma}_i(x_1^p,\cdots,x_r^p)
 \end{align*}
-So $p$ divides all the coefficients of $S$.
+Hence $\overline{S}(\overline{\sigma}_1, \ldots, \overline{\sigma}_r) = \overline{\sigma}_i(x_1^p,\cdots,x_r^p) - \overline{\sigma}_i^p =  0$. Since $\overline{\sigma}_1, \ldots, \overline{\sigma}_r$ are algebraically independant over $\F_p$ (see Ex. 2.2.5),  $\overline{S} = 0$, so $S \equiv 0 \pmod p$.
+Therefore $p$ divides all the coefficients of $S$.
 \end{enumerate}
 \end{proof}
 
@@ -266,14 +267,13 @@ So $p$ divides all the coefficients of $S$.
 }
 
 \begin{proof}
-Let $\zeta$ be a primitive $n$th root of unity, so $|\zeta| = n$ (where we write $|x|$ the order of an element $x$ in a group $G$).
+Let $\zeta$ be a primitive $n$th root of unity, so $o(\zeta) = n$ (where we write $o(x)$ the order of an element $x$ in a group $G$).
 We have proved in Exercise 3 that for all $i\in \Z$,
-$$|\zeta^i| = \frac{n}{n\wedge i}$$
+$$o(\zeta^i) = \frac{n}{n\wedge i}$$
 
-In particular, if $i$ and $n$ are relatively prime ($n \wedge i = 1$), then $\mathrm{ord}(\zeta^i) = n$, so $\zeta^i$ is a primitive $n$th root of unity.
+In particular, if $i$ and $n$ are relatively prime ($n \wedge i = 1$), then $o(\zeta^i) = n$, so $\zeta^i$ is a primitive $n$th root of unity.
 
-If $\xi$ is any primitive $n$th root of unity, as $\zeta$ is a generator of $\U_n$, $\xi= \zeta^i, 0 \leq i <n$. As $\zeta^i$ is a primitive $n$th root of unity, $|\zeta^i|=n = \frac{n}{n\wedge i}$, so  $n\wedge i=1$.
-
+If $\xi$ is any primitive $n$th root of unity, as $\zeta$ is a generator of $\U_n$, $\xi= \zeta^i, 0 \leq i <n$. As $\zeta^i$ is a primitive $n$th root of unity, $o(\zeta^i)=n = \frac{n}{n\wedge i}$, so  $n\wedge i=1$. 
 \item[(b)]
 Let $i \in \Z$ relatively prime to $n$. Consider
 $$
@@ -290,6 +290,9 @@ $\varphi$ is a group homomorphism.
 If $\lambda \in \ker(\varphi)$, then $\lambda = \zeta^k,\  k \in \Z$, and $1 = \lambda^i = \zeta^{ki}$, thus $n\mid ki$. Since $n \wedge i =1$, $n\mid k$, hence $\lambda = \zeta^k = 1$, so $ \ker(\varphi) = \{1\}$.
 
 The group homomorphism $\varphi$ is injective, so the images of the distinct $\gamma_1,\cdots,\gamma_r \in \U_n$ are distinct.
+
+Conclusion:  if $i\wedge n = 1$, $\zeta \mapsto \zeta^i$ is a bijection from the set of primitive $n$th roots of unity on itself.
+
 \end{proof}
 
 \paragraph{Ex. 9.1.8}
@@ -316,9 +319,9 @@ As in the text, $q(x) \in \Z[x]$ maps to the polynomial $\overline{q}(x) \in \F_
  As in the proof of Theorem 9.1.9, the Gauss's Lemma in the form of Corollary 4.2.1 allows us to assume that there exists a polynomial $f(x)\in \Z[x]$ of $\Phi_n(x)$ such that
  $\Phi_n(x) = f(x) g(x),\  f(x),g(x) \in \Z[x]$, where $f$ is monic and irreducible over $\Q$. Let $p$ be a prime number such that $p\nmid n$.
 
-By a reductio ad absurdum, suppose that $\zeta$ is a root of $f$ such that $f(\zeta^p)\neq 0$.
+Reasoning by contradiction, we suppose that $\zeta$ is a root of $f$ such that $f(\zeta^p)\neq 0$.
 \begin{enumerate}
-\item[(a)] As $\zeta$ is the root of $f$, where $f$ divides $\Phi_n$, $\zeta$ is a $n$th primitive root of uniy. Since $p\nmid n, p\wedge n=1$, hence $\zeta^p$ is also a $n$th primitive root of untity by Exercise 7(a), therefore $0 = \Phi(\zeta^p) = f(\zeta^p) g(\zeta^p)$. As $f(\zeta^p) \neq 0$, $g(\zeta^p)=0$, so
+\item[(a)] As $\zeta$ is the root of $f$, where $f$ divides $\Phi_n$, $\zeta$ is a $n$th primitive root of unity. Since $p\nmid n, p\wedge n=1$, hence $\zeta^p$ is also a $n$th primitive root of unity by Exercise 7(a), therefore $0 = \Phi(\zeta^p) = f(\zeta^p) g(\zeta^p)$. As $f(\zeta^p) \neq 0$, $g(\zeta^p)=0$, so
 \begin{center}
 $\zeta$ is a root of $g(x^p)$.
 \end{center}
@@ -375,15 +378,15 @@ $$a \wedge n = 1 \Rightarrow a^{\phi(n)} \equiv 1 \ [n].$$
 }
 
 \begin{proof}
-More generally, we prove that a cyclic group of order $n$ has $\phi(d)$ elements of order $d$ if $d \mid n$ (0 otherwise !).
+More generally, we prove that a cyclic group $G$ of order $n$ has $\phi(d)$ elements of order $d$ if $d \mid n$ (0 otherwise !).
 
-Let $\zeta$ a generator of $G$ : $G = \langle \zeta \rangle$.
+Let $\zeta$ a generator of $G$: $G = \langle \zeta \rangle$.
 
 Every element $\alpha \in G$ is of the form $\zeta^k, 0 \leq k <n$. Recall (see Exercise 3), that 
-$$\mathrm{ord}(\zeta^k) = \frac{n}{n\wedge k}.$$
+$$o(\zeta^k) = \frac{n}{n\wedge k}.$$
 If $d \nmid n$, there is no element of order $d$ by Lagrange's Theorem, and if $d \mid n$,
 \begin{align*}
-\mathrm{ord}(\zeta^k)  = d &\iff  \frac{n}{n\wedge k} = d\\
+o(\zeta^k)  = d &\iff  \frac{n}{n\wedge k} = d\\
 &\iff \frac{n}{d} = n \wedge k\\
 &\iff\exists \lambda \in \Z,\  k = \lambda \frac{n}{d}, \ 0 \leq \lambda < d,\ \lambda \wedge d = 1
 \end{align*}
@@ -405,7 +408,7 @@ Conversely, if $ k = \lambda \frac{n}{d}, \ \lambda \wedge d = 1$, then $$n\wedg
 
 The elements of order $d$ in $G$ are so the elements $\zeta^k$, where $$k = \lambda \frac{n}{d}, \ 0 \leq \lambda < d,\ \lambda \wedge d = 1.$$
 
-The mapping  $\varphi : \{\lambda \in \Z\ \vert \  0\leq \lambda <d, \lambda \wedge d = 1\} \to \{\alpha \in G \ \vert \ |\alpha| = d\}$ 
+The mapping  $\varphi : \{\lambda \in \Z\ \vert \  0\leq \lambda <d, \lambda \wedge d = 1\} \to \{\alpha \in G \ \vert \ o(\alpha)= d\}$ 
 defined by $\varphi(\lambda) = \zeta^{\lambda \frac{n}{d}}$ is so a bijection. 
 
 Hence there exist exactly $\phi(d)$ elements of order $d$ in $G$, for every factor $d$ of $n = \vert G \vert$. In particular, there exist $\phi(n)$ elements of order $n = |G|$ in $G$, hence $\phi(n)$ generators in a cyclic group $G$ of order $n$.
@@ -525,13 +528,13 @@ Moreover, these two polynomials are monic, and $\Phi_{pn}$ is separable.
 
 We show that every root $\zeta$ of $\Phi_{pn}(x)$ is a root of $\Phi_n(x^p)/\Phi_n(x)$.
 
-If $\zeta$ is a root of $\Phi_{pn}(x)$, then $|\zeta| = pn$, therefore $|\zeta^p| = n$ 
+If $\zeta$ is a root of $\Phi_{pn}(x)$, then $o(\zeta) = pn$, therefore $o(\zeta^p) = n$ 
 
-(indeed, forall $k\in \Z$, $ (\zeta^p)^k = 1 \iff \zeta^{pk}=1 \iff pn \mid pk \iff n \mid k$).
+(indeed, for all $k\in \Z$, $ (\zeta^p)^k = 1 \iff \zeta^{pk}=1 \iff pn \mid pk \iff n \mid k$).
 
 So $\zeta^p$ is a root of $\Phi_n(x)$, which is equivalent to $\zeta$ is a root of $\Phi_{n}(x^p)$.
 
-As $\zeta^n \neq 1$, $\Phi_n(\zeta)\neq 0$, therfore $\zeta$ is a root of $\Phi_{n}(x^p)/\Phi_n(x)$.
+As $o(\zeta) = pn$, $\zeta^n \neq 1$, $\Phi_n(\zeta)\neq 0$, therefore $\zeta$ is a root of $\Phi_{n}(x^p)/\Phi_n(x)$.
 
 The hypotheses of the lemma are so satisfied, so 
 
@@ -580,7 +583,7 @@ $$
 \end{array}
 \right.
 $$
-
+Prove that $\sum_{d \mid n} \mu\left(\frac{n}{d}\right) = 0$ when $n>1$.
 }
 
 \begin{proof}
@@ -590,11 +593,11 @@ Therefore $$\sum_{d \vert n} \mu(d) = \sum_{r=0}^{k} (-1)^r \binom{k}{r} = (1-1)
  
   
  Conclusion: if $n>1$,
- $$\sum_{d \vert n} \mu(d)= 
+ $$\sum_{d \mid n} \mu\left(\frac{n}{d}\right) = \sum_{d \vert n} \mu(d)= 
  \left\{
 \begin{array}{ll}
-  0&    \mathrm{if} \ n>1,  \\
-  1   &   \mathrm{if}\ n=0.
+  0,&    \mathrm{if} \ n>1,  \\
+  1,   &   \mathrm{if}\ n=0.
 \end{array}
 \right.
 $$
@@ -607,18 +610,20 @@ $$\Phi_n(x) = \prod_{d\mid n} (x^d-1)^{\mu(n/d)}.$$
 }
 
 \begin{proof}
-Our starting point is $$F(n) = x^n - 1 = \prod\limits_{ d \mid n} \Phi_d \ (n \geq 1).$$
+Our starting point is $$F(n) = x^n - 1 = \prod\limits_{ d \mid n} \Phi_d \hspace{1cm} (n \geq 1).$$
 It is sufficient to copy the proof of the Mšbius Inversion Formula in multiplicative notations:
- $$  \prod_{d \mid n} (x^d - 1)^{\mu \left (\frac{n}{d} \right )} =  \prod\limits_{e \vert n}  (x^{\frac{n}{e}} -1)^{\mu(e)}$$
-           $$= \prod\limits_{e \vert n} \ \prod\limits_ {d \vert \frac{n}{e}} \Phi_d^{ \mu(e) } $$
-            $$=\prod\limits_{d \vert n}\  \prod_{e \vert \frac{n}{d}}\Phi_d^{\mu(e)}$$
-            			(since $e\vert n \  \mathrm{and}   \ d \vert \frac{n}{e}  \iff d \vert n\  \mathrm{and}  \ e \vert \frac{n}{d}$)
-           $$ = \prod\limits_{d \vert n}   \Phi_d^{\sum\limits_{\ e \vert \frac{n}{d}}\mu(e)}  = \Phi_n$$
-           
-           since by Exercise 14 $\sum_{\ e \vert \frac{n}{d}} \mu(e) \not = 0$ only if $\frac{n}{d}=1$, that is $d =n$, so the product is $\Phi_n$.
+\begin{align*}
+   \prod_{d \mid n} (x^d - 1)^{\mu \left (\frac{n}{d} \right )} &=  \prod\limits_{e \vert n}  (x^{\frac{n}{e}} -1)^{\mu(e)}\\
+           &= \prod\limits_{e \vert n} \ \prod\limits_ {d \vert \frac{n}{e}} \Phi_d^{ \mu(e) } \\
+            &=\prod\limits_{d \vert n}\  \prod_{e \vert \frac{n}{d}}\Phi_d^{\mu(e)}
+            			\hspace{1cm} (\mathrm{ since }\  e\vert n \  \mathrm{and}   \ d \vert \frac{n}{e}  \iff d \vert n\  \mathrm{and}  \ e \vert \frac{n}{d}) \\
+           & = \prod\limits_{d \vert n}   \Phi_d^{\sum\limits_{\ e \vert \frac{n}{d}}\mu(e)} \\
+           &= \Phi_n,
+ \end{align*}         
+           since by Exercise 14, $\sum_{\ e \vert \frac{n}{d}} \mu(e) \not = 0$ only if $\frac{n}{d}=1$, that is $d =n$, so the product is $\Phi_n$.
 
 Conclusion :            
-$$\Phi_n(x) = \prod\limits_{d \mid n} (x^d - 1)^{\mu \left (\frac{n}{d} \right )}\quad (n>1).$$
+$$\Phi_n(x) = \prod\limits_{d \mid n} (x^d - 1)^{\mu \left (\frac{n}{d} \right )}\quad (n\geq 1).$$
 \end{proof}
 
 \paragraph{Ex. 9.1.16}
@@ -665,7 +670,7 @@ Using the Tower Theorem,
 $$\phi(n)\phi(m) = [\Q(\zeta_n, \zeta_m) : \Q] = [\Q(\zeta_n, \zeta_m) : \Q(\zeta_m)]\, [\Q( \zeta_m) : \Q] = \phi(m)[\Q(\zeta_n, \zeta_m) : \Q(\zeta_m)] ,$$thus
 $$\phi(n) = [\Q(\zeta_m)( \zeta_n) : \Q(\zeta_m)] .$$
 
-Let $f$ the minimal polynomial of $\zeta_n$ over $\Q(\zeta_m)$. Then $$\deg(f) = [\Q(\zeta_m)( \zeta_n) : \Q(\zeta_m)] = \phi(n).$$
+Let $f$ be the minimal polynomial of $\zeta_n$ over $\Q(\zeta_m)$. Then $$\deg(f) = [\Q(\zeta_m)( \zeta_n) : \Q(\zeta_m)] = \phi(n).$$
 
 $\zeta_n$ is a root of $\Phi_n(x)\in \Q[x] \subset \Q(\zeta_m)[x]$, therefore $f \mid \Phi_n$ in $\Q(\zeta_m)[x]$. Moreover these two polynomials are monic of same degree $\phi(n)$, so they are identical. $\Phi_n = f$ is so irreducible over $\Q(\zeta_m)$.
 \end{enumerate}
@@ -693,7 +698,7 @@ The order of $g$ is $n = ef$, hence the order of $g^e$ is $\frac{n}{n\wedge e} =
 Conversely, if $h \in \langle g^e\rangle$, then $h = (g^e)^k, k \in \Z$.
 The Euclidean division of $k$ by $f$ gives $k = qf+r, 0 \leq r <f$, thus $h = (g^{ef})^q g^{er} = ({g^e})^r, 0 \leq r <f$, therefore $h \in A$. 
  
-Hence $H_f = \langle g^e \rangle = A$ is of order  $f$.
+Hence $H_f = \langle g^e \rangle = A$ has order  $f$.
 $$\vert H_f\vert = \vert \langle g^e \rangle \vert = f.$$
 
 \bigskip
@@ -708,13 +713,13 @@ As $g^k \in K, \langle g^k \rangle \subset K$.
 
 Conversely, if $h \in K$, then $h$ is an element of $G$ of the form $h=g^l, \ l\in \Z$. The Euclidean division of $l$ by $k$ gives $l = qk+r, \ 0 \leq r<k$.
 
-Then $g^r = g^l(g^k)^{-q} = h (g^k)^{-q} \in K$ and $0\leq r < k$. If $r$ was not zero, it would lie in $E$ and would be less than the minimum of $E$. This is a contradiction, so $r=0$, and $h = (g^k)^{-q} \in \langle g^k \rangle$. Therefore $K \subset \langle g^k  \rangle$. Finally,
+Then $g^r = g^l(g^k)^{-q} = h (g^k)^{-q} \in K$ and $0\leq r < k$. If $r$ was not zero, it would lie in $E$ and would be less than the minimum of $E$. This is a contradiction, so $r=0$, and $h = g^l =(g^k)^{q} \in \langle g^k \rangle$. Therefore $K \subset \langle g^k  \rangle$. Finally,
 $$K = \langle g^k \rangle.$$
 
 We show first that $k \mid n$. Write $d = k\wedge n$. There exist integers $u,v$ such that $d = uk+vn$, therefore $g^d =(g^k)^u (g^n)^v= (g^k)^u \in K$, so $d \in E$, and $1 \leq d \leq k$, therefore $d = k$ by definition of $k = \min(E)$. So $k = k \wedge n$, hence $k \mid n$.
 
 $K = \langle g^k \rangle$ is cyclic, and its cardinality is the order of $g^k,\  k\mid n$,  so
-$$  |K| = \langle g^k \rangle = |g^k| = \frac{n}{k},$$
+$$  |K| = \langle g^k \rangle = o(g^k)= \frac{n}{k},$$
 by the first part of the proof.
 
 By hypothesis the order of $K$ is $f$, so $f = \vert K \vert =n/k$, and $k= n/f= e$.$$K = \langle g^e \rangle = H.$$
@@ -749,14 +754,14 @@ is the fixed field of  $\tilde{H}_f$, with  $ \Q\subset L_f \subset \Q(\zeta_p)$
 
 \begin{enumerate}
 \item[(a)]
-As $G = \Gal(\Q(\zeta_p)/\Q)$ is Abelian ($G$ is cyclic since $(\Z/p\Z)^* \simeq G$ is cyclic for prime $p$ , so every subgroup of $G$ is normal, therefore  $\Q\subset L_f$ is a Galois extension (Theorem 7.3.2).
+As $G = \Gal(\Q(\zeta_p)/\Q)$ is Abelian ($G$ is cyclic since $(\Z/p\Z)^* \simeq G$ is cyclic for prime $p$), so every subgroup of $G$ is normal, therefore  $\Q\subset L_f$ is a Galois extension (Theorem 7.3.2).
 
  Moreover, by the Galois correspondence (Theorem 7.3.1), $[L_f : \Q] = (G:\tilde{H}_f), $ and $(G:\tilde{H}_f) = ((\Z/p\Z)^* : H_f) = (p-1)/f = e$, so
 $$[L_f : \Q]=e.$$
 $L_f$ is a Galois extension of $\Q$ of degree $e$.
 \item[(b)]
 By Exercise 1, $f \mid f' \iff  H_f \subset H_{f'}$. 
-As the Galois corresponding is order reversing,
+As the Galois correspondence is order reversing,
 $$f \mid f' \iff  H_f \subset H_{f'} \iff \tilde{H}_f \subset \tilde{H}_{f'} \iff L_f \supset L_{f'}.$$
 
 \item[(c)]
@@ -826,7 +831,7 @@ Let $\tau$ be the complex conjugation restricted to $\Q(\zeta_7)$. As $\tau(\zet
 
 Let $L_2 = L_{\langle\tau\rangle}$ be the fixed field of $\tilde{H}_2$.
 By the Galois Correspondence (see Proposition 9.2.1 and Exercise 2), 
-$$[L_2 : \Q] = (G: H_2) =3$$
+$$[L_2 : \Q] = (G: H_2) =3.$$
 As $\eta_1 \in \R, \tau(\eta_1) = \eta_1$, hence $\eta_1 \in L_2$, and so $\Q(\eta_1) \subset L_2$. 
 
 Since $[L_2:\Q] = [\Q(\eta_1):\Q] = 3$, then $[L_2 : \Q(\eta_1)] = 1$, hence $L_2 = \Q(\eta_1)$.
@@ -843,7 +848,7 @@ g(y) &= f\left(y - \frac{1}{3}\right)\\
 &=y^3-y^2+\frac{1}{3}y-\frac{1}{27}+y^2-\frac{2}{3}y+\frac{1}{9} - 2y +\frac{2}{3} - 1\\
 &=y^3 - \frac{7}{3} y - \frac{7}{27}
 \end{align*}
-(Note: if $\Delta$ is the discriminant of $f$ or $g$, then $\Delta = -4p^3-27q^2 = -4\left(-\frac{7}{3}\right)^3 - 27 \left(\frac{7}{27}\right)^2 = \frac{1072}{27} - \frac{49}{27} : \frac{1323}{27} = 49 = 7^2$ is the square of an element of $\Q$, hence the Galois group of $f$ is $A_3\simeq \Z/3\Z$. This shows again that $$\vert \Gal(\Q(\eta_1) / \Q) \vert = [L_2 : \Q] = 3.)$$
+(Note: if $\Delta$ is the discriminant of $f$ or $g$, then $\Delta = -4p^3-27q^2 = -4\left(-\frac{7}{3}\right)^3 - 27 \left(\frac{7}{27}\right)^2 = \frac{1372}{27} - \frac{49}{27} = \frac{1323}{27} = 49 = 7^2$ is the square of an element of $\Q$, hence the Galois group of $f$ is $A_3\simeq \Z/3\Z$. This shows again that $$\vert \Gal(\Q(\eta_1) / \Q) \vert = [L_2 : \Q] = 3.)$$
 
 Let $\alpha$ a root of $g$ (that is to say $\alpha - 1/3$ is a root of $f$). There exist two complex numbers $u,v$ such that
 $\alpha = u+v, uv = 7/9$. Then
@@ -916,7 +921,7 @@ Indeed,
 $$cB = \bigcup_{1\leq i \leq d} c b_i A.$$
 \item[$\bullet$] The union is a disjoint union: if $g \in cb_iA$ and $g\in cb_jA$, then $c^{-1}g \in b_iA\cap b_jA$, which is possible only if $i=j$. Thus $i\neq j \Rightarrow cb_iA\cap cb_jA = \emptyset$.
 \ee
-Conclusion : every left coset of $B$ in $G$ is the disjoint union of $d = (B:A)$ left cosets of $B$ in $G$.
+Conclusion: every left coset of $B$ in $G$ is the disjoint union of $d = (B:A)$ left cosets of $B$ in $G$.
 \end{proof}
 
 \paragraph{Ex. 9.2.5}
@@ -930,9 +935,9 @@ By Exercise 4 , we obtain (9.12):
 $$[\lambda]H_{f'} = [\lambda_1]H_f\cup\cdots \cup[\lambda_d]H_f, \qquad \lambda = \lambda_1.$$
 We must prove that every period $(f,\lambda_j),\ j=1,\ldots,d,$ is of the form  $(f,\lambda_j) = \sigma(\eta) = \sigma((f,\lambda))$, where $\sigma \in \Gal(\Q(\zeta_p)/L_{f'})$.
 
-Write $i = \lambda^{-1} \lambda_j$.  As  $[\lambda_j]\in [\lambda] H_{f'}$, then  $[i] = [\lambda]^{-1} [\lambda_j ]\in H_{f'}$. 
+Write $[i] = [\lambda]^{-1} [\lambda_j]$.  As  $[\lambda_j]\in [\lambda] H_{f'}$, then  $[i] = [\lambda]^{-1} [\lambda_j ]\in H_{f'}$. 
 
-Since $\lambda_j =  i \lambda $,
+Since $[\lambda_j ]= [ i \lambda] $,
  $$(f,\lambda_j) = (f,i\lambda), \qquad i\in H_{f'}.$$ 
 Let $\sigma \in \Gal(\Q(\zeta_p)/L_{f'})$ be defined by $\sigma(\zeta_p) = \zeta_p^i$, where $ [i] \in H_{f'}$, so by Lemma 9.2.4(c),
 $$(f,\lambda_j) = (f,i\lambda) = \sigma(\eta),\ \sigma \in  \Gal(\Q(\zeta_p)/L_{f'}).$$
@@ -950,9 +955,9 @@ $$(\Z/p\Z)^* = \biguplus_{1\leq i \leq e} \lambda_i H_f,$$
 where $\lambda_1,\cdots,\lambda_e$ are distinct representatives of the cosets of $H_f$ in $(\Z/p\Z)^*$.
 
 The $e$ distinct $f$-periods are the $(f,\lambda_i),\ i=1,\cdots,e$, thus  
-$$\sum_{i=1}^e (f,\lambda_i) = \sum_{i=1}^e \sum_{a\in [\lambda_i] H_f} \zeta_p^a =  \sum_{a\in \bigcup_{1\leq i \leq e} [\lambda_i] H_f} \zeta_p^a = \sum_{a\in (\Z/p\Z)^*} \zeta^a = -1,$$
+$$\sum_{i=1}^e (f,\lambda_i) = \sum_{i=1}^e \sum_{a\in [\lambda_i] H_f} \zeta_p^a =  \sum_{a\in \bigcup_{1\leq i \leq e} [\lambda_i] H_f} \zeta_p^a = \sum_{a\in (\Z/p\Z)^*} \zeta_p^a = -1,$$
 
-since $\sum_{a\in (\Z/p\Z)} \zeta^a = 0$.
+since $\sum_{a\in (\Z/p\Z)} \zeta_p^a = 0$.
 \end{proof}
 
 \paragraph{Ex. 9.2.7}
@@ -975,30 +980,33 @@ $2^2=4\not \equiv 1\pmod {19}$, and $2^9=512 = 19\times26+18 \equiv -1\pmod{19}$
 
 
 \item[(b)]
+In Example 9.2.10, we obtained
 \begin{align*}
-H_6 &= \{1,7,8,11,12,18\}\\
-2H_6&=\{2,3,5,14,16,17\}\\
-4H_6 &= \{4,6,9,10,13,15\}\\
+H_6 &= \{1,7,8,11,12,18\},\\
+2H_6&=\{2,3,5,14,16,17\},\\
+4H_6 &= \{4,6,9,10,13,15\}.\\
 \end{align*}
-$$(6,1)^2 = \sum_{\lambda'\in H_6}(6,\lambda'+1),\ (6,2)^2 = \sum_{\lambda'\in 2H_6}(6,\lambda'+2),\ (6,4)^2 = \sum_{\lambda'\in 4H_6}(6,\lambda'+4)$$
+By Proposition 9.2.9,
+$$(6,1)^2 = \sum_{\lambda'\in H_6}(6,\lambda'+1),\ (6,2)^2 = \sum_{\lambda'\in 2H_6}(6,\lambda'+2),\ (6,4)^2 = \sum_{\lambda'\in 4H_6}(6,\lambda'+4).$$
 \begin{align*}
 (6,1)^2 &=(6,2)+(6,8)+(6,9)+(6,12)+(6,13)+6\\
 &=2(6,1)+(6,2)+2(6,4)+6\\
 &=(6,1)+(6,4)+5\\
-&=4 - (6,2)\\
+&=4 - (6,2),\\
 \\
 (6,2)^2&=(6,4)+(6,5)+(6,7)+(6,16)+(6,18)+6\\
 &=2(6,1)+2(6,2)+(6,4)+6\\
 &=(6,1)+(6,2)+5\\
-&=4-(6,4)\\
+&=4-(6,4),\\
 \\
 (6,4)^2&=(6,8)+(6,10)+(6,13)+(6,14)+(6,17)+6\\
 &=(6,1)+2(6,2)+2(6,4)+6\\
 &=(6,2)+(6,4)+5\\
-&=4-(6,1)
+&=4-(6,1).
 \end{align*}
 
-$$(6,1)^2= 4 - (6,2),\ (6,2)^2 = 4-(6,4),\ (6,4)^2 = 4 - (6,2).$$
+$$(6,1)^2= 4 - (6,2),\ (6,2)^2 = 4-(6,4),\ (6,4)^2 = 4 - (6,1).$$
+
 If we write $\eta_1= (6,1), \eta_2 = (6,2), \eta_3 = (6,4)$, then
 $$\eta_1^2 = 4 - \eta_2,\quad \eta_2^2 = 4 - \eta_3, \quad \eta_3^2 = 4 - \eta_1.$$
 
@@ -1021,17 +1029,17 @@ $$\Gal(\Q(\eta_1)/\Q) \simeq \Z/3\Z, \ \Gal(\Q(\eta_1)/\Q) = \langle \tilde{\sig
 (6,1)(6,2)&=\sum_{\lambda'\in H_6} (6,\lambda'+2)\\
 &=(6,3)+(6,9)+(6,10)+(6,13)+(6,14)+(6,1)\\
 &=(6,2)+(6,4)+(6,4)+(6,4)+(6,2)+(6,1)\\
-&=(6,1)+2(6,2)+3(6,4)\\
+&=(6,1)+2(6,2)+3(6,4).\\
 \end{align*}
-If we apply  $\tilde{\sigma}, \tilde{\sigma}^2$ to this equality, we obtain (9.15) :
+If we apply  ${\sigma},{\sigma}^2$ to this equality, we obtain (9.15) :
 \begin{align*}
-(6,1)(6,2) &=(6,1)+2(6,2)+3(6,4)\\
-(6,2)(6,4) &= 3(6,1)+(6,2)+2(6,4)\\
-(6,4)(6,1) &=2(6,1)+3(6,2)+(6,4)
+(6,1)(6,2) &=(6,1)+2(6,2)+3(6,4),\\
+(6,2)(6,4) &= 3(6,1)+(6,2)+2(6,4),\\
+(6,4)(6,1) &=2(6,1)+3(6,2)+(6,4).
 \end{align*}
 It follows
 \begin{align*}
-(6,1)(6,2)(6,4)&=(6,1)(3(6,1)+(6,2)+2(6,4)\\
+(6,1)(6,2)(6,4)&=(6,1)(3(6,1)+(6,2)+2(6,4))\\
 &=3(6,1)^2 +(6,1)(6,2)+2(6,1)(6,4)\\
 &=[12 - 3(6,2)] + [(6,1)+2(6,2)+3(6,4)] + 2[2(6,1)+3(6,2)+(6,4)]\\
 &=12 +5(6,1) +5(6,2)+5(6,4)\\
@@ -1040,32 +1048,43 @@ It follows
 We have so obtained
 $$\eta_1+ \eta_2+\eta_3 = -1,\ \eta_1\eta_2+\eta_2\eta_3+\eta_3\eta_1 = -6,\  \eta_1 \eta_2 \eta_3 = 7.$$
 Hence the minimal polynomial of $\eta_1$ over $\Q$ (and also of  $\eta_2,\eta_3$) is
-$$f=(x-\eta_1)(x-\eta_2)(x-\eta_4) = x^3+x^2-6x-7.$$
-The splitting field of $f$ is  $L_6=\Q(\eta_1)$ generated by the 6-pŽriods.
+$$f=(x-\eta_1)(x-\eta_2)(x-\eta_3) = x^3+x^2-6x-7.$$
+The splitting field of $f$ is  $L_6=\Q(\eta_1)$ generated by the 6-periods.
 
 
 \item[(e)]
+Since
 \begin{align*}
-H_6 &= \{1,7,11\} \cup \{8,12,18\} = H_3 \cup 8 H_5\\
-2H_6 &=\{2,3,14\} \cup \{5,16,17\} = 2H_3 \cup 5H_3\\
-4H_6 &= \{4,6,9\} \cup \{10,13,15\} = 4H_3 \cup10H_3 
+H_6 &= \{1,7,11\} \cup \{8,12,18\} = H_3 \cup 8 H_3,\\
+2H_6 &=\{2,3,14\} \cup \{5,16,17\} = 2H_3 \cup 16H_3,\\
+4H_6 &= \{4,6,9\} \cup \{10,13,15\} = 4H_3 \cup13H_3,
+\end{align*}
+we obtain
+\begin{align*}
+(6,1) &= (3,1) + (3,8),\\
+(6,2) &= (3,2) + (3,16),\\
+(6,4) &= (3,4) + (3,13).
 \end{align*}
 In Example 9.2.12, we have proved that the minimal polynomial of $(3,1)$ and $(3,8)$ over $L_6$ est
 $$(x-(3,1))(x-(3,8)) = x^2 - (6,1)x + (6,4)+3 = x^2 - \eta_1 x + \eta_2 + 3.$$
-If $\sigma  \in \Gal(\Q(\zeta_p)/\Q)$ is determined by $\sigma(\zeta_{19})= \zeta_{19}^2$ then $\sigma((3,1)) = (3,2),\sigma((3,8)) = (3,16) = (3,5),\sigma((6,1)) = (6,2),\sigma(6,4) = (6,8)=(6,1)$, so the minimal polynomial of $(3,2)$ is
-$$(x-(3,2))(x-(3,5)) = x^2 - (6,2)x +(6,1)+3.$$
+If $\sigma  \in \Gal(\Q(\zeta_p)/\Q)$ is determined by $\sigma(\zeta_{19})= \zeta_{19}^2$ then $\sigma((3,1)) = (3,2),\sigma((3,8)) = (3,16) ,\sigma((6,1)) = (6,2),\sigma(6,4) = (6,8)=(6,1)$, so the minimal polynomial of $(3,2)$ is
+$$(x-(3,2))(x-(3,16)) = x^2 - (6,2)x +(6,1)+3.$$
 Similarly, applying $\sigma^2$, we obtain
-$$(x-(3,4))(x-(3,10)) = x^2 - (6,4) x +(6,2)+3.$$
+$$(x-(3,4))(x-(3,13)) = x^2 - (6,4) x +(6,2)+3.$$
 
 
-\item[(f)] The extension $L_1/L_3 = \Q(\zeta_{19})/\Q(3,1)$ is an extension of degree $d=3$. 
+\item[(f)] The extension $L_1/L_3 = \Q(\zeta_{19})/\Q((3,1))$ is an extension of degree $d=3$. 
 
 Here $[1]H_3 = \{[1],[7],[11]\} = [1]H_{1} \cup [7] H_{1} \cup [11] H_{1}$ (with $H_1=\{1\}$). Proposition 9.2.8 shows that the minimal polynomial of $\zeta_{19}$ over $L_3$ is
 $$( x- (1,1))(x-(1,7))(x-(1,11)) = (x-\zeta_{19})(x-\zeta_{19}^7)(x- \zeta_{19}^{11}).$$
+Without Proposition 9.2.8, note that $\Gal(L_1/L_3) = \tilde{H}_3 =  \langle \sigma^6 \rangle = \{e, \sigma^6, \sigma^{12}\}$, where $\sigma^6$ takes $\zeta_{19}$ to $\zeta_{19}^{2^6} = \zeta_{19}^7$, so the minimal polynomial of $\zeta_{19}$ over $L_3$ is
+$$(x-\zeta_{19})(x-\sigma^6(\zeta_{19}))(x- \sigma^{12}(\zeta_{19})) = (x-\zeta_{19})(x-\zeta_{19}^7)(x- \zeta_{19}^{11}).$$
 As 
-$$\zeta_{19}+ \zeta_{19}^7+\zeta_{19}^{11} = (3,1),$$
-$$\zeta_{19} \zeta_{19}^7\zeta_{19}^{11} = \zeta_{19}^{19} = 1,$$
-$$\zeta_{19} \zeta_{19}^7+\zeta_{19}^7\zeta_{19}^{11}+\zeta_{19}\zeta_{19}^{11}  = \zeta_{19}^8 + \zeta_{19}^{18}+ \zeta_{19}^{12} = (3,8),$$
+\begin{align*}
+\zeta_{19}+ \zeta_{19}^7+\zeta_{19}^{11} &= (3,1),\\
+\zeta_{19} \zeta_{19}^7\zeta_{19}^{11} &= \zeta_{19}^{19} = 1,\\
+\zeta_{19} \zeta_{19}^7+\zeta_{19}^7\zeta_{19}^{11}+\zeta_{19}\zeta_{19}^{11}  &= \zeta_{19}^8 + \zeta_{19}^{18}+ \zeta_{19}^{12} = (3,8),
+\end{align*}
 we obtain that the minimal polynomial of $\zeta_{19}$ over $L_3$ is
 $$ (x-\zeta_{19})(x-\zeta_{19}^7)(x- \zeta_{19}^{11}) = x^3-(3,1)x^2+(3,8)x-1.$$
 
@@ -1079,9 +1098,9 @@ $$ (x-\zeta_{19})(x-\zeta_{19}^7)(x- \zeta_{19}^{11}) = x^3-(3,1)x^2+(3,8)x-1.$$
 \item[(a)] Show that $3$ is a primitive root modulo $17$.
 \item[(b)] Show that
    \begin{align*}
-   H_8 &= \{1,2,4,8,9,13,15,16\}\\
-   H_4 &= \{1,4,13,16\}\\
-   H_2 &= \{1,16\}
+   H_8 &= \{1,2,4,8,9,13,15,16\},\\
+   H_4 &= \{1,4,13,16\},\\
+   H_2 &= \{1,16\}.
    \end{align*}
    \item[(c)]Use Propositions 9.2.8 and 9.2.9 to compute the following minimal polynomials:
 $$
@@ -1112,9 +1131,9 @@ H_8 = \langle 3^2 \rangle &=\{1,9,9^2,9^3,-1,-9,-9^2,-9^3\} \\
 \end{align*}
   $H_4 =\langle 3^4 \rangle= \{1,13,16,4\}$, and  $H_2 = \langle 3^8 \rangle = \{1,16\}$, so 
 \begin{align*}
-H_8 &= \{1,2,4,8,9,13,15,16\}\\
-H_4 &= \{1,4,13,16\}\\
-H_2 &= \{1,16\}
+H_8 &= \{1,2,4,8,9,13,15,16\},\\
+H_4 &= \{1,4,13,16\},\\
+H_2 &= \{1,16\}.
 \end{align*}
 
 \item[(c)] 
@@ -1123,15 +1142,15 @@ H_2 &= \{1,16\}
 
 The cosets of $H_8$ in $(\Z/17\,\Z)^*$ are
 \begin{align*}
-H_8 &= \{1,2,4,8,9,13,15,16\}\\
-3H_8 &=\{3, 6, 12, 7, 10, 5, 11, 14\}
+H_8 &= \{1,2,4,8,9,13,15,16\},\\
+3H_8 &=\{3, 6, 12, 7, 10, 5, 11, 14\}.
 \end{align*}
  $L_8$ is generated over $\Q$ by the 8-periods $(8,1),(8,3)$, where $(8,1) + (8,3) = -1$, and
 \begin{align*}
 (8,1)(8,3) &= \sum_{\lambda \in H_8} (8,\lambda+3)\\
 &=(8,4)+(8,5)+(8,7)+(8,11)+(8,12)+(8,16)+(8,1)+(8,2)\\
 &=4(8,1)+4(8,3)\\
-&=-4
+&=-4.
 \end{align*}
 The minimal polynomial over $\Q$ of the 8-pŽriods $(8,1),(8,3)$ is so
 $$(x-(8,1))(x-(8,3)) = x^2 +x-4.$$
@@ -1140,14 +1159,14 @@ $$(x-(8,1))(x-(8,3)) = x^2 +x-4.$$
 
 \begin{align*} 
 H_8 &= \{1,4,13,16\} \cup \{2,8,9,15\} = H_4 \cup 2 H_4,\\
-3 H_8 &= \{3,5,12,14\} \cup \{6,7,10,11\} = 3H_4 \cup 6H_4
+3 H_8 &= \{3,5,12,14\} \cup \{6,7,10,11\} = 3H_4 \cup 6H_4.
 \end{align*}
 The 4-periods are so $(4,1),(4,2)$, and $(4,3),(4,6)$, where
 \begin{align*}
-(4,1) + (4,2) &= (8,1)\\
+(4,1) + (4,2) &= (8,1),\\
 (4,1)\times(4,2) &= \sum_{\lambda \in H_4} (4,\lambda+2)\\
 &= (4,3)+(4,7)+(4,15)+(4,1)\\
-&=-1
+&=-1.
 \end{align*}
 The minimal polynomial of $(4,1)$ et $(4,2)$ over $L_8$ is so
 $$(x-(4,1))(x-(4,2)) = x^2 -(8,1) x -1.$$
@@ -1156,16 +1175,16 @@ $$(x-(4,3))(x-(4,6)) = x^2 -(8,3) x -1.$$
 
 \item[$\bullet$]  Extension $L_4\subset L_2$.
 \begin{align*}
-H_4 &= \{1,16\} \cup \{4,13\} = H_2 \cup 4 H_2\\
-3H_4 &=\{3,14\} \cup \{5,12\} = 3 H_2 \cup 5 H_2\\
+H_4 &= \{1,16\} \cup \{4,13\} = H_2 \cup 4 H_2,\\
+3H_4 &=\{3,14\} \cup \{5,12\} = 3 H_2 \cup 5 H_2,\\
 &\cdots
 \end{align*}
 The $2$-periods $(2,1),(2,4)$ satisfy
 \begin{align*}
-(2,1)+(2,4) &= (4,1)\\
+(2,1)+(2,4) &= (4,1),\\
 (2,1)\times (2,4) &= \sum_{\lambda \in H_2}(2,\lambda + 4)\\
 &=(2,5)+(2,3)\\
-&=(4,3)
+&=(4,3).
 \end{align*}
 The minimal polynomial of $(2,1)$ and $(2,4)$ over $L_4$ is so
 $$(x-(2,1))(x-(2,4)) = x^2 - (4,1)x+(4,3).$$
@@ -1178,6 +1197,23 @@ $$(x-(2,1))(x-(2,4)) = x^2 - (4,1)x+(4,3).$$
 {\it In this exercise, you will use numerical computations and the previous exercise to find radical expressions for various $f$-periods when $p=17$.
 \be
 \item[(a)] Show that
+\begin{align*}
+(8,1) &=  2\cos(2\pi/17) + 2\cos(4\pi/17)+2\cos(8\pi/17)+2\cos(16\pi/17)\\
+(4,1) &= 2\cos(2\pi/17)+2\cos(8\pi/17)\\
+(4,3) &= 2\cos(6\pi/17)+2\cos(10\pi/17)\\
+(2,1) &= 2\cos(2\pi/17)
+\end{align*}
+Then compute each of these periods to five decimal places.
+\item[(b)] Use the numerical computations of part (a) and the quadratic polyomials of Exercice 8 to show that
+\begin{align*}
+(8,1) &= \frac{1}{2}\left(-1+\sqrt{17}\right)\\
+(8,3) &= \frac{1}{2}\left(-1-\sqrt{17}\right)\\
+(4,1) &= \frac{1}{4} \left(-1+\sqrt{17} +\sqrt{34-2\sqrt{17}}\right)\\
+(4,2) &= \frac{1}{4} \left(-1+\sqrt{17} - \sqrt{34-2\sqrt{17}}\right)\\
+(4,3) &= \frac{1}{4} \left(-1-\sqrt{17} +\sqrt{34+2\sqrt{17}}\right)
+\end{align*}
+
+\item[(c)] Use the quadratic polynomial $x^2 - (4,1) x + (4,3)$ and part (b) to derive (9.19).
 \ee
 }
 
@@ -1221,27 +1257,27 @@ $(4,1) \simeq 2.04948, (4,3)\simeq 0.34415$,
 
 $(8,1) \simeq 1.56155$.
 
-As $(4,1)+(4,2) = (8,1)$, on obtient $(4,2) \simeq -0.48792<0$.
+As $(4,1)+(4,2) = (8,1)$, we obtain $(4,2) \simeq -0.48792<0$.
 
 \item[(b)]
 By Exercise 8, $(8,1),(8,3)$ are the roots of $x^2+x-4$, and by part (a) $(8,1)>0$. The only positive root of $x^2+x-4$ is $(-1+\sqrt{17})/2$, therefore
 \begin{align*}
-(8,1) &= \frac{1}{2}\left(-1+\sqrt{17}\right)\\
-(8,3) &= \frac{1}{2}\left(-1-\sqrt{17}\right)\\
+(8,1) &= \frac{1}{2}\left(-1+\sqrt{17}\right),\\
+(8,3) &= \frac{1}{2}\left(-1-\sqrt{17}\right).\\
 \end{align*}
 $(4,1),(4,2)$ are the roots of $x^2-(8,1)x-1$, with discriminant $$\Delta= \frac{1}{4}(-1+\sqrt{17})^2+4 = \frac{1}{4}(34 - 2\sqrt{17}),$$ therefore
-$$\{(4,1),(4,2)\} =\left \{\frac{1}{4} \left(-1+\sqrt{17} +\sqrt{34-2\sqrt{17}}\right), \frac{1}{4} \left(-1+\sqrt{17} -\sqrt{34-2\sqrt{17}}\right)\right\}$$
+$$\{(4,1),(4,2)\} =\left \{\frac{1}{4} \left(-1+\sqrt{17} +\sqrt{34-2\sqrt{17}}\right), \frac{1}{4} \left(-1+\sqrt{17} -\sqrt{34-2\sqrt{17}}\right)\right\}.$$
 By part (a) $(4,2)<0<(4,1)$, so
 \begin{align*}
-(4,1) &= \frac{1}{4} \left(-1+\sqrt{17} +\sqrt{34-2\sqrt{17}}\right)\\
-(4,2)&= \frac{1}{4} \left(-1+\sqrt{17} - \sqrt{34-2\sqrt{17}}\right)
+(4,1) &= \frac{1}{4} \left(-1+\sqrt{17} +\sqrt{34-2\sqrt{17}}\right),\\
+(4,2)&= \frac{1}{4} \left(-1+\sqrt{17} - \sqrt{34-2\sqrt{17}}\right).
 \end{align*}
 $(4,3),(4,6)$ are the roots of $x^2-(8,3)x-1$, with discriminant $$\Delta= \frac{1}{4}(-1-\sqrt{17})^2+4 = \frac{1}{4}(34 + 2\sqrt{17}),$$ therefore
-$$\{(4,3),(4,6)\} =\left \{\frac{1}{4} \left(-1-\sqrt{17} +\sqrt{34+2\sqrt{17}}\right), \frac{1}{4} \left(-1-\sqrt{17} -\sqrt{34+2\sqrt{17}}\right)\right\}$$
+$$\{(4,3),(4,6)\} =\left \{\frac{1}{4} \left(-1-\sqrt{17} +\sqrt{34+2\sqrt{17}}\right), \frac{1}{4} \left(-1-\sqrt{17} -\sqrt{34+2\sqrt{17}}\right)\right\}.$$
 As $(4,3)>0$,
 \begin{align*}
-(4,3) &= \frac{1}{4} \left(-1-\sqrt{17} +\sqrt{34+2\sqrt{17}}\right)\\
-(4,6) &=\frac{1}{4} \left(-1-\sqrt{17} -\sqrt{34+2\sqrt{17}}\right)
+(4,3) &= \frac{1}{4} \left(-1-\sqrt{17} +\sqrt{34+2\sqrt{17}}\right),\\
+(4,6) &=\frac{1}{4} \left(-1-\sqrt{17} -\sqrt{34+2\sqrt{17}}\right).
 \end{align*}
 
 
@@ -1257,18 +1293,18 @@ then
 \begin{align*}
 \Delta &= (4,2) -2(4,3) + 4\\
 &= \frac{1}{4} \left (  -1+\sqrt{17}- \sqrt{34-2\sqrt{17}} -2\left(-1-\sqrt{17} +\sqrt{34+2\sqrt{17}}\right) +16\right)\\
-&= \frac{1}{4} \left ( 17 + 3\sqrt{17} - \sqrt{34-2\sqrt{17}}  -2 \sqrt{34+2\sqrt{17}} \right)
+&= \frac{1}{4} \left ( 17 + 3\sqrt{17} - \sqrt{34-2\sqrt{17}}  -2 \sqrt{34+2\sqrt{17}} \right).
 \end{align*}
 The roots of $x^2 -(4,1)x+(4,3)$ are so
 $\frac{1}{2}((4,1)\pm \sqrt{\Delta})$
 
-$=\frac{1}{8} \left(-1+\sqrt{17} +\sqrt{34-2\sqrt{17}}\right) \pm \frac{1}{4} \sqrt{17 + 3\sqrt{17} - \sqrt{34-2\sqrt{17}}  -2 \sqrt{34+2\sqrt{17}} }$
+$=\frac{1}{8} \left(-1+\sqrt{17} +\sqrt{34-2\sqrt{17}}\right) \pm \frac{1}{4} \sqrt{17 + 3\sqrt{17} - \sqrt{34-2\sqrt{17}}  -2 \sqrt{34+2\sqrt{17}} }.$
 
 As $(2,4) = 2\cos(4\pi/17) < 2 \cos(2\pi/17) = (2,1)$, we can conclude that
 
  \begin{align*}
 \cos\left(\frac{2\pi}{17}\right) =&-\frac{1}{16}+ \frac{1}{16}\sqrt{17} +\frac{1}{16}\sqrt{34-2\sqrt{17}}\\
- & + \frac{1}{8} \sqrt{17 + 3\sqrt{17} - \sqrt{34-2\sqrt{17}}  -2 \sqrt{34+2\sqrt{17}} }
+ & + \frac{1}{8} \sqrt{17 + 3\sqrt{17} - \sqrt{34-2\sqrt{17}}  -2 \sqrt{34+2\sqrt{17}} }.
  \end{align*}
  
 \end{enumerate}
@@ -1295,27 +1331,27 @@ we obtain for all $n\in \N$
 $$u_{n+2} = \eta \,u_{n+1} - u_n, \ u_0 = 2,u_1 = \eta.$$
 Therefore
 \begin{align*}
-\zeta+\zeta^{-1} &= \eta\\
-\zeta^2+\zeta^{-2} &= \eta^2-2\\
-\zeta^3+\zeta^{-3} &=\eta(\eta^2-2)-\eta = \eta^3-3\eta\\
-\zeta^4+\zeta^{-4} &=\eta(\eta^3-3\eta) - (\eta^2-2) = \eta^4-4\eta^2+2\\
-\zeta^5+\zeta^{-5} &=\eta(\eta^4-4\eta^2+2)-(\eta^3-3\eta) = \eta^5-5\eta^3+5\eta
+\zeta+\zeta^{-1} &= \eta,\\
+\zeta^2+\zeta^{-2} &= \eta^2-2,\\
+\zeta^3+\zeta^{-3} &=\eta(\eta^2-2)-\eta = \eta^3-3\eta,\\
+\zeta^4+\zeta^{-4} &=\eta(\eta^3-3\eta) - (\eta^2-2) = \eta^4-4\eta^2+2,\\
+\zeta^5+\zeta^{-5} &=\eta(\eta^4-4\eta^2+2)-(\eta^3-3\eta) = \eta^5-5\eta^3+5\eta.
 \end{align*}
 The equality \eqref{eq:1} gives
 \begin{align*}
 0 &= (\eta^5-5\eta^3+5\eta)+(\eta^4-4\eta^2+2)+(\eta^3-3\eta)+(\eta^2-2)+\eta+1\\
-&=\eta^5+\eta^4-4\eta^3 - 3 \eta^2+3\eta + 1
+&=\eta^5+\eta^4-4\eta^3 - 3 \eta^2+3\eta + 1.
 \end{align*}
 So $\eta$ is a root of $f= x^5+x^4-4x^3-3x^2+3x+1 \in \Q[x]$.
 
-By Proposition 9.2.6 (b), the fixed field $L_2$ of $\tilde{H}_2$ corresponding to $H_2 = \{-1,1\}$ is $L_2 = \Q(\zeta)$, and $[L_2:\Q] = 5$ by Proposiion 9.2.1.
+By Proposition 9.2.6 (b), the fixed field $L_2$ of $\tilde{H}_2$ corresponding to $H_2 = \{-1,1\}$ is $L_2 = \Q(\eta)$, and $[L_2:\Q] = 5$ by Proposition 9.2.1.
 (as $\Q \subset \Q(\zeta)$ is a Galois extension, $[\Q(\eta):\Q] =\vert \Gal(\Q(\eta)/\Q) \vert=  (G:\tilde{H}_2) =((\Z/11\Z)^* : \{-1,1\}) = 5$).
 
 The minimal polynomial $g$ of $\eta$ over $\Q$ divides $f$, and has degree 5, so $g = f$.
 
 Using the other form of the minimal polynomial given in Proposition 9.2.6(a), we obtain that
 \begin{align*}
-&(x-\zeta-\zeta^{-1})(x-\zeta^{2}-\zeta^{-2})(x-\zeta^{3}-\zeta^{-3})(x-\zeta^{4}-\zeta^{-4})(x-\zeta^{5}-\zeta^{-5}) = \\
+&(x-\zeta-\zeta^{-1})(x-\zeta^{2}-\zeta^{-2})(x-\zeta^{3}-\zeta^{-3})(x-\zeta^{4}-\zeta^{-4})(x-\zeta^{5}-\zeta^{-5}) \\
 &=x^5+x^4-4x^3-3x^2+3x+1
 \end{align*}
 is the minimal polynomial of $\eta = \zeta_{11}+ \zeta_{11}^{-1}$ over $\Q$.
@@ -1341,7 +1377,7 @@ By section 9.2,
 \begin{center}
 $L_f$ is the fixed field of $\tilde{H}_f = \langle \sigma \rangle$, where $\sigma(\zeta_p ) = \zeta_p^{g^e}$.
 \end{center}
-$\tilde{H}_f$ is the set of automorphisms $\xi$ such that $\zeta_p \mapsto \xi(\zeta) =  \zeta_p^i,\   i \in H_f = \{1,g^e,g^{2e},\cdots,g^{(f-1)e}\}$.
+$\tilde{H}_f$ is the set of automorphisms $\xi$ such that $\zeta_p \mapsto \xi(\zeta_p) =  \zeta_p^i,\   i \in H_f = \{1,g^e,g^{2e},\cdots,g^{(f-1)e}\}$.
 
 This result applied to $f'$ gives:
 \begin{center}
@@ -1365,9 +1401,9 @@ $$\sigma'((f,\lambda)) = (f,g^{e/q} \lambda).$$
 \item[(b)]
 
 Since $q\mid p-1, p\wedge q = 1$, therefore $\Phi_q(x) = \frac{x^{q}-1}{x-1}$ is irreducible over $\Q(\zeta_p)$ by Exercise 9.1.16. Hence $\Phi_q$ is a fortiori irreducible over the subfields $L_f,L_{fq}$ of $\Q(\zeta_p)$.
-Consequently $$[L_f(\omega):L_f] = [L_{fq}(\omega) : L_{fq}] = q-1.$$
+Consequently $$[L_f(\omega):L_f] = [L_{fq}(\omega) : L_{fq}] = \deg(\Phi_q) =  q-1.$$
  
- $L_f(\omega)$ is the splitting field of $\Phi_q$ over $L_f$, $L_f \subset L_f(\omega)$ is so a Galois extension, and similarly $L_{fq}(\omega)/L_{fq}$ is Galois.
+ $L_f(\omega)$ is the splitting field of $\Phi_q$ over $L_f$, $L_f \subset L_f(\omega)$ is so a Galois extension, and similarly $L_{fq} \subset L_{fq}(\omega)$ is Galois.
  
 By Exercises 8.3.2 and 8.2.7, $L_f(\omega)$ is a Galois extension of $L_{fq}$, a fortiori of $L_{fq}(\omega)$.
 
@@ -1387,7 +1423,7 @@ $\varphi$ is a group homomorphism, and $\varphi$ is injective:
 
 if $\sigma \in \ker(\varphi)$, then $\sigma(\omega) = \omega$, and $\sigma$ is the identity on $L_f$, thus $\sigma$ is the identity on $L_f(\omega)$, so $\sigma = e$, therefore $\ker(\varphi) = \{e\}$.
 
-Moreover, $[L_k:L_{fq}] = q$ and $[L_f(\omega):L_f] = [L_{fq}(\omega) : L_{fq}] = q-1$, therefore $[L_f(\omega):L_{fq}(\omega)] = q$.
+Moreover, $[L_f:L_{fq}] = q$ and $[L_f(\omega):L_f] = [L_{fq}(\omega) : L_{fq}] = q-1$, therefore, by the Tower Theorem, $[L_f(\omega):L_{fq}(\omega)] = q$.
 Hence $\vert  \Gal(L_f(\omega)/L_{fq}(\omega)) \vert = \vert \Gal(L_f,L_{fq}) \vert = q$, so $\varphi$ is a group isomorphism.
 
 \item[(c)] Let $\sigma = \varphi^{-1}(\sigma')$. Then $\sigma$ is a generator of $\Gal(L_f(\omega)/L_{fq}(\omega))$, and $\varphi(\sigma) = \sigma'$.
@@ -1490,8 +1526,7 @@ $$\Gal_{\Q}(\Phi_n) = \Gal(\Q(\zeta_n)/\Q) \simeq (\Z/n\Z)^* \simeq C_{n-1}.$$
 For such a Galois extension,
 $$\vert \Gal(\Q(\zeta_n)/\Q) \vert = [\Q(\zeta_n):\Q] = n-1 = \deg(\Phi_n(x)).$$
 
-\item[(b)]
-The equality $\vert \Gal_{\Q}(f) \vert = \deg(f)$ is true for all irreducible separable polynomials $f$, and in this case, every root of $f$ is a primitive element of the splitting field of $f$, so all the roots are rational functions of a fixed root.
+\item[(b)] If all the roots are rational function of one fixed root $\alpha$ of $f$, then the extension $\Q \subset \Q(\alpha)$ is Galois, so  the equality $\vert \Gal(\Q(\alpha)/\Q) \vert = [\Q(\alpha) : \Q]  = \deg(f)$ is true for the minimal polynomial $f$ of $\alpha$ over $\Q$.
 \end{proof}
 
 \paragraph{Ex. 9.2.15}
