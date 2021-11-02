@@ -9,6 +9,9 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{tikz}
+\usepackage{mathrsfs}
+
+
 %\input{8bitdefs}
 
 % marges
@@ -44,7 +47,7 @@
 \newcommand{\ord}{\mathrm{ord}}
 \newcommand{\Gal}{\mathrm{Gal}}
 \newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
-
+%\renewcommand\familydefault{cmss}
 \title{Solutions to David A.Cox  "Galois Theory''}
 \author{Richard Ganaye}
 \refstepcounter{section} \refstepcounter{section} \refstepcounter{section} \refstepcounter{section}
@@ -64,15 +67,17 @@
 }
 
 \begin{proof}
-Let $ \mathcal C$ be the set of constructible numbers in $\C$.
+Let $ \mathscr{C}$ be the set of constructible numbers in $\C$.
 
 Write $C(\gamma,r)$ the circle with center $\gamma \in \C$ and radius $r$.
 
 Starting from $ \{0,1\}$, we obtain by $C1$ the $x$-axis and by $P2$ the point $-1$ at the intersection of $C(0,1)$ with the $x$-axis, so
-$$ \{-1,0,1\} \subset {\cal C}.$$
+$$ \{-1,0,1\} \subset {\mathscr{C}}.$$
 If $\alpha = -1, \beta = 1$, then $|\beta - \alpha| = 2$, so $C(-1,2)$ and $C(1,2)$ are constructible by $C2$.
 
-Using $P3$, the intersection $C(-1,2) \cap C(1,2)=\{\delta - \delta\}$ gives the point $\delta = i\sqrt{3}$. The $y$-axis that goes through $0$ and $\delta$ is so constructible by $C1$.
+Using $P3$, the intersection $C(-1,2) \cap C(1,2)=\{\delta, - \delta\}$ gives the point $\delta = i\sqrt{3}$. The $y$-axis that goes through $0$ and $\delta$ is so constructible by $C1$.
+
+Example 10.1.2(b) shows then that $i \in \C$ is  constructible. 
 \end{proof}
 
 \paragraph{Ex. 10.1.2}
@@ -86,11 +91,11 @@ Using $P3$, the intersection $C(-1,2) \cap C(1,2)=\{\delta - \delta\}$ gives the
 
 \begin{proof}
 \be
-\item[(a)] $C(\alpha,1)$ is constructible by $C2$. Let $\gamma'$ the intersection point of the line $\alpha \beta$ with $C(\alpha,1)$, then $\gamma'$ is constructible by $P2$. Let $\eta$ the orthogonal projection of $\gamma'$ on the line $\alpha \beta$. Then $\eta$ is constructible with the usual construction: the circle $C(\gamma',r)$, with $r=  |\gamma' \alpha|$,  has two intersection points $\alpha,\alpha'$ with the line $\alpha \beta$, and the intersection point $\gamma'' \ne \gamma'$ of $C(\alpha,r)$ with $C(\alpha',r)$ is constructible, so is the line $\gamma' \gamma''$, and $\eta$ the intersection of the line $\gamma' \gamma''$ with the orthogonal line $\alpha \beta$. Then the cosine of the angle $(\overrightarrow{\alpha \beta},\overrightarrow{\alpha \gamma})$ is $\pm | \eta \alpha| $.
+\item[(a)] $C(\alpha,1)$ is constructible by $C2$. Let $\gamma'$ the intersection point of the line $\alpha \gamma$ with $C(\alpha,1)$, then $\gamma'$ is constructible by $P2$. Let $\eta$ the orthogonal projection of $\gamma'$ on the line $\alpha \beta$. Then $\eta$ is constructible with the usual construction: the circle $C(\gamma',r)$, with $r=  |\gamma' \alpha|$,  has two intersection points $\alpha,\alpha'$ with the line $\alpha \beta$, and the intersection point $\gamma'' \ne \gamma'$ of $C(\alpha,r)$ with $C(\alpha',r)$ is constructible, so is the line $\gamma' \gamma''$, and $\eta$ the intersection of the line $\gamma' \gamma''$ with the orthogonal line $\alpha \beta$. Then the cosine of the angle $(\overrightarrow{\alpha \beta},\overrightarrow{\alpha \gamma})$ is $\pm | \eta \alpha| $.
 
 Write $\xi, \xi'$ the two intersection points of $C(0,| \eta \alpha|)$ with the $x$-axis. The  line passing trough $\xi$ and orthogonal to the $x$-axis intersect $C(0,1)$ in the point $\delta_1 $ with positive $y$-coordinate, and similarly  line passing trough $\xi'$ and orthogonal to the $x$-axis intersect $C(0,1)$ in the point $\delta_2 $ with positive $y$-coordinate, so both are constructible. Then the cosine of the angle formed by $0,1,\delta_1$ is the opposite of the cosine of the angle formed by $0,1,\delta_2$, and equal in absolute value to $ |\eta \alpha|$. So the angle formed by  $0,1,\delta_1$ or $0,1,\delta_2$ is congruent to the angle formed by $\alpha,\beta,\gamma$, so we can take $\delta = \delta_1$ or $\delta = \delta_2$ such that the angle formed by  $0,1,\delta$ is congruent to the angle formed by $\alpha,\beta,\gamma$, and $\delta$ is constructible.
 
-\item[(b)] $\bullet$ If $\zeta_n$ is constructible, so are $1,\zeta_n,\ldots, \zeta_n^{n-1}$ since $\cal C$ is a subfield of $\C$ (Theorem 10.1.4), and these points are the vertices of a regular $n$-gon.
+\item[(b)] $\bullet$ If $\zeta_n$ is constructible, so are $1,\zeta_n,\ldots, \zeta_n^{n-1}$ since $\mathscr{C}$ is a subfield of $\C$ (Theorem 10.1.4), and these points are the vertices of a regular $n$-gon.
 
 $\bullet$ Suppose that a regular $n$-gon can be constructed by straightedge and compass. Let $\beta, \gamma$ be two consecutive vertices. Then the center $\alpha$ of the $n$-gon is constructible, and the measure of the angle formed by $\alpha, \beta,\gamma$ has measure $\theta = 2\pi/n$ (see Example 10.1.3).
 
@@ -103,8 +108,8 @@ By part (a), we can construct $\delta$ with positive $y$-coordinate such that th
 {\it This exercise covers the details omitted in the proof of Theorem 10.1.4.
 \be
 \item[(a)] Let $\alpha,\beta$ be constructible numbers such that $0,\alpha,\beta$ are collinear. Prove that $\alpha+\beta$ is constructible.
-\item[(b)] Let $a\in {\cal C} \cap \{x\in \R\, | \, x>0\}$. Use Figure 2 in the proof of Theorem 10.1.4 to show that $1/a$ is constructible.
-\item[(c)] In the proof of Theorem 10.1.4, we showed that ${\cal C} \cap  \{x\in \R\, | \, x>0\}$ is closed under addition, mutiplication, and multiplicative inverses. Use this to prove that ${\cal C} \cap \R$ is a subfield of $\R$.
+\item[(b)] Let $a\in {\mathscr{C}} \cap \{x\in \R\, | \, x>0\}$. Use Figure 2 in the proof of Theorem 10.1.4 to show that $1/a$ is constructible.
+\item[(c)] In the proof of Theorem 10.1.4, we showed that ${\mathscr{C}} \cap  \{x\in \R\, | \, x>0\}$ is closed under addition, mutiplication, and multiplicative inverses. Use this to prove that ${\mathscr{C}} \cap \R$ is a subfield of $\R$.
 \item[(d)] Prove that the number $\beta$ pictured in (10.1) is constructible (assuming that $r$ is constructible).
 \ee
 }
@@ -113,14 +118,14 @@ By part (a), we can construct $\delta$ with positive $y$-coordinate such that th
 \be
 \item[(a)] Let $D$ be the line passing through $0,\alpha,\beta$, and $C$ the circle of radius $|\beta|$ with center $\alpha$. Then $D$ and $C$ intersect in two points, one of them being $\alpha + \beta$, which is so constructible.
 \item[(b)] As $a$ is constructible, so is $ia$. We can construct the parallel to the line $1,ia$ passing through $i$. The intersection point of this parallel with the $x$-axis gives a point $d>0$. As the triangles $(0,d,i)$ and $(0,1,ia)$ are similar, $d/1 = i/ia$, so $1/a = d$ is constructible.
-\item[(c)] We have proved in the text that $\cal C$ is a subgroup of $(\C,+)$, so ${\cal C} \cap \R$ is a subgroup of $(\R,+)$.
+\item[(c)] We have proved in the text that $\mathscr{C}$ is a subgroup of $(\C,+)$, so ${\mathscr{C}} \cap \R$ is a subgroup of $(\R,+)$.
 
-Let $a,b\in {\cal C} \cap \R$. If $a = 0$ or $b = 0$ then $a+b \in  {\cal C} \cap \R$. If $a \ne 0, b\ne 0$ then $|a| = \pm a \in {\cal C} \cap \R_+^*$, so $|ab| = |a| |b| \in  {\cal C} \cap \R_+^*$, therefore $ab =\pm |ab| \in {\cal C} \cap \R$.
+Let $a,b\in {\mathscr{C}} \cap \R$. If $a = 0$ or $b = 0$ then $a+b \in  {\mathscr{C}} \cap \R$. If $a \ne 0, b\ne 0$ then $|a| = \pm a \in {\mathscr{C}} \cap \R_+^*$, so $|ab| = |a| |b| \in  {\mathscr{C}} \cap \R_+^*$, therefore $ab =\pm |ab| \in {\mathscr{C}} \cap \R$.
 
-Let $a \in {\cal C} \cap \R, a\ne 0$. then $| a | \in {\cal C} \cap \R_+^*$, so $1/|a| \in {\cal C} \cap \R_+^*$. Therefore $1/a = \pm 1/|a| \in {\cal C} \cap \R$.
+Let $a \in {\mathscr{C}} \cap \R, a\ne 0$. then $| a | \in {\mathscr{C}} \cap \R_+^*$, so $1/|a| \in {\mathscr{C}} \cap \R_+^*$. Therefore $1/a = \pm 1/|a| \in {\mathscr{C}} \cap \R$.
 
-Conclusion : ${\cal C} \cap \R$ is a subfield of $\R$.
-\item[(d)] We can construct the orthogonal line $D$ to the $x$-axis passing through $1$, the bisection of $(0,2)$. As $r$ is constructible, so is $1+r$ (Exercise 10.1.3(a)). The intersection of the bisection of $(0,1+r)$ with the $x$-axis gives the number $(1+r)/2$, which is so constructible. The intersection of the circle with radius $(1+r)/2$ centered in $(1+r)/2$ with $D$ give $\beta$ with positive $y$-coordinate, and so $\beta$ is constructible.
+Conclusion: ${\mathscr{C}} \cap \R$ is a subfield of $\R$.
+\item[(d)] We can construct the orthogonal line $D$ to the $x$-axis passing through $1$, the perpendicular bisector of $(0,2)$. As $r$ is constructible, so is $1+r$ (Exercise 10.1.3(a)). The intersection of the perpendicular bisector of $(0,1+r)$ with the $x$-axis gives the number $(1+r)/2$, which is so constructible. The intersection of the circle with radius $(1+r)/2$ centered in $(1+r)/2$ with $D$ give $\beta$ with positive $y$-coordinate, and so $\beta$ is constructible.
 
 The end of the proof of Theorem 10.1.4 shows that $\sqrt{r}$ is constructible.
 \ee
@@ -162,8 +167,8 @@ z \in C &\iff |z-\gamma_2|^2 = |\alpha_2-\beta_2|^2\\
 &\iff x^2+y^2+a_2x+b_2y+c_2 = 0,
 \end{align*}
 where $a_2 = -2u,b_2 = -2v ,c_2 = -(a^2+b^2) \in F$.
-\item[(c)] If $a_1 = 0$, then for all $z =x+iy \in l$, $y=c_1/b_1 x = u$, where $u = c_1/b_1 \in F=F_n$. Substituting $y = u$ into (10.3) gives the quadratic equation
-$$x^2+a_2x+u^2+b_2u+c_2.$$
+\item[(c)] If $a_1 = 0$, then for all $z =x+iy \in l$, $y=c_1/b_1 x = ux$, where $u = c_1/b_1 \in F=F_n$. Substituting $y = ux$ into (10.3) gives the quadratic equation
+$$x^2+a_2x+u^2x^2+b_2ux+c_2.$$
 Therefore $x$ lies in a quadratic extension $F_{n+1}$ of $F_n$ (and $y \in F_n \subset F_{n+1}$).
 \ee
 \end{proof}
@@ -180,7 +185,7 @@ Therefore $x$ lies in a quadratic extension $F_{n+1}$ of $F_n$ (and $y \in F_n \
 \begin{proof} 
 \be
 \item[(a)]
-As $\mathrm{Re}(\zeta_3) = -1/2$, $\zeta_3$ is on the bissection of $(-1,0)$.
+As $\mathrm{Re}(\zeta_3) = -1/2$, $\zeta_3$ is on the perpendicular bisector of $(-1,0)$.
 
 We gives the details of the construction:
 $C(0,1)$ and $C(-1,0)$ are constructible by $C2$, so the two intersection points are constructibles by $P3$, and these two points are $\zeta_3,\overline{\zeta}_3$, so $\zeta_3$ is constructible.
@@ -204,7 +209,7 @@ $$\Q = F_0 \subset F_1\subset \cdots \subset F_{n-1}\subset F_n \subset \C,$$
 with $[F_i:F_{i-1}] = 2$ for $1\leq i \leq n$, and $\zeta_{18} \in F_n$. But then by the tower theorem, $6 = [\Q(\zeta_{18}) : \Q] $ divides $[F_n : \Q] = 2^n$, and $3 \mid 2^{n-1}$: this is a contradiction. So $\zeta_{18}$ is not constructible, hence it is impossible to trisect a 60° angle by straightedge and compass.
 \end{proof}
 
-\paragraph{Ex. 10.1.10}
+\paragraph{Ex. 10.1.7}
 
 {\it Suppose we have extensions $\Q\subset F \subset \C$ where $[F:\Q]$ is finite. Prove that there is a field $M$ such that $F \subset M \subset \C$ and $M$ is a Galois closure of $F$ over $\Q$.
 }
@@ -224,11 +229,11 @@ Conclusion: there is a field $M$ such that $F \subset M \subset \C$ and $M$ is a
 
 \paragraph{Ex. 10.1.8}
 
-{\it In the Mathematical notes we defined the field ${\cal P} \subset \R$ and what it means for a subfield $F \subset \R$ to be Pythagorean.
+{\it In the Mathematical notes we defined the field ${\mathscr P} \subset \R$ and what it means for a subfield $F \subset \R$ to be Pythagorean.
 \be
 
-\item[(a)] Let $\alpha$ be a real number. Prove that $\alpha \in {\cal P}$ if and only if there is a sequence of fields $\Q = F_0\subset \ldots \subset F_n \subset \R$ such that $\alpha \in F_n$, and for $i=1,\ldots,n$ there are $a_i,b_i \in F_{i-1}$ such that $F_i = F_{i-1}\left(\sqrt{a_i^2+b_i^2}\right)$.
-\item[(b)] Prove that ${\cal P}$ is the smallest Pythagorean subfield of $\R$.
+\item[(a)] Let $\alpha$ be a real number. Prove that $\alpha \in {\mathscr P} $ if and only if there is a sequence of fields $\Q = F_0\subset \ldots \subset F_n \subset \R$ such that $\alpha \in F_n$, and for $i=1,\ldots,n$ there are $a_i,b_i \in F_{i-1}$ such that $F_i = F_{i-1}\left(\sqrt{a_i^2+b_i^2}\right)$.
+\item[(b)] Prove that ${\mathscr P} $ is the smallest Pythagorean subfield of $\R$.
 \ee
 }
 
@@ -236,16 +241,16 @@ Write $\mathbb{P}$ the set of points of $\C$ (identified with the Euclidean plan
 
 \bigskip
 
-{\bf Lemma 1. } {\it If $A,B,C\in \mathbb{P}$, with $A\ne B$, then the parallel $l$ to $(AB)$ passing through $C$ is in $\mathbb{D}$.}
-\begin{proof} Let $C'$ the symmetric point of $C$ relative to $A$, and $C''$ the symmetric point of $C'$ relative to $B$, so $\overrightarrow{AC'} = -\overrightarrow{AC}, \overrightarrow{BC''} = - \overline{BC'}$. Since $AC = AC'$ and $BC' = BC''$, $C',C''$ lie in  $\mathbb{P}$, and $\overrightarrow{CC''} = 2 \overrightarrow{AB}$, so $C \ne C''$ and $(CC'')$ is parallel to $(AB)$, with $(CC'') \in \mathbb{D}$. So $l = (CC'') \in \mathbb{D}$.
+{\bf Lemma 1. } {\it If $A,B,C\in {\mathbb P}$, with $A\ne B$, then the parallel $l$ to $(AB)$ passing through $C$ is in $\mathbb{D}$.}
+\begin{proof} Let $C'$ the symmetric point of $C$ relative to $A$, and $C''$ the symmetric point of $C'$ relative to $B$, so $\overrightarrow{AC'} = -\overrightarrow{AC}, \overrightarrow{BC''} = - \overrightarrow{BC'}$. Since $AC = AC'$ and $BC' = BC''$, $C',C''$ lie in  $\mathbb{P}$, and $\overrightarrow{CC''} = 2 \overrightarrow{AB}$, so $C \ne C''$ and $(CC'')$ is parallel to $(AB)$, with $(CC'') \in \mathbb{D}$. So $l = (CC'') \in \mathbb{D}$.
 \end{proof} 
 
-{\bf Lemma 2.}  ${\cal P}$ {\it is a subfield of $\R$.}
+{\bf Lemma 2.}  ${\mathscr P} $ {\it is a subfield of $\R$.}
 \begin{proof}
-Using Lemma 1, we can mimic the proof of Theorem 8.1.4.
+Using Lemma 1, we can mimic the proof of first part of Theorem 10.1.4.
 \end{proof}
 
-{\bf Lemma 3.} {\it Let $\alpha = a+ib \in \C$, where $a,b \in \R$. Then $\alpha \in \mathbb{ P}$ if and only if $a,b \in {\cal P}$.}
+{\bf Lemma 3.} {\it Let $\alpha = a+ib \in \C$, where $a,b \in \R$. Then $\alpha \in \mathbb{ P}$ if and only if $a,b \in {\mathscr P} $.}
 
 %{\it  Let $l = (AB),\  A,B \in \mathbb{P}$, a straightedge-and-dividers constructible line, and $C \in \mathbb{P}$ a straightedge-and-dividers constructible point. Then line $l'$ passing trough $C$ and orthogonal to $l$ is a straightedge-and-dividers constructible line: $l' \in \mathbb{D}$.}
 
@@ -253,8 +258,8 @@ Using Lemma 1, we can mimic the proof of Theorem 8.1.4.
 
 \be
 
-\item[$\bullet$] Suppose that $\alpha =a +i b \in \mathbb{P}$. By Lemma 1, we can construct by straightedge-and-dividers constructions the lines passing through $\alpha$ and parallel to the axis, so $a, ib$ are constructible, and using the divider, so are  the real numbers $a,b$, therefore $a,b \in {\cal P}$.
-\item[$\bullet$] Suppose that $a,b \in {\cal P}$. Then $a, ib \in \mathbb{P}$, and the intersection $\alpha = a+ib$ of the lines passing through these two points and parallel to the $y$-axis and $x$-axis respectively lies in $\mathbb{P}$.
+\item[$\bullet$] Suppose that $\alpha =a +i b \in \mathbb{P}$. By Lemma 1, we can construct by straightedge-and-dividers constructions the lines passing through $\alpha$ and parallel to the axis, so $a, ib$ are constructible, and using the divider, so are  the real numbers $a,b$, therefore $a,b \in {\mathscr P} $.
+\item[$\bullet$] Suppose that $a,b \in {\mathscr P} $. Then $a, ib \in \mathbb{P}$, and the intersection $\alpha = a+ib$ of the lines passing through these two points and parallel to the $y$-axis and $x$-axis respectively lies in $\mathbb{P}$.
 \ee
 
 \end{proof}
@@ -264,17 +269,17 @@ Using Lemma 1, we can mimic the proof of Theorem 8.1.4.
 \be
 \item[(a)] Let $\alpha$ be a real number.
 \be
-\item[$\bullet$]  Suppose that there is a sequence of fields $\Q = F_0\subset \ldots \subset F_n \subset \R$ such that $\alpha \in F_n$, and for $i=1,\ldots,n$ there are $a_i,b_i \in F_{i-1}$ such that $F_i = F_{i-1}\left(\sqrt{a_i^2+b_i^2}\right)$.
+\item[$\bullet$]  Suppose that there is a sequence of fields $\Q = F_0\subset \ldots \subset F_n \subset \R$ such that $\alpha \in F_n$, and for $k=1,\ldots,n$, there are $a_k,b_k \in F_{k-1}$ such that $F_k= F_{k-1}\left(\sqrt{a_k^2+b_k^2}\right)$.
 
-We prove by induction that $F_k \subset {\cal P}$. Since ${\cal P}$ is a subfield of $\R$, $F_0 = \Q \subset \R$. Suppose that $F_{i-1} \subset {\cal P}$. As $a_i,b_i \in F_{i-1} \subset {\cal P}$, $\sqrt{a_i^2+b_i^2} \in {\cal P}$ (see the Mathematical Notes), so $F_i =F_{i-1}\left(\sqrt{a_i^2+b_i^2}\right) \subset {\cal P}$, and the induction is done. 
+We prove by induction that $F_k \subset {\mathscr P} $. Since ${\mathscr P} $ is a subfield of $\R$, $F_0 = \Q \subset \mathscr{P}$. Suppose that $F_{k-1} \subset {\mathscr P} $. As $a_k,b_k\in F_{k-1} \subset {\mathscr P} $, $\sqrt{a_k^2+b_k^2} \in {\mathscr P} $ (see the Mathematical Notes), so $F_k=F_{k-1}\left(\sqrt{a_k^2+b_k^2}\right) \subset {\mathscr P} $, and the induction is done. 
 
-Therefore  $F_n \subset {\cal P}$, and $\alpha \in F_n$, so $\alpha \in {\cal P}$. 
+Therefore  $F_n \subset {\mathscr P} $, and $\alpha \in F_n$, so $\alpha \in {\mathscr P} $. 
 
-\item[$\bullet$]  Conversely, suppose that $\alpha = a+ib \in {\mathbb P}$. We use induction on the number $N$ of steps in the construction of $\alpha$ to prove that there is a sequence of subfield of $\R$, $\Q = F_0\subset \ldots \subset F_n \subset \R$ such that $a,b \in F_n$, where $F_i = F_{i-1}\left(\sqrt{a_i^2+b_i^2}\right),\ i=1,\ldots,n$.
+\item[$\bullet$]  Conversely, suppose that $\alpha = a+ib \in {\mathbb P}$. We use induction on the number $N$ of steps in the construction of $\alpha$ to prove that there is a sequence of subfields of $\R$, $\Q = F_0\subset \ldots \subset F_n \subset \R$, such that $a,b \in F_n$, where $F_k= F_{k-1}\left(\sqrt{a_k^2+b_k^2}\right),\ k=1,\ldots,n$.
 
- When $N = 0$, we must have $\alpha = 0,1$ or $i$, in which case we let $F_n = F_0 = \Q$.
+ When $N = 0$, we must have $\alpha = 0,1$ or $i$, in which case $F_n = F_0 = \Q$ contains the real and imaginary part of $\alpha$.
 
-Now suppose that $\alpha$ is constructed in $N>1$ steps, where the last step use the intersection of two lines $l_1,l_2$. As in the proof of theTheorem 10.1.6, the coordinates of $\alpha$ lie in the same field $F_n$.
+Now suppose that $\alpha$ is constructed in $N\geq1$ steps, where the last step use the intersection of two lines $l_1,l_2$. As in the proof of the Theorem 10.1.6, the coordinates of $\alpha$ lie in the same field $F_n$.
 
 If the last step uses the divider, then their exists four points $\beta,\gamma, \delta, \varepsilon \in \mathbb{P}$ such that $\delta,\varepsilon, \alpha$ are collinear and $|\alpha - \delta| = |\beta - \gamma|$. Moreover, by the induction hypothesis,  the coordinates $\beta_x, \beta_y,\gamma_x,\ldots$ of $\beta,\gamma,\delta,\varepsilon$ are in $F_n$.
 
@@ -287,19 +292,20 @@ F_{n+2} &=F_{n+1}(|\varepsilon - \delta|) = F_{n+1}(\sqrt{u^2+v^2}),  \mathrm{wh
 \end{align*}
 Then $\lambda \in F_{n+2}$. As $\alpha = a+ i b =  \delta + \lambda (\varepsilon - \delta)$, $a, b \in F_{n+2}$, and the induction is done.
 
-In particular, if $\alpha = a+ib \in {\cal P} = \mathbb{P} \cap \R$, then $b=0, \alpha = b \in F_n$, where 
-$\Q = F_0\subset \ldots \subset F_n \subset \R$ and there are $a_i,b_i \in F_{i-1}$ such that $F_i = F_{i-1}\left(\sqrt{a_i^2+b_i^2}\right),\ i = 1,\ldots,n$.
+In particular, if $\alpha = a+ib \in {\mathscr P}  = \mathbb{P} \cap \R$, then $b=0, \alpha = a \in F_n$, where 
+$\Q = F_0\subset \ldots \subset F_n \subset \R$ and there are $a_k,b_k\in F_{k-1}$ such that $F_k = F_{k-1}\left(\sqrt{a_k^2+b_k^2}\right),\ k= 1,\ldots,n$.
 \ee
-\item[(b)] By the Mathematical notes, if $a,b \in {\cal P}$, then $\sqrt{a^2+b^2} \in {\cal P}$, so $\cal P$ is a Pythagorean subfield of $\R$.
 
-Let $K$ any Pythagorean subfield of $\R$, and take any $ \alpha \in {\cal P}$.  By part (a), there exists a sequence of subfields of $\R$,
+\item[(b)] By the Mathematical notes, if $a,b \in {\mathscr P} $, then $\sqrt{a^2+b^2} \in {\mathscr P} $, so $\mathscr P$ is a Pythagorean subfield of $\R$.
+
+Let $K$ any Pythagorean subfield of $\R$, and take any $ \alpha \in {\mathscr P} $.  By part (a), there exists a sequence of subfields of $\R$,
 $$\Q = F_0\subset \ldots \subset F_n \subset \R,$$
-such that $\alpha \in F_n$, and for $i=1,\ldots,n$ there are $a_i,b_i \in F_{i-1}$ such that $F_i = F_{i-1}\left(\sqrt{a_i^2+b_i^2}\right)$.
-As any subfield of $\R$, $K$ contains $\Q$, so $F_0 = \Q \in K$.
+such that $\alpha \in F_n$, and for $k=1,\ldots,n$ there are $a_k,b_k \in F_{k-1}$ such that $F_k= F_{k-1}\left(\sqrt{a_k^2+b_k^2}\right)$.
+As any subfield of $\R$, $K$ contains $\Q$, so $F_0 = \Q \subset K$.
 
-By induction, suppose that $F_{i-1} \subset K$ for some integer $i, 1 \leq i \leq n$. Then $F_i = F_{i-1}(\sqrt{a_i^2+b_i^2})$, where $a_i,b_i \in F_{i-1} \subset K$. As $K$ is Pythagorean, $\sqrt{a_i^2+b_i^2} \in K$, so $F_i \subset K$, and the induction is done.
+By induction, suppose that $F_{k-1} \subset K$ for some integer $k, 1 \leq k\leq n$. Then $F_k = F_{k-1}(\sqrt{a_k^2+b_k^2})$, where $a_k,b_k\in F_{k-1} \subset K$. As $K$ is Pythagorean, $\sqrt{a_k^2+b_k^2} \in K$, so $F_k \subset K$, and the induction is done.
 
-So $F_n \subset K$, and $\alpha \in F_n$, so $\alpha \in K$. Hence ${\cal P} \subset K$, so $\cal P$ is the smallest Pythagorean subfield of $\R$.
+So $F_n \subset K$, and $\alpha \in F_n$, so $\alpha \in K$. Hence ${\mathscr P}  \subset K$, so $\mathscr P$ is the smallest Pythagorean subfield of $\R$.
 \ee
 \end{proof}
 
@@ -311,7 +317,7 @@ So $F_n \subset K$, and $\alpha \in F_n$, so $\alpha \in K$. Hence ${\cal P} \su
 \begin{proof}
 Let $l = OA=OB$ be the side of the triangle $OAB$, and $A = l^2/2$ the area of this triangle. 
 
-The area of the semicircle with diameter $AB$ is $$A_1 = \frac{\pi}{4} l^2.$$
+The area of the semicircle with diameter $AB$ is $$A_1 = \frac{1}{2} \pi \left(\frac{\sqrt{2}}{2} l \right)^2 = \frac{\pi}{4} l^2.$$
 The area of the quarter circle with radius $0A$ is $\frac{\pi}{4} l^2,$
 so the area between the arc $AB$ and the chord $AB$ is $$A_2 = \frac{\pi}{4} l^2 - A.$$
 Therefore the area of the lune, the shaded region of the figure in historical notes, is
@@ -324,7 +330,7 @@ so is this area is the area $A = l^2/2$ of the triangle.
 {\it The quadratrix is the curve $y = x \cot(\pi x/2)$ for $0<x\leq 1$. In this problem, you will use this curve to square the circle and trisect the angle.
 \be
 \item[(a)] Show that $2/\pi = \lim_{x\to 0^+} x \cot(\pi x/2)$, i.e., the quadratrix meets the $y$ axis at $y = 2/\pi$. We will follow Hippias and include this point in the curve.
-\item[(b)] Show that we can square the circle starting from 0 and 1 and and constructing new points using $C1,C2,P1,P2$, or $P3$, together with the intersections of constructible lines with the quadratrix.
+\item[(b)] Show that we can square the circle starting from 0 and 1 and constructing new points using $C1,C2,P1,P2$, or $P3$, together with the intersections of constructible lines with the quadratrix.
 \item[(c)] A point $(a,b)$ on the quadratrix determines an angle $\theta$ as pictured below (see fig. in Cox p. 269). Prove that $\theta = \pi a/2$.
 \item[(d)] Suppose that we are given an angle $0 < \theta < \pi/2$. Prove that we can trisect $\theta$ starting from 0,1, and $\theta$ and constructing new points using $C1,C2,P1,P2$, or $P3$, together with the intersections of constructible lines with the quadratrix.
 \item[(e)] Explain how the method of part (d) can be adapted to trisect arbitrary angles.
@@ -340,15 +346,15 @@ As $\lim_{u\to 0} \frac{\sin u}{u} = 1$ and $\lim_{u\to 0} \cos(u)=1$, then
 $$\lim_{x \to 0} x \cot\left(\frac{\pi x}{2}\right) = \frac{2}{\pi}.$$
 
 \item[(b)]
-We say that a point $z =x +i y \in \C$, where $x,y \in \R$, is Hippias-constructible if there is a finite sequence of straightedge-and-compass constructions using $C1,C2,P1,P2$ and $P3$ that ends with $\alpha$ and begins with the set  of points $0,1$, together with the points $\beta = x+iy$, were $(x,y)$ lies in the graph of the quadratrix, $(0,2/\pi)$ included. Let $\mathbb{H} $ be the set of Hippias-constructible points. Then by Section 10.1, $\mathbb{H}$ is a subfield of $\C$, and ${\cal C}$ is a subfield of $\mathbb{H}$.
+ Let $\mathbb{H} $ be the set of Hippias-constructible points. Then by Section 10.1, $\mathbb{H}$ is a subfield of $\C$, and ${\mathscr{C}}$ is a subfield of $\mathbb{H}$.
 
-As $(0,2/\pi)$ is on the quadratrix, $(2/\pi) i \in \mathbb{H}$. Since $i$ is constructible and since $\mathbb{H}$ is a field, $2/\pi \in \mathbb{H}$, so $\pi/2$ and $\pi$ are in $\mathbb{H}$. 
+As $(0,2/\pi)$ is on the quadratrix and the $y$-axis is constructible,  $(2/\pi) i \in \mathbb{H}$. Since $i$ is constructible and since $\mathbb{H}$ is a field, $2/\pi \in \mathbb{H}$, so $\pi/2$ and $\pi$ are in $\mathbb{H}$. 
 Then the proof of Theorem 10.1.4 shows that $\sqrt{\pi}\in \mathbb{H}$. If $r \in \R_+^*$ is a constructible number and the radius of a circle $C$, then $\sqrt{\pi} r \in \mathbb{H}$, so we can square every constructible circle with the quadratrix.
 
 \item[(c)] As $M = (a,b)$ is on the quadratrix, $b = a \cot (\pi a/2)$. By definition, $\theta$ is a measure of the angle $\widehat{(\overrightarrow{OM}, \vec{e}_2)}$ (where $\vec{e}_2 = (0,1)$), then 
 $$\frac{b}{a} = \cot \theta = \cot\left(\frac{\pi}{2} a\right).$$
 If $\theta = 0$, then $a = 0$. Since the restriction $\cot :\,  ]0, \pi/2] \to [0,+\infty[$ is strictly decreasing, hence is injective, and $\theta \in ]0, \pi/2], \frac{\pi}{2} a \in ]0, \pi/2]$, then 
-$$\theta = \frac{\pi}{2} a,\qquad 0 \leq 1 \leq a.$$
+$$\theta = \frac{\pi}{2} a,\qquad 0 \leq a \leq 1.$$
 
 \item[(d)]
 Let $l$ a line containing the origin $O$, and $(a,b)$ the intersection of $l$ with the quadratrix. As in part (c),
@@ -392,9 +398,9 @@ The volume of the cube with side $a$ is twice the volume of the cube of side $b$
 \item[(a)] If $M =(x,y)$ is a point of the spiral of Archimedes, then
 $$r =\sqrt{x^2+y^2} = \theta.$$
 If $\theta = \pi /2$, then $x = 0, y>0$, so $y = \pi/2$.
-So $\pi/2$ and $\pi$ is constructible, if we add the spiral of Archimede to the starting of the construction, and also $\sqrt{pi}$ by Section 10.1. So the spiral of Archimedes enable one to square the circle.
+So $\pi/2$ and $\pi$ is constructible, if we use the spiral of Archimede, and also $\sqrt{\pi}$ by Section 10.1. So the spiral of Archimedes enables one to square the circle.
 
-\item[(b)] If $0 < \theta_0 < \pi$, let $M=(a,b)$ the corresponding point on the spiral, so $$r = \sqrt{a^2+b^2} = \theta_0.$$ We can obtain by the geometric construction of Section 10.1 the real number $r' = r/3$. Let $C$ the circle with center 0 and radius $r' = r/3$. The intersection of $C$ with the spiral gives is the point $M' = (\cos(\theta/3),\sin(\theta/3))$, so the measure of the angle $\widehat{\vec{e}_1,\overrightarrow{OM'}}$ is $\theta_0 /3$. So the spiral enables one to trisect $\theta_0$. 
+\item[(b)] If $0 < \theta_0 < \pi$, let $M=(a,b)$ the corresponding point on the spiral, so $$r = \sqrt{a^2+b^2} = \theta_0.$$ We can obtain by the geometric construction of Section 10.1 the real number $r' = r/3$. Let $C$ the circle with center 0 and radius $r' = r/3$. The intersection of $C$ with the spiral gives is the point $M' = ((r/3)\cos(\theta_0/3),(r/3)\sin(\theta_0/3))$, so the measure of the angle $\widehat{(\vec{e}_1,\overrightarrow{OM'})}$ is $\theta_0 /3$. So the spiral enables one to trisect $\theta_0$. 
 \ee
 \end{proof}
 
@@ -405,7 +411,7 @@ So $\pi/2$ and $\pi$ is constructible, if we add the spiral of Archimede to the 
 {\it Suppose that $2^k+1$ is an odd prime. Prove that $k$ is a power of 2.
 }
 
-\begin{proof}Let $N = 2^k + 1, \ k\geq 1$ an odd prime. Suppose that there exists an odd divisor $q$ of $k$, so $k = ql$. Since $q$ is odd,
+\begin{proof}Let $N = 2^k + 1, \ k\geq 1$ an odd prime. Suppose that there exists an odd divisor $q$ of $k$, so $k = ql$. Since $l$ is odd,
 $$2^k+1 =2^{ql}+1 = (2^q + 1)(2^{q(l-1)} - 2^{q(l-2)}+ \cdots -2^q + 1) = (2^q+1)\sum_{j=0}^{l-1} (-1)^j 2^{qj},$$
 so $2^q + 1$ divides $2^k+1$, and $1\leq q \leq k$, hence $ 1< 3 \leq 2^q + 1 \leq 2^k < 2^k+1$, so $2^q + 1$ is a nontrivial divisor of $N = 2^k+1$. Therefore $N$ is composite: this is a contradiction.
 
@@ -426,33 +432,6 @@ $$x^{p^2} = x^p\, \overline{\Phi}_{p^2}(x+1).$$
 \ee
 }
 
-
-{\bf Lemma.}
-If $0<k<p^2$, then $p \mid \binom{p^2}{k}$.
-\begin{proof}
-Write $\nu_p(n)$ (or $\mathrm{ord}_p(n)$) the exponent of $p$ in the prime decomposition of the positive integer $n$. Then, for all positive integer $N$,
-$$\nu_p(N!) =  \sum_ {i = 1}^{\infty} \left \lfloor \frac{N}{p^i} \right \rfloor =\left  \lfloor \frac{N}{p} \right \rfloor + \left \lfloor \frac{N}{p^2}\right \rfloor + \cdots.$$
-where the sum ends when $p^i>N$ (see a proof of this formula in Ireland-Rosen Exercise 2.6 on 
-github.com/RichardGanaye/Ireland-Rosen).
-
-Note that the $\left \lfloor \frac{n}{p^k} \right \rfloor = 0$ if $p^k >n$, so the sum is finite.
-
-Suppose that $0<k<n$. Then
-\begin{align*}
-\nu_p\left(\frac{p^2}{k}\right) &= \sum_{i=1}^2  \left ( \left \lfloor \frac{p^2}{p^i} \right \rfloor  - \left \lfloor \frac{p^2-k}{p^i} \right \rfloor - \left \lfloor \frac{k}{p^i} \right \rfloor \right)\\
-&= p -  \left \lfloor \frac{p^2-k}{p} \right \rfloor - \left \lfloor \frac{k}{p} \right \rfloor + 1 - \left \lfloor \frac{p^2-k}{p^2} \right \rfloor -  \left \lfloor \frac{k}{p^2} \right \rfloor\\
-&= p+1 - \left \lfloor p -\frac{k}{p} \right \rfloor - \left \lfloor \frac{k}{p} \right \rfloor.
-\end{align*}
-Moreover, for all real $a,b$, $\lfloor a \rfloor + \lfloor b \rfloor \leq a+b$, and $\lfloor a \rfloor + \lfloor b \rfloor \in \Z$, hence 
-$$\lfloor a \rfloor + \lfloor b \rfloor \leq \lfloor a + b \rfloor,$$
-therefore
-$$\left \lfloor p -  \frac{k}{p} \right \rfloor + \left \lfloor \frac{k}{p} \right \rfloor \leq p,$$
-so
-$$ \nu_p\left(\frac{p^2}{k}\right) \geq 1,$$
-thus $p \mid \binom{p^2}{k}$.
-
-\end{proof}
-
 \begin{proof} (Ex 10.2.2)
 \be
 \item[(a)] As in Example 9.1.6, using Proposition 9.1.5, we obtain
@@ -463,8 +442,10 @@ The substitution $x \to x+1$ gives
 $$(x+1)^{p^2} - 1 = ((x+1)^p - 1)\Phi_{p^2}(x+1).$$
 
 \item[(b)]
-We know that $p \mid \binom{p}{k}, \ 1 \leq k \leq p-1$, and by Lemma, $p \mid \binom{p^2}{k},\ 1 \leq k \leq p^2 - 1$, so
-$$(x+1)^p - 1 \equiv x^p \pmod p \quad \mathrm{and} \quad (x+1)^{p^2} - 1 \equiv x^{p^2} \pmod p.$$
+We know that $p \mid \binom{p}{k}, \ 1 \leq k \leq p-1$, so
+$$(x+1)^p  \equiv x^p + 1 \pmod p $$
+Therefore
+$$ (x+1)^{p^2} =[(x+1)^p]^p  \equiv  (x^p + 1)^p \equiv x^{p^2} \pmod p.$$
 The reduction modulo $p$ of the equality proved in part (a) gives
 $$x^{p^2} = x^p\, \overline{\Phi}_{p^2}(x+1).$$
 
@@ -520,7 +501,7 @@ As the set of constructible points is a subfield of $\C$, $\zeta_m$ is construct
 
 \begin{proof}
 \be
-\item[(a)] The minimal polynomial of $\zeta_{2^s}$ over $Q$ is $\Phi_{2^s}(x)$, and $$\deg(\Phi_{2^s}(x)) = \phi(2^s) = 2^{s-1}(2-1) = 2^{s-1}.$$ Therefore $[\Q(\zeta_s) : \Q] = \deg(\Phi_{2^s}(x)) = 2^{s-1}$ is a power of 2. Since $\Q(\zeta_{2^s})$ is the splitting field of $\Phi(\zeta_{2^s})$ over $\Q$, by Theorem 10.1.12, $\zeta_{2^s}$ is constructible.
+\item[(a)] The minimal polynomial of $\zeta_{2^s}$ over $\Q$ is $\Phi_{2^s}(x)$, and $$\deg(\Phi_{2^s}(x)) = \phi(2^s) = 2^{s-1}(2-1) = 2^{s-1}.$$ Therefore $[\Q(\zeta_s) : \Q] = \deg(\Phi_{2^s}(x)) = 2^{s-1}$ is a power of 2. Since $\Q(\zeta_{2^s})$ is the splitting field of $\Phi(\zeta_{2^s})$ over $\Q$, by Theorem 10.1.12, $\zeta_{2^s}$ is constructible.
 
 Note 1. Since $x^{2^s} - 1 = \Phi_1(x)\Phi_2(x)\cdots \Phi_{2^{s-1}}(x) \Phi_{2^s}(x) = (x^{2^{s-1}}-1) \Phi_{2^s}(x)$, we see that $\Phi_{2^s}(x) = x^{2^{s-1}} +1$. 
 
@@ -534,13 +515,13 @@ $$\zeta_a^v \zeta_b^u = e^{2\pi i \left(\frac{v}{a}+ \frac{u}{b} \right)} = e^{\
 So $\zeta_{ab} = \zeta_a^v \zeta_b^u$, product of constructible numbers, is constructible.
 
 \item[(c)] 
-We show first that two distinct Fermat primes $F_n = 2^{2^n} +1, F_m = 2^{2^m}+1, \ n < m$ are relatively prime. By reductio ad absurdum, suppose that a prime $q$ divides $F_n$ and $F_m$. Then $2^{2^n} \equiv -1 \pmod q$, and
+We show first that two distinct Fermat primes $F_n = 2^{2^n} +1, F_m = 2^{2^m}+1, \ n < m$ are relatively prime. Suppose on the contrary that a prime $q$ divides $F_n$ and $F_m$. Then $2^{2^n} \equiv -1 \pmod q$, and
 $$-1 \equiv 2^{2^m} \equiv (2^{2^n})^{2^{m-n}} \equiv (-1)^{2^{m-n}} \equiv 1 \pmod q.$$
 Therefore $q\mid 2$, so $q=2$, but this is impossible since $F_n$ is odd. 
 
 So $n\ne m \Rightarrow \gcd(F_n,F_m) = 1$.
 
-Since since $\zeta_{2^s},\zeta_{p_1},\ldots, \zeta_{p_r}$ are constructible, and $2^s,p_1,p_r$ are relatively prime, by part (b), $\zeta_{2^s p_1},\, \zeta_{2^s p_1 p_2}, \ldots, \zeta_{ 2^s p_1\cdots p_r} = \zeta_n$ are constructible. 
+Since since $\zeta_{2^s},\zeta_{p_1},\ldots, \zeta_{p_r}$ are constructible, and $2^s,p_1,\ldots,p_r$ are relatively prime, by part (b), $\zeta_{2^s p_1},\, \zeta_{2^s p_1 p_2}, \ldots, \zeta_{ 2^s p_1\cdots p_r} = \zeta_n$ are constructible. 
 \ee
 
 \bigskip
@@ -590,11 +571,11 @@ Since $3^{(F_3-1)/2} = 3^{128} \equiv -1 \pmod {257}$, and $3^{(F_4-1)/2} = 3^{3
 {\it Use $\log_{10}(F_{33}) \approx 2^{33} \log_{10}(2)$ to estimate the number of digits in the decimal expansion of $F_{33}$. The do the same for $F_{2478782}$.
 }
 
-\begin{proof} The number of digits in the decimal expansion of $F_{33}$ is $$\lfloor \log_{10}(F_{33}) \rfloor \approx  2^{33} \log_{10}(2)  = 2,585,827,972.$$
+\begin{proof} The number of digits in the decimal expansion of $F_{33}$ is $$\lfloor \log_{10}(F_{33}) \rfloor + 1  \approx  2^{33} \log_{10}(2)  = 2,585,827,972.$$
 
-( 2.6 gigabytes in the RAM of my computer.)
+(2.6 gigabytes in the RAM of my computer.)
 
-The number of digits in the decimal expansion of $F_{2478782}$ is $$\lfloor \log_{10}(F_{2478782})  \approx   2^{2478782} \log_{10}(2) \approx 1.634\times 10^{746187}.$$
+The number of digits in the decimal expansion of $F_{2478782}$ is $$\lfloor \log_{10}(F_{2478782}) + 1  \approx   2^{2478782} \log_{10}(2) \approx 1.634\times 10^{746187}.$$
 
 (my computer is not so big!)
 \end{proof}
@@ -662,7 +643,7 @@ This means that the measure of the  angle formed by   the bottom of the square  
 \begin{proof}
 \item[(a)] To bisect the same angle $\theta$, we apply the same line $l_2$ on the bottom line. The fold is on the bisector of the angle.
 To double the angle, we fold the sheet along the line $l_2$. Then the bottom line goes on the line that makes a double angle with the bottom line.
-\item[(b)] If the angle $\theta$ is between $0$ and $\pi/4$, the angle $\theta' = \pi/2 - \theta$ is constructible by origami with the symmetry with regard to the bisector of the bottom left corner, and $\theta'$ is between $\pi/4$ and $\pi/2$, so we can trisect it, and we obtain the angle $\pi/6 - \theta/3$. As $\pi/6$ is origami-constructible by trisection of the angle $\pi/2$ (here $Q=P_2=Q_2$) and as we can add or remove an origami-constructible angle, then so is the angle $\theta/3$.
+\item[(b)] If the angle $\theta$ is between $0$ and $\pi/4$, the angle $\theta' = \pi/2 - \theta$ is constructible by origami with the symmetry with regard to the bisector of the bottom left corner, and $\theta'$ is between $\pi/4$ and $\pi/2$, so we can trisect it, and we obtain the angle $\pi/6 - \theta/3$. As $\pi/6$ is origami-constructible by trisection of the angle $\pi/2$ (here $Q=P_2=Q_2$) and as we can add or subtract an origami-constructible angle, then so is the angle $\theta/3$.
 
 If $\theta$ is between $\pi/2$ and $\pi$, Then $\theta'' = \pi - \theta$ is origami-constructible and between $0$ and $\pi/2$, so we can trisect it. We obtain the angle $\pi/3 - \theta/3$, where $\pi/3$ is the double of the origami-constructible angle $\pi/6$, so the angle $\theta/3$ is also origami-constructible.
 \end{proof}
@@ -684,16 +665,16 @@ If $\theta$ is between $\pi/2$ and $\pi$, Then $\theta'' = \pi - \theta$ is orig
 \begin{proof}
 \be
 \item[(a)]
-Let $\cal P$ be the parabola with focus $P_1$ and directrix $l_1$.
+Let $\mathscr P$ be the parabola with focus $P_1$ and directrix $l_1$.
 
-With the chosen coordinates system, let $Q (x,y)$ a point in the plane, and $Q_1$ the orthogonal projection of $Q$ on the directrix.  Since $P_1(0,a)$ and $Q_1(x,-a)$,
+With the chosen coordinates system, let $Q (x,y)$ a point in the plane, and $Q_1$ the orthogonal projection of $Q$ on the directrix.  Knowing  $P_1(0,a)$ and $Q_1(x,-a)$, we obtain
 \begin{align*}
-Q \in {\cal P} &\iff QP_1^2 = QQ_1^2\\
+Q \in {\mathscr P}  &\iff QP_1^2 = QQ_1^2\\
 &\iff x^2+(y-a)^2 = (y+a)^2\\
 &\iff x^2+y^2-2ay +a^2 = y^2+2ay +a^2\\
 &\iff x^2 = 4ay
 \end{align*}
-So the equation of ${\cal P}$ is $${\cal P} : x^2 = 4ay.$$
+So the equation of ${\mathscr P} $ is $${\mathscr P}  : x^2 = 4ay.$$
 
 \item[(b)] Let $Q(x_0,y_0)$ be a point on the parabola, so $x_0^2 = 4ay_0$.
 
@@ -729,7 +710,7 @@ $$P_1(0,a), \quad R(0,-y_0),\quad Q_1(x_0,-a),\quad Q(x_0,y_0), \quad (a>0,y_0>0
   As in any parallelogram, the intersection of the diagonals is the middle point of $(P_1,Q_1)$ and $(Q,R)$, so $Q_1$ is the reflection of $P_1$ about the tangent line to the parabola at $Q$.
   
   \item[(d)] 
-  Conversely, let $Q_1(x_0,-a)$ be any point on the directrix $l_1$, and $l$ the bisection of $(P_1,Q_1)$. We must prove that $l$ is tangent to the parabola $\cal P$.
+  Conversely, let $Q_1(x_0,-a)$ be any point on the directrix $l_1$, and $l$ the perpendicular bisector of $(P_1,Q_1)$. We must prove that $l$ is tangent to the parabola $\mathscr P$.
   Let $M(x,y)$ a point of the plane. With $P_1(0,a)$, and $Q_1(x_0,-a)$,
 \begin{align*}
 M\in l &\iff MP_1^2 = MQ_1^2\\
@@ -737,9 +718,9 @@ M\in l &\iff MP_1^2 = MQ_1^2\\
 &\iff x^2+y^2-2ay+a^2 = x^2-2x_0x+x_0^2+y^2+2ay+a^2\\
 &\iff x_0x-2ay = \frac{x_0^2}{2}
 \end{align*}
- If we write $y_0 = \frac{x_0^2}{4a}$, then the point $M_0(x_0,y_0)$ lies on the parabola $\cal P$. Since $x_0^2-2ay_0 = \frac{x_0^2}{2}$, $M_0$ lies also on $l$. By part (b), the equation of the tangent $T$ at point $M_0$ is $x_0x -2ay_0 = 2ay_0 = x_0^2/2$, hence $T = l$, so $l$ is tangent to the parabola $\cal P$.
+ If we write $y_0 = \frac{x_0^2}{4a}$, then the point $M_0(x_0,y_0)$ lies on the parabola $\mathscr P$. Since $x_0^2-2ay_0 = \frac{x_0^2}{2}$, $M_0$ lies also on $l$. By part (b), the equation of the tangent $T$ at point $M_0$ is $x_0x -2ay_0 = 2ay_0 = x_0^2/2$, hence $T = l$, so $l$ is tangent to the parabola $\mathscr P$.
  
- Conclusion: the reflexion of $P_1$ about $l$ lies on the directrix $l_1$ if and only if $l$ is tangent to the parabola with focus $P_1$ and directrix $l_1$.
+ Conclusion: the reflexion of $P_1$ about $l$ lies on the line $l_1$ if and only if $l$ is tangent to the parabola with focus $P_1$ and directrix $l_1$.
 \ee
 \end{proof}
 
@@ -758,7 +739,7 @@ is
 \end{align*}
 so the equation of $T$ is
 $$T : bx - \left(y_1-\frac{1}{2}a\right)y -bx_1+\left(y_1-\frac{1}{2}a\right)y_1 = 0.$$
-So the slope of $T$ is 
+The slope of $T$ is 
 $$m=\frac{b}{y_1-\frac{1}{2}a}.$$
 \end{proof}
 
@@ -800,16 +781,22 @@ which is equal to
 \alpha &= \sqrt[3]{\frac{1}{18} \sqrt{177} - \frac{1}{2}} - \frac{2}{3 \sqrt[3]{\frac{1}{18} \sqrt{177} - \frac{1}{2}}} \approx -0.4534.
 \end{align*}
 
-\item[(a)] By Exercise 7, the focus and directrix of ${\cal P}_1 : (y-1)^2 = 2x$ are $$F_1\left (\frac{1}{2},1\right), \qquad D_1 : x = -\frac{1}{2},$$
-and the focus and directrix of ${\cal P}_2 : y = \frac{x^2}{2}$ are $$F_2\left(0,\frac{1}{2}\right), \qquad D_2 : y = -\frac{1}{2}.$$
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics [width=8cm,height=8cm] {cubic_equation.pdf}
+\end{center}
+\end{figure}
 
-As all the points have rational coordinates, and the lines rational coefficients, they are constructible by origami. More precisely, take two arbitrary points on the $x$-axis to represent $(0,0)$ and $(1,0)$. For instance the middle point of the sheet, obtained by folding the paper so that the left edge touches the right, represent the origin, and the  fold is then the $y$ axis. A second fold so that the right edge touches the $y$-axis gives an intersection point with the $x$-axis which we take as the point $(1,0)$.
+\item[(a)] By Exercise 7, the focus and directrix of ${\mathscr P} _1 : (y-1)^2 = 2x$ are $$F_1\left (\frac{1}{2},1\right), \qquad D_1 : x = -\frac{1}{2},$$
+and the focus and directrix of ${\mathscr P} _2 : y = \frac{x^2}{2}$ are $$F_2\left(0,\frac{1}{2}\right), \qquad D_2 : y = -\frac{1}{2}.$$
 
-We obtain similarly the point $(0,1)$ and dividing by 2 with horizontal and vertical folds, we obtain $F_1,D_1,F_2,D_2$.
+As all the points have rational coordinates, and the lines rational coefficients, they are constructible by origami. More precisely, take two arbitrary points on the $x$-axis to represent $(0,0)$ and $(1,0)$. To respect the instructions, the directrix $D_1 : x = -1/2$ must be the left side of the sheet, so the $y$-axis is placed at $1/8$ of the length of the sheet, and the unit is $1/4$ of this length, so we obtain the $y$-axis by three vertical folds (see figure). 
 
-\item[(b)] As seen in part (a), the discriminant of $x^3+2x+1$ is $\Delta_f =  -59<0$, the equation (10.12) $m^3+am+b = 0$, where $a = 2,b=1$, has a unique real solution $\alpha$. As the slope of a commune tangent to the parabolas ${\cal P}_1,{\cal P}_2$ is a  root of this equation, the slope of such a tangent is $m=\alpha$. Since the intersection point $M_1(x_1,y_1)$ of the tangent with the parabola ${\cal P}_1$ satisfies (10.10)
+To obtain the two foci $F_1,F_2$, and the directrix $D_2$, we divide in eight equal parts the sheet by horizontal folds.
+
+\item[(b)] As seen in the preliminaries, the discriminant of $x^3+2x+1$ is $\Delta_f =  -59<0$, the equation (10.12) $m^3+am+b = 0$, where $a = 2,b=1$, has a unique real solution $\alpha$. As the slope of a common tangent to the parabolas ${\mathscr P} _1,{\mathscr P} _2$ is a  root of this equation, the slope of such a tangent is $m=\alpha$. Since the intersection point $M_1(x_1,y_1)$ of the tangent with the parabola ${\mathscr P} _1$ satisfies (10.10)
 $$x_1 = \frac{b}{2m^2}, \qquad y_1 = \frac{b}{m} + \frac{a}{2}$$
-this intersection point is determined by $m = \alpha$, and similarly the tangent point  $M_2(x_2,y_2)$ with ${\cal P}_2$ is uniquely determined by 
+this intersection point is determined by $m = \alpha$, and similarly the tangent point  $M_2(x_2,y_2)$ with ${\mathscr P} _2$ is uniquely determined by 
 $$x_2 = m, \qquad y_2 = \frac{m^2}{2},$$ so there is at most one common tangent to the two parabolas, and at most one way to take the focus of each parabola to a point on the corresponding directrix.
 
 Conversely, we must prove the existence of a common tangent.
@@ -820,25 +807,29 @@ $$D : -\alpha x + y +\frac{\alpha^2}{2}.$$
 $D$ contains $M_1(x_1,y_1)$, where $(x_1,y_1) = (\frac{1}{2\alpha^2},1+\frac{1}{\alpha})$, since
 $$-\alpha\left (\frac{1}{2\alpha^2}\right) + 1 + \frac{1}{\alpha} + \frac{\alpha^2}{2} = \frac{1}{2\alpha}(\alpha^3+2\alpha+1) = 0.$$
 
-By Example 10.3.2 and Exercise 4, the slope of the tangent $T_1$ to ${\cal P}_1$ at $M_1$ is $m = \frac{b}{y_1-\frac{1}{2}a} = \alpha$, and the slope of the tangent $T_2$ to ${\cal P}_2$ at $M_2$ is $m = x_2 = \alpha$, so $D = T_1 = T_2$, therefore $D$ is tangent to ${\cal P}_1$ and ${\cal P}_2$. This proves the existence of one common tangent $D$ to the two parabolas, with equation
+By Example 10.3.2 and Exercise 4, the slope of the tangent $T_1$ to ${\mathscr P} _1$ at $M_1$ is $m = \frac{b}{y_1-\frac{1}{2}a} = \alpha$, and the slope of the tangent $T_2$ to ${\mathscr P} _2$ at $M_2$ is $m = x_2 = \alpha$, so $D = T_1 = T_2$, therefore $D$ is tangent to ${\mathscr P} _1$ and ${\mathscr P} _2$. This proves the existence of one common tangent $D$ to the two parabolas, with equation
 $$D : -\alpha x + y +\frac{\alpha^2}{2}.$$
 
-Conclusion : there is exactly one way to take the focus of each parabola to a point on the corresponding directrix.
+Conclusion: there is exactly one way to take the focus of each parabola to a point on the corresponding directrix.
 
-\item[(c)] Let $F'_2$ be the reflexion of the focus $F_2$ of ${\cal P}_2$ about the common tangent $D$. By Exercise 3, the line $(M_2F_2)$ is parallel to the $y$-axis, so the abscissa of $F'_2$ is $$x_2 =m.$$
-A vertical fold is obtained by the perpendicular line tho the horizontal fold passing by $F_2$. The intersection of this fold with the $x$-axis gives the point $(m,0)$, with $m\approx -0.45$
+To obtain the corresponding line (the dotted line of the figure) by an origami fold, we take $F_1$ to $D_1$ (the left side of the sheet), and simultaneously $F_2$ to $D_2$. The slope $m$ of this line is the root $\alpha$ of $x^3 + 2x +1$.
 
-(Another method consists to construct the parallel to the tangent $D$ passing by the origin. The intersection of this parallel with the line $x=1$ gives the point $(1,m)$.)
+
+\item[(c)] Let $F'_2$ be the reflexion of the focus $F_2$ of ${\mathscr P} _2$ about the common tangent $D$, and $M_2$ the point of tangency. By Exercise 3, the line $(M_2F'_2)$ is parallel to the $y$-axis, so by (10.11) the abscissa of $F'_2$ is $$x_2 =m.$$
+ The intersection of the vertical fold  passing by $F'_2$ with the $x$-axis gives the point $(m,0)$, with $m\approx -0.45$. 
+ 
+ We have resolved the equation $x^3 + 2x + 1 = 0$ by origami !
+ 
 \end{proof}
 
 \paragraph{Ex. 10.3.6}
 
-{\it Supose that in the situation of C3, we have points $\alpha_1\ne \alpha_2$ not lying on lines $l_1\ne l_2$. Also assume that $l_1$ and $l_2$ are parallel and that there is a line $l$ satisfying C3 (i.e., $l$ reflects $\alpha_i$ to a point of $l_i$ for $i=1,2$). Prove that the distance between $l_1$ and $l_2$ is at most the distance between $\alpha_1$ and $\alpha_2$. This makes it easy to find examples where the line described in C3 does not exist.
+{\it Suppose that in the situation of C3, we have points $\alpha_1\ne \alpha_2$ not lying on lines $l_1\ne l_2$. Also assume that $l_1$ and $l_2$ are parallel and that there is a line $l$ satisfying C3 (i.e., $l$ reflects $\alpha_i$ to a point of $l_i$ for $i=1,2$). Prove that the distance between $l_1$ and $l_2$ is at most the distance between $\alpha_1$ and $\alpha_2$. This makes it easy to find examples where the line described in C3 does not exist.
 }
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics  {parabolas0.pdf}
+\includegraphics [width=7cm,height=7.5cm]  {parabolas0.pdf}
 \end{center}
 \end{figure}
 
@@ -855,13 +846,13 @@ To conclude, the distance $d$ between $l_1$ and $l_2$ is at most the distance be
 
 For instance, let $l_1$ be the line with equation $y=0$, $l_2$ with equation $y=-2$, $\alpha_1 = i, \alpha_2 = 1+i$. Then $d = d(l_1,l_2) = 2 > |\alpha_1 - \alpha_2 |$, so there is no line $l$ that reflects $\alpha_1$ on a point on $l_1$ and $\alpha_2$ on a point on $l_2$. In other words, there is no common tangent to the two parabolas with focus $\alpha_i$ and directrix $l_i$, $i=1,2$, with equations
 \begin{align*}
-{\cal P}_1 &: y = \frac{1}{2} (x^2+1)\\
-{\cal P}_2 &: y = \frac{1}{6} (x^2 - 2x-2)
+{\mathscr P} _1 &: y = \frac{1}{2} (x^2+1)\\
+{\mathscr P} _2 &: y = \frac{1}{6} (x^2 - 2x-2)
 \end{align*}
 (see figure).
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=10cm, height=12cm]  {parabolas.pdf}
+\includegraphics[width=5cm, height=6cm]  {parabolas.pdf}
 \end{center}
 \end{figure}
 \end{proof}
@@ -879,19 +870,19 @@ Hence the focus and directrix of the first parabola are defined over any subfiel
 
 \begin{proof}
 \item[(a)]
-Let ${\cal P}_1$ the parabola with focus $F\left(\frac{1}{2}b,\frac{1}{2}a\right)$ and directrix $D : x=-\frac{1}{2} b$. Let $M(x,y)$ a point of the plane and $H(-\frac{1}{2}b,y)$ the orthogonal projection of $M$ on $D$. Then
+Let ${\mathscr P} _1$ the parabola with focus $F\left(\frac{1}{2}b,\frac{1}{2}a\right)$ and directrix $D : x=-\frac{1}{2} b$. Let $M(x,y)$ a point of the plane and $H(-\frac{1}{2}b,y)$ the orthogonal projection of $M$ on $D$. Then
 \begin{align*}
-M(x,y) \in {\cal P}_1 &\iff MF^2 = MH^2\\
+M(x,y) \in {\mathscr P} _1 &\iff MF^2 = MH^2\\
 & \iff \left(x-\frac{b}{2}\right)^2 + \left ( y -\frac{a}{2} \right)^2 = \left(x+\frac{b}{2}\right)^2\\
-&\iff  \left ( y -\frac{a}{2} \right)^2 = 2bx
+&\iff  \left ( y -\frac{a}{2} \right)^2 = 2bx.
 \end{align*}
 So the first parabola $\left (y-\frac{1}{2}a\right)^2 = 2bx$ has focus $\left(\frac{1}{2}b,\frac{1}{2}a\right)$ and directrix $x=-\frac{1}{2} b$.
 
-\item[(b)] Let ${\cal P}_2$ the parabola with focus $F\left(0,\frac{1}{2}\right)$ and directrix $D : x=-\frac{1}{2} $. Let $M(x,y)$ a point of the plane and $H(0,-\frac{1}{2})$ the orthogonal projection of $M$ on $D$. Then
+\item[(b)] Let ${\mathscr P} _2$ the parabola with focus $F\left(0,\frac{1}{2}\right)$ and directrix $D : x=-\frac{1}{2} $. Let $M(x,y)$ a point of the plane and $H(0,-\frac{1}{2})$ the orthogonal projection of $M$ on $D$. Then
 \begin{align*}
-M(x,y) \in {\cal P}_2 &\iff MF^2 = MH^2\\
+M(x,y) \in {\mathscr P} _2 &\iff MF^2 = MH^2\\
 & \iff x^2 + \left ( y -\frac{1}{2} \right)^2 = \left(y+\frac{1}{2}\right)^2\\
-&\iff x^2 = 2y
+&\iff x^2 = 2y.
 \end{align*}
 So the second parabola $y = x^2/2$ has focus $\left(0,\frac{1}{2}\right)$ and directrix $y=-\frac{1}{2}$.
 \end{proof}
@@ -923,7 +914,7 @@ By Theorem 10.3.4, $\beta = \sigma(\alpha) \in \sigma(F_n)$ is an origami number
 \be
 \item[$\bullet$] Suppose that $\alpha \in {\cal O}$  and let $\Q \subset L$ be the splitting field of the minimal polynomial $f$ of $\alpha$ over $\Q$. Since $\Q \subset \cal O$ is normal, $L \subset {\cal O}$. By the theorem of the Primitive Element, we have $L = \Q(\gamma)$ for some $\gamma \in L$. Since $\gamma \in {\cal O}$, there are subfields
 $$\Q=F'_0\subset F'_1\subset \cdots \subset F'_{n-1} \subset F'_m \subset \C$$
-such that $\gamma \in F_m$ and $[F'_i:F'_{i-1}] = 2$ or $3$ for $1\leq i \leq m$.
+such that $\gamma \in F'_m$ and $[F'_i:F'_{i-1}] = 2$ or $3$ for $1\leq i \leq m$.
 
 As $\Q \subset \Q(\gamma) \subset F'_m$, by the Tower Theorem, 
 
@@ -936,7 +927,7 @@ $[L:\Q] = 2^a3^b$ for some integer $a,b\geq 0$.
 
 Since $\Q \subset L$ is Galois, then $G =\Gal(L/\Q)$ satisfies $|G | = [L:\Q]$ is of the form
 $$|G| = 2^a 3^b.$$
-By Burnside's $p^nq^m$ Theorem (Theorem 8.1.8), $G$ is solvable., so we have subgroups
+By Burnside's $p^nq^m$ Theorem (Theorem 8.1.8), $G$ is solvable, so we have subgroups
 $$\{e\}=G_m \subset G_{m-1} \subset \cdots \subset G_1 \subset G_0 = G = \Gal(L/\Q)$$
 such that $G_i$ is normal in $G_{i-1}$ of index 2 or 3, since $|G| = 2^a 3^b$. The Galois Correspondence Theorem gives
 $$\Q=L_{G_0} \subset L_{G_1} \subset \cdots \subset L_{G_m} = L,$$
@@ -981,15 +972,15 @@ $$ l: y = m\left (x-\frac{1}{2}\right).$$
 
 The intersection point $(x_1,y_1)$ of $l$ with $l_1: y=x$ is given by the system
 \begin{align*}
-y_1 &= x_1\\
-y_1 &= m\left (x_1-\frac{1}{2}\right)
+y_1 &= x_1,\\
+y_1 &= m\left (x_1-\frac{1}{2}\right),
 \end{align*}
 which gives $x_1 = m\left (x_1-\frac{1}{2}\right)$,  $2x_1 = 2mx_1-m$, so
 $$Q_1 = (x_1,y_1) = \left ( \frac{m}{2m-2}, \frac{m}{2m-2}\right).$$
 The intersection point $(x_2,y_2)$ of $l$ with $l_2: y=-\frac{1}{2}x$ is given by the system
 \begin{align*}
-y_2 &= -\frac{1}{2}x_2\\
-y_2 &= m\left (x_2-\frac{1}{2}\right)
+y_2 &= -\frac{1}{2}x_2,\\
+y_2 &= m\left (x_2-\frac{1}{2}\right),
 \end{align*}
 which gives $-\frac{1}{2}x_2 = m\left (x_2-\frac{1}{2}\right)$, so
 $$Q_2 = (x_2,y_2) = \left ( \frac{m}{2m+1}, -\frac{m}{2(2m-2)}\right).$$
@@ -1003,7 +994,7 @@ Q_1Q_2 = 1 &\iff 1 = (x_2-x_1)^2 + (y_2-y_1)^2 \\
 &\iff 16 (2m+1)^2(m-1)^2 = 36 m^2(1+m^2)\\
 &\iff 4(2m+1)^2(m-1)^2 = 9 m^2(1+m^2)\\
 &\iff 16 m^4-16m^3-12m^2+8m+ 4 = 9 m^4 + 9m^2\\
-&\iff 7m^4-15m^3-21m^2+8m+4 = 0
+&\iff 7m^4-15m^3-21m^2+8m+4 = 0.
 \end{align*}
 
 We obtain the four slopes and the figure with the following SAGE instructions:
@@ -1054,7 +1045,7 @@ $$l : y - \frac{1}{2} = m (x-1).$$
 The intersection point of $l$ with $l_1 : y = 0$ and the intersection of $l$ with $l_2 : y=x$ are the points
 \begin{align*}
 Q_1 &= (x_1,y_1) =  \left (\frac{2m-1}{2m},0 \right),\\
-Q_2 &= (x_2,y_2) =  \left (\frac{2m-1}{2m-2}, \frac{2m-1}{2m-2} \right)
+Q_2 &= (x_2,y_2) =  \left (\frac{2m-1}{2m-2}, \frac{2m-1}{2m-2} \right).
 \end{align*}
 Therefore
 \begin{align*}
@@ -1064,7 +1055,7 @@ Q_1Q_2 = 1 &\iff1= (x_2-x_1)^2 + (y_2-y_1)^2\\
 &\iff 1 = \frac{(2m-1)^2}{(2m-2)^2} \left ( \frac{1}{m^2} + 1 \right)\\
 &\iff 4m^2(m-1)^2 = (2m-1)^2(m^2 + 1)\\
 &\iff 4m^4 - 8m^3 + 4m^2 = 4 m^4 - 4m^3+ 5m^2 - 4m+1\\
-&\iff 4m^3+m^2 - 4m+1 = 0
+&\iff 4m^3+m^2 - 4m+1 = 0.
 \end{align*}
 Let $f(x) = 4x^3+x^2-4x+1$, then 
 $$\lim_{x \to -\infty}f(x) = -\infty,\quad  f\left(-\frac{2}{3}\right) = \frac{79}{27} >0,\quad  f\left(\frac{1}{2}\right) = -\frac{1}{4}<0,\quad  \lim_{x \to +\infty} f(x)= +\infty.$$ Therefore $f(x)$ has three real roots
@@ -1072,9 +1063,9 @@ $$m_1 \approx 0.2991, m_2 \approx -1.2290, m_3 \approx 0.6799.$$
 This gives 4 solutions with $m=\infty$.
 (see figure.)
 
-$f(x)$ has no rational root. Indeed , if $\alpha = \frac{p}{q}, p,q \in \Z, q>0, p\wedge q = 1$ is a root of $f$, then $4p^3+p^2q-4pq^2+q^3 = 0$, so $p^3 \mid 1, q^3 \mid 2$, therefore $p = \pm 1, q =1$, so $\alpha = \pm 1$, but neither 1 nor $-1$ is a root of $f$. Since$\deg(f) = 3$, $f$ is irreducible over $\Q$ and the minimal polynomial of $m_1,m_2$ or $m_3$ over $\Q$ is $f$.
+$f(x)$ has no rational root. Indeed , if $\alpha = \frac{p}{q}, p,q \in \Z, q>0, p\wedge q = 1$ is a root of $f$, then $4p^3+p^2q-4pq^2+q^3 = 0$, so $p^3 \mid 1, q^3 \mid 2$, therefore $p = \pm 1, q =1$, so $\alpha = \pm 1$, but neither 1 nor $-1$ is a root of $f$. Since $\deg(f) = 3$, $f$ is irreducible over $\Q$ and the minimal polynomial of $m_1,m_2$ or $m_3$ over $\Q$ is $f$.
 
-Let $L = \Q(m_1) = \Q(m_1,m_2,m_3)$ the splitting field of $f$.
+Let $L = \Q(m_1,m_2,m_3)$ the splitting field of $f$.
 The discriminant of $f$ is $\Delta_f = 316 = 2^2 \times 79$, where $79$ is prime, so $\Delta_f$ is not a square in $\Q$, so $\Gal(L:\Q) \simeq S_3$, therefore $[L:\Q] = 6$ is not a power of 2, so $m_1,m_2,m_3$ are not constructible numbers. Therefore the nonvertical lines are not constructible by straightedge and compass.
 \end{proof}
 
@@ -1129,9 +1120,9 @@ Therefore
 \begin{align*}
 QR = 1 &\iff 1 = (x_2-x_1)^2 + (y_2-y_1)^2\\
 &\iff 1 = \left ( \frac{1}{2m} \sin \theta -  \frac{1}{2} \cos \theta \right)^2 + \left( \frac{1}{2} \sin \theta - m \frac{1}{2} \cos \theta\right)^2\\
-&\iff 1 = \frac{1}{4m^2} (sin \theta - m \cos \theta)^2 + \frac{1}{4} (\sin \theta - m \cos \theta)^2\\
-&\iff 4 m^2  = (sin \theta - m \cos \theta)^2(m^2+1)\\
-&\iff 0 = \left (\sin \theta - m \cos \theta - \frac{2m}{\sqrt{m^2+1}}\right )\left (\sin \theta - m \cos \theta + \frac{2m}{\sqrt{m^2+1}}\right) 
+&\iff 1 = \frac{1}{4m^2} (\sin \theta - m \cos \theta)^2 + \frac{1}{4} (\sin \theta - m \cos \theta)^2\\
+&\iff 4 m^2  = (\sin \theta - m \cos \theta)^2(m^2+1)\\
+&\iff 0 = \left (\sin \theta - m \cos \theta - \frac{2m}{\sqrt{m^2+1}}\right )\left (\sin \theta - m \cos \theta + \frac{2m}{\sqrt{m^2+1}}\right).
 \end{align*}
 Note that, since $m = \tan \alpha$,
 $$ \frac{2m}{\sqrt{m^2+1}} = \frac{2 \, \frac{\sin \alpha}{\cos \alpha}} {\sqrt{\frac{\sin^2 \alpha}{\cos^2 \alpha} + 1}}  = 2 \sin \alpha.$$
@@ -1180,13 +1171,13 @@ We follow the indication of David A. Cox and give the more geometric proof of [1
 \item[(a)]
 Let $H$ the orthogonal projection of $R$ on the $x$-axis, and $S$ such that $H$ is the midpoint  of $RS$, so $S$ is the reflection of $R$ with regard to the $x$-axis. Since $R$ is on the curve $C$,
 $$PR = 2 RA = RS,$$
-therefore the measures of $\angle ROP$ and $\angle SOR$ are equal, and is twice the measure of $\angle AOP$, so $\overrightarrow{OR}$ trisects the angle $\angle POA$ and a measure of $\angle ROA$ is $\theta/3$.
+therefore the measures of $\angle ROP$ and $\angle SOR$ are equal, and is twice the measure of $\angle AOR$, so $\overrightarrow{OR}$ trisects the angle $\angle POA$ and a measure of $\angle ROA$ is $\theta/3$.
 
 \item[(b)] Let $Q=(x,y), H = (x,0), P = (\cos \theta, \sin \theta)$
 \begin{align*}
 Q \in C &\iff QP = 2 QH \iff QP^2 = 4 QH^2\\
 &\iff(x- \cos \theta)^2 + (y-\sin \theta)^2 = 4 y^2\\
-& \iff x^2 - 3 y^2  - 2 x \cos \theta  - 2 y \sin \theta +1 = 0
+& \iff x^2 - 3 y^2  - 2 x \cos \theta  - 2 y \sin \theta +1 = 0.
 \end{align*}
 The discriminant of the quadratic form $a x^2 + bxy + cy^2 = x^2-3y^2$ is $\Delta = 12>0$, so $C$ is not empty and $C$ is a hyperbola.
 \ee
@@ -1211,7 +1202,7 @@ Verging from $C$ with the lines $l_1$ and $l_2$ indicated above gives points $Q\
 \end{figure}
 
 \begin{proof}
-\item[(a)] We suppose that $k\geq 0$. Let $I$ be the midpoint of $AB$. As $\triangle ABC$ is isosceles, by Pythagoras' Theorem, $CI^2 + (k/8)^2 = AC^2 = 1$,  therefore $0 \leq k/8\leq1$, so $k \leq 8$. If $k>8$, there exists no point $C$ with the conditions of the text. If $k=8$, $C$ is the midpoint of $AB$ and $l_1$ = $l_2$, and if $k=0$, $A=B$ and $l_2$ is not defined. The restriction $0<k<8$ is necessary.
+\item[(a)] We suppose that $k\geq 0$. Let $I = M$ be the midpoint of $AB$. As $\triangle ABC$ is isosceles, by Pythagoras' Theorem, $CI^2 + (k/8)^2 = AC^2 = 1$,  therefore $0 \leq k/8\leq1$, so $k \leq 8$. If $k>8$, there exists no point $C$ with the conditions of the text. If $k=8$, $C$ is the midpoint of $AB$ and $l_1$ = $l_2$, and if $k=0$, $A=B$ and $l_2$ is not defined. The restriction $0<k<8$ is necessary.
 
 \item[(b)] 2 solutions.
 
@@ -1258,28 +1249,29 @@ R \left |
 \right.
 .
 $$	
-Let $M = (X,Y)$ a point.
+Let $(X,Y)$ any point in the plane.
 \begin{align*}
 (X,Y) \in l_1 = (DB) &\iff 0 = \begin{vmatrix} X - x_B & x_B - x_D \\Y-y_B & y_B - y_D \end{vmatrix} = \begin{vmatrix} X - \lambda & 3 \lambda \\Y&\mu \end{vmatrix}\\
-	&\iff \mu X +(\lambda+x) Y = 0.\\
+	&\iff \mu(X-\lambda) - 3\lambda Y= 0.\\
 \end{align*}
 So the equation of $(DB)$ is
-$$(DB) : \mu x +(\lambda + x) Y =\mu(\lambda + x).$$
+$$(DB) : \mu X - 3 \lambda Y = \lambda \mu.$$
 Similarly,
 \begin{align*}
 (X,Y) \in (CR) &\iff 0 = \begin{vmatrix} X - x_C & -(x_R - x_C) \\Y-y_C &-(y_R-y_C) \end{vmatrix} = \begin{vmatrix} X  & -( \lambda +x)\\Y - \mu &\mu \end{vmatrix}\\
-	&\iff \mu(X-\lambda) - 3\lambda = 0.\\
+	&\iff \mu X +(\lambda+x) Y = \mu(\lambda + x) .\\
 \end{align*}
 So the equation of $(CR)$ is
-$$(CR) : \mu x - 3 \lambda Y = \lambda \mu.$$
+$$(CR) : \mu X +(\lambda + x) Y =\mu(\lambda + x).$$
+
 The coordinates $(x_Q,y_Q)$ are given by the system
 \begin{align*}
-\mu X - 3 \lambda Y &= \lambda \mu\\
-\mu X + (\lambda + x) Y &= \mu (\lambda +X)
+\mu X - 3 \lambda Y &= \lambda \mu,\\
+\mu X + (\lambda + x) Y &= \mu (\lambda +x).
 \end{align*}
 Since $\mu \ne 0$, this is equivalent to
 \begin{align*}
-(4\lambda + x) X &= 4\lambda(\lambda + x)\\
+(4\lambda + x) X &= 4\lambda(\lambda + x),\\
 (4\lambda + x) Y &= \mu x,
 \end{align*}
 so
@@ -1300,7 +1292,7 @@ R \left |
 $$
 Therefore 
 \begin{align*}
-QR = 1 &\iff \left [ \frac{4 \lambda (\lambda + x)}{4\lambda +x} - (\lambda + x) \right ]^2 + \left [ \frac{\mu x}{4\lambda +x} \right]^2\\
+QR = 1 &\iff 1 =  \left [ \frac{4 \lambda (\lambda + x)}{4\lambda +x} - (\lambda + x) \right ]^2 + \left [ \frac{\mu x}{4\lambda +x} \right]^2 \\
 &\iff (4 \lambda + x)^2 = (\lambda + x)^2 x^2 + \mu^2 x^2\\
 &\phantom{\iff (4 \lambda + x)^2\, } = x^4+ 2\lambda x^3 +( \lambda^2 + \mu ^2) x^2\\
 &\phantom{\iff (4 \lambda + x)^2\, } = x^4 + 2 \lambda x^3 + x^2\\
@@ -1358,29 +1350,47 @@ By part (a), verging is the same as intersecting the conchoid with a line. Since
 
 \item[(b)] As $QR=1$, with $R$ on $l$, $Q$ is on the conchoid determined by $P$ and $l$, and on the unit circle, so $Q$ is at the intersection of the unit circle and the conchoid.
 
-\item[(c)] Here $P = (0,0)$ and $l$ is the horizontal line $y=-b$, in the Cartesian coordinates system $(P,\vec{e}_1,\vec{e}_2)$.   
+\item[(c)] Here $P = (0,0)$ and $l$ is the horizontal line $y=-b, b>0$, in the Cartesian coordinates system $(P,\vec{e}_1,\vec{e}_2)$.   
 
-If $R$ is any point on $l$, then $\overrightarrow{PR} = \rho  \vec{u}$, where $\vec{u} = \cos \theta \, \vec{e}_1 + \sin \theta\,  \vec{e}_2, \ 0  <\theta < \pi$, and $\rho = PM>0$. The equation of the line $l_R = (PR)$ is 
+If $R$ is any point on $l$, then $\overrightarrow{PR} = \rho  \vec{u}$, where 
+$$\vec{u}  = \cos \theta \, \vec{e}_1 + \sin \theta\,  \vec{e}_2, \ \theta \in \R \setminus \{k \pi, k \in \Z\}.$$
+The equation of the line $l_R = (PR)$ is given for $M =(x,y) \in l_R$ by $\det( \overrightarrow{PM}, \vec{u}) = 0$:
 $$x \sin \theta - y \cos \theta=0,$$
 thus $$ R = \left(-b\, \frac{\cos \theta}{\sin \theta}, -b\right).$$
-If $C$ is the conchoid, and $Q = (x,y) = (r \cos \theta, r \sin \theta), \ r>0, 0 < \theta < \pi$ any point of the line $l_R$, then
+Let $\mathscr{C} $ be the conchoid, and let $(r,\theta)$ the polar coordinates of a point $Q = (x,y) = (r \cos \theta, r \sin \theta)$ where $Q$ is a point in the line $PR$. Then 
+$$\overrightarrow{PQ} = r \vec{u} = r (\cos \theta \, \vec{e}_1+ \sin \theta \, \vec{e}_2) ,$$
+where $\theta \in \R \setminus \{k \pi, k \in \Z\}$, and $r \in \R$ may be positive or negative.
 \begin{align*}
-Q \in  C & \iff  QR = 1\\
+Q \in  \mathscr{C} & \iff  QR = 1\\
 &\iff 1 =    \left(x + b\, \frac{\cos \theta}{\sin \theta} \right)^2 + (y + b)^2\\
 &\iff \left ( r \cos \theta + b \frac{\cos \theta}{\sin \theta} \right)^2 + (r \sin \theta + b)^2 = 1\\
 &\iff \left ( r + \frac{b}{\sin \theta} \right)^2 = 1\\
 &\iff  r = \frac{-b}{\sin \theta}   \pm 1 \quad ( = -b \csc \theta \pm 1).
 \end{align*}
  So the polar equation of the conchoid of Nicomedes is
-  $$r = \frac{-b}{\sin \theta}   \pm 1, \qquad 0 < \theta < \pi,$$
-where the sign gives the two portions of the curve.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-\ee
+  $$r = \frac{-b}{\sin \theta}   \pm 1, \theta \in \R \setminus \{k \pi, k \in \Z\},$$
+where the sign of $\pm 1$ gives the two portions of the curve.  
 
-\item[(c)]
+$PR = \left | \frac{b}{\sin \theta} \right |$.
+
+If $\theta \in ]0,\pi[$, then $r<0$ and $ -\frac{b}{\sin \theta}  < 0$,  so $\frac{-b}{\sin \theta} - 1$ give the portion below the line $l$, and  $\frac{-b}{\sin \theta} + 1$ give the portion above.   
+
+If  $\theta \in ]-\pi,0[$, then $r>0$ and  $ -\frac{b}{\sin \theta}  > 0$, so $\frac{-b}{\sin \theta} - 1$ give the portion above the line $l$, and  $\frac{-b}{\sin \theta} + 1$ give the portion below.  
+
+This is confirmed by the instruction "polar\_plot" with Sage, where the blue and red portions of the conchoid are exchanged when  $\theta \in ]0,\pi[$ and $\theta \in ]-\pi,0[$ (see figure).
+ 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=10cm,height=8cm]{conchoid.png}
+\end{center}
+\end{figure}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+So, when  $\theta$ traces $\R$, the mobile point passes through the infinity point of the curve when $\theta = k\pi, k \in \Z$, and the two parts of the curve are traced with only one of the two formulas, for instance $r = -b \csc \theta +1$.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+\item[(d)]
 Any non horizontal line $l_1$ has an equation $x = py$, where $p = 0$ or $p = 1/m$, $m$ being the slope of $l_1$.
-The intersection point $R$ of $l$ with $l_1$ is $R = (-pb,-b)$, so 
+The intersection point $R$ of $l$ with $l_1$ is $R = (-pb,-b)$, so, if $Q = (x,y)$,
 \begin{align*}
-Q \in C &\iff \exists p \in \R,\ Q \in l_1 \quad \mathrm{and} \quad QR = 1\\
+Q \in  \mathscr{C}  &\iff \exists p \in \R,\ Q \in l_1 \quad \mathrm{and} \quad QR = 1\\
 &\iff \exists p \in \R,\quad 
 \left\{
 \begin{array}{ccl}
@@ -1390,7 +1400,7 @@ Q \in C &\iff \exists p \in \R,\ Q \in l_1 \quad \mathrm{and} \quad QR = 1\\
 \right.\\
 &\iff (x,y) = (0,0)\  \mathrm{or} \ \left ( x + b \frac{x}{y} \right)^2 + (y+b)^2 = 1\\
 &\iff x^2(y+b)^2 + y^2(y+b)^2 = y^2\\
-&\iff (x^2 + y^2)(y+b)^2 = y^2
+&\iff (x^2 + y^2)(y+b)^2 = y^2.
 \end{align*}
 (The polar equation gives the same Cartesian equation. For $r\ne 0$, 
 \begin{align*}
@@ -1398,6 +1408,7 @@ Q \in C &\iff \exists p \in \R,\ Q \in l_1 \quad \mathrm{and} \quad QR = 1\\
 &\iff (x^2 +y^2)(y+b)^2 = y^2.)
 \end{align*}
 The sign $-$ in the text seems to be a misprint, if the equation of $l$ is $y = -b$ (correct if the equation of $l$ is $y=b$). 
+\ee
 \end{proof}
 
 \paragraph{Ex. 10.3.17}
@@ -1421,12 +1432,12 @@ $$(x^2+y^2 -2ax)^2 = x^2 + y^2.$$
 \be
 \item[(a)]  As $QR = 1$, where $Q \in C$ and $R$ is on the line $(PQ)$, $R\in l$ is by definition on the limaçon determined by $P$ and $C$,
 
-\item[(b)] Let $l_1 : y = mx$ be any nonvertical line passing through $P = (0,0)$, with $m = \tan \theta, \ -\pi / 2 <\theta < \pi/2$, so the measure of the angle between the $x$-axis and $l_1$ is $\theta$.  Let $Q =(x_Q,y_Q),Q \ne P$ be the intersection point of $l_1$ with $C$. Then $x_Q \ne 0$.
+\item[(b)] Let $l_1 : y = mx$ be any nonvertical line passing through $P = (0,0)$, with $m = \tan \theta, \ -\pi / 2 <\theta < \pi/2$, so the measure of the angle between the $x$-axis and $l_1$ is $\theta$.  Let $Q =(x_Q,y_Q),Q \ne P$, be the intersection point of $l_1$ with $C$. Then $x_Q \ne 0$.
 
 $(x_Q,y_Q)$ is solution of the system
 \begin{align*}
-y &= mx\\
-a^2 &=(x-a)^2 + y^2 
+y &= mx,\\
+a^2 &=(x-a)^2 + y^2, 
 \end{align*}
 which gives $$y_Q = mx_Q,\qquad 0 = x_Q\, [(m^2+1)x_Q - 2a],$$ with $x_Q \ne 0$, so
 $$Q = \left(\frac{2a}{m^2+1}, \frac{2am}{m^2+1}\right).$$
@@ -1461,7 +1472,7 @@ $$r = 1 + 2a \cos \theta, \qquad \theta \in \R.$$
 \right.\\
  &\iff 1  =    \left(x - \frac{2a}{\frac{x^2}{y^2} + 1}\right)^2 + \left(y - \frac{2a\frac{x}{y}}{\frac{x^2}{y^2}+1}\right) \\
  &\iff x^2(x^2+y^2-2ax)^2 + y^2 (x^2+y^2-2ax)^2 = (x^2+y^2)^2\\
- &\iff (x^2 + y^2 -2ax)^2 = x^2+y^2
+ &\iff (x^2 + y^2 -2ax)^2 = x^2+y^2.
 \end{align*}
 
 The two exceptional points $(0,\pm1)$ satisfy this equation, so the Cartesian equation of the limaçon is
@@ -1486,8 +1497,8 @@ $$\zeta_n \in {\cal O} \iff \phi(n)=2^a 3^b,\ a,b \in \N.$$
 Write $p_k = 2^{u_k}3^{v_k}+1, \ u_k, v_k \in \N$, for $k=1,\ldots,s$. As $2^u, 3^v, p_1,\ldots,p_s$ are relatively prime, if $u\geq 1,v \geq 1$ 
 \begin{align*}
 \phi(n) &= \phi(2^u) \phi(3^v) \phi(p_1)\cdots \phi(p_s) \\
-	&=  (2^a - 2^{a-1}) (3^b - 3^{b-1}) (p_1-1)\cdots(p_s-1)\\
-	&= 2^{a-1} ( 2 \times 3^{b-1}) (2^{u_1}3^{v_1}) \cdots (2^{u_s}3^{v_s})\\
+	&=  (2^u- 2^{u-1}) (3^v - 3^{v-1}) (p_1-1)\cdots(p_s-1)\\
+	&= 2^{u-1} ( 2 \times 3^{v-1}) (2^{u_1}3^{v_1}) \cdots (2^{u_s}3^{v_s})\\
 	&= 2^a 3^b,\qquad a,b \in \N.
 \end{align*}
 If $u=0$, $\phi(2^u) = 1$, and if $v=0$, $\phi(3^v) = 1$. In all cases,
