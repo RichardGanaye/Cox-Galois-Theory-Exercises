@@ -110,7 +110,7 @@ So, $h = \gcd(f,g)$ in $L[x]$ implies that $h = \gcd(f,g)$ in $F[x]$.
 
 \item[$\bullet$] Conversely, suppose that $h = \gcd(f,g)$ in $F[x]$.
 
-By Bézout's Theorem, there exists $u,v \in F[x]$ such that $h = uf +vg$.Consequently, if $q \in L[x]$ divides $f$ and $g$ in $L[x]$, $q$ divides $h$ in $L[x]$. So $h$ satisfies (iii), therefore $h$ is the greatest common divisor of $f,g$ in $L[x]$.
+By Bézout's Theorem, there exists $u,v \in F[x]$ such that $h = uf +vg$. Consequently, if $q \in L[x]$ divides $f$ and $g$ in $L[x]$, $q$ divides $h$ in $L[x]$. So $h$ satisfies (iii), therefore $h$ is the greatest common divisor of $f,g$ in $L[x]$.
 \ee
 \end{proof}
 
@@ -140,7 +140,7 @@ So $p^m-1$ divides $p^n - 1$, thus $p^n-1 = l (p^m-1), l \in \N$. Consequently
 $$x^{p^n-1} - 1 = x^{l(p^m-1)}- 1 = (x^{p^m-1} - 1)\sum_{j=0}^{l-1} x^{j(p^m-1)},$$
 therefore $ x^{p^m-1} - 1 \mid x^{p^n-1} - 1$, and also $x^{p^m} - x \mid x^{p^n}- x$.
 
-Therefore the polynomial $x^{p^m} -x$ splits completely over $\F_{p^n}$. By Exercise 2, the set of its roots is a subfield of $\F_{p^n}$ with $p^m$ éléments. By Corollary 11.1.3, it is isomorphic to $\F_{p^m}$.
+Therefore the polynomial $x^{p^m} -x$ splits completely over $\F_{p^n}$. By Exercise 1, the set of its roots is a subfield of $\F_{p^n}$ with $p^m$ éléments. By Corollary 11.1.3, it is isomorphic to $\F_{p^m}$.
 \end{proof}
 
 \paragraph{Ex. 11.1.4}
@@ -165,7 +165,7 @@ So $L_H$ is the set of the roots of $x^{p^m} - x$. $L_H$ is the unique subfield 
 By the Fundamental Theorem of Galois Theory (section 7.3), 
 $$\Gal(\F_{p^n}/\F_{p^m}) = \Gal(\F_{p^n}/L_H) = H = \langle F^m \rangle.$$
 So $$\Gal(\F_{p^n}/\F_{p^m}) =\langle F^m \rangle \simeq \Z/\frac{n}{m}\Z,$$
- where the isomorphism sends $F = (\mathrm{Frob}_p)^m$ on the generator $[1]\in \Z/\frac{n}{m}\Z$.
+ where the isomorphism sends $F^m = (\mathrm{Frob}_p)^m$ on the generator $[1]\in \Z/\frac{n}{m}\Z$.
 \end{proof}
 
 \paragraph{Ex. 11.1.5}
@@ -187,15 +187,17 @@ Let $f(x) = vx^2 \in\Z/m\Z[x]$. Then $f(0) = f(u) = f(2u)=0$.
 
 Moreover $u \not \equiv 0 \pmod {uv}, u \not \equiv 2u  \pmod {uv}$.
 
-If $2v \equiv 0 \pmod {uv}$, then $v \mid 2$. Since $1<u\leq v$, then $u=v=2$, and $m=4$.
+If $2u \equiv 0 \pmod {uv}$, then $v \mid 2$. Since $1<u\leq v$, then $u=v=2$, and $m=4$.
 
 So if $m$ is composite and $m>4$, the polynomial $f(x) = vx^2 \in\Z/m\Z[x]$ has at least three distinct roots in $\Z/m\Z$.
 
 If $m = 4$, the polynomial $g(x) = 2x^2+2x \in \Z/4\Z[x]$ has 4 roots, namely $0,1,2,3$.
 	
-Conclusion : If $m>1$ is not prime, there exists some polynomial of degree 2 in $\Z/m\Z[x]$ with more than 2 roots in $\Z/m\Z[x]$.
+Conclusion:
 
-If $m>1$, if every polynomial of degree 2 in $\Z/m\Z[x]$has at most two roots in $\Z/m\Z[x]$, then $m$ is prime.			
+If $m>1$ is not prime, there exists some polynomial of degree 2 in $\Z/m\Z[x]$ with more than 2 roots in $\Z/m\Z[x]$.
+
+If $m>1$, and if every polynomial of degree 2 in $\Z/m\Z[x]$ has at most two roots in $\Z/m\Z[x]$, then $m$ is prime.			
 \ee
 \end{proof}
 
@@ -214,14 +216,14 @@ $\overline{F}$ is not an unit of $\F_p[x]$.
 \be
 \item[$\bullet$] Suppose that there exist polynomials $\varphi,\psi,\chi \in \Z[x]$, where $\deg(\varphi),\deg(\psi) < n$, such that
 $$\varphi(x) \psi(x) = F(x) + p \chi(x).$$
-As the leading coefficient of $F$ is not
 Then $\overline{\varphi}(x) \overline{\psi}(x) = \overline{F}(x)$, and $\deg(\overline{\varphi}) \leq \deg(\varphi) < n$, and $\deg(\overline{\psi}) \leq \deg(\psi) < n$, with $\deg(\overline{F})\geq 1$. So $\overline{F}$ is not irreducible in $\F_p[x]$. 
 
-Conclusion : if $\overline{F}$ is irreducible over $\F_p$, it is not possible to find polynomials $\varphi,\psi,\chi \in \Z[x]$, where $\deg(\varphi),\deg(\psi) < n$, such that
+Conclusion: if $\overline{F}$ is irreducible over $\F_p$, it is not possible to find polynomials $\varphi,\psi,\chi \in \Z[x]$, where $\deg(\varphi),\deg(\psi) < n$, such that
 $$\varphi(x) \psi(x) = F(x) + p \chi(x).$$
 
 \item[$\bullet$]  Conversely, suppose that $\overline{F}$ is not irreducible in $\F_p[x]$. Then there exist polynomials $p,q \in \F_p[x]$ with $\deg(p),\deg(q)<n$ and $\overline{F}(x) = p(x)q(x)$.
-There exist polynomial $\varphi, \psi \in \Z[x]$ such that $\overline{\varphi} = p, \overline{\psi} = q$ and $\deg(\varphi) = \deg(p) < n, \deg(\psi) = \deg(q)<n$ (if $p = \sum_{i=0}^d [a_i] x^i$, with $[a_d] \ne [0]$, take $\varphi = \sum_{i=0}^d a_i x^i$). Thus $\overline{F} = \overline{\varphi} \overline{\psi} $, therefore $\overline{\varphi \psi-F} = \overline{0}$, so $ \varphi \psi -F \in p \Z[x]$: there exists $\chi \in \Z[x]$ such that
+
+There exist some polynomials $\varphi, \psi \in \Z[x]$ such that $\overline{\varphi} = p, \overline{\psi} = q$ and $\deg(\varphi) = \deg(p) < n, \deg(\psi) = \deg(q)<n$ (if $p = \sum_{i=0}^d [a_i] x^i$, with $[a_d] \ne [0]$, take $\varphi = \sum_{i=0}^d a_i x^i$). Thus $\overline{F} = \overline{\varphi} \overline{\psi} $, therefore $\overline{\varphi \psi-F} = \overline{0}$, so $ \varphi \psi -F \in p \Z[x]$: there exists $\chi \in \Z[x]$ such that
 $$\varphi(x) \psi(x) = F(x) + p \chi(x).$$
 \ee
 
@@ -235,7 +237,10 @@ $$\varphi(x) \psi(x) = F(x) + p \chi(x).$$
 }
 
 \begin{proof}
-The splitting field $L$ of $f$ is a finite field $\F_q$, where $q = p^n$. Since $f$ is irreducible over $\F_p$, $n =[\F_{p^n} : \F_p] =  [L : \F_p] =\deg(f) = \nu$, so $L = \F_{p^\nu}$.
+ Since $f$ is irreducible, $L = \F_p[x] / \langle f \rangle$ is a field, and $[L : \F_p] = \deg(f) = \nu$, so $\vert L \vert = q^\nu$, and $L = \F_{q^\nu}$. 
+ 
+ By Theorem 11.1.7, $ \F_p \subset L = \F_{q^\nu}$ is a Galois extension, therefore $L$ contains all roots of $f$, so $L$ is the splitting field of $f$ over $\F_p$.
+
 
 Write $F = \mathrm{Frob}_p$ the Frobenius automorphism of $\F_q=  \F_{p^\nu}$. By Theorem 11.1.7,  $\Gal(\F_q/\F_p) = \langle F \rangle$.
 
@@ -261,7 +266,7 @@ $$f(x) = (x-i)(x-i^p)(x - i^{p^2})\cdots(x- i^{p^{\nu - 1}}).$$
 \be
 \item[(a)] $I+J$ is a subgroup of $(R,+)$. If $t \in I+J$ and $u \in R$, then $t = r+s, r \in I, s \in J$. As $I,J$ are ideals of $R$, $ua \in I, ub \in J$, therefore $ut = ua + ub \in I+J$, so $I+J$ is an ideal of $R$.
 
-$\overline{I}$ is a subgroup of $R/J$, image of $I$ by the natural projection $\pi : R \to \R/J$.
+$\overline{I}$ is a subgroup of $R/J$, image of $I$ by the natural projection $\pi : R \to R/J$.
 
 Let $\overline{r}= r+ J , r \in I$ be an element of $\overline{I}$, and $\overline{s} = s + J, s \in R$ be any element of $R/J$. Then by definition of the laws in $R/J$,
 $$\overline{s}\, \overline{r} = (s+J)(r+J) = sr + J,$$
@@ -325,9 +330,9 @@ $$
 $$
 is well defined.
 
-Let $\overline{q} = q +f u, \overline{r} = r + f v, \ u,v \in \Z[x]$ be elements of $\Z[x]/f\Z[x] $. Then
+Let $\overline{q} = q +f \Z[x], \overline{r} = r + f \Z[x]$  be elements of $\Z[x]/f\Z[x] $. Then
 $$\varphi(\overline{q})+  \varphi(\overline{r}) = q(\alpha) + r(\alpha) = (q+r)(\alpha)= \varphi(\overline{q+r}) = \varphi(\overline{q}+ \overline{r}).$$
-Similarly, $\varphi(\overline{q})  \varphi(\overline{r}) =  \varphi(\overline{q}\,  \overline{r})$, and $\varphi(1) = 1$, so $\varphi$ is a ring homomorphism.
+Similarly, $\varphi(\overline{q})  \varphi(\overline{r}) =  \varphi(\overline{q}\,  \overline{r})$, and $\varphi(\overline{1}) = 1$, so $\varphi$ is a ring homomorphism.
 
 If $\varphi(\overline{q}) = 0$, then $q(\alpha) = 0$. As $f$ is the minimal polynomial of $\alpha$ over $\Q$, $f$ divides $q$ in $\Q[x]$, so $q = u f$, where $u\in \Q[x]$. But $f$ is a monic polynomial in $\Z[x]$, so the algorithm of the Euclidean division gives a quotient $u \in \Z[x]$, therefore $q \in f\Z[x]$, and $\overline{q} = 0$. $\ker(\varphi) = \{ \overline{0}\}$, so $\varphi$ is injective.
 
@@ -403,13 +408,13 @@ Note that $$\F_{3^3} \cap \F_{3^7} = \F_3.$$
 
 Indeed, $\F_{3^3} \cap \F_{3^7}$ is a finite subfield of $\Omega$, so is of the form $\F_{3^n}$, where $n \mid 3$ and $n \mid 7$, thus $n=1$.
 
-Moreover $f$ has not root in $\F_3$, since $\gcd(f,x^3-x)=1$. So the sets of the roots of $f$ in $\F_{3^3} $ and $ \F_{3^7}$ are disjointed. Therefore $f$ has 10 distinct roots in any field which contains  $\F_{3^3} $ and $ \F_{3^7}$. In particular $f$ has 10 distinct roots in $\F_{3^{21}}$, so $f$ splits completely in $\F_{3^{21}}$.
+Moreover $f$ has not root in $\F_3$, since $\gcd(f,x^3-x)=1$. So the sets of the roots of $f$ in $\F_{3^3} $ and $ \F_{3^7}$ are disjointed. Therefore $f$ has 10 distinct roots in any field which contains  $\F_{3^3} $ and $ \F_{3^7}$. In particular $f$ has 10 distinct roots in $\F_{3^{21}}$, and $\deg(f) = 10$, so $f$ splits completely in $\F_{3^{21}}$.
 
 Name $\alpha_1,\alpha_2,\alpha_3$ the three roots of $f$ in $\F_{3^3}$, and $\alpha_4,\ldots,\alpha_{10}$ the seven roots of $f$ in $\F_{3^7}$.
 
 Since 7 is prime, there is no strictly intermediate field between $\F_3$ and $\F_{3^7}$, and since $\alpha_i \not \in \F_3$, then $\F_3(\alpha_4, \ldots,\alpha_7) = \F_{3^7}$, and similarly $\F_3(\alpha_1,\alpha_2,\alpha_3) = \F_{3^3}$.
 
-Let $K = \F_3(\alpha_1,\ldots,\alpha_{10})$. Then $K = \F_{3^r}\ (r \in \N)$, is a finite subfield of $\Omega$, which contains $\F_{3^3}$ and $\F_{3^7}$, so $3 \mid r$ and $7 \mid r$, with $\gcd(3,7)=1$, thus $21 \mid m$, therefore $K = \F_{3^r} \supset F_{3^{21}}$, so $F_{3^{21}} \subset F_3(\alpha_1,\ldots,\alpha_{10})$. Moreover $\alpha_1,\ldots,\alpha_{10}$ are in $F_{3^{21}}$, so
+Let $K = \F_3(\alpha_1,\ldots,\alpha_{10})$. Then $K = \F_{3^r}\ (r \in \N)$, is a finite subfield of $\Omega$, which contains $\F_{3^3}$ and $\F_{3^7}$, so $3 \mid r$ and $7 \mid r$, with $\gcd(3,7)=1$, thus $21 \mid m$, therefore $K = \F_{3^r} \supset \F_{3^{21}}$, so $\F_{3^{21}} \subset \F_3(\alpha_1,\ldots,\alpha_{10})$. Moreover $\alpha_1,\ldots,\alpha_{10}$ are in $\F_{3^{21}}$, so
 $$\F_3(\alpha_1,\ldots,\alpha_{10} )= \F_{3^{21}}.$$
 (In other words $\F(\alpha_1,\ldots,\alpha_{10})$ is the compositum in $\Omega$ of $ \F_3(\alpha_1,\alpha_2,\alpha_3) = \F_{3^3}$ and $\F_3(\alpha_4, \ldots,\alpha_7) = \F_{3^7}$, and the  
  compositum of $\F_{3^3}$ and $\F_{3^7}$ in $\Omega$ is $\F_{3^{21}}$, so $\F_3(\alpha_1,\ldots,\alpha_{10} )= \F_{3^{21}}$.)
@@ -422,12 +427,26 @@ Therefore,  $\F_{3^{21}}$ is the splitting field of $f$ over $\F_3$.
 {\it Let $f \in \F_p[x]$ be an irreducible polynomial of degree $n$. Prove that $f$ splits completely in $\F_{p^n}$.
 }
 
-\begin{proof} The splitting field of $f$ is a finite field $L = \F_q =  \F_{p^n}$, and $\F_p \subset \F_q$ is a Galois extension by Theorem 11.1.7, so $\F_p \subset \F_q$ is normal, therefore $f$ splits completely in $F_{p^n}$.
+\begin{proof} 
+Let $F = \F_p[x]/\langle f \rangle$. Since $f$ is irreducible over $\F_p$, $F$ is a field, and since $\deg(f) = n$, $|K | = p^n$, so $F$ is a field with $p^n$ elements.
 
-(Moreover, we proved in Exercise 7 that if $\alpha$ is a root of $f$ in $L$, then
-$$f(x)  = a (x-\alpha)(x- \alpha^p)(x-\alpha^{p^2})\cdots(x- \alpha^{p^{n-1}}).$$
-As $\alpha^{p^k} \in L$ for $k= 1,\ldots,n-1$, we prove anew that $f(x)$ splits completely in $L = \F_{p^n}$.) 
+Moreover $\overline{x} = x + \langle f \rangle$ is a root of $f$ in $F$.
+
+By Theorem 11.1.2, $F$ is a splitting field over $\F_p$ of the separable polynomial $x^{p^n} -x$, therefore $F$ is a Galois extension of $\F_p$. As the irreducible polynomial $f$ has one root in $F$, it splits completely in $F$.
+
+If $\F_{p^n}$ is a field with $p^n$ elements, there exists an isomorphism $\varphi : K \to \F_{p^n}$, which sends the roots of $f$ in $F$ on roots of $f$ in $\F_{p^n}$, so $f$ splits completely in $\F_{p^n}$, and this don't depends of the choice of the field with $p^n$ elements that we name $\F_{p^n}$.
 \end{proof}
+\bigskip
+
+Note: let $\alpha$ be a root of $f$ in $\F_{p^n}$, and $\alpha_1=\alpha,\ldots,\alpha_n$ the roots of $f$ in $\F_{p^n}$. Then $[\F_{p^n} : \F_p] = n =[\F_p(\alpha) : \F_p]$, hence $\F_p(\alpha) = \F_{p^n}$. Since $\F_{p^n} = \F_{p}(\alpha) \subset \F_{p}(\alpha_1,\ldots,\alpha_n) \subset \F_{p^n}$, we conclude that
+$$\F_{p^n} = \F_p(\alpha_1,\ldots,\alpha_n)$$
+is a splitting field of $f$ over $\F_p$.
+
+Since $\F_{p^n}$ is a splitting field of $f$ over $\F_p$, by Exercice 7, 
+$$f(x) = a (x -\alpha)(x - \alpha^p)(x-\alpha^{p^2})\cdots(x- \alpha^{p^{n-1}}),\ a \in \F_p.$$
+
+
+
 
 \subsection{IRREDUCIBLE POLYNOMIALS OVER FINITE FIELDS (OPTIONAL)}
 
@@ -517,7 +536,7 @@ N_{36} &= \frac{1}{36}(p^{36}-p^{18} -p^{12}+p^6)
 
 \paragraph{Ex. 11.2.4}
 
-{\it In Theorem 11.1.4 we used slitting fields to show that a field of order $p^n$ exists for any prime $p$ and integer $n\geq 1$. When Galois and others cosidered this question in the nineteenth century, their approach was to prove the existence of an irreducible polynomial in $\F_p[x]$ of degree $n$. In other words, they needed to prove that $N_n>0$.
+{\it In Theorem 11.1.4 we used slitting fields to show that a field of order $p^n$ exists for any prime $p$ and integer $n\geq 1$. When Galois and others considered this question in the nineteenth century, their approach was to prove the existence of an irreducible polynomial in $\F_p[x]$ of degree $n$. In other words, they needed to prove that $N_n>0$.
 \be
 \item[(a)] Prove that $N_n>0$ using Theorem 11.1.4.
 \item[(b)] Suppose that we have proved Theorem 11.2.4 but not Theorem 11.1.4. Use this to prove that $N_n>0$.
@@ -527,8 +546,9 @@ N_{36} &= \frac{1}{36}(p^{36}-p^{18} -p^{12}+p^6)
 \begin{proof}
 
 \be
-\item[(a)] By Theorem 11.1.4, there exists a finite field $\F_{p^n}$ with $p^n$ elements. We know that the group $\F_{p^n}^*$ is cyclic. if $\alpha$ is a generator of $\F_{p^n}^*$, then
-\item[(a)] By Theorem 11.1.4, there exists a finite field $\F_{p^n}$ with $p^n$ elements. We know that the group $\F_{p^n}^*$ is cyclic. if $\alpha$ is a generator of $\F_{p^n}^*$, then $$\F_{p^n} =\{0,1,\alpha,\alpha^2,\ldots,\alpha^{p^{n-1}-1}\}= \F_p(\alpha)$$ (this proves the Primitive Element Theorem in the case where the field is finite). Let $f$ be the minimal polynomial of $\alpha$. Then $\deg(f) = [\F_{p^n}:\F_p] = n$ and $f$ is irreducible over $\F_p$, so $N_n>0$.
+
+\item[(a)] By Theorem 11.1.4, there exists a finite field $\F_{p^n}$ with $p^n$ elements. We know that the group $\F_{p^n}^*$ is cyclic. If $\alpha$ is a generator of $\F_{p^n}^*$, then $\alpha^{p^n-1} = 1$, and
+$$\F_{p^n} =\{0,1,\alpha,\alpha^2,\ldots,\alpha^{p^{n}-2}\}= \F_p(\alpha).$$ This proves the Primitive Element Theorem in the case where the field is finite. Let $f$ be the minimal polynomial of $\alpha$. Then $\deg(f) = [\F_{p^n}:\F_p] = n$ and $f$ is monic irreducible over $\F_p$, so $N_n>0$.
 
 \item[(b)] By Theorem 11.2.4,
  $$N_n = \frac{1}{n} \sum_{d\mid n} \mu\left(\frac{n}{d}\right) p^{d}.$$
@@ -558,7 +578,7 @@ Let $d\geq 1$ the order of $\alpha$ in the group $\F_p(\alpha)^*$. Then $\alpha^
 
 {\it This exercise is concerned with Example 11.2.8.
 \be
-\item[(a)] Show that $n^4 = 3$ when $p=2$. Then write down these three irreducible olynomials explicitely.
+\item[(a)] Show that $N_4 = 3$ when $p=2$. Then write down these three irreducible polynomials explicitly.
 
 \item[(b)] Verify the factorization of $\Phi_{15}(x)$ given in the example.
 
@@ -608,11 +628,11 @@ If $\alpha$ is a root of $x^4+x^3+1$, then $\alpha \ne 0$ and $\alpha^4 + \alpha
 
 \paragraph{Ex. 11.2.7}
 
-{\it As in the discussion of Berlekamp's algorithm, let $R = \F_p[x]/\langle f \rangle$ and consider the $p$th power map $T : R \to R$. Prove that $T$ is a linear map when $F$ is regarded as a vector space over $\F_p$.
+{\it As in the discussion of Berlekamp's algorithm, let $R = \F_p[x]/\langle f \rangle$ and consider the $p$th power map $T : R \to R$. Prove that $T$ is a linear map when $R$ is regarded as a vector space over $\F_p$.
 }
 
 \begin{proof}
-Let $\overline{g} = g+\langle f \rangle, \overline{h} = h+\langle f \rangle \in T$, and $\lambda \in \F_p$. Since the characteristic is $p$, $g+h)^p = g^p+h^p$, so
+Let $\overline{g} = g+\langle f \rangle, \overline{h} = h+\langle f \rangle \in T$, and $\lambda \in \F_p$. Since the characteristic is $p$, $(g+h)^p = g^p+h^p$, so
 \begin{align*}
 T(\overline{g} + \overline{f}) 
 &=(g+h)^p + \langle f \rangle\\
@@ -673,14 +693,14 @@ Let $f \in \F_q[x]$ be irreducible over $\F_q$, of degree $m$. Then:
 }
 \begin{proof}
 \be
-Note: we suppose that all the fields considered here are subfields of a field $\Omega$, which can be an algebraic closure of $\F_p$. In this case, there is a unique subfield of $\Omega$ with a given cardinality $p^d$, written $\F_{p^d}$, where
-$$\F_{p^d} = \{\alpha \in \Omega \ | \ \alpha^{p^d} = \alpha\}.$$
+Note: we suppose that all the fields considered here are subfields of a field $\Omega$, which can be an algebraic closure of $\F_q$. In this case, there is a unique subfield of $\Omega$ with a given cardinality $q^d$, written $\F_{q^d}$, where
+$$\F_{q^d} = \{\alpha \in \Omega \ | \ \alpha^{q^d} = \alpha\}.$$
 
-We begin with part (c). Let $\alpha \in \Omega$ be a root of $f$. Since $f$ is irreducible over $\F_q$, the extension $\F_q \subset \F_q(\alpha)$ has degree $m = \deg(f)$. So $| \F_q(\alpha)| = q^m$, therefore $\F_q(\alpha) = \F_{q^m}$ (see the note). If $\alpha \in \F_{q^n}$, then $\F_q(\alpha) = \F_{q^m} \subset \F_{q^n}$, therefore $m\mid n$ (Corollary 11.1.8). Conversely, if $m\mid n$, then $\F_q(\alpha) = \F_{q^m} \subset \F_{q^n}$. This proves the second equivalence of part (c).
+We begin with part (c). Let $\alpha \in \Omega$ be a root of $f$. Since $f$ is irreducible over $\F_q$, the extension $\F_q \subset \F_q(\alpha)$ has degree $m = \deg(f)$. So $| \F_q(\alpha)| = q^m$, therefore $\F_q(\alpha) = \F_{q^m}$ (see the note). If $\alpha \in \F_{q^n}$, then $\F_q(\alpha) = \F_{q^m} \subset \F_{q^n}$, therefore $m\mid n$ (Corollary 11.1.8). Conversely, if $m\mid n$, then $\F_q(\alpha) = \F_{q^m} \subset \F_{q^n}$, so the root $\alpha$ of $f$ is in $\F_{q^n}$. This proves the second equivalence of part (c).
 
 If $f$ has a root $\alpha \in \F_{q^n}$, then $\alpha^{q^n} = \alpha$, so $\alpha$ is a root of $x^{q^n}-x$. As $f$ is the minimal polynomial of $\alpha$ over $\F_q$, $f(x) \mid x^{q^n}-x$.
 
-Conversely, suppose that $f(x) \mid x^{q^n}-x$. Take any root of $f$ in $\Omega$. As $f(x) \mid x^{q^n}-x$, then $\alpha^{q^n} = \alpha$, and this implies $\alpha \in \F_{q^n}$, so (c) is proven.
+Conversely, suppose that $f(x) \mid x^{q^n}-x$. Take any root $\alpha$ of $f$ in $\Omega$. As $f(x) \mid x^{q^n}-x$, then $\alpha^{q^n} = \alpha$, and this implies $\alpha \in \F_{q^n}$, so (c) is proved.
 
 We get part (a) by taking $n=m$ in part (c), and part (b) follows immediately, since $x^{q^n} -x = x^{p^{n \nu }} - x$ is separable by the proof of Theorem 11.1.4.
 
@@ -688,7 +708,7 @@ We get part (a) by taking $n=m$ in part (c), and part (b) follows immediately, s
 \end{proof}
 
 {\bf Theorem 11.2.2 bis.} {\it Let}
-$${\mathcal N}'_m =  \{f \in \F_q[x]\ |\  f \text{ is monic irreducible of degree } m\},$$
+$${\mathcal N}'_m =  \{f \in \F_q[x]\ |\  f \text{ is monic irreducible over } \F_q \text{ of degree } m\},$$
 and $ N'_m = |{\mathcal N}'_m |$.
 
 {\it Then, for any $n\geq 1$, we have
@@ -705,7 +725,7 @@ Since every $f\in {\mathcal N}_m$ has degree $m$, taking the degree of each side
 
 {\bf Theorem 11.2.4 bis.}
 The number of monic irreducible polynomials of degree $n$ in $\F_q[x]$ is given by
-$$N'n = \frac{1}{n} \sum_{m\mid n} \mu(m) q^{\frac{n}{m}}.$$
+$$N'_n = \frac{1}{n} \sum_{m\mid n} \mu(m) q^{\frac{n}{m}}.$$
 \begin{proof}
 Write $F(n) = nN'_n$ ,and $G(n) = \sum_{m\mid n}  F(m) = q^n$.
 
@@ -825,7 +845,7 @@ $$T(\overline{g}) = \overline{g} \iff T'(\varphi(\overline{g})) = \varphi(\overl
 \be
 \item[$\bullet$] If $T(\overline{g}) = \overline{g}$, then 
 $$T'(\varphi(\overline{g})) = (\varphi \circ T \circ \varphi^{-1}) (\varphi(\overline{g})) = \varphi(T(\overline{g})) = \varphi(\overline{g}).$$
-\item[$\bullet$] If $T'(\varphi(\overline{g})) = \varphi(\overline{g})$, then $(\varphi \circ T \circ \varphi^{-1})(\varphi(\overline{g}) = \varphi(\overline{g})$, so $(\varphi \circ T)(\overline{g}) = \varphi(\overline{g})$. Since $\varphi$ is bijective, $T(\overline{g}) = \overline{g}$, and the equivalence is proven.
+\item[$\bullet$] If $T'(\varphi(\overline{g})) = \varphi(\overline{g})$, then $(\varphi \circ T \circ \varphi^{-1})(\varphi(\overline{g}) = \varphi(\overline{g})$, so $(\varphi \circ T)(\overline{g}) = \varphi(\overline{g})$. Since $\varphi$ is bijective, $T(\overline{g}) = \overline{g}$, and the equivalence is proved.
 \ee
 Thus, if $\overline{g} \in \ker(T-1_R)$, then $T(\overline{g}) = \overline{g}$,  $T'(\varphi(\overline{g})) = \varphi(\overline{g})$, $\varphi(\overline{g}) \in \ker(T' - 1_{R'})$.
 Conversely, if $y \in \ker(T' - 1_{R'})$, then $y = \varphi(g), g \in R$, so $T'(\varphi(\overline{g}))$, therefore $T(\overline{g}) = \overline{g}$, so $g \in \ker(T - 1_R)$.
@@ -878,7 +898,7 @@ is a one-dimensional subspace of the kernel of $T-1_R$, corresponding to the con
 
 \item[(b)] By part (a), the rank of $T-1_R$ is not $n$, and by hypothesis this rank is not $n-1$, so the rank of $T-1_R$ is less than $n-1$, so the kernel of $T-1_R$ has dimension at least 2.
 
-Therefore there exist a polynomial $h$, with $\deg(h)<n$, such that $\overline{h} = h + \langle f \rangle \in \ker(T-1_R)$ which is not in the one-dimensional subspace of part (a), thus $h$ is not a constant polynomial. Since $h \in \ker(T-1_R)$, $h^p  \langle f \rangle = h + \langle f \rangle$, thus $f \mid h^p-h$.
+Therefore there exists a polynomial $h$, with $\deg(h)<n$, such that $\overline{h} = h + \langle f \rangle \in \ker(T-1_R)$ which is not in the one-dimensional subspace of part (a), thus $h$ is not a constant polynomial. Since $h \in \ker(T-1_R)$, $h^p + \langle f \rangle = h + \langle f \rangle$, thus $f \mid h^p-h$.
 
 Conclusion: there is a nonconstant polynomial $h$ of degree $<n$ such that $f \mid h^p - h$.
 
@@ -887,10 +907,10 @@ $$x^p -x = \prod_{a \in \F_p} (x- a).$$
 The formal composition with $h(x)$ gives
 $$h^p -h = \prod_{a \in \F_p} (h- a).$$
 
-\item[(d)] We know that if $f1,\ldots,f_s$ are  polynomials in $\F_p[x]$ such that $\gcd(f_i,f_j)$ if $i\ne j$, then
+\item[(d)] We know that if $f_1,\ldots,f_s$ are  polynomials in $\F_p[x]$ such that $\gcd(f_i,f_j)=1$ if $i\ne j$, then
 $$\gcd(f,f_1\cdots f_s) = \gcd(f,f_1) \cdots \gcd(f,f_s).$$
 
-Take $f_a = x-a \in \F_p[x]$. Then  $a \ne b \Rightarrow \gcd(f_a,f_b) = 1$, since $$\frac{1}{b-a} (x-a) - \frac{1}{b-a}(x-b) = 1.$$
+Take $f_a = h-a \in \F_p[x]$. Then  $a \ne b \Rightarrow \gcd(f_a,f_b) = 1$, since $$\frac{1}{b-a} (h-a) - \frac{1}{b-a}(h-b) = 1.$$
 
 Therefore, since $f \mid h^p-h$,
 \begin{align*}
@@ -901,7 +921,7 @@ f &= \gcd(f,h^p-h)\\
 
 \item[(e)] Since $\deg(h)<n$, $\deg(h-a)<n$, therefore $\deg(\gcd(f,h-a))<n$. Moreover, since $f \ne 0$, $\deg(\gcd(f,h-a))\geq  0$, so $f$ cannot divide $\gcd(f,h-a)$ when $a \in \F_p$. 
 
-Therefore the product $\prod_{a \in \F_p} \gcd(f,h-a)$ has more than one nonconstant factor (if all factor except one are constant, then $f \mid \gcd(f,h-a)$ for some $a \in \F_p$, which is impossible). 
+Therefore the product $\prod_{a \in \F_p} \gcd(f,h-a)$ has more than one nonconstant factor (if all factors except one are constant, then $f \mid \gcd(f,h-a)$ for some $a \in \F_p$, which is impossible). 
 
 So $\gcd(f,h-a)$ is nonconstant factor of $f$ (and non associate to $f$) for at least two $a\in \F_p$.
 \ee
@@ -924,7 +944,7 @@ So $\gcd(f,h-a)$ is nonconstant factor of $f$ (and non associate to $f$) for at 
 
 \begin{proof}
 \be
-\item[(a)] Since $f' = 1$, $\gcd(f,f') = 1$, so $f$ is separable so we can use Berlekamp's algorithm directly.
+\item[(a)] Since $f' = 1$, $\gcd(f,f') = 1$, so $f$ is separable and we can use Berlekamp's algorithm directly.
 If we apply $T$ to each element of the basis, then
 \begin{align*}
 1& \mapsto 1\\
@@ -974,7 +994,7 @@ h {\phantom{0}}&=  x^2+x^3+x^5\\
 h'{\phantom{\,}} &= x^4+x^5
 \end{align*}
 
-By exercise 12 (e), $\gcd(f,h-a)$ is a non trivial factor for at least two $a$ in $\F_2$. Since $\F_2$ has only two elements, $gcd(f,h)$ and $gcd(f,h-1)$ are two non trivial factors of $f$, and
+By exercise 12 (e), $\gcd(f,h-a)$ is a non trivial factor for at least two $a$ in $\F_2$. Since $\F_2$ has only two elements, $\gcd(f,h)$ and $\gcd(f,h-1)$ are two non trivial factors of $f$, and
 \begin{align*}
 &\gcd(f,h) = \gcd(x^6+x^4+x+1,x^2+x^3+x^5)= x^3+x+1\\
 &\gcd(f,h+1) = \gcd(x^6+x^4+x+1,1+x^2+x^3+x^5) = x^3+1
@@ -1029,9 +1049,9 @@ $$F(n) = \sum_{m\mid n} \mu(m) G\left(\frac{n}{m}\right),$$
 so, for all positive integer $n$,
 $$P_n = \sum_{m \mid n} \mu(m) p^{\frac{n}{m}}.$$
 
-\item[(c)] Let $\alpha$ be a primitive element of $\F_{p^n}$, and $f$ the minimal polynomial of $\alpha$ over $\F_p$. Then $\deg(f) = [\F_{p^n} : \F_p] = n$. Since the extension $\F_p \subset \F_{p^n}$ is normal, $f$ splits completely in $\F_{p^n}$, so there exist exactly $n$ primitive elements in $\F_{p^n}$ with the same minimal polynomial.
+\item[(c)] Let $\alpha$ be a primitive element of $\F_{p^n}$, and $f$ the minimal polynomial of $\alpha$ over $\F_p$. Then $\deg(f) = [\F_{p^n} : \F_p] = n$. Since the extension $\F_p \subset \F_{p^n}$ is normal, $f$ splits completely in $\F_{p^n}$, so there exist exactly $n$ primitive elements in $\F_{p^n}$ with the same minimal polynomial. Moreover two distinct monic irreducible polynomials have no common root.
 
-If we write $A_n = \{\alpha \in \F_{p^n}\ | \ \F_{p^n} = \F_p(\alpha)\}$ the set of primitive elements of the extension $\F_p\subset \F_{p^n}$, and ${\mathcal N}_n$ the set of monic irreducible polynomials $f \in \F_p[x]$, then by definition $|A_n| = P_n$ and $|{\mathcal N}_n| =N_n$. The map $\varphi : A_n \to B_n$ defined by $\alpha \mapsto \mathrm{Irr}(\alpha,\F_p)$, where $\mathrm{Irr}(\alpha,\F_p)$ is the minimal polynomial of $\alpha$ over $\F_p$ is onto, and is such that every element of $B_n$ has $n$ preimages, thus $|A_n| = n |B_n|$:
+If we write $A_n = \{\alpha \in \F_{p^n}\ | \ \F_{p^n} = \F_p(\alpha)\}$ the set of primitive elements of the extension $\F_p\subset \F_{p^n}$, and ${\mathcal N}_n$ the set of monic irreducible polynomials $f \in \F_p[x]$ of degree $n$, then by definition $|A_n| = P_n$ and $|{\mathcal N}_n| =N_n$. The map $\varphi : A_n \to {\mathcal N}_n$ defined by $\alpha \mapsto \mathrm{Irr}(\alpha,\F_p)$, where $\mathrm{Irr}(\alpha,\F_p)$ is the minimal polynomial of $\alpha$ over $\F_p$ is onto, and is such that every element of ${\mathcal N}_n$ has $n$ preimages, with $\varphi^{-1}(f) \cap \varphi^{-1}(g) = \emptyset$ if $f, g \in {\mathcal N}, f \ne g$, thus $|A_n| = n |B_n|$:
 $$P_n = n N_n.$$
 We find a new proof of the Theorem 11.2.4:
 $$N_n = \frac{1}{n} \sum_{m \mid n} \mu(m) p^{\frac{n}{m}}.$$
@@ -1050,16 +1070,16 @@ Conversely, if we know Theorem 11.2.4, we find the formula of part (b): these tw
 
 \begin{proof}
 \be
-\item[(a)] Let $\gamma$ a generator of the cyclic group $\F_{p^n}^*$, with cardinality $p^n-1$. Then $\gamma^k, 1 \leq k <p^n-1$ is a generator of the same group if and only if $k \wedge n = 1$, so $\F_{p^n}$ has $\phi(p^n-1)$ primitive roots.
+\item[(a)] Let $\gamma$ a generator of the cyclic group $\F_{p^n}^*$, with cardinality $p^n-1$. Then $\gamma^k, 0 \leq k <p^n-1$, is a generator of the same group if and only if $k \wedge n = 1$, so $\F_{p^n}$ has $\phi(p^n-1)$ primitive roots.
 
 \item[(b)] Let $\alpha$ a primitive root of $\F_{p^n}$. As $F_{p^n} = \{0\} \cup \{1,\alpha,\alpha^2,\ldots,\alpha^{p^n-2}\}$, then $\F_{p^n} = \F_p(\alpha)$ (in other words, a primitive root of $\F_{p^n}$ is a primitive element of the extension $\F_p \subset \F_{p^n}$).
 
-Let $f$ the primitive polynomial of $\alpha$. Then
+Let $f$ a primitive polynomial. By definition, $f$ is the minimal polynomial of a primitive root $\alpha$. Then
 $$\deg(f) = [\F_p(\alpha) : \F_p] = [\F_{p^n}:\F_p] = n.$$
 Every primitive polynomial for $\F_{p^n}$ has degree $n$.
 
-\item[(c)] By definition of the cyclotomic polynomials, $$\Phi_{p^n-1}(x) =\prod_{|\alpha| = p^n-1} (x- \alpha),$$
-where we write $|\alpha |$ the order of $\alpha$ in the group $\F_{p^n}^*$.
+\item[(c)] By definition of the cyclotomic polynomials, $$\Phi_{p^n-1}(x) =\prod_{o(\alpha) = p^n-1} (x- \alpha),$$
+where we write $o(\alpha )$ the order of $\alpha$ in the group $\F_{p^n}^*$.
 
 So the roots of  $\Phi_{p^n-1}(x) $  are the primitive roots of $\F_{p^n}$.
 
@@ -1067,7 +1087,7 @@ Let $f$ a primitive polynomial for $\F_{p^n}$. By definition , $f$ is the minima
 
 Conversely, let $f \in \F_p[x]$ be an irreducible factor of $\Phi_{p^n-1}(x)$. Let $\alpha$ a root of $f(x)$ in some extension of $\F_{p^n}$. Since $f(x) \mid \Phi_{p^n-1}(x)$ and $\Phi_{p^n-1}(x) \mid x^{p^n-1}-1$, then $\alpha^{p^n-1} = 1$, $\alpha^{p^n} = \alpha$, therefore $\alpha \in \F_{p^n}$. Moreover $\alpha$ is a root of $\Phi_{p^n-1}(x)$, so $\alpha$ is a primitive root of $\F_{p^n}$, thus $f$ is a primitive polynomial for $\F_{p^n}$.
 
-So the irreducible factors of $\Phi_{p^n-1}(x)$ in  $\F_p[x]$ are all primitive polynomials for $\F_{p^n}$. Since $\Phi_{p^n-1}(x)$ is a separable polynomial, $\Phi_{p^n-1}(x)$ is square-free, so $\Phi_{p^n-1}(x)$ is the product of its monic irreducible factors:
+So the irreducible factors of $\Phi_{p^n-1}(x)$ in  $\F_p[x]$ are all primitive polynomials for $\F_{p^n}$. Since $\Phi_{p^n-1}(x)$ is a separable polynomial, $\Phi_{p^n-1}(x)$ is squarefree, so $\Phi_{p^n-1}(x)$ is the product of its monic irreducible factors:
 \begin{center}
 the product of the primitive polynomials for $\F_{p^n}$ is $\Phi_{p^n-1}(x)$.
 \end{center}
@@ -1082,7 +1102,7 @@ Note: this is consistent with Theorem 11.2.7. Indeed, $\Phi_{p^n-1}(x)$ is the p
 
 \begin{proof}
 \be
-\item[$\bullet$] Suppose that $f$ is irreducible over $\F_2$. Then $F = \F_2[x]/\langle f\rangle$ is a field with $2^r$ elements, so $\F\simeq \F_{2^r}$. Then $\alpha = x +\langle f \rangle \in F$ is a root of $f$ in $F$, and $F \simeq  \F_{2^r}$, therefore $\alpha^{2^r} =\alpha$, so $\alpha$ is a root of $x^{2^r} -x$. Since $f$ is the minimal polynomial of $\alpha$ over $\F_2$, $f \mid x^{2^r} -x$.
+\item[$\bullet$] Suppose that $f$ is irreducible over $\F_2$. Then $F = \F_2[x]/\langle f\rangle$ is a field with $2^r$ elements, so $F\simeq \F_{2^r}$. Then $\alpha = x +\langle f \rangle \in F$ is a root of $f$ in $F$, and $F \simeq  \F_{2^r}$, therefore $\alpha^{2^r} =\alpha$, so $\alpha$ is a root of $x^{2^r} -x$. Since $f$ is the minimal polynomial of $\alpha$ over $\F_2$, $f \mid x^{2^r} -x$.
 
 \item[$\bullet$] Conversely, suppose that $f \mid x^{2^r} -x$.
 
@@ -1103,12 +1123,12 @@ Let $\alpha = x + \langle f \rangle$ the coset of $x$. Then $f(\alpha) = 0$, and
 
 Moreover, $\beta = h(\alpha)$, where $h \in \F_2[x], \deg(h)< r$. Since the characteristic is 2,
 $$\beta^{2^r} = h(\alpha)^{2^r} = h(\alpha^{2^r}) = h(\alpha) = \beta.$$
-By the isomorphism $\psi$, $\psi(g)^{2^r}=\psi(\beta)$, thus $(g_1,\ldots,g_k)^{2^r} = (g_1,\ldots,g_k)$, so $g_1^{2^r} = g_1, \ldots, g_k^{2^r} = g_k$, with $g_i \ne 0$ in the field $R_i$, so
+By the isomorphism $\psi$, $\psi(\beta)^{2^r}=\psi(\beta)$, thus $(g_1,\ldots,g_k)^{2^r} = (g_1,\ldots,g_k)$, so $g_1^{2^r} = g_1, \ldots, g_k^{2^r} = g_k$, with $g_i \ne 0$ in the field $R_i$, so
 $$g_1^{2^r-1} = 1, \ldots, g_k^{2^r-1} = 1.$$
 Since the order of $g_i$ is $2^{d_i}-1$,
 $$2^{d_1} - 1 \mid 2^r -1,\ldots, 2^{d_k} - 1 \mid 2^r -1.$$
 
-Recall that $2^m - 1 \mid 2^n-1$ implies $m \mid n$. Indeed, write $m =nq + r, 0 \leq r < n$. Then $2^m \equiv 1 \pmod{2^n-1}$ (and $2^n \equiv 1 \pmod {2^n-1}$), so $1 \equiv 2^m = (2^n)^q 2^r \equiv 2^r \pmod {2^n-1}$, thus $2^n-1 \mid 2^r -1, 0 \leq r <n$, therefore $r=0$, so  $m\mid n$.
+Recall that $2^n - 1 \mid 2^m-1$ implies $n \mid m$. Indeed, write $m =nq + s, 0 \leq s < n$. Then $2^m \equiv 1 \pmod{2^n-1}$ (and $2^n \equiv 1 \pmod {2^n-1}$), so $1 \equiv 2^m = (2^n)^q 2^s \equiv 2^s \pmod {2^n-1}$, thus $2^n-1 \mid 2^s -1, 0 \leq s<n$, therefore $s=0$, so  $n\mid m$.
 
 Consequently,
 $$d_1 \mid r,\ldots, d_k \mid r.$$
@@ -1132,9 +1152,9 @@ Therefore $f$ is irreducible over $\F_2$.
 \begin{proof}
 Let $[g]$ a generator of $(\Z/p\Z)^*$. By Dirichlet's Theorem, since $\gcd(g,p)=1$, there is some integer $k$ such that $l = g+kp$ is prime, and  $[l] = [g]$ has order $p-1$.
 
-Let $\overline{\Phi}_p(x)$ the reduction modulo $l$ of $\Phi_p$. By Theorem 11.2.7, $\overline{\Phi}_p(x)$ is the product of $\Phi(p)/m = (p-1)/m$  irreducible polynomials in $\F_l[x]$ of degree $m$, where $m$ is the order of $[l] in (\Z/p\Z)^*$, which is $p-1$. So $m = p-1$, and $\overline{\Phi}_p(x)$ is irreducible over $\F_l$.
+Let $\overline{\Phi}_p(x)$ the reduction modulo $l$ of $\Phi_p$. By Theorem 11.2.7, $\overline{\Phi}_p(x)$ is the product of $\phi(p)/m = (p-1)/m$  irreducible polynomials in $\F_l[x]$ of degree $m$, where $m$ is the order of $[l] \in (\Z/p\Z)^*$, which is $p-1$. So $m = p-1$, and $\overline{\Phi}_p(x)$ is irreducible over $\F_l$.
 
- Since $\Phi_p$ is monic, any decomposition $\Phi_p(x) = u(x) v(x)$ with $u,v \in \Z[x], \deg(u)<p-1, \deg(v)<p-1$ would give a decomposition $\overline{\Phi}_p(x)= \overline{u}(x) \overline{v}(x)$ in $\F_l[x]$, where $\deg(\overline{\Phi}_p(x)) = p-1, \deg(\overline{u}(x))<p-1,\deg( \overline{v}(x)) < p-1$. Since $\overline{\Phi}_p(x)$ is irreducible over $\F_l$, this is impossible, so $\overline{\Phi}_p(x)$ is irreducible over $\Q$.
+ Since $\Phi_p$ is monic, any decomposition $\Phi_p(x) = u(x) v(x)$ with $u,v \in \Z[x], \deg(u)<p-1, \deg(v)<p-1$ would give a decomposition $\overline{\Phi}_p(x)= \overline{u}(x) \overline{v}(x)$ in $\F_l[x]$, where $\deg(\overline{\Phi}_p(x)) = p-1, \deg(\overline{u}(x))<p-1,\deg( \overline{v}(x)) < p-1$. Since $\overline{\Phi}_p(x)$ is irreducible over $\F_l$, this is impossible, so $\Phi_p(x)$ is irreducible over $\Q$.
 \end{proof}
 
 \end{document}
