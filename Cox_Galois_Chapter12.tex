@@ -973,4 +973,551 @@ so $[S_4 : H] = 3 <n=4$. This proves that the Theorem 12.1.10 is false if we for
 \ee
 \end{proof}
 
+\subsection{GALOIS}
+
+\paragraph{Ex. 12.2.1}
+
+{\it Let $F$ an infinite field and let $V$ be a finite-dimensional vector space over $F$. The goal of this exercise is to prove that $V$ cannot be the union of a finite number of proper subspaces. This will be used in Exercise 2 to prove the existence of Galois resolvents.
+
+Let $W_1,\ldots,W_m$ be proper subspaces of $V$ such that $V = W_1\cup\cdots \cup W_m$, where $m>1$ is is the smallest positive integer for which this is true. We derive a contradiction as follows.
+\be
+\item[(a)] Explain why there is $v \in W_1 \setminus (W_2\cup \cdots \cup W_m)$.
+\item[(b)] There is $w \in V\setminus W_1$, since $W_1$ is a proper subspace. Using $v$ from part (a), we have $\lambda v + w \in V = W_1\cup \cdots \cup W_m$ for all $\lambda \in F$. Explain why this implies that there are $\lambda_1 \ne \lambda_2$ in $F$ such that $\lambda_1 v + w, \lambda_2 v + w \in W_i$ for some $i$.
+\item[(c)] Now derive the desired contradiction.
+\ee
+}
+
+\begin{proof}
+\be
+\item[(a)] If there is no $v \in W_1 \setminus (W_2\cup \cdots \cup W_m)$, then $W_1 \subset W_2\cup \cdots W_m$. Therefore $E = W_2\cup\cdots W_m$, so $E$ is the union of $m-1$ proper subspaces, in contradiction with the definition of $m$. Thus there is $v \in W_1 \setminus (W_2\cup \cdots \cup W_m)$.
+
+\item[(b)] There is $w \in V\setminus W_1$, since $W_1$ is a proper subspace. Since $v \in W_1\subset V$, and $w \in V$, $\lambda v + w \in V = W_1\cup\cdots \cup W_m$, for every $\lambda \in F$.
+
+Let $\mu_1,\ldots,\mu_{m+1}$ be $m+1$ distinct elements of $F$. Since $F$ is infinite, it is possible to find such elements. For $i=1,\ldots,m+1$, $\mu_i v + w \in W_1\cup\cdots \cup W_m$. 
+
+Since there are more $\mu_i$ than subspaces $W_j$, there exist two distinct values $\mu_j \ne \mu_k$ such that $\mu_j v + w, \mu_k v + w$ are in the same subspace $W_i$. If we write $\lambda_1 = \mu_i, \lambda_2 = \mu_j$, then
+$$\lambda_1 \ne \lambda_2, \qquad \lambda_1 v + w  = r  \in W_i, \quad  \lambda_2 v + w = s \in W_i \text{ for some } i, \ 1\leq i \leq m.$$
+
+\item[(c)] Note that $W_i \ne W_1$, otherwise $ w = r -\lambda_1 v \in W_1$, in contradiction with the definition of $w$. Therefore
+$$r-s = (\lambda_1 - \lambda_2) v \in W_i \text{ for some } i=2,\ldots,m. $$
+Since $\lambda_1 - \lambda_2 \ne 0$, $v \in W_2\cup \cdots W_m$, and this is in contradiction with the choice of $v$.
+
+Conclusion: a finite dimensional vector space over an infinite field cannot be the union of a finite number of proper subspaces.
+\ee
+\end{proof}
+
+\paragraph{Ex. 12.2.2}
+
+{\it Suppose that we have an extension $F \subset L$, where $F$ is infinite. The goal of this exercise is to show that if $\alpha_1,\ldots,\alpha_n \in L$ are distinct, then $t_1,\ldots,t_n \in F$ can be chosen so that the polynomial $s(y)$ defined in (12.21) has distinct roots. Given $\sigma \ne \tau$ in $S_n$, let
+\begin{center}
+$W_{\sigma,\tau} =  \{(t_1,\ldots,t_n) \in F^n \ {\big | }\ \sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) t_i = 0 \}.$
+\be
+\item[(a)] Prove that $W_{\sigma,\tau}$ is a subspace of $F^n$ and that $W_{\sigma,\tau} \ne F^n$.
+\item[(b)] Show that part (a) and Exercise 1 imply that there are $t_1,\ldots,t_n \in F$ such that the polynomial $s(y)$ from (12.21) has distinct roots.
+\ee
+
+\end{center}
+}
+
+\begin{proof}
+\be
+\item[(a)] $(0,\ldots,0) \in W_{\sigma,\tau}$. If $\lambda, \mu \in F$  and  $ v = (t_1,\ldots,t_n) \in W_{\sigma,\tau}, w = (s_1,\ldots,s_n) \in W_{\sigma,\tau}$, then $ \sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) t_i = 0$ and $ \sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) s_i = 0$, therefore
+$$0 =  \lambda \sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) t_i  + \mu\sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) s_i =  \sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) (\lambda t_i + \mu s_i),$$
+so $\lambda v + \mu w \in W_{\sigma,\tau}$. Thus $W_{\sigma,\tau}$ is a subspace of $F^n$.
+
+Since $\sigma \ne \tau$, there exists $k \in \gcro 1, n \dcro$ such that $\sigma(k) \ne \tau(k)$. Moreover the $\alpha_i$ are distinct, so $\alpha_{\sigma(k)} \ne \alpha_{\tau(k)}$. Let $v = (t_1,\ldots,t_k, \ldots,t_n) = (0,\ldots,1,\ldots,0)$, where $t_k = 1$ and $t_i = 0$ if $i\ne k$. Then $v \in F^n$ satisfies $ \sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) t_i  = \alpha_{\sigma(k)} - \alpha_{\tau(k)} \ne 0$, so $W_{\sigma,\tau} \ne F^n$.
+
+Therefore $W_{\sigma,\tau}$ is a proper subspace of $F^n$, for all $\sigma, \tau \in S_n$.
+
+\item[(b)] By Exercise 1, 
+$$\bigcup_{(\sigma,\tau) \in S_n \times S_n, \sigma \ne \tau} W_{\sigma,\tau} \ne F^n.$$
+Therefore there exists $(t_1,\ldots,t_n) \in F^n$ such that $(t_1,\ldots,t_n) \not \in W_{\sigma,\tau}$ for all $\sigma,\tau \in S_n, \sigma \ne \tau$. This means that
+$$\sum_{i=1}^n \alpha_{\sigma(i)}t_i \ne  \sum_{i=1}^n \alpha_{\tau(i)}t_i,\qquad \text { for all } \sigma,\tau \in S_n, \sigma \ne \tau,$$
+so the $n!$ roots of 
+$$s(y) = \prod_{\sigma \in S_n}  \left(y - (t_1\alpha_{\sigma(1)} + \cdots + t_n \alpha_{\sigma(n)})\right)$$
+are distinct.
+\ee
+\end{proof}
+
+\paragraph{Ex. 12.2.3}
+
+{\it This exercise will prove Galois's Lemma III using the methods of Lagrange. Let $V = t_1\alpha_1 + \cdots + t_n \alpha_n$, where $t_1,\ldots,t_n$ are chosen so that the Galois resolvent $s(y)$ from (12.21) is separable. Also let $V_{\sigma} = t_1 \alpha_{\sigma(1)} + \cdots + t_n \alpha_{\sigma(n)}$ for $\sigma \in S_n$. Prove that each $\alpha_j$ can be written as a rational function in $V$ with coefficients in $F$ by adapting the second proof of Theorem 12.1.6.
+}
+
+\begin{proof}
+We know from Section 12.2.B the Galois resolvent
+$$s(y) = \prod_{\sigma \in S_n} (y - V_\sigma) \in F[y].$$
+
+Let $j \in \gcro 1, n\dcro$ be a fixed integer. We show that $\alpha_j \in F(V)$, where $V = V_e = t_1 \alpha_1+ \cdots + t_n \alpha_n$.
+
+Let 
+\begin{align*}
+\psi_j(y) &= \sum_{\sigma \in S_n} \alpha_{\sigma(j)} \frac{s(y)}{y - V_\sigma}\\
+&= \sum_{\sigma \in S_n} \alpha_{\sigma(j)} \prod_{\tau \ne \sigma} (y - V_\tau).
+\end{align*}
+If $p_\sigma =  \prod_{\tau \ne \sigma} (y - V_\tau)$, then for $\varphi \in S_n$, $p_\sigma(V_\varphi) = 0$ if $\varphi \ne \sigma$, and $\prod_{\tau \ne \sigma} (V_\sigma - V_\tau)$ if $\varphi = \sigma$. Therefore
+$$\psi_j(V) = \alpha_j \prod_{\tau \ne e} (V - V_\tau).$$
+Moreover $s'(y) = \sum_{\sigma \in S_n} \prod_{\tau \ne \sigma} (y - V_\tau)$, so
+$$s'(V)= \prod_{\tau \ne e} (V - V_\tau).$$
+Since the Galois resolvent $s(y)$ is separable, $s'(V)= \prod_{\tau\ne e} (V - V_\tau) \ne 0$, so
+$$\alpha_j = \frac{\psi_j(V)}{s'(V)}.$$
+We know that $s(y), s'(y)$ are in $F[y]$. It remains to prove that $\psi_j(y) \in F[y]$. 
+We use $V(x_1,\ldots,x_n) = t_1x_1+\cdots + t_nx_n \in F[x_1,\ldots,x_n]$, so that 
+$$V_\sigma  = V(\alpha_{\sigma(1)},\ldots,\alpha_{\sigma(n)}),$$ 
+and
+$$\Psi_j(y,x_1,\ldots,x_n) =  \sum_{\sigma \in S_n} x_{\sigma(j)} \prod_{\tau \ne \sigma} (y - V(x_{\tau(1)},\ldots,x_{\tau(n)}),$$
+so that $\psi_j(y) = \Psi_j(y,\alpha_1,\ldots,\alpha_n)$.
+Then, for all $\varphi \in S_n$,
+\begin{align*}
+\varphi \cdot \Psi_j &= \sum_{\sigma \in S_n} x_{(\varphi \sigma)(j)} \prod_{\tau \ne \sigma} (y - V(x_{(\varphi \tau)(1)},\ldots,x_{(\varphi \tau)(n)})\\
+&=\sum_{\sigma \in S_n} x_{(\varphi \sigma)(j)} \prod_{\tau' \ne \varphi \sigma} (y - V(x_{\tau'(1)},\ldots,x_{\tau'(n)}) \qquad (\tau' = \varphi \tau) \\
+&= \sum_{\sigma' \in S_n} x_{\sigma'(j)} \prod_{\tau' \ne \sigma'} (y - V(x_{\tau'(1)},\ldots,x_{\tau'(n)}) \ \qquad (\sigma' = \varphi \sigma)\\
+&= \Psi_j
+\end{align*}
+Therefore the coefficients of $\Psi_j$ lie in the field $F(\sigma_1,\ldots,\sigma_n)$, and the evaluation $x_i \mapsto \alpha_i$ gives
+$$\psi_j(y) \in F[y].$$
+Therefore $\alpha_j = \frac{\psi_j(V)}{s'(V)} \in F(V),\ j=1,\ldots,n$, and $V \in F(\alpha_1,\ldots,\alpha_n)$, so
+$$F(\alpha_1,\ldots,\alpha_n) = F(V).$$
+\end{proof}
+
+\paragraph{Ex. 12.2.4}
+
+{\it In the discussion preceding (12.25), we have extensions $F\subset L$, which is a splitting field of $f \in F[x]$, and $F \subset K = F(\beta)$, where $\beta$ is a root of an irreducible polynomial in $F[x]$. Given the many ways in which extension fields can be constructed, these extensions might not have to do with each other. Prove that there is an extension $F\subset M$ that contains subfields $F \subset L_1 \subset M$ and $F \subset K_1 \subset M$ such that $L_1,K_1$ are isomorphic to $L,K$, respectively, where the isomorphisms are the identity on $F$. Thus, by replacing $L,K$ with the isomorphic fields $L_1,K_1$, we can assume that $L,K$ lie in a larger field, as claimed in the text.
+}
+
+\begin{proof}
+Let $g$ be the minimal polynomial of $\beta$ over $F$, and $M$ a splitting field of $fg$ over $F$. Write $\alpha_1,\ldots,\alpha_n$ the roots of $f$ in $M$, and $\beta_1,\ldots,\beta_m$ the roots of $g$ in $M$. 
+
+Then $L_1 = F(\alpha_1,\ldots,\alpha_n)$ is a splitting field of $f$ over$ F$. Since $L,L_1$ are splitting fields of $f$ over $F$,  there exists by Corollary 5.1.7 an isomorphism $\varphi : L \simeq L_1$ which is the identity on $F$.
+
+Write $K_1 = F(\beta_1)$. Since $g$ is irreducible over $F$, $K_1 \simeq F[x]/\langle g \rangle \simeq K \simeq K$, where the isomorphisms are the identity on $F$. Here $K_1, L_1$ are subfields of $M$.
+
+Thus, by replacing $L,K$ with the isomorphic fields $L_1,K_1$, we can assume that $L,K$ lie in a larger field $M$.
+\end{proof}
+
+\paragraph{Ex. 12.2.5}
+
+{\it Suppose that $F\subset L$ is the splitting field of a separable polynomial $f\in F[x]$. Also suppose that we have another finite extension $F\subset K$ such that the compositum $KL$ is defined. Prove that $K\subset KL$ is the splitting field of $f$ over $K$.
+}
+
+\begin{proof}
+By hypothesis, $K,L$ are subfields of a field $M$.
+
+Write $\alpha_1,\ldots,\alpha_n$ the roots of $f$ in $L$, so $L = F(\alpha_1,\ldots,\alpha_n)$.
+Since $F\subset K$ is a finite extension, there are $\beta_1,\ldots,\beta_m$ in $K$ such that $K = F(\beta_1,\ldots,\beta_m)$. Then $F(\alpha_1,\ldots,\alpha_n,\beta_1,\ldots,\beta_m)$ is the smallest subfield of $M$ containing $K$ and $L$, so is the compositum $KL$:
+$$KL = F(\alpha_1,\ldots,\alpha_n,\beta_1,\ldots,\beta_m).$$
+
+Therefore $$KL = F(\beta_1,\ldots,\beta_m)(\alpha_1,\ldots,\alpha_n) = K(\alpha_1,\ldots,\alpha_n).$$
+Since $\alpha_1,\ldots,\alpha_m$ are the roots of $f$ in $K$, a fortiori in $KL$,  $KL$ is the splitting field of the separable polynomial $f$ over $ K$, so $K\subset KL$ is a Galois extension.
+\end{proof}
+
+\paragraph{Ex. 12.2.6}
+
+{\it This exercise will complete the proof of Theorem 12.2.5. Given $\sigma \in \Gal(KL/K)$, we showed in the text that $\sigma|_L$ maps $L$ to $L$.
+\be
+\item[(a)] Show that $(\sigma \tau)|_L = \sigma|_L\, \tau|_L$.
+\item[(b)] Use part (a) to show that $\sigma^{-1}|_L$ is the inverse function of $\sigma|L$.
+\item[(c)] Use part (a) to show that (12.26) is a group homomorphism.
+\item[(d)] Let $\sigma$ be an automorphism of $KL$ that is the identity on both $K$ and $L$. Prove that $\sigma$ is the identity on $KL$.
+\ee
+}
+
+\begin{proof}
+In the proof of Theorem 12.2.5, we cannot use Theorem 7.2.5, since we don't know if $F \subset KL$ is a Galois extension, so we prefer a direct argument. 
+
+If $\sigma \in \Gal(KL/K)$, then $\sigma$ fixes $F \subset K$. Let $\alpha \in L$, and $f \in F[x]$ the minimal polynomial of $\alpha$ over $F$. Then $0 = \sigma(f(\alpha)) = f(\sigma(\alpha))$, so $\sigma(\alpha)$ is a root of $f$. Since $F \subset L$ is a normal extension, $\sigma(\alpha) \in L$, thus $\sigma(L) \subset L$. Moreover, $\sigma$ is $L$-linear, injective, and $[L:F] < \infty$, therefore $$\sigma(L) = L.$$
+Write $\sigma|_L $ the map $\sigma|_L : L \to L$ defined by $ \alpha \mapsto \sigma(\alpha)$.
+
+\be
+\item[(a)] $\sigma \tau \in \Gal(KL/K)$, so $(\sigma \tau)|_L : L \to L$, and also $\sigma|_L \tau|_L : L \to L$.
+
+If $\alpha \in L$, then 
+$$(\sigma|_L \circ \tau|_L)(\alpha) = \sigma|_L(\tau|_L(\alpha)) = \sigma(\tau(\alpha)) = (\sigma \circ \tau)(\alpha) =  (\sigma \circ \tau)|_L(\alpha),$$
+so $$(\sigma \tau)|_L = \sigma|_L\, \tau|_L.$$
+
+\item[(b)] By part (a), $$\sigma|_L \sigma^{-1}|_L = (\sigma \sigma^{-1})|_L = (\mathrm{id}_{KL})|L = \mathrm{id}_L,$$ and similarly $ \sigma^{-1}|_L\, \sigma|_L =  \mathrm{id}_L$. Therefore
+$$\sigma^{-1}|_L = (\sigma|_L)^{-1}.$$
+
+\item[(c)] Let
+$$
+\varphi\ 
+\left\{
+\begin{array}{ccc}
+ \Gal(KL/K) & \to  & \Gal(L/K)   \\
+  \sigma &\mapsto   &    \sigma|_L ,
+\end{array}
+\right.
+$$
+where $\sigma|_L$ lies in $\Gal(L/K)$, since $\sigma|_L : L \to L$ is a field automorphism, and for every $\alpha \in K \subset KL$, $\sigma|_L(\alpha) = \sigma(\alpha) = \alpha$.
+By part (a), if $\sigma, \tau \in \Gal(KL/K)$,
+$$\varphi(\sigma \tau) = (\sigma \tau)|_L = \sigma|_L\,  \tau|_L = \varphi(\sigma) \varphi(\tau),$$
+so $\varphi$ is a group homomorphism.
+
+\item[(d)]  Let $\sigma$ be an automorphism of $KL$ that is the identity on both $K$ and $L$.
+Let $M = \{\alpha \in KL\ | \ \sigma(\alpha) = \alpha\}$. Then $M$ is a field, the fixed field of $\sigma$ in $KL$. By hypothesis,  $K \subset M$ and $L \subset M$. By definitition of the compositum $KL$, $KL \subset M$. Since $M \subset KL$ by definition, $KL = M$, so $\sigma$ is the identity on $KL$.
+
+This prove that $\varphi$ is injective.
+\ee
+\end{proof}
+
+\paragraph{Ex. 12.2.7}
+
+{\it This exercise is concerned with the details of Example 12.2.6. As in the example, let $L$ be the splitting field of $f = x^3 + 9x -2$ over $\Q$ and set $K = \Q(\beta)$, where $\beta = \sqrt[3]{1 + 2 \sqrt{7}}$.
+\be
+\item[(a)] Show that $\sqrt[3]{1 - 2 \sqrt{7}} \in K$.
+\item[(b)] Show that $K' = K(\omega), \omega = e^{2\pi i/3}$, contains all roots of $f$.
+\ee
+}
+
+\begin{proof}
+\be
+\item [(a)] 
+Here the cubic roots are reals, so
+$$\sqrt[3]{1 + 2 \sqrt{7}} \sqrt[3]{1 - 2 \sqrt{7}} = \sqrt[3]{(1 + 2 \sqrt{7})(1 -2 \sqrt{7})} = \sqrt[3]{ 1 -28} = \sqrt[3]{-27} = -3.$$
+Therefore $\sqrt[3]{1 - 2 \sqrt{7}}  = -3/\beta \in K$.
+
+\item[(b)] Consider the following formula in $\Q(x,u,v)$
+$$
+(x-u-v)(x-\omega u - \omega^2v)(x - \omega^2u - \omega v) = x^3 - 3uv x - (u^3 + v^3).
+$$
+If we use the evaluation $u \mapsto \beta = \sqrt[3]{1 - 2 \sqrt{7}}, v \mapsto \gamma = \sqrt[3]{1 - 2 \sqrt{7}}$, since
+$$uv \mapsto -3, u^3 + v^3 \mapsto  2,$$
+we obtain
+$$x^3+ 9 x - 2 = (x - (\beta + \gamma))(x -( \omega \beta + \omega^2 \gamma))(x - (\omega^2 \beta + \omega \gamma)),$$
+so the root of $f$ are 
+$$\alpha_1 = \beta + \gamma,\qquad  \alpha_2 = \omega \beta + \omega^2 \gamma,\qquad  \alpha_3 = \omega^2 \beta + \omega \gamma.$$
+Since $\beta, \gamma \in K$, $\alpha_1,\alpha_2,\alpha_3$ lie in $K' = K(\omega)$:
+\begin{center}
+$K(\omega)$ contains all roots of $f$.
+\end{center}
+\ee
+\end{proof}
+
+\paragraph{Ex. 12.2.8}
+
+{\it In Theorem 12.2.5, we have the map (12.26) defined by $\sigma \mapsto \sigma|_L$. However, if $F \subset L$ is the splitting field of a separable polynomial $f \in F[x]$ of degree $n$, then we also have maps (12.28) and (12.29). Prove that these maps are compatible, i.e., that $\sigma \in \Gal(KL/K)$ and $\sigma|_L \in \Gal(L/F)$ map to the same element of $S_n$ under (12.28) and (12.29).
+}
+
+\begin{proof}
+Write $\chi : \Gal(KL/K) \to \Gal(L/F)$ the injective homomorphism (12.26) defined by $\sigma  \mapsto \sigma\vert_L$.
+
+
+Let $x_1,\ldots,x_n$ be a numbering of the roots of $f$, and 
+$\varphi : \Gal(L/F) \to S_n,$ the isomorphism defined for every  $\tau \in \Gal(L/K)$ by 
+$$\tilde{\tau} = \varphi(\tau) \iff \tau(x_i) = x_{\tilde{\tau}(i)}, \quad i=1,\ldots,n.$$
+Similarly, since $KL$ is the splitting field over $K$ of the same polynomial $f$, the isomorphism $\psi : \Gal(KL/K) \to S_n$ is defined for every $\sigma \in \Gal(KL/K)$ by
+$$\tilde{\sigma} = \psi(\sigma) \iff \sigma(x_i) = x_{\tilde{\sigma}(i)}, \quad i=1,\ldots,n.$$
+
+If $\tau = \sigma|_L$, and $\tilde{\tau} = \varphi(\tau), \tilde{\sigma}= \psi(\sigma)$, then for all $i$, $\tau(x_i) =(\sigma|_L)(x_i) = \sigma(x_i)$, therefore
+$$x_{\tilde{\tau}(i)} = \tau(x_i) = \sigma(x_i) = x_{\tilde{\sigma}(i)},\qquad i= 1,\ldots,n $$
+Since the roots $x_1,\ldots,x_n$ are distinct and $x_{\tilde{\tau}(i)} = x_{\tilde{\sigma}(i)}$ for every $i$, then $\tilde{\tau} = \tilde{\sigma}$, so 
+$$\psi(\tau) = \varphi(\tau|_L),$$
+for every $\sigma \in \Gal(KL/K)$.  Hence $\psi = \phi \circ \chi$.
+
+As a conclusion,
+$\tau \in \Gal(KL/K)$ and $\tau|_L \in \Gal(L/F)$ map to the same element of $S_n$ under (12.28) and (12.29).
+\end{proof}
+
+\paragraph{Ex. 12.2.9}
+
+{\it In the situation of Theorem 12.2.5, suppose that $F\subset K$ is an extension of prime degree $p$. Prove that $\Gal(KL/K)$ is isomorphic to either $\Gal(L/F)$ or a subgroup of index $p$ in $\Gal(L/F)$.
+}
+
+
+\begin{center}
+
+\begin{tikzpicture}
+    \node (KL) at (3,6) {$KL$};
+    \node (K) at (1,4) {$K$};
+     \node (L) at (5,4) {$L $};
+    \node (KinterL) at (3,2) {$K \cap L$};
+    \node (F) at (3,0) {$F$};
+    \draw[<-] (KL) edge (K)  edge (L);
+    \draw[->] (KinterL) edge (K)  edge (L);
+    \draw[->] (F) edge (KinterL);
+\end{tikzpicture}
+
+\end{center}
+
+\begin{proof}
+Since $ p = [K:F] = [K:K \cap L]\cdot [K\cap L:F]$ is prime, the factor $ [K\cap L:F]$ of $p$ is $1$ or $p$.
+
+If $[K\cap L:F] = 1$, then $F = K\cap L$ and so $\Gal(KL/K) \simeq \Gal(L/F)$.
+
+If $[K \cap L:F] = p$, then by the Galois correspondence (Theorem 7.3.1), $\Gal(L/K\cap L)$ corresponds to $K\cap L$, and
+$$[K \cap L : F] = p = (\Gal(L/K) : \Gal(L/K\cap L) ).$$
+Therefore $\Gal(KL/K) \simeq \Gal(L / K\cap L)$ is isomorphic to a subgroup of index $p$ in $\Gal(L/K)$.
+\begin{center}
+\begin{tikzpicture}
+    \node (L) at (1,4) {$L$};
+    \node (KinterL) at (1,2) {$K \cap L$};
+     \node (F) at (1,0) {$F $};
+    \draw[->] (F) edge node[right]{$p$}(KinterL);
+    \draw[->] (KinterL) edge (L);
+     \node (e) at (5,4) {$\{e\}$};
+    \node (GKinterL) at (5,2) {$\Gal(L/K\cap L)$};
+     \node (GK) at (5,0) {$\Gal(L/K) $};
+    \draw[<-] (GKinterL) edge (e);
+    \draw[<-] (GK) edge node[right]{$p$} (GKinterL);
+\end{tikzpicture}
+\end{center}
+\end{proof}
+
+\paragraph{Ex. 12.2.10}
+
+{\it Suppose that we have a diagram (12.25) as in Theorem 12.2.5. Also assume that $K = F(\beta)$, and let $K' = F(\beta')$, where $\beta'$ and $\beta$ have the same minimal polynomial over $F$. You will show that $\Gal(KL/K)$ and $\Gal(K'L/K')$ give conjugate subgroups of $Gal(L/F)$. This is the modern version of what Galois says in 1¡ of Proposition II.
+\be
+\item[(a)] Let $F \subset M'$ be the Galois closure of the extension $F \subset M$ constructed in Exercise 4. Explain why we can regard $L,K$, and $K'$ as subfields of $M'$.
+\item[(b)] Explain why we can find $\tau \in \Gal(M'/F)$ such that $\tau(K) = K'$.
+\item[(c)] Show that $\tau|_L \in \Gal(L/F)$ maps $K \cap L$ to $K' \cap L$. Thus $K \cap L$ and $K' \cap L$ are conjugate subfields of $L$.
+\item[(d)] Use Lemma 7.2.4 to show that in Theorem 12.2.5, $\Gal(KL/K)$ and $\Gal(K'L/K')$ map to conjugate subgroups of $\Gal(L/F)$.
+\ee
+}
+
+\begin{proof}
+\be
+\item[(a)] 
+Since $F\subset L$ is a Galois extension, there is a polynomial $f \in F[x]$ such that $L = F(\alpha_1,\ldots,\alpha_n)$, where $\alpha_1,\ldots,\alpha_n$ are the roots of $f$ in $L$.
+
+By Exercise 4, we can take $M = F(\alpha_1,\ldots,\alpha_n,\beta_1,\ldots,\beta_m)$ the splitting field of $fg$, where  $\beta_1,\ldots,\beta_m$ the roots in $M$ of the common minimal polynomial $g$ of $\beta,\beta'$. If we replace the initial fields by  the new fields, written $K,L$, and $\beta, \beta'$ by $\beta_1,\beta_2$, then
+$$F \subset K = F(\beta) \subset M,\qquad F \subset K' = F(\beta') \subset M\qquad F \subset L \subset M.$$
+We must suppose $g$ separable. Then $F\subset M$ is separable (Theorem 5.3.15 (a)), so there exists a Galois closure $F\subset M'$ of the extension $F\subset M$.
+
+Since $M \subset M'$, $L,K$, and $K'$ are subfields of $M'$.
+
+\item[(b)]
+$F \subset M'$ is a Galois extension (therefore $M'$ is a splitting field over $F$ of some polynomial), and $\beta,\beta'$ have the same minimal polynomial. By Proposition 5.1.8 there exists an $F$-automorphism $\tau$ of $M'$ which sends $\beta$ on $\beta'$.
+Since $\tau(\beta) = \beta'$, $\tau(K) = \tau(F(\beta)) = F(\tau(\beta)) = F(\beta') = K'$.
+
+\item[(c)] Since $F\subset L$ is normal, $\tau(L) = L$, so $\tau|_L \in \Gal(L/F)$,  and by part (b), $\tau(K) = K'$. Therefore $\tau(K \cap L) = K' \cap L$, so $\tau|_L$ sends $K \cap L$ on $K' \cap L$. Thus $K \cap L$ and $K' \cap L$ are conjugate subfields of $L$.
+
+\item[(d)] Since $K' \cap L = \sigma(K \cap L)$, where $\sigma = \tau|_L \in \Gal(L/F)$,  by Lemma 7.2.4,
+$$\Gal(L/K'\cap L) = \Gal(L/\sigma(K \cap L)) = \sigma \Gal(L/K\cap L) \sigma^{-1}.$$
+
+Since the isomorphisms of Theorem 7.2.4 send $\Gal(KL/K)$ on $\Gal(L/K\cap L) $ and $\Gal(K'L/K')$ on $\Gal(L/K' \cap L)$, $\Gal(KL/K)$ and $\Gal(K'L/K')$ map to conjugate subgroups of $\Gal(L/F)$.
+\ee
+\end{proof}
+
+\paragraph{Ex. 12.2.11}  
+
+{\it Let $A$ denote the set of arrangements described by Galois. This is Galois's "group". For simplicity, we write the first arrangement on Galois's list as $\alpha_1 \ldots \alpha_n$. Then let $G$ be the set of permutations that take the first element of $A$ to the others . Theorem 12.2.3 implies that $G$ is a subgroup of $S_n$ isomorphic to $\Gal(L/F)$.
+
+We also have the action of $S_n$ on the set of all $n!$ arrangements of roots by
+$$\sigma \cdot \alpha_{i_1}\cdots \alpha_{i_n} = \alpha_{\sigma(i_1)}\cdots \alpha_{\sigma(i_n)}.$$
+This induces an action of $G$ on the set of arrangements.
+\be
+\item[(a)] Explain why $A$ is the orbit of $\alpha_1\cdots\alpha_n$ under the $G$ action.
+\item[(b)] Show that the map $G\to A$ defined by $\sigma \mapsto \sigma \cdot \alpha_1 \cdots \alpha_n$ is one-to-one and onto.
+\ee
+}
+
+\begin{proof}
+\be
+\item[(a)] We use the notations of Theorem 12.2.3: $ V = V^{(0)},  V' = V^{(1)}, \ldots,V^{(m-1)}$ are the roots of the polynomial $h$, irreducible over $F$. Moreover
+$\alpha_1, \ldots,\alpha_n$ are the roots of $f$, and $L = F(\alpha_1,\ldots,\alpha_n) = F(V)$.
+
+Write 
+$$\Gal(L/F) = \{\sigma_0 = e,\sigma_1,\ldots,\sigma_{m-1}\},$$
+where $\sigma_i$ is the unique $F$-automorphism of $L$ such that
+$$\sigma_i(V) = V^{(i)},\qquad 0\leq i \leq n-1.$$
+Let $\tau_i \in S_n$ the permutation associate to $\sigma_i$, defined by
+$$\sigma_i(\alpha_j) = \alpha_{\tau_i(j)}, \qquad 0\leq i \leq m-1,\qquad 1\leq j \leq n.$$
+Since $F(\alpha_1,\ldots,\alpha_n) = F(V)$, there are $\varphi_j  \in F(x)$ such that 
+$$\alpha_j = \varphi_{j-1}(V),\qquad 1\leq j \leq n.$$
+Then 
+\begin{align*}
+\alpha_{\tau_{i}(j)} &= \sigma_i(\alpha_j)\\
+&= \sigma_i(\varphi_{j-1}(V))\\
+&= \varphi_{j-1}(\sigma_i(V))\\
+&=\varphi_{j-1}(V^{(i)})
+\end{align*}
+Thus $$\alpha_{\tau_i(j)} = \varphi_{j-1}(V^{(i)}),\qquad 0 \leq i \leq m-1, \qquad 1\leq j \leq n.$$
+Therefore the orbit of the arrangement $a = (\alpha_1,\ldots,\alpha_n)$ under the action of $G =\{\tau_0,\ldots,\tau_{m-1}\},\ G \subset S_n,\ G \simeq \Gal(L/F)$ is given by
+$$
+\begin{array}{rllll}
+ a = & (\alpha_1 = \varphi(V),  &\alpha_2 = \varphi_1(V),  & \ldots, & \alpha_n = \varphi_{n-1}(V)) \\
+ \tau_1\cdot  a= & (\alpha_{\tau_1(1)} = \varphi(V'),  &\alpha_{\tau_1(2)} = \varphi_1(V'),  & \ldots, & \alpha_{\tau_1(n)} = \varphi_{n-1}(V)) \\
+   \ldots &   &  &  &  \\
+ \tau_{m-1}\cdot  a = & (\alpha_{\tau_{m-1}(1)} = \varphi(V^{(m-1)}),  &\alpha_{\tau_{m-1}(2)} = \varphi_1(V^{(m-1)}),  & \ldots, & \alpha_{\tau_{m-1}(n)} = \varphi_{n-1}(V^{(m-1)})) \\
+ \end{array}
+$$
+The set of arrangements $A$ described by Galois is the orbit of the arrangement $(\alpha_1,\ldots,\alpha_n)$ under the $G$-action, where $G$ is the subgroup $G$ of $S_n$ isomorphic to $\Gal(L/F)$.
+\item[(b)]
+Let $\psi : G \to A = {\cal O}_a$ defined by $\sigma \mapsto \sigma \cdot a$.
+\be
+\item[$\bullet$] 
+If $\tau_k \cdot a = \tau_l \cdot a$, where $a = (\alpha_1,\ldots,\alpha_n)$ and $\tau_k, \tau_l \in G$, then
+$$\alpha_{\tau_k(j)} = \alpha_{\tau_l(j)},\qquad 1\leq j \leq n.$$
+If $\sigma_k,\sigma_l \in \Gal(L/F)$ are the automorphisms associate to $\tau_k,\tau_l \in S_n$, then
+$$\sigma_k(\alpha_j) = \sigma_l(\alpha_j),\qquad 1\leq j \leq n.$$
+Since $L = F(\alpha_1,\ldots,\alpha_n)$, this implies that $\sigma_k = \sigma_l$, thus $\tau_k = \tau_l$, and $\psi$ is injective.
+
+\item[$\bullet$]  Moreover $|G| = |A| = m$, therefore the injective map $\psi$ is also surjective.
+\ee
+$\psi : G \to A$ is a bijection.
+\ee
+\end{proof}
+
+\paragraph{Ex. 12.2.12}
+
+{\it In the situation of Theorem 12.2.5, let $G \subset S_n$ correspond to $\Gal(L/F)$, and $H \subset S_n$ correspond to $\Gal(KL/K)$. By Exercise 8, we know that $H \subset G$. Also let $A$ be the set of arrangements studied in Exercise 11. Then a left coset $\sigma H \subset G$ gives a subset $\sigma H\cdot \alpha_1\cdots \alpha_n \subset A$, and since the map $\sigma \cdot \alpha_1\cdots \alpha_n$ is one-to-one and onto, the sets $\sigma H\cdot \alpha_1\cdots\alpha_n$ partition $A$ into disjoint subsets. We claim that these are the "groups" that appear in 1¡ and 2¡ of Galois Proposition II.
+\be
+\item[(a)] Given any two such "groups" $\sigma H \cdot \alpha_1\cdots\alpha_n$ and $\tau H \cdot \alpha_1\cdots\alpha_n$, prove that there is $\gamma \in G$ such that (as Galois says in 2¡) one passes from one to the other by applying $\gamma$ to all arrangements in the first.
+
+\item[(b)] So far, it seems like Galois describing cosets. However, as pointed out in [12], Galois thought of these "groups" differently. This is seen by explaining how they relate to 1¡ of Galois' proposition. Let $M'$ be the field used in Exercise 10, and let $\tau \in \Gal(M'/F)$. Then $K' = \tau(K)$ is a conjugate of $K$. Let $\sigma \in G$ be the permutation corresponding to $\tau|_L \in \Gal(L/F)$. Show that $\sigma H \sigma^{-1}$ is a subgroup of $S_n$ corresponding to $\Gal(K'L/K')$.
+
+\item[(c)] Using the setup of part (b), consider the "group" $\sigma H\cdot \alpha_1\cdots\alpha_n \subset A$. Prove that $\sigma H \sigma^{-1} \subset S_n$ is the set of all permutations of $S_n$ that map the first element of this "group", namely $\sigma\cdot \alpha_1\cdots \alpha_n$, to another element of the "group". (Remember that this is the process for turning a "group" of arrangements into a subgroup of $S_n$.)
+\ee
+Combining parts (b) and (c), we see that what Galois says in 1¡ of Proposition II is fully consistent with what we did in Exercise 10.
+}
+
+\begin{proof}
+\be
+\item[(a)] Let $\gamma = \tau \sigma^{-1}$. Since $G$ is a subgroup of $S_n$, $\gamma \in G$, and, for all $h \in H$,
+\begin{align*}
+\gamma \cdot (\sigma h \cdot \alpha_1\cdots \alpha_n) &= \gamma \sigma h \cdot \alpha_1\cdots \alpha_n\\
+&= \tau h \cdot \alpha_1\cdots \alpha_n,
+\end{align*}
+so 
+$$ \gamma \cdot (\sigma H \cdot \alpha_1\cdots \alpha_n) =\tau H \cdot \alpha_1\cdots \alpha_n.$$
+There exists $\gamma \in G$ such that one passes from one to the other by applying $\gamma$ to all arrangements in the first.
+
+\item[(b)] By Exercise 10(d), we know that
+$$\Gal(L/K' \cap L) = (\tau \vert_L) \Gal(L/K\cap L) (\tau \vert _L)^{-1}.$$
+The map $\Gal(L/F) \to S_n$ given by the action of the Galois group on the roots is a morphism. As $\sigma$ is the image of $\tau\vert_ L$ by this morphism, we obtain
+$$H' = \sigma H \sigma^{-1},$$
+where $H$ is the subgroup of $S_n$ corresponding to ${\Gal(L/K\cap L) }$, and $H'$ to ${\Gal(L/K' \cap L)}$.
+
+These two subgroups of $S_n$ are the images of $\Gal(KL/K)$ and $\Gal(K'L/K')$ under the injective homomorphism (12.29), which is compatible with (12.28) and (12.29) by Exercise 8, i.e. $\tau$ and $\tau\vert_L$ map to the same element of $S_n$.
+
+Conclusion: if $H\subset S_n$ is corresponding to $\Gal(KL/K)$, then $\sigma H \sigma^{-1}$ is a subgroup of $S_n$ corresponding to $\Gal(K'L/K')$ (where $K' = \tau K$, and $\sigma \in G$ is the permutation corresponding to $\tau\vert L \in \Gal(L/F)$).
+
+\item[(c)] 
+Let $\gamma \in S_n$. Then $\gamma$ maps $\sigma\cdot \alpha_1\cdots \alpha_n$ on $\sigma H\cdot \alpha_1\cdots\alpha_n $ if and only if, there exists $h \in H$ such that
+$$\gamma \cdot(\sigma\cdot \alpha_1\cdots \alpha_n) = (\sigma h) \cdot \alpha_1\cdots\alpha_n.$$
+This is equivalent to  $(\gamma \sigma)\cdot \alpha_1\cdots \alpha_n = (\sigma h) \cdot \alpha_1\cdots\alpha_n,\ h\in H$.
+
+Since $\sigma \mapsto \sigma\cdot \alpha_1\cdots \alpha_n$ is bijective (Exercise 11(b)), this is equivalent to
+$$\gamma \sigma = \sigma h,\  h \in H,$$
+or equivalent to $\gamma \in \sigma H \sigma^{-1}.$
+$$\gamma \cdot(\sigma\cdot \alpha_1\cdots \alpha_n) \in \sigma H\cdot \alpha_1\cdots\alpha_n  \iff \gamma \in \sigma H \sigma^{-1}.$$
+\ee
+\end{proof}
+
+\paragraph{Ex. 12.2.13}
+
+{\it This exercise will show that not all choices of the $t_i$ in (12.21) give Galois resolvents. As in Example 12.2.1, $f = (x^2-2)(x^2-3)$ has roots $\sqrt{2},-\sqrt{2},\sqrt{3}$, and $-\sqrt{3}$. This time we will use $(t_1,t_2,t_3,t_4) = (0,1,2,3)$. Show that (12.21) gives the polynomial
+$$s(y) = 16
+$$
+This does not have distinct roots, so that $s(y)$ is not a Galois resolvent.
+}
+
+
+Note. The results in Example 12.2.1 are false for $(t_1,t_2,t_3,t_4) = (0,1,2,4)$. The first given factor of $s(y)$ is $900 -132 y^2 + y^4$, which  has root $\sqrt{66 + 24 \sqrt{6}} = 4\sqrt{2} + 3 \sqrt{3}$ and this root can't be written $t_{\sigma(1)}\sqrt{2} + t_{\sigma(2)}(-\sqrt{2}) + t_{\sigma(3)}\sqrt{3} + t_{\sigma(4)}(-\sqrt{3})$ for any permutation $\sigma \in S_4$. Idem for the second factor $25 - 118 y^2 + y^4$.
+
+The following Sage instructions gives the right answer : 
+\begin{verbatim}
+t1,t2,t3,t4 = 0,1,2,4
+var('x1,x2,x3,x4')
+V = t1*x1 + t2*x2 + t3*x3 + t4*x4
+from itertools import permutations
+R.<y> = ZZ[]
+t = 1
+for perm in permutations([x1,x2,x3,x4]):
+    t = t * (y - V.subs(x1 = perm[0], x2 = perm[1], x3 = perm[2], x4 = perm[3]))
+s0= t.subs(x1 = sqrt(2),x2 = -sqrt(2), x3 = sqrt(3),x4 = -sqrt(3))
+s = R(s0.expand())
+s
+\end{verbatim}
+\begin{align*}
+s(y) = & \ y^{24} - 350y^{22} + 52395y^{20} - 4390200y^{18} + 226512195y^{16} -7470312150y^{14}\\
+ &+ 158533048725y^{12} - 2128033120500y^{10}+17319964832940y^{8} - 79514980673600y^{6}\\
+  &+ 185487963684016y^{4} -182187606350400y^{2} + 57817774440000
+\end{align*}
+
+and
+\begin{verbatim}
+s.factor()
+\end{verbatim}
+gives the Galois resolvent $s(y)$:
+$$(y^{4} - 100y^{2} + 2116) \cdot (y^{4} - 70y^{2} + 361) \cdot (y^{4} -70y^{2} + 841) \cdot (y^{4} - 60y^{2} + 36) \cdot (y^{4} - 28y^{2} +100) \cdot (y^{4} - 22y^{2} + 25)$$
+
+The minimal polynomial of $V = -\sqrt{2} - 2 \sqrt{3}$ is the factor $h = y^{4} - 28y^{2} +100$.
+\begin{proof}
+
+The same instructions with $t_1,t_2,t_3,t_4 = 0,1,2,3$ give
+\begin{align*}
+s(y) =&\  y^{24} - 200y^{22} + 16620y^{20} - 743400y^{18} + 19430070y^{16} -
+302989800y^{14}\\
+& + 2777491500y^{12} - 14100111000y^{10} +
+34064189265y^{8} - 25798725200y^{6}\\
+& + 7753861216y^{4} - 910060800y^{2} +
+36000000\\
+= &\ (y^{4} - 58y^{2} + 625) \cdot (y^{4} - 42y^{2} + 225) \cdot (y^{4} -
+40y^{2} + 16)^{2} \cdot (y^{4} - 10y^{2} + 1)^{2}
+\end{align*}
+This does not have distinct roots, so that $s(y)$ is not a Galois resolvent.
+
+(But the result is not the same as in the statement.)
+\end{proof}
+
+\paragraph{Ex. 12.2.14}
+
+{\it Use Theorem 12.2.5 and standard results about Galois extensions to prove that $|\Gal(KL/K)| = [L:K\cap L]$. Then explain that $|\Gal(KL/K)| < |\Gal(L/F)|$ if and only if $F$ is a proper subfield of $K\cap L$.
+}
+
+\begin{proof}
+By Theorem 12.2.5, 
+$$\Gal(KL/K) \simeq \Gal(L/K\cap L).$$
+Moreover, $F \subset L$ is a Galois extension, where $F \subset K \cap L$, thus $K \cap L \subset L$ is also a Galois extension. Therefore $|\Gal(L/K\cap L)| = [L : K \cap L]$. We obtain the conclusion
+$$|\Gal(KL/K)| = [L:K\cap L].$$
+
+Since $F \subset K \cap L \subset L$,
+\begin{align*}
+|\Gal(KL/K)| < |\Gal(L/F)| &\iff  [L:K\cap L] < [L:F]\\
+&\iff K \cap L \ne F
+\end{align*}
+So  $|\Gal(KL/K)| < |\Gal(L/F)|$ if and only if $F$ is a proper subfield of $K\cap L$.
+\end{proof}
+
+\paragraph{Ex. 12.2.15}
+
+{\it Let $F \subset L$ and $F \subset K$ be Galois extensions such that $KL$ is defined. We will also assume that $K\cap L = F$. The goal of this exercise is to prove that $F \subset KL$ is a Galois extension with Galois group
+$$\Gal(KL/F) \simeq \Gal(L/F) \times \Gal(K/F).$$
+\be
+\item[(a)] Prove that $F \subset KL$ is Galois and that $\sigma \in \Gal(KL/F)$ implies that $\sigma \vert_L \in \Gal(L/F)$ and $\sigma \vert_K \in \Gal(L/K)$.
+
+\item[(b)] Use part (d) of Exercise 6 to show that there is a one-to-one group homomorphism
+$$\Gal(KL/F) \to \Gal(L/F) \times \Gal(K/F).$$
+
+\item[(c)] Use Exercise 14 and the Tower Theorem to show that $[KL:F] = [K:F][L:F]$.
+
+\item[(d)] Conclude that the map of part (b) is an isomorphism.
+\ee
+}
+
+\begin{proof}
+\be
+\item[(a)] The Exercise 8.2.7 proves that $F \subset KL$ is Galois. Let $\sigma \in \Gal(KL/F)$. By Theorem 7.2.5, since $F \subset L$ is normal, $\sigma L = L$, and $\sigma$ fixes the elements of $F$, so $\sigma|_L \in \Gal(L/F)$. Similarly $\sigma \vert_K \in \Gal(K/F)$ (there is a misprint in the statement).
+
+\item[(b)] Let
+$$\varphi :
+\left\{
+\begin{array}{lll}
+\Gal(KL/F)& \to& \Gal(L/F) \times \Gal(K/F)\\
+\sigma &\mapsto & (\sigma|_L, \sigma \vert_K)
+\end{array}
+\right.
+$$
+Then $\varphi$ is a group homomorphism. Moreover, if $(\sigma|_L, \sigma_K) = (\mathrm{id}_L,\mathrm{id}_K)$, then $\sigma$ is the identity on both $K$ and $L$. By Exercise 6(d), $\sigma$ is the identity on $KL$, so $\varphi$ is injective.
+
+\item[(c)] By the Tower Theorem
+$$[KL : F] = [KL:K][K:F].$$
+Moreover, Theorem 12.2.5 shows that $\Gal(KL:K) \simeq \Gal(L/K\cap L) = \Gal(L/F)$, thus $[KL:K] = [L:F]$. The conclusion is
+$$[KL:F] = [K:F][L:F].$$
+
+\item[(d)] So the finite sets $\Gal(KL/F),  \Gal(L/F) \times \Gal(K/F)$ have same cardinality, and $\varphi$ is injective, therefore $\varphi$ is bijective , so $\varphi$ is a group isomorphism.
+\ee
+\end{proof}
+
 \end{document}
