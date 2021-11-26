@@ -243,12 +243,13 @@ is zero for the chosen $y$.
 \be
 \item[(a)] For the moment, forget all the theory developed so far, and let $y$ be some root of the Ferrari resolvent (12.10). Given only this, can we determine how $y$ relates to the $x_i$? This is surprisingly easy to do. Suppose $x_i,x_j$. are the roots of (12.11) for one choice of sign, and $x_k,x_l$ are the roots for the other. Thus $i,j,k,l$ are the number 1,2,3,4 in some order. Prove that $y$ is given by $y=x_ix_j + x_kx_l$.
 
-\item[(b)] Now let $y = x_1x_2 +x_3x_4$, and define the square root in (12.11) using (12.12). Show that the roots of (12.11) are $x_1,x_2$ for the plus sign and $x_3,x_4$ for the minus sign.
+\item[(b)] Now let $y_1 = x_1x_2 +x_3x_4$, and define the square root in (12.11) using (12.12). Show that the roots of (12.11) are $x_1,x_2$ for the plus sign and $x_3,x_4$ for the minus sign.
 \ee
 }
 
 \begin{proof}
 \be
+\item[(a)]
 If $y$ is some root of the Ferrari resolvent, then
 $x_i,x _j$ are the roots of
 $$x^2 - \frac{\sigma_1}{2} x + \frac{y}{2} = + \sqrt{y + \frac{\sigma_1^2}{4} - \sigma_2} \, \left(x + \frac{\frac{-\sigma_1}{2} y + \sigma_3 }{2(y+\frac{\sigma_1^2}{4} - \sigma_2)} \right).$$
@@ -278,7 +279,7 @@ We choose the square root such that
 $$ \sqrt{y_1 + \frac{\sigma_1^2}{4} - \sigma_2 } = \frac{t_1}{2}.$$
 Then the quadratic equation with $y=y_1$ and the plus sign is
 $$x^2 - \frac{\sigma_1}{2} x + \frac{y_1}{2} = + \sqrt{y_1 + \frac{\sigma_1^2}{4} - \sigma_2} \, \left(x + \frac{\frac{-\sigma_1}{2} y_1 + \sigma_3 }{2(y_1+\frac{\sigma_1^2}{4} - \sigma_2)} \right),$$
-or otherwise
+which gives
 $$x^2 - \left(\frac{\sigma_1}{2} + \frac{t_1}{2}\right) x + \frac{y_1}{2} +\frac{1}{2t_1} (\sigma_1 y_1 - 2 \sigma_3).$$
 
 Let $u,v$ be the roots of this equation, and $S = u+v, P= uv$ be the sum and product of these roots. Then

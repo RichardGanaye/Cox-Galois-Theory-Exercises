@@ -70,27 +70,36 @@
 \be
 \item[(a)]
 By definition of the isomorphism $\phi_1 : \Gal(L/F) \to S_n$ in Section 6.3, if $\tau_1 = \phi_1(\sigma)$, then 
-$$\sigma(\alpha_i) = \alpha_{\tau_1(i)},\qquad i=1,\ldots,n.$$
+\begin{align}
+\sigma(\alpha_i) = \alpha_{\tau_1(i)},\qquad i=1,\ldots,n.\label{eq:1}
+\end{align}
 As $\beta_1,\ldots,\beta_n$ are the same roots in a different order, there exist a permutation $\gamma \in S_n$ such that
-$$\beta_i = \alpha_{\gamma(i)},\qquad i=1,\ldots,n.$$
+\begin{align}
+\beta_i = \alpha_{\gamma(i)},\qquad i=1,\ldots,n.\label{eq:2}
+\end{align}
 This numbering of the roots is associate to the isomorphisme $\phi_2$. If $\tau_2 = \phi_2(\sigma)$, then 
-$$\sigma(\beta_i) = \beta_{\tau_2(i)}, \qquad i=1,\ldots,n.$$
-Therefore, for all $i=1,\ldots,n$,
-\begin{align*}
-\sigma(\alpha_{\gamma(i)} )&= \alpha_{\gamma(\tau_2(i))}\\
-\sigma(\alpha_{\gamma(i)}) &= \alpha_{\tau_1(\gamma(i))}.
-\end{align*}
-Thus $\alpha_{\gamma(\tau_2(i))} = \alpha_{\tau_1(\gamma(i))}$ for all $i$. Since $i \mapsto \alpha_i$ is one-to-one,
+\begin{align}
+\sigma(\beta_i) = \beta_{\tau_2(i)}, \qquad i=1,\ldots,n.\label{eq:3}
+\end{align}
+Therefore, for all $i=1,\ldots,n$, using \eqref{eq:2}, \eqref{eq:3}, and \eqref{eq:2} again,
+\begin{align}
+\sigma(\alpha_{\gamma(i)} )&= \sigma(\beta_i)  = \beta_{\tau_2(i)} = \alpha_{\gamma(\tau_2(i))}.\label{eq:4}
+\end{align}
+Now, with the substitution $i \to \gamma(i)$ in \eqref{eq:1}, we get
+\begin{align}
+\sigma(\alpha_{\gamma(i)}) &= \alpha_{\tau_1(\gamma(i))}.\label{eq:5}
+\end{align}
+Thus , by \eqref{eq:4},\eqref{eq:5}, $\alpha_{\gamma(\tau_2(i))} = \alpha_{\tau_1(\gamma(i))}$ for all $i$. Since $i \mapsto \alpha_i$ is one-to-one,
 $$\gamma(\tau_2(i)) = \tau_1(\gamma(i)),\qquad i=1,\ldots,n,$$
 so
 $$\gamma  \tau_2 = \tau_1 \gamma.$$
 Therefore $\tau_2 = \gamma^{-1} \tau_1 \gamma$, so  $\phi_2(\sigma) = \hat{\gamma}(\phi_1(\sigma))$, for all $\sigma \in \Gal(L/F)$:
 $$\phi_2 = \hat{\gamma} \circ \phi_1.$$
-\item[(b)] Let $G$ the image of $\phi_1$ in $S_n$ : $G = \{\phi_1(\sigma)\ | \ \sigma \in \Gal(L/F)\} \subset S_n$. 
+\item[(b)] Let $G$ the image of $\phi_1$ in $S_n$: $G = \{\phi_1(\sigma)\ | \ \sigma \in \Gal(L/F)\} \subset S_n$. 
 
 Similarly the image of $\phi_2$ is $G' = \{\phi_2(\sigma)\ | \ \sigma \in \Gal(L/F)\} \subset S_n$. 
 
-Since $\phi_2(\sigma) = \gamma^{-1} \phi_1(\sigma) \gamma$ for all $\sigma \in \Gal(L/F)$,
+Since $\phi_2(\sigma) = \gamma^{-1} \phi_1(\sigma) \gamma$ for all $\sigma \in \Gal(L/F)$ by part (a),
 $$G' = \gamma^{-1} G \gamma.$$
 So, if we change the labels, then $G$ gets replaces with a conjugate subgroup.
 \ee
@@ -102,10 +111,10 @@ So, if we change the labels, then $G$ gets replaces with a conjugate subgroup.
 }
 
 \begin{proof}
-Let $H$ a subgroup of $S_n$ such that $[S_n:H]=2$. Then $H$ is normal in $S_n$ (by Exercise 12.1.20). Thus $G/H \simeq \{1,-1\}$. So there exists a group homomorphism 
-$$\varphi:S_n \to \{1,-1\}, \qquad \ker(\varphi) = H.$$
+Let $H$ a subgroup of $S_n$ such that $[S_n:H]=2$. Then $H$ is normal in $S_n$ (by Exercise 12.1.20). Thus $S_n/H \simeq \{1,-1\}$. So there exists a group homomorphism 
+$$\varphi:S_n \to \{1,-1\}, \qquad \text{with }\ker(\varphi) = H.$$
 
-Any two transpositions $\tau_1 = (a\, b), \tau_2 = (c\ d)$ of $S_n$ are conjugate: if $\gamma = (a \ c)(b\  d)$, then $\tau_2 = \gamma \tau_1 \gamma^{-1}$ (even if $b=c$).
+Any two transpositions $\tau_1 = (a\, b), \tau_2 = (c\, d)$ of $S_n$ are conjugate: if $\gamma = (a \, c)(b\,  d)$, then $\tau_2 = \gamma \tau_1 \gamma^{-1}$ (even if $b=c$).
 
 Since  $ \{1,-1\} \simeq \Z/2\Z$ is abelian,
 \begin{align*}
@@ -136,10 +145,10 @@ $$\Delta(\theta) = (y_1-y_2)^2(y_1-y_3)^2(y_2-y_3)^2
 =[(x_1-x_4)(x_2-x_3)(x_1-x_3)(x_2-x_4)(x_1-x_2)(x_3-x_4)]^2
 =\Delta
 $$
-As the evaluation is a ring homomorphism, if we applied to this equality in $F[x_1,x_2,x_3,x_4]$ the evaluation defined by $x_1 \mapsto \alpha_1,\ldots,x_4\mapsto \alpha_4$, we obtain
+As the evaluation is a ring homomorphism, if we applied the evaluation defined by $x_1 \mapsto \alpha_1,\ldots,x_4\mapsto \alpha_4$ to this equality in $F[x_1,x_2,x_3,x_4]$, we obtain
 that the roots
 $$\beta_1 = \alpha_1\alpha_2+\alpha_3\alpha_4, \qquad \beta_2 = \alpha_1\alpha_3+\alpha_2\alpha_4,\qquad \beta_3 = \alpha_1\alpha_4+\alpha_2\alpha_3,$$
-are the images of $Y_1,y_2,y_3$ and satisfy
+are the images of $y_1,y_2,y_3$ and satisfy
 \begin{align*}
 \Delta(\theta_f) &= (\beta_1-\beta_2)^2(\beta_1-\beta_3)^2(\beta_2-\beta_3)^2\\
 &=[(\alpha_1-\alpha_4)(\alpha_2-\alpha_3)(\alpha_1-\alpha_3)(\alpha_2-\alpha_4)(\alpha_1-\alpha_2)(\alpha_3-\alpha_4)]^2\\
@@ -195,18 +204,19 @@ $$\langle (1\,2),(3\,4) \rangle,\qquad  \langle (1\,2)(3\,4),  (1\,3)(2\,4) \ran
 \begin{proof}
 Let $g = (x-\alpha_1)(x-\alpha_2)(x-\alpha_3)$, where $\alpha_1,\alpha_2,\alpha_3$ lie in some splitting field of $F$, and $\alpha_1 \in F$.
 \be
-\item[$\bullet$] if $g$ splits completely over $F$, then $\alpha_1,\alpha_2,\alpha_3$ lie in $F$, therefore 
+\item[$\bullet$] If $g$ splits completely over $F$, then $\alpha_1,\alpha_2,\alpha_3$ lie in $F$, therefore 
 
 ${\delta = (\alpha_1 - \alpha_2)(\alpha_1-\alpha_3)(\alpha_2-\alpha_3) \in F}$, so
-$\Delta = \delta^2 \in F^2$.
-\item[$\bullet$] Conversely, if $\Delta \in F^2$,then $\Delta = a^2, \ a \in F $, so $\delta =\pm a\in F$.
+$\Delta(g)= \delta^2 \in F^2$.
+\item[$\bullet$] Conversely, suppose that $\Delta(g) \in F^2$. Then $\Delta (g)= a^2, \ a \in F $, so $\delta =\pm a\in F$.
 Since $\alpha_1 \in F$, the Euclidean division of $g(x)$ by $x-\alpha_1 \in F[x]$ gives 
 $$g(x) = (x-\alpha_1)(x^2+px+q), \qquad p,q \in F.$$
-$\alpha_2+\alpha_3 = -p \in F, \alpha_2\alpha_3 = q \in F$, so
-$$(\alpha_1-\alpha_2)(\alpha_1 - \alpha_3) = \alpha_1^2  + p \alpha +q \in F.$$
-If $\alpha_1 = \alpha_2$ or $\alpha_1 = \alpha_3$, then $\Delta(f) = 0 \in F^2$. 
+Then $x^2+px+q = (x-\alpha_2)(x-\alpha_3)$, hence
+$\alpha_2+\alpha_3 = -p \in F, \alpha_2\alpha_3 = q \in F$, and
+$$(\alpha_1-\alpha_2)(\alpha_1 - \alpha_3) = \alpha_1^2  + p \alpha_1 +q \in F.$$
+If $\alpha_1 = \alpha_2$, then $\alpha_3 = -p - \alpha_2 = -p - \alpha_1 \in F$, so $g$ splits completely over $F$, and similarly the same conclusion is true if $\alpha_1 = \alpha_3$. 
 
-In the other case, $(\alpha_1-\alpha_2)(\alpha_1 - \alpha_3) \ne 0$, so
+In the remaining case, $(\alpha_1-\alpha_2)(\alpha_1 - \alpha_3) \ne 0$, so
 $$\alpha_2 - \alpha_3 = \delta [(\alpha_1-\alpha_2)(\alpha_1 - \alpha_3)]^{-1} \in F.$$
 Since $\alpha_2 + \alpha_3 \in F$, and $\alpha_2 - \alpha_3 \in F$, and since the characteristic of $F$ is not 2,
 $$\alpha_2 = \frac{1}{2}[(\alpha_2 + \alpha_3) +(\alpha_2-\alpha_3)] \in F, \alpha_3 = \frac{1}{2}[(\alpha_2 + \alpha_3) -(\alpha_2-\alpha_3)] \in F.$$
@@ -232,7 +242,7 @@ s &:= \alpha_1+\alpha_2 = \alpha_3+\alpha_4\\
 p &:= \alpha_1\alpha_2 = \alpha_3\alpha_4
 \end{align*}
 Thus $x^2-sx+p = (x-\alpha_1)(x - \alpha_2) = (x-\alpha_3)(x-\alpha_4)$, therefore
-$$\{\alpha_1,\alpha_2\} = \{\alpha_3,\alpha_4.$$
+$$\{\alpha_1,\alpha_2\} = \{\alpha_3,\alpha_4\}.$$
 Since $\alpha_3 = \alpha_1$ or $\alpha_3 = \alpha_2$, $f$ is not separable.
 
 \item[(b)] If $\beta$ is a root of the resolvent $\theta_f$, we can relabel the roots of $f$ so that $\beta = \alpha_1\alpha_2 + \alpha_3\alpha_4$ and
@@ -243,7 +253,7 @@ Therefore $4\beta+c_1^2-4c_2$ and $\beta^2 - 4 c_4$ can't both vanish when $f$ i
 
 \item[(c)] Suppose that $4\beta + c_1^2-4c_2^2 = 0$ in part (c) of Theorem 13.1.1, where $\theta_f(y)$ has a unique root $\beta$ in $F$. Therefore $\theta_f(y) = (y-\beta)(y-\beta')(y-\beta'')$, where $\beta' \not \in F, \beta'' \not \in F$.
 
-If $\theta_f$ was not separable, then $\beta' = \beta''$, and $\theta_f(t) = (y-\beta)(y-\beta')^2 \in F[y], \beta \in F$, thus $(y-\beta'^2) = y^2 - 2 \beta' y + \beta'^2 \in F[y]$, which implies that 
+If $\theta_f$ was not separable, then $\beta' = \beta''$, and $\theta_f(t) = (y-\beta)(y-\beta')^2 \in F[y], \beta \in F$, thus $(y-\beta')^2 = y^2 - 2 \beta' y + \beta'^2 \in F[y]$, which implies that 
 $2\beta' \in F$. 
 
 Since the characteristic of $F$ is not 2, $\beta' \in F$. This is a contradiction, so $\theta_f$ is separable. Since the discriminant of $\theta_f$ and $f$ are equal, $f$ is separable.
@@ -260,8 +270,8 @@ $$\sigma (\alpha_1\alpha_2 - \alpha_3  \alpha_4) = \alpha_3  \alpha_4 - \alpha_2
 Therefore $\sigma$ fixes $\sqrt{\Delta(f) (\beta^2 - 4 c_4)}$, so $\sqrt{\Delta(f) (\beta^2 - 4 c_4)} \in F^*$, and $$\Delta(f) (\beta^2 - 4 c_4) \in (F^*)^2.$$
 \item[$\bullet$] Suppose that  $G = \langle (1\,3\,2\,4),(1,2)\rangle$. Then $\Gal(L/F) = \langle \sigma, \tau \rangle$, where $\tau$ corresponds to $(1\,2)$.
 $\tau ( \sqrt{\Delta(f)} )= - \sqrt{\Delta(f)}$ and $\tau (\alpha_1\alpha_2 - \alpha_3  \alpha_4) = \alpha_2\alpha_1 - \alpha_3  \alpha_4 = \alpha_1\alpha_2 - \alpha_3  \alpha_4$, so
-$\tau(\sqrt{\Delta(f) (\beta^2 - 4 c_4)}) = -\sqrt{\Delta(f) (\beta^2 - 4 c_4)}$. Since the characteristic is not 2, $\sqrt{\Delta(f) (\beta^2 - 4 c_4)} \not \in F$, so 
-$$\Delta(f) (\beta^2 - 4 c_4) \in (F^*)^2.$$
+$\tau(\sqrt{\Delta(f) (\beta^2 - 4 c_4)}) = -\sqrt{\Delta(f) (\beta^2 - 4 c_4)}$. Since the characteristic is not 2, and $\Delta(f) (\beta^2 - 4 c_4) \ne 0$,$\sqrt{\Delta(f) (\beta^2 - 4 c_4)} \not \in F$, so 
+$$\Delta(f) (\beta^2 - 4 c_4) \not \in (F^*)^2.$$
 Therefore $G$ is conjugate to $\langle (1\,3\,2\,4),(1\,2) \rangle$ if and only if $\Delta(f)(\beta^2 - 4 c_4) \not \in (F^*)^2$.
 \ee
 \ee
@@ -342,7 +352,7 @@ As $0$ is not a root of $f$, the roots of $f$ are the roots of  $z = x+\frac{1}{
 $$x^2-z_1x+1,\qquad x^2 -z_2x+1,$$
 where $z_1,z_2$ are the roots in $L$ of
 $$z^2+az+b-2.$$
-If we relabel the roots so that $\alpha_1,\alpha_2$ are the roots of $x^2-z_1x+1$, and $\alpha_3,\alpha_4$ the roots of $x^2 -z_2x+1$, then $\alpha_1\alpha_2 = 1, \alpha_3\alpha_4 = 1$
+If we relabel the roots so that $\alpha_1,\alpha_2$ are the roots of $x^2-z_1x+1$, and $\alpha_3,\alpha_4$ the roots of $x^2 -z_2x+1$, then $\alpha_1\alpha_2 = 1, \alpha_3\alpha_4 = 1$,
 therefore $\beta_1 = \alpha_1\alpha_2+ \alpha_3\alpha_4 = 2$ is a root of the Ferrari resolvent $\theta_f(y)$.
 \end{proof}
 
@@ -375,6 +385,8 @@ $$
 $$
 Thus $\theta_f(y) = (y-b)(y - 2\sqrt{d})(y+2\sqrt{d})$ has a unique root if $F$ if $d \not \in F^2$, and the discriminant is not a square in $F^2$.
 \end{proof}
+
+\paragraph{Ex. 13.1.11}
 
 {\it In Example 13.1.7 we showed that if $f=x^4+ax^3+bx^2+ax+1 \in \Z[x]$ is irreducible over $\Q$, then its Galois group is $\Z/2\Z \times \Z/2\Z$ if and only if there is $c \in \Q$ such that $4a^2+c^2 = (b+2)^2$.
 \be
@@ -455,19 +467,19 @@ the splitting field of $f$ over $\Q$ is $\Q\left (\sqrt{47 + 12 \sqrt{15}}\right
 
 \begin{proof}
 \be
-\item[(a)] Let $g = y^2+Ay+B \in F[y]$ and let $F \subset F(\sqrt{a}),\ a \in F$ be a quadratic extension.
+\item[(a)] Let $g = y^2+Ay+B \in F[y]$ and let $F \subset F(\sqrt{a}),\ a \in F$, be a quadratic extension.
 
 If $\Delta(g) = 0$ then $a\Delta(g) = 0 \in F^2$. Suppose now that $g$ is irreducible over $F$.
 \be
 \item[$\bullet$] Suppose that $g$ splits completely over $F(\sqrt{a})$, so
 $$g = (y-y_1)(y-y_2),\qquad y_1,y_2\in F(\sqrt{a}).$$
 Then $\Delta(g) = (y_1-y_2)^2 = A^2 - 4B \in F$. We choose $\sqrt{\Delta(g)} = y_1-y_2 \in F(\sqrt{a})$.
- As $\deg(g) =2$, $g$ is irreducible over $f$, therefore the roots of $g$
+Here $\deg(g) =2$, and $g$ is irreducible over $f$, therefore the roots of $g$
 \begin{align*}
 y_1 &= \frac{1}{2}((y_1+y_2) + (y_1-y_2)) = \frac{1}{2} \left(-A - \sqrt{\Delta(g)}\right),\\
- y_2 &= \frac{1}{2}((y_1+y_2) - (y_1-y_2 ))= \frac{1}{2} \left (-A + \sqrt{\Delta(g)}\right)
+ y_2 &= \frac{1}{2}((y_1+y_2) - (y_1-y_2 ))= \frac{1}{2} \left (-A + \sqrt{\Delta(g)}\right),
  \end{align*}
-are not in $F$, which is equivalent to
+are not in $F$, and this is equivalent to
 $$\sqrt{\Delta(g)} \not \in F.$$
 Since $ \sqrt{\Delta(g)} \in F(\sqrt{a})$, and $\sqrt{\Delta(g)} \not \in F$,
 $$\sqrt{\Delta(g)} = u + v\sqrt{a},\qquad u,v \in F,\qquad v\ne 0.$$
@@ -488,7 +500,7 @@ We choose $\sqrt{\Delta(g)}$ such that
   Then 
   \begin{align*}
 y_1 &= \frac{1}{2}((y_1+y_2) + (y_1-y_2)) = \frac{1}{2} \left(-A - \sqrt{\Delta(g)}\right),\\
- y_2 &= \frac{1}{2}((y_1+y_2) - (y_1-y_2 ))= \frac{1}{2} \left (-A + \sqrt{\Delta(g)}\right)
+ y_2 &= \frac{1}{2}((y_1+y_2) - (y_1-y_2 ))= \frac{1}{2} \left (-A + \sqrt{\Delta(g)}\right),
  \end{align*}
  are in $F(\sqrt{a})$, so $g = (y-y_1)(y-y_2)$ splits completely over $F(\sqrt{a})$.
  
@@ -517,6 +529,7 @@ Similarly
 so
 $$h_2 = y^2 - \beta y +c_4 = (y-\alpha_1\alpha_2)(y-\alpha_3\alpha_4).$$
 \ee
+We have proved that $h_1,h_2$ split completely over $L$. Since $\deg(h_1) = 2$, $h_1$ splits over a quadratic extension $F\subset M$, with  $M \subset L$. But the unique such quadratic extension is $F(\sqrt{\Delta(f)})$ (since $\Gal(L/F) \simeq \Z/4\Z$ has a unique subgroup of index 2). Therefore $M =  F(\sqrt{\Delta(f)})$, and $h_1$ splits completely over $F(\sqrt{\Delta(f)})$, and also $h_2$.
 \end{proof}
 
 \paragraph{Ex. 13.1.13}
@@ -529,20 +542,20 @@ With the hypothesis of part (c), $\Delta(f) \not \in F^2$, so $\Delta(f) \ne 0$ 
 
 \be
  \item[$\bullet$] If $G \simeq \Z/4\Z$, then 
-$G = \langle \sigma \rangle \subset S_4$,  where $\sigma$ corresponds to $\tilde{\sigma} \in \Gal(L/F)$. Write $G_\alpha = \mathrm{Stab}_G(\alpha)$. Since $f$ is irreducible,  $4 = |{\cal O}_\alpha| = (G: G_\alpha)$, so $G_{\alpha} = \{e\}$. Therefore $\tilde{\sigma}^i \ne\tilde{\sigma}^j$ if $1\leq i < j \leq 4$.   So  $\tilde{\sigma}(\alpha_1) = \alpha_3,\tilde{\sigma}(\alpha_3) = \alpha_2,\tilde{\sigma}(\alpha_2) = \alpha_4$ are the four distinct roots of $f$, and $\sigma = (1\,3\,2\,4)$.
+$G = \langle \sigma \rangle \subset S_4$,  where $\sigma$ corresponds to $\tilde{\sigma} \in \Gal(L/F)$. Write $G_\alpha = \mathrm{Stab}_G(\alpha)$. Since $f$ is irreducible, ${\cal O}_\alpha = \{\alpha_1,\alpha_2,\alpha_3,\alpha_4\}$ is the set of the four roots of $f$, therefore $4 = |{\cal O}_\alpha| = (G: G_\alpha)$, so $G_{\alpha} = \{e\}$. Hence $\tilde{\sigma}^i(\alpha) \ne\tilde{\sigma}^j(\alpha)$ if $1\leq i < j \leq 4$.   We choose the numbering of the roots such that $\alpha_1 = \alpha$, and $\tilde{\sigma}(\alpha_1) = \alpha_3,\tilde{\sigma}(\alpha_3) = \alpha_2,\tilde{\sigma}(\alpha_2) = \alpha_4$ are the four distinct roots of $f$, so $\sigma = (1\,3\,2\,4)$.
 $$f = (x-\alpha_1)(x-\alpha_3)(x-\alpha_2)(x-\alpha_4) = (x-\alpha)(x-\tilde{\sigma}(\alpha))(x-\tilde{\sigma}^2(\alpha))(x-\tilde{\sigma}^3(\alpha)).$$
 
-As  $\Delta(f) \not \in F^2$,  $F(\sqrt{\Delta})$ is a quadratic extension of $F$.
+As  $\Delta(f) \not \in F^2$,  $F(\sqrt{\Delta(f)})$ is a quadratic extension of $F$.
 
-Since the only subgroup of $G$ are $\{e\} \subset H =\langle \sigma^2 \rangle \subset G = \langle \sigma \rangle$, by the Galois correspondence, the only intermediate fields of $F\subset L$ are $F \subset F(\sqrt{\Delta})\subset L$, and the fixed field of $H = \langle \sigma^2 \rangle$ is $L_H =  F(\sqrt{\Delta})$.
+Since the only subgroup of $G$ are $\{e\} \subset H =\langle \sigma^2 \rangle \subset G = \langle \sigma \rangle$, by the Galois correspondence, the only intermediate fields of $F\subset L$ are $F \subset F(\sqrt{\Delta(f)})\subset L$, and the fixed field of $H = \langle \sigma^2 \rangle$ is $L_H =  F(\sqrt{\Delta(f)})$.
 
-If $F(\alpha) \subset F(\sqrt{\Delta})$, then $\alpha \in F(\sqrt{\Delta}) = L_H$, therefore $\sigma^2(\alpha) = \alpha$, and so $\alpha_2 = \alpha_1$, in contradiction with the separability of $f$. Hence $F(\alpha) \not \subset F(\sqrt{\Delta})$, so $$F(\alpha) = L = F(\alpha_1,\alpha_2,\alpha_3,\alpha_4).$$
+If $F(\alpha) \subset F(\sqrt{\Delta(f)})$, then $\alpha \in F(\sqrt{\Delta(f)}) = L_H$, therefore $\sigma^2(\alpha) = \alpha$, and so $\alpha_2 = \alpha_1$, in contradiction with the separability of $f$. Hence $F(\alpha) \not \subset F(\sqrt{\Delta(f)})$, so $$F(\alpha) = L = F(\alpha_1,\alpha_2,\alpha_3,\alpha_4).$$
 
 Then $f$ splits completely over $F(\alpha)$.
 
 
  \item[$\bullet$] If $G \not \simeq \Z/4\Z$, then by Theorem 13.1.1, $G \simeq D_8$. Therefore $[L : F] = |G| = 8$, and $[F(\alpha) : F] = \deg(f) = 4$, which implies $F(\alpha) \ne L = F(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$.
- Therefore one on the root $\alpha_i$ is not in $F(\alpha)$, and so $f =(x-\alpha_1)(x-\alpha_2)(x-\alpha_3)(x-\alpha_4)$ doesn't splits completely over $F(\alpha)$.
+ Therefore one of the roots $\alpha_i$ is not in $F(\alpha)$, and so $f =(x-\alpha_1)(x-\alpha_2)(x-\alpha_3)(x-\alpha_4)$ doesn't splits completely over $F(\alpha)$.
 \ee
 
 
@@ -655,7 +668,7 @@ $\Delta(f) = -2^8\cdot 19$ is  not a square in $\Q$, and $\theta_f(y) = y^3 -8y 
 
 \item[(b)] $f = x^4 + 8x+12$.
 
-$\Delta(f) = 2^{12}\cdot 3^4$ is  a square in $\Q$, and $\theta_f(y) = y^3 -48y - 64$ is irreducible over $\Q$, so $\Gal_\Q(f) \simeq S_4$ (part (a) of Theorem 13.1.11).
+$\Delta(f) = 2^{12}\cdot 3^4$ is  a square in $\Q$, and $\theta_f(y) = y^3 -48y - 64$ is irreducible over $\Q$, so $\Gal_\Q(f) \simeq A_4$ (part (a) of Theorem 13.1.11).
 
 \item[(c)] $f = x^4+1$.
 
@@ -668,7 +681,7 @@ Let $\zeta$ a root of $f$. Then
 $$f = (x-\zeta)(x-\zeta^2)(x-\zeta^3)(x-\zeta^4)$$
 splits completely over $\Q(\zeta)$. By Exercise 13,
 $$G \simeq \Z/4\Z.$$
-(we know already this result, since $f = \Phi_4$.)
+(we know already this result, since $f = \Phi_5$.)
 
 \item[(e)] $f = x^4-2$.
 
@@ -698,11 +711,14 @@ where $g(y) = y^2 + a y +b \in F[y].$
 Therefore the roots $y_2,y_3$ of $g$ are in $F(\sqrt{\delta})$, where $\delta = a^2 - 4b \in F$ is the discriminant of $g$.
 Moreover $t_1 = \alpha_1+\alpha_2-\alpha_3-\alpha_4  = \sqrt{ 4y_1 + c_1^2 - 4 c_2} \in L$, and similarly $t_2,t_3 \in L$, so $F(t_1,t_2,t_3) \subset L$, and by (12.17), $L \subset F(t_1,t_2,t_3)$, therefore
 $$L = F(t_1,t_2,t_3) = F\left(\sqrt{ 4y_1 + c_1^2 - 4 c_2}, \sqrt{ 4y_2 + c_1^2 - 4 c_2},\sqrt{ 4y_3 + c_1^2 - 4 c_2}\right).$$
-There is at most one $t_i$ equal to $0$. Indeed, if $t_1 = t_2 = 0$ (for instance), then $y_1 = y_2$ and $\theta_f$ and $f$ would not be separable, in contradiction with $\Delta(f) \ne 0$ in part (c) of Theorem 13.1.1. So we can choose the numbering such that $t_1t_2 \ne 0$ (perhaps $t_3 = 0$). Since $t_1t_2t_3 = c_1^3 - 4 c_1 c_2 + 8c_3 \in F$, $t_3 \in F(t_1,t_2)$, so
+Since $\Delta(\theta_f) = \Delta(f) \ne 0$, there is at most one $t_i$ equal to $0$. So we can choose the numbering such that $t_1t_2 \ne 0$ (perhaps $t_3 = 0$). Since $t_1t_2t_3 = c_1^3 - 4 c_1 c_2 + 8c_3 \in F$, $t_3 \in F(t_1,t_2)$, so
 $$L = F(t_1,t_2,t_3) = F(t_1,t_2) =F\left(\sqrt{ 4y_1 + c_1^2 - 4 c_2}, \sqrt{ 4y_2 + c_1^2 - 4 c_2}\right).$$
-Note $t_i^2 = 4y_i + C_1^2 - 4 c_2 \in L$, so $y_i \in L,\  i = 1,2,3$, so  $\sqrt{\delta} = y_2- y_3 \in L$, therefore $L(\sqrt{\delta}) = L$.
+Note that $t_i^2 = 4y_i + c_1^2 - 4 c_2 \in L$, so $y_i \in L,\  i = 1,2,3$, so  $\sqrt{\delta} = y_2- y_3 \in L$, therefore $L(\sqrt{\delta}) = L$.
 Consider the chain of inclusions
-$$F \subset F(\sqrt{4y_1+c_1^2-4c_2}) \subset  F(\sqrt{4y_1+c_1^2-4c_2}, \sqrt{\delta}) \subset F(\sqrt{4y_1+c_1^2-4c_2}, \sqrt{\delta},\sqrt{4y_2+c_1^2-4c_2} ) =L.$$
+\begin{align*}
+F \subset F\left(\sqrt{4y_1+c_1^2-4c_2}\right) \subset  F&\left(\sqrt{4y_1+c_1^2-4c_2},\sqrt{\delta}\right)\\
+& \subset F\left(\sqrt{4y_1+c_1^2-4c_2}, \sqrt{\delta},\sqrt{4y_2+c_1^2-4c_2} \right) =L.
+\end{align*}
  Since $4y_1+c_1^2-4c_2 \in F, \delta \in F$ and $4y_2+c_1^2-4c_2 \in F(\sqrt{\delta})$), the degree of each extension is 1 or 2, so 
 $$[L:F] \mid 8.$$
 Moreover $L \supset F(\alpha_1)$, and the minimal polynomial of $\alpha_1$ is 4, so $$[L:F] \geq [F(\alpha_1):F] = \deg(f) = 4.$$ Since $|G| = [L:F]$,
@@ -727,7 +743,7 @@ H_1 &= \langle (1\,2),(3\,4) \rangle = \{(), (1\,2),(3\,4), (1\,2) (3\,4)\}, \\
  \end{align*}
   are both isomorphic to the Klein's group $\Z/2\Z \times \Z/2\Z$.
   
-Every conjugate of $(1\,2)(3\,4)$ by $\sigma \in S_4$ is $(\sigma(1)\, \sigma(2)) (\sigma(3) \, \sigma(4))$, so is not in $H_1$. The groups $H_1,H_2$ are not conjugate. 
+Every conjugate of $(1\,2) \in H_1$ by $\sigma \in S_4$ is $(\sigma(1)\, \sigma(2)) )$, which is not in $H_2$. The subgroups $H_1,H_2$ are not conjugate. 
 \item[(b)] $H_1 = \langle (1\,2),(3\,4) \rangle$ is not a transitive subgroup of $S_4$ (the orbit of 1 is $\{1,2\}$), so isn't mentioned in Theorems 13.1.1 and 13.1.6.
 \ee
 \end{proof}
