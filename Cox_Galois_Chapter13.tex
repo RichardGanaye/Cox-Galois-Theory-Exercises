@@ -2042,10 +2042,10 @@ By Section 13.2, the Galois group of $f$ is $\mathrm{AGL}(1,\F_5)$ up to conjuga
 \item[(c)]  By Exercise 13, we know that the Galois group of $x^5 - 2$ over $\Q(\sqrt{5})$ is $\mathrm{AGL}(1,\F_5)\cap A_5$ which is not cyclic, so there is a misprint in the sentence. 
 
    \be 
-\item[$\bullet$] The polynomial $f = x^5 - D \in \Q(\sqrt{5})[x], D \in \Q$, is irreducible over $\Q$ by hypothesis.  Therefore the real number $\sqrt[5]{D} \not  \in \Q$. Since $[\Q(\sqrt{5} : \Q] = 2$ and $[\Q(\sqrt{5}) : \Q] = 5$, we obtain that $10 = 2 \times 5$ divides $[\Q(\sqrt{5},\sqrt[5]{D}) : \Q]$, where $[\Q(\sqrt{5},\sqrt[5]{D}) : \Q] \leq 10$. Therefore 
-$$10 = [\Q(\sqrt{5},\sqrt[5]{D}) : \Q] = [\Q(\sqrt{5},\sqrt[5]{D}) : \Q(\sqrt{5})] [\Q(\sqrt{5}):\Q],$$
- so $[\Q(\sqrt{5},\sqrt[5]{D}) : \Q(\sqrt{5})] = 5$, which proves that $\sqrt[5]{D} \not \in \Q(\sqrt{5})$. By theorem 4.2.6, $f = x^5 - D$ is irreducible over $\Q(\sqrt{5})$.
-
+\item[$\bullet$] The polynomial $f = x^5 - D \in \Q(\sqrt{5})[x], D \in \Q$, is irreducible over $\Q$ by hypothesis. Let $\alpha$ be a root of $f$. Since $[\Q(\alpha) : \Q] = 5$ and $[\Q(\sqrt{5}) : \Q] = 2$, we obtain that $10 = 2 \times 5$ divides $[\Q(\sqrt{5},\alpha) : \Q]$, where $[\Q(\sqrt{5},\alpha) : \Q] \leq 10$. Therefore 
+$$10 = [\Q(\sqrt{5},\alpha) : \Q] = [\Q(\sqrt{5},\alpha) : \Q(\sqrt{5})] [\Q(\sqrt{5}):\Q],$$
+ so $[\Q(\sqrt{5},\alpha) : \Q(\sqrt{5})] = 5$. If $p$ is the minimal polynomial of $\alpha$ over $\Q(\sqrt{5})$, then $\deg(p) = [\Q(\sqrt{5},\alpha) : \Q(\sqrt{5})] = 5$, and $p$ divides $f$, therefore $p = f$, and we have proved that $f$ is irreducible over $\Q(\sqrt{5})$.
+ 
 Moreover
 $$\Delta(f) = 5^5 D^4  = (5^2 D^2 \sqrt{5})^2$$
  is a square in $\Q(\sqrt{5})$, and $0 \in \Q(\sqrt{5})$ is a root of the resolvent
@@ -2056,9 +2056,9 @@ But $\zeta \alpha \not \in \R$, so $\zeta \alpha \not \in \Q(\sqrt{5})(\alpha) \
 $$\Gal(L/\Q(\sqrt{5})) \simeq \mathrm{AGL}(1,\F_5)\cap A_5,$$
 where $L$ is the splitting field of $x^5 - D$.
  
- \item[$\bullet$] Now $f= x^5 - 5Px^2-5Qx-\frac{Q^2}{P} - \frac{P^3}{Q}$. 
+ \item[$\bullet$] Now $f= x^5 - 5Px^2-5Qx-\frac{Q^2}{P} - \frac{P^3}{Q}$, and $f$ is assumed irreducible over $\Q$.
  
- Here we assume that $f$ remains irreducible over $\Q(\sqrt{5})$. 
+With the same proof as in the first bullet, $f$ remains irreducible over $\Q(\sqrt{5})$.
  
  By part (b), 
   $$\Delta = 5^5 \frac{(P^8 +11 P^4 Q^3 -Q^6)^2}{P^4Q^4}$$
@@ -2090,7 +2090,7 @@ By the table 13.2.C, $\Gal(L/\Q(\sqrt{5}) \simeq \mathrm{AGL}(1,\F_5)\cap A_5$.
    
    If $p = -5P,q = -D$, we obtain $f = x^5+ p x^3 +\frac{1}{5} p^2x +q$, which is Example 13.2.10. We know from this example and from Exercise 14 that the Galois group of $f$ over $\Q$ is $\mathrm{AGL}(1,\F_5)$.
   
-Here we assume that $f$ remains irreducible over $\Q(\sqrt{5})$.
+With the same proof as in the first bullet, $f$ remains irreducible over $\Q(\sqrt{5})$.
  
  By Exercise 14,
  $$
@@ -2145,7 +2145,7 @@ f &= x^5 -5 Px^3 + 5 P^2 x - D\\
 \end{align*}
  If the root $\alpha_2 = \zeta u - \zeta^{-1}v$ is real, then $u=v$, so $\left(\frac{q}{2} \right)^2 + \left(\frac{p}{5} \right)^5 = 0$, and this imply $\Delta(f) = 0$, in contradiction with the assumed separability of $f$.
  
- Therefore $\alpha_2 \not \in \Q(\sqrt{5})(\alpha_1)$, where $\alpha_1= u + v \in \R$ is a root of $f$, so $f$ doesn't split completely over $\Q(\sqrt{5})(\alpha_1)$.
+ Therefore $\alpha_2 \not \in \Q(\sqrt{5})(\alpha_1) \subset \R$, where $\alpha_1= u + v \in \R$ is a root of $f$, so $f$ doesn't split completely over $\Q(\sqrt{5})(\alpha_1)$.
  
 $\Gal(L/\Q(\sqrt{5}))$ is isomorphic to $\mathrm{AGL}(1,\F_5)\cap A_5$.
   
