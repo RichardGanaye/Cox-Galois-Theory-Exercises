@@ -1126,7 +1126,7 @@ Since $\alpha_1,\ldots,\alpha_m$ are the roots of $f$ in $K$, a fortiori in $KL$
 \begin{proof}
 In the proof of Theorem 12.2.5, we cannot use Theorem 7.2.5, since we don't know if $F \subset KL$ is a Galois extension, so we prefer a direct argument. 
 
-If $\sigma \in \Gal(KL/K)$, then $\sigma$ fixes $F \subset K$. Let $\alpha \in L$, and $f \in F[x]$ the minimal polynomial of $\alpha$ over $F$. Then $0 = \sigma(f(\alpha)) = f(\sigma(\alpha))$, so $\sigma(\alpha)$ is a root of $f$. Since $F \subset L$ is a normal extension, $\sigma(\alpha) \in L$, thus $\sigma(L) \subset L$. Moreover, $\sigma$ is $L$-linear, injective, and $[L:F] < \infty$, therefore $$\sigma(L) = L.$$
+If $\sigma \in \Gal(KL/K)$, then $\sigma$ fixes $F \subset K$. Let $\alpha \in L$, and $f \in F[x]$ the minimal polynomial of $\alpha$ over $F$. Then $0 = \sigma(f(\alpha)) = f(\sigma(\alpha))$, so $\sigma(\alpha)$ is a root of $f$. Since $F \subset L$ is a normal extension, $\sigma(\alpha) \in L$, thus $\sigma(L) \subset L$. Moreover, $\sigma$ is $F$-linear, injective, and $[L:F] < \infty$, therefore $$\sigma(L) = L.$$
 Write $\sigma|_L $ the map $\sigma|_L : L \to L$ defined by $ \alpha \mapsto \sigma(\alpha)$.
 
 \be
@@ -1779,4 +1779,5 @@ $$B(\beta) S'(\beta) = \Delta(S).$$
 \item[(c)] If we define $\Psi_i(y) = B(y) \Phi_i(y)$, then $$x_i = \frac{\Phi_i(\beta)}{S'(\beta)} = \frac{B(\beta) \Phi_i(\beta)}{B(\beta) S'(\beta)}  = \frac{\Psi_i(\beta)}{\Delta(S)}. $$
 \ee
 \end{proof}
+
 \end{document}
