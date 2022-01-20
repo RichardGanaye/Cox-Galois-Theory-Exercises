@@ -1181,7 +1181,7 @@ Therefore $\sqrt[3]{1 - 2 \sqrt{7}}  = -3/\beta \in K$.
 $$
 (x-u-v)(x-\omega u - \omega^2v)(x - \omega^2u - \omega v) = x^3 - 3uv x - (u^3 + v^3).
 $$
-If we use the evaluation $u \mapsto \beta = \sqrt[3]{1 - 2 \sqrt{7}}, v \mapsto \gamma = \sqrt[3]{1 - 2 \sqrt{7}}$, since
+If we use the evaluation $u \mapsto \beta = \sqrt[3]{1 + 2 \sqrt{7}}, v \mapsto \gamma = \sqrt[3]{1 - 2 \sqrt{7}}$, since
 $$uv \mapsto -3, u^3 + v^3 \mapsto  2,$$
 we obtain
 $$x^3+ 9 x - 2 = (x - (\beta + \gamma))(x -( \omega \beta + \omega^2 \gamma))(x - (\omega^2 \beta + \omega \gamma)),$$
@@ -1246,8 +1246,8 @@ Since $ p = [K:F] = [K:K \cap L]\cdot [K\cap L:F]$ is prime, the factor $ [K\cap
 If $[K\cap L:F] = 1$, then $F = K\cap L$ and so $\Gal(KL/K) \simeq \Gal(L/F)$.
 
 If $[K \cap L:F] = p$, then by the Galois correspondence (Theorem 7.3.1), $\Gal(L/K\cap L)$ corresponds to $K\cap L$, and
-$$[K \cap L : F] = p = (\Gal(L/K) : \Gal(L/K\cap L) ).$$
-Therefore $\Gal(KL/K) \simeq \Gal(L / K\cap L)$ is isomorphic to a subgroup of index $p$ in $\Gal(L/K)$.
+$$[K \cap L : F] = p = (\Gal(L/F) : \Gal(L/K\cap L) ).$$
+Therefore $\Gal(KL/K) \simeq \Gal(L / K\cap L)$ is isomorphic to a subgroup of index $p$ in $\Gal(L/F)$.
 \begin{center}
 \begin{tikzpicture}
     \node (L) at (1,4) {$L$};
@@ -1257,7 +1257,7 @@ Therefore $\Gal(KL/K) \simeq \Gal(L / K\cap L)$ is isomorphic to a subgroup of i
     \draw[->] (KinterL) edge (L);
      \node (e) at (5,4) {$\{e\}$};
     \node (GKinterL) at (5,2) {$\Gal(L/K\cap L)$};
-     \node (GK) at (5,0) {$\Gal(L/K) $};
+     \node (GK) at (5,0) {$\Gal(L/F) $};
     \draw[<-] (GKinterL) edge (e);
     \draw[<-] (GK) edge node[right]{$p$} (GKinterL);
 \end{tikzpicture}
