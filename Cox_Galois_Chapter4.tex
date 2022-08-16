@@ -196,7 +196,7 @@ $$F(\alpha_1,\ldots,\alpha_n) \simeq  F(x_1,\ldots,x_n).$$
 \item[(a)] Show that $g$ and $p$ are relatively prime in $F[x]$.
 \item[(b)] By part (a) and the Euclidean algorithm, we have $Ap+Bg = 1$ for some $A,B \in F[x]$. Prove that $B(\alpha) \in F[\alpha]$ is the multiplicative inverse of $g(\alpha)$.
 \end{enumerate}
-Do you see how this exercice relates to Exercise 5 of section 3.1?
+Do you see how this exercise relates to Exercise 5 of section 3.1?
 }
 
 \begin{proof}
@@ -214,13 +214,13 @@ If $q =\lambda \in F^*$, then $p = \lambda^{-1} u $ divides $u$, which divides $
 
 So $u = \mu \in F^*$ , $u \mid 1$. Consequently, for all $u \in F[x]$, $(u \mid p, u \mid g) \Rightarrow u\mid 1$: $p,g$ are relatively prime.
 
-\item[(b)]  Then there exists a BŽzout's relation between these two polynomials:
+\item[(b)]  Then there exists a B\'ezout's relation between these two polynomials:
 $$Ap + Bg = 1, \ A,B \in F[x].$$
 The evaluation of these polynomials in $\alpha$, since $p(\alpha)=0$, gives
 $$B(\alpha) g(\alpha) = 1, B(\alpha) \in F[\alpha]$$
 So $B(\alpha)$ is the multiplicative inverse of $\beta = g(\alpha)\neq 0$ in $F[\alpha]$: $F[\alpha]$ is a field.
 
-Note: We have proved in Exercice 3.5.1 that $F[x]/\langle f\rangle$, where $f$ is irreducible over $F$,  is a field with the same argumentation. Here $f = p$ is the minimal polynomial  of $\alpha$ over $F$, so it is irreducible over $f$.
+Note: We have proved in Exercise 3.5.1 that $F[x]/\langle f\rangle$, where $f$ is irreducible over $F$,  is a field with the same argumentation. Here $f = p$ is the minimal polynomial  of $\alpha$ over $F$, so it is irreducible over $f$.
 \end{enumerate}
 \end{proof}
 
@@ -332,7 +332,7 @@ Conclusion: There exists one and only one polynomial $g$ with degree at most $d$
 
 \paragraph{Ex. 4.2.2}
 
-{\it This exercise deals with Schšnemann's version of the irreducibility criterion.
+{\it This exercise deals with Sch\"onemann's version of the irreducibility criterion.
 \begin{enumerate}
 \item[(a)] Let $f(x) = (x-a)^n + pF(x)$, where $a\in \Z$ and $F(x) \in \Z[x]$ satisfy $\deg(F) \leq n$, and $p\nmid F(a)$. Prove that $f$ is irreducible over $\Q$.
 \item[(b)] More generally, let $g(x) \in \Z[x]$ be irreducible modulo $p$ (i.e., reducing its coefficients modulo $p$ gives an irreducible polynomial in $\F_p[x]$). Then let $f(x) = g(x)^n + pF(x)$, where $F[x] \in \Z[x]$ and $g(x)$ and $F(x)$ are relatively prime modulo $p$. Also assume that $\deg(F) \leq n \deg(g)$. Prove that $f$ is irreducible over $\Q$.
@@ -703,7 +703,7 @@ where $a_0,a_1,\ldots, a_{n-1}$ are unique.
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-Note that $\sqrt[4]{2}$ is a root of $p=x^4-2 \in \Q[x]$, and $p$ is irreducible over $\Q$ by Exercise 4.2.8 (or Schšnemann-Eisenstein Criterion for the prime 2). Thus $$[\Q(\sqrt[4]{2}) : \Q]=4.$$
+Note that $\sqrt[4]{2}$ is a root of $p=x^4-2 \in \Q[x]$, and $p$ is irreducible over $\Q$ by Exercise 4.2.8 (or Sch\"onemann-Eisenstein Criterion for the prime 2). Thus $$[\Q(\sqrt[4]{2}) : \Q]=4.$$
 $i$ is a root of $x^2+1$, which has no root in $\mathbb{R}$, a fortiori in $\Q[\sqrt[4]{2}]$. As its degree is 2, it is irreducible over $\Q[\sqrt[4]{2}]$, thus
 $$[\Q(\sqrt[4]{2},i) : \Q(\sqrt[4]{2})]  =2 .$$
 
@@ -737,7 +737,7 @@ $$f= x^4-4x^2+2.$$
 We show that $f$ is irreducible $\Q$.
 $f= x^4-4x^2+2 = a_4x^4+a_3x^3+a_2x^2+a_1x+a_0$ satisfies
 $2 \nmid a_4 =1, 2 \mid a_3=0,2\mid a_2=-4, 2 \mid a_1=0,2 \mid a_0=2,  2^2 \nmid a_0 = 2$, so 
-the Schšnemann-Eisenstein Criterion with $p=2$ implies that $f$ is irreducible over $\mathbb{Q}$.
+the Sch\"onemann-Eisenstein Criterion with $p=2$ implies that $f$ is irreducible over $\mathbb{Q}$.
 
 
 Conclusion: $f = x^4 -4x^2+2$ is irreducible over $\Q$. $f$ is the minimal polynomial of $\alpha = \sqrt{2+\sqrt{2}}$, thus
@@ -821,7 +821,7 @@ If $\alpha \not \in F$, then $F(\alpha) \neq F$, thus by (a), $F(\alpha) = L$.
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-The Schšnemann-Eisenstein Criterion with $p=2$ shows that $x^4-2$ is irreducible over $\Q$, and with $p=3$ shows that $f = x^3-3$ is irreducible over $\Q$ (alternatively, we can use Exercise 4.2.8).
+The Sch\"onemann-Eisenstein Criterion with $p=2$ shows that $x^4-2$ is irreducible over $\Q$, and with $p=3$ shows that $f = x^3-3$ is irreducible over $\Q$ (alternatively, we can use Exercise 4.2.8).
 
 \item[(b)]
 
@@ -930,7 +930,7 @@ So the induction is done.
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-In Example 4.2.4, we have seen that the Schšnemann-Eisenstein Criterion implies that, for all  $n\geq 2$, and $p$ prime,
+In Example 4.2.4, we have seen that the Sch\"onemann-Eisenstein Criterion implies that, for all  $n\geq 2$, and $p$ prime,
 $$f=x^n+px+p$$ is irreducible over $\mathbb{Q}$.
 Let $\alpha$ a root of $f$ in $\C$. Since $f$ is irreducible over $\Q$, the minimal polynomial of $\alpha$ over $\Q$ is $f$, and
 $$[\Q(\alpha) : \Q] = \deg(f) = n.$$
