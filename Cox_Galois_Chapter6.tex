@@ -548,7 +548,7 @@ $$[\Q(i,\sqrt[4]{2}) : \Q] = [\Q(i,\sqrt[4]{2}) : \Q(\sqrt[4]{2})] \ [\Q(\sqrt[4
 and so
 $$\vert \Gal(L:\Q) \vert = 8.$$
 
-If $\sigma \in \Gal(L/\Q)$, as $i$ is a root of $x^2+1 \in \Q[x]$, and $\sqrt[4]{2}$ a root of $x^4-2 \in \Q[x]$, then $\sigma(i) = \pm i$, et $\sigma(\sqrt[4]{2}) = i^k \sqrt[4]{2},k=0,1,2,3$.
+If $\sigma \in \Gal(L/\Q)$, as $i$ is a root of $x^2+1 \in \Q[x]$, and $\sqrt[4]{2}$ a root of $x^4-2 \in \Q[x]$, then $\sigma(i) = \pm i$, and $\sigma(\sqrt[4]{2}) = i^k \sqrt[4]{2},k=0,1,2,3$.
 
 As $\sigma$ is uniquely determined by the images of $ i,\sqrt[4]{2}$, and as $\vert \Gal(L:\Q) \vert = 8$, these 8 possibilities occur, thus $G=\Gal(L/\Q) = \{\sigma_{j,k} \ \vert \ 0\leq j \leq1, 0 \leq k \leq 3 \}$, where $\sigma_{j,k}$, which is identity on $\Q$, is determined by
 $$\sigma_{j,k}(i) = (-1)^j i, \sigma_{j,k}(\sqrt[4]{2}) = i^k \sqrt[4]{2}.$$
@@ -752,7 +752,7 @@ B  &\to   &  B \\
 \right.
 $
 \end{center}
-restrictions  of $\sigma$  $A,B$, satisfy $\sigma_1 \in S(A), \sigma_2 \in S(B)$.
+restrictions  of $\sigma$ on $A,B$, satisfy $\sigma_1 \in S(A), \sigma_2 \in S(B)$.
 
 The map
 \begin{center}
@@ -773,7 +773,7 @@ thus $\eta_1 = \sigma_1\tau_1, \eta_2 = \sigma_2\tau_2$. Consequently
 
 $\varphi(\sigma \circ \tau) = \varphi(\eta) = (\eta_1,\eta_2) = (\sigma_1  \tau_1, \sigma_2  \tau_2) = (\sigma_1, \sigma_2) (\tau_1,\tau_2) =  \varphi(\sigma)\varphi(\tau)$.
 
-$\varphi$ is injective : if $\varphi(\sigma) = (\sigma_1,\sigma_2) = (1_A,1_B)$, then $$\sigma(\alpha_i) = \alpha_i,\ i=1,\cdots r \ \mathrm{et}\ \sigma(\beta_j) = \beta_j,\ j=1,\cdots s.$$
+$\varphi$ is injective : if $\varphi(\sigma) = (\sigma_1,\sigma_2) = (1_A,1_B)$, then $$\sigma(\alpha_i) = \alpha_i,\ i=1,\cdots r \ \mathrm{and}\ \sigma(\beta_j) = \beta_j,\ j=1,\cdots s.$$
 
 As $L=F(\alpha_1,\cdots,\alpha_{r}, \beta_1,\cdots,\beta_{s})$, $\sigma = 1_L$.
 
@@ -846,13 +846,13 @@ $$\gamma_{a,b}^{-1} =  \gamma_{a^{-1}, -a^{-1}b}.$$
 \item[(c)]
 We show that $\mathrm{AGL}(1,\F_p)$ is a subgroup of $(S(\F_p),\circ)$.
 
-$\bullet$ By part (a), if $f \in\mathrm{AGL}(1,\F_p)$, then $f = \gamma_{a,b}$, where $a\neq 0$, thus $f$ est bijective :  $\mathrm{AGL}(1,\F_p) \subset S(\F_p)$, and $1_{\F_p} = \gamma_{1,0} \in \mathrm{AGL}(1,\F_p)$, so $\mathrm{AGL}(1,\F_p) \ne \emptyset$.
+$\bullet$ By part (a), if $f \in\mathrm{AGL}(1,\F_p)$, then $f = \gamma_{a,b}$, where $a\neq 0$, thus $f$ is bijective :  $\mathrm{AGL}(1,\F_p) \subset S(\F_p)$, and $1_{\F_p} = \gamma_{1,0} \in \mathrm{AGL}(1,\F_p)$, so $\mathrm{AGL}(1,\F_p) \ne \emptyset$.
 
 $\bullet$ If $f,g \in \mathrm{AGL}(1,\F_p)$, then $f = \gamma_{a,b}, g=\gamma_{c,d},\ a,b,c,d \in \F_p, a\neq 0, c\neq 0$.
 
 For all $u \in \F_p$, 
 
-$(g\circ f)(u) = \gamma_{c,d}(\gamma_{a,b}(u) = \gamma_{c,d}(au+b) = c(au+b)+d = ac u +(bc+d) = \gamma_{ac,bc+d}$.
+$(g\circ f)(u) = \gamma_{c,d}(\gamma_{a,b}(u)) = \gamma_{c,d}(au+b) = c(au+b)+d = ac u +(bc+d) = \gamma_{ac,bc+d}$.
 
 Therefore $g \circ f =  \gamma_{c,d} \circ \gamma_{a,b} = \gamma_{ac,bc+d}$ and $ac \neq 0$, so $g\circ f \in \mathrm{AGL}(1,\F_p)$.
 
@@ -875,7 +875,7 @@ $\mathrm{AGL}(1,\F_p)$ is a group under composition.
 Let $\varphi :  \mathrm{AGL}(1,\F_p) \to \F_p^*, \gamma_{a,b} \mapsto  \varphi(\gamma_{a,b}) =a$.
 \begin{enumerate}
 \item[(a)] This map is well defined, since 
-$$f = \gamma_{a,b} = \gamma_{c,d} \in \mathrm{AGL}(1,\F_p) \Rightarrow \forall u \in \F_p, au+b = cu+d \Rightarrow a=c.$$
+$$f = \gamma_{a,b} = \gamma_{c,d} \in \mathrm{AGL}(1,\F_p) \Rightarrow \forall u \in \F_p, au+b = cu+d \Rightarrow a=c,b=d.$$
 $\varphi$ is a group homomorphism: if $f = \gamma_{a,b} , g = \gamma_{c,d} \in \mathrm{AGL}(1,\F_p)$, then
 $$\varphi(g\circ f) = \varphi(\gamma_{c,d} \circ \gamma_{a,b}) = \varphi(\gamma_{ac,bc+d}) = ac =\varphi(g) \varphi(f).$$
 This homomorphism is surjective, since every  $a\in \F_p^*$ satisfies $a = \varphi(\gamma_{a,0})$, with $\gamma_{a,0} \in \mathrm{AGL}(1,\F_p)$.
@@ -886,7 +886,7 @@ As the image of the group homorphism $\varphi$ is $\F_p^*$, and its kernel $T$, 
 $$\mathrm{AGL}(1,\F_p)/T \simeq \F_p^*.$$
 
 \item[(b)]
-The map $\psi : T \to \F_p, \gamma_{1,b} \mapsto b$ is bijective, and satisfies $$\psi(\gamma_{1,b} \circ \gamma_{1,d}) = \psi(\gamma_{1,b+d}) = b+d = \psi(\gamma_{1,b})\psi(\gamma_{1,d}),$$ 
+The map $\psi : T \to \F_p, \gamma_{1,b} \mapsto b$ is bijective, and satisfies $$\psi(\gamma_{1,b} \circ \gamma_{1,d}) = \psi(\gamma_{1,b+d}) = b+d = \psi(\gamma_{1,b})+\psi(\gamma_{1,d}),$$ 
 So $\psi$ is a group homomorphism: $T \simeq \F_p$.
 
 \end{enumerate}
@@ -962,7 +962,7 @@ $\tilde{\phi}$ is a ring homomorphism: $\tilde{\phi}(1) = 1$ since $1 \in R$ and
 
 If $\tilde{\phi}(p/q) =0$, then $\phi(p)/\phi(q) =0$, thus $\phi(p) = 0$, $p=0$, $p/q = 0$ : $\tilde{\phi}$ is injective.
 
-If $g = u/v \in K$, as $\phi$ is surjective, $u = \phi(p),v=\phi(q),\  p,q\in R$. Then $g = \phi(p)/\phi(q) = \tilde{\phi}(p/q),\  p/q \in K$ : $\tilde{\phi}$ est surjective.
+If $g = u/v \in K$, as $\phi$ is surjective, $u = \phi(p),v=\phi(q),\  p,q\in R$. Then $g = \phi(p)/\phi(q) = \tilde{\phi}(p/q),\  p/q \in K$ : $\tilde{\phi}$ is surjective.
 
 $\tilde{\phi} : K \to K$ is a field automorphism.
 
@@ -1014,7 +1014,7 @@ $f(-x_0) = -x_0(x_0^4-6)+3 = \frac{24}{5}x_0+3> 0$.
 
 As $f$ is continuous, $\lim\limits_{x\to -\infty}f(x) = -\infty, f(-x_0)>0$, and $f$ is strictly increasing on $]-\infty, -x_0]$, the Intermediate Values Theorem shows that $f$ has a unique root in $]-\infty, -x_0]$.
 
-With a similar reasoning on  $[-x_0,x_0]$ and on $[x_0,+\infty[$, with $f(-x_0)<0,f(x_0)>0,\lim\limits_{x\to +\infty}f(x) = +\infty$, we prove that $f$ has a unique root in $[-x_0,x_0]$, and also in $[x_0,+\infty[$.
+With a similar reasoning on  $[-x_0,x_0]$ and on $[x_0,+\infty[$, with $f(-x_0)>0,f(x_0)<0,\lim\limits_{x\to +\infty}f(x) = +\infty$, we prove that $f$ has a unique root in $[-x_0,x_0]$, and also in $[x_0,+\infty[$.
 
 Conclusion: $f$ has exactly three real roots.
 \end{enumerate}
@@ -1033,7 +1033,7 @@ $$G_n=\langle (1,2), (2,3),\ldots,(n-1,n) \rangle$$
 Indeed, if  $g = (i,i+1) \circ (i+1,i+2)\circ \cdots \circ (n-1,n)  =  (i,i+1) (i+1,i+2)\cdots (n-1,n)$  (with the convention $g=e$ if $i=n$), then  $g \in G_n$ and $g(n) = i$
 (as ${\cal O}_n = [1,n]$, $G_n$ is a transitive subgroup of $S_n$).
 
-Conclusion: for all $i \in \{1,\ldots,n\}$, there exists $g \in G_n$ tel que $g(n) = i$.
+Conclusion: for all $i \in \{1,\ldots,n\}$, there exists $g \in G_n$ such that $g(n) = i$.
 
 \bigskip
 
@@ -1047,7 +1047,7 @@ The subgroup of  $S_n$ of the permutations fixing $n$ is identified with $S_{n-1
 $$\mathrm{Stab}_{S_n}(n) = S_{n-1}.$$
 
 Let $\sigma \in S_n$ and $i = \sigma(n)$.
-By part (a), there exist $g \in G_n$ such that $g(n) = i$. 
+By above conclusion, there exist $g \in G_n$ such that $g(n) = i$. 
 Then $$(g^{-1} \circ \sigma)(n) = n :  g' = g^{-1} \circ \sigma \in S_{n-1}.$$
 
 Thus $\sigma = g \circ g'$, where $g \in G_n, g' \in G_{n-1} \subset G_n$, therefore $\sigma \in G_n$.
@@ -1177,7 +1177,7 @@ $.
 
 $\chi(h)\chi(h') = (h,e)(h',e) = (h (e\cdot h'), e) = (hh',e) = \chi(hh')$ : $\chi$ is a group homorphisme from $H$ on the subgroup $H\times \{e\}$ of $H \rtimes G$.
 
-$\chi(h) = (e,e) \iff h=e$, thus $\chi$ est injective, and surjective since every element of $H\times\{e\}$ is of the form $(h,e) = \chi(h)$ : $H \simeq H\times \{e\}$.
+$\chi(h) = (e,e) \iff h=e$, thus $\chi$ is injective, and surjective since every element of $H\times\{e\}$ is of the form $(h,e) = \chi(h)$ : $H \simeq H\times \{e\}$.
 
 Therefore the sequence  $\{e\} \to H \to H\rtimes G \to G \to \{e\}$ is a short exact sequence, so $H\rtimes G$ is an extension of $H$ by $G$.
 \end{enumerate}
@@ -1408,7 +1408,7 @@ The roots of $f$ being polynomials in $\alpha$, the splitting field of $f$ is $F
 
 Moreover, as $\theta_1 = x, \theta_2 = -x, \theta_4 = -\theta_3$ and $\theta_3,\theta_4$ are odd functions,
 
- $\theta_1(\theta_i(\alpha)) = \theta_i(\alpha) = \theta_i(\theta(\alpha)),\ i=2,3,4$.
+ $\theta_1(\theta_i(\alpha)) = \theta_i(\alpha) = \theta_i(\theta_1(\alpha)),\ i=2,3,4$.
 
 $\theta_2(\theta_i(\alpha)) = - \theta_i(\alpha) = \theta_i(-\alpha) = \theta_i(\theta_2(\alpha)),\ i=3,4$.
 
@@ -1428,25 +1428,25 @@ $x^4-10x^2+1 = 0$ is an Abelian equation.
 \begin{proof}
 We show that the Galois group $G$ of an Abelian equation is Abelian. 
 
-Let $L=F(\alpha_1,\ldots,\alpha_n)$ a splitting field of $f \in F[x]$, et $\alpha=\alpha_1$.
+Let $L=F(\alpha_1,\ldots,\alpha_n)$ a splitting field of $f \in F[x]$, and $\alpha=\alpha_1$.
 
 By definition of an Abelian equation,  there exists $\theta_i \in F(x)$ tels que $\alpha_i = \theta_i(\alpha)\ (i=1,\ldots,n)$, so $L = F(\alpha)$ (see Exercise 1).
 
 $\bullet$ 
-$\sigma \in \Gal(L/F)$, et $f\in F[x]$, thus $\sigma(\alpha)$ is also a root $\alpha_i,1\leq i \leq n$ of $f$:
+$\sigma \in \Gal(L/F)$, and $f\in F[x]$, thus $\sigma(\alpha)$ is also a root $\alpha_i,1\leq i \leq n$ of $f$:
 
  $\sigma(\alpha) = \alpha_i = \theta_i(\alpha)$. Similarly $\tau(\alpha) = \theta_j(\alpha),1\leq j\leq n$.
 
 $\bullet$ 
 if $\sigma\tau = \tau \sigma$, then $\sigma( \tau (\alpha)) = (\sigma \tau)(\alpha) = (\tau \sigma)(\alpha) = \tau(\sigma(\alpha))$.
 
-Rciproquement, si $\sigma( \tau (\alpha))  = \tau(\sigma(\alpha))$, then $(\sigma \tau)(\alpha) = (\tau \sigma)(\alpha)$.
+Conversely, if $\sigma( \tau (\alpha))  = \tau(\sigma(\alpha))$, then $(\sigma \tau)(\alpha) = (\tau \sigma)(\alpha)$.
 
-As $L = F(\alpha)$, and as  $\sigma \tau$ and $\tau \sigma$ are identity over $f$ $F$ and send $\alpha$ on the same element, $\sigma\tau = \tau \sigma$.
+As $L = F(\alpha)$, and as  $\sigma \tau$ and $\tau \sigma$ are identity over $F$ and send $\alpha$ on the same element, $\sigma\tau = \tau \sigma$.
 $$\sigma \tau = \tau \sigma \iff \sigma( \tau (\alpha))  = \tau(\sigma(\alpha)).$$
 
 $\bullet$ $\sigma(\tau(\alpha)) = \sigma(\theta_j(\alpha))$.
-Moreover $\sigma$ is a $F$-automorphism of fields, et $\theta_j \in F(x)$ a polynomial, thus $\sigma(\theta_j(\alpha)) = \theta_j(\sigma(\alpha)) = \theta_j(\theta_i(\alpha)$. Therefore 
+Moreover $\sigma$ is a $F$-automorphism of fields, and $\theta_j \in F(x)$ a polynomial, thus $\sigma(\theta_j(\alpha)) = \theta_j(\sigma(\alpha)) = \theta_j(\theta_i(\alpha))$. Therefore 
 $\sigma(\tau(\alpha)) = \theta_j(\theta_i(\alpha))$. Similarly $\tau(\sigma(\alpha)) = \theta_i(\theta_j(\alpha))$.
 
 The equation $f=0$ being Abelian, $\theta_j(\theta_i(\alpha)) = \theta_i(\theta_j(\alpha))$, thus $\sigma(\tau(\alpha)) = \tau(\sigma(\alpha))$, so $\sigma \tau=\tau \sigma$, and this is true for all  $\sigma,\tau \in \Gal(L/F)$: $\Gal(L/F)$ is Abelian.
