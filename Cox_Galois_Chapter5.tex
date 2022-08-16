@@ -65,7 +65,7 @@ The roots of $x^3-2$ are $\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}$. 
 
 As $\omega,\sqrt[3]{2} \in \Q(\omega,\sqrt[3]{2})$, and as $\Q(\omega,\sqrt[3]{2})$ is a field, $\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}$ are elements of $\Q(\omega,\sqrt[3]{2})$. Since $\Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}) $ is the smallest subfield of $\C$ containing $\Q$ and $\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}$,
 $$\Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}) \subset \Q(\omega,\sqrt[3]{2}).$$
-Moreover  $ \omega = \omega\sqrt[3]{2} / \sqrt[3]{2} \in \Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2})$ et $\sqrt[3]{2} \in \Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2})$. As $\Q(\omega,\sqrt[3]{2})$ is the smallest subfield of $\C$ containing these two elements, 
+Moreover  $ \omega = \omega\sqrt[3]{2} / \sqrt[3]{2} \in \Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2})$ and $\sqrt[3]{2} \in \Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2})$. As $\Q(\omega,\sqrt[3]{2})$ is the smallest subfield of $\C$ containing these two elements, 
  $$\Q(\omega,\sqrt[3]{2}) \subset \Q(\sqrt[3]{2},\omega \sqrt[3]{2},\omega^2 \sqrt[3]{2}).$$
  
 These two subfields are identical.
@@ -187,7 +187,7 @@ f = \left(x-\sqrt{2+\sqrt{2}}\right)\left(x+\sqrt{2+\sqrt{2}}\right)\left(x-\sqr
 \end{align}
 
 We show that $f$ is irreducible over $\Q$.
-The Schönemann-Eisenstein Criterion,  with $p=2$ applies to the polynomial $f= x^4-4x^2+2 = a_4x^4+a_3x^3+a_2x^2+a_1x+a_0$ 
+The Sch≈°nemann-Eisenstein Criterion,  with $p=2$ applies to the polynomial $f= x^4-4x^2+2 = a_4x^4+a_3x^3+a_2x^2+a_1x+a_0$ 
 ($2 \nmid a_4 =1, 2 \mid a_3=0,2\mid a_2=-4, 2 \mid a_1=0,2 \mid a_0=2,  2^2 \nmid a_0 = 2$). $f$ is so irreducible over $\mathbb{Q}$.
 
 Consequently, $f$ of degree 4, is the minimal polynomial of $\alpha=  \sqrt{2+\sqrt{2}}$ over $\Q$, so,
@@ -254,7 +254,7 @@ In conclusion, $L = \F_3(\alpha)$ is the splitting field of $x^3-x+1$ over $\F_3
 
 \paragraph{Ex. 5.1.8}
 
-{\it Let n be a positive integer. Then the polynomial $f = x^n-2$ is irreducible over $\Q$ by the Schönemann-Eisenstein Criterion for the prime 2.
+{\it Let n be a positive integer. Then the polynomial $f = x^n-2$ is irreducible over $\Q$ by the Sch≈°nemann-Eisenstein Criterion for the prime 2.
 \begin{enumerate}
 \item[(a)] Determine the splitting field $L$ of $f$ over $\Q$.
 \item[(b)] Show that $[L:\Q] = n(n-1)$ when $n$ is prime.
@@ -340,7 +340,7 @@ $[L : F] = n!\  \Rightarrow$ $f$ is irreducible over $F$.
 \item[(b)]
 We give a counterexample of the converse : by Exercise 5, $L = \Q(\sqrt{2}+\sqrt{3})$ is the splitting field of the irreducible polynomial $f = x^4-10x^2+1$, but 
 
-$[L : \Q] = [\Q(\sqrt{2},\sqrt{3}):\Q] = 4 \neq 4! = 24$.
+$[L : \Q] = [\Q(\sqrt{2}+\sqrt{3}):\Q] = 4 \neq 4! = 24$.
 
 \end{enumerate}
 \end{proof}
@@ -356,7 +356,7 @@ If $F \subset K \subset L$, and if $L$ is the splitting field of $f$ over $K$, t
 
 Indeed, $L$ contains the roots $\alpha_1,\ldots,\alpha_n$ of $f$, and $L = F(\alpha_1,\ldots\alpha_n)$. Moreover $f = c(x-\alpha_1)\cdots(x-\alpha_n), c\in F$.
 
-$F \subset K \subset L$ and $\alpha_1,\ldots,\alpha_n \in L$, thus $K(\alpha_1,\ldots,\alpha_n) \subset L = F(\alpha_1,\ldots,\alpha_n) \subset K(\alpha_1,\ldots,\alpha_n)$. Consequently, $L = K(\alpha_1,\ldots,\alpha_n)$, and $f$ splits completely over the extension $K \subset L$ since $c \in F \subset K$. The conditions (a), (b) of definition 5.1.1 are filled: $L$ is the splitting field of $f$ over $K$.
+$F \subset K \subset L$ and $\alpha_1,\ldots,\alpha_n \in L$, thus $K(\alpha_1,\ldots,\alpha_n) \subset L = F(\alpha_1,\ldots,\alpha_n) \subset K(\alpha_1,\ldots,\alpha_n)$. Consequently, $L = K(\alpha_1,\ldots,\alpha_n)$, and $f$ splits completely over the extension $K \subset L$ since $c \in F \subset K$. The conditions (a), (b) of definition 5.1.1 are filled: $L$ is the splitting field of $f$ over $F$.
 
 Note: therefore, if $F\subset K \subset L$, and if $F \subset L$ is a normal extension, so is $K \subset L$.
 \end{proof}
@@ -399,15 +399,15 @@ $[L_1:F_1] < \infty$. Let $(f_1,\ldots,f_d)$ a basis of $L_1$ over $F_1$. We sho
 $\bullet$ If \ $\sum_{i=1}^d b_i \overline{\varphi}(f_i) = 0$, where $b_i \in F_2$, then, since $\varphi : F_1\to F_2$ is surjective, ${b_i = \varphi(a_i)}, \ a_i \in F_1, \ i=1,\ldots d$.
 
 As the restriction of $\overline{\varphi}$ to $F_1$ is $\varphi$, $b_i =\varphi(a_i) =  \overline{\varphi}(a_i)$. $\overline{\varphi}$ being a ring homomorphism,
-$$0= \sum_{i=1}^d b_i \overline{\varphi}(f_i) = \sum_{i=1}^d \overline{\varphi}(a_i) \overline{\varphi}(f_i) = \overline{\varphi}\left (\sum_{i=0}^d a_i f_i\right).$$
-As the kernel of $\overline{\varphi}$ is $0$, $\sum_{i=0}^d a_i f_i =0$, where the family $(f_i)_{0\leq i \leq d}$ is free, thus $a_1=\cdots=a_d=0$, and since $b_i = \varphi(a_i)$, $b_1=\cdots=b_d=0$. So the family $(\overline{\varphi}(f_i))_{1\leq i \leq d}$ is free.
+$$0= \sum_{i=1}^d b_i \overline{\varphi}(f_i) = \sum_{i=1}^d \overline{\varphi}(a_i) \overline{\varphi}(f_i) = \overline{\varphi}\left (\sum_{i=1}^d a_i f_i\right).$$
+As the kernel of $\overline{\varphi}$ is $0$, $\sum_{i=1}^d a_i f_i =0$, where the family $(f_i)_{1\leq i \leq d}$ is free, thus $a_1=\cdots=a_d=0$, and since $b_i = \varphi(a_i)$, $b_1=\cdots=b_d=0$. So the family $(\overline{\varphi}(f_i))_{1\leq i \leq d}$ is free.
 
 {\medskip}
 
  $\bullet$ Let $y $ be any element in $L_2$. As $\overline{\varphi}$ is surjective, there exists $x\in L_1$ such that $y =\overline{\varphi}(x)$.
- $(f_1,\cdots,f_d)$ being a basis, there exists $(a_0,\cdots,a_d) \in F_1^d$ such that  $x = \sum_{i=0}^d a_i f_i$.
+ $(f_1,\cdots,f_d)$ being a basis, there exists $(a_1,\cdots,a_d) \in F_1^d$ such that  $x = \sum_{i=1}^d a_i f_i$.
  
- Then $$y = \overline{\varphi}(x) = \sum_{i=0}^d \overline{\varphi}(a_i) \overline{\varphi}(f_i) =  \sum_{i=0}^d \varphi(a_i) \overline{\varphi}(f_i) =  \sum_{i=0}^d b_i\overline{\varphi}(f_i),$$
+ Then $$y = \overline{\varphi}(x) = \sum_{i=1}^d \overline{\varphi}(a_i) \overline{\varphi}(f_i) =  \sum_{i=1}^d \varphi(a_i) \overline{\varphi}(f_i) =  \sum_{i=1}^d b_i\overline{\varphi}(f_i),$$
 where $b_i = \varphi(a_i) \in F_2$. Consequently $(\overline{\varphi}(f_i))_{1\leq i \leq d}$ is a basis of $L_2/F_2$, and so
  
 $$[L_2:F_2] = d =[L_1:F_1].$$
@@ -438,7 +438,7 @@ As $\Q(\sqrt{2},\sqrt{3})$ is the splitting field of $x^2-3$ over $\mathbb{Q}(\s
 \begin{proof}
 This is equivalent to show that $\Q(\sqrt[4]{2})$ is not a normal extension of $\Q$.
 
-$x^4 - 2$ is an irreducible polynomial over $\Q$ by Schönemann-Eisenstein Criterion with $p=2$.
+$x^4 - 2$ is an irreducible polynomial over $\Q$ by Sch≈°nemann-Eisenstein Criterion with $p=2$.
 
 The roots of the minimal polynomial of $\sqrt[4]{2}$ over $\Q$ are $\sqrt[4]{2}, i \sqrt[4]{2},-\sqrt[4]{2},-i\sqrt[4]{2}$.
 
@@ -471,7 +471,7 @@ Let $g \in F[x]$ any irreducible polynomial, and $\alpha$ a root of $g$ in $L$. 
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-As $\Q(\zeta_n)$ contient $\zeta_n^k$ pour tout $k \in \Z$, 
+As $\Q(\zeta_n)$ contains $\zeta_n^k$ for all $k \in \Z$, 
 $$\Q(\zeta_n) = \Q(1,\zeta_n,\zeta_n^2,\cdots,\zeta_n^{n-1}).$$
 $\Q(1,\zeta_n,\zeta_n^2,\cdots,\zeta_n^{n-1}) = \Q(\zeta_n)$ is the splitting field of $x^n-1$ over $\Q$. 
 
@@ -534,7 +534,7 @@ thus
 \end{align*}
 
 \item[(b)]
-By \eqref{eq5.3.1:1}, lthe definition of the product of two polynomials gives
+By \eqref{eq5.3.1:1}, the definition of the product of two polynomials gives
 $$gh = \sum_{k=0}^{m+n} \left(\sum_{i=0}^k a_i b_{k-i} \right)x^k .$$
 Thus 
 $$(gh)'= \sum_{k=1}^{m+n} k\left(\sum_{i=0}^k a_i b_{k-i} \right)x^{k-1}=\sum_{k=0}^{m+n-1} (k+1)\left(\sum_{i=0}^{k+1} a_i b_{k+1-i} \right)x^{k}.$$
@@ -592,7 +592,7 @@ $$(\alpha- \beta)^p = (\alpha+ \beta)^p=\alpha^p + \beta^p=\alpha^p - \beta^p.$$
 Let $H : F \to F, x \mapsto x^p$ the Frobenius homomorphism of $F$.
 By induction, we show that $H^n (x) = x^{p^n}$ for all  $x\in F$ : 
 
-$H^0(x) = x = x^{p^0}$, et 
+$H^0(x) = x = x^{p^0}$, and 
 
 $H^n(x) = x^{p^n} \Rightarrow H^{n+1}(x) = H(H^n(x)) = (x^{p^n})^p = x^{p.p^n} = x^{p^{n+1}}$.
 
@@ -618,7 +618,7 @@ $$(\alpha+\beta)^{p^e} = \alpha^{p^e}+\beta^{p^e}.$$
  
  If $p \nmid n$, then $n\neq 0$ in the field $F$ of characteristic $p$, thus $n$ is a unit in $F[x]$.
  
- $x(nx^{n-1}) - n(x^n-1) = n = xf'-nf$ is a Bézout's relation  between $f$ and $f'$, which proves that $f\wedge f'=1$. So $f$ is a separable polynomial, and the $n$ roots of $f$ in its splitting field, which are the $n$th roots of unity, are distinct.
+ $x(nx^{n-1}) - n(x^n-1) = n = xf'-nf$ is a B\'ezout's relation  between $f$ and $f'$, which proves that $f\wedge f'=1$. So $f$ is a separable polynomial, and the $n$ roots of $f$ in its splitting field, which are the $n$th roots of unity, are distinct.
  
  \item[(b)]
 If the characteristic of $F$ is $p$, by Exercise 2,
@@ -639,7 +639,7 @@ Let $f =x^n + a_1 x^{n-1}+ \cdots+a_0 \in \Z[x]$ be a monic nonconstant polynomi
 
 In the section 2.4, $\Delta(f)$ is defined by 
 $$\Delta(f) = \Delta(-a_1,\cdots,(-1)^i a_i, \cdots,(-1)^n a_n).$$
-obtained by applying to $\Delta(\sigma_1,\cdots,\sigma_n)$ the evaluation homomorphism defined by $\sigma_i \mapsto (-1)^ia_i$, which sends $\tilde{f} = x^n-\sigma_1 x^{n-1}+\cdots+(-1)^n \sigma_n$ on $f$, and $\Delta$ sur $\Delta(f)$.
+obtained by applying to $\Delta(\sigma_1,\cdots,\sigma_n)$ the evaluation homomorphism defined by $\sigma_i \mapsto (-1)^ia_i$, which sends $\tilde{f} = x^n-\sigma_1 x^{n-1}+\cdots+(-1)^n \sigma_n$ on $f$, and $\Delta$ over $\Delta(f)$.
 
 Write $f_p$ the reduction of $f$ modulo $p$ : 
 
@@ -765,7 +765,7 @@ Let $f_i$ be the minimal polynomial of $\alpha_i$ over $F$. Then $f_i$ divides $
 }
 
 \begin{proof}
-Soit $F$ un corps de caractéristique $p$, et $f \in F[x]$ irréductible sur $F$, de degré $n\geq 1$.
+Let $F$ is a field of characteristic $p$, and $f \in F[x]$ irr≈Ωductible over $F$, de degr≈Ω $n\geq 1$.
 \begin{enumerate}
 \item[(a)]
 We suppose first that $f'\neq 0$.
@@ -819,9 +819,9 @@ Let $F = k(t,u)$, where $t,u$ are two variables,  $f = (x^2-t)(x^3-u)$, and $\al
 
 \begin{enumerate}
 \item[(a)]
-The Exercice 4.2.9, applied to the field $k(u)$,  shows that $x^2-t$  has no root in $F  = k(t,u) = k(u) (t)$, so it is irreducible over $F$. So $x^2 -t$ is the minimal polynomial of $\alpha$ over $F$. 
+The Exercise 4.2.9, applied to the field $k(u)$,  shows that $x^2-t$  has no root in $F  = k(t,u) = k(u) (t)$, so it is irreducible over $F$. So $x^2 -t$ is the minimal polynomial of $\alpha$ over $F$. 
 
-In $L$, $x^2 - u = (x-\alpha)(x+\alpha)$, and $\alpha \neq -\alpha$, otherwise $2 \alpha = 0$, with $2=-1\neq 0$ in $k$, and $\alpha \neq 0$ since $\alpha^2 = t \ne 0$.
+In $L$, $x^2 - t = (x-\alpha)(x+\alpha)$, and $\alpha \neq -\alpha$, otherwise $2 \alpha = 0$, with $2=-1\neq 0$ in $k$, and $\alpha \neq 0$ since $\alpha^2 = t \ne 0$.
 
 Thus the minimal polynomial $x^2 - u \in F[x]$ of $\alpha$ over $F$ is separable, so $\alpha$ is separable.
 
@@ -963,7 +963,7 @@ Counterexample in $F = \F_3(t)$: the polynomial $f= x^3 - t \in \F_3(t)[x]$ is i
 \begin{proof}
 By Proposition 5.3.2(c), $f \in F[x]$ is separable if and only if $f$ is nonconstant and  $f\wedge f' = 1$.
 
-If $f, f'$ have a common root $\alpha$ in an extension  $L$ of $F$, then $x-\alpha$ divides $f$ dans $L[x]$, and also $f'$, so divides their gcd in  $L[x]$, and so $\mathrm{gcd}(f,f') \ne 1$ (we know that the gcd is the same in $F[x]$ and in $L[x]$).
+If $f, f'$ have a common root $\alpha$ in an extension  $L$ of $F$, then $x-\alpha$ divides $f$ in $L[x]$, and also $f'$, so divides their gcd in  $L[x]$, and so $\mathrm{gcd}(f,f') \ne 1$ (we know that the gcd is the same in $F[x]$ and in $L[x]$).
 
 We have proved that if $f\wedge f' = 1$, then $f,f'$ have no common root in any extension of $F$.
 
@@ -1254,7 +1254,7 @@ The remainder of of the proof is unchanged, and at each step of the induction, w
 
 \paragraph{Ex. 5.4.4}
 
-{\it In the extension $F \subset L$ of example 5.4.4, we have $F=k(t,u)$, where $k$ has characteristic $p$ and $L$ is the splitting field of $(x^p-t)(x^p-u) \in F[x]$. We also have $\alpha,\beta \in L$ satisfying $\alpha^p=y, \beta^p=u$. Prove the following properties of $F \subset L$:
+{\it In the extension $F \subset L$ of example 5.4.4, we have $F=k(t,u)$, where $k$ has characteristic $p$ and $L$ is the splitting field of $(x^p-t)(x^p-u) \in F[x]$. We also have $\alpha,\beta \in L$ satisfying $\alpha^p=t, \beta^p=u$. Prove the following properties of $F \subset L$:
 \begin{enumerate}
 \item[(a)] $L = F(\alpha,\beta)$ and $[L:F] = p^2$.
 \item[(b)] $[F(\gamma):F] = p$ for all $\gamma \in L \setminus F$.
@@ -1271,7 +1271,7 @@ As $\alpha,\beta\in L$, and as $F\subset L$, $F(\alpha,\beta)\subset L$.
 Since $F$ has characteristic $p$, $f=(x^p-t)(x^p-u)  = (x-\alpha)^p(x-\beta)^p$ has only the roots $\alpha,\beta$. The splitting field of $f$ over $F$ is so $F(\alpha,\beta)$.
 $$L = F(\alpha,\beta).$$
 
-The polynomial $x^p -u$ has no root in  $k(t,u,\alpha) = F(\alpha)$ by Exercise 4.2.9. applied to the field $k(t,\alpha)$. Moreover, $p$ is prime, so Proposition 4.2.6 shows that $h=x^p-u$ is irreducible over $F(\alpha)$. Therefore $h$ is the minimal polynomial of $\beta$ sur $F(\alpha)$. Consequently, 
+The polynomial $x^p -u$ has no root in  $k(t,u,\alpha) = F(\alpha)$ by Exercise 4.2.9. applied to the field $k(t,\alpha)$. Moreover, $p$ is prime, so Proposition 4.2.6 shows that $h=x^p-u$ is irreducible over $F(\alpha)$. Therefore $h$ is the minimal polynomial of $\beta$ over $F(\alpha)$. Consequently, 
  $$[L : F(\alpha)] = [F(\alpha,\beta):F(\alpha)] = \deg(x^p-u) = p.$$
  With the same argument, $x^p - t$ has no root in  $F(t)$ and is irreducible. $x^p-t$ is the minimal polynomial of $\alpha$ over $F$, thus $[F(\alpha):F] = p$.
  
@@ -1382,15 +1382,15 @@ f(\alpha+\beta-x) &= -x^3 +(\alpha+\beta)^3 - u \in F(\alpha+\beta)[x]
 \end{align*}
 vanish at $\alpha$, since $g(\alpha) = 0, f(\beta) = 0$, and they are both in ${F(\alpha+\beta)[x]}$.
 
-Thus $x-\alpha \mid h(x) = \mathrm{gcd}(g(x),f(\alpha+\beta -x)$.
+Thus $x-\alpha \mid h(x) = \mathrm{gcd}(g(x),f(\alpha+\beta -x))$.
 
 $1\leq \deg(h) \leq 2$. If $\deg(h) = 2$, as $h\mid g$, we would have $h=g = (x-\alpha)(x+\alpha)$, and then $x+\alpha  \mid h \mid f(\alpha+\beta-x)$.
 
 As $f(x) = (x-\beta)^3$, then $f(\alpha+\beta-x) = -(x-\alpha)^3$, which is not divisible by $x+\alpha$, since $-\alpha \neq \alpha$.
 
-Therefore $\deg(h) = 1$, and $h(x) =\mathrm{pgcd}(g(x),f(\alpha+\beta - x)) = x-\alpha$.
+Therefore $\deg(h) = 1$, and $h(x) =\mathrm{gcd}(g(x),f(\alpha+\beta - x)) = x-\alpha$.
 
-Thus there exists a Bézout's relation 
+Thus there exists a B\'ezout's relation 
 $$A(x) g(x) + B(x) f(\alpha+\beta - x) = x- \alpha, \ A,B \in F(\alpha+\beta)[x].$$
 
 This proves that $\alpha \in F(\alpha+\beta)$, thus also $\beta = (\alpha+ \beta) - \alpha \in F(\alpha+\beta)$, which implies that $L = F(\alpha,\beta) = F(\alpha+\beta)$ : $\alpha+\beta$ is a primitive element of $L/F$.
