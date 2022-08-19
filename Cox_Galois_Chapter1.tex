@@ -464,7 +464,7 @@ and similarly in the two other cases.
 By definition,
 $$\sqrt{\Delta} = (x_1-x_2)(x_1-x_3)(x_2-x_3).$$
 
-Si $\sigma \in S_3$, we define $$\sigma \cdot \sqrt{\Delta}  = (x_{\sigma(1)}-x_{\sigma(2)})(x_{\sigma(1)}-x_{\sigma(3)})(x_{\sigma(2)}-x_{\sigma(3)}).$$
+If $\sigma \in S_3$, we define $$\sigma \cdot \sqrt{\Delta}  = (x_{\sigma(1)}-x_{\sigma(2)})(x_{\sigma(1)}-x_{\sigma(3)})(x_{\sigma(2)}-x_{\sigma(3)}).$$
 
 If $\tau = (1\ 2)$, 
  $$\tau \cdot \sqrt{\Delta}  = (x_2-x_1)(x_2-x_3)(x_1-x_3) = -\sqrt{\Delta}.$$
@@ -551,7 +551,7 @@ Conclusion : the discriminant of  $y^3+py+q$ is $$\Delta = -4p^3-27q^2.$$
 
 \paragraph{Ex. 1.3.2}
 
-{\it Let $f(y) = y^3+py+q$. The purpose of Exercises 2 to 5 is to prove Theorem 1.3.1 geometrically using graphing techniques. The proof breaks up into three cases corresponding to $p>0,p=0$, and $p<0$. This exercice will consider the case $p>0$.
+{\it Let $f(y) = y^3+py+q$. The purpose of Exercises 2 to 5 is to prove Theorem 1.3.1 geometrically using graphing techniques. The proof breaks up into three cases corresponding to $p>0,p=0$, and $p<0$. This exercise will consider the case $p>0$.
 \begin{enumerate}
 \item[(a)] Explain why $\Delta <0$.
 \item[(b)] Analyse the sign of $f'(y)$, and show that $f(y)$ is always increasing.
@@ -570,7 +570,7 @@ For all $y\in \mathbb{R}$, $f'(y) = 3y^2+p>0$,  thus $f$ is strictly increasing 
 \item[(c)]
 As $f$ is strictly increasing on $\mathbb{R}$, $f$ is injective (one to one).
 
-Moreover $\lim\limits_{y\to +\infty} f(y) = +\infty$, and $\lim\limits_{y\to -\infty} f(y) = -\infty$, so there exists $x_1$ such that $f(x_1)<0$ and there exists $x_2$ such that $f(x_2)>0$. As $f$ is a continuous function, the intermediate values theorem gives the existence of a real root of $f$. As $f$ is injective, this is the only real root.
+Moreover $\lim\limits_{y\to +\infty} f(y) = +\infty$, and $\lim\limits_{y\to -\infty} f(y) = -\infty$, so there exists $y_1$ such that $f(y_1)<0$ and there exists $y_2$ such that $f(y_2)>0$. As $f$ is a continuous function, the intermediate values theorem gives the existence of a real root of $f$. As $f$ is injective, this is the only real root.
 
 \end{enumerate}
 \end{proof}
@@ -591,7 +591,7 @@ Moreover $\lim\limits_{y\to +\infty} f(y) = +\infty$, and $\lim\limits_{y\to -\i
  The hypothesis of theorem 1.3.1 is $\Delta \neq 0$, so $\Delta <0$.
  
  \item[(b)]
-For all $y \in \mathbb{R}$, $f'(y) = 3y^2 \geq 0$ et $f'(y) = 0$ only if $x=0$, so $f$ is strictly increasing. With the same argument already given in Ex. 1.3.2, $f$ has a unique real root, written $\sqrt[3]{-q}$.
+For all $y \in \mathbb{R}$, $f'(y) = 3y^2 \geq 0$ and $f'(y) = 0$ only if $y=0$, so $f$ is strictly increasing. With the same argument already given in Ex. 1.3.2, $f$ has a unique real root, written $\sqrt[3]{-q}$.
 \end{enumerate}
 \end{proof}
 
@@ -612,9 +612,9 @@ Case $p<0$.
 \begin{enumerate}
 
 \item[(a)]
-$f'(y) = 3y^2+p < 0 \iff y^2<-p/3 \iff \alpha < f'(y) < \beta\  (\alpha = \sqrt{-p/3} = -\beta)$.
+$f'(y) = 3y^2+p < 0 \iff y^2<-p/3 \iff \beta < f'(y) < \alpha\  (\alpha = \sqrt{-p/3} = -\beta)$.
 
-$f$ is strictly increasing on $]-\infty,\beta]$ and on $[\alpha, +\infty[$, strictly decreasing sur $[\beta,\alpha]$. $\beta$ is a local maximum, and $\alpha$ a local minimum. As $f$ is decreasing on  $[\beta,\alpha]$, $f(\beta) > f(\alpha)$.
+$f$ is strictly increasing on $]-\infty,\beta]$ and on $[\alpha, +\infty[$, strictly decreasing on $[\beta,\alpha]$. $\beta$ is a local maximum, and $\alpha$ a local minimum. As $f$ is decreasing on  $[\beta,\alpha]$, $f(\beta) > f(\alpha)$.
 
 \item[(b)] As $f$ is continuous, and  $\lim\limits_{y\to +\infty} f(y) = +\infty$,  $\lim\limits_{y\to -\infty} f(y) = -\infty$ and $f$ strictly  monotonous on each interval $]-\infty,\beta],[\beta,\alpha],[\alpha, +\infty[$, the intermediate value theorem gives three roots if $f(\alpha)f(\beta)<0$, and a unique root if $f(\alpha) f(\beta)>0$.
 
@@ -680,7 +680,7 @@ y^3-15y-4 &= (y-4)(y^2+4y+1)\\
 the three roots of $y^3-15y-4$ are $4,-2+\sqrt{3},-2-\sqrt{3}$ and are all real.
 
 The Cardan's formulas, with $q/2 = -2,p/3=-5 $, give 
-$$-\frac{q}{2}+ \sqrt{\left (\frac{q}{2}\right)^2+\left (\frac{p}{3}\right)^3} = 2 + \sqrt{4 - 125} = 2 + i \sqrt{11}.$$
+$$-\frac{q}{2}+ \sqrt{\left (\frac{q}{2}\right)^2+\left (\frac{p}{3}\right)^3} = 2 + \sqrt{4 - 125} = 2 + 11i.$$
 
 
 Using the Bombelli's note :
@@ -740,7 +740,7 @@ The discriminant of $f$ is given by
 \paragraph{Ex. 1.3.10}
 
 {\it 
-The goal of this exercice is to prove Theorem 1.3.3. Let $y^3+py+q=0$ be a cubic equation with positive discriminant. Consider the substitution $y = \lambda t$, which transforms the given equation into $\lambda^3 t^3 +\lambda pt+q = 0$.
+The goal of this exercise is to prove Theorem 1.3.3. Let $y^3+py+q=0$ be a cubic equation with positive discriminant. Consider the substitution $y = \lambda t$, which transforms the given equation into $\lambda^3 t^3 +\lambda pt+q = 0$.
 \begin{enumerate}
 \item[(a)] Show that Exercises 2 and 3 imply that $p<0$.
 \item[(b)] The equation $\lambda^3 t^3 + \lambda pt + q = 0$ can be written as
@@ -752,7 +752,7 @@ Note that $\sqrt{-p}$ is real and nonzero by part (a).
 $$\left | \frac{3\sqrt{3}q}{2p\sqrt{-p}} \right | < 1.$$
 \item[(d)] Explain how part (c) implies that the second equation of part (b) can be solved for $\theta$. Also show that $\theta>0$ implies that $\cos(3\theta) \neq \pm 1$.
 \item[(e)] By (1.25), $t_1 = \cos \theta, t_2 = \cos\left(\theta + \frac{2\pi}{3}\right)$, and $t_3 = \cos\left(\theta + \frac{4\pi}{3}\right)$ are the three roots of $\lambda^3 t^3 + \lambda pt + q = 0$. Then show that the theorem follows by transforming this back to $y=\lambda t$ via part (b).
-\end{enumerate}
+\end{enumerate}}
 \begin{proof}
 The discriminant of $f(y) = y^3+py+q$ is positive by hypothesis :
 $$\Delta = -4p^3-27q^2>0.$$
@@ -804,7 +804,7 @@ $u(-1/2) = 1,u(0) = 0, u(1/2)=-1,u(1)=1,u(-1) = -1$. Thus $|t|>1 \Rightarrow |u(
 $$\forall t \in \R,\quad   u(t) \in [-1,1] \Rightarrow t \in [-1,1].$$
 
 
-Let $t$ a root of $h(t)$, then $u(t) = 4t^3 - 3 t = \cos(3\theta) \in [-1,1]$. By the properties of the function $u$ on $[-1,1]$, $t \in [-1,1]$, so there exists $\alpha \in \mathbb{R}$ tel que $\cos(\alpha) = t$.
+Let $t$ a root of $h(t)$, then $u(t) = 4t^3 - 3 t = \cos(3\theta) \in [-1,1]$. By the properties of the function $u$ on $[-1,1]$, $t \in [-1,1]$, so there exists $\alpha \in \mathbb{R}$ such that $\cos(\alpha) = t$.
 \begin{align*}
 h(t) = 0 &\iff 4 t^3 - 3t = \cos(3\theta)\\
 &\iff 4 \cos^3(\alpha) - 3 \cos(\alpha) = \cos(3\theta)\\
@@ -813,7 +813,7 @@ h(t) = 0 &\iff 4 t^3 - 3t = \cos(3\theta)\\
 &\iff \alpha = \pm\theta + k \frac{2\pi}{3}, \quad k \in \Z\\
 &\iff t = \cos\left (\theta + k \frac{2\pi}{3}\right),\quad  k = 0,1,2.\\
 \end{align*}
-Therefore the polynomial $$h(t) = t^4 -\frac{3}{4} - \frac{1}{4} \cos(3\theta)$$ has three roots :  $\cos(\theta), \cos(\theta+ \frac{2\pi}{3}),\cos(\theta+ \frac{4\pi}{3})$. These roots are real, and distinct, since $\Delta>0$.
+Therefore the polynomial $$h(t) = 4t^3 - 3t -\cos(3\theta)$$ has three roots :  $\cos(\theta), \cos(\theta+ \frac{2\pi}{3}),\cos(\theta+ \frac{4\pi}{3})$. These roots are real, and distinct, since $\Delta>0$.
 
 As  $h(t) = \frac{4}{\lambda^3} f(\lambda t) $, $f(t)=0 \iff h(t/\lambda)=0$.
 
@@ -873,7 +873,7 @@ t_3&= e^{i 4 \pi/3} z_1 + e^{-i4\pi/3} \overline{z_1}=\frac{1}{2} (e^{i (\theta 
 
 {\it Example 1.3.2 discusses Bombelli's discovery that $\sqrt[3]{2+11i} = 2+i$. But not all cube roots can be expressed so simply. This exercise will show that $\sqrt[3]{4+\sqrt{11}i}$ is not of the form $a+b\sqrt{11}i$ for $a,b \in \Z$.
 \begin{enumerate}
-\item[(a)] Suppose that $4 + \sqrt{11}i = (a+ b \sqrt{11}i)^3$ for some $a,b\in \Z$. Show that this implies that $4 = a^4 - 33 ab^2$ and $1 = 3a^2b - 11 b^3$.
+\item[(a)] Suppose that $4 + \sqrt{11}i = (a+ b \sqrt{11}i)^3$ for some $a,b\in \Z$. Show that this implies that $4 = a^3 - 33 ab^2$ and $1 = 3a^2b - 11 b^3$.
 \item[(b)] Show that the equations of part (a) imply that $b=\pm1$ and $a\mid 4$. Conclude that the equation $4 + \sqrt{11}i = (a+b \sqrt{11}i)^3$ has no solutions with $a,b\in \Z$.
 \item[(c)] Find a cubic polynomial of the form $x^3+px+q$ with $p,q\in \Z$ which has the number $\sqrt[3]{4+\sqrt{11}i} + \sqrt[3]{4-\sqrt{11}i}$ as a root.
 \end{enumerate}
@@ -935,7 +935,7 @@ Then
 \begin{align*}
 \Delta &= (x_1-x_2)^2 (x_1-x_3)^2 (x_1 - x_4)^2 (x_2-x_3)^2 (x_2-x_4)^2 (x_3-x_4)^2\\
 &=(x_1-x_2)^2(x_1-a-bi)^2(x_1-a+bi)^2(x_2-a-bi)^2(x_2-a+bi)^2(2bi)^2\\
-&=-4b^2(x_1-x_2)^2\vert x_1-a-bi\vert^2 \vert x_2 -a -bi \vert^2 <0.
+&=-4b^2(x_1-x_2)^2\vert x_1-a-bi\vert^4 \vert x_2 -a -bi \vert^4 <0.
 \end{align*}
 
 The only other possible cases are the case where the 4 roots are real, and then $\Delta >0$, and the case where the 4 roots are non real, forming two complex conjugate pairs.
@@ -946,8 +946,8 @@ Then
 \begin{align*}
 \Delta &= (x_1-x_2)^2 (x_1-x_3)^2 (x_1 - x_4)^2 (x_2-x_3)^2 (x_2-x_4)^2 (x_3-x_4)^2\\
 &=(x_1-x_2)^2 (x_3-x_4)^2(x_1-x_3)^2(\overline{x_1-x_3})^2 (x_1-x_4)^2(\overline{x_1-x_4})^2\\
-&=(2ib)^2(2id)^2 \vert x_1-x_3 \vert^2\vert x_1-x_4 \vert^2\\
-&=16b^2d^2 \vert x_1-x_3 \vert^2\vert x_1-x_4 \vert^2 >0.\\
+&=(2ib)^2(2id)^2 \vert x_1-x_3 \vert^4\vert x_1-x_4 \vert^4\\
+&=16b^2d^2 \vert x_1-x_3 \vert^4\vert x_1-x_4 \vert^4 >0.\\
 \end{align*}
 
 Conclusion : $\Delta<0$ if and only if $f$ has exactly two real roots.
@@ -996,7 +996,7 @@ x_1 &= -\frac{2}{3} + \sqrt[3]{\frac{352}{27} + \sqrt{\frac{5240}{27}}}+ \sqrt[3
 
 \end{enumerate}
 
-With a calculator, an approximation at $10^{-10}$ of the real root $x_1$ est $x_1 \simeq 1.3688081078$.
+With a calculator, an approximation at $10^{-10}$ of the real root $x_1$ is $x_1 \simeq 1.3688081078$.
 
 The two other roots are given by
 \begin{align*}
@@ -1046,7 +1046,7 @@ print l
 }
 
 \begin{proof}
-We use the Vite's method to
+We use the Vi\`ete's method to
 $$y^3 - 7y +3 : \qquad p=-7,q=3.$$
 
 By theorem 1.3.3, the roots are given by
