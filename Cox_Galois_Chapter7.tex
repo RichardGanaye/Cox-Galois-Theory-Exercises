@@ -69,7 +69,7 @@ We show that $L_H$ is a subfield of $L$ containing $F$.
 
 $\bullet$  By definition of $\Gal(L/F)$, every element $\sigma$ of $H\subset \Gal(L/F)$ satisfies $\sigma(\alpha) = \alpha$ for all $\alpha \in F$, therefore $F \subset L_H$. In particular $1 \in F \subset L_H $, so  $L_H \neq \emptyset$.
 
-$\bullet$ If $\alpha, \beta \in L_H$, then,  for all $\alpha \in F$, 
+$\bullet$ If $\alpha, \beta \in L_H$, then 
 \begin{align*}
 \sigma(\alpha - \beta) &= \sigma(\alpha)- \sigma(\beta) = \alpha- \beta,\\
 \sigma(\alpha \beta) &= \sigma(\alpha) \sigma(\beta) = \alpha \beta,
@@ -92,7 +92,7 @@ By hypothesis, the extension $F \subset L$ is finite, normal and separable. As $
 
 We show that $L$ is the splitting field of $f$ over $F$.
 
-As $q_j = p_i$ for som $i,\ 1\leq i \leq n$ is the minimal polynomial of $\alpha_i \in L$ over $F$, and as $F \subset L$ is normal, then  all the roots of $p_i$ are in $L$, so $q_j$ splits completely over $L$, thus $f =\prod_{j=1}^r q_j$ splits completely over $L$. Write $\beta_1,\ldots,\beta_m \in L$ the roots of $f$, and $L'=F(\beta_1,\ldots,\beta_m) \subset L$ the splitting  field of $f$ over $F$. As $F \subset L$, and $\beta_1,\ldots,\beta_m \in L$, we know that $L' \subset L$.
+As $q_j = p_i$ for some $i,\ 1\leq i \leq n$ is the minimal polynomial of $\alpha_i \in L$ over $F$, and as $F \subset L$ is normal, then  all the roots of $p_i$ are in $L$, so $q_j$ splits completely over $L$, thus $f =\prod_{j=1}^r q_j$ splits completely over $L$. Write $\beta_1,\ldots,\beta_m \in L$ the roots of $f$, and $L'=F(\beta_1,\ldots,\beta_m) \subset L$ the splitting  field of $f$ over $F$. As $F \subset L$, and $\beta_1,\ldots,\beta_m \in L$, we know that $L' \subset L$.
 
 As every $\alpha_i,1\leq i \leq n$ is a root of a polynomial $p_i = q_j$, then $\alpha_i$ is a root of $f$, so $\alpha_i = \beta_k$ for some $k,\ 1\leq k \leq m$, thus $\alpha_i \in L'$. Consequently $\{\alpha_1,\ldots,\alpha_n\}\subset \{\beta_1,\ldots,\beta_m\}$ and 
 $$L = F(\alpha_1,\ldots,\alpha_n) \subset F(\beta_1,\ldots,\beta_m) = L' \subset  L :$$
@@ -103,7 +103,7 @@ Conclusion: if $F\subset L$ is a finite normal separable extension, $L$ is the s
 
 \paragraph{Ex. 7.1.3}
 
-{\it Suppose that $F \subset L$ and that $\alpha, \beta \in L$ are separable over $F$. Prove that $\alpha + \beta, \alpha \beta$, and $\alpha \beta$ (assuming $\beta \ne 0$) are also separable over $F$.
+{\it Suppose that $F \subset L$ and that $\alpha, \beta \in L$ are separable over $F$. Prove that $\alpha + \beta, \alpha \beta$, and $\alpha/\beta$ (assuming $\beta \ne 0$) are also separable over $F$.
 }
 
 \begin{proof}
@@ -181,7 +181,7 @@ Thus $F(\beta_1,\ldots,\beta_m)$ contains  $L$ and $\beta_1,\ldots,\beta_m$, the
 
 Therefore $M = F(\beta_1,\ldots,\beta_m)$ is the splitting field of $f$ over $F$. Then , by Theorem 5.2.4, the extension $F \subset M$ is normal (and finite), so $M$ satisfies (a).
 
-Let $M' \supset L$ any normal extension of $F$. As $F \subset M'$ is normal, the $p_i$ splits completely over $M'$, thus also $f$. Let $\gamma_1,\ldots,\gamma_m \in M'$ the roots of $f$ dans $M'$, and $M'' = F(\gamma_1,\ldots,\gamma_m) \subset M'$. As $\alpha_i  \in L \subset M'$, the $\alpha_i$ are roots of $f$ in $M'$ : $\{\alpha_1,\ldots,\alpha_n\}\subset\{\gamma_1,\ldots,\gamma_m\}$, thus $L = F(\alpha_1,\ldots,\alpha_n) \subset F(\gamma_1,\ldots,\gamma_m) = M''$.
+Let $M' \supset L$ any normal extension of $F$. As $F \subset M'$ is normal, the $p_i$ splits completely over $M'$, thus also $f$. Let $\gamma_1,\ldots,\gamma_m \in M'$ the roots of $f$ in $M'$, and $M'' = F(\gamma_1,\ldots,\gamma_m) \subset M'$. As $\alpha_i  \in L \subset M'$, the $\alpha_i$ are roots of $f$ in $M'$ : $\{\alpha_1,\ldots,\alpha_n\}\subset\{\gamma_1,\ldots,\gamma_m\}$, thus $L = F(\alpha_1,\ldots,\alpha_n) \subset F(\gamma_1,\ldots,\gamma_m) = M''$.
 
 $M''$ and $M$ are so two splitting fields of $f$ over $L$. By the unicity of the splitting field (Corollary 5.1.7), there exist a field isomorphism of $M$ in $M''$  that is identity on $L$. Since $M'' \subset M'$, we can regard this isomorphism as an injective field homomorphism $\varphi : M \to M'$.
 \end{proof}
@@ -233,7 +233,7 @@ $$\vert G_\alpha \vert  = \vert \Gal(L/F(\alpha))\vert = [L:F(\alpha)] = [L:F]\,
 
 \bigskip
 
-Let $\sigma_1,\ldots,\sigma_r$ a complete system of representants of the left cosets $\sigma G_\alpha, \sigma \in G$. Then the $\sigma_i G$ form a partition of $G$ : 
+Let $\sigma_1,\ldots,\sigma_r$ a complete system of representants of the left cosets $\sigma G_\alpha, \sigma \in G$. Then the $\sigma_i G_\alpha$ form a partition of $G$ : 
 $$G = \bigcup_{i=1}^r \,\sigma_i G_\alpha,$$ $$i \neq j \Rightarrow \sigma_i G_\alpha \cap \sigma_j G_\alpha = \emptyset \ (1\leq i,j \leq r).$$
 
 If $\sigma \in \sigma_iG_\alpha$, then $\sigma = \sigma_i \tau, \tau \in G_\alpha$, thus $\sigma(\alpha) =\sigma_i(\tau(\alpha)) = \sigma_i(\alpha)$. Let $\gamma_i =\sigma_i(\alpha)\in S$. The image of $\alpha$ by all the elements of the left coset $\sigma_iG_\alpha$ is a constant  equal to $\gamma_i = \sigma_i(\alpha)$. As $\vert \sigma_iG_\alpha \vert = \vert G_\alpha \vert= m$,
@@ -274,7 +274,7 @@ Let  $\alpha,\beta,\gamma$ the roots of $f$, where we suppose $\alpha \neq \beta
 $\Q \subset \Q(\alpha,\beta)$ is a normal and separable extension, so is a Galois extension (Th. 7.1.1(c)).
 
 \item[(c)]$t$ is a root of $f = x^p-t^p = (x-t)^p\in \F_p(t^p)$.
-The only root of $f$ is $t$, and $t \not \in \F_p(t^p)$, otherwise $t = u(t^p)/v(t^p)$, where $u,v \in \F_p[t], u \wedge v= 1$. Moreover $u(t)^p = (\sum_{i=0}^d a_i x^i)^p = \sum_{i=0}^d a_i^p x^{ip} = \sum_{i=0}^da_i x^{ip} = u(x^p)$, and similarly for $v$.
+The only root of $f$ is $t$, and $t \not \in \F_p(t^p)$, otherwise $t = u(t^p)/v(t^p)$, where $u,v \in \F_p[t], u \wedge v= 1$. Moreover $u(t)^p = (\sum_{i=0}^d a_i t^i)^p = \sum_{i=0}^d a_i^p t^{ip} = \sum_{i=0}^da_i t^{ip} = u(t^p)$, and similarly for $v$.
 
 Consequently, we would have $t= u(t)^p/v(t)^p,u\wedge v = 1$, which is impossible by Exercise 4.2.9.
 
@@ -283,13 +283,13 @@ The equation $f = x^p - t^p$ has so no root in $\F(t^p)$, where $p =\deg(f)$ is 
 The minimal polynomial of $t \in \F(t)$ is not separable, so $\F_p(t)/\F_p(t^p)$ is not a Galois extension.
 
 \item[(d)]
-Let $f = x^2-\left(t+\frac{1}{t}\right)x + 1 \in \C(t+t^{-1})[x]$. Then  $t$ et $t^{-1}$ are roots of $f$ in  $\C(t)$. Moreover $t^{-1} \in \C(t)$, therefore $\C(t) = \C(t,t^{-1})$ is the splitting field of $f$ over $C(t+t^{-1})$. $ \C(t,t^{-1}) \subset \C(t)$ is so a normal extension, and is separable since the characteristic of $\C$, and of $\C(t,t^{-1})$ is zero. 
+Let $f = x^2-\left(t+\frac{1}{t}\right)x + 1 \in \C(t+t^{-1})[x]$. Then  $t$ et $t^{-1}$ are roots of $f$ in  $\C(t)$. Moreover $t^{-1} \in \C(t)$, therefore $\C(t) = \C(t,t^{-1})$ is the splitting field of $f$ over $C(t+t^{-1})$. $ \C(t+t^{-1}) \subset \C(t)$ is so a normal extension, and is separable since the characteristic of $\C$, and of $\C(t+t^{-1})$ is zero. 
 
-$\C(t,t^{-1}) \subset \C(t)$ is a Galois extension.
+$\C(t+t^{-1}) \subset \C(t)$ is a Galois extension.
 
 
 \item[(e)]
-$t$ is a root of $x^n-t^n = (x-t)(x-\zeta t)\cdots (x-\zeta^{n-1}t) \in \C(t^n)[x]$, où $\zeta = e^{2i\pi}/n$.
+$t$ is a root of $x^n-t^n = (x-t)(x-\zeta t)\cdots (x-\zeta^{n-1}t) \in \C(t^n)[x]$, where $\zeta = e^{2i\pi}/n$.
 
 As $\zeta^k t \in \C(t), 0\leq k \leq n-1$, $\C(t) = \C(t,\zeta t, \ldots, \zeta^{m-1}t)$ is the splitting field of the polynomial $x^n-t^n \in \C(t^n)[x]$, so $\C(t^n)\subset \C(t)$ is a normal extension. As the characteristic of $\C(t^n)$ is zero, this extension is also separable.
 
@@ -367,7 +367,7 @@ $f$ being irreducible, there exists (Prop. 5.1.8) an isomorphism  $\sigma : L \t
 
 (Explicitly, $\sigma : u+v\alpha \mapsto u+v \beta, \ u,v \in F$: we can verify directly that it is an isomorphism.)
 
-Every $\tau \in \Gal(L/F)$ sends the root $\alpha$ of $f\in F[x]$ on a root of $f$, so $\tau(\alpha) = \alpha=1_K(\alpha)$ or $\tau(\beta) = \beta = \sigma(\alpha)$. As $L = F(\alpha)$, this $F$-automorphisme is uniquely determined by the image of $\alpha$. Thus $\tau = \sigma$ or $\tau = 1_K = e$. Moreover $\sigma \ne e$, otherwise $\sigma(\alpha) = \alpha$, so $\beta = \alpha$, which is false by part (b). Consequently $G = \{e,\sigma\}$.
+Every $\tau \in \Gal(L/F)$ sends the root $\alpha$ of $f\in F[x]$ on a root of $f$, so $\tau(\alpha) = \alpha=1_K(\alpha)$ or $\tau(\alpha) = \beta = \sigma(\alpha)$. As $L = F(\alpha)$, this $F$-automorphisme is uniquely determined by the image of $\alpha$. Thus $\tau = \sigma$ or $\tau = 1_K = e$. Moreover $\sigma \ne e$, otherwise $\sigma(\alpha) = \alpha$, so $\beta = \alpha$, which is false by part (b). Consequently $G = \{e,\sigma\}$.
 
 Every group of order 2 is isomorphic to  $\Z/2\Z$, thus
 
@@ -402,7 +402,7 @@ $$L = F(\gamma), \gamma^2 \in F , \qquad  L = F(\sqrt{c}) , c \in F$$
 \item[(a)]
 By Section 6.4.A (or Exercises 6.2.2 and 6.3.1), there exists $\sigma,\tau \in \Gal(L/\Q)$ uniquely determined by
  $$\sigma(\omega) = \omega, \ \sigma(\sqrt[3]{2}) = \omega \sqrt[3]{2},$$
- $$\tau(\omega) = \omega^2, \sigma(\sqrt[3]{2}) =  \sqrt[3]{2},$$
+ $$\tau(\omega) = \omega^2, \tau(\sqrt[3]{2}) =  \sqrt[3]{2},$$
  and $G = \Gal(L/\Q) = \langle \sigma, \tau\rangle$.
  
  
@@ -499,7 +499,7 @@ Suppose that $K_1 \subset K_2 \subset L$. Let $\sigma \in \Gal(L/K_2)$. Then  $\
 
 Here $\sigma, \tau$ are  the elements of $G = \Gal(L/\Q)$, where $L = \Q(\omega,\sqrt[3]{2})$, determined by
  $$\sigma(\omega) = \omega, \ \sigma(\sqrt[3]{2}) = \omega \sqrt[3]{2},$$
- $$\tau(\omega) = \omega^2, \sigma(\sqrt[3]{2}) =  \sqrt[3]{2}.$$
+ $$\tau(\omega) = \omega^2, \tau(\sqrt[3]{2}) =  \sqrt[3]{2}.$$
 We show that the map $K \mapsto \Gal(L/\Q)$ applies the left diagram on the right diagram, the inclusion arrows are opposite by Exercise 3.
 
 $\bullet$ If $K = L$, $\Gal(L/L) = \{e\}$, and if $K = \Q$, $\Gal(L/K) = \Gal(L/\Q)=G$.
@@ -879,7 +879,7 @@ inclusions :
 \end{verbatim}
 This corresponds to the lattice of subgroups of $G$ written in the first diagram (the node (1) corresponding to the subgroup generated by $\sigma^2 = (1,3)(2,4)$).
 
-We find again these results directly without computer in $$D_8 = \langle \sigma, \tau  \rangle = \{e, \sigma, \sigma^2, \sigma^3, \tau, \sigma \tau, \sigma^2 \tau, \sigma^3 \tau\}\simeq G,$$ where $\sigma = (1,2,3,4), \tau = (1,3)$ (cf Ex. 6.3.2(b)).  Here the numbering of the roots is $$z_1 = i\sqrt[4]{2},z_2 =  - i\sqrt[4]{2}, z_3 = -i  \sqrt[4]{2}, z_4 = i\sqrt[4]{2}, $$so $\tau$, which exchanges $z_1,z_3$ corresponds to the transposition $(1,3)$, and $\sigma$ to the $4$-cycle $(1,2,3,4)$.
+We find again these results directly without computer in $$D_8 = \langle \sigma, \tau  \rangle = \{e, \sigma, \sigma^2, \sigma^3, \tau, \sigma \tau, \sigma^2 \tau, \sigma^3 \tau\}\simeq G,$$ where $\sigma = (1,2,3,4), \tau = (1,3)$ (cf Ex. 6.3.2(b)).  Here the numbering of the roots is $$z_1 = i\sqrt[4]{2},z_2 =  - \sqrt[4]{2}, z_3 = -i  \sqrt[4]{2}, z_4 = \sqrt[4]{2}, $$so $\tau$, which exchanges $z_1,z_3$ corresponds to the transposition $(1,3)$, and $\sigma$ to the $4$-cycle $(1,2,3,4)$.
 
 $\sigma$ is of order 4 and generates $H =\langle  \sigma \rangle =\{e,\sigma, \sigma^2,\sigma^3\}$, $\tau$ is of order 2, and $\sigma \tau = \tau \sigma^{-1} =(1,4)(2,3)$ :
 $$\sigma^4 = \tau ^2 = e,\qquad \sigma \tau = \tau \sigma^{-1}.$$
@@ -901,7 +901,7 @@ H_2 &= \langle \sigma^2, \sigma \tau\rangle =\{e, \sigma^2,\sigma \tau,\sigma^3\
 Otherwise $M = \langle \sigma^k \tau ,\sigma^l \tau\rangle,\ 1\leq k,l \leq 3,k\neq l$. As $\sigma^k\tau \sigma^l \tau = \sigma^{k-l} \in H$ is of order 2, $\sigma^{k-l} = \sigma^2$ and so 
 
 $$M = \{e, \sigma^k \tau, \sigma^l \tau, \sigma^{2} \}.$$
-Since $\Z/2\Z \times \Z/2\Z$ is generated by any pair of elements not equal to $e$, $M = \langle \sigma^2, \sigma^k \tau\rangle$, and so $M = H_1$ ou $M = H_2$. We find again the subgroups of diagram 1.
+Since $\Z/2\Z \times \Z/2\Z$ is generated by any pair of elements not equal to $e$, $M = \langle \sigma^2, \sigma^k \tau\rangle$, and so $M = H_1$ where $M = H_2$. We find again the subgroups of diagram 1.
 
 \item[(b)]
 With find the fixed fields $L_M$ corresponding with the subgroups  $M$ of $G$.
@@ -1194,7 +1194,7 @@ $$G = \langle \sigma \rangle \supset \langle \sigma^2 \rangle \supset \{e\}.$$
 \begin{enumerate}
 \item[(a)]
 Proposition 4.2.5, with $p=7$ prime, shows that $$f = \Phi_7 = x^6+x^5+x^4+x^3+x^2+x+1$$ is irreducible over $\Q$.
-$\zeta = \zeta_7 = e^{2i\pi/7}$ being a root of $\Phi_7 = (x^7-1)/(x-1)$, $f=\Phi_7$ is the minimal polynomial of  $\zeta$ sur $\Q$.
+$\zeta = \zeta_7 = e^{2i\pi/7}$ being a root of $\Phi_7 = (x^7-1)/(x-1)$, $f=\Phi_7$ is the minimal polynomial of  $\zeta$ over $\Q$.
 
 The roots of $f$ are the roots of $x^7-1$ distinct of $1$, they are $\zeta, \zeta^2,\cdots,\zeta^6$. The splitting field of $f$ is so $\Q(\zeta, \zeta^2,\cdots,\zeta^6) = \Q(\zeta)$, since $\zeta^k \in \Q(\zeta)$ for all integers $k$.
 
@@ -1219,7 +1219,7 @@ $
 \end{center} 
 Let $\tilde{H} = \{-\overline{1},+\overline{1}\} \subset (\Z/7\Z)^*$, and $H \subset G$ the corresponding subgroup.  We compute its fixed field $L_H$.
 
-Write $\tau$ the unique element of $G$ such that $\sigma(\zeta) = \zeta^{-1}$. We prove that $H = \{e,\tau\}$.
+Write $\tau$ the unique element of $G$ such that $\tau(\zeta) = \zeta^{-1}$. We prove that $H = \{e,\tau\}$.
 As $\overline{\zeta} = \zeta^6 = \zeta^{-1} \in \Q(\zeta)$, then  $\chi : L \to L, z \mapsto \overline{z}$ is an automorphism of $L$ which is the identity on $\Q$, consequently $\chi \in \Gal(L/\Q)$. Since $\chi(\zeta) = \overline{\zeta} = \zeta^{-1} = \tau(\zeta)$, $\tau = \chi$ is the complex conjugation restricted to $L$, $\varphi(\tau) = [-1]$, and $H = \{e, \tau\}$.
 
 For all $z \in L$,
@@ -1337,7 +1337,7 @@ $$\Gal(\Q(\zeta_7+\zeta_7^{-1})/\Q) \simeq \Z/3\Z.$$
 }
 
 \begin{proof}
-$\bullet$ Suppose (b): $L$ is the splitting field of $f=(x^2-a)(x^2-b)$, où $a,b \in F$, but $\sqrt{a},\sqrt{b},\sqrt{ab}$ do not lie in $F$.
+$\bullet$ Suppose (b): $L$ is the splitting field of $f=(x^2-a)(x^2-b)$, where $a,b \in F$, but $\sqrt{a},\sqrt{b},\sqrt{ab}$ do not lie in $F$.
 
 The splitting field of $f$ is $F(\sqrt{a}, -\sqrt{a},\sqrt{b},-\sqrt{b}) = F(\sqrt{a},\sqrt{b})$ :
 $$L =  F(\sqrt{a},\sqrt{b}).$$
@@ -1413,7 +1413,7 @@ The only non trivial subgroups have cardinality 2: they are $\langle \sigma \ran
 
 The intermediate field corresponding with these subgroups are the fixed fields $$K_\sigma = L_{\langle \sigma\rangle},K_\tau=L_{\langle \tau\rangle},K_\zeta = L_{\langle\sigma \circ \tau\rangle}.$$
 
-As the index in $G$ of these three subgroups ist 2, $K_\sigma,K_\tau,K_\zeta $ are quadratic extensions of $F$ (by Theorem 7.3.1$[L_H:F] = [\Gal(L/F) : H]$). Since $[L:F] = \Gal(L/F) = 4$, $L$ is a quadratic extension of each of them.
+As the index in $G$ of these three subgroups is 2, $K_\sigma,K_\tau,K_\zeta $ are quadratic extensions of $F$ (by Theorem 7.3.1$[L_H:F] = [\Gal(L/F) : H]$). Since $[L:F] = \Gal(L/F) = 4$, $L$ is a quadratic extension of each of them.
 
 As the characteristic of $F$ is different from 2, the Exercise 7.1.12 shows that $K_\sigma = F(\alpha)$, where $a=\alpha^2 \in F,\alpha \not \in F$. Write $\alpha = \sqrt{a}$, then $K_\sigma = F(\sqrt{a}),a\in F,\sqrt{a} \not \in F$. Similarly $K_\tau = F(\sqrt{b}), b \in F,\beta = \sqrt{b} \not \in F$.
 
@@ -1469,7 +1469,7 @@ $$\Q(\alpha) = \Q(\beta).$$
 
 (b)$\Rightarrow$(c):
 
-$\delta = \alpha + \beta = a+(b+1) \beta \in \Q(\beta)$. Therefore the list $(1,\delta,\delta^2)$ of 3 vectors in a 2-dimensional vector space if linearly dependent over $\Q$, so there exist $(u,v,w) \in \Q^3 \setminus\{(0,0,0)\}$ such that $u\delta^2 + v\delta + w = 0$.
+$\delta = \alpha + \beta = a+(b+1) \beta \in \Q(\beta)$. Therefore the list $(1,\delta,\delta^2)$ of 3 vectors in a 2-dimensional vector space is linearly dependent over $\Q$, so there exist $(u,v,w) \in \Q^3 \setminus\{(0,0,0)\}$ such that $u\delta^2 + v\delta + w = 0$.
 
 Let $f(x) = u x^2+vx+w \in \Q[x]$. Then $f(\alpha + \beta) = 0$, with $f\neq 0, \deg(f) \leq 2$. If $\deg(f)=2$, (c) is proved.
 
@@ -1608,7 +1608,7 @@ Conclusion:  $\mathrm{Core}_G(H) = \bigcap\limits_{g\in G}gHg^{-1}$ is the large
 
 \begin{proof}
 Let $F \subset L$ a Galois extension, $F \subset K \subset L$ an intermediate field, $G = \Gal(L/F), H =\Gal(L/K)$, 
- $N = \mathrm{Core}_G(H)$, and $M = L_N$ the fixed field of $H$. We show that $M = L_N$ is the Galois closure of $K$ over $F$.
+ $N = \mathrm{Core}_G(H)$, and $M = L_N$ the fixed field of $N$. We show that $M = L_N$ is the Galois closure of $K$ over $F$.
 
 Since $N \subset H, L_N \supset L_H = K$, so $K$ is a subfield of $L_N$.
 
@@ -1625,7 +1625,7 @@ Let $M_0$ be any Galois closure of $K$ over $F$. As $F \subset M$ is a Galois ex
 
 If $M''$ is any extension of $K$ which is Galois over $F$, by the definition of a Galois closure, there exists an field homomorphism $\varphi:M_0 \to M''$ that is the identity on $K$, so $\varphi \circ \psi^{-1}$ is an embedding from $M$ to $M''$ that is the identity on $L$, so $M=L_N$ is a Galois closure of $K$.
 \ee
-Note: this exercise shows that there exists always a Galois closure of an intermediate field $K$ of a Galois extension $F\subset L$ that is included in $L$. Moreover it is characterized by the fact that it is the smallest intermediate field of $F\subset L$ containing $K$ that is a Galois extension of $F$. Such a subfield of $F$ is unique (not only up to an isomorphism). 
+Note: this exercise shows that there exists always a Galois closure of an intermediate field $K$ of a Galois extension $F\subset L$ that is included in $L$. Moreover it is characterized by the fact that it is the smallest intermediate field of $F\subset L$ containing $K$ that is a Galois extension of $F$. Such a subfield of $L$ is unique (not only up to an isomorphism). 
 \end{proof}
 
 \paragraph{Ex. 7.3.14}
@@ -1743,7 +1743,7 @@ $$
 \item[(a)]
 $f= x^3-4x+2.$
 
-$f$ is irreducible by the Schönemann-Eisenstein Criterion with $p = 2$.
+$f$ is irreducible by the Sch¬önemann-Eisenstein Criterion with $p = 2$.
 $$ \Delta(f) = -4p^3-27q^2 = -4(-4)^3 - 27(2)^2 = 256 -108 = 148 = 2^2\times 37 .$$
 As $\Delta(f) \ne 0$, $f$ is separable, so Proposition 7.4.2 applies to $f$.
 
@@ -1756,7 +1756,7 @@ $$\Gal_{\Q(\sqrt{37})}( x^3-4x+2) = A_3.$$
 
 \item[(c)] $f=x^3-3x+1$.
 
-If $\alpha = p/q,\ p\wedge q=1$ is a root of $f$ dans $\Q$, then $p^3 - 3 pq^2+q^3 = 0$, thus $p \mid q, q\mid p$ with $p\wedge q = 1$, therefore $\alpha = \pm1$, but nor 1 neither $-1$ is a root of $f$, thus $f$ has no rational root. As $\deg(f) = 3$, $f$ is irreducible over $\Q$.
+If $\alpha = p/q,\ p\wedge q=1$ is a root of $f$ in $\Q$, then $p^3 - 3 pq^2+q^3 = 0$, thus $p \mid q, q\mid p$ with $p\wedge q = 1$, therefore $\alpha = \pm1$, but nor 1 neither $-1$ is a root of $f$, thus $f$ has no rational root. As $\deg(f) = 3$, $f$ is irreducible over $\Q$.
 $\Delta(f) = -4(-3)^3 - 27 = 81 = 9^2$, thus $\Delta (f) \ne 0$ and so $f$ is separable. Moreover $\Delta(f) = 9^2$ is a square in  $\Q$. By Proposition 7.4.2,
 $$\Gal_{\Q}(x^3-3x+1) = A_3.$$
 
@@ -1804,7 +1804,7 @@ $$f + \tau \cdot f = 2 A.$$
 
 Then $P = (B\sqrt{\Delta})(-B \sqrt{\Delta}) = -B^2 \Delta$.
 
-\item[(d)] Posons $B = u/v, \ u,v \in F[\sigma_1,\cdots,\sigma_n]$, where $u,v$ are relatively prime. Then $v^2 P = -u^2 \Delta$.
+\item[(d)] Let $B = u/v, \ u,v \in F[\sigma_1,\cdots,\sigma_n]$, where $u,v$ are relatively prime. Then $v^2 P = -u^2 \Delta$.
 
 As $\tau \cdot P = (\tau\cdot(f-A))(\tau \cdot(\tau\cdot(f-A))) = (\tau\cdot(f-A))(f-A) = P$, $P$ is invariant under $A_n$ and also invariant under $\tau$, thus is invariant under $S_n$, and $P$ is a polynomial in $x_1,\cdots,x_n$, since $f, A \in F[x_1,\ldots,x_n]$. Therefore there exists a polynomial $g$ such that $P = g(\sigma_1, \cdots, \sigma_n)$, and 
 $v^2 g = -u^2 \Delta$ is an equality in $F[\sigma_1, \cdots \sigma_n]$: $u,v,g,\Delta \in F[\sigma_1,\cdots,\sigma_n]$.
@@ -2025,7 +2025,7 @@ Suppose that
 $$a(x) - yb(x) = AB,\qquad A,B \in F(y)[x].$$
 You need to prove that $A$ or $B$ is constant, which in this case means that $A$ or $B$ lies in $F(y)$.
 \be
-\item[(a)] Show that there are there are nonzero polynomials $g(y),h(y)\in F[y]$ that clear the denominators of $A$ and $B$, i.e, $g(y)A = A_1$ and $h(y)B = B_1$ for some $A_1,B_1 \in F[x,y]$.
+\item[(a)] Show that there are nonzero polynomials $g(y),h(y)\in F[y]$ that clear the denominators of $A$ and $B$, i.e, $g(y)A = A_1$ and $h(y)B = B_1$ for some $A_1,B_1 \in F[x,y]$.
 \item[(b)] Show that $g(y)h(y)(a(x) - yb(x)) = A_1B_1$ in $F[x,y]$ and explain why $a(x) -yb(x)$ must divide either $A_1$ or $B_1$ in $F[x,y]$.
 \item[(c)] Assume that $A_1 = (a(x) -yb(x))A_2$, where $A_2 \in F[x,y]$. Show that this implies that $g(y)h(y) = A_2B_1$, and then conclude that $B_1\in F[y]$.
 \item[(d)] Show that $B\in F(y)$.
@@ -2150,7 +2150,7 @@ If $\left(
 
 Moreover $(c,d) \neq 0$, otherwise $B(t) =a t +b$ is zero, in contradiction with $\sigma(t) = A(t)/B(t) \in F(t)$.
 
-So there exists $\lambda \in F$ tel que $(a,b) = \lambda (c,d)$, and then $\sigma(t) = A(t)/B(t)  = \lambda \in F$. As $\sigma^{-1} \in \Gal(F(t)/F)$, $t = \sigma^{-1}(\lambda) = \lambda \in F$, which is impossible since $t$ is transcendental over $F$.
+So there exists $\lambda \in F$ such that $(a,b) = \lambda (c,d)$, and then $\sigma(t) = A(t)/B(t)  = \lambda \in F$. As $\sigma^{-1} \in \Gal(F(t)/F)$, $t = \sigma^{-1}(\lambda) = \lambda \in F$, which is impossible since $t$ is transcendental over $F$.
 
 Conclusion: $\left(
 \begin{array}{cc}
@@ -2297,7 +2297,7 @@ for all  $z\in \hat{F }$, and for all  $ M,N\in GL(2,F)$,
 }
 \item[(b)]
 
-If $\lambda \in F^*$, and $Z \in F$, $(\lambda I) \cdot z = \frac{\lambda z +0}{0.z + \lambda} = z$, so $(\lambda I) \cdot \infty = \infty$. The elements of $C = F^* I_2$ act trivially on  $\hat{F}$.
+If $\lambda \in F^*$, and $z \in F$, $(\lambda I) \cdot z = \frac{\lambda z +0}{0.z + \lambda} = z$, so $(\lambda I) \cdot \infty = \infty$. The elements of $C = F^* I_2$ act trivially on  $\hat{F}$.
 The quotient group $PGL(2,F) = GL(2,F)/C$, where $C =F^* I_2 =  \{\lambda I, \lambda \in F^*\}$, acts on $\hat{F}$.
 
 Indeed the action is well defined: two elements $M,N$ of a same class modulo $C$ satisty $M = \lambda N, \lambda \in F^*$, thus $M\cdot z = (\lambda N)\cdot z =N \cdot ((\lambda I_2) \cdot z) =  N \cdot z$. We can so define the action by $[M] \cdot z = M \cdot z$, where $[M]$ is the class of $M$ in $\mathrm{PGL}(2,F)$. Then the relations (i)(ii) are always true
@@ -2513,7 +2513,7 @@ $r_2 = \mathrm{Rot}(\pi/2, \overrightarrow{e_3})$ gives the cycle $A_1 \mapsto A
 $$\varphi(r_2) = (1 2 3 4).$$
 
 
-$r_3 = \mathrm{Rot}(\pi/2, \overrightarrow{e_2})$ vérifie $A_1 \mapsto A_8 \mapsto A_5 \mapsto A_2\mapsto A_1$, thus $D_1 \mapsto D_4 \mapsto D_2 \mapsto D_3 \mapsto D_1$:
+$r_3 = \mathrm{Rot}(\pi/2, \overrightarrow{e_2})$ gives $A_1 \mapsto A_8 \mapsto A_5 \mapsto A_2\mapsto A_1$, thus $D_1 \mapsto D_4 \mapsto D_2 \mapsto D_3 \mapsto D_1$:
 
 $$\varphi(r_3) = (1 4 2 3).$$
 
@@ -2764,7 +2764,7 @@ $2 \sin  \frac{\pi}{n} =  \sqrt{2} \iff  \sin \frac{\pi}{n}  = \sin  \frac{\pi}{
 Suppose that $n\neq 4$. With a reductio ad absurdum, if  $A'_0$ was a pole, then $A'_0A'_1 = \sqrt{2}$ (if $A'_1=A_k$) or $A'_0A'_1 = 2$ (if $A'_1$ is the opposite pole). In both cases, this is impossible, as previously proved.
 
 Consequently $\rho(A_0) = A_k, \ k=0,1,\cdots,n-1$.
-The same argument proves that the image of $A_i$ is in the polygon $\{A_0,,\cdots,A_{n-1}\}$, so $\rho$ is a permutation of the vertices of this polygon, thus sends $\{P,S\}$ sur $\{P,S\}$. Therefore $\rho$ fixes these two poles, or exchanges them.
+The same argument proves that the image of $A_i$ is in the polygon $\{A_0,,\cdots,A_{n-1}\}$, so $\rho$ is a permutation of the vertices of this polygon, thus sends $\{P,S\}$ over $\{P,S\}$. Therefore $\rho$ fixes these two poles, or exchanges them.
 
 \be
 \item[$\bullet$] case 1: if $\rho(P) = P$, then since $\rho(O) = O, \rho(A_0)= A_k$, 
@@ -2783,24 +2783,24 @@ In the case $n=4$, we have proved in Exercise 10 that $G \simeq S_4$.
 The modification of the polyhedron given in the text (or more simply the suppression of the south pole $S$) implies then $\rho(N) = N$, so it remains only the case 1 in the preceding discussion, so  $G = \langle r \rangle \simeq C_n$.
 
 \item[(c)]
-$\bullet$ The irregular tetrahedron  $T = \{(1,0,0), (0,1,0), (0,0,1), (\frac{1}{9},\frac{4}{9},\frac{8}{9})\}$, set of four non coplanar points 4,  est inscribed in $S_2$ (since $\left(\frac{1}{9}\right)^2 +\left(\frac{4}{9}\right)^2 +\left(\frac{8}{9}\right)^2  = 1$) and its symmetry group ist $G_T = \{e\}\simeq C_1$.
+$\bullet$ The irregular tetrahedron  $T = \{(1,0,0), (0,1,0), (0,0,1), (\frac{1}{9},\frac{4}{9},\frac{8}{9})\}$, set of four non coplanar points 4, inscribed in $S_2$ (since $\left(\frac{1}{9}\right)^2 +\left(\frac{4}{9}\right)^2 +\left(\frac{8}{9}\right)^2  = 1$) and its symmetry group ist $G_T = \{e\}\simeq C_1$.
 
 $\bullet$ Complete an isosceles non equilateral triangle  in the equatorial plane by the two poles: 
 
-$P = \{(1,0,0), (\frac{2}{5},-\frac{3}{5},0), (-\frac{2}{5},-\frac{3}{5},0),  (0,0,1), (0,0,-1)\}$ has the symmetry group $G_P= \langle s \rangle \simeq C_2$, où $s = \mathrm{Rot}(\vec{e}_1,\pi)$.
+$P = \{(1,0,0), (\frac{4}{5},\frac{3}{5},0), (\frac{4}{5},-\frac{3}{5},0),  (0,0,1), (0,0,-1)\}$ has the symmetry group $G_P= \langle s \rangle \simeq C_2$, where $s = \mathrm{Rot}(\vec{e}_1,\pi)$.
 
 $\bullet$ The rectangle in the equatorial plane is completed by the two poles:
 
-$R = \{(\frac{4}{5},\frac{3}{5},0),(\frac{4}{5},-\frac{3}{5},0),(-\frac{4}{5},-\frac{3}{5},0),-(\frac{4}{5},\frac{3}{5},0), (0,0,1), (0,0,-1)\}$ has the symmetry group $G_R =\langle \sigma, \tau,\xi\rangle$, where $\sigma,\tau,\xi$ are the rotations of angles $\pi$ and axes $\vec{e}_1, \vec{e}_2,\vec{e}_2$. $G_R \simeq D_4$ is the Klein four-group. 
+$R = \{(\frac{4}{5},\frac{3}{5},0),(\frac{4}{5},-\frac{3}{5},0),(-\frac{4}{5},-\frac{3}{5},0),(-\frac{4}{5},\frac{3}{5},0), (0,0,1), (0,0,-1)\}$ has the symmetry group $G_R =\langle \sigma, \tau,\xi\rangle$, where $\sigma,\tau,\xi$ are the rotations of angles $\pi$ and axes $\vec{e}_1, \vec{e}_2,\vec{e}_3$. $G_R \simeq D_4$ is the Klein four-group. 
 
-$\bullet$ Soit $C$ a rectangular parallelepiped with square basis  inscribed in the sphere $S_2$ :
+$\bullet$ Let $C$ be a rectangular parallelepiped with square basis  inscribed in the sphere $S_2$ :
 
 $
-C=\{ (\frac{4}{9},\frac{8}{9},\frac{1}{9}),(-\frac{4}{9},\frac{8}{9},\frac{1}{9}),(-\frac{4}{9},-\frac{8}{9},\frac{1}{9}),(\frac{4}{9},-\frac{8}{9},\frac{1}{9}),\\
- \ \ (\frac{4}{9},\frac{8}{9},-\frac{1}{9}),(-\frac{4}{9},\frac{8}{9},-\frac{1}{9}),(-\frac{4}{9},-\frac{8}{9},-\frac{1}{9}),(\frac{4}{9},-\frac{8}{9},-\frac{1}{9}) \}. 
+C=\{ (\frac{\sqrt{40}}{9},\frac{\sqrt{40}}{9},\frac{1}{9}),(-\frac{\sqrt{40}}{9},\frac{\sqrt{40}}{9},\frac{1}{9}),(-\frac{\sqrt{40}}{9},-\frac{\sqrt{40}}{9},\frac{1}{9}),(\frac{\sqrt{40}}{9},-\frac{\sqrt{40}}{9},\frac{1}{9}),\\
+ \ \ (\frac{\sqrt{40}}{9},\frac{\sqrt{40}}{9},-\frac{1}{9}),(-\frac{\sqrt{40}}{9},\frac{\sqrt{40}}{9},-\frac{1}{9}),(-\frac{\sqrt{40}}{9},-\frac{\sqrt{40}}{9},-\frac{1}{9}),(\frac{\sqrt{40}}{9},-\frac{\sqrt{40}}{9},-\frac{1}{9}) \}. 
 $
 
-The symmetry group of $C$ is $G_C =\langle r,s \rangle= \{e,r,r^2,r^2,s,rs,r^2s,r^3s\}$, where $r = \mathrm{Rot}(\vec{e}_3,\pi/2), s = \mathrm{Rot}(\vec{e}_1,\pi)$, so $G_C \simeq D_8$.
+The symmetry group of $C$ is $G_C =\langle r,s \rangle= \{e,r,r^2,r^3,s,rs,r^2s,r^3s\}$, where $r = \mathrm{Rot}(\vec{e}_3,\pi/2), s = \mathrm{Rot}(\vec{e}_1,\pi)$, so $G_C \simeq D_8$.
 \end{enumerate}
 \end{proof}
 
@@ -2870,14 +2870,14 @@ Moreover, for all $\alpha(t) \in F(t)$,
 \begin{align*}
 (\rho\sigma)(\alpha(t))&= \rho\left ( \alpha\left(\frac{1}{t}\right)\right)\\
 &=\alpha\left(\frac{t}{t-1}\right),\\
-(\sigma \rho^{-1})(\alpha(t)&= (\sigma \rho^2)(\alpha(t))\\
+(\sigma \rho^{-1})(\alpha(t))&= (\sigma \rho^2)(\alpha(t))\\
 &=\sigma\left(\alpha\left(\frac{1}{1-t}\right)\right)\\
 &=\alpha\left(\frac{1}{1-\frac{1}{t}} \right)\\
 &=\alpha\left(\frac{t}{t-1}\right).\\
 \end{align*}
 Thus $\rho \sigma = \sigma \rho^{-1}$.
 
-To summerise, $G = \langle \sigma,\rho \rangle$, with
+To summarise, $G = \langle \sigma,\rho \rangle$, with
 $\sigma^2 = \rho^3=e\ (\sigma \neq e, \rho\neq e), \rho \sigma = \sigma \rho^{-1}$, therefore 
 $$G \simeq D_6 \simeq S_3.$$
 
@@ -2931,7 +2931,7 @@ Conclusion: $G$ corresponds to the subgroup of $\mathrm{PGL}(2,F)$ consisting of
 We verify that $\alpha(t) = \frac{(t^2-t+1)^3}{t^2(t-1)^2} \in L_G$:
 \begin{align*}
 \sigma(\alpha(t)) &= \frac{((\frac{1}{t})^2-(\frac{1}{t})+1)^3}{(\frac{1}{t})^2((\frac{1}{t})-1)^2}\\
-&=\frac{(1 -t -t^2)^3}{t^2(1-t)^2}\\
+&=\frac{(1 -t +t^2)^3}{t^2(1-t)^2}\\
 &=\alpha(t),\\
 \tau(\alpha(t) &=  \frac{((1-t)^2-(1-t)+1)^3}{(1-t)^2((1-t)-1)^2} \\
 &=\frac{(t^2-t+1)^3}{(t-1)^2 t^2}\\
