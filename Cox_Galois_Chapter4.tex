@@ -126,7 +126,7 @@ Moreover $F(\alpha_1,\ldots,\alpha_n)$ contains $\alpha_{r+1}, \ldots, \alpha_n$
 By Lemma 4.1.9, $F(\alpha_1,\ldots,\alpha_r)(\alpha_{r+1},\ldots,\alpha_n)$ is the smallest subfield of $L$ containing $F(\alpha_1,\ldots,\alpha_r)$ and $\alpha_{r+1},\ldots,\alpha_n$, thus 
 $$F(\alpha_1,\ldots,\alpha_r)(\alpha_{r+1},\ldots,\alpha_n) \subset F(\alpha_1,\ldots,\alpha_n).$$
 
-We the reciprocal inclusion proved in section 4.1, we conclude that
+From the reciprocal inclusion proved in section 4.1, we conclude that
 $$F(\alpha_1,\ldots,\alpha_r)(\alpha_{r+1},\ldots,\alpha_n) = F(\alpha_1,\ldots,\alpha_n).$$
 \end{proof}
 
@@ -136,7 +136,7 @@ $$F(\alpha_1,\ldots,\alpha_r)(\alpha_{r+1},\ldots,\alpha_n) = F(\alpha_1,\ldots,
 }
 
 \begin{proof}
-$\bullet$ Let $\gamma \in F[\alpha_1,\ldots,\alpha_{n-1}][\alpha_n]$. Write  $R =  F[\alpha_1,\ldots,\alpha_{n-1}]$. By definition, there exists a polynomial $p = \sum_{k=0}^d a_k x_n^k \in R[x_n]$ such that $\gamma= p(\alpha_n)$, and for every  $a_k \in K, 0 \leq k \leq d$, there exists $f_k  \in F[x_1,\ldots,x_{n-1}]$ such that $a_k = f_k(\alpha_1,\ldots,\alpha_{n-1})$.
+$\bullet$ Let $\gamma \in F[\alpha_1,\ldots,\alpha_{n-1}][\alpha_n]$. Write  $R =  F[\alpha_1,\ldots,\alpha_{n-1}]$. By definition, there exists a polynomial $p = \sum_{k=0}^d a_k x_n^k \in R[x_n]$ such that $\gamma= p(\alpha_n)$, and for every  $a_k \in R, 0 \leq k \leq d$, there exists $f_k  \in F[x_1,\ldots,x_{n-1}]$ such that $a_k = f_k(\alpha_1,\ldots,\alpha_{n-1})$.
 
 Thus $$\gamma = \sum\limits_{k=0}^d  f_k(\alpha_1,\ldots,\alpha_{n-1})\alpha_n^k.$$
 
@@ -150,9 +150,9 @@ There exists $f \in F[x_1,\ldots,x_n]$ such that $x = f(\alpha_1,\ldots,\alpha_n
 
 As $F[x_1,\ldots,x_n] = F[x_1,\ldots,x_{n-1}][x_n]$, $f = \sum\limits_{k=0}^d f_k(x_1,\ldots,x_{n-1})x_n^k$, where $f_k \in F[x_1,\ldots,x_{n-1}]$.
 
-So  $\gamma = \sum\limits_{k=0}^d f_k(\alpha_1,\ldots,\alpha_{n-1})\alpha_n^k = \sum\limits_{k=0}^d a_k x_n^k$, with $a_k = f_k(\alpha_1,\ldots,\alpha_{n-1}) \in F[\alpha_1,\ldots,\alpha_n]=R$.
+So  $\gamma = \sum\limits_{k=0}^d f_k(\alpha_1,\ldots,\alpha_{n-1})\alpha_n^k = \sum\limits_{k=0}^d a_k x_n^k$, with $a_k = f_k(\alpha_1,\ldots,\alpha_{n-1}) \in F[\alpha_1,\ldots,\alpha_{n-1}]=R$.
 
-Let $p = \sum_{k=0}^d a_k x_n^k$. Alors $p \in R[x_n]$ and $x = p(\alpha_n)$, thus $x \in R[\alpha_n] = F[\alpha_1,\ldots,\alpha_{n-1}][\alpha_n]$.
+Let $p = \sum_{k=0}^d a_k x_n^k$. Then $p \in R[x_n]$ and $x = p(\alpha_n)$, thus $x \in R[\alpha_n] = F[\alpha_1,\ldots,\alpha_{n-1}][\alpha_n]$.
 
 The reciprocal inclusion
 $$F[\alpha_1,\ldots,\alpha_n] \subset F[\alpha_1,\ldots,\alpha_{n-1}][\alpha_n]$$
@@ -196,7 +196,7 @@ $$F(\alpha_1,\ldots,\alpha_n) \simeq  F(x_1,\ldots,x_n).$$
 \item[(a)] Show that $g$ and $p$ are relatively prime in $F[x]$.
 \item[(b)] By part (a) and the Euclidean algorithm, we have $Ap+Bg = 1$ for some $A,B \in F[x]$. Prove that $B(\alpha) \in F[\alpha]$ is the multiplicative inverse of $g(\alpha)$.
 \end{enumerate}
-Do you see how this exercice relates to Exercise 5 of section 3.1?
+Do you see how this exercise relates to Exercise 5 of section 3.1?
 }
 
 \begin{proof}
@@ -210,17 +210,18 @@ There exists $g \in F[x]$ such that $\beta = g(\alpha)$.
 Let $u\in F[x]$ such that $u \mid p, u \mid g$. Then
 $p = uq,\ q\in F[x]$, and since $p$ is irreducible over $F$,  $u$ or $q$ is a constant of $F^*$.
 
-If $q =\lambda \in F^*$, then $p = \lambda^{-1} u $ divides $u$, which divides $g$, thus $p$ divides $g$. In this case, since $p(\alpha) = 0$, $\beta = g(\alpha) = 0$, in contradiction with the hypothesis $\beta \neq 0$.
+If $q =\lambda \in F^*$, then $u = \lambda^{-1} p $ and $p$ 
+divides $u$, which divides $g$, thus $p$ divides $g$. In this case, since $p(\alpha) = 0$, $\beta = g(\alpha) = 0$, in contradiction with the hypothesis $\beta \neq 0$.
 
 So $u = \mu \in F^*$ , $u \mid 1$. Consequently, for all $u \in F[x]$, $(u \mid p, u \mid g) \Rightarrow u\mid 1$: $p,g$ are relatively prime.
 
-\item[(b)]  Then there exists a BŽzout's relation between these two polynomials:
+\item[(b)]  Then there exists a B\'ezout's relation between these two polynomials:
 $$Ap + Bg = 1, \ A,B \in F[x].$$
 The evaluation of these polynomials in $\alpha$, since $p(\alpha)=0$, gives
 $$B(\alpha) g(\alpha) = 1, B(\alpha) \in F[\alpha]$$
 So $B(\alpha)$ is the multiplicative inverse of $\beta = g(\alpha)\neq 0$ in $F[\alpha]$: $F[\alpha]$ is a field.
 
-Note: We have proved in Exercice 3.5.1 that $F[x]/\langle f\rangle$, where $f$ is irreducible over $F$,  is a field with the same argumentation. Here $f = p$ is the minimal polynomial  of $\alpha$ over $F$, so it is irreducible over $f$.
+Note: We have proved in Exercise 3.5.1 that $F[x]/\langle f\rangle$, where $f$ is irreducible over $F$,  is a field with the same argumentation. Here $f = p$ is the minimal polynomial  of $\alpha$ over $F$, so it is irreducible over $f$.
 \end{enumerate}
 \end{proof}
 
@@ -241,18 +242,18 @@ Suppose on the contrary that $f$ is reducible over $F$:  $f = x^2 - 3 = u v,\ u 
 
 $$u = ax+b, a,b\in \mathbb{Q}[\sqrt{2}], a\neq 0.$$
 
-Then $\alpha = -b/a \in \mathbb{Q}[\sqrt{2}]$ is a root of $u$, thus is a root of $f = x^2-3$. Since $\sqrt{2}^{2n} = 2^n$ et $\sqrt{2}^{2n+1} = 2^n \sqrt{2}$, every element of $\mathbb{Q}[\sqrt{2}]$  is of the form $c+ d\sqrt{2} , \ c,d \in \mathbb{Q}$.
+Then $\alpha = -b/a \in \mathbb{Q}[\sqrt{2}]$ is a root of $u$, thus is a root of $f = x^2-3$. Since $\sqrt{2}^{2n} = 2^n$ and $\sqrt{2}^{2n+1} = 2^n \sqrt{2}$, every element of $\mathbb{Q}[\sqrt{2}]$  is of the form $c+ d\sqrt{2} , \ c,d \in \mathbb{Q}$.
 
 We should have $\alpha = c + d \sqrt{2} = \pm \sqrt{3}. $
-Alors $$\alpha^2 = c^2+2d^2  +2cd\sqrt{2}=3.$$
+Then $$\alpha^2 = c^2+2d^2  +2cd\sqrt{2}=3.$$
 
-If $cd\neq 0$, $\sqrt{2} = (c^2+2d^2 -3)/(2cd) \in \mathbb{Q}$, in contradiction with the irrationality of $\sqrt{2}$. Thus $c=0$ ou $d=0$.
+If $cd\neq 0$, $\sqrt{2} = (c^2+2d^2 -3)/(2cd) \in \mathbb{Q}$, in contradiction with the irrationality of $\sqrt{2}$. Thus $c=0$ or $d=0$.
 
 $d=0$ gives $\sqrt{3} = \pm c \in \mathbb{Q}$: this is in contradiction with the irrationality of $\sqrt{3}$.
 
 $c=0$ implies $\sqrt{\frac{3}{2}} = \pm d \in \mathbb{Q}$. But then $\sqrt{\frac{3}{2}} =\frac{p}{q}, (p,q) \in \mathbb{Z} \times \mathbb{N}^*, p\wedge q=1$.
 
-$3q^2 = 2 p^2$, $q^2 \mid 2 p^2$ and $q^2 \wedge p^2 = 1$. By Gauss Lemma, $q^2 \mid 2, q\in \mathbb{N}^*$, donc $q=1, 3 = 2p^2$, thus $3$ is even: this is absurd.
+$3q^2 = 2 p^2$, $q^2 \mid 2 p^2$ and $q^2 \wedge p^2 = 1$. By Gauss Lemma, $q^2 \mid 2, q\in \mathbb{N}^*$, hence $q=1, 3 = 2p^2$, thus $3$ is even: this is absurd.
 
 Conclusion: $x^2-3$ is irreducible $\mathbb{Q}[\sqrt{2}]$.
 
@@ -332,7 +333,7 @@ Conclusion: There exists one and only one polynomial $g$ with degree at most $d$
 
 \paragraph{Ex. 4.2.2}
 
-{\it This exercise deals with Schšnemann's version of the irreducibility criterion.
+{\it This exercise deals with Sch\"onemann's version of the irreducibility criterion.
 \begin{enumerate}
 \item[(a)] Let $f(x) = (x-a)^n + pF(x)$, where $a\in \Z$ and $F(x) \in \Z[x]$ satisfy $\deg(F) \leq n$, and $p\nmid F(a)$. Prove that $f$ is irreducible over $\Q$.
 \item[(b)] More generally, let $g(x) \in \Z[x]$ be irreducible modulo $p$ (i.e., reducing its coefficients modulo $p$ gives an irreducible polynomial in $\F_p[x]$). Then let $f(x) = g(x)^n + pF(x)$, where $F[x] \in \Z[x]$ and $g(x)$ and $F(x)$ are relatively prime modulo $p$. Also assume that $\deg(F) \leq n \deg(g)$. Prove that $f$ is irreducible over $\Q$.
@@ -366,11 +367,11 @@ Hence there exist polynomials $G,H \in \mathbb{Z}[x]$ such that
  $$g = u(x-a)^k + p G(x), h =v(x-a)^l + pH(x).$$
 Consequently
  $$f(x) = (x-a)^n + pF(x) = [u(x-a)^k + p G(x)][v(x-a)^l + pH(x)].$$
-As $k\geq 1, l \geq 1$, $(x-a)^k$ et $(x-a)^l$ have $a$ as a root, thus
+As $k\geq 1, l \geq 1$, $(x-a)^k$ and $(x-a)^l$ have $a$ as a root, thus
  $$f(a) = pF(a) = p^2 G(a) H(a).$$
 Then $F(a) = p G(a)H(a)$ is divisible by $p$, in contradiction with the hypothesis $p\nmid F(a)$.
  
- Conclusion: $f\in \mathbb{Z}[x]$ is not product of nonconstant polynomials  in $\mathbb{Z}[x]$. By Corollary 4.2.1, $f$ is irreducible over $\mathbb{Q}$.
+ Conclusion: $f\in \mathbb{Z}[x]$ is not a product of nonconstant polynomials  in $\mathbb{Z}[x]$. By Corollary 4.2.1, $f$ is irreducible over $\mathbb{Q}$.
  
 
  \item[(b)]
@@ -522,7 +523,7 @@ Note: If we know the cyclotomic polynomials, since $3$ is prime:
 \end{align*}
 ($24 = 3\times2^3, \mathrm{rad}(24) = 3\times 2 = 6$).
 \end{enumerate}
-$\Phi_{24}$ is the minimal polynomial of $\zeta_{24}$ sur $\mathbb{Q}$.
+$\Phi_{24}$ is the minimal polynomial of $\zeta_{24}$ over $\mathbb{Q}$.
 The decomposition in (a) is the decomposition
 $$x^{24}-1 =\prod_{d\mid 24 }  \Phi_d(x) = \Phi_{24} \,\Phi_{12} \,\Phi_{8} \,\Phi_{3}\, \Phi_{6} \,\Phi_{4} \,\Phi_{2}\, \Phi_{1}.$$
 \end{proof}
@@ -571,7 +572,7 @@ It is so sufficient to test the divisibility of $f$ by quadratic polynomials, wh
 
 $$x^2,x^2+1, x^2+x, x^2+x+1.$$
 
-$x^2$ et $x^2+x$ are not irreducible, can be excluded of the list. It remains to test two divisions by
+$x^2$ and $x^2+x$ are not irreducible, can be excluded of the list. It remains to test two divisions by
 
 $$x^2+1,x^2+x+1$$.
 
@@ -703,7 +704,7 @@ where $a_0,a_1,\ldots, a_{n-1}$ are unique.
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-Note that $\sqrt[4]{2}$ is a root of $p=x^4-2 \in \Q[x]$, and $p$ is irreducible over $\Q$ by Exercise 4.2.8 (or Schšnemann-Eisenstein Criterion for the prime 2). Thus $$[\Q(\sqrt[4]{2}) : \Q]=4.$$
+Note that $\sqrt[4]{2}$ is a root of $p=x^4-2 \in \Q[x]$, and $p$ is irreducible over $\Q$ by Exercise 4.2.8 (or Sch\"onemann-Eisenstein Criterion for the prime 2). Thus $$[\Q(\sqrt[4]{2}) : \Q]=4.$$
 $i$ is a root of $x^2+1$, which has no root in $\mathbb{R}$, a fortiori in $\Q[\sqrt[4]{2}]$. As its degree is 2, it is irreducible over $\Q[\sqrt[4]{2}]$, thus
 $$[\Q(\sqrt[4]{2},i) : \Q(\sqrt[4]{2})]  =2 .$$
 
@@ -737,7 +738,7 @@ $$f= x^4-4x^2+2.$$
 We show that $f$ is irreducible $\Q$.
 $f= x^4-4x^2+2 = a_4x^4+a_3x^3+a_2x^2+a_1x+a_0$ satisfies
 $2 \nmid a_4 =1, 2 \mid a_3=0,2\mid a_2=-4, 2 \mid a_1=0,2 \mid a_0=2,  2^2 \nmid a_0 = 2$, so 
-the Schšnemann-Eisenstein Criterion with $p=2$ implies that $f$ is irreducible over $\mathbb{Q}$.
+the Sch\"onemann-Eisenstein Criterion with $p=2$ implies that $f$ is irreducible over $\mathbb{Q}$.
 
 
 Conclusion: $f = x^4 -4x^2+2$ is irreducible over $\Q$. $f$ is the minimal polynomial of $\alpha = \sqrt{2+\sqrt{2}}$, thus
@@ -769,7 +770,7 @@ $$ ( 1,\sqrt[3]{2},\sqrt[3]{2}^2, \sqrt{3},\sqrt{3}\sqrt[3]{2},\sqrt{3}\sqrt[3]{
 is a basis of $\Q(\sqrt{3},\sqrt[3]{2})$ over $\Q$.
 
 \item[(c)] The minimal polynomial of $\sqrt{2+\sqrt{2}}$ over $\Q$ being of degree 4, 
-$$\left(1,\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2}}^{\, 2}= 2+\sqrt{2}, \sqrt{2+\sqrt{2}}^{\, 3} =(2+\sqrt{2})\sqrt{2+\sqrt{2}}, \sqrt{2+\sqrt{2}}^{\,4}= (2+\sqrt{2})^2 \right)$$
+$$\left(1,\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2}}^{\, 2}= 2+\sqrt{2}, \sqrt{2+\sqrt{2}}^{\, 3} =(2+\sqrt{2})\sqrt{2+\sqrt{2}} \right)$$
 is a basis of $\Q\left(\sqrt{2+\sqrt{2}}\right)$ over $\Q$.
 
 \item[(d)]
@@ -784,7 +785,7 @@ is a basis of $\Q\left(i,\sqrt{2+\sqrt{2}}\right)$ over $\Q$.
 
 {\it Suppose that $F\subset L$ is a finite extension with $[L:F]$ prime.
 \begin{enumerate}
-\item[(a)] Show that that the only subfields of $L$ containing $F$ are $F$ and $L$.
+\item[(a)] Show that the only subfields of $L$ containing $F$ are $F$ and $L$.
 \item[(b)] Show that $L = F(\alpha)$ for any $\alpha \in L \setminus F$.
 \end{enumerate}
 }
@@ -798,7 +799,7 @@ so $[K:F]$ divides $p = [L:F]$, where $p$ is a prime.
 
 If $[K:F] = 1$, then $K = F$, and if $[K:F]=p$, then $[L:K]= 1$, thus $K = L$.
 
-Conclusion: If  $[L:F]$ is a prime number, the only intermediate subfields of the extension $F \subset L$  are $L$ et $F$.
+Conclusion: If  $[L:F]$ is a prime number, the only intermediate subfields of the extension $F \subset L$  are $L$ and $F$.
 
 
 \item[(b)] Since $\alpha \in L$, $F \subset F(\alpha) \subset L$.
@@ -821,7 +822,7 @@ If $\alpha \not \in F$, then $F(\alpha) \neq F$, thus by (a), $F(\alpha) = L$.
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-The Schšnemann-Eisenstein Criterion with $p=2$ shows that $x^4-2$ is irreducible over $\Q$, and with $p=3$ shows that $f = x^3-3$ is irreducible over $\Q$ (alternatively, we can use Exercise 4.2.8).
+The Sch\"onemann-Eisenstein Criterion with $p=2$ shows that $x^4-2$ is irreducible over $\Q$, and with $p=3$ shows that $f = x^3-3$ is irreducible over $\Q$ (alternatively, we can use Exercise 4.2.8).
 
 \item[(b)]
 
@@ -840,7 +841,7 @@ thus $3 = \deg(x^3-3) =  [\Q(\sqrt[3]{3}):\Q]$ divides $ [L : \Q] $.
 
 
 \item[(d)]
-As $3\mid [L : \Q]$,  and as $4 \mid [L : \Q] $, where 3 et 4 are relatively prime, $$12 = 3 \times 4 \mid [L : \Q] .$$ In particular, $12 \leq [L : \Q] $. By (b), $12 \geq [L : \Q] $, thus
+As $3\mid [L : \Q]$,  and as $4 \mid [L : \Q] $, where 3 and 4 are relatively prime, $$12 = 3 \times 4 \mid [L : \Q] .$$ In particular, $12 \leq [L : \Q] $. By (b), $12 \geq [L : \Q] $, thus
 $$ [L : \Q] =12.$$
 
 \end{enumerate}
@@ -864,7 +865,7 @@ Then $f$ is the minimal polynomial of  $\alpha$ over $F(\beta)$, thus $$ \delta_
 
 $\delta_2 = d_1$, combined with the relation \eqref{eq:4.3.6}, gives $\delta_1= d_2$.
 
-Let $G$ the minimal polynomial of  $\beta$ sur $F(\alpha)$.
+Let $G$ the minimal polynomial of  $\beta$ over $F(\alpha)$.
 
 As $g \in F[x] \subset F(\alpha)[x]$, and $g(\beta)=0$, then $G \mid g$, and $\deg(g) = d_2 = \delta_1 = \deg(G)$, where $g$ and  $G$ are monic, thus $g=G$.
 
@@ -894,7 +895,7 @@ $$[L_m:L_0] = [L_m:L_{m-1}][L_{m-1}:L_{m-2}]\cdots[L_2:L_1][L_1:L_0].$$
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-The Tower Theorem shows that (a) et (b) are true for $m=2$. Suppose that (a) et (b) are true for an integer $m\geq 2$. We prove that they remain true for the integer $m+1$.
+The Tower Theorem shows that (a) and (b) are true for $m=2$. Suppose that (a) and (b) are true for an integer $m\geq 2$. We prove that they remain true for the integer $m+1$.
 
 $\bullet$  If  $[L_i : L_{i-1}] = \infty$ for some $i, 1 \leq i \leq m$, the induction hypothesis show that $[L_m : L_0] = \infty$. As  $L_0 \subset L_m \subset L_{m+1}$, the part (a) of Theorem 4.3.8 (Tower Theorem), shows that $[L_{m+1} : L_0] = \infty$.
 
@@ -930,7 +931,7 @@ So the induction is done.
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-In Example 4.2.4, we have seen that the Schšnemann-Eisenstein Criterion implies that, for all  $n\geq 2$, and $p$ prime,
+In Example 4.2.4, we have seen that the Sch\"onemann-Eisenstein Criterion implies that, for all  $n\geq 2$, and $p$ prime,
 $$f=x^n+px+p$$ is irreducible over $\mathbb{Q}$.
 Let $\alpha$ a root of $f$ in $\C$. Since $f$ is irreducible over $\Q$, the minimal polynomial of $\alpha$ over $\Q$ is $f$, and
 $$[\Q(\alpha) : \Q] = \deg(f) = n.$$
@@ -990,7 +991,7 @@ and
 
 \item[(b)]
 
-By Lemma 4.4.2(b),  as $\alpha \in L$, the degree of the minimal polynomial of  $\alpha$ over $\Q$ divides ${[L:\Q] = 1760}$.
+By Lemma 4.4.2(b),  as $\alpha \in L$, the degree of the minimal polynomial of  $\alpha$ over $\Q$ divides ${[L:\Q] \leq 1760}$, hence $\deg(p) \leq 1760$.
 \end{enumerate}
 \end{proof}
 
@@ -1011,7 +1012,7 @@ $\bullet$ Following this definition, suppose that $p(\alpha) = 0$, where $p\in \
 
 Write $P\in \Q[x]$ the minimal polynomial of $\alpha$ over $\Q$. Then $P$ divides $p$ in $\Q[x]$: there exists $q \in \Q[x]$ such that $p = P q$.
 
-By Gauss Lemma, Proposition A.3.2 of appendix A, there exists $\delta \in \mathbb{\Q}^*$ such that $\tilde{P} =\delta P$ et $\tilde{q} = \delta^{-1} q$ have integer coefficients. So $p = \tilde{P} \tilde{q}, \tilde{P}, \tilde{q} \in \Z[x]$.
+By Gauss Lemma, Proposition A.3.2 of appendix A, there exists $\delta \in \mathbb{\Q}^*$ such that $\tilde{P} =\delta P$ and $\tilde{q} = \delta^{-1} q$ have integer coefficients. So $p = \tilde{P} \tilde{q}, \tilde{P}, \tilde{q} \in \Z[x]$.
 
 As $p$ is monic, $\pm \tilde{P},\pm \tilde{q}$ are also monic. Possibly by multiplying  $\delta$ by $-1$, we can so suppose that $ \tilde{P}, \tilde{q}$ are monic. Thus $P = \tilde{P}$, and so $P \in \mathbb{Z}[x]$.
 
@@ -1041,7 +1042,7 @@ Conclusion: If $n = [L:F] < \infty$, every $\alpha \in L$ is a root of a nonzero
 
 \paragraph{Ex. 4.4.5}
 
-{\it In 1873 Hermite proved that the number $e$ is transcendental over $\Q$, and in 1882, Lindemann show that $\pi$ is transcendental over $\Q$. It is unknown whether $\pi+e$ and $\pi-e$ are transcendental. Prove that {\bf at least} one of these numbers is transcendental over $\Q$.
+{\it In 1873 Hermite proved that the number $e$ is transcendental over $\Q$, and in 1882, Lindemann showed that $\pi$ is transcendental over $\Q$. It is unknown whether $\pi+e$ and $\pi-e$ are transcendental. Prove that {\bf at least} one of these numbers is transcendental over $\Q$.
 }
 
 \begin{proof}
@@ -1062,7 +1063,7 @@ At least one of the numbers $\pi+e,\pi-e$ is transcendental over $\Q$.
 \begin{proof}
 Let $f \in F(x), f\neq 0$. Then $f =p/q,\  p,q \in F[x], \ p \wedge q = 1,\  p\neq 0, q\neq 0$.
 
-If $f$ is algebraic over $F$, let $P  = \sum_{k=0}^d a_i x^k \in F[x]$ the minimal polynomial $f$ over $F$, of degree $n$. Then $a_n = 1 \neq 0$, and $a_0 \neq 0$ (if $a_0 = 0$,  $P/x$ has the root $f$ and so $P$ should not be the minimal polynomial). Then 
+If $f$ is algebraic over $F$, let $P  = \sum_{i=0}^n a_i x^i \in F[x]$ the minimal polynomial $f$ over $F$, of degree $n$. Then $a_n = 1 \neq 0$, and $a_0 \neq 0$ (if $a_0 = 0$,  $P/x$ has the root $f$ and so $P$ should not be the minimal polynomial). Then 
 $$a_{n}\left ( \frac{p}{q}\right )^n+a_{n-1}\left ( \frac{p}{q}\right )^{n-1}+\cdots+a_0 = 0,$$
 thus   $$a_n p^n + a_{n-1} p^{n-1}q+\cdots+a_0 q^n = 0.$$
 
@@ -1097,9 +1098,9 @@ An algebraically closed field has no proper algebraic extension.
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-Soit $\R \subset L$ an algebraic extension. 
+Let $\R \subset L$ is an algebraic extension. 
 
-If  $x^2+1$ has a root $\alpha$ in $L$, we can take  $K=L$. Otherwise $x^2+1$, being of degree 2, is irreducible over $L$, thus $K = L[x]/\langle x^2 +1\rangle$ if an extension of $L$ containing $\alpha = \overline{x} = x +\langle x^2 +1\rangle $, root of $x^2+1$ in $K$. 
+If  $x^2+1$ has a root $\alpha$ in $L$, we can take  $K=L$. Otherwise $x^2+1$, being of degree 2, is irreducible over $L$, thus $K = L[x]/\langle x^2 +1\rangle$ is an extension of $L$ containing $\alpha = \overline{x} = x +\langle x^2 +1\rangle $, root of $x^2+1$ in $K$. 
 
 In the two cases, there exists  an extension $L \subset K$ such that $x^2+1$ has a root $\alpha$ in $K$ (and $ [L[\alpha]:L] \leq \deg(x^2+1) = 2$).
 

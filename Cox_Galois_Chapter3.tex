@@ -85,7 +85,7 @@ If $p \in \langle f \rangle$, then $p = u f, u \in F[x]$, thus  $p = \mu u g \in
 If $p \in \langle g \rangle$, then $p = q g, q \in F[x]$, thus $p = \mu^{-1} q f \in \langle f \rangle$, so $\langle g \rangle \subset \langle f \rangle$.
 $$\langle f \rangle = \langle g \rangle = I.$$
 
-$\bullet$ Conversely, if $\langle f \rangle = \langle g \rangle,$  then $g \in \langle f \rangle$ , $g = v f, v \in k[x]$, thus $g = v gh$. As $f = gh\neq 0, g \neq 0$, thus $1 = vh$, therefore $h \in F^*$ is a constant.
+$\bullet$ Conversely, if $\langle f \rangle = \langle g \rangle,$  then $g \in \langle f \rangle$ , $g = v f, v \in F[x]$, thus $g = v gh$. As $f = gh\neq 0, g \neq 0$, thus $1 = vh$, therefore $h \in F^*$ is a constant.
 
 $$h \in F^* \iff I =\langle f \rangle.$$
 
@@ -98,7 +98,7 @@ $$h \in F^* \iff I =\langle f \rangle.$$
 }
 
 \begin{proof}
-Let $x \in F$. If $x\ne 0$, then $x.x^{-1} = 1$, thus $\varphi(x) \varphi(x^{-1}) = 1$, so $\varphi(x) \ne 0$.
+Let $x \in F$. If $x\ne 0$, then $x\cdot x^{-1} = 1$, thus $\varphi(x) \varphi(x^{-1}) = 1$, so $\varphi(x) \ne 0$.
 For all $x\in F$, $x \ne 0 \Rightarrow \varphi(x) \ne 0$, therefore $\varphi(x) = 0 \Rightarrow x =0$, so $\ker(\varphi) = \{0\}$ and $\varphi$ is injective.
 
 Consequently, the corestriction $F \to \varphi(F), x \mapsto \varphi(x)$ is a bijection, so it is a ring isomorphism $\varphi : F \simeq \varphi(F)$.
@@ -110,7 +110,7 @@ Consequently, the corestriction $F \to \varphi(F), x \mapsto \varphi(x)$ is a bi
 }
 
 \begin{proof}
-Let $a,b \in A = F[x]$. Suppose that $a+I = a'+I$ et $b+I = b'+I$.
+Let $a,b \in A = F[x]$. Suppose that $a+I = a'+I$ and $b+I = b'+I$.
 
 Then $a' =a + u, u \in I, b' = b+v, v\in I$, so $a'+b' = a+b + u+v$, where $u+v \in I$, thus $a+b+I = a'+b'+I$.
 
@@ -156,11 +156,11 @@ Let $f \in F[x]$ be irreducible, and let $L =F[x]/\langle f \rangle$ the quotien
 \begin{enumerate}
 \item[(a)]  Let  $\overline{g} \in L, \overline{g} \neq \overline{0}$, that is to say $g + \langle f \rangle \neq 0 + \langle f \rangle$, which is equivalent to $ g \not \in \langle f \rangle$, or  $f \nmid g$ (in $F[x]$).
 
-Let $h$ a common divisor of $f$ et $g$. Since $f$ is irreducible, either $u$ is a nonzero constant, or $u = k f, k \in F^*$ is associate to $f$. But in this last case, $f = k^{-1} u$ divides u, which divides $g$, so $f \mid g$, in contradiction with the hypothesis.
+Let $u$ a common divisor of $f$ and $g$. Since $f$ is irreducible, either $u$ is a nonzero constant, or $f = k u, k \in F^*$, i.e., $u$ is associate to $f$. But in this last case, $u = k^{-1} f$ and $f$ divides $u$, which divides $g$, so $f \mid g$, in contradiction with the hypothesis.
 
 So the only common divisors of $f,g$ are the nonzero constants, thus $f \wedge g = 1$.
 
-By  BŽzout theorem, there exist polynomials $A,B \in k[x]$ such that
+By  B\'ezout theorem, there exist polynomials $A,B \in k[x]$ such that
 $$1 = A f + B g.$$
 
 \item[(b)]  
@@ -180,7 +180,7 @@ So $B+\langle f \rangle$ is the inverse of $g+ \langle f \rangle$ in  $L =F[x]/\
 
 $f = x^2+x+1$ has no root in $\mathbb{Q}$ is has degree 2, therefore $f$ is irreducible on $\mathbb{Q}$, and consequently $\Q[x]/\langle f \rangle$ is a field.
 
- Moreover $-x(x+1) + (x^2+x+1) = 1$ is a BŽzout's relation between $x+1$ and $x^2+x+1$. This gives the following equality in $\Q[x]/\langle f \rangle$:
+ Moreover $-x(x+1) + (x^2+x+1) = 1$ is a B\'ezout's relation between $x+1$ and $x^2+x+1$. This gives the following equality in $\Q[x]/\langle f \rangle$:
 $$(-x + \langle f \rangle) (x+1+\langle f \rangle) +  (x^2+x+1) + \langle f \rangle = 1 + \langle f \rangle,$$
 so
 $$(-x + \langle f \rangle) (x+1+\langle f \rangle)  = 1 + \langle f \rangle.$$
@@ -392,7 +392,7 @@ $$z_0 = \sqrt{\frac{1}{2}\left ( \sqrt{x^2+y^2}  + x\right)} + i \ \mathrm{sgn}(
 We will write $\sqrt{\Delta}$ one of the square roots of $\Delta$. Then
  \begin{align*}
  ax^2+bx+c &= a\left[\left(x+\frac{b}{2a}\right)^2 -\left (\frac{\sqrt{\Delta}}{2a}\right)^2\right]\\
- &=a(x-x_1)(x-x_2), x_1 = \frac{-b+\sqrt{\Delta}}{2} \in F(i), x_2 = \frac{-b+\sqrt{\Delta}}{2} \in F(i)
+ &=a(x-x_1)(x-x_2), x_1 = \frac{-b-\sqrt{\Delta}}{2} \in F(i), x_2 = \frac{-b+\sqrt{\Delta}}{2} \in F(i)
  \end{align*}
  splits completely over $F(i)$.
   
@@ -438,7 +438,7 @@ We suppose $d>0$, and put the induction hypothesis that  every polynomial  in $ 
 
 Let $g \in \R[x]$ a polynomial of degree $d$ without real root. $g$ has by hypothesis a complex root $\alpha$. Then $g = (x-\alpha)g_1, g_1\in \mathbb{C}[X]$.
 
-By (a), $\overline{\alpha}$ is a root of $g$. $0 = g(\overline{\alpha}) = (\overline{\alpha} - \alpha) g_1(\alpha)$, and $\overline{\alpha} \neq  \alpha$, thus $g_1(\overline{\alpha})=0$, $g_1 = (x- \overline{\alpha}) h, h \in \mathbb{C}[x]$, therefore
+By (a), $\overline{\alpha}$ is a root of $g$. $0 = g(\overline{\alpha}) = (\overline{\alpha} - \alpha) g_1(\overline{\alpha})$, and $\overline{\alpha} \neq  \alpha$, thus $g_1(\overline{\alpha})=0$, $g_1 = (x- \overline{\alpha}) h, h \in \mathbb{C}[x]$, therefore
 
 $$g = (x-\alpha)(x-\overline{\alpha}) h, \ h \in \mathbb{C}[x].$$
 
@@ -476,10 +476,10 @@ If $d=1$, $f = ax+b, \ a\ne 0$, is product of one linear factor.
 
 Let $f \in F[x], d = \deg(f) >1$. Then $f$ has by hypothesis a root $\alpha \in F$, so $f = (x-a)g$, where $\deg(g)<d$. By the induction hypothesis, $g$ is a constant or is product of linear factors, so it is the same for $f$, and the induction is done.
 
-Conclusion: If $F$ is a field, the two following propositions are equivalent,
+Conclusion: If $F$ is an algebraically closed field, then the two following propositions are equivalent:
 \begin{enumerate}
 \item[(i)] Every nonconstant polynomial in $F[x]$ is product of linear factors.
-\item[(ii)] Every nonconstant polynomial in $F[x]$ has a root in $F$
+\item[(ii)] Every nonconstant polynomial in $F[x]$ has a root in $F$.
 \end{enumerate}
 \end{proof}
 
