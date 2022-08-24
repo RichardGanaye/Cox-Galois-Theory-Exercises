@@ -114,7 +114,7 @@ Let $G$ solvable, and $H$ a normal subgroup of $G$. We must prove that $G/H$ is 
 
 There exist subgroups $G_i$ of $G$ such that
 $$\{{e}\} = {G}_n \subset \cdots \subset {G}_i \subset {G}_{i-1} \subset \cdots \subset {G}_0 = G,$$
-where ${G}_i \lhd {G}_{i-1}$, and $ {G}_i / {G}_{i-1}$ is of prime order.
+where ${G}_i \lhd {G}_{i-1}$, and $ {G}_{i-1} / {G}_i$ is of prime order.
 \be
 \item[(a)]  Let $\pi : G \to G/H, g \mapsto gH$ the canonical projection, and $\tilde{G}_i= \pi(G_i)$.
 
@@ -303,7 +303,7 @@ If $q=2$ or $q=3$, then $H$ is cyclic, and $G/H$ of order 15 or 10 is solvable b
 
 A group of order 5 is cyclic, a fortiori solvable, and a group of order 6 est isomorphic to the cyclic group $C_6$, or to $S_3$, and in both cases is solvable.
 
-If $q = 5$ ou $q=6$, $H$ et $G/H$ are both solvable, so $G$ is solvable.
+If $q = 5$ or $q=6$, $H$ and $G/H$ are both solvable, so $G$ is solvable.
 \ee
 
 Conclusion: a group $G$ of order 30 is solvable if and only if it contains a proper non trivial normal subgroup.
@@ -602,7 +602,7 @@ Consequently $F \subset \sigma L$ is a radical extension.
 
 \paragraph{Ex. 8.2.7}
 
-{\it Suppose that we have extensions $F \subset K_1 \subset L$ and $F\subset K_2 \subset L$ such that $F\subset K_1$ and $F \subset K_2$ are galois. Prove that $F \subset K_1K_2$ is Galois. This will show that the compositum of two Galois extensions is again Galois.
+{\it Suppose that we have extensions $F \subset K_1 \subset L$ and $F\subset K_2 \subset L$ such that $F\subset K_1$ and $F \subset K_2$ are Galois. Prove that $F \subset K_1K_2$ is Galois. This will show that the compositum of two Galois extensions is again Galois.
 }
 
 \begin{proof}
@@ -634,7 +634,7 @@ By Theorem 7.2.5, we conclude that $K_1K_2$ is a Galois extension of $F$.
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-Let $f=x^m-1,\ m\in \N^*$. Then $f'=m x^{m-1}$ is relatively prime with  $f$. Indeed $m\neq 0$ in $L$ since the characteristic of $L$ is not $0$, and $-f +m^{-1} x f'= -x^m+1 + x^m = 1$ is a BŽzout's relation between $f$ et $f'$. Therefore (Prop. 5.3.2), $f$ is a separable polynomial, so $x^m-1$ has $m$ distinct roots in $M$,  the splitting field of $f$ over $L$.
+Let $f=x^m-1,\ m\in \N^*$. Then $f'=m x^{m-1}$ is relatively prime with  $f$. Indeed $m\neq 0$ in $L$ since the characteristic of $L$ is $0$, and $-f +m^{-1} x f'= -x^m+1 + x^m = 1$ is a B\'ezout's relation between $f$ and $f'$. Therefore (Prop. 5.3.2), $f$ is a separable polynomial, so $x^m-1$ has $m$ distinct roots in $M$,  the splitting field of $f$ over $L$.
 
 \item[(b)] We show that $\mathbb{U}_m = \{\alpha \in M\ \vert \ \alpha^m=1\}$, the set of the $m$ roots of $f$ in $M$, is a subgroup of $M^*$.
 \be
@@ -656,7 +656,7 @@ The roots of $x^m-1$ in $M$ form a group under multiplication, subgroup of the m
 \begin{proof}
 Let $\zeta$ a primitive root of $f = x^m-1$, in other words a generator of $\mathbb{U}_m$.
 
-As the characteristic of $F$ is 0, by Exercise 1, $f$ is a separable polynomial, and $f=(x-1)(x-\zeta)\ldots(x-\zeta)^{m-1}$
+As the characteristic of $F$ is 0, by Exercise 1, $f$ is a separable polynomial, and $f=(x-1)(x-\zeta)\ldots(x-\zeta^{m-1})$
 
 $F(\zeta) = F(1,\zeta,\cdots,\zeta^{m-1})$ is the splitting field over $F$ of the separable polynomial $f$, so $F\subset F(\zeta)$ is a Galois extension. By hypothesis, $F\subset L$ is also a Galois extension. By the Theorem of the Primitive Element, there exists $\alpha\in L$ such that $L=F(\alpha)$. Then the compositum of $L=F(\alpha)$ and $F(\zeta)$  is $F(\alpha,\zeta) = L(\zeta)$. By Exercise 8.2.7, this is a Galois extension of $F$.
 \begin{center}
@@ -720,7 +720,7 @@ Thus $(\sigma \tau)(\gamma_i) = \sigma(\zeta_i^k \gamma_i) = \sigma(\zeta_i)^k \
   
   $\bullet$ $\varphi$ is an injective homomorphism: 
   
-if $\sigma \in \ker(\varphi)$, $[l] = [0]$, so $\sigma(\gamma_i) = \sigma_i^l \gamma_i = \gamma_i$. As $\sigma$ fixes the elements of $F_{i-1}$ and also $\gamma_{i}$, this is the identity on $F_i=F_{i-1}(\gamma_i)$. $\ker(\varphi) = \{e\}$, and $\varphi$ is injective.
+if $\sigma \in \ker(\varphi)$, $[l] = [0]$, so $\sigma(\gamma_i) = \zeta_i^l \gamma_i = \gamma_i$. As $\sigma$ fixes the elements of $F_{i-1}$ and also $\gamma_{i}$, this is the identity on $F_i=F_{i-1}(\gamma_i)$. $\ker(\varphi) = \{e\}$, and $\varphi$ is injective.
   
 \item[(c)]
 Therefore $\Gal(F_i/F_{i-1})$ is isomorphic to a subgroup $H$ of $\Z/m_i\Z$. As every subgroup of a cyclic group is cyclic, $H$ is cyclic, so 
@@ -1028,13 +1028,15 @@ $$B = \{i_2,i_3,i_5,\sigma^{-1}(i_2),\sigma^{-1}(i_3),\sigma^{-1}(i_5)\} = \{i_1
 \be
 \item[$\bullet$]  If $k \not \in B$, $\mu(k) = k = (i_1\, i_4\, i_2 \,i_3\, i_5)\cdot k$.
 
-\item[$\bullet$] If $k=i_4$, $[ \sigma^{-1} (i_2\, i_3\,i_5)^{-1} \sigma\, (i_2\, i_3\,i_5)] \cdot i_4 = [ \sigma^{-1} (i_2\, i_3\,i_5)^{-1}]\cdot i_5 = \sigma^{-1}(i_3) = i_2= (i_1\, i_4\, i_2 \,i_3\, i_5)\cdot i_4$
-
 \item[$\bullet$] If $k=i_1$, $[ \sigma^{-1} (i_2\, i_3\,i_5)^{-1} \sigma\, (i_2\, i_3\,i_5)] \cdot i_1 = [ \sigma^{-1} (i_2\, i_3\,i_5)^{-1}]\cdot i_2 = \sigma^{-1}(i_5) = i_4= (i_1\, i_4\, i_2 \,i_3\, i_5)\cdot i_1$
 
 \item[$\bullet$] If $k=i_2$, $[ \sigma^{-1} (i_2\, i_3\,i_5)^{-1} \sigma\, (i_2\, i_3\,i_5)] \cdot i_2 = [ \sigma^{-1} (i_2\, i_3\,i_5)^{-1}]\cdot i_1 = \sigma^{-1}(i_1) = i_3= (i_1\, i_4\, i_2 \,i_3\, i_5)\cdot i_2$
 
 \item[$\bullet$] If $k=i_3$, $[ \sigma^{-1} (i_2\, i_3\,i_5)^{-1} \sigma\, (i_2\, i_3\,i_5)] \cdot i_3 = [ \sigma^{-1} (i_2\, i_3\,i_5)^{-1}]\cdot \sigma(i_5) = \sigma^{-1}(\sigma(i_5)) = i_5= (i_1\, i_4\, i_2 \,i_3\, i_5)\cdot i_3$ (since $\sigma(i_5) \not \in \{i_2,i_3,i_5\}$).
+
+\item[$\bullet$] If $k=i_4$, $[ \sigma^{-1} (i_2\, i_3\,i_5)^{-1} \sigma\, (i_2\, i_3\,i_5)] \cdot i_4 = [ \sigma^{-1} (i_2\, i_3\,i_5)^{-1}]\cdot i_5 = \sigma^{-1}(i_3) = i_2= (i_1\, i_4\, i_2 \,i_3\, i_5)\cdot i_4$
+
+\item[$\bullet$] If $k=i_5$, $[ \sigma^{-1} (i_2\, i_3\,i_5)^{-1} \sigma\, (i_2\, i_3\,i_5)] \cdot i_5 = [ \sigma^{-1} (i_2\, i_3\,i_5)^{-1}]\cdot i_3 = \sigma^{-1}(i_2) = i_1= (i_1\, i_4\, i_2 \,i_3\, i_5)\cdot i_5$
 \ee
 Hence $\mu = (i_1\, i_4\, i_2 \,i_3\, i_5)$.
 
@@ -1112,7 +1114,7 @@ We assume that $H_1 \lhd G, H_2\subset G$.
 Let $x \in H_1 \cap H_2$.
 If $y \in H_2$, then $y \in G$. As $H_1 \lhd G$, $yxy^{-1} \in H_1$. Moreover  $x \in H_1 \cap H_2$, thus $x \in H_2$, and  by hypothesis $y\in H_2$, hence $yxy^{-1} \in H_2$. Consequently $yxy^{-1} \in H_1\cap H_2$.
 $$\forall x \in H_1\cap H_2,\ \forall y \in H_2, \ yxy^{-1} \in H_1\cap H_2.$$
-Conclusion:  if $H_1$ is a subgroup of $G$ , and if $H_2$ is normal in $G$, then  $H_1\cap H_2$ is a normal subgroup of $H_2$.
+Conclusion:  if $H_1$ is a subgroup of $G$ , and if $H_1$ is normal in $G$, then  $H_1\cap H_2$ is a normal subgroup of $H_2$.
 \end{proof}
 
 \paragraph{Ex. 8.4.5}
@@ -1291,7 +1293,7 @@ So, by definition, $L$ is a Galois closure of $F\subset F(\alpha)$, unique up to
 }
 
 \begin{proof}
-By Proposition 5.3.8, $f$ has the same roots as $g = f/\mathrm{pgcd}(f,f')$. The splitting field $L$ of $f$ over $F$ is so the splitting field of the separable polynomial $g$. As $\deg(g) \leq \deg(d) \leq 4$, $L$ is solvable over $F$ by Proposition 8.5.4. We can conclude that all polynomial $f \in F[x]$ of degree $n\leq 4$, separable or not, is solvable by radicals over $F$.
+By Proposition 5.3.8, $f$ has the same roots as $g = f/\mathrm{pgcd}(f,f')$. The splitting field $L$ of $f$ over $F$ is so the splitting field of the separable polynomial $g$. As $\deg(g) \leq \deg(f) \leq 4$, $L$ is solvable over $F$ by Proposition 8.5.4. We can conclude that all polynomial $f \in F[x]$ of degree $n\leq 4$, separable or not, is solvable by radicals over $F$.
 \end{proof}
 
 \paragraph{Ex. 8.5.4}
@@ -1328,7 +1330,7 @@ As $K \subset N$ is radical (and $K \subset M$), then  $M \subset MN$ is also ra
 
 So $F \subset M$ and $M \subset MN$ are radical extensions, so $F \subset MN$ is a radical extension (Lemma 8.2.7(a)).
 
-As $\alpha \in N \subset MN$, with $F \subset MN$ radical, by definition $\alpha$ is expressible par radicals over $F$ and by Proposition 8.5.2, it minimal polynomial $f$ over $F$ is solvable by radicals over $F$.
+As $\alpha \in N \subset MN$, with $F \subset MN$ radical, by definition $\alpha$ is expressible par radicals over $F$ and by Proposition 8.5.2, its minimal polynomial $f$ over $F$ is solvable by radicals over $F$.
 \end{proof}
 
 \paragraph{Ex. 8.5.6}
@@ -1418,7 +1420,7 @@ $M \subset MK$ is a real radical extension.
 \begin{proof}
 By Gauss Lemma (Theorem A.3.2), it is sufficient to prove that $f$ has no non trivial factorization in $\Z[x]$. Since the reduction modulo 2 of $f$ is $\overline{f} = x^4 +x+1$ is of the same degree, it is sufficient to prove that $\overline{f}$ is irreducible in $\F_2[x]$ (a non trivial factorization in $\Z[x]$ would give a factorisation in $\F_2[x]$ by projection). This is the case if $\overline{f}$ has no root in  $\F_4 \supset \F_2$ (an irreducible factor  $\overline{g}$ of $\overline{f}$ of degree 2 would give a root of $g$ in $\F_2[x]/\langle g \rangle \simeq \F_4$).
 
-As any element $\alpha \in \F_4$ satisfies $\alpha^4 = \alpha = -\alpha$, $\overline{f}(\alpha) = \alpha^4+\alpha +1 = 1 \ne 0$, so $\overline{f}$ is irreducible over $\F_2$.
+As any element $\alpha \in \F_2$ satisfies $\alpha^4 = \alpha = -\alpha$, $\overline{f}(\alpha) = \alpha^4+\alpha +1 = 1 \ne 0$, so $\overline{f}$ is irreducible over $\F_2$.
 Therefore
 \begin{center}
  $x^4 -4x^2 +x + 1$ is irreducible over $\Q$
@@ -1587,7 +1589,7 @@ Since the Galois correspondence is inclusion-reversing, this gives the fields
 $$F=L_{\Gal(L/F)} = L_{G_0}=F_0\subset F_1\subset \cdots \subset F_{n-1} \subset F_n = L_{G_n} = L_{\{1_L\}} = L.$$
 Furthermore, since $G_i$ is normal in $G_{i-1}$, the Galois correspondance together with Theorem 7.2.7 implies that
 $$G_{i-1}/G_i \simeq \Gal(F_i/F_{i-1}).$$
-Since $[G_{i-1}:G_i]$ is prime, $\Gal(F_i/F_{i-1}) \simeq \Z/q\Z$ for a prime $q$. By Exercise 5, we know that $q = |\Gal(F_i/F_{i-1})$ divides $\Gal(L/F)|$. By (8.12), $F$ and hence $F_{i-1}$ contain a primitive $q$th root of unity.
+Since $[G_{i-1}:G_i]$ is prime, $\Gal(F_i/F_{i-1}) \simeq \Z/q\Z$ for a prime $q$. By Exercise 5, we know that $q = |\Gal(F_i/F_{i-1})|$ divides $|\Gal(L/F)|$. By (8.12), $F$ and hence $F_{i-1}$ contain a primitive $q$th root of unity.
 
 It follows that $F_{i-1} \subset F_i$ satisfies the conditions of Lemma 8.3.2. Thus $F_i$ is obtained from $F_{i-1}$ by adjunction of a $q$th root of an element of $F_{i-1}$:
 $$F_{i} = F_{i-1}(\theta_i),\qquad \theta_i \in F_i \setminus F_{i-1}, \quad \theta_i^q \in F_{i-1}.$$
@@ -1599,8 +1601,8 @@ This proves that $F\subset L$ is a radical extension when $F$ satisfies (8.12).
 
 Write $m =  [L:F] = |\Gal(L/F)|$, then $m,p$ are relatively prime, so $m$ is invertible in $F$.
 
-If $h = x^m-1$, then $h' = m x^{m-1}$, where $m$ is invertible in $F$, so the BŽzout's relation
-$m^{-1} h' + hq^{-1}= x(m x^{m-1}) -(x^m-1) =1$ proves that $h\wedge h'=1$, so $h$ is separable. Let $K$ a splitting field of $h$ over $L$. Let 
+If $h = x^m-1$, then $h' = m x^{m-1}$, where $m$ is invertible in $F$, so the B\'ezout's relation
+$xm^{-1} h' + h(-1)= x(x^{m-1}) -(x^m-1) =1$ proves that $h\wedge h'=1$, so $h$ is separable. Let $K$ a splitting field of $h$ over $L$. Let 
 $$\U_m = \{\xi \in K\ \vert \ \xi^m = 1\}$$
 the set of the roots of $h$ in $K$. Then $\U_m$ is a subgroup of $K^*$, so $\U_m$ is cyclic (Proposition A.5.3), and as $h$ is separable, $| \U_m | = m$, hence $\U_m \simeq \Z/m\Z$, so $\U_m$ has a generator $\zeta$, i.e. a $m$th primitive root of unity, and
 $$\U_m = \{1,\zeta, \zeta^2,\ldots, \zeta^{m-1}\}.$$
