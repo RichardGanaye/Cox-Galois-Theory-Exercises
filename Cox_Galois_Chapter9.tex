@@ -64,9 +64,9 @@
 }
 
 \begin{proof}
-If $[i]$ has a multiplicative inverse in the ring $\Z/n\Z$, then there exists $[j] \in \Z/n\Z$ such  that $[i][j] = [ij] = 1$, so $ij \equiv 1\ [n]$. Thus there exists $k\in \Z$ such that $ij - k n =1$. This Bézout's relation between $i$ and $n$ shows that $i\wedge n=1$.
+If $[i]$ has a multiplicative inverse in the ring $\Z/n\Z$, then there exists $[j] \in \Z/n\Z$ such  that $[i][j] = [ij] = 1$, so $ij \equiv 1\ [n]$. Thus there exists $k\in \Z$ such that $ij - k n =1$. This B\'ezout's relation between $i$ and $n$ shows that $i\wedge n=1$.
 
-Conversely, if $i\wedge n=1$, by  Bézout's Theorem, there exist integers $j,k$ such that $ij-kn=1$, so $[i] [j] = [1]$, and $[i]$ has a multiplicative inverse $\Z/n\Z$.
+Conversely, if $i\wedge n=1$, by  B\'ezout's Theorem, there exist integers $j,k$ such that $ij-kn=1$, so $[i] [j] = [1]$, and $[i]$ has a multiplicative inverse $\Z/n\Z$.
 
 $$[i] \in (\Z/n\Z)^* \iff i\wedge n=1.$$
 
@@ -92,17 +92,17 @@ If $n = 1$, the ring $\Z/1\Z$ is the trivial ring $\{[0]\}$, where $[0]=[1]$, so
 }
 
 \begin{proof}
-Let $A,B$ to commutative rings (with unity). Then $$(A\times B)^* = A^*\times B^*.$$
+Let $A,B$ are commutative rings (with unity). Then $$(A\times B)^* = A^*\times B^*.$$
 
 Indeed, let $(a,b)\in A\times B$.
 
 \begin{align*}
 (a,b) \in (A\times B)^* &\iff \exists (c,d) \in A\times B, \ (a,b)(c,d) = (1,1)\\
- &\iff \exists c \in A, \exists c \in B, \ ac=1,bd=1\\
+ &\iff \exists c \in A, \exists d \in B, \ ac=1,bd=1\\
   &\iff a\in A^*, b\in B^* \\
   &\iff (a,b)\in A^*\times B^*.
  \end{align*}
-Moreover, if $\varphi : A\to B$ is a ring isomorphism, then for all $a \in A$, $a \in A^* \Rightarrow \varphi(a) \in A^*$, since $ab = 1_A \Rightarrow \varphi(a) \varphi(b) = \varphi(1_A) = 1_B$. So we can define
+Moreover, if $\varphi : A\to B$ is a ring isomorphism, then for all $a \in A^* \Rightarrow \varphi(a) \in A^*$, since $ab = 1_A \Rightarrow \varphi(a) \varphi(b) = \varphi(1_A) = 1_B$. So we can define
 $\psi : A^* \to B^*$ by restriction with $a\mapsto \psi(a) = \varphi(a)$.
 
 $\psi$ is a group homomorphism: if $u,v \in A^*, \psi(uv) = \varphi(uv) = \varphi(u)\varphi(v) = \psi(u)\psi(v)$, and $\psi$ is bijective:
@@ -121,7 +121,7 @@ $$(\Z/nm\Z)^* \simeq (\Z/n\Z \times \\Z/m\Z)^* = (\Z/nZ)^* \times (\Z/m\Z)^*.$$
 }
 
 \begin{proof}
-Let $\U_n$ be the group of $n$throots of unity in $\C$. Then $\U_n = \langle \zeta_n \rangle$, where $\zeta_n = e^{2i\pi/n}$. Write $o(x)$ the order of an element $x\in G$. Then $o(x)= \vert \langle x \rangle \vert$.
+Let $\U_n$ be the group of $n$-th roots of unity in $\C$. Then $\U_n = \langle \zeta_n \rangle$, where $\zeta_n = e^{2i\pi/n}$. Write $o(x)$ the order of an element $x\in G$. Then $o(x)= \vert \langle x \rangle \vert$.
 
 Recall that if $d>0$, $o(x)= d \iff (\forall k \in \Z,\  x^k = e \iff d \mid k)$.
 
@@ -173,7 +173,7 @@ $g_1 =  q_1 f+r, q_1 \in R[x],\ r \in R[x],\ \deg(r) < \deg(f)$.
 
 Then $g = (a_n x^{n-m} + q_1) f+ r$.
 
-If we write $q = a_n x^{n-m} + q_1$, then $q \in \mathbb{Z}[x]$ and $g = fq+r,\ (q,r) \in\mathbb{Z}[x]^2, \deg(r) < \deg(f)$. The pair $(q,r)$ is an answer, and the induction is done.
+If we write $q = a_n x^{n-m} + q_1$, then $q \in \mathbb{R}[x]$ and $g = fq+r,\ (q,r) \in\mathbb{R}[x]^2, \deg(r) < \deg(f)$. The pair $(q,r)$ is an answer, and the induction is done.
 
 In particular, if $g,f \in \mathbb{Z}[x]$ , and $g = f q$, the unicity of the Euclidean division in $\mathbb{Q}[x]$ and the preceding result shows that $q \in \mathbb{Z}[x]$.
 
@@ -300,7 +300,7 @@ Conclusion:  if $i\wedge n = 1$, $\zeta \mapsto \zeta^i$ is a bijection from the
 {\it This exercise will present an alternate proof of (9.8) that doesn't use symmetric polynomials.  \begin{center}
 (9.8) \qquad If $\zeta$ is a root of f, then so is $\zeta^p$.
 \end{center}
-where $f$ is an irreducible factor of $\Phi_n$, and $p$ a prime number such that $p\nmid n$..
+where $f$ is an irreducible factor of $\Phi_n$, and $p$ a prime number such that $p\nmid n$.
 
 Assume that $\zeta$ is a root of $f$ such that $f(\zeta^p) \ne 0$.
 As in the text, $q(x) \in \Z[x]$ maps to the polynomial $\overline{q}(x) \in \F_p[x]$. Let $g(x)$ be as in (9.7), i.e. $\Phi_n(x) = f(x) g(x)$.
@@ -342,7 +342,7 @@ $$\overline{g}(x)^p =\left( \sum\limits_{i=0}^r a_i x^i\right)^p = \sum\limits_{
 
 Therefore $\overline{f}(x)$ divides $\overline{g}(x)^p$ in $\F_p[x]$.
 
-\item[(d)] Let $h(x)  \in \F_p[x]$ an irreducible factor of $\overline{f}(x)$. Then $h(x) \mid \overline{g}(x)^p$. Since $h$ is irreducible (hence prime) in $\F_p[x]$, then  $h \mid g$.
+\item[(d)] Let $h(x)  \in \F_p[x]$ an irreducible factor of $\overline{f}(x)$. Then $h(x) \mid \overline{g}(x)^p$. Since $h$ is irreducible (hence prime) in $\F_p[x]$, then  $h \mid \overline{g}$.
 
 $h(x) \mid \overline{f}(x), h(x) \mid \overline{g}(x)$, so $h(x)^2 \mid \overline{f}(x)\overline{g}(x)$. 
 
@@ -369,7 +369,7 @@ We conclude that $\Phi_n$ is irreducible as in the conclusion of the proof of Th
 If $a \wedge n = 1$, $[a] \in (\Z/n\Z)^*$.
 By Lagrange Theorem, the order of $[a]$ divides the order of the group $(\Z/n\Z)^*$, therefore the order of $a$ divides $ \phi(n) = \vert (\Z/n\Z)^* \vert$, and so $[a]^{\phi(n)} = [1]$.
 
-$$a \wedge n = 1 \Rightarrow a^{\phi(n)} \equiv 1 \ [n].$$
+$$a \wedge n = 1 \Rightarrow a^{\phi(n)} \equiv 1 \ \pmod n.$$
 \end{proof}
 
 \paragraph{Ex. 9.1.10}
@@ -492,7 +492,7 @@ Note first that $\deg(\Phi_{2n}(x)) = \phi(2n) = \phi(2) \phi(n) = \phi(n) = \de
 If $n>2$, then $\phi(n)$ is even. Indeed, we can group in pairs the elements of $(\mathbb{Z}/ n \mathbb{Z})^*$, with the pairs $\{[d],-[d]\}$, where $d \wedge n = 1$ and $ [d] \neq -[d]$ since $(n \mid 2d , d \wedge n = 1) \Rightarrow n \mid 2$, which is impossible if $n > 2$. Hence
 $$ (-1)^{\phi(n)} = 1\qquad (n>2).$$
 
-$\Phi_{2n}(x)$ is monic by definition, and the leading coefficient of $\Phi_n(-x)$ est $(-1)^{\phi(n)} = 1$, so $\Phi_n(-x)$ is also monic.
+$\Phi_{2n}(x)$ is monic by definition, and the leading coefficient of $\Phi_n(-x)$ is $(-1)^{\phi(n)} = 1$, so $\Phi_n(-x)$ is also monic.
 
 Let $\alpha$ be any root of $\Phi_n(-x)$. Then $\alpha = -\zeta$, where $\zeta$ is a $n$th primitive root of unity , so $\zeta$ is an element of order $n$ in the group $\mathbb{C}^*$.
 
@@ -512,7 +512,7 @@ $$\Phi_{2n}(x) = \Phi_n(-x)$$
 
 \item[(c)]
 
-We show first that $\Phi_n(x)$ divides $\Phi_n(x^p)$. As $\Phi_n(x)$ is separable, it is sufficient to verity that every root $\zeta$ of $\Phi_n(x)$ is a root of $\Phi_n(x^p)$. Such a root   $\zeta$  is a $n$th primitive root of unity, so its order is $n$. Then the order of $\zeta^p$ is also $n$. Indeed, for all $k\in \Z$, as $n\wedge p = 1$,
+We show first that $\Phi_n(x)$ divides $\Phi_n(x^p)$. As $\Phi_n(x)$ is separable, it is sufficient to verify that every root $\zeta$ of $\Phi_n(x)$ is a root of $\Phi_n(x^p)$. Such a root   $\zeta$  is a $n$th primitive root of unity, so its order is $n$. Then the order of $\zeta^p$ is also $n$. Indeed, for all $k\in \Z$, as $n\wedge p = 1$,
 $$(\zeta^p)^k=1 \iff \zeta^{pk} = 1 \iff n \mid pk \iff n \mid k.$$
 Therefore $\zeta^p$ is a root of $\Phi_n$, so $\Phi_n(\zeta^p)=0$ and $\zeta$ is a root of $\Phi_n(x^p)$.
 $$\Phi_n(x) \mid \Phi_n(x^p)\quad (p\nmid n).$$
@@ -572,7 +572,7 @@ By Exercise 12(c),
 
 \paragraph{Ex. 9.1.14}
 
-{\it The Möbius function is defined for integers $n\geq 1$ by
+{\it The M\"obius function is defined for integers $n\geq 1$ by
 $$
 \mu(n) = 
 \left\{
@@ -592,12 +592,12 @@ Suppose $n>1$.  Write $n =p_1^{\alpha_1} p_2^{\alpha_2}\cdots p_k^{\alpha_k}$ it
 Therefore $$\sum_{d \vert n} \mu(d) = \sum_{r=0}^{k} (-1)^r \binom{k}{r} = (1-1)^k = 0 $$ (since $k \not = 0$)
  
   
- Conclusion: if $n>1$,
+ Conclusion: if $n \geq 1$,
  $$\sum_{d \mid n} \mu\left(\frac{n}{d}\right) = \sum_{d \vert n} \mu(d)= 
  \left\{
 \begin{array}{ll}
   0,&    \mathrm{if} \ n>1,  \\
-  1,   &   \mathrm{if}\ n=0.
+  1,   &   \mathrm{if}\ n=1.
 \end{array}
 \right.
 $$
@@ -605,13 +605,13 @@ $$
 
 \paragraph{Ex. 9.1.15}
 
-{\it Let $\mu$ be the Möbius function defined in Exercise 14. Prove that
+{\it Let $\mu$ be the M\"obius function defined in Exercise 14. Prove that
 $$\Phi_n(x) = \prod_{d\mid n} (x^d-1)^{\mu(n/d)}.$$
 }
 
 \begin{proof}
 Our starting point is $$F(n) = x^n - 1 = \prod\limits_{ d \mid n} \Phi_d \hspace{1cm} (n \geq 1).$$
-It is sufficient to copy the proof of the Möbius Inversion Formula in multiplicative notations:
+It is sufficient to copy the proof of the M\"obius Inversion Formula in multiplicative notations:
 \begin{align*}
    \prod_{d \mid n} (x^d - 1)^{\mu \left (\frac{n}{d} \right )} &=  \prod\limits_{e \vert n}  (x^{\frac{n}{e}} -1)^{\mu(e)}\\
            &= \prod\limits_{e \vert n} \ \prod\limits_ {d \vert \frac{n}{e}} \Phi_d^{ \mu(e) } \\
@@ -642,7 +642,7 @@ Here we write $\zeta_k = e^{2i\pi/k}$ for all subscript $k$.
 $\zeta_n = (\zeta_{nm})^m \in \Q(\zeta_{nm})$, and $\zeta_m = (\zeta_{nm})^n \in \Q(\zeta_{nm})$,therefore
 $$\Q(\zeta_n,\zeta_m) \subset \Q(\zeta_{nm}).$$
 
-As $u\wedge v = 1$, there exists integers $u,v$ such that $1=un+vm$.
+As $n\wedge m = 1$, there exists integers $u,v$ such that $1=un+vm$.
 
 Therefore $\zeta_{nm} = (\zeta_{nm}^n)^u (\zeta_{nm}^m)^v = \zeta_m^u \zeta_n^v \in \Q(\zeta_n,\zeta_m)$, hence
 $$\Q(\zeta_{nm})\subset\Q(\zeta_n,\zeta_m)$$ 
@@ -921,7 +921,7 @@ Indeed,
 $$cB = \bigcup_{1\leq i \leq d} c b_i A.$$
 \item[$\bullet$] The union is a disjoint union: if $g \in cb_iA$ and $g\in cb_jA$, then $c^{-1}g \in b_iA\cap b_jA$, which is possible only if $i=j$. Thus $i\neq j \Rightarrow cb_iA\cap cb_jA = \emptyset$.
 \ee
-Conclusion: every left coset of $B$ in $G$ is the disjoint union of $d = (B:A)$ left cosets of $B$ in $G$.
+Conclusion: every left coset of $B$ in $G$ is the disjoint union of $d = (B:A)$ left cosets of $A$ in $G$.
 \end{proof}
 
 \paragraph{Ex. 9.2.5}
@@ -1065,7 +1065,7 @@ we obtain
 (6,2) &= (3,2) + (3,16),\\
 (6,4) &= (3,4) + (3,13).
 \end{align*}
-In Example 9.2.12, we have proved that the minimal polynomial of $(3,1)$ and $(3,8)$ over $L_6$ est
+In Example 9.2.12, we have proved that the minimal polynomial of $(3,1)$ and $(3,8)$ over $L_6$ is
 $$(x-(3,1))(x-(3,8)) = x^2 - (6,1)x + (6,4)+3 = x^2 - \eta_1 x + \eta_2 + 3.$$
 If $\sigma  \in \Gal(\Q(\zeta_p)/\Q)$ is determined by $\sigma(\zeta_{19})= \zeta_{19}^2$ then $\sigma((3,1)) = (3,2),\sigma((3,8)) = (3,16) ,\sigma((6,1)) = (6,2),\sigma(6,4) = (6,8)=(6,1)$, so the minimal polynomial of $(3,2)$ is
 $$(x-(3,2))(x-(3,16)) = x^2 - (6,2)x +(6,1)+3.$$
@@ -1116,7 +1116,7 @@ $$
 \end{array}
 $$
 The resulting quadratic equations are easy to solve using quadratic formula. But how do the roots correspond to the periods? For example, the roots $(8,1),(8,3)$ of $x^2+x-4$ are $(-1\pm\sqrt{17})/2$. How do these match up? The answer will be given in the next exercise.
-\ee
+\ee}
 
 \begin{proof}
 \begin{enumerate}
@@ -1152,7 +1152,7 @@ H_8 &= \{1,2,4,8,9,13,15,16\},\\
 &=4(8,1)+4(8,3)\\
 &=-4.
 \end{align*}
-The minimal polynomial over $\Q$ of the 8-périods $(8,1),(8,3)$ is so
+The minimal polynomial over $\Q$ of the 8-p≈Ωriods $(8,1),(8,3)$ is so
 $$(x-(8,1))(x-(8,3)) = x^2 +x-4.$$
 
 \item[$\bullet$] Extension $L_8 \subset L_4$.
@@ -1168,9 +1168,9 @@ The 4-periods are so $(4,1),(4,2)$, and $(4,3),(4,6)$, where
 &= (4,3)+(4,7)+(4,15)+(4,1)\\
 &=-1.
 \end{align*}
-The minimal polynomial of $(4,1)$ et $(4,2)$ over $L_8$ is so
+The minimal polynomial of $(4,1)$ and $(4,2)$ over $L_8$ is so
 $$(x-(4,1))(x-(4,2)) = x^2 -(8,1) x -1.$$
-Applying $\sigma : \zeta_{17} \mapsto \zeta_{17}^3$, we obtain the minimal polynomial of $(4,3)$ et $(4,6)$ 
+Applying $\sigma : \zeta_{17} \mapsto \zeta_{17}^3$, we obtain the minimal polynomial of $(4,3)$ and $(4,6)$ 
 $$(x-(4,3))(x-(4,6)) = x^2 -(8,3) x -1.$$
 
 \item[$\bullet$]  Extension $L_4\subset L_2$.
@@ -1204,7 +1204,7 @@ $$(x-(2,1))(x-(2,4)) = x^2 - (4,1)x+(4,3).$$
 (2,1) &= 2\cos(2\pi/17)
 \end{align*}
 Then compute each of these periods to five decimal places.
-\item[(b)] Use the numerical computations of part (a) and the quadratic polyomials of Exercice 8 to show that
+\item[(b)] Use the numerical computations of part (a) and the quadratic polynomials of Exercise 8 to show that
 \begin{align*}
 (8,1) &= \frac{1}{2}\left(-1+\sqrt{17}\right)\\
 (8,3) &= \frac{1}{2}\left(-1-\sqrt{17}\right)\\
@@ -1316,12 +1316,12 @@ As $(2,4) = 2\cos(4\pi/17) < 2 \cos(2\pi/17) = (2,1)$, we can conclude that
 }
 
 \begin{proof}
-Let $\zeta = \zeta_{11} = e^{2i\pi/11}$, et $\eta = (2,1) = \zeta + \zeta^{-1} = 2 \cos(2\pi/11)$. 
-The powers of 2 modulo 11 are $1,2,2^2=2,2^3 =8, 2^4=5,2^5=-1$, so the order of $[2]$ in $(\Z/11\, \Z)^*$ is 10, so 2 is a primitive root modulo 11.
+Let $\zeta = \zeta_{11} = e^{2i\pi/11}$, and $\eta = (2,1) = \zeta + \zeta^{-1} = 2 \cos(2\pi/11)$. 
+The powers of 2 modulo 11 are $1,2,2^2=4,2^3 =8, 2^4=5,2^5=-1$, so the order of $[2]$ in $(\Z/11\, \Z)^*$ is 10, so 2 is a primitive root modulo 11.
 
 As $\Phi_{11}(\zeta) = 1+\zeta+\zeta^{2}+\zeta^{3}+\zeta^{4}+\zeta^{5}+\zeta^{6}+\zeta^{7}+\zeta^{8}+\zeta^{9}+\zeta^{10}=0$, we obtain by multiplication by $\zeta^{-5}$ :
 \begin{align}
-(\zeta^{-5} + \zeta^5)+(\zeta^{-4} + \zeta^4)+(\zeta^{-3} + \zeta^3)+(\zeta^{-2} + \zeta^2)+(\zeta^{-1} + \zeta) + 1. \label{eq:1}
+(\zeta^{-5} + \zeta^5)+(\zeta^{-4} + \zeta^4)+(\zeta^{-3} + \zeta^3)+(\zeta^{-2} + \zeta^2)+(\zeta^{-1} + \zeta) + 1=0. \label{eq:1}
 \end{align}
 Write $u_n = \zeta^n+\zeta^{-n}$. As 
 \begin{align*}
@@ -1432,7 +1432,7 @@ As $\sigma\vert _{L_f} = \sigma'$, by the note in part (a),
 $$\sigma((f,\lambda)) =  \sigma'((f,\lambda)) = (f,g^{e/q} \lambda).$$
 
 
-\item[(d)] $H_f = \langle g^e \rangle$, et $H_{fq} = \langle g^{e/q} \rangle$.
+\item[(d)] $H_f = \langle g^e \rangle$, and $H_{fq} = \langle g^{e/q} \rangle$.
 
 We show first that $g^{k(e/q)} \not \in H_f$ if $1 \leq k \leq  q-1$. If not, there would exist an integer $j$ such that $g^{k(e/q)} = g^{je}$. As the order of $g$ is $p-1=ef$, $ef \mid k \frac{e}{q} - je$, so $\lambda e f q = ke -jeq ,\lambda \in \Z$, therefore $\lambda f q = k -jq$, and so $q \mid k$. It is impossible since $1 \leq k \leq  q-1$.
 
@@ -1471,7 +1471,7 @@ where $b_k$ is a constant on every coset  $[\lambda_i]H_f$, equal to $a_i$.
 
 Since $\zeta_p,\zeta_p^2,\cdots,\zeta_p^{p-1}$ are linearly independent over $\Q(\zeta_m)$, all the $b_k$ are zero, so  $a_1 = \cdots = a_e = 0$.
 
-Les $f$-périodes sont linéairement indépendantes sur $\Q(\zeta_m)$.
+Thus $f$-periods are linearly independent over $\Q(\zeta_m)$.
 \end{enumerate}
 \end{proof}
 
@@ -1535,7 +1535,7 @@ $$\vert \Gal(\Q(\zeta_n)/\Q) \vert = [\Q(\zeta_n):\Q] = n-1 = \deg(\Phi_n(x)).$$
 }
 
 \begin{proof}
-$H_1 = \{[1]\}$, and the coset of $[a] \in (\Z/p\Z)^*$ is $[a]H_{1} = \{[a]\}$, so  the 1-périodes $(1,a)$ are the powers of $\zeta_p$: $$(1,a) = \zeta_p^a.$$
+$H_1 = \{[1]\}$, and the coset of $[a] \in (\Z/p\Z)^*$ is $[a]H_{1} = \{[a]\}$, so  the 1-periods $(1,a)$ are the powers of $\zeta_p$: $$(1,a) = \zeta_p^a.$$
 \end{proof}
 
 \paragraph{Ex. 9.2.16}
@@ -1554,7 +1554,7 @@ $$f = (x- (2,1))(x-(2,2))(x-(2,3))$$
 $3$ is a primitive root modulo 7. Let $\sigma$ the $\Q$-automorphism determined by $\sigma(\zeta) = \zeta^3$. Then $\sigma$ gives the chain $(2,1) \mapsto (2,3) \mapsto (2,2) \mapsto (2,1)$, so
 $$(2,1)(2,2) =  (2,3)+(2,1),\quad (2,3)(2,1) =  (2,2)+(2,3), \quad (2,2)(2,3) = (2,1)+(2,2).$$
 
-By sommation of these equalities, 
+By summation of these equalities, 
 $$(2,1)(2,2)+ (2,3)(2,1)+(2,2)(2,3) = 2(2,3) +2(2,1)+2(2,2) = -2.$$
 Finally $$(2,1)(2,2)(2,3) = (2,1)[(2,1)+(2,2)] = (2,1)^2 + (2,1)(2,2) = (2,2)+ 2 +(2,3)+(2,1) = 1.$$
 
@@ -1570,7 +1570,7 @@ The fixed field $L_2$ of $\tilde{H}_2$ corresponding to $H_2$ is $\Q(\zeta+\zeta
 }
 
 \begin{proof}
-As $2 \mid f$ is even, $H_2\subset H_f$ (Exercise 1), so every coset $[\lambda] H_f$ is a disjoint union of $[\mu] H_2$ (cf Exercise 4), so $$[\lambda] H_f = \bigcup_{[\mu] \in A} [\mu] H_2.$$
+As $2 \mid f$ is even, $H_2\subset H_f$ (Exercise 1), so every coset $[\lambda] H_f$ is a disjoint union of $[\mu] H_2$ (Exercise 4), so $$[\lambda] H_f = \bigcup_{[\mu] \in A} [\mu] H_2.$$
 Therefore
 $$(f,\lambda) = \sum_{a \in[\lambda] H_f} \zeta_p^a = \sum _{\mu \in A} \sum_{a \in [\mu] H_2} \zeta_p^{a} =\sum _{\mu \in A} (\zeta_p^{\mu} + \zeta_p^{-\mu}) \in \R. $$
 \end{proof}
