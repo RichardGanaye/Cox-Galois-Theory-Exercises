@@ -10,7 +10,7 @@
 \usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{mathrsfs}
-
+\graphicspath{ {./figures/} }
 
 %\input{8bitdefs}
 
@@ -82,7 +82,7 @@ Example 10.1.2(b) shows then that $i \in \C$ is  constructible.
 
 \paragraph{Ex. 10.1.2}
 
-{\it Suppose that $\alpha,\beta,\gamma$ are noncolinear and consider the rays $\overrightarrow{\alpha \beta}$ and $\overrightarrow{\alpha \gamma}$ emanating from $\alpha$ that go through $\beta$ and $\gamma$ respectively. We call this the angle formed by $\alpha,\beta,\gamma$. Also assume that $\alpha, \beta,\gamma$ are constructible.
+{\it Suppose that $\alpha,\beta,\gamma$ are noncollinear and consider the rays $\overrightarrow{\alpha \beta}$ and $\overrightarrow{\alpha \gamma}$ emanating from $\alpha$ that go through $\beta$ and $\gamma$ respectively. We call this the angle formed by $\alpha,\beta,\gamma$. Also assume that $\alpha, \beta,\gamma$ are constructible.
 \be
 \item[(a)] Prove that there is a constructible number $\delta$ with positive $y$-coordinate such that the angle formed by $\alpha,\beta,\gamma$ is congruent to the angle formed by $0,1,\delta$. As in Exercise 1, each step in the construction should be justified by $C1,C2,P1,P2$, or $P3$.
 \item[(b)] Prove that the claim made in Example 10.1.3 that $\zeta_n = e^{2\pi i/n}$ is constructible if and only if a regular $n$-gon can be constructed by straightedge and compass.
@@ -167,15 +167,15 @@ z \in C &\iff |z-\gamma_2|^2 = |\alpha_2-\beta_2|^2\\
 &\iff x^2+y^2+a_2x+b_2y+c_2 = 0,
 \end{align*}
 where $a_2 = -2u,b_2 = -2v ,c_2 = -(a^2+b^2) \in F$.
-\item[(c)] If $a_1 = 0$, then for all $z =x+iy \in l$, $y=c_1/b_1 x = ux$, where $u = c_1/b_1 \in F=F_n$. Substituting $y = ux$ into (10.3) gives the quadratic equation
-$$x^2+a_2x+u^2x^2+b_2ux+c_2.$$
+\item[(c)] If $a_1 = 0$, then for all $z =x+iy \in l$, $y=c_1/b_1 = u$, where $u = c_1/b_1 \in F=F_n$. Substituting $y = u$ into (10.3) gives the quadratic equation
+$$x^2+a_2x+u^2+b_2u+c_2.$$
 Therefore $x$ lies in a quadratic extension $F_{n+1}$ of $F_n$ (and $y \in F_n \subset F_{n+1}$).
 \ee
 \end{proof}
 
 \paragraph{Ex. 10.1.5}
 
-{\it In this exercise you will give two proof that $\zeta_3 = e^{2\pi i/3}$ is constructible.
+{\it In this exercise you will give two proofs that $\zeta_3 = e^{2\pi i/3}$ is constructible.
 \be
 \item[(a)] Give a direct geometric construction of $\zeta_3$ with each step justified by citing $C1,C2,P1,P2$ or $P3$.
 \item[(b)] Use Theorem 10.1.6 to show that $\zeta_3$ is constructible.
@@ -188,7 +188,7 @@ Therefore $x$ lies in a quadratic extension $F_{n+1}$ of $F_n$ (and $y \in F_n \
 As $\mathrm{Re}(\zeta_3) = -1/2$, $\zeta_3$ is on the perpendicular bisector of $(-1,0)$.
 
 We gives the details of the construction:
-$C(0,1)$ and $C(-1,0)$ are constructible by $C2$, so the two intersection points are constructibles by $P3$, and these two points are $\zeta_3,\overline{\zeta}_3$, so $\zeta_3$ is constructible.
+$C(0,1)$ and $C(-1,1)$ are constructible by $C2$, so the two intersection points are constructible by $P3$, and these two points are $\zeta_3,\overline{\zeta}_3$, so $\zeta_3$ is constructible.
 \item[(b)] As the minimal polynomial of $\zeta_3$ over $\Q$ is $x^2+x+1$, the extension $\Q\subset \Q(\zeta_3)$ is quadratic, so $\zeta_3$ is constructible by Theorem 10.1.6.
 \ee
 \end{proof}
@@ -197,16 +197,16 @@ $C(0,1)$ and $C(-1,0)$ are constructible by $C2$, so the two intersection points
 
 \paragraph{Ex. 10.1.6}
 
-{\it Show that it is impossible to trisect a 60° angle by straightedge and compass.
+{\it Show that it is impossible to trisect a $\it 60^{\circ}$ angle by straightedge and compass.
 }
 
-\begin{proof} If  a 20° angle was constructible by straightedge and compass, then $\zeta_{18}$ would be constructible. The minimal polynomial of $\zeta_{18}$ is $\Phi_{18}(x)$.
+\begin{proof} If  a $20^{\circ}$ angle was constructible by straightedge and compass, then $\zeta_{18}$ would be constructible. The minimal polynomial of $\zeta_{18}$ is $\Phi_{18}(x)$.
 
 By Exercise 9.1.12, $\Phi_{18}(x) = \Phi_9(-x)$, and $\Phi_9(x) = \Phi_3(x^3) = x^6 +x^3+1$, so
 $$\Phi_{18}(x) = x^6-x^3+1.$$
 Therefore $[\Q(\zeta_{18}) : \Q] = 6$. If $\zeta_{18}$ was constructible, by Theorem 10.1.6, there exist subfields 
 $$\Q = F_0 \subset F_1\subset \cdots \subset F_{n-1}\subset F_n \subset \C,$$
-with $[F_i:F_{i-1}] = 2$ for $1\leq i \leq n$, and $\zeta_{18} \in F_n$. But then by the tower theorem, $6 = [\Q(\zeta_{18}) : \Q] $ divides $[F_n : \Q] = 2^n$, and $3 \mid 2^{n-1}$: this is a contradiction. So $\zeta_{18}$ is not constructible, hence it is impossible to trisect a 60° angle by straightedge and compass.
+with $[F_i:F_{i-1}] = 2$ for $1\leq i \leq n$, and $\zeta_{18} \in F_n$. But then by the tower theorem, $6 = [\Q(\zeta_{18}) : \Q] $ divides $[F_n : \Q] = 2^n$, and $3 \mid 2^{n-1}$: this is a contradiction. So $\zeta_{18}$ is not constructible, hence it is impossible to trisect a $60^{\circ}$ angle by straightedge and compass.
 \end{proof}
 
 \paragraph{Ex. 10.1.7}
@@ -322,7 +322,7 @@ The area of the quarter circle with radius $0A$ is $\frac{\pi}{4} l^2,$
 so the area between the arc $AB$ and the chord $AB$ is $$A_2 = \frac{\pi}{4} l^2 - A.$$
 Therefore the area of the lune, the shaded region of the figure in historical notes, is
 $$A_1 - A_2 = \frac{\pi}{4} l^2 -  \left(\frac{\pi}{4} l^2 - A\right) = A,$$
-so is this area is the area $A = l^2/2$ of the triangle.
+so is this area $A = l^2/2$ of the triangle.
 \end{proof}
 
 \paragraph{Ex. 10.1.10}
@@ -367,7 +367,7 @@ Starting from the line $l$, the quadratrix and the points $0,1$, We can construc
 
 \item[(e)]
 Using construction given in Exercise 2 (a), we can transport with straightedge-and-compass constructions any given angle determined by  $\alpha,\beta,\gamma$ (with measure $\theta,\ 0 < \theta <  \pi /2 $) on a congruent angle $\widehat{(\overrightarrow{OM}, \vec{e}_2)}$. The inverse transport gives the trisection of the given angle.
-If $\pi/2 \leq \theta \leq \pi$ (obtuse angle), then we can trisect the constructive angle with measure $\theta - \pi/2$, the add the constructive angle with measure $\pi/6$. So we can trisect arbitrary angle with the quadratrix.
+If $\pi/2 \leq \theta \leq \pi$ (obtuse angle), then we can trisect the constructive angle with measure $\theta - \pi/2$, then add the constructive angle with measure $\pi/6$. So we can trisect arbitrary angle with the quadratrix.
 
 \item[(f)] In the reasoning of parts(d) and (e), we can replace $\theta/3$ by $\theta/n$, where $n$ is any positive integer. So we can divide any angle in $n$ parts with the quadratrix. Thanks to the quadratrix!
 \ee
@@ -422,13 +422,13 @@ so $2^q + 1$ divides $2^k+1$, and $1\leq q \leq k$, hence $ 1< 3 \leq 2^q + 1 \l
 
 {\it Let $p$ be prime. In Example 9.1.6, we showed that
 $$\Phi_{p^2}(x) = x^{p(p-1)}+ x^{p(p-2)} + \cdots + x^{2p} +x^p + 1.$$
-The goal of this exercise is to prove that $\Phi_{p^2}(x)$ is irreducible over $\Q$ using only the Schönemann-Eisenstein criterion.
+The goal of this exercise is to prove that $\Phi_{p^2}(x)$ is irreducible over $\Q$ using only the Sch\"onemann-Eisenstein criterion.
 \be
 \item[(a)] Explain how the formulas of Example 9.1.6 imply that
 $$(x+1)^{p^2} - 1 = ((x+1)^p - 1)\Phi_{p^2}(x+1).$$
 \item[(b)] Let $\overline{\Phi}_{p^2}(x+1)$ be the reduction of $\Phi_{p^2}(x+1)$ modulo $p$. Show that
 $$x^{p^2} = x^p\, \overline{\Phi}_{p^2}(x+1).$$
-\item[(c)] Show that $\Phi_{p^2}(x+1)$ is irreducible over $\Q$ by the Schönemann-Eisenstein criterion. As in the proof of Proposition 4.2.5, this will imply that the same is true for $\Phi_{p^2}(x)$.
+\item[(c)] Show that $\Phi_{p^2}(x+1)$ is irreducible over $\Q$ by the Sch\"onemann-Eisenstein criterion. As in the proof of Proposition 4.2.5, this will imply that the same is true for $\Phi_{p^2}(x)$.
 \ee
 }
 
@@ -445,11 +445,11 @@ $$(x+1)^{p^2} - 1 = ((x+1)^p - 1)\Phi_{p^2}(x+1).$$
 We know that $p \mid \binom{p}{k}, \ 1 \leq k \leq p-1$, so
 $$(x+1)^p  \equiv x^p + 1 \pmod p $$
 Therefore
-$$ (x+1)^{p^2} =[(x+1)^p]^p  \equiv  (x^p + 1)^p \equiv x^{p^2} \pmod p.$$
+$$ (x+1)^{p^2} =[(x+1)^p]^p  \equiv  (x^p + 1)^p \equiv x^{p^2}+1 \pmod p.$$
 The reduction modulo $p$ of the equality proved in part (a) gives
 $$x^{p^2} = x^p\, \overline{\Phi}_{p^2}(x+1).$$
 
-\item[(c)] As $ \overline{\Phi}_{p^2}(x+1) = x^{p^2-p}$, all the the coefficients of $\Phi_{p^2}(x+1)$ are divisible by $p$, except the leading coefficient. Moreover $\Phi_{p^2}(1) = p$, so the constant coefficient of $\Phi_{p^2}(x+1)$ is not divisible by $p^2$, so the Schönemann-Eisenstein criterion shows that $\Phi_{p^2}(x+1)$ is irreducible over $\Q$, and this is equivalent to the irreducibility of $\Phi_p(x)$ over $\Q$.
+\item[(c)] As $ \overline{\Phi}_{p^2}(x+1) = x^{p^2-p}$, all the the coefficients of $\Phi_{p^2}(x+1)$ are divisible by $p$, except the leading coefficient. Moreover $\Phi_{p^2}(1) = p$, so the constant coefficient of $\Phi_{p^2}(x+1)$ is not divisible by $p^2$, so the Sch\"onemann-Eisenstein criterion shows that $\Phi_{p^2}(x+1)$ is irreducible over $\Q$, and this is equivalent to the irreducibility of $\Phi_{p^2}(x)$ over $\Q$.
 \ee
 \end{proof}
 
@@ -501,7 +501,7 @@ As the set of constructible points is a subfield of $\C$, $\zeta_m$ is construct
 
 \begin{proof}
 \be
-\item[(a)] The minimal polynomial of $\zeta_{2^s}$ over $\Q$ is $\Phi_{2^s}(x)$, and $$\deg(\Phi_{2^s}(x)) = \phi(2^s) = 2^{s-1}(2-1) = 2^{s-1}.$$ Therefore $[\Q(\zeta_s) : \Q] = \deg(\Phi_{2^s}(x)) = 2^{s-1}$ is a power of 2. Since $\Q(\zeta_{2^s})$ is the splitting field of $\Phi(\zeta_{2^s})$ over $\Q$, by Theorem 10.1.12, $\zeta_{2^s}$ is constructible.
+\item[(a)] The minimal polynomial of $\zeta_{2^s}$ over $\Q$ is $\Phi_{2^s}(x)$, and $$\deg(\Phi_{2^s}(x)) = \phi(2^s) = 2^{s-1}(2-1) = 2^{s-1}.$$ Therefore $[\Q(\zeta_{2^s}) : \Q] = \deg(\Phi_{2^s}(x)) = 2^{s-1}$ is a power of 2. Since $\Q(\zeta_{2^s})$ is the splitting field of $\Phi(\zeta_{2^s})$ over $\Q$, by Theorem 10.1.12, $\zeta_{2^s}$ is constructible.
 
 Note 1. Since $x^{2^s} - 1 = \Phi_1(x)\Phi_2(x)\cdots \Phi_{2^{s-1}}(x) \Phi_{2^s}(x) = (x^{2^{s-1}}-1) \Phi_{2^s}(x)$, we see that $\Phi_{2^s}(x) = x^{2^{s-1}} +1$. 
 
@@ -521,7 +521,7 @@ Therefore $q\mid 2$, so $q=2$, but this is impossible since $F_n$ is odd.
 
 So $n\ne m \Rightarrow \gcd(F_n,F_m) = 1$.
 
-Since since $\zeta_{2^s},\zeta_{p_1},\ldots, \zeta_{p_r}$ are constructible, and $2^s,p_1,\ldots,p_r$ are relatively prime, by part (b), $\zeta_{2^s p_1},\, \zeta_{2^s p_1 p_2}, \ldots, \zeta_{ 2^s p_1\cdots p_r} = \zeta_n$ are constructible. 
+Since $\zeta_{2^s},\zeta_{p_1},\ldots, \zeta_{p_r}$ are constructible, and $2^s,p_1,\ldots,p_r$ are relatively prime, by part (b), $\zeta_{2^s p_1},\, \zeta_{2^s p_1 p_2}, \ldots, \zeta_{ 2^s p_1\cdots p_r} = \zeta_n$ are constructible. 
 \ee
 
 \bigskip
@@ -531,7 +531,7 @@ Conclusion: if $p_1,\ldots,p_r$ are Fermat primes, and $n = 2^s p_1\cdots p_r$, 
 
 \paragraph{Ex. 10.2.6}
 
-{\it Now suppose that $\zeta_n$ is constructible for some $n>2$. The goal of this exercise is to prove that $p$ is an odd prime dividing $n$, then $p$ is a Fermat prime and $p^2 \nmid n$. This and Exercise 5 will give a proof of Theorem 10.2.1 that doesn't require knowing that $\Phi_n(x)$ is irreducible for arbitrary $n$.
+{\it Now suppose that $\zeta_n$ is constructible for some $n>2$. The goal of this exercise is to prove that if $p$ is an odd prime dividing $n$, then $p$ is a Fermat prime and $p^2 \nmid n$. This and Exercise 5 will give a proof of Theorem 10.2.1 that doesn't require knowing that $\Phi_n(x)$ is irreducible for arbitrary $n$.
 \be
 \item[(a)] Let $p$ be an odd prime dividing $n$. Use Exercises 3 and 4 to show that $p$ is a Fermat prime.
 \item[(b)] Now assume that $p$ is an odd prime and $p^2\mid n$. Use Exercise 4 to show that $\zeta_{p^2}$ is constructible. Then use Theorem 10.1.12 and Exercise 2 to obtain a contradiction.
@@ -553,7 +553,7 @@ Conclusion: if $p_1,\ldots,p_r$ are Fermat primes, and $n = 2^s p_1\cdots p_r$, 
 
 \paragraph{Ex. 10.2.7}
 
-{\it
+{\it Prove that 3,5,17,257 and 65537 are Fermat primes.
 }
 
 \begin{proof}
@@ -568,7 +568,7 @@ Since $3^{(F_3-1)/2} = 3^{128} \equiv -1 \pmod {257}$, and $3^{(F_4-1)/2} = 3^{3
 
 \paragraph{Ex. 10.2.8}
 
-{\it Use $\log_{10}(F_{33}) \approx 2^{33} \log_{10}(2)$ to estimate the number of digits in the decimal expansion of $F_{33}$. The do the same for $F_{2478782}$.
+{\it Use $\log_{10}(F_{33}) \approx 2^{33} \log_{10}(2)$ to estimate the number of digits in the decimal expansion of $F_{33}$. Then do the same for $F_{2478782}$.
 }
 
 \begin{proof} The number of digits in the decimal expansion of $F_{33}$ is $$\lfloor \log_{10}(F_{33}) \rfloor + 1  \approx  2^{33} \log_{10}(2)  = 2,585,827,972.$$
@@ -584,7 +584,13 @@ The number of digits in the decimal expansion of $F_{2478782}$ is $$\lfloor \log
 
 \paragraph{Ex. 10.3.1}
 
-{\it This exercise will use the diagram of page 284 to prove that the origami construction described at the beginning of the section trisects the angle $\theta$ formed by the line $l_2$ and the bottom of the square.
+{\it This exercise will use the diagram of page 284 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics [width=8cm,height=8cm] {Ex.10.3.1.png}
+\end{center}
+\end{figure}
+to prove that the origami construction described at the beginning of the section trisects the angle $\theta$ formed by the line $l_2$ and the bottom of the square.
 \be
 \item[(a)] Let $Q$ be the intersection of the line segments $\overline{P_1Q_2}$ and $\overline{P_2Q_1}$. Prove that $Q$ lies on the dashed line $l$.
 \item[(b)] Prove that $\theta$ is congruent to $\alpha+\beta$.
@@ -610,7 +616,7 @@ Then $s(Q)$ is on the images of these two lines, so $$s(Q) \in s(\overline{P_1Q_
  
  Since $PQ_1$ and $P_1D$ are parallel, $(\widehat{\overrightarrow{P_1D},\overrightarrow{P_1Q_1}}) = (\widehat{\overrightarrow{Q_1P},\overrightarrow{Q_1P_1}})$ (alternate interior angles), so $\beta = \delta$. We can deduce of these two equalities that $$\theta = \alpha + \beta.$$
  
-  \item [(c)] The reflection $r$ with regard to the line $l_1$ sends $P_1$ on $P_2$ and $Q_1$ on $Q_1$, therefore $Q_1P1 = Q_1P_2$, so the triangle $\bigtriangleup Q_1P_1P_2$ is isosceles, and
+  \item [(c)] The reflection $r$ with regard to the line $l_1$ sends $P_1$ on $P_2$ and $Q_1$ on $Q_1$, therefore $Q_1P_1 = Q_1P_2$, so the triangle $\bigtriangleup Q_1P_1P_2$ is isosceles, and
   $$(\widehat{\overrightarrow{Q_1P},\overrightarrow{Q_1P_2}}) = - (\widehat{\overrightarrow{r(Q_1)r(P)},\overrightarrow{r(P_1)r(Q_1)}}) =- (\widehat{\overrightarrow{Q_1P},\overrightarrow{Q_1P_1}}),$$
   so the absolute value of the measures of these angles are the same, so $$\beta = \gamma.$$
   
@@ -619,7 +625,7 @@ $$ -(\widehat{\overrightarrow{P_1Q_1},\overrightarrow{P_1Q}}) =  (\widehat{\over
  (\widehat{\overrightarrow{Q_1P_1},\overrightarrow{Q_1P}}) + (\widehat{\overrightarrow{Q_1P},\overrightarrow{Q_1Q}}),$$
 so $$\alpha = \beta + \gamma.$$
 
-\item[(d)] From $\delta = \beta$ and from the three equalities obtained in parts (b),(c),(d):
+\item[(e)] From $\delta = \beta$ and from the three equalities obtained in parts (b),(c),(d):
 \begin{align*}
 \theta &= \alpha + \beta,\\
 \beta &= \gamma,\\
@@ -678,7 +684,7 @@ So the equation of ${\mathscr P} $ is $${\mathscr P}  : x^2 = 4ay.$$
 
 \item[(b)] Let $Q(x_0,y_0)$ be a point on the parabola, so $x_0^2 = 4ay_0$.
 
-Write $F(x,y) = x^2-4ay$.  The equation of the tangent $T$ to $\cal P$ at the point $Q$ is given by
+Write $F(x,y) = x^2-4ay$.  The equation of the tangent $T$ to $\mathscr P$ at the point $Q$ is given by
 \begin{align*}
 0 &=\frac{\partial F}{\partial x}(x_0,y_0) (x-x_0) + \frac{\partial F}{\partial y}(x_0,y_0) (y-y_0), \\
 0&= 2x_0(x-x_0) - 4a(y-y_0),\\
@@ -718,7 +724,7 @@ M\in l &\iff MP_1^2 = MQ_1^2\\
 &\iff x^2+y^2-2ay+a^2 = x^2-2x_0x+x_0^2+y^2+2ay+a^2\\
 &\iff x_0x-2ay = \frac{x_0^2}{2}
 \end{align*}
- If we write $y_0 = \frac{x_0^2}{4a}$, then the point $M_0(x_0,y_0)$ lies on the parabola $\mathscr P$. Since $x_0^2-2ay_0 = \frac{x_0^2}{2}$, $M_0$ lies also on $l$. By part (b), the equation of the tangent $T$ at point $M_0$ is $x_0x -2ay_0 = 2ay_0 = x_0^2/2$, hence $T = l$, so $l$ is tangent to the parabola $\mathscr P$.
+ If we write $y_0 = \frac{x_0^2}{4a}$, then the point $M_0(x_0,y_0)$ lies on the parabola $\mathscr P$. Since $x_0^2-2ay_0 = \frac{x_0^2}{2}$, $M_0$ lies also on $l$. By part (b), the equation of the tangent $T$ at point $M_0$ is $x_0x -2ay = 2ay_0 = x_0^2/2$, hence $T = l$, so $l$ is tangent to the parabola $\mathscr P$.
  
  Conclusion: the reflexion of $P_1$ about $l$ lies on the line $l_1$ if and only if $l$ is tangent to the parabola with focus $P_1$ and directrix $l_1$.
 \ee
@@ -852,7 +858,7 @@ For instance, let $l_1$ be the line with equation $y=0$, $l_2$ with equation $y=
 (see figure).
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=5cm, height=6cm]  {parabolas.pdf}
+\includegraphics[width=7.5cm, height=9cm]  {parabolas.pdf}
 \end{center}
 \end{figure}
 \end{proof}
@@ -878,7 +884,7 @@ M(x,y) \in {\mathscr P} _1 &\iff MF^2 = MH^2\\
 \end{align*}
 So the first parabola $\left (y-\frac{1}{2}a\right)^2 = 2bx$ has focus $\left(\frac{1}{2}b,\frac{1}{2}a\right)$ and directrix $x=-\frac{1}{2} b$.
 
-\item[(b)] Let ${\mathscr P} _2$ the parabola with focus $F\left(0,\frac{1}{2}\right)$ and directrix $D : x=-\frac{1}{2} $. Let $M(x,y)$ a point of the plane and $H(0,-\frac{1}{2})$ the orthogonal projection of $M$ on $D$. Then
+\item[(b)] Let ${\mathscr P} _2$ the parabola with focus $F\left(0,\frac{1}{2}\right)$ and directrix $D : y=-\frac{1}{2} $. Let $M(x,y)$ a point of the plane and $H(x,-\frac{1}{2})$ the orthogonal projection of $M$ on $D$. Then
 \begin{align*}
 M(x,y) \in {\mathscr P} _2 &\iff MF^2 = MH^2\\
 & \iff x^2 + \left ( y -\frac{1}{2} \right)^2 = \left(y+\frac{1}{2}\right)^2\\
@@ -918,7 +924,7 @@ such that $\gamma \in F'_m$ and $[F'_i:F'_{i-1}] = 2$ or $3$ for $1\leq i \leq m
 
 As $\Q \subset \Q(\gamma) \subset F'_m$, by the Tower Theorem, 
 
-$[L : \Q] = [\Q(\gamma) : \Q]$ divides $[F'm:\Q] = 2^u3^v,\ u,v \in \N$, so 
+$[L : \Q] = [\Q(\gamma) : \Q]$ divides $[F'_m:\Q] = 2^u3^v,\ u,v \in \N$, so 
 \begin{center}
 $[L:\Q] = 2^a3^b$ for some integer $a,b\geq 0$.
 \end{center}
@@ -983,7 +989,7 @@ y_2 &= -\frac{1}{2}x_2,\\
 y_2 &= m\left (x_2-\frac{1}{2}\right),
 \end{align*}
 which gives $-\frac{1}{2}x_2 = m\left (x_2-\frac{1}{2}\right)$, so
-$$Q_2 = (x_2,y_2) = \left ( \frac{m}{2m+1}, -\frac{m}{2(2m-2)}\right).$$
+$$Q_2 = (x_2,y_2) = \left ( \frac{m}{2m+1}, -\frac{m}{2(2m+1)}\right).$$
 Therefore
 \begin{align*}
 Q_1Q_2 = 1 &\iff 1 = (x_2-x_1)^2 + (y_2-y_1)^2 \\
@@ -994,7 +1000,7 @@ Q_1Q_2 = 1 &\iff 1 = (x_2-x_1)^2 + (y_2-y_1)^2 \\
 &\iff 16 (2m+1)^2(m-1)^2 = 36 m^2(1+m^2)\\
 &\iff 4(2m+1)^2(m-1)^2 = 9 m^2(1+m^2)\\
 &\iff 16 m^4-16m^3-12m^2+8m+ 4 = 9 m^4 + 9m^2\\
-&\iff 7m^4-15m^3-21m^2+8m+4 = 0.
+&\iff 7m^4-16m^3-21m^2+8m+4 = 0.
 \end{align*}
 
 We obtain the four slopes and the figure with the following SAGE instructions:
@@ -1075,10 +1081,16 @@ The discriminant of $f$ is $\Delta_f = 316 = 2^2 \times 79$, where $79$ is prime
 }
 
 \begin{proof} 
- Let $\alpha = \angle PRO$. Since $QR = QO=1$ , $\triangle QRO$ is isosceles, so $\angle QOR = \alpha$. Therefore the extern angle $\angle OQP = 2\alpha$. Since $OQ = OP =1$, $\triangle OPQ$ is isosceles, so 
+ Let $\alpha = \angle PRO$. Since $QR = QO=1$ , $\triangle QRO$ is isosceles, so $\angle QOR = \alpha$. Therefore the external angle $\angle OQP = 2\alpha$. Since $OQ = OP =1$, $\triangle OPQ$ is isosceles, so 
  $$\angle OQP = \angle OPQ = 2\alpha.$$
  Therefore $\angle QOP = \pi - 4\alpha$. Since $\angle ROQ + \angle QOP + \theta = \pi,$ $\alpha + (\pi - 4 \alpha) + \theta = \pi$, so $\theta = 3\alpha$,
  $$\angle PRO = \frac{\theta}{3}.$$
+ \begin{figure}[htbp]
+\begin{center}
+\includegraphics [width=8cm,height=3cm] {Ex.10.3.12.png}
+\end{center}
+\end{figure}
+
 \end{proof}
 
 
@@ -1141,13 +1153,13 @@ $$QR = 1 \iff \alpha = \frac{\theta}{3} \quad \mathrm{or} \quad \alpha = \frac{\
 
 The only solution $0 < \alpha < \theta$ is $\alpha = \theta/3$.
 
-In the example of the angle $\theta = 60° = \pi/3$, where $\theta/3 = 20° = \pi/9$ is not constructible by straightedge and compass, we obtain $\alpha \in \left \{ \frac{\pi}{9}, \frac{4\pi}{9},-\frac{2\pi}{9}, - \frac{\pi}{3}\right \}$, all constructible with the marked ruler (see figure).
+In the example of the angle $\theta = 60^{\circ} = \pi/3$, where $\theta/3 = 20^{\circ} = \pi/9$ is not constructible by straightedge and compass, we obtain $\alpha \in \left \{ \frac{\pi}{9}, \frac{4\pi}{9},-\frac{2\pi}{9}, - \frac{\pi}{3}\right \}$, all constructible with the marked ruler (see figure).
 \end{proof}
 
 {\bf Solution 2}
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=7.8cm,height=5.4cm]{markedRulers6.pdf}
+\includegraphics[width=11.7cm,height=8.1cm]{markedRulers6.pdf}
 \end{center}
 \end{figure}
 
@@ -1170,7 +1182,7 @@ We follow the indication of David A. Cox and give the more geometric proof of [1
 \be
 \item[(a)]
 Let $H$ the orthogonal projection of $R$ on the $x$-axis, and $S$ such that $H$ is the midpoint  of $RS$, so $S$ is the reflection of $R$ with regard to the $x$-axis. Since $R$ is on the curve $C$,
-$$PR = 2 RA = RS,$$
+$$PR = 2 RH = RS,$$
 therefore the measures of $\angle ROP$ and $\angle SOR$ are equal, and is twice the measure of $\angle AOR$, so $\overrightarrow{OR}$ trisects the angle $\angle POA$ and a measure of $\angle ROA$ is $\theta/3$.
 
 \item[(b)] Let $Q=(x,y), H = (x,0), P = (\cos \theta, \sin \theta)$
@@ -1186,6 +1198,12 @@ The discriminant of the quadratic form $a x^2 + bxy + cy^2 = x^2-3y^2$ is $\Delt
 \paragraph{Ex. 10.3.15}
 
 {\it In this exercise, we discuss a marked-ruler construction of cube roots due to Nicomedes and taken from [15]. Let $k$ be a real number such that $0<k<8$, and consider an isosceles triangle $\triangle ABC$ such that $AC$ and $BC$ have length 1 and AB has length $k/4$. Then extend $AC$ and $AB$ as indicated in the picture below, and choose $D$ on the extension of $AC$ so that $AD$ also has length 1. Finally, draw the line through $D$ and $B$.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics [width=8cm,height=6cm] {Ex.10.3.15.png}
+\end{center}
+\end{figure}
 
 Verging from $C$ with the lines $l_1$ and $l_2$ indicated above gives points $Q\in l_1$ and $R \in l_2$ that are one unit apart. Assume that $Q\ne D$.
 \be
@@ -1309,7 +1327,7 @@ The marked-ruler constructions of Pappus (for the trisection) and Nicomedes (for
 
 	\item[{\bf Solution2.}]  From  [15] (G.E. Martin, Geometric Constructions):
 
-" Let the parallel to $(AB)$ that passes through $C$ intersect $(DB)$ at $E$. So $\triangle ABD$ and $\triangle CDE$ are similar. Then, since $A$ bisects $CD$, we have $CE = 2 AB = k/2$. Also, since $\triangle QBR$ and $\triangle QCE$ are similar, we have $(k/2) / CQ = BR/1$. With $x = BR$, then $CQ = k/(2x)$. With $M$ the midpoint of $A$ and $B$, by two aplications of the Pythagorean Theorem, we now have
+" Let the parallel to $(AB)$ that passes through $C$ intersect $(DB)$ at $E$. So $\triangle ABD$ and $\triangle CDE$ are similar. Then, since $A$ bisects $CD$, we have $CE = 2 AB = k/2$. Also, since $\triangle QBR$ and $\triangle QCE$ are similar, we have $(k/2) / CQ = BR/1$. With $x = BR$, then $CQ = k/(2x)$. With $M$ the midpoint of $A$ and $B$, by two applications of the Pythagorean Theorem, we now have
 \begin{align*}
 \left ( 1 + \frac{k}{2x} \right )^2 &= CR^2 = CM^2+MR^2 = (CA^2 - AM^2) + MR^2\\
 &=1^2 - \left ( \frac{k}{8} \right)^2  + \left( x + \frac{k}{8}\right)^2
@@ -1319,7 +1337,7 @@ The marked-ruler constructions of Pappus (for the trisection) and Nicomedes (for
 16(2x+k)^2 &= 8^2x^2 - k^2x^2 +x^2(8x+k)^2\\
 64 x^2 + 64 kx + 16 k^2 &= 64 x^2 - k^2 x^2 + 64 x^4 + 16kx^3 + k^2 x^2\\
 0 &= 64x^4 + 16kx^3 -64kx - 16k^2\\
-0 &=4x^4 + kx^3 - 4kx -k^2. )
+0 &=4x^4 + kx^3 - 4kx -k^2. 
 \end{align*}
 Fortunately, this quartic easily factors as $(4x+k)(x^3-k) =0$. Since $4x+k>0$, then we must have $x^3 -k =0$. Therefore, $x$ is the real cube root of $k$, as desired."
 \ee
@@ -1329,6 +1347,12 @@ Fortunately, this quartic easily factors as $(4x+k)(x^3-k) =0$. Since $4x+k>0$, 
 \paragraph{Ex. 10.3.16}
 
 {\it Let $P$ be a point distance $b>0$ from a line $l$. Put a marked ruler though $P$ with one mark at $R \in l$. When $R$ moves along $l$, the other mark $Q_1$ or $Q_2$ (depending on which side of $l$ it is on) traces out the conchoid of Nicomedes.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics [width=12cm,height=6cm] {Ex.10.3.16.png}
+\end{center}
+\end{figure}
 
 We can relate the conchoid to constructions problems as follows.
 \be
@@ -1381,7 +1405,7 @@ This is confirmed by the instruction "polar\_plot" with Sage, where the blue and
  
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=10cm,height=8cm]{conchoid.png}
+\includegraphics[width=12cm,height=9cm]{conchoid.png}
 \end{center}
 \end{figure}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1413,12 +1437,19 @@ The sign $-$ in the text seems to be a misprint, if the equation of $l$ is $y = 
 
 \paragraph{Ex. 10.3.17}
 
-{\it Let $P$ a point on a circle, and consider a marked ruler that goes through $P$. If we place one mark on a point $Q$ on the circle, then the other mark $R_1$ or $R_2$ traces out a curve called the limaçon of Pascal.
+{\it Let $P$ a point on a circle, and consider a marked ruler that goes through $P$. If we place one mark on a point $Q$ on the circle, then the other mark $R_1$ or $R_2$ traces out a curve called the lima\c con of Pascal:
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics [width=7cm,height=6cm] {Ex.10.3.17.png}
+\end{center}
+\end{figure}
+
 \be
-\item[(a)] Show that the angle trisection (10.18) can be interpreted as the intersection of the line $l$ with the limaçon determined by the circle and the point $P$.
-\item[(b)] Let $P =(0,0)$ and let $C$ be the circle of radius $a$ and center $(a,0)$. Show that the corresponding limaçon has polar equation
+\item[(a)] Show that the angle trisection (10.18) can be interpreted as the intersection of the line $l$ with the lima\c con determined by the circle and the point $P$.
+\item[(b)] Let $P =(0,0)$ and let $C$ be the circle of radius $a$ and center $(a,0)$. Show that the corresponding lima\c con has polar equation
 $$r = 1 + 2a \cos \theta.$$
-\item[(c)] In the situation of part (b), show that the Cartesian equation of the limaçon is
+\item[(c)] In the situation of part (b), show that the Cartesian equation of the lima\c con is
 $$(x^2+y^2 -2ax)^2 = x^2 + y^2.$$
 \ee
 }
@@ -1430,7 +1461,7 @@ $$(x^2+y^2 -2ax)^2 = x^2 + y^2.$$
 \end{figure}
 \begin{proof}
 \be
-\item[(a)]  As $QR = 1$, where $Q \in C$ and $R$ is on the line $(PQ)$, $R\in l$ is by definition on the limaçon determined by $P$ and $C$,
+\item[(a)]  As $QR = 1$, where $Q \in C$ and $R$ is on the line $(PQ)$, $R\in l$ is by definition on the lima\c con determined by $P$ and $C$,
 
 \item[(b)] Let $l_1 : y = mx$ be any nonvertical line passing through $P = (0,0)$, with $m = \tan \theta, \ -\pi / 2 <\theta < \pi/2$, so the measure of the angle between the $x$-axis and $l_1$ is $\theta$.  Let $Q =(x_Q,y_Q),Q \ne P$, be the intersection point of $l_1$ with $C$. Then $x_Q \ne 0$.
 
@@ -1444,7 +1475,7 @@ $$Q = \left(\frac{2a}{m^2+1}, \frac{2am}{m^2+1}\right).$$
 Since $m = \tan \theta$,
 $$ Q = (2a \cos^2 \theta, 2a \sin \theta \cos \theta) = (a (\cos(2\theta)+1), a \sin(2\theta)).$$
 Let $R = (r\cos \theta, r\sin \theta)$ any point of $l_1$.
-Then $R$ is on the limaçon determined by $C$ and $P$ if and only if $QR = 1$ (by continuity, the points at distance 1 on the vertical tangent to the circle at point $P$ are considered to be on the limaçon):
+Then $R$ is on the lima\c con determined by $C$ and $P$ if and only if $QR = 1$ (by continuity, the points at distance 1 on the vertical tangent to the circle at point $P$ are considered to be on the lima\c con):
 \begin{align*}
 QR = 1 &\iff 1 = (r \cos \theta - 2a \cos^2 \theta)^2 + (r \sin \theta  - 2 a \sin \theta \cos \theta)^2\\
 &\iff 1 = (\cos^2 \theta + \sin^2 \theta)(r - 2 a \cos \theta)^2\\
@@ -1452,30 +1483,30 @@ QR = 1 &\iff 1 = (r \cos \theta - 2a \cos^2 \theta)^2 + (r \sin \theta  - 2 a \s
 &\iff r = 1 + 2a \cos \theta \quad \mathrm{or} \quad r = -1 + 2a \cos \theta
 \end{align*}
 \ee
-This can be interpreted geometrically. Let $P,A$ the intersection points of $C$ with the $x$-axis. As $PA$ is a diameter of $C$, the angle $\angle PQR$ is a right angle, so $PQ = 2a \cos \theta$. Therefore $PR = | PQ \pm 1| = |\pm 1 + 2a \cos \theta|$.
+This can be interpreted geometrically. Let $P,A$ the intersection points of $C$ with the $x$-axis. As $PA$ is a diameter of $C$, the angle $\angle PQA$ is a right angle, so $PQ = 2a \cos \theta$. Therefore $PR = | PQ \pm 1| = |\pm 1 + 2a \cos \theta|$.
 
-The limaçon is the union of the curves $C_1,C_2$ with polar equations
+The lima\c con is the union of the curves $C_1,C_2$ with polar equations
 $$ r = 1 + 2a \cos \theta, \qquad  r = -1 + 2a \cos \theta, \qquad -\frac{\pi}{2} < \theta < \frac{\pi}{2}.$$
 As $\cos(\theta + \pi) = - \cos(\theta)$, if the point $R$ with polar coordinates $(r, \theta)$ is on $C_1$, then $(-r, \theta + \pi)$ is on $C_2$. But $(r,\theta)$ and  $(-r,\theta + \pi)$ are polar coordinates of the same point!  Therefore the two curves are identical if we let $\theta$ vary in $\R$, and we obtain the complete curve if we let $\theta$ vary in $]-\pi,\pi]$ in the equation of $C_1$.
 
-The limaçon determined by $P$ and $C$ has polar equation
+The lima\c con determined by $P$ and $C$ has polar equation
 $$r = 1 + 2a \cos \theta, \qquad \theta \in \R.$$
 
-\item[(c)] Let $L$ the limaçon. By part (b), if $x \ne 0$
+\item[(c)] Let $L$ the lima\c con. By part (b), if $x \ne 0$
 \begin{align*}
 (x,y) \in L &\iff \exists m \in \R, 
 \left\{
 \begin{array}{ccl}
  y & =   & mx  \\
- 1 & =  &   \left(x - \frac{2a}{m^2 + 1}\right)^2 + \left(y - \frac{2am}{m^2+1}\right) \\
+ 1 & =  &   \left(x - \frac{2a}{m^2 + 1}\right)^2 + \left(y - \frac{2am}{m^2+1}\right)^2 \\
 \end{array}
 \right.\\
- &\iff 1  =    \left(x - \frac{2a}{\frac{x^2}{y^2} + 1}\right)^2 + \left(y - \frac{2a\frac{x}{y}}{\frac{x^2}{y^2}+1}\right) \\
+ &\iff 1  =    \left(x - \frac{2a}{\frac{y^2}{x^2} + 1}\right)^2 + \left(y - \frac{2a\frac{y}{x}}{\frac{y^2}{x^2}+1}\right)^2 \\
  &\iff x^2(x^2+y^2-2ax)^2 + y^2 (x^2+y^2-2ax)^2 = (x^2+y^2)^2\\
  &\iff (x^2 + y^2 -2ax)^2 = x^2+y^2.
 \end{align*}
 
-The two exceptional points $(0,\pm1)$ satisfy this equation, so the Cartesian equation of the limaçon is
+The two exceptional points $(0,\pm1)$ satisfy this equation, so the Cartesian equation of the lima\c con is
 $$L : (x^2 + y^2 -2ax)^2 = x^2+y^2.$$
 (We can also obtain this equation from the polar equation $r = 1 + 2a \cos \theta$.)
 \end{proof}
