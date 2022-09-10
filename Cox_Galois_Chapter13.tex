@@ -77,7 +77,7 @@ As $\beta_1,\ldots,\beta_n$ are the same roots in a different order, there exist
 \begin{align}
 \beta_i = \alpha_{\gamma(i)},\qquad i=1,\ldots,n.\label{eq:2}
 \end{align}
-This numbering of the roots is associate to the isomorphisme $\phi_2$. If $\tau_2 = \phi_2(\sigma)$, then 
+This numbering of the roots is associate to the isomorphism $\phi_2$. If $\tau_2 = \phi_2(\sigma)$, then 
 \begin{align}
 \sigma(\beta_i) = \beta_{\tau_2(i)}, \qquad i=1,\ldots,n.\label{eq:3}
 \end{align}
@@ -127,7 +127,7 @@ So $\tau_1, \tau_2 \in H$, or  $\tau_1, \tau_2 \in S_n  \setminus H$.
 If $\tau_1, \tau_2$ are in $S_n\setminus H$, then $\varphi(\tau_1\tau_2) = \varphi(\tau_1)\varphi(\tau_2) = (-1)\times (-1) = 1$, so $\tau_1 \tau_2 \in H$. In both cases 
 $\tau_1 \tau_2 \in H$. 
 
-Sine every permutation $\sigma$ of $A_n$ is the product of an even number of transpositions, $\sigma \in H$, so $A_n \subset H$. As $|A_n| = |H | = n!/2$, $H = A_n$.
+Since every permutation $\sigma$ of $A_n$ is the product of an even number of transpositions, $\sigma \in H$, so $A_n \subset H$. As $|A_n| = |H | = n!/2$, $H = A_n$.
 
 $A_n$ is the only subgroup of $S_n$ with $n!/2$ elements.
 \end{proof}
@@ -230,7 +230,7 @@ Therefore $g = (x-\alpha_1)(x-\alpha_2)(x-\alpha_3)$ splits completely over $F$.
 \be
 \item[(a)] Suppose that $f$ has roots $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ such that $\alpha_1+\alpha_2 - \alpha_3-\alpha_4 = \alpha_1\alpha_2 - \alpha_3 \alpha_4 = 0$. Prove that $f$ is not separable.
 \item[(b)] Let $\beta$ be a root of the resolvent $\theta_f(y)$. Use part (a) to prove that $4\beta+c_1^2-4c_2$ and $\beta^2 - 4 c_4$ can't both vanish when $f$ is separable.
-\item[(c)] Suppose that $4\beta+c_1^2-4c_2^2=0$ in part (c) of Theorem 13.1.1. Prove carefully that $G$ is conjugate to $\langle (1\,3\,2\,4),(1\,2) \rangle$ if and only if $\Delta(f)(\beta^2 - 4 c_4) \not \in (F^*)^2$.
+\item[(c)] Suppose that $4\beta+c_1^2-4c_2=0$ in part (c) of Theorem 13.1.1. Prove carefully that $G$ is conjugate to $\langle (1\,3\,2\,4),(1\,2) \rangle$ if and only if $\Delta(f)(\beta^2 - 4 c_4) \not \in (F^*)^2$.
 \ee
 }
 
@@ -251,7 +251,7 @@ Since $\beta^2 - 4c_4 = (\alpha_1\alpha_2 - \alpha_3\alpha_4)^2$, if $4\beta+c_1
 
 Therefore $4\beta+c_1^2-4c_2$ and $\beta^2 - 4 c_4$ can't both vanish when $f$ is separable.
 
-\item[(c)] Suppose that $4\beta + c_1^2-4c_2^2 = 0$ in part (c) of Theorem 13.1.1, where $\theta_f(y)$ has a unique root $\beta$ in $F$. Therefore $\theta_f(y) = (y-\beta)(y-\beta')(y-\beta'')$, where $\beta' \not \in F, \beta'' \not \in F$.
+\item[(c)] Suppose that $4\beta + c_1^2-4c_2 = 0$ in part (c) of Theorem 13.1.1, where $\theta_f(y)$ has a unique root $\beta$ in $F$. Therefore $\theta_f(y) = (y-\beta)(y-\beta')(y-\beta'')$, where $\beta' \not \in F, \beta'' \not \in F$.
 
 If $\theta_f$ was not separable, then $\beta' = \beta''$, and $\theta_f(t) = (y-\beta)(y-\beta')^2 \in F[y], \beta \in F$, thus $(y-\beta')^2 = y^2 - 2 \beta' y + \beta'^2 \in F[y]$, which implies that 
 $2\beta' \in F$. 
@@ -721,7 +721,7 @@ F \subset F\left(\sqrt{4y_1+c_1^2-4c_2}\right) \subset  F&\left(\sqrt{4y_1+c_1^2
 \end{align*}
  Since $4y_1+c_1^2-4c_2 \in F, \delta \in F$ and $4y_2+c_1^2-4c_2 \in F(\sqrt{\delta}$), the degree of each extension is 1 or 2, so 
 $$[L:F] \mid 8.$$
-Moreover $L \supset F(\alpha_1)$, and the minimal polynomial of $\alpha_1$ is 4, so $$[L:F] \geq [F(\alpha_1):F] = \deg(f) = 4.$$ Since $|G| = [L:F]$,
+Moreover $L \supset F(\alpha_1)$, and the minimal polynomial of $\alpha_1$ is f, so $$[L:F] \geq [F(\alpha_1):F] = \deg(f) = 4.$$ Since $|G| = [L:F]$,
 $$|G| = 4 \text{ or } |G| = 8.$$
 \end{proof}
 
@@ -775,7 +775,7 @@ Since 2 is a generator of $\F_5^*$ ($2^2\equiv -1 \mod 5$), every $a \in \F_p^*$
 Thus 
 $$\mathrm{AGL}(1,\F_5) \cap A_5 =\langle \rho, \sigma^2 \rangle =  \langle (1\,2\,3\,4\,5), (1\,4)(2\,3) \rangle.$$
 
-\item[(c)] For every $x \in \F_p$, $(s^2 \circ r)(x)  = 4(x+1)$, and $(t^{-1} \circ s^2)(x) = 4x - 1 = 4x + 4 = 4(x+1)$, so $s^2 \circ r = r^{-1} \circ s^2$ and $\sigma^2 \rho = \rho^{-1} \sigma^2$.
+\item[(c)] For every $x \in \F_p$, $(s^2 \circ r)(x)  = 4(x+1)$, and $(r^{-1} \circ s^2)(x) = 4x - 1 = 4x + 4 = 4(x+1)$, so $s^2 \circ r = r^{-1} \circ s^2$ and $\sigma^2 \rho = \rho^{-1} \sigma^2$.
 
 Write $\sigma' = \sigma^2$. Since $\mathrm{AGL}(1,\F_5) \cap A_5  = \langle \rho, \sigma' \rangle$, the relations 
 $$\rho^5 = e, \qquad \sigma'^2 = e, \qquad \sigma' \rho = \rho^{-1} \sigma'$$
@@ -800,7 +800,7 @@ $$
 {\it This exercise will consider some simple properties of $S_5$.
 \be
 \item[(a)] Prove that $\langle (1\,2\,3\,4\,5) \rangle$ is a 5-Sylow subgroup of $S_5$ and more generally is a $5$-Sylow subgroup of any subgroup $G \subset S_5$ containing $\langle (1\,2\,3\,4\,5) \rangle$.
-\item[(b)] Prouve that $S_5$ has twenty-four $5$-cycles.
+\item[(b)] Prove that $S_5$ has twenty-four $5$-cycles.
 \ee
 }
 
@@ -832,7 +832,7 @@ $$
 $$ \tau \in C \Rightarrow \sigma \cdot \tau \in C.$$
 
 Moreover, if $\sigma, \sigma' \in G$, and $\tau \in C$, then $e\cdot \tau = e \tau e^{-1} = \tau$, and
-$$\sigma \cdot (\sigma' \tau) = \sigma \cdot (\sigma' \tau \sigma^{-1}) = \sigma \sigma' \tau \sigma'^{-1} \sigma^{-1} = (\sigma \sigma') \cdot \tau.$$
+$$\sigma \cdot (\sigma' \cdot \tau) = \sigma \cdot (\sigma' \tau \sigma'^{-1}) = \sigma \sigma' \tau \sigma'^{-1} \sigma^{-1} = (\sigma \sigma') \cdot \tau.$$
 Therefore $\sigma \cdot \tau = \sigma \tau \sigma^{-1}$ defines an action of $G$ on $C$.
 
 \item[(b)] Let $\tau = (a_1\,a_2\,a_3\,a_4\,a_5)\in S_5$ be a $5$-cycle. 
@@ -869,7 +869,7 @@ $$|G| \text{ divides } |C|.$$
 
 \item[(d)] By Exercise 2,  $S_5$ has $24$ 5-cycles. 
 \begin{align*}
-\{\tau \in S_n \ | \ \tau \text{ is a 5-cycle} \} &= \{\tau \in G \ | \ \tau \text{ is a 5-cycle} \} \cup \{\tau \in G \setminus S_n \ | \ \tau \text{ is a 5-cycle} \} \\
+\{\tau \in S_n \ | \ \tau \text{ is a 5-cycle} \} &= \{\tau \in G \ | \ \tau \text{ is a 5-cycle} \} \cup \{\tau \in  S_n \setminus G \ | \ \tau \text{ is a 5-cycle} \} \\
 &= \{\tau \in G \ | \ \tau \text{ is a 5-cycle} \} \cup C,
 \end{align*}
 where the union is a disjoint union.
@@ -963,7 +963,7 @@ $$(y-\beta_1)^6 = (y^3+b_2y^2+b_4y+b_6)^2 - 2^{10} \Delta(f) y.$$
 Multiplying this out, we obtain
 \begin{align*}
 &y^6 - 6 \beta_1 y^5 +15 \beta_1^2 y^4 - 20\beta_1^3 y^3 + 15 \beta_1^4 y^2 -6 \beta_1^5 y + \beta_1^6 =\\
-&y^6 + 2 b_2 y^5 +(b_2^2 + 2b_4) y^4 +(2b_6 +2b_2b_4) y^3 + (b_4^2 + 2 b_4b_6) y^2 +(2 b_4b_6 - 2^{10} \Delta(f))y +b_6^2,
+&y^6 + 2 b_2 y^5 +(b_2^2 + 2b_4) y^4 +(2b_6 +2b_2b_4) y^3 + (b_4^2 + 2 b_2b_6) y^2 +(2 b_4b_6 - 2^{10} \Delta(f))y +b_6^2,
 \end{align*}
 so
 \begin{align*}
@@ -1197,7 +1197,7 @@ $$B_i = D_i \sqrt{\Delta},\qquad D_i \in F[\sigma_1,\ldots,\sigma_5] \qquad \tex
 \ee
 
 \item[(e)] Since $\sqrt{\Delta} = \prod_{1\leq i < j \leq 5} (x_i - x_j)$, $\sqrt{\Delta}$ has degree $1+2+3+4 = 10$ as a polynomial in $x_1,x_2,x_3,x_4,x_5$.
-$B_1 = u_1+u_2+u_3+u_4+u_5$, with $\deg(u_i) = 2$, thus $\deg(D_1 \sqrt{\Delta}) \leq 10$. Therefore $D_1 = 0$.
+$B_1 = u_1+u_2+u_3+u_4+u_5$, with $\deg(u_i) = 2$, thus $\deg(D_1 \sqrt{\Delta}) \leq 2$. Therefore $D_1 = 0$.
 
 $B_3 = u_1u_2u_3+\cdots$, so $\deg(B_3) = \deg(D_3\sqrt{\Delta}) \leq 6$. Therefore $D_3 = 0$, and $B_3 = 0$.
 
@@ -1247,7 +1247,7 @@ Under the hypothesis of Theorem 13.2.7 (and 13.2.6), $F \subset L$ is a separabl
 $$p(x) = (x-\gamma_1)\cdots(x-\gamma_r),$$
 where $\gamma_1,\ldots,\gamma_r$ are distinct. Since $p$ is the minimal polynomial over $F$ of $\beta_1,\ldots,\beta_6$, each $\beta_j$ is a $\gamma_i$ for some  $i, 1\leq i \leq r$, and since $p(y)$ divides $\theta_f(y)$, each $\gamma_i$ is a $\beta_j$, so $\{\gamma_1,\ldots,\gamma_r\} = \{\beta_1,\ldots,\beta_6\}$, and $\gamma_1,\ldots,\gamma_r$ are the distinct roots of $\theta_f(y)$.
 
-Let $k_i$ the order of multiplicity of $\beta_i$ in $\theta_f(y)$, so $\theta_f(y) = (y-\beta_i)^k q_i(y), \ q_i(y) \in L[y]$. Let $\sigma \in \Gal(L/F)$ such that $\sigma(\beta_i) = \beta_j$. Applying $\sigma$ to $\theta_f(y)$, we obtain $\theta_f(y) = (y-\beta_j)^k (\sigma \cdot q_i)(y)$, so $k_j \geq k_i$, and similarly $k_i \geq k_j$, so the distinct $\gamma_i$ have the same order of multiplicity $m$ in $\theta_f(y)$. Therefore
+Let $k_i$ the order of multiplicity of $\beta_i$ in $\theta_f(y)$, so $\theta_f(y) = (y-\beta_i)^{k_i} q_i(y), \ q_i(y) \in L[y]$. Let $\sigma \in \Gal(L/F)$ such that $\sigma(\beta_i) = \beta_j$. Applying $\sigma$ to $\theta_f(y)$, we obtain $\theta_f(y) = (y-\beta_j)^{k_i} (\sigma \cdot q_i)(y)$, so $k_j \geq k_i$, and similarly $k_i \geq k_j$, so the distinct $\gamma_i$ have the same order of multiplicity $m$ in $\theta_f(y)$. Therefore
 $$\theta_f(y) = (x-\gamma_1)^m \cdots (x-\gamma_r)^m = p(y)^m.$$
 Since $6 = \deg(\theta_f(y)) = m \deg(p(y))$, $m \mid 6$, so $ m = 1,2,3$ or $6$.
 
@@ -1512,7 +1512,7 @@ where $b,c \in F(\beta_1,\beta_2)$ are constant.
  \end{align*}
  The first equation gives $\beta_1 = -2b_2$, and the last  gives
  $$-2b_2\beta_2^5 = \frac{1}{4}b_2^6.$$
- If $b_2 \ne 0$, $\beta_2^5 = -\frac{1}{2} b_2^5$, so
+ If $b_2 \ne 0$, $\beta_2^5 = -\frac{1}{8} b_2^5$, so
  $$2^{10} \Delta(f) = \beta_2^5 + 2 b_4 b_6 = -\frac{1}{8} b_2^5 -\frac{1}{2} b_2^5 = -\frac{5}{8} b_2^5 = 0.$$
  Therefore $\Delta(f) = 0$, and this is a contradiction.
  
@@ -1566,11 +1566,11 @@ By theorem 13.2.6 (c), $G$ is conjugate to $\langle (1\,2\,3\,4\,5) \rangle$ if 
 
 \paragraph{Ex. 13.2.12}
 
-{\it Let $f = x^5 - 6x+3 \in \Q[x]$.
+{\it Let $f = x^5 - 6x+3 \in \Q[x]$. Compute $\Delta(f)$ and $\theta_f(y)$ and show that $\theta_f(y)$ is irreducible over $\Q$.
 }
 
 \begin{proof}
-By the Schšnemann-Eisenstein Criterion for $p=3$, we know that $f$ is irreducible over $\Q$.
+By the Sch\"onemann-Eisenstein Criterion for $p=3$, we know that $f$ is irreducible over $\Q$.
 
 The discriminant $f = x^5 +ax+b, a,b\in \Q$ is given by
 $$\Delta(f) = 256a^5+3125b^4,$$
@@ -1585,7 +1585,7 @@ With $a = -6, b = 3$, we obtain
 &= y^{6} + 240 \, y^{5} + 31680 \, y^{4} + 1935360 \, y^{3} + 58060800 \,
 y^{2} + 584838144 \, y + 4777574400
 \end{align*}
-The Schšnemann-Eisenstein Criterion doesn't apply.  
+The Sch\"onemann-Eisenstein Criterion doesn't apply.  
 
 With Sage, we obtain
 \begin{verbatim}
@@ -1629,7 +1629,7 @@ Let $L$ the splitting field of $x^5 - 2$ over $\Q$.
   We know that $\zeta_5 = (\zeta_5 \sqrt[5]{2})/ \sqrt[5]{2} \in L$, and also $\sqrt{5} = \zeta_5 + \zeta_5^{-1} - \zeta_5^2 - \zeta_5^{-2} \in L$ (see the quadratic Gauss sum page 249).
   
  Since $\Q \subset \Q(\sqrt{5})$ is a quadratic extension, by the Galois correspondence, $\Gal(L / \Q(\sqrt{5}))$ is a subgroup of index 2 in $\Gal(L/\Q)$ and the subgroup $H \subset S_5$ corresponding to $\Gal(L/\Q(\sqrt{5}))$ has index 2 in $G \simeq \mathrm{AGL}(1,\F_5)$. Thus $|H| = 10$, and since $5 \mid |H|$, $H$ contains a 5-cycle and is a transitive subgroup of $S_5$.  By Theorem 13.2.2, $H$ is conjugate to $\langle (1\,2\,3\,4\,5) \rangle$ or to $ \mathrm{AGL}(1,\F_5) \cap A_5$. Since $(G:H) = 2$, $H$ is conjugate to  $\mathrm{AGL}(1,\F_5) \cap A_5$, so
- $$\Gal(K/\Q(\sqrt{5})) \simeq H \simeq \mathrm{AGL}(1,\F_5) \cap A_5.$$
+ $$\Gal(L/\Q(\sqrt{5})) \simeq H \simeq \mathrm{AGL}(1,\F_5) \cap A_5.$$
  
 \end{proof}
 
@@ -1815,7 +1815,7 @@ So there exists $\lambda$ in some solvable Galois extension $L$ of $F$ such that
 $$\beta_0 = \lambda \alpha, \beta_1 = \lambda(\alpha+1),\beta_2 =  \lambda(\alpha +2),\beta_3= \lambda(\alpha +3), \beta_4 = \lambda (\alpha +4).$$
 A splitting field of $f$ over $F$ is 
 $$K = F(\beta_0,\ldots,\beta_4) = F(\lambda \alpha,\lambda(\alpha+1),\ldots,\lambda (\alpha +4)).$$
-Since $\lambda = \lambda(\alpha +1) - \lambda \alpha = \beta_1 \in K$, and $\alpha = (\lambda \alpha) / \lambda = \beta_0/(\beta_1 - \beta_0) \in K$, $F(\lambda,\alpha) \subset K$, and $\lambda \alpha,\ldots, \lambda(\alpha +4) \in F(\lambda,\alpha)$, so $K \subset F(\lambda,\alpha)$:
+Since $\lambda = \lambda(\alpha +1) - \lambda \alpha = \beta_1 - \beta_0 \in K$, and $\alpha = (\lambda \alpha) / \lambda = \beta_0/(\beta_1 - \beta_0) \in K$, $F(\lambda,\alpha) \subset K$, and $\lambda \alpha,\ldots, \lambda(\alpha +4) \in F(\lambda,\alpha)$, so $K \subset F(\lambda,\alpha)$:
 $$K = F(\lambda, \alpha)$$
 is the splitting field of $f =x^5 +ax +b$ over $F$.
 
@@ -1848,7 +1848,7 @@ The Galois group of $f = x^5 - \sigma_1 x^4 +\sigma_2 x^3 - \sigma_3 x^2 + \sigm
 \item[(b)] Show that coefficients of $y^2$ and $y$ in (13.26) both vanish if and only if $a=2$ and $b^2+b-1 = 0$.
 \item[(c)] The equation for $y$ becomes trivial to solve when $a = 2$ and $b = (\sqrt{5} - 1)/2$. We could then solve for $x$ using $y = a+b x+x^2$, but there is a better way to proceed. Note that
 $$x^3 = -bx^2 -ax + yx$$
-follows from $y = a+bx+cx^2$. Furthermore, we can use $y =a +bx+x^2$ to eliminate the $x^2$ in the above equation. Then use $x^3+3x+1 = 0$ to obtain an equation in which $x$ appears only to the first power. Solving this gives a formula for $x$ in terms of $y$. The general version of this argument can be found in [Lagrange, p.223].
+follows from $y = a+bx+x^2$. Furthermore, we can use $y =a +bx+x^2$ to eliminate the $x^2$ in the above equation. Then use $x^3+3x+1 = 0$ to obtain an equation in which $x$ appears only to the first power. Solving this gives a formula for $x$ in terms of $y$. The general version of this argument can be found in [Lagrange, p.223].
 \ee
 }
 
@@ -1886,7 +1886,7 @@ R = S.det(); R
 $$a^{3} + 3 a b^{2} -  b^{3} - 3 a^{2} y - 3 b^{2} y + 3 a y^{2} -  y^{3}
 - 6 a^{2} + 3 a b + 12 a y - 3 b y - 6 y^{2} + 9 a - 3 b - 9 y + 1$$
 
-But is is more easy to call the method "resultant" to obtain the same result:
+But it is more easy to call the method "resultant" to obtain the same result:
 \begin{verbatim}
 res = f.resultant(g,x);res
 \end{verbatim}
@@ -1913,7 +1913,7 @@ so
 y^3 &= \frac{25 - 5 \sqrt{5}}{2}\\
 &= \sqrt{5}^3 \, \frac{\sqrt{5} - 1}{2}.
 \end{align*}
-By the property of the resultant, if $y$ is evaluated to $y_0 = \omega^k\, \sqrt{5}\, \sqrt[3]{\frac{\sqrt{5} - 1}{2}}, \ {k=0,1,2}, \ {\omega = e^{2 i \pi /3}}$, then there exists a commun root of $f$ and $g$ in $\C$, where
+By the property of the resultant, if $y$ is evaluated to $y_0 = \omega^k\, \sqrt{5}\, \sqrt[3]{\frac{\sqrt{5} - 1}{2}}, \ {k=0,1,2}, \ {\omega = e^{2 i \pi /3}}$, then there exists a common root of $f$ and $g$ in $\C$, where
 \begin{align*}
 f &= x^3 + 3x +1\\
 g &= x^2 + \frac{\sqrt{5} - 1}{2} x + 2 - y_0.
@@ -1952,7 +1952,7 @@ x_0 &= w - \frac{\sqrt{5} + 1}{2} w^2\\
 &= w - w^{-1}
 \end{align*}
 We can write $w = \omega^k \sqrt[3]{\frac{\sqrt{5}-1}{2}}, k = 0,1,2$, then  $w^{-1} = \omega^{2k} \sqrt[3]{\frac{\sqrt{5}+1}{2}}$, where the cubic roots are chosen so that their product is real, equal to 1. Then
-$$ \omega^k \,\sqrt[3]{\frac{\sqrt{5}-1}{2}} + \omega^{2k}\, \sqrt[3]{\frac{\sqrt{5}+1}{2}},\qquad k=0,1,2$$
+$$ \omega^k \,\sqrt[3]{\frac{\sqrt{5}-1}{2}} - \omega^{2k}\, \sqrt[3]{\frac{\sqrt{5}+1}{2}},\qquad k=0,1,2$$
 are the roots of $f$. This is identical to the formulas obtained with Cardano's formulas, with more sweat.
 \ee
 \end{proof}
@@ -1984,22 +1984,22 @@ $$u^5 +v^5 -\frac{Q^{2}}{P} -\frac{P^{3}}{Q} = \frac{Q^2}{P} + \frac{P^3}{Q}-  \
 and
 \begin{align*}
 &u^{3} v + u^{2} v^{2} + u v^{3} - P u - P v - Q\\
-& = P^{-\frac{3}{5}} Q^{\frac{6}{5}}P^{\frac{3}{5}} Q^{-\frac{1}{5}} + P^{-\frac{2}{5}} Q^{\frac{4}{5}} P^{-\frac{1}{5}} Q^{\frac{2}{5}} +P^{-\frac{1}{5}} Q^{\frac{2}{5}}P^{\frac{9}{5}} Q^{-\frac{3}{5}}\\
-&\qquad -P^{\frac{5}{5}} P^{-\frac{1}{5}} Q^{\frac{2}{5}} - P^{\frac{5}{5}} P^{\frac{3}{5}} Q^{-\frac{1}{5}}\\
-&= Q + P^{\frac{4}{5}} Q^{\frac{2}{5}} + P^{\frac{8}{5}} Q^{-\frac{1}{5}} - P^{\frac{4}{5}} Q^{\frac{2}{5}} - P^{-\frac{8}{5}} Q^{-\frac{1}{5}} - Q\\
+& = P^{-\frac{3}{5}} Q^{\frac{6}{5}}P^{\frac{3}{5}} Q^{-\frac{1}{5}} + P^{-\frac{2}{5}} Q^{\frac{4}{5}} P^{\frac{6}{5}} Q^{-\frac{2}{5}} +P^{-\frac{1}{5}} Q^{\frac{2}{5}}P^{\frac{9}{5}} Q^{-\frac{3}{5}}\\
+&\qquad -P^{\frac{5}{5}} P^{-\frac{1}{5}} Q^{\frac{2}{5}} - P^{\frac{5}{5}} P^{\frac{3}{5}} Q^{-\frac{1}{5}} - Q\\
+&= Q + P^{\frac{4}{5}} Q^{\frac{2}{5}} + P^{\frac{8}{5}} Q^{-\frac{1}{5}} - P^{\frac{4}{5}} Q^{\frac{2}{5}} - P^{\frac{8}{5}} Q^{-\frac{1}{5}} - Q\\
 &= 0.
 \end{align*}
 Therefore $$u + v = \sqrt[5]{Q^2/P} + (P/Q)\sqrt[5]{Q^2/P}^2$$ is a root of $x^5 - 5Px^2 - 5Qx - Q^2/P -P^3/Q$.
 If we replace $\sqrt[5]{Q}$ by another fifth root $\zeta^k \sqrt[5]{Q},\ k=1,2,3,4,$ (where $\zeta = e^{2i\pi/5}$), in the equation
 $$0 = u^{3} v + u^{2} v^{2} + u v^{3} - P u - P v - Q, \qquad \text{where } u= \sqrt[5]{P}^{-1}\sqrt[5]{Q}^2, v = \sqrt[5]{P}^3 \sqrt[5]{Q}^{-1},$$
-then $u$ is replaced by $\zeta^2u$, and $v$ is replace by $\zeta^4 v$, therefore $\zeta^{2k}  u , \zeta^{4k} v$ is a solution of the preceding system, so $\zeta^{2k}  u + \zeta^{4k} v$ is also a root of $f$.
+then $u$ is replaced by $\zeta^{2k}u$, and $v$ is replace by $\zeta^{4k} v$, therefore $\zeta^{2k}  u , \zeta^{4k} v$ is a solution of the preceding system, so $\zeta^{2k}  u + \zeta^{4k} v$ is also a root of $f$.
 So $$u+v,\quad \zeta^2 u + \zeta^4 v, \quad\zeta^4 u + \zeta^3 v,\quad \zeta u + \zeta^2 v,\quad \zeta^3 u + \zeta v,$$
 are roots of $f$, where 
 $$u = \sqrt[5]{Q^2/P} ,\qquad  v = (P/Q)\sqrt[5]{Q^2/P}^2 .$$ 
 This roots are the five roots of $f$, as proved in the following expansion:
 \begin{align*}
 & (x - (u+v))(x- (\zeta^2 u + \zeta^4 v))(x- (\zeta^4 u + \zeta^3 v))(x-(\zeta u + \zeta^2 v))(x- (\zeta^3 u + \zeta v))\\
-& = x^5 -5 uv^2 x^3 -5 u^3v x -u^5-v^5.
+& = x^5 -5 uv^2 x^2 -5 u^3v x -u^5-v^5.
 \end{align*}
 Since 
 $$P = uv^2, \qquad Q = u^3 v,$$
@@ -2070,7 +2070,7 @@ With the same proof as in the first bullet, $f$ remains irreducible over $\Q(\sq
 f &= x^5 - 5Px^2 - 5Qx - \frac{Q^{2}}{P} -\frac{P^{3}}{Q}\\
 &=(x - (u+v))(x- (\zeta^2 u + \zeta^4 v))(x- (\zeta^4 u + \zeta^3 v))(x-(\zeta u + \zeta^2 v))(x- (\zeta^3 u + \zeta v))
 \end{align*}
-We prove that $\alpha_2 = \zeta^2u + \zeta^4v$ is not real. If $\alpha_2 \in \R$, then $\alpha_2 = \overline{\alpha_2}$, so $(\zeta^2 u - \zeta^3)u + (\zeta^4 - \zeta) v = 0$. 
+We prove that $\alpha_2 = \zeta^2u + \zeta^4v$ is not real. If $\alpha_2 \in \R$, then $\alpha_2 = \overline{\alpha_2}$, so $(\zeta^2 - \zeta^3)u + (\zeta^4 - \zeta) v = 0$. 
 
 Then, using $\sqrt{5} = \zeta - \zeta^2 - \zeta^3 + \zeta^4$ and $\zeta^2 + \zeta^3 = \frac{-1 + \sqrt{5}}{2}$,
 \begin{align*}
@@ -2105,7 +2105,7 @@ It remains to know if $f$ splits completely over $\Q(\sqrt{5})$.
 
    Note that
    $$f(u+v) = u^5 + v^5 + q + (u^2 + uv + v^2 +\frac{p}{5})(5 uv +p)(u+v).$$
-   Therefore if $uv = -\frac{p}{5}$, $f(u + v) = u^5 +v^5 +q$, so we find anew (see Exercise 14) that
+   Therefore if $uv = -\frac{p}{5}$, $f(u + v) = u^5 +v^5 +q$, so we find (see Exercise 14) that
    $$f\left(z - \frac{p}{5z}\right) = z^5 - \frac{p^5}{5^5 z^5} + q.$$
   
    So $u+v$ is a root of $f$ if 
@@ -2117,7 +2117,7 @@ It remains to know if $f$ splits completely over $\Q(\sqrt{5})$.
 \end{array}
 \right.
    $$
-   Therefore $u^5, v^5$ are the roots of $x^2 + qx -\frac{p}{5}$ and satisfy $uv = -p/5 \in \Q$. If $u+v$ is a root, so is $\zeta^k u + \zeta^{-k} v, \ k \in \Z$ (where $\zeta = \zeta_5 = e^{2i\pi/5}$).
+   Therefore $u^5, v^5$ are the roots of $x^2 + qx -(\frac{p}{5})^5$ and satisfy $uv = -p/5 \in \Q$. If $u+v$ is a root, so is $\zeta^k u + \zeta^{-k} v, \ k \in \Z$ (where $\zeta = \zeta_5 = e^{2i\pi/5}$).
   
    
    Conversely
@@ -2143,7 +2143,7 @@ It remains to know if $f$ splits completely over $\Q(\sqrt{5})$.
 f &= x^5 -5 Px^3 + 5 P^2 x - D\\
 &= (x - u-v) (x - \zeta u - \zeta^{-1}v)(x - \zeta^2 u - \zeta^{-2}v)(x - \zeta^3 u - \zeta^{-3}v)(x - \zeta^4 u - \zeta^{-4}v)
 \end{align*}
- If the root $\alpha_2 = \zeta u - \zeta^{-1}v$ is real, then $u=v$, so $\left(\frac{q}{2} \right)^2 + \left(\frac{p}{5} \right)^5 = 0$, and this imply $\Delta(f) = 0$, in contradiction with the assumed separability of $f$.
+ If the root $\alpha_2 = \zeta u + \zeta^{-1}v$ is real, then $u=v$, so $\left(\frac{q}{2} \right)^2 + \left(\frac{p}{5} \right)^5 = 0$, and this imply $\Delta(f) = 0$, in contradiction with the assumed separability of $f$.
  
  Therefore $\alpha_2 \not \in \Q(\sqrt{5})(\alpha_1) \subset \R$, where $\alpha_1= u + v \in \R$ is a root of $f$, so $f$ doesn't split completely over $\Q(\sqrt{5})(\alpha_1)$.
  
@@ -2208,7 +2208,7 @@ def resolvent(f):
     return theta_f.expand()
 \end{verbatim}
 
-For the rational root (which is an integer if $f\in \Z[x]$ is monic.
+For the rational root (which is an integer if $f\in \Z[x]$ is monic):
 \begin{verbatim}
 def rational_root(theta):
     n = Integer(theta.subs(y=0)) 
@@ -2304,7 +2304,7 @@ Thus the Galois group of $f = x^5+20x+16$ over $\Q$ is $A_5$.
 
 Verification:
 \begin{verbatim}
-f.galois_group()
+f.galois_group().gens()
 \end{verbatim}
 $$\langle(3,4,5),(1,2,3,4,5)\rangle$$
 
@@ -2340,7 +2340,7 @@ Thus the Galois group of $f = x^5+2$ over $\Q$ is $\mathrm{AGL}(1,\F_5)$, up to 
 
 Verification:
 \begin{verbatim}
-f.galois_group()
+f.galois_group().gens()
 \end{verbatim}
 $$	
 \langle (1,2,3,4,5), (1,2,4,3) \rangle
@@ -2395,7 +2395,7 @@ Thus the Galois group of $f = x^5+20x+16$ over $\Q$ is $\mathrm{AGL}(1,\F_5) \ca
 
 Verification:
 \begin{verbatim}
-f.galois_group()
+f.galois_group().gens()
 \end{verbatim}
 $$	
 \langle (1,2,3,4,5), (1,4)(2,3) \rangle
@@ -2445,7 +2445,7 @@ Thus the Galois group of $f = x^5+20x+16$ over $\Q$ is $\langle (1\,2\,3\,4\,5) 
 
 Verification:
 \begin{verbatim}
-f.galois_group()
+f.galois_group().gens()
 \end{verbatim}
 $$	
 \langle (1,2,3,4,5) \rangle
@@ -2490,7 +2490,7 @@ So the Galois group of $f$ is $S_5$, and $f$ is not solvable by radicals over $\
 
 Verification:
 \begin{verbatim}
-f.galois_group()
+f.galois_group().gens()
 \end{verbatim}
 $$\langle (1,2), (1,2,3,4,5) \rangle
 $$
