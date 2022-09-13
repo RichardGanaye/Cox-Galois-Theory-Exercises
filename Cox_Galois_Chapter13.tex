@@ -324,6 +324,7 @@ d.factor()
 \end{verbatim}
 $$2^{6} \cdot 3^{6} \cdot 7^{-6} \cdot 3739$$
 \begin{verbatim}
+R.<y> = QQ[]
 l = f.coefficients(sparse=False);
 c1 = -l[3]/l[4]; c2 = l[2]/l[4];c3 = -l[1]/l[4]; c4 = l[0]/l[4];
 theta_f = y^3 -c2*y^2 +(c1*c3-4*c4)*y - c3^2-c1^2*c4 + 4*c2*c4;
@@ -383,7 +384,7 @@ factor(Delta)
 $$	
 \left(16\right) \cdot d \cdot (- b^{2} + 4 d)^{2}
 $$
-Thus $\theta_f(y) = (y-b)(y - 2\sqrt{d})(y+2\sqrt{d})$ has a unique root if $F$ if $d \not \in F^2$, and the discriminant is not a square in $F^2$.
+Thus $\theta_f(y) = (y-b)(y - 2\sqrt{d})(y+2\sqrt{d})$ has a unique root in $F$ if $d \not \in F^2$, and the discriminant is not a square in $F^2$.
 \end{proof}
 
 \paragraph{Ex. 13.1.11}
@@ -473,8 +474,8 @@ If $\Delta(g) = 0$ then $a\Delta(g) = 0 \in F^2$. Suppose now that $g$ is irredu
 \be
 \item[$\bullet$] Suppose that $g$ splits completely over $F(\sqrt{a})$, so
 $$g = (y-y_1)(y-y_2),\qquad y_1,y_2\in F(\sqrt{a}).$$
-Then $\Delta(g) = (y_1-y_2)^2 = A^2 - 4B \in F$. We choose $\sqrt{\Delta(g)} = y_1-y_2 \in F(\sqrt{a})$.
-Here $\deg(g) =2$, and $g$ is irreducible over $f$, therefore the roots of $g$
+Then $\Delta(g) = (y_1-y_2)^2 = A^2 - 4B \in F$. We choose $\sqrt{\Delta(g)} = y_2-y_1 \in F(\sqrt{a})$.
+Here $\deg(g) =2$, and $g$ is irreducible over $G$, therefore the roots of $g$
 \begin{align*}
 y_1 &= \frac{1}{2}((y_1+y_2) + (y_1-y_2)) = \frac{1}{2} \left(-A - \sqrt{\Delta(g)}\right),\\
  y_2 &= \frac{1}{2}((y_1+y_2) - (y_1-y_2 ))= \frac{1}{2} \left (-A + \sqrt{\Delta(g)}\right),
@@ -595,7 +596,17 @@ factor(f)
 $$(x - a) \cdot (x + a) \cdot (x - \frac{1}{3} a^{3} + 3 a) \cdot (x + \frac{1}{3} a^{3} - 3 a)$$
 
 These results prove that the Galois group of  $f = x^4-12x^2+18$ over $\Q$ is isomorphic to $\Z/4\Z$.
-
+Verification with Sage:
+\begin{verbatim}
+R.<x> = QQ[]
+f = x^4-12*x^2 + 18
+f.galois_group().gens()
+\end{verbatim}
+$$ [(1,2,3,4)]$$
+\begin{verbatim}
+f.galois_group().structure_description()
+\end{verbatim}
+$$C4$$
 \bigskip
 
 Example 2: $f = x^4 - 2$ over $\Q$.
@@ -623,7 +634,17 @@ factor(f)
 \end{verbatim}
 $$(x - a) \cdot (x + a) \cdot (x^{2} + a^{2})$$
 Thus the Galois group of $x^4 - 2$ over $\Q$ is $D_8$.
-
+Verification with Sage:
+\begin{verbatim}
+R.<x> = QQ[]
+f = x^4-2
+f.galois_group().gens()
+\end{verbatim}
+$$ [(1,2,3,4), (1,3)]$$
+\begin{verbatim}
+f.galois_group().structure_description()
+\end{verbatim}
+$$D4$$
 \bigskip
 
 Example 3: $f = x^4-18x^2+9$ over $\Q$.
@@ -646,7 +667,17 @@ $$
 (y - 6) \cdot (y + 6) \cdot (y + 18)
 $$
 The Galois group of $f = x^4-18x^2+9$ over $\Q$ is isomorphic to $\Z/2\Z \times \Z/2\Z$.
-
+Verification with Sage:
+\begin{verbatim}
+R.<x> = QQ[]
+f = x^4-18*x^2 + 9
+f.galois_group().gens()
+\end{verbatim}
+$$ [(1,2)(3,4), (1,4)(2,3)]$$
+\begin{verbatim}
+f.galois_group().structure_description()
+\end{verbatim}
+$$C2 \times C2$$
 \paragraph{Ex. 13.1.14}
 
 {\it Use Theorem 13.1.1 to compute the Galois groups of the following polynomials in $\Q[x]$:
@@ -855,7 +886,7 @@ Since $ \{a_1,a_2,a_3,a_4,a_5\} = \{1,2,3,4,5\}$, $\sigma = \tau^{i-1} \in \lang
 
 \item[$\bullet$] Conversely, suppose that $\sigma \in \langle \tau \rangle$. Since $\langle \tau \rangle$ is cyclic, it is an Abelian subgroup, therefore $\sigma \tau = \tau \sigma$, so $\sigma \tau \sigma^{-1} = \tau$.
 \ee
-Conclusion: If $\tau \in S_n$ is a 5-cycle,
+Conclusion: If $\tau \in S_5$ is a 5-cycle,
 $$\forall \sigma \in S_5, \quad \sigma \tau \sigma^{-1} = \tau \iff \sigma \in \langle \tau \rangle.$$
 
 \item[(c)] By part (b), the stabilizer of $\tau \in C$ in $G$ is 
@@ -869,7 +900,7 @@ $$|G| \text{ divides } |C|.$$
 
 \item[(d)] By Exercise 2,  $S_5$ has $24$ 5-cycles. 
 \begin{align*}
-\{\tau \in S_n \ | \ \tau \text{ is a 5-cycle} \} &= \{\tau \in G \ | \ \tau \text{ is a 5-cycle} \} \cup \{\tau \in  S_n \setminus G \ | \ \tau \text{ is a 5-cycle} \} \\
+\{\tau \in S_5 \ | \ \tau \text{ is a 5-cycle} \} &= \{\tau \in G \ | \ \tau \text{ is a 5-cycle} \} \cup \{\tau \in  S_5 \setminus G \ | \ \tau \text{ is a 5-cycle} \} \\
 &= \{\tau \in G \ | \ \tau \text{ is a 5-cycle} \} \cup C,
 \end{align*}
 where the union is a disjoint union.
@@ -914,10 +945,8 @@ Sage instructions
 S5 = SymmetricGroup(5)
 a = S5([(1,2,3,4,5)])
 b = S5([(1,2,4,3)])
-e = S5([])
 G = PermutationGroup([a,b])
-l =  [e,S5([(1,2,3)]),S5([(2,3,4)]),S5([(3,4,5)]),S5([(1,4,5)]),S5([(1,2,5)])]
-verif = [u*v^(-1) for u in l for v in l if u < v]
+l =  [S5([]),S5([(1,2,3)]),S5([(2,3,4)]),S5([(3,4,5)]),S5([(1,4,5)]),S5([(1,2,5)])]
 [u*v^(-1) in G for u in l for v in l if u< v]
 \end{verbatim}
 \begin{center}
@@ -1188,7 +1217,7 @@ $$\tau \cdot \Theta(y) =  y^6 + \tau \cdot B_1 y^5 + \tau \cdot B_2 y^4 + \tau \
 we conclude
 $$\tau \cdot B_i = (-1)^i B_i, \qquad i=1,\ldots,6.$$
 
-\item[(c)] For $i = 2,4,6$, $\tau \cdot B_i = B_i$ for every transposition $\tau$. Since every $\sigma \in S_n$ is a product of transpositions, for all $\sigma \in S_n$, $\sigma \cdot B_i = B_i$, where $B_i \in F[x_1,\ldots,x_5]$, therefore $B_i \in F[\sigma_1,\ldots,\sigma_5]$.
+\item[(c)] For $i = 2,4,6$, $\tau \cdot B_i = B_i$ for every transposition $\tau$. Since every $\sigma \in S_5$ is a product of transpositions, for all $\sigma \in S_5$, $\sigma \cdot B_i = B_i$, where $B_i \in F[x_1,\ldots,x_5]$, therefore $B_i \in F[\sigma_1,\ldots,\sigma_5]$.
 
 $B_2,B_4,B_6$ are polynomials in $\sigma_1,\sigma_2,\sigma_3,\sigma_4,\sigma_5$.
 
@@ -1661,55 +1690,59 @@ $$
 
 \bigskip
 
-We obtain the sextic resolvent with the same method as in Exercise 6
+We use the following procedure to compute a sextic resolvent with the same method as in Exercise 6:
 \begin{verbatim}
-R.<Delta,x1,x2,x3,x4,x5,y1,y2,y3,y4,y5,p,q,x,y> = 
-        PolynomialRing(QQ, order = 'degrevlex')
-elt = SymmetricFunctions(QQ).e()
-e = [elt([i]).expand(5).subs(x0=x1, x1=x2, x2=x3, x3 = x4, x4 = x5) 
-               for i in range(6)]
-J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3,e[4]-y4,e[5]-y5)
-G = J.groebner_basis()
-u1 =x1*x2 + x2*x3 + x3*x4 + x4*x5 + x5*x1
-         - x1*x3 - x3*x5 -x5*x2 - x2*x4 -x4*x1
-u2 = u1.subs(x1 = x2, x2 = x3, x3 = x1)
-u3 = u1.subs(x2 = x3, x3 = x4, x4 = x2)
-u4 = u1.subs(x3 = x4, x4 = x5, x5 = x3)
-u5 = u1.subs(x1 = x4, x4 = x5, x5 = x1)
-u6 = u1.subs(x1 = x2, x2 = x5, x5 = x1)
-f1 = (y-u1) * (y-u2) * (y-u3) * (y-u4) * (y-u5) * (y-u6) 
-var('sigma_1,sigma_2,sigma_3,sigma_4,sigma_5')
-g = f1.reduce(G).subs(y1=sigma_1, y2=sigma_2, y3=sigma_3, 
-        y4=sigma_4, y5= sigma_5)
-h = g.collect(y);
-B2 = h.coefficient(y,4)
-B4 = h.coefficient(y,2)
-B6 = h.coefficient(y,0)
-b2 = B2.subs(sigma_1 = 0, sigma_2= p, sigma_3 = 0,
-         sigma_4 = (1/5)*p^2, sigma_5 = q)
-b4 = B4.subs(sigma_1 = 0, sigma_2= p, sigma_3 = 0, 
-        sigma_4 = (1/5)*p^2, sigma_5 = q)
-b6 = B6.subs(sigma_1 = 0, sigma_2= p, sigma_3 = 0,
-        sigma_4 = (1/5)*p^2, sigma_5 = q)
-theta_f = (y^3+b2*y^2+b4*y+b6)^2 - 2^10*Delta*y
+def resolvent(f):
+    l = f.coefficients(sparse = False)
+    R.<Delta,x1,x2,x3,x4,x5,y1,y2,y3,y4,y5,y,P,Q,e> = PolynomialRing(QQ, order = 'degrevlex')
+    elt = SymmetricFunctions(QQ).e()
+    e = [elt([i]).expand(5).subs(x0=x1, x1=x2, x2=x3, x3 = x4, x4 = x5)
+                   for i in range(6)]
+    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3,e[4]-y4,e[5]-y5)
+    G = J.groebner_basis()
+    u1 =x1*x2 + x2*x3 + x3*x4 + x4*x5 + x5*x1 - x1*x3 - x3*x5 -x5*x2 - x2*x4 -x4*x1
+    u2 = u1.subs(x1 = x2, x2 = x3, x3 = x1)
+    u3 = u1.subs(x2 = x3, x3 = x4, x4 = x2)
+    u4 = u1.subs(x3 = x4, x4 = x5, x5 = x3)
+    u5 = u1.subs(x1 = x4, x4 = x5, x5 = x1)
+    u6 = u1.subs(x1 = x2, x2 = x5, x5 = x1)
+    f1 = (y-u1) * (y-u2) * (y-u3) * (y-u4) * (y-u5) * (y-u6)
+    var('sigma_1,sigma_2,sigma_3,sigma_4,sigma_5')
+    g = f1.reduce(G).subs(y1=sigma_1, y2=sigma_2, y3=sigma_3, y4=sigma_4, y5= sigma_5)
+    h = g.collect(y);
+    B2 = h.coefficient(y,4)
+    B4 = h.coefficient(y,2)
+    B6 = h.coefficient(y,0)
+    b2 = B2.subs(sigma_1 = -l[4], sigma_2= l[3],sigma_3 = -l[2], sigma_4 = l[1], sigma_5 = -l[0])
+    b4 = B4.subs(sigma_1 = -l[4], sigma_2= l[3],sigma_3 = -l[2], sigma_4 = l[1], sigma_5 = -l[0])
+    b6 = B6.subs(sigma_1 = -l[4], sigma_2= l[3],sigma_3 = -l[2],
+                sigma_4 = l[1], sigma_5 = -l[0])
+    theta_f = [(y^3+b2*y^2+b4*y+b6)^2 - 2^10*Delta*y,b2,b4,b6]
+    return theta_f
 \end{verbatim}
 
-Then we obtain $b_2,b_4,b_6$:
+Then we obtain $b_2,b_4,b_6$ and $\theta_f(y)$:
 \begin{verbatim}
-b2,b4,b6
+K.<p,q> = QQ[]
+S.<x> =PolynomialRing(K, order = 'degrevlex')
+f = x^5 + p*x^3 +(1/5)*p^2*x + q
+resolvent(f)[1:4]
 \end{verbatim}
 $$\left(-7 \, p^{2}, 11 \, p^{4}, \frac{3}{25} \, p^{6} + 4000 \, p q^{2}\right)$$
 
-So 
-$$\theta_f(y) = \left(y^3-7 \, p^{2}y^2+11 p^{4}y+\frac{3}{25} \, p^{6} + 4000 \, p q^{2}\right)^2 - 2^{10}\Delta(f) y
-$$
+\begin{verbatim}
+theta_f=resolvent(f)[0];theta_f
+\end{verbatim}
+\begin{align*}
+&\theta_f(y) = \frac{1}{625} \left(3 p^{6} +275 p^{4}y-175 p^{2}y^2+ 100000 p q^{2}+25y^3\right)^2 - 1024\Delta(f) y\\
+& = \left(y^3-7 \, p^{2}y^2+11 p^{4}y+\frac{3}{25} \, p^{6} + 4000 \, p q^{2}\right)^2 - 2^{10}\Delta(f) y
+\end{align*}
 We obtained the results given in the text.
 
 \item[(b)]
 To find the rational root of $f$ we write
 \begin{verbatim}
-theta_f = theta_f.subs(Delta = (1/5)^5*(4*p^5+3125*q^2)^2)
-theta_f.factor()
+theta_f.subs(Delta = Delta).factor()
 \end{verbatim} 
 \begin{align*}
 &\frac{1}{3125} \, (5 \, p^{2} - y)\, (9 \, p^{10} - 1625 \, p^{8} y + 74250 \, p^{6} y^{2} + 600000 \, p^{5} q^{2} - 81250 \, p^{4} y^{3}\\
@@ -1758,6 +1791,30 @@ $$\Q \subset \Q(\zeta_{5}) \subset \Q\left(\zeta_{5}, \sqrt{\delta}\right) \subs
 proves that this last field is a radical extension.
 
 \ee
+\end{proof}
+
+\paragraph{Ex. 13.2.15}
+
+{\it As in Theorem 13.2.12, let $f = x^5 + ax+b $. Compute $\Delta(f)$ and $\theta_f(y)$.
+}
+
+\begin{proof}
+With the same Sage procedure as in Exercise 14, we obtain:
+
+\begin{verbatim}
+S.<a,b,x> = QQ[]
+f = x^5 + a*x + b
+Delta = f.discriminant(x);Delta.factor()
+\end{verbatim}
+$$\Delta(f) = 256a^5+3125b^4,$$
+
+\begin{verbatim}
+K.<a,b> = QQ[]
+S.<x> =PolynomialRing(K, order = 'degrevlex')
+f = x^5 + a*x + b
+theta_f=resolvent(f)[0];theta_f.subs(Delta = f.discriminant())
+\end{verbatim}
+$$\theta_f(y) =  {\left(y^{3} - 20 \, a y^{2}  + 240 \,a^{2} y + 320 \, a^{3} \right)}^{2} - 2^{10}(256 \, a^{5}  + 3125 \, b^{4}) y. $$
 \end{proof}
 
 \paragraph{Ex. 13.2.16}
@@ -2029,13 +2086,17 @@ so
 $$\Delta = 5^5 \frac{(P^8 +11 P^4 Q^3 -Q^6)^2}{P^4Q^4}.$$
 Thus $\Delta$ is not a square in $\Q$.
 
-Using the Sage instructions of Exercise 14, with the substitution
+Using the resolvent() function of Exercise 14, we obtain the sextic resolvent:
 \begin{verbatim}
-b2 = B2.subs(sigma_1 = 0, sigma_2= 0,sigma_3 = 5*P,
-         sigma_4 = -5*Q, sigma_5 = Q^2/P+P^3/Q), ...
+K.<P,Q,e> = QQ[]
+S.<x> =PolynomialRing(K, order = 'degrevlex')
+f = x^5 - 5*P*x^2 - 5*Q*x -e
+theta = resolvent(f)[0]; theta.subs(e = Q^2/P + P^3/Q)
 \end{verbatim}
-we obtain the sextic resolvent
-$$\theta_f(y) =  {   \left( y^{3} +100 \, Q y^{2}  - 2000 \, {\left(\frac{P^{4}}{Q} - 2 \,Q^{2}\right)} y\right)}^{2} - 1024 \, \Delta(f) y,$$
+\begin{align*}
+\theta_f(y) &=  {   \left( 100 \, Q y^{2} + y^{3} + 2000 \, {\left( 3 \,Q^{2}-\left(P^4+Q^3\right)/Q \right)} y\right)}^{2} - 1024 \, \Delta(f) y\\
+&=  {   \left( y^{3} +100 \, Q y^{2}  - 2000 \, {\left(\frac{P^{4}}{Q} - 2 \,Q^{2}\right)} y\right)}^{2} - 1024 \, \Delta(f) y,
+\end{align*}
 which has root $0 \in \Q$ ($b_6 = 0$).
 By Section 13.2, the Galois group of $f$ is $\mathrm{AGL}(1,\F_5)$ up to conjugacy.
 
@@ -2167,48 +2228,8 @@ We obtained the same Galois group for the 3 Euler's polynomials of (13.28).
 }
 
 \begin{proof}
-We use the two following procedures to compute a sextic resolvent, and to verify that this resolvent has a rational root
-(the polynomials are supposed as in this exercise monic and with integer coefficients).
-
-
-
-\begin{verbatim}
-def resolvent(f):
-    l = f.coefficients(sparse = False)
-    R.<Delta,x1,x2,x3,x4,x5,y1,y2,y3,y4,y5,p,q,x,y> = 
-               PolynomialRing(QQ, order = 'degrevlex')
-    elt = SymmetricFunctions(QQ).e()
-    e = [elt([i]).expand(5).subs(x0=x1, x1=x2, x2=x3, x3 = x4, x4 = x5) 
-                   for i in range(6)]
-    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3,e[4]-y4,e[5]-y5)
-    G = J.groebner_basis()
-    u1 =x1*x2 + x2*x3 + x3*x4 + x4*x5 + x5*x1 - 
-                   x1*x3 - x3*x5 -x5*x2 - x2*x4 -x4*x1
-    u2 = u1.subs(x1 = x2, x2 = x3, x3 = x1)
-    u3 = u1.subs(x2 = x3, x3 = x4, x4 = x2)
-    u4 = u1.subs(x3 = x4, x4 = x5, x5 = x3)
-    u5 = u1.subs(x1 = x4, x4 = x5, x5 = x1)
-    u6 = u1.subs(x1 = x2, x2 = x5, x5 = x1)
-    f1 = (y-u1) * (y-u2) * (y-u3) * (y-u4) * (y-u5) * (y-u6) 
-    var('sigma_1,sigma_2,sigma_3,sigma_4,sigma_5')
-    g = f1.reduce(G).subs(y1=sigma_1, y2=sigma_2, 
-               y3=sigma_3, y4=sigma_4, y5= sigma_5)
-    h = g.collect(y);
-    B2 = h.coefficient(y,4)
-    B4 = h.coefficient(y,2)
-    B6 = h.coefficient(y,0)
-    b2 = B2.subs(sigma_1 = -l[4], sigma_2= l[3],sigma_3 = -l[2], 
-                sigma_4 = l[1], sigma_5 = -l[0])
-    b4 = B4.subs(sigma_1 = -l[4], sigma_2= l[3],sigma_3 = -l[2], 
-                sigma_4 = l[1], sigma_5 = -l[0])
-    b6 = B6.subs(sigma_1 = -l[4], sigma_2= l[3],sigma_3 = -l[2],
-                sigma_4 = l[1], sigma_5 = -l[0])
-    Delta = f.discriminant()
-    theta_f = (y^3+b2*y^2+b4*y+b6)^2 - 2^10*Delta*y
-    return theta_f.expand()
-\end{verbatim}
-
-For the rational root (which is an integer if $f\in \Z[x]$ is monic):
+We use the Exercise 14 resolvent() procedure to compute a sextic resolvent, and the additional procedure to verify that this resolvent has a rational root
+(the polynomials are supposed, as in this exercise, monic with integer coefficients, i.e., $f\in \Z[x]$, hence resolvent rational root is an integer):
 \begin{verbatim}
 def rational_root(theta):
     n = Integer(theta.subs(y=0)) 
@@ -2225,8 +2246,7 @@ def rational_root(theta):
 \item[(a)]
 \begin{verbatim}
 R.<x> = QQ[]
-f = x^5 + x + 1
-f
+f = x^5 + x + 1;f
 \end{verbatim}
 $$x^{5} + x + 1$$
 \begin{verbatim}
@@ -2274,8 +2294,7 @@ $$G = \Gal_{\Q}(f) = \langle (1\, 2), (1\,2\,3), (4 \, 5) \rangle \simeq S_3 \ti
 \item[(b)] 
 \begin{verbatim}
 R.<x> = QQ[]
-f = x^5 + 20 *x + 16
-f
+f = x^5 + 20 *x + 16;f
 \end{verbatim}
 $$	
 x^{5} + 20 x + 16
@@ -2285,7 +2304,7 @@ f.is_irreducible()
 \end{verbatim}
 $$\text{True}$$
 \begin{verbatim}
-theta = resolvent(f); theta
+theta = resolvent(f)[0]; theta.subs(Delta = f.discriminant()).expand()
 \end{verbatim}
 $$y^{6} - 800 \, y^{5} + 352000 \, y^{4} - 71680000 \, y^{3} + 7168000000
 \, y^{2} - 557056000000 \, y + 6553600000000
@@ -2311,8 +2330,7 @@ $$\langle(3,4,5),(1,2,3,4,5)\rangle$$
 \item[(c)]
 \begin{verbatim}
 R.<x> = QQ[]
-f = x^5 + 2
-f
+f = x^5 + 2;f
 \end{verbatim}
 $$	
 x^{5} + 2
@@ -2322,7 +2340,7 @@ f.is_irreducible()
 \end{verbatim}
 $$\text{True}$$
 \begin{verbatim}
-theta = resolvent(f); theta
+theta = resolvent(f)[0]; theta.subs(Delta = f.discriminant()).expand()
 \end{verbatim}
 $$y^{6} - 51200000 \, y
 $$
@@ -2349,8 +2367,7 @@ $$
 \item[(d)]
 \begin{verbatim}
 R.<x> = QQ[]
-f = x^5 -5*x + 12
-f
+f = x^5 -5*x + 12;f
 \end{verbatim}
 $$	
 x^{5} - 5x + 12
@@ -2360,7 +2377,7 @@ f.is_irreducible()
 \end{verbatim}
 $$\text{True}$$
 \begin{verbatim}
-theta = resolvent(f); theta
+theta = resolvent(f)[0]; theta.subs(Delta = f.discriminant()).expand()
 \end{verbatim}
 $$y^{6} + 200 \, y^{5} + 22000 \, y^{4} + 1120000 \, y^{3} + 28000000 \,
 y^{2} - 66016000000 \, y + 1600000000
@@ -2415,7 +2432,7 @@ f.is_irreducible()
 \end{verbatim}
 $$\text{True}$$
 \begin{verbatim}
-theta = resolvent(f); theta
+theta = resolvent(f)[0]; theta.subs(Delta = f.discriminant()).expand()
 \end{verbatim}
 $$y^{6} - 264 \, y^{5} + 25168 \, y^{4} - 1022208 \, y^{3} + 14992384 \,
 y^{2} - 14992384 \, y
@@ -2462,8 +2479,7 @@ $$
 With the same procedures as in Exercise 19, we obtain
 \begin{verbatim}
 R.<x> = QQ[]
-f = x^5 - 4*x^4 + 2*x^3 + 4 *x^2 + 2*x -6
-f
+f = x^5 - 4*x^4 + 2*x^3 + 4 *x^2 + 2*x -6;f
 \end{verbatim}
 $$x^{5} - 4 x^{4} + 2 x^{3} + 4 x^{2} + 2 x - 6$$
 
@@ -2473,7 +2489,7 @@ f.is_irreducible()
 $$\text{True}$$
 
 \begin{verbatim}
-theta = resolvent(f); theta
+theta = resolvent(f)[0]; theta.subs(Delta = f.discriminant()).expand()
 \end{verbatim}
 $$y^{6} - 360 \, y^{5} + 47856 \, y^{4} - 3025152 \, y^{3} + 103474944 \,
 y^{2} - 1812875264 \, y + 14770999296
