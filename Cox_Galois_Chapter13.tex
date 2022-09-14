@@ -2511,4 +2511,46 @@ f.galois_group().gens()
 $$\langle (1,2), (1,2,3,4,5) \rangle
 $$
 \end{proof}
+
+\subsection{Resolvents}
+
+\paragraph{Ex. 13.3.6}
+
+{\it Let $D=\sum_{\sigma \in A_4} \sigma \cdot x_1^3x_2^2x_3 \in F[x_1,x_2,x_3,x_4]$.
+\be
+\item[(a)] Prove that $D=\frac{1}{2}(\sigma_1\sigma_2\sigma_3 -3 \sigma_1^2 \sigma_4 -3\sigma_3^2 + 4\sigma_2 \sigma_4)+\frac{1}{2}\sqrt{\Delta}$ in characteristic $\ne 2$.
+\item[(b)] Prove that $\sqrt{\Delta}=D-(12)\cdot D$ in all characteristics.
+\ee
+\begin{proof}
+\item[(a)] Since $$\sum_{\sigma \in S_4} \sigma =\sum_{\sigma \in A_4} \sigma + \sum_{\sigma \in S_4 \setminus A_4} \sigma =\sum_{\sigma \in A_4} \sigma + (12)\cdot \sum_{\sigma \in  A_4} \sigma $$ and based on results of Ex.2.2.3, we have:
+$$\sum_{\sigma \in S_4} \sigma \cdot x_1^3x_2^2x_3 = D+(12)\cdot D =\sigma_1\sigma_2\sigma_3 -3 \sigma_1^2 \sigma_4 -3\sigma_3^2 + 4\sigma_2 \sigma_4 $$
+Sage verification:
+\begin{verbatim}
+    R.<x1,x2,x3,x4,y1,y2,y3,y4> = PolynomialRing(QQ, order = 'degrevlex')
+    elt = SymmetricFunctions(QQ).e()
+    e = [elt([i]).expand(4).subs(x0=x1, x1=x2, x2=x3, x3 = x4) for i in range(5)]
+    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3,e[4]-y4)
+    G = J.groebner_basis()
+    D = x1^3*x2^2*x3;
+    D=D+D.subs(x1=x3,x2=x4,x3=x1)+D.subs(x1=x2,x2=x1,x3=x4)+D.subs(x1=x4,x2=x3,x3=x2)
+    D=D+D.subs(x1=x2,x2=x3,x3=x1)+D.subs(x1=x2,x2=x3,x3=x1).subs(x1=x2,x2=x3,x3=x1)
+    u=D+D.subs(x1=x2,x2=x1)
+    var('sigma_1,sigma_2,sigma_3,sigma_4')
+    u.reduce(G).subs(y1=sigma_1, y2 = sigma_2,y3=sigma_3,y4=sigma_4)
+\end{verbatim}
+$$\sigma_1\sigma_2\sigma_3 -3 \sigma_1^2 \sigma_4 -3\sigma_3^2 + 4\sigma_2 \sigma_4 $$
+
+Assuming that $D-(12)\cdot D=\sqrt{\Delta}$ is valid, then $2D \ne 0$ in characteristic $\ne 2$ and
+$$D=\frac{1}{2}(\sigma_1\sigma_2\sigma_3 -3 \sigma_1^2 \sigma_4 -3\sigma_3^2 + 4\sigma_2 \sigma_4)+\frac{1}{2}\sqrt{\Delta}.$$
+\item[(b)] We use Sage to prove that $D-(12)\cdot D-\sqrt{\Delta}=0$:
+
+\begin{verbatim}
+    Delta = (x1-x2)*(x1-x3)*(x1-x4)*(x2-x3)*(x2-x4)*(x3-x4)
+    D-D.subs(x1=x2,x2=x1)-Delta==0
+    
+    True
+\end{verbatim}
+Hence in all characteristics  $$\sqrt{\Delta}=D-(12)\cdot D.$$
+\end{proof}
+}
 \end{document}
