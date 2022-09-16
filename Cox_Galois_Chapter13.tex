@@ -2514,6 +2514,93 @@ $$
 
 \subsection{Resolvents}
 
+\paragraph{Ex. 13.3.4}
+
+{\it As in Examples 13.3.3 and 13.3.4, let $\varphi=\sqrt{\Delta}(x_1+x_2-x_3-x_4)$.
+\be
+\item[(a)] Show that the symmetry group of $\varphi$ is $G=\langle(1324)\rangle\subset S_4$ in characteristic $\ne 2$.
+\item[(b)] Show that in the universal case, $\varphi$ leads to the resolvent $$\Theta(y)=\prod_{i=1}^3 ( y^2 - \Delta(4y_i+\sigma_1^2-4\sigma_2)) ,$$ where $y_1=x_1x_2+x_3x_4,y_2=x_1x_3+x_2x_4,y_3=x_1x_4+x_2x_3$ are the roots of the universal Ferrari resolvent $\theta(y)$.
+\item[(c)] Let $\Theta_f (y)$ be obtained by specializing the resolvent $\Theta (y)$ of part (b) to $f=x^4+bx^2+d$. Show that $$\Theta_f (y)=y^2((y^2+4b\Delta(f))^2-2^6 d\Delta(f)^2). $$
+\ee
+\begin{proof}
+\item[(a)] Since $G=\langle(1324)\rangle=[(), (1,3,2,4), (1,3,2,4)^2, (1,3,2,4)^3]$, the direct calculation shows that $\varphi=(1,3,2,4)\varphi=(1,3,2,4)^2\varphi= (1,3,2,4)^3\varphi$.
+
+Sage verification:
+\begin{verbatim}
+    R.<x1,x2,x3,x4> = PolynomialRing(QQ, order = 'degrevlex')
+
+    Delta = (x1-x2)*(x1-x3)*(x1-x4)*(x2-x3)*(x2-x4)*(x3-x4)
+    D=Delta*(x1+x2-x3-x4);
+    (D==D.subs(x1=x3,x2=x4,x3=x2,x4=x1)
+    ,D==D.subs(x1=x3,x2=x4,x3=x2,x4=x1).subs(x1=x3,x2=x4,x3=x2,x4=x1)
+    ,D==D.subs(x1=x3,x2=x4,x3=x2,x4=x1).subs(x1=x3,x2=x4,x3=x2,x4=x1)
+    .subs(x1=x3,x2=x4,x3=x2,x4=x1))
+    
+       (True, True, True)
+\end{verbatim}
+
+Let $S_G=\{(),(1,2),(2,3),(1,4),(1,3),(2,4)\}$ is the complete system of coset representatives of $G$ in $S_4$. Since $\varphi \ne \tau \varphi$ for all $\tau \in S_G, \tau\ne ()$, in characteristic $\ne 2$ only $G$ is the symmetry group of $\varphi$. In case of characteristic $2$, $\varphi = -(1,2) \varphi= (1,2) \varphi$ and the assertion of (a) is not valid. 
+
+Sage verification:
+\begin{verbatim}
+    S4=SymmetricGroup(4);
+    H = S4.subgroup([S4("(1,3,2,4)")])
+    [S4.cosets(H)[i]  for i in range(S4.order()/H.order()) ]
+\end{verbatim}
+\begin{align*}
+&[(), (1,2)(3,4), (1,3,2,4), (1,4,2,3)], [(3,4), (1,2), (1,4)(2,3), (1,3)(2,4)],\\
+& [(2,3), (1,3,4,2), (1,2,4), (1,4,3)], [(2,3,4), (1,3,2), (1,4), (1,2,4,3)],\\
+& [(2,4,3), (1,4,2), (1,2,3,4), (1,3)], [(2,4), (1,4,3,2), (1,3,4), (1,2,3)]
+\end{align*}
+\begin{verbatim}
+    (D==D.subs(x1=x2,x2=x1),D==D.subs(x2=x3,x3=x2),
+    D==D.subs(x1=x4,x4=x1),D==D.subs(x1=x3,x3=x1),
+    D==D.subs(x2=x4,x4=x2))
+
+      (False, False, False, False, False)
+       
+    D==-D.subs(x1=x2,x2=x1)  
+    
+      True
+      
+\end{verbatim}
+\item[(b)] By the definition $\Theta(y)=\prod_{\tau\in S_G} ( y - \tau\varphi)$. 
+
+Since $(1,2)\varphi=-\varphi,(1,3)\varphi=-(2,4)\varphi$ and $(1,4)\varphi=-(2,3)\varphi,$ we have $$\Theta(y)=\prod_{\tau\in S'_G} ( y - \tau\varphi)( y + \tau\varphi)=\prod_{\tau\in S'_G} ( y^2 - \tau\varphi^2),$$ where $S'_G=\{(),(1,4),(1,3)\}$.
+
+Since $(x_1+x_2-x_3-x_4)^2=(\sigma_1 -2(x_3+x_4))^2=\sigma_1^2-4\sigma_1(x_3+x_4)+4(x_3+x_4)^2=\sigma_1^2-4(x_1+x_2)(x_3+x_4)=\sigma_1^2-4(\sigma_2-x_1x_2-x_3x_4)=4y_1+\sigma_1^2-4\sigma_2$ and $y_2=(1,4)y_1, y_3=(1,3)y_1$, we have  $$\Theta(y)=\prod_{\tau\in S'_G} ( y^2 - \tau \Delta(4y_1+\sigma_1^2-4\sigma_2))=\prod_{i=1}^3 ( y^2 - \Delta(4y_i+\sigma_1^2-4\sigma_2))$$
+
+\item[(c)] We have $\Sigma_3 y_1=y_1+y_2+y_3=\Sigma_4 x_1x_2=\sigma_2$. The Sage calculation shows that:
+\begin{verbatim}
+    R.<x1,x2,x3,x4,y1,y2,y3,y4> = PolynomialRing(QQ, order = 'degrevlex')
+    elt = SymmetricFunctions(QQ).e()
+    e = [elt([i]).expand(4).subs(x0=x1, x1=x2, x2=x3, x3 = x4) for i in range(5)]
+    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3,e[4]-y4)
+    G = J.groebner_basis()
+    d1=x1*x2+x3*x4;d2=d1.subs(x2=x3,x3=x2);d3=d1.subs(x1=x3,x3=x1);
+    S2=d1*d2+d1*d3+d2*d3;S3=d1*d2*d3
+    var('sigma_1,sigma_2,sigma_3,sigma_4')
+    S2.reduce(G).subs(y1=sigma_1, y2 = sigma_2,y3=sigma_3,y4=sigma_4)
+    S3.reduce(G).subs(y1=sigma_1, y2 = sigma_2,y3=sigma_3,y4=sigma_4)
+\end{verbatim}
+
+$$\Sigma_3 y_1y_2=\sigma_1\sigma_3-4\sigma_4, ~ y_1y_2y_3= \sigma_1^2\sigma_4+\sigma_3^2-4\sigma_2\sigma_4 $$
+
+Since $\sigma_1=\sigma_3=0$, $\sigma_2=b,\sigma_4=d$ for $f=x^4+bx^2+d$,
+$$\Sigma_3 y_1=b,~\Sigma_3 y_1y_2=-4d,~y_1y_2y_3=-4bd.$$
+Based on the formula for $\Theta(y)$ resolvent from (b), we have with $Z=y^2+4b\Delta(f)$:
+\begin{align*}
+\Theta_f (y)&=\prod_{i=1}^3 ( y^2 - \Delta(f)(4y_i-4b))\\
+&=\prod_{i=1}^3 ( Z - 4\Delta(f)y_i) \\
+&=Z^3 - 4\Delta(f)\Sigma_3y_1Z^2+4^2\Delta(f)^2\Sigma_3y_1y_2Z-4^3\Delta(f)^3y_1y_2y_3 \\
+&=Z^3 - 4\Delta(f)bZ^2+4^2\Delta(f)^2(-4d)Z-4^3\Delta(f)^3(-4bd) \\
+&=(Z - 4b\Delta(f))Z^2-(Z-4b\Delta(f))4^3d\Delta(f)^2 \\
+& =y^2((y^2+4b\Delta(f))^2-2^6 d\Delta(f)^2).
+\end{align*}
+
+\end{proof}
+}
+
 \paragraph{Ex. 13.3.6}
 
 {\it Let $D=\sum_{\sigma \in A_4} \sigma \cdot x_1^3x_2^2x_3 \in F[x_1,x_2,x_3,x_4]$.
