@@ -2514,6 +2514,47 @@ $$
 
 \subsection{Resolvents}
 
+\paragraph{Ex. 13.3.1}
+
+{\it Let $f(x) \in \Q[x]$.
+\be
+\item[(a)] Prove that there are $\lambda, \mu \in \Q^*$ such that $g(x)=\lambda f(\mu x)\in\Z[x]$ is monic.
+\item[(b)] Prove that f and g have isomorphic Galois groups over $\Q$.
+\ee
+\begin{proof}
+\item[(a)] Let $f(x)=\frac {a_0}{b_0}x^n+\frac {a_1}{b_1}x^{n-1}+...+\frac {a_n}{b_n}=\sum_{i=0}^n \frac {a_i}{b_i}x^{n-i}$, where $a_i,b_i \in \Z$, and $\nu=lcm(b_0,b_1,...,b_n)$, then $f(x)=1/\nu \sum_{i=0}^n \frac {a_i}{b_i}\nu x^{n-i}=\sum_{i=0}^n c_i x^{n-i}$, where $c_i \in \Z$.
+
+After multiplication by $c_0^{n-1}$ we have $$c_0^{n-1}f(x)=\sum_{i=0}^n c_i c_0^{n-1} x^{n-i}=(c_0 x)^n+\sum_{i=1}^n c_i c_0^{i-1} (c_0 x)^{n-i}=g(c_0 x), ~ c_i c_0^{i-1} \in \Z.$$ Hence $g(x)$ is monic   and $g(x)=\lambda f(\mu x)\in\Z[x]$, where $\lambda=c_0^{n-1},\mu=1/c_0, c_0=\frac{a_0}{b_0} \nu$, i.e. $\lambda,\nu \in \Q^*$.
+
+
+\item[(b)] Let $\alpha_i, i=1,...,n$ are the roots of $f(x)$, then $\beta_i=\alpha_i/\mu, i=1,...,n$ are the roots of $g(x)$. If $\sigma,\sigma'$ are the elements of Galois groups of $f$ and $g$ over $\Q$ such that $\sigma(\alpha_i)=\alpha_j=\mu\beta_j=\mu\sigma'(\beta_i)$, then the bijection $$\sigma'=\frac{1}{\mu}\sigma \iff  \sigma(\alpha_i)=\alpha_j,\sigma'(\beta_i)=\beta_j,~i,j=1,...,n $$  is an isomorphism of these groups.  
+\end{proof}
+}
+
+\paragraph{Ex. 13.3.2}
+
+{\it Let $f(x)=x^n-c_1x^{n-1}+...+(-1)^n c_n \in \Z[x]$, and let $\Theta_f(y)$ be the resolvent built from $\varphi \in \Z [x_1,...,x_n]$. Prove that $\Theta_f(y) \in \Z[y]$.
+
+\begin{proof}
+Let $G$ is the symmetry group of $\varphi$ and $\tau_1,...,\tau_l$ be representatives for the left cosets of $G$ in $S_n$. The universal resolvent is $\Theta(y)=\prod_{i=1}^l ( y - \tau_i\varphi(x_1,...,x_n))$. Since $\varphi \in \Z [x_1,...,x_n]$, for each $i, 1\leq i \leq l$, $\tau_i\varphi(x_1,...,x_n)\in \Z [x_1,...,x_n]  $, hence the coefficients of $\Theta(y)$ are in $\Z [x_1,...,x_n]  $, i.e., $\Theta(y)\in \Z [x_1,...,x_n][y]  $.
+
+Suppose $\sigma \in S_n$, then $\sigma\Theta(y)=\prod_{i=1}^l ( y - \sigma\tau_i\varphi(x_1,...,x_n))$. But the set $\sigma\tau_1,...,\sigma\tau_l$ is also a set of left coset representatives of $G$ in $S_n$. Thus the application of $\sigma$ has merely permuted the roots of $\Theta(y)$ leaving the coefficients fixed. It means that coefficients of $\Theta(y)$ are symmetric and are polynomials in $\sigma_1,...,\sigma_n$ (cf. Ex.9.1.6), i.e., $\Theta(y)\in \Z [\sigma_1,...,\sigma_n][y]  $.
+The application of evaluation map $\sigma_i \mapsto c_i$ to $\Theta(y)$ gives $\Theta_f(y) \in \Z [c_1,...,c_n][y] = \Z[y]$.
+\end{proof}
+}
+
+\paragraph{Ex. 13.3.3}
+
+{\it In the proof of proposition 13.3.2, we asserted that $$\varphi (\alpha_1,...,\alpha_n)=\varphi (\alpha_{\tau(1)},...,\alpha_{\tau(n)})$$ follows from $\beta=\varphi (\alpha_1,...,\alpha_n) \in F$ and $\tau \in G_f$. Prove this.
+
+\begin{proof}
+Let $\sigma \in \Gal(L/F)$ corresponds to $\tau \in G_f$, and, since F is fixed for $\sigma$, 
+$$\sigma(\beta)=\sigma(\varphi (\alpha_1,...,\alpha_n))=\varphi (\alpha_1,...,\alpha_n), $$ 
+$$\sigma(\varphi (\alpha_1,...,\alpha_n))=\varphi (\alpha_{\tau(1)},...,\alpha_{\tau(n)}). $$
+Therefore, $\varphi (\alpha_1,...,\alpha_n)=\varphi (\alpha_{\tau(1)},...,\alpha_{\tau(n)})$ for $\varphi (\alpha_1,...,\alpha_n) \in F$ and $\tau \in G_f$.
+\end{proof}
+}
+
 \paragraph{Ex. 13.3.4}
 
 {\it As in Examples 13.3.3 and 13.3.4, let $\varphi=\sqrt{\Delta}(x_1+x_2-x_3-x_4)$.
@@ -2597,6 +2638,31 @@ Based on the formula for $\Theta(y)$ resolvent from (b), we have with $Z=y^2+4b\
 &=(Z - 4b\Delta(f))Z^2-(Z-4b\Delta(f))4^3d\Delta(f)^2 \\
 & =y^2((y^2+4b\Delta(f))^2-2^6 d\Delta(f)^2).
 \end{align*}
+
+\end{proof}
+}
+
+\paragraph{Ex. 13.3.5}
+
+{\it This problem will sate and prove a relative version of Proposition 13.3.2. Fix a subgroup $H\subset S_n$ and suppose that $f\in F[x]$ is separable of degree n and that $G_f \subset H$. Now let $G \subset H$ be a subgroup. We want to know whether or not $G_f$ lies in the smaller subgroup G. Let $\varphi \in F[x_1,...,x_n]$ have G as its symmetry group and let $\varphi_1=\varphi,\varphi_2,...,\varphi_l$ be the ordit of H acting on $\varphi$. Then set $$\Theta^H(y)=\prod_{i=1}^l ( y - \varphi_i) \in F[x_1,...,x_n][y].$$ Finally, if $\alpha_1,...,\alpha_n$ are the roots of f in the splitting field L, let $$\Theta_f^H(y)=\prod_{i=1}^l ( y - \varphi_i(\alpha_1,...,\alpha_n))\in L[y]$$  be the polynomial obtained by $x_i \mapsto \alpha_i$.
+\be
+\item[(a)] Explain why the degree of $\Theta_f^H(y)$ is the index of G in H.
+\item[(b)] Prove that $\Theta_f^H(y) \in F[y]$.
+\item[(c)] Assume that $G_f$ is conjugate within H to a subgroup of G (this means that $\tau G_f \tau^{-1} \subset G$ for some $\tau \in H$). Prove that $\Theta_f^H(y)$ has a root in F.
+\item[(d)] Assume that $\Theta_f^H(y)$ has a simple root in F. Prove that $G_f$ is conjugate within H to a subgroup of G.
+\ee
+\begin{proof}
+\item[(a)] $G$ is the symmetry group of $\varphi$, therefore $G\subset H$ is the isotropy subgroup of $\varphi$ and $|H:G|=|H\cdot \varphi|=l$ (cf. Theorem A.4.9). The degree of $\Theta_f^H(y)$ is equal to $l$, hence $deg(\Theta_f^H(y))=|H:G|$. 
+\item[(b)] Let $\tau_1,...,\tau_l$ be representatives for the left cosets of $G$ in $H$. Then $$\Theta_f^H(y)=\prod_{i=1}^l ( y - \tau_i\varphi(\alpha_1,...,\alpha_n)).$$ Since $\varphi \in F [x_1,...,x_n]$, for each $i, 1\leq i \leq l$, $\tau_i\varphi((\alpha_1,...,\alpha_n))\in F [\alpha_1,...,\alpha_n]  $, hence the coefficients of $\Theta_f^H(y)$ are in $F [\alpha_1,...,\alpha_n]  $.
+
+Suppose $\sigma \in G_f$, then $\sigma \in H$ and $\sigma\Theta_f^H(y)=\prod_{i=1}^l ( y - \sigma\tau_i\varphi(\alpha_1,...,\alpha_n))$. But the set $\sigma\tau_1,...,\sigma\tau_l$ is also a set of left coset representatives of $G$ in $H$. Thus the application of $\sigma$ has merely permuted the roots of $\Theta_f^H(y)$ leaving the coefficients fixed. It means that coefficients of $\Theta_f^H(y)$ are in $F$, i.e., $\Theta_f^H(y) \in F[y]$. 
+
+\item[(c)] Suppose $\tau G_f \tau^{-1} \subset G$ for some $\tau \in H$ and $\tau_1,...,\tau_l$ be representatives for the left cosets of $G$ in $H$. Then $\tau G_f \tau^{-1}(\varphi)=\varphi$ and $G_f (\tau^{-1}\varphi)=\tau^{-1}\varphi$, i.e., $\tau^{-1}\varphi$ is fixed under the action of Galois group.
+Therefore $\tau^{-1}\varphi(\alpha_1,...,\alpha_n) \in F$.
+
+Since $\tau^{-1}\in \tau_i G$ for some $i=1,...,l$, exists $g\in G$ such that $\tau^{-1}\varphi(\alpha_1,...,\alpha_n)=\tau_i g \varphi(\alpha_1,...,\alpha_n) = \tau_i \varphi(\alpha_1,...,\alpha_n)  \in F$, i.e., $\Theta_f^H(y)$ has a root in F.
+
+\item[(d)]  Suppose $\tau_i\varphi(\alpha_1,...,\alpha_n) \in F$ is not repeated root of $\Theta_f^H(y)$. Then $G_f \tau_i \varphi(\alpha_1,...,\alpha_n) = \tau_i \varphi(\alpha_1,...,\alpha_n)$ and $\tau_i ^{-1} G_f \tau_i \varphi(\alpha_1,...,\alpha_n) = \varphi(\alpha_1,...,\alpha_n)$. Hence $\tau_i ^{-1} G_f \tau_i \subset G$, i.e., $G_f$ is conjugate within H to a subgroup of G. 
 
 \end{proof}
 }
