@@ -2706,4 +2706,65 @@ $$D=\frac{1}{2}(\sigma_1\sigma_2\sigma_3 -3 \sigma_1^2 \sigma_4 -3\sigma_3^2 + 4
 Hence in all characteristics  $$\sqrt{\Delta}=D-(12)\cdot D.$$
 \end{proof}
 }
+
+\paragraph{Ex. 13.3.7}
+
+{\it As in Example 13.3.7, let $f=x^4+(u+1)x^2+ux+1 \in F[x]$, where $F=\mathbb{F}_2(u)$.
+\be
+\item[(a)] Use Gauss's Lemma and the Sch\"onemann-Eisenstein criterion to show that $f$ is irreducible over $F$. (These results apply since $\mathbb{F}_2[u]$ is a PID.) 
+\item[(b)] Verify the formulas for $D_f(y)$ and $\theta_f(y)$ given in Example 13.3.7.
+\item[(c)] Show that $y^2+uy+1$ is irreducible over the splitting field of $D_f(y)$.
+\ee
+\begin{proof}
+\item[(a)] Let 
+$\bar f=x^4+x^2+1\in F_u[x]$ is obtained from $f$ by reducing all coefficients modulo $u$. Since $\bar f$ is irreducible (it is cyclotomic polynomial in $F_u[x^2]$) and since $F=\mathbb{F}_2[u]$ is a PID and $u \in F$ is prime, the Gauss's Lemma and Mod p test irreducibility is applicable, i.e., $f$ is irreducible over $F$.
+
+\item[(b)] For the given polynomial $c_1=\sigma_1=0,c_2=\sigma_2=u+1,c_3=\sigma_3=-u,c_4=\sigma_4=1$. For $D_f(y)$ we have (cf. Ex.13.3.6,13.3.4 and (13.3),(13.32)):
+\begin{align*}
+& A=D+(12)\cdot D =\sigma_1\sigma_2\sigma_3 -3 \sigma_1^2 \sigma_4 -3\sigma_3^2 + 4\sigma_2 \sigma_4=\sigma_3^2=c_3^2=u^2~ mod(2)\\
+& B=D\cdot (12)D=c_2^3c_3^2+c_3^4=(u+1)^3u^2+u^4=u^5+u^3+u^2~ mod(2)\\
+& D_f(y)=y^2-Ay+B=y^2+u^2y+u^5+u^3+u^2\\
+& \\
+& a=\sigma_2=c_2=u+1,~b=\sigma_1\sigma_3-4\sigma_4=c_1c_3-4c_4=0,\\
+& c= \sigma_1^2\sigma_4+\sigma_3^2-4\sigma_2\sigma_4=c_1^2c_4+c_3^3-4c_2c_4=u^2\\
+& \theta_f(y)=y^3-ay^2+by-c=y^3+(u+1)y^2+u^2=(y+u)(y^2+y+u)
+\end{align*}
+Sage verification:
+\begin{verbatim}
+    R.<x1,x2,x3,x4,y1,y2,y3,y4> = PolynomialRing(QQ, order = 'degrevlex')
+    elt = SymmetricFunctions(QQ).e()
+    e = [elt([i]).expand(4).subs(x0=x1, x1=x2, x2=x3, x3 = x4) for i in range(5)]
+    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3,e[4]-y4)
+    G = J.groebner_basis()
+    D = x1^3*x2^2*x3;
+    D=D+D.subs(x1=x3,x2=x4,x3=x1)+D.subs(x1=x2,x2=x1,x3=x4)
+      +D.subs(x1=x4,x2=x3,x3=x2)
+    D=D+D.subs(x1=x2,x2=x3,x3=x1)
+      +D.subs(x1=x2,x2=x3,x3=x1).subs(x1=x2,x2=x3,x3=x1)
+    d1=x1*x2+x3*x4;d2=d1.subs(x2=x3,x3=x2);d3=d1.subs(x1=x3,x3=x1);
+    S1=d1+d2+d3; S2=d1*d2+d1*d3+d2*d3; S3=d1*d2*d3
+
+    S.<c1,c2,c3,c4,u> = PolynomialRing(ZZ, order = 'degrevlex')
+    A=(D+D.subs(x1=x2,x2=x1)).reduce(G).subs(y1=c1,y2=c2,y3=c3,y4=c4)
+    A=A.subs(c1=0,c2=u+1,c3=-u,c4=1).change_ring(GF(2));
+    B=(D*D.subs(x1=x2,x2=x1)).reduce(G).subs(y1=c1,y2=c2,y3=c3,y4=c4)
+    B=B.subs(c1=0,c2=u+1,c3=-u,c4=1).change_ring(GF(2));
+    a=S1.reduce(G).subs(y1=c1, y2 = c2,y3=c3,y4=c4)
+    a=a.subs(c1=0,c2=u+1,c3=-u,c4=1).change_ring(GF(2));
+    b=S2.reduce(G).subs(y1=c1, y2 = c2,y3=c3,y4=c4)
+    b=b.subs(c1=0,c2=u+1,c3=-u,c4=1).change_ring(GF(2));
+    c=S3.reduce(G).subs(y1=c1, y2 = c2,y3=c3,y4=c4)
+    c=c.subs(c1=0,c2=u+1,c3=-u,c4=1).change_ring(GF(2));
+     (A,B);(a,b,c)
+    (y^3+a*y^2+b*y+c).factor()
+\end{verbatim}
+\item[(c)] As per (b), $D_f(y)=y^2+u^2y+u^5+u^3+u^2=(y+u)^2+u^2(y+u)+u^5=u^4(Y^2+Y+u)$, where $Y=({y+u})/{u^2}$.
+
+Then the splitting field of $D_f(y)$ is $F(D_f(y))=\mathbb{F}_2(u,\alpha)$, where $\alpha^2+\alpha+u=0$. Since $u=\alpha^2+\alpha$, $\mathbb{F}_2(u,\alpha)=\mathbb{F}_2(\alpha)$ and $g(y)=y^2+uy+1=y^2+(\alpha^2+\alpha)y+1$. Then $g(y+1)=(y+1)^2+(\alpha^2+\alpha)(y+1)+1=y^2+(\alpha^2+\alpha)y+(\alpha^2+\alpha)$ is irreducible in $\mathbb{F}_2(\alpha)$ by the Sch\"onemann-Eisenstein criterion.
+
+
+Thus $y^2+uy+1$ is irreducible over the splitting field of $D_f(y)$, therefore $D_f(y)\simeq D_8$ by Proposition 13.3.6.
+\end{proof}
+}
+
 \end{document}
