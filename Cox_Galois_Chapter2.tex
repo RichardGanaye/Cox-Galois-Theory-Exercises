@@ -1178,6 +1178,40 @@ So the cubic polynomial whose roots are the fourth powers of the roots of the po
 $$y^{3} - 122 \, y^{2} - 379 \, y - 625.$$
 \end{proof}
 
+\paragraph{Ex. 2.3.3}
+
+{\it Express $\Sigma_3 x_1^3 x_2^2$ in terms of elementary symmetric polynomials.
+}
+
+\begin{proof}
+Explicitly, 
+$$f = \Sigma_3 x_1^3 x_2^2 = x_1^2x_2^3+x_1^2 x_3^3 + x_1^3 x_2^2+x_1^3 x_3^2 +x_2^2x_3^3+x_2^3 x_3^2.$$
+
+Note that $x_1^3 x_2^2 = x_1^3 x_2^2 x_3^0$ is the leading term for the graded lexicographic order, so the following term in the sequence is $g = f - \sigma_1^{3-2} \sigma_2^{2-0} \sigma_3^0 = f - \sigma_1 \sigma_2^2$.
+
+\begin{align*}
+\sigma_1 \sigma_2^2 &= (x_1+x_2+x_3) (x_1 x_2+x_1x_3+x_2x_3)^2\\
+&= (x_1+x_2+x_3) (x_1^2 x_2^2+x_1^2x_3^2+x_2^2x_3^2+2x_1x_2x_3(x_1+x_2+x_3))\\
+&= x_1^2x_2^3+x_1^2 x_3^3 + x_1^3 x_2^2+x_1^3 x_3^2 +x_2^2x_3^3+x_2^3 x_3^2+x_1x_2x_3(x_1 x_2+x_1x_3+x_2x_3)+2\sigma_3 \sigma_1^2 \\
+&=f+ \sigma_3 \sigma_2+2\sigma_3 \sigma_1^2,
+\end{align*}
+thus
+$$f =\sigma_1 \sigma_2^2- \sigma_3 \sigma_2-2\sigma_3 \sigma_1^2.$$
+Verification with Sage:
+\begin{verbatim}
+    R.<x1,x2,x3,y1,y2,y3> = PolynomialRing(QQ, order = 'degrevlex')
+    elt = SymmetricFunctions(QQ).e()
+    e = [elt([i]).expand(3).subs(x0=x1, x1=x2, x2=x3) for i in range(5)]
+    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3)
+    G = J.groebner_basis()
+    D = x1^3*x2^2;
+    u=D+D.subs(x1=x2,x2=x1)+D.subs(x1=x3,x2=x2)+D.subs(x1=x2,x2=x3)+D.subs(x1=x3,x2=x1)+D.subs(x1=x1,x2=x3)
+    var('sigma_1,sigma_2,sigma_3')
+    u.reduce(G).subs(y1=sigma_1, y2 = sigma_2,y3=sigma_3)
+\end{verbatim}
+$$\sigma_1 \sigma_2^2-2\sigma_1^2\sigma_3 - \sigma_2 \sigma_3$$
+\end{proof}
+
 \paragraph{Ex. 2.3.4}
 
 {\it Given a cubic $x^3+bx^2+cx+d$, what condition must $b,c,d$ satisfy in order that one root be the average of the other two ?
