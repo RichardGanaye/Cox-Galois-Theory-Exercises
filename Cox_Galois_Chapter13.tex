@@ -3055,4 +3055,445 @@ D_f(y) &=y^2-(D(f)+D'(f))y+D(f)D'(f) \\
 \end{proof}
 }
 
+\subsection{Other Methods}
+
+\paragraph{Ex. 13.4.1}
+
+{\it Verify the computations given in Example 13.4.1.
+\begin{proof}
+\be
+The following Sage instruction :
+\begin{verbatim}
+    R.<y,x1,x2,x3,y1,y2,y3,u_1,u_2,u_3> = PolynomialRing(QQ,10, order = 'lex')
+    elt = SymmetricFunctions(QQ).e()
+    e = [elt([i]).expand(3).subs(x0=x1, x1=x2, x2=x3) for i in range(4)]
+    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3)
+    G = J.groebner_basis()
+    S = y-(u_1*x1+u_2*x2+u_3*x3)
+    S1=S*S.subs(x1=x1,x2=x3,x3=x2)*S.subs(x1=x2,x2=x1,x3=x3)
+    S1=S1*S.subs(x1=x2,x2=x3,x3=x1)*S.subs(x1=x3,x2=x1,x3=x2)
+    S=S1*S.subs(x1=x3,x2=x2,x3=x1)
+    S=S.subs(u_1=-1,u_2=1,u_3=2)
+    var('sigma_1,sigma_2,sigma_3')
+    f=S.reduce(G).subs(y1=sigma_1, y2 = sigma_2,y3=sigma_3);
+    show(f.collect(y))
+\end{verbatim}
+gives output:
+\begin{align*}
+& 4\sigma_{1}^{6} - 4\sigma_{1}y^{5} + y^{6} - 32 \sigma_{1}^{4}\sigma_{2} + 2(\sigma_{1}^{2} + 7 \sigma_{2}) y^{4} + 55 \sigma_{1}^{2} \sigma_{2}^{2} + 76 \sigma_{1}^{3} \sigma_{3} + 4(2 \sigma_{1}^{3} - 11\sigma_{1} \sigma_{2} + 5\sigma_{3}) y^{3} \\
+& + 36\sigma_{2}^{3} - 322  \sigma_{1} \sigma_{2} \sigma_{3} - (7\sigma_{1}^{4} - 18 \sigma_{1}^{2} \sigma_{2} - 49 \sigma_{2}^{2} + 40\sigma_{1} \sigma_{3}) y^{2} + 343 \sigma_{3}^{2} \\
+& - 4 (\sigma_{1}^{5} - 11\sigma_{1}^{3} \sigma_{2} + 28\sigma_{1} \sigma_{2}^{2} + 5 \sigma_{1}^{2} \sigma_{3} - 35 \sigma_{2} \sigma_{3}) y
+\end{align*}
+After regrouping the terms we have the same result as in Example 13.4.1:
+\begin{align*}
+S(y)= & y^{6} - 4\sigma_{1}y^{5} + (2\sigma_{1}^{2} + 14\sigma_{2}) y^{4} + (8 \sigma_{1}^{3} - 44\sigma_{1} \sigma_{2} + 20\sigma_{3}) y^{3} \\
+& + (-7\sigma_{1}^{4} + 18 \sigma_{1}^{2} \sigma_{2} + 49 \sigma_{2}^{2} - 40\sigma_{1} \sigma_{3}) y^{2} + (-4 \sigma_{1}^{5} + 44\sigma_{1}^{3} \sigma_{2} \\ & - 112\sigma_{1} \sigma_{2}^{2} - 20\sigma_{1}^{2} \sigma_{3} + 140\sigma_{2} \sigma_{3}) y+4\sigma_{1}^{6}  - 32 \sigma_{1}^{4}\sigma_{2} + 55 \sigma_{1}^{2} \sigma_{2}^{2} \\
+& + 36\sigma_{2}^{3} + 76 \sigma_{1}^{3} \sigma_{3} - 322  \sigma_{1} \sigma_{2} \sigma_{3} + 343 \sigma_{3}^{2}. 
+\end{align*}
+Using $\sigma_1 \mapsto -1,\sigma_2 \mapsto -2,\sigma_3 \mapsto 1$, we obtain:
+\begin{verbatim}
+    f1=f.subs(sigma_1=-1, sigma_2=-2,sigma_3=1)
+    show("s(y)= ",f1)
+    show(f1.factor())
+\end{verbatim}
+The Sage output coincides with Example 13.4.1:
+\begin{align*}
+s(y)& = y^{6} + 4y^{5} - 26y^{4} - 76y^{3} + 193y^{2} + 240y - 377 \\
+& = (y^{3} + 2y^{2} - 15y + 13)(y^{3} + 2y^{2} - 15y - 29). 
+\end{align*}
+\ee\end{proof}
+}
+
+\paragraph{Ex. 13.4.2}
+
+{\it Prove that the polynomial $s_u(y)$ defined in (13.41) lies in $K[u_1,...,u_n,y]$.
+\begin{proof}
+\be
+Let $f(x)=x^n-c_1x^{n-1}+...+(-1)^n c_n \in K[x]$. The universal version of $s_u(y)$ is given by :
+$$S(y)=\prod_{\sigma\in S_n} ( y - (u_1x_{\sigma(1)}+...+u_nx_{\sigma(n)}))\in K[x_1,...,x_n,u_1,...,u_n,y]$$
+For any $\tau \in S_n$ 
+\begin{align*}
+\tau S(y)&=\prod_{\sigma\in S_n} ( y - (u_1x_{\tau\sigma(1)}+...+u_nx_{\tau\sigma(n)}))\\&=\prod_{\sigma'\in S_n} ( y - (u_1x_{\sigma'(1)}+...+u_nx_{\sigma'(n)}))=S(y)    
+\end{align*}
+
+Thus the application of $\tau$ has merely permuted the roots of $S(y)$ leaving the coefficients fixed. It means that coefficients of $S(y)$ are symmetric and are polynomials in $\sigma_1,...,\sigma_n$ (cf. Ex.9.1.6), i.e., $S(y)\in K[\sigma_1,...,\sigma_n,u_1,...,u_n,y]$.
+The application of evaluation map $\sigma_i \mapsto c_i$ to $S(y)$ gives $s_u(y) \in K[c_1,...,c_n,u_1,...,u_n,y] = K[u_1,...,u_n,y]$. 
+
+\ee\end{proof}
+}
+
+\paragraph{Ex. 13.4.3}
+
+{\it This exercise is concerned with the proof of Theorem 13.4.2.
+\be
+\item[(a)] Let $\beta_1,...,\beta_n\in L$. Prove that $y+\sum_{i=1}^r\beta_iu_i$ is irreducible in $L[u_1,...,u_n,y]$. (This implies that (13.41)is the irreducible factorization of $s_u(y)$ in $L[u_1,...,u_n,y]$.)
+\item[(b)] Let $g,h\in F[u_1,...,u_n,y]$, and assume that in the larger ring $L[u_1,...,u_n,y]$ we have $h=gq$ for some $q\in L[u_1,...,u_n,y]$. Prove that $q\in F[u_1,...,u_n,y]$.
+\item[(c)] In the final part of the proof of Theorem 13.4.2, we showed that $G\subset\sigma^{-1}G_f\sigma$. Prove the opposite inclusion.
+\ee
+\begin{proof}
+\be
+\item[(a)] Assume that $h=y+\sum_{i=1}^r\beta_iu_i$ is reducible, i.e., $h=ge$ with $g,e\in L[u_1,...,u_n,y]$. In the ring $L[u_1,...,u_n][y]$ the polynomial $h$ is clearly irreducible as every polynomial of degree 1. Then $g$ or $e$ in $L[u_1,...,u_n]$. Case when $g\in L[u_1,...,u_n]$, gives $g\mid 1$ which is impossible. 
+
+Hence the assumption is wrong and $h$ is irreducible in $L[u_1,...,u_n,y]$.
+\item[(b)] For any $\sigma\in Gal(L/F)$, since $g,h\in F[u_1,...,u_n,y]$, we have $\sigma \cdot g=g$ and $\sigma \cdot h=h$. Then $\sigma \cdot h=h=\sigma\cdot (gq)=g(\sigma\cdot q)$, i.e., $\sigma\cdot q=q$ for all $\sigma\in Gal(L/F)$.
+
+It proves that $q\in F[u_1,...,u_n,y]$.
+\item[(c)] Following the proof of Theorem 13.4.2, for the selected $\sigma\in S_n$, for any $\mu\in G_f$ and $\tau=\sigma^{-1}\mu^{-1}\sigma\in\sigma^{-1}G_f\sigma$, we have
+$$y-(u_{\tau(1)}\alpha_{\sigma(1)}+...+u_{\tau(n)}\alpha_{\sigma(n)})=y-(u_{1}\alpha_{\mu\sigma(1)}+...+u_{n}\alpha_{\mu\sigma(n)}).$$
+Then
+$$\tilde{h}=\prod_{\mu\in G_f}(y-(u_{1}\alpha_{\mu\sigma(1)}+...+u_{n}\alpha_{\mu\sigma(n)})) = \prod_{\tau\in\sigma^{-1}G_f\sigma}(y-(u_{\tau(1)}\alpha_{\sigma(1)}+...+u_{\tau(n)}\alpha_{\sigma(n)})). $$
+As per the proof of Theorem 13.4.2, $\tilde{h}=h$. Standard arguments imply that 
+$$h= \prod_{\tau\in\sigma^{-1}G_f\sigma}(y-(u_{\tau(1)}\alpha_{\sigma(1)}+...+u_{\tau(n)}\alpha_{\sigma(n)}))$$
+is invariant under the action of $\sigma^{-1}G_f\sigma$, so that $\tau\cdot h=h$ for $\tau\in\sigma^{-1}G_f\sigma$, which proves that $\sigma^{-1}G_f\sigma\subset G=\{\tau\in S_n \mid \tau\cdot h=h\}$. 
+\ee\end{proof}
+}
+
+\paragraph{Ex. 13.4.4}
+
+{\it Consider the polynomial $s_u(y)$ when $f=x^3+x^2-2x-1$ from Example 13.4.3.
+\be
+\item[(a)] Compute $s_u(y) \in \mathbb{Q}[u_1,u_2,u_3,y]$, and derive factorization given in Example 13.4.3.
+\item[(b)] Let h be the first factor of $s_u(y)$ given in Example 13.4.3, multiplied by -1 so that it is monic in y. Using Sage, write h as a polynomial in y so that its coefficients are of the form
+\begin{align*}
+\rm a~symmetric~polynomial~in~ \it u_1,u_2,u_3 \rm ~+~ a~remainder~in~ \it u_1,u_2,u_3. 
+\end{align*}
+This should give the formula for h given in Example 13.4.3. 
+\ee
+\begin{proof}
+\be
+\item[(a)] The following Sage instruction :
+\begin{verbatim}
+    R.<y,x1,x2,x3,y1,y2,y3,u_1,u_2,u_3> = PolynomialRing(QQ)
+    elt = SymmetricFunctions(QQ).e()
+    e = [elt([i]).expand(3).subs(x0=x1, x1=x2, x2=x3) for i in range(4)]
+    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3)
+    G = J.groebner_basis()
+    S = y-(u_1*x1+u_2*x2+u_3*x3)
+    S1=S*S.subs(x1=x1,x2=x3,x3=x2)*S.subs(x1=x2,x2=x1,x3=x3)
+    S1=S1*S.subs(x1=x2,x2=x3,x3=x1)*S.subs(x1=x3,x2=x1,x3=x2)
+    S=S1*S.subs(x1=x3,x2=x2,x3=x1)
+    f=S.reduce(G).subs(y1=-1, y2 = -2,y3=1);show(f.factor())
+\end{verbatim}
+gives output the same as in Example 13.4.3:
+\begin{align*}
+s_u(y)=& (-y^3 - y^2u_1 + 2yu_1^2 + u_1^3 - y^2u_2 - 3yu_1u_2 - 4u_1^2u_2 + 2yu_2^2 + 3u_1u_2^2 + u_2^3 - y^2u_3\\ & - 3yu_1u_3 + 3u_1^2u_3 - 3yu_2u_3 - u_1u_2u_3 - 4u_2^2u_3 + 2yu_3^2 - 4u_1u_3^2 + 3u_2u_3^2 + u_3^3)\cdot \\
+&   (-y^3 - y^2u_1+ 2yu_1^2 + u_1^3 - y^2u_2 - 3yu_1u_2 + 3u_1^2u_2 + 2yu_2^2 - 4u_1u_2^2 + u_2^3 - y^2u_3\\
+& - 3yu_1u_3 - 4u_1^2u_3 - 3yu_2u_3  - u_1u_2u_3 + 3u_2^2u_3 + 2yu_3^2 + 3u_1u_3^2 - 4 u_2u_3^2 + u_3^3)\\
+&=(u_1^3+3u_1^2u_2-4u_1u_2^2+u_2^3-4u_1^2u_3-u_1u_2u_3+3u_2^2u_3+3u_1u_3^2\\&-4u_2u_3^2+u_3^3+2u_1^2y-3u_1u_2y+2u_2^2y-3u_1u_3y-3u_2u_3y+2u_3^2y\\&-u_1y^2-u_2y^2-u_3y^2-y^3) \times (u_1^3-4u_1^2u_2+3u_1u_2^2+u_2^3+3u_1^2u_3\\&-u_1u_2u_3-4u_2^2u_3-4u_1u_3^2+3u_2u_3^2+u_3^3+2u_1^2y-3u_1u_2y\\&+2u_2^2y-3u_1u_3y-3u_2u_3y+2yu_3^2-u_1y^2-u_2y^2-u_3y^2-y^3)
+\end{align*}
+\item[(b)] The following Sage instruction :
+\begin{verbatim}
+    R.<y,x1,x2,x3,y1,y2,y3,u_1,u_2,u_3> = PolynomialRing(QQ)
+    elt = SymmetricFunctions(QQ).e()
+    e = [elt([i]).expand(3).subs(x0=x1, x1=x2, x2=x3) for i in range(4)]
+    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3)
+    G = J.groebner_basis()
+    S = y-(u_1*x1+u_2*x2+u_3*x3)
+    S1=S*S.subs(x1=x1,x2=x3,x3=x2)*S.subs(x1=x2,x2=x1,x3=x3)
+    S1=S1*S.subs(x1=x2,x2=x3,x3=x1)*S.subs(x1=x3,x2=x1,x3=x2)
+    S=S1*S.subs(x1=x3,x2=x2,x3=x1)
+    h=(-1)*S.reduce(G).subs(y1=-1, y2 = -2,y3=1).factor()[1][0]
+    show(h)
+\end{verbatim}
+gives output for the first factor of $s_u(y)$, given in Example 13.4.3, multiplied by -1:
+\begin{align*}
+h=& y^{3} + y^{2} u_{1} - 2 y u_{1}^{2} - u_{1}^{3} + y^{2} u_{2} + 3 y u_{1} u_{2} - 3 u_{1}^{2} u_{2} - 2 y u_{2}^{2} + 4 u_{1} u_{2}^{2} - u_{2}^{3} + y^{2} u_{3}\\ & + 3 y u_{1} u_{3} + 4 u_{1}^{2} u_{3} + 3 y u_{2} u_{3} + u_{1} u_{2} u_{3} - 3 u_{2}^{2} u_{3} - 2 y u_{3}^{2} - 3 u_{1} u_{3}^{2} + 4 u_{2} u_{3}^{2} - u_{3}^{3}
+\end{align*}
+The additional Sage instruction: 
+\begin{verbatim}
+    h=h.subs(u_1=x1,u_2=x2,u_3=x3)
+    h=h.reduce(G).subs(y1=sigma_1, y2 = sigma_2,y3=sigma_3)
+        .subs(x1=u_1, x2=u_2,x3=u_3)
+    h=h-7*sigma_3+sigma_1^3
+    h=h.subs(sigma_1=u_1+u_2+u_3, sigma_2=u_1*u_2+u_2*u_3+u_3*u_1
+        ,sigma_3=u_1*u_2*u_3).collect(y)
+    h=h-h.subs(y=0)+h.subs(y=0).expand()+(7*sigma_3-sigma_1^3)
+        .subs(sigma_1=u_1+u_2+u_3,sigma_3=u_1*u_2*u_3)
+    show(h)
+\end{verbatim}
+gives the formula for h as a polynomial in y given in Example 13.4.3:
+\begin{align*}
+h&= -(u_{1} + u_{2} + u_{3})^{3} + 7 u_{1} u_{2}^{2} + 7u_{1}^{2} u_{3} + 7u_{1} u_{2} u_{3} + 7u_{2} u_{3}^{2}\\ &  + (u_{1} + u_{2} + u_{3}) y^{2} + y^{3} - (2(u_{1} + u_{2} + u_{3})^{2} - 7u_{1} u_{2} - 7 u_{1} u_{3} - 7u_{2} u_{3}) y\\ 
+& =y^{3}+ (u_{1} + u_{2} + u_{3}) y^{2} + (7(u_{1} u_{2} + u_{1} u_{3} + u_{2} u_{3})-2(u_{1} + u_{2} + u_{3})^{2}) y\\ 
+& +7u_{1} u_{2} u_{3}-(u_{1} + u_{2} + u_{3})^{3}+ 7(u_{1} u_{2}^{2} + u_{1}^{2} u_{3} + u_{2} u_{3}^{2}).
+\end{align*}
+\ee\end{proof}
+}
+
+\paragraph{Ex. 13.4.5}
+
+{\it Use the method of part (a) of Exercise 4 to derive the factorization of $s_u(y)$ given in Example 13.4.4.
+\begin{proof}
+\be
+The following Sage instruction :
+\begin{verbatim}
+    R.<y,x1,x2,x3,y1,y2,y3,u_1,u_2,u_3> = PolynomialRing(QQ)
+    elt = SymmetricFunctions(QQ).e()
+    e = [elt([i]).expand(3).subs(x0=x1, x1=x2, x2=x3) for i in range(4)]
+    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3)
+    G = J.groebner_basis()
+    S = y-(u_1*x1+u_2*x2+u_3*x3)
+    S1=S*S.subs(x1=x1,x2=x3,x3=x2)*S.subs(x1=x2,x2=x1,x3=x3)
+    S1=S1*S.subs(x1=x2,x2=x3,x3=x1)*S.subs(x1=x3,x2=x1,x3=x2)
+    S=S1*S.subs(x1=x3,x2=x2,x3=x1)
+    f=S.reduce(G).subs(y1=0, y2 = 0,y3=1);show(f.factor())
+\end{verbatim}
+gives output the same as in Example 13.4.4:
+\begin{align*}
+s_u(y)=&(y^{2} - 2 y u_{1} + u_{1}^{2} + y u_{2} - u_{1} u_{2} + u_{2}^{2} + y u_{3} - u_{1} u_{3} - u_{2} u_{3} + u_{3}^{2}) \cdot \\&(y^{2} + y u_{1} + u_{1}^{2} - 2 y u_{2} - u_{1} u_{2} + u_{2}^{2} + y u_{3} - u_{1} u_{3} - u_{2} u_{3} + u_{3}^{2}) \cdot \\&(y^{2} + y u_{1} + u_{1}^{2} + y u_{2} - u_{1} u_{2} + u_{2}^{2} - 2 y u_{3} - u_{1} u_{3} - u_{2} u_{3} + u_{3}^{2})\\
+=&(y^{2} + (u_{2}+ u_{3}-2u_{1})y + u_{1}^{2} + u_{2}^{2} + u_{3}^{2}   - u_{1} u_{2} - u_{1} u_{3} - u_{2} u_{3}) \\
+\times&(y^{2} + (u_{1}+ u_{3}-2u_{2})y + u_{1}^{2} + u_{2}^{2} + u_{3}^{2}   - u_{1} u_{2} - u_{1} u_{3} - u_{2} u_{3})  \\
+\times&(y^{2} + (u_{1}+ u_{2}-2u_{3})y + u_{1}^{2} + u_{2}^{2} + u_{3}^{2}   - u_{1} u_{2} - u_{1} u_{3} - u_{2} u_{3})
+\end{align*}
+
+\ee\end{proof}
+}
+
+\paragraph{Ex. 13.4.6}
+
+{\it As in the proof of Theorem 13.4.5, suppose that we have $s_u(y)\in \mathbb{Z}[u_1,...,u_n,y]$ and $h\in \mathbb{Q}[u_1,...,u_n,y]$ is an irreducible factor of $s_u(y)$ when $s_u(y)$ is regarded as an element of $\mathbb{Q}[u_1,...,u_n,y]$. In this exercise we will study how close $h$ is to being an irreducible factor of $s_u(y)$ in $\mathbb{Z}[x_1,...,x_n,y]$.
+\be
+\item[(a)] We know that the rings $\mathbb{Z}[x_1,...,x_n,y]$ and $\mathbb{Q}[x_1,...,x_n,y]$ are both UFDs. Prove that if $f\in\mathbb{Z}[x_1,...,x_n,y]$ is irreducible and nonconstant, then it is also irreducible when regarded as an element of $\mathbb{Q}[x_1,...,x_n,y]$.
+\item[(b)] Prove that $s_u(y)$ and $h$ are as above, then $h$ is a $\mathbb{Q}$-multiple of an irreducible factor of $s_u(y)$ in  $\mathbb{Z}[x_1,...,x_n,y]$. 
+\ee
+\begin{proof}
+\be
+\item[(a)] Suppose by contradiction that $f$, regarded as an element of $\mathbb{Q}[x_1,...,x_n,y]$, is reducible in two irreducible factors, i.e., $f=gh$, where $g,h\in\mathbb{Q}[x_1,...,x_n,y]$. Let pick positive integers $r,s\in\mathbb{Z}$ small enough to get $rg,sh\in\mathbb{Z}[x_1,...,x_n,y]$ and both $rg,sh$ are  irreducible in  $\mathbb{Z}[x_1,...,x_n,y]$.
+
+Then $rsf=(rg)(sh)$. Since $rs\in\mathbb{Z}$ can be uniquely factorized to product of two or more primes $p\in\mathbb{Z}$, which are irreducible in $\mathbb{Z}[x_1,...,x_n,y]$ in the UFD sense, we have contradiction - one side of identity is uniquely factorized to three or more irreducible factors and the other side is factorized in only two irreducible factors. 
+
+It proves that irreducible $f\in\mathbb{Z}[x_1,...,x_n,y]$  is also irreducible when regarded as an element of $\mathbb{Q}[x_1,...,x_n,y]$.
+
+\item[(b)] Since $\mathbb{Z}[x_1,...,x_n,y]$ is UFD, $s_u(y)$ can be uniquely factorized $s_u(y)=h_1\cdots h_n$, where $h_1,...,h_n\in\mathbb{Z}[x_1,...,x_n,y]$ and are irreducible. By the part (a), $h_1,...,h_n$ are irreducible when regarded as an elements of $\mathbb{Q}[x_1,...,x_n,y]$, hence for irreducible factor $h\in\mathbb{Q}[x_1,...,x_n,y]$ exists $i$, such that $h\mid h_i$. It follows that $h=h_i$ after multiplying $h_i$ by a suitable constant from $\mathbb{Q}$.
+
+Therefore an irreducible factor $h\in\mathbb{Q}[x_1,...,x_n,y]$ of $s_u(y)$, when $s_u(y)$ is regarded as an element of $\mathbb{Q}[u_1,...,u_n,y]$, is a $\mathbb{Q}$-multiple irreducible factor of $s_u(y)$, when $s_u(y)$ is regarded as an element of  $\mathbb{Z}[x_1,...,x_n,y]$.
+\ee
+\end{proof}
+}
+
+\paragraph{Ex. 13.4.7}
+
+{\it Let $f=x^5+20x+16 \in \mathbb{Q}[x]$ be the polynomial of Example 13.4.6. Show that f is irreducible over $\mathbb{Q}$, and compute its discriminant and irreducible factorization modulo $7$.
+\begin{proof}
+\be
+The given polynomial $f$ is irreducible, since $f(x-1)=(x-1)^5+20(x-1)+16=x^5-5x^4+10x^3-10x^2+25x-5$ is irreducible by Sch\"onemann-Eisenstein criterion with $p=5$.
+
+The discriminant may be calculated by the formula (cf. Ex.13.2.15):
+$$\Delta(f) = 256a^5+3125b^4,$$
+where $a=20,b=16$. Then
+\begin{align*}
+\Delta(f) &= 2^820^5+5^516^4=2^{18}5^5+5^52^{16}=2^{16}5^5(4+1)=2^{16}5^6.
+\end{align*}
+Reducing the polynomial by modulo 7 gives:
+$\bar f(x)=x^5+6x+2$. 
+
+We have $\bar f(4)=\bar f(5)=0$ and $\bar f(i)\ne 0$ for $i\in \{0,1,2,3,6\}$. Division of $\bar f$ by $(x-4)=(x+3)$ and $(x-5)=(x+2)$ gives:
+$$\bar f=(x+2)(x+3)(x^3+2x^2+5x+5) ~~ in~\mathbb{F}_7.$$
+\ee\end{proof}
+}
+
+\paragraph{Ex. 13.4.8}
+
+{\it Compute the Galois group of  $f=x^5-6x+3$ over $\mathbb{Q}$ using reduction modulo 11 and the method of Example 13.4.6.
+\begin{proof}
+\be
+The discriminant calculation (cf. Ex.13.2.15):
+$$\Delta(f) = 256a^5+3125b^4,$$
+where $a=-6,b=3$. Then
+\begin{align*}
+\Delta(f) &= 2^8(-6)^5+5^53^4=3^4(5^5-3\cdot 2^{13})=3^4(3125-256\cdot96)=-3^4\cdot19\cdot1129.
+\end{align*}
+Reducing the polynomial by modulo 11 gives:
+$\bar f(x)=x^5+5x+3$.
+
+The Sage instructions :
+\begin{verbatim}
+R.<X> = PolynomialRing(ZZ)
+R11.<x> = PolynomialRing(GF(11))
+f = X^5 - 6*X + 3
+R11(f)
+R11(f).factor()
+\end{verbatim}
+gives the irreducible factorization:
+\begin{align*}
+\bar f=(x^2 + 3x + 8)(x^3 + 8x^2 + x + 10)
+\end{align*}
+Since $\Delta(f)<0$, the Galois group $f$ over $\mathbb{Q}$ is isomorphic to a subgroup of $S_5$. Since $11\nmid \Delta(f)$, the order of the Galois group is divisible by 3 and 2.
+
+The classification of transitive subgroups of $S_5$ given in (13.16) shows that $S_5$ has no proper transitive subgroup of order divisible by 6. Hence the Galois group $f$ over $\mathbb{Q}$ is isomorphic to $S_5$.
+\ee\end{proof}
+}
+
+\paragraph{Ex. 13.4.9}
+
+{\it Prove that two permutations in $S_n$ are conjugate if and only if they have the same cycle type.
+\begin{proof}
+\be
+Let $\sigma \in S_n$ have cycle type $(k_1,k_2,...,k_l)$. Then $\sigma$ can be expressed uniquely as the product of disjoint cycles $\sigma=\alpha_1\alpha_2\cdots\alpha_l$, where $\alpha_i$ is a $k_i$-cycle.
+
+Let $\tau\in S_n$ such that $\rho=\tau\sigma\tau^{-1}$. Then:
+\begin{align*}
+  \tau\sigma\tau^{-1}&=\tau\alpha_1\alpha_2\cdots\alpha_l\tau^{-1}=\tau\alpha_1\tau^{-1}\tau\alpha_2\tau^{-1}\cdots\tau\alpha_l\tau^{-1}=\alpha_{\tau(1)}\alpha_{\tau(2)}\cdots\alpha_{\tau(l)}  
+\end{align*}
+Since $\alpha_i$ and $\alpha_j$ are disjoint for $i,j\in\{1,2,...,l\}$, then $\tau\alpha_i\tau^{-1}$ and $\tau\alpha_j\tau^{-1}$ are also disjoint. 
+
+Indeed, being disjoint means no number is moved by both $\alpha_i$ and $\alpha_j$, i.e., there is no $k$ such that $\alpha_i(k)\ne k$ and $\alpha_j(k)\ne k$. If $\tau\alpha_i\tau^{-1}$ and $\tau\alpha_j\tau^{-1}$ are not disjoint, then they both move some number $l$. Then $\tau\alpha_i\tau^{-1}(l)\ne l$ and $\tau\alpha_j\tau^{-1}(l)\ne l$, hence $\alpha_i\tau^{-1}(l)\ne \tau^{-1}(l)$ and $\alpha_j\tau^{-1}(l)\ne \tau^{-1}(l)$, which means that $\tau^{-1}(l)$ is moved by both $\alpha_i$ and $\alpha_j$. This is a contradiction. 
+
+Therefore $\tau\sigma\tau^{-1}$ is the product of $\tau$-conjugates of disjoint cycles for $\sigma$, and these $\tau$-conjugates are disjoint cycles with the same respective lengths, i.e., $\tau\sigma\tau^{-1}$ has the same cycle type as $\sigma$.
+
+For the converse direction, suppose $\sigma_1$ and $\sigma_2$ have the same cycle type $(k_1,k_2,...,k_l)$. Then
+$$\sigma_1=(a_1a_2... a_{k_1})(a_{k_1+1}a_{k_1+2}... a_{k_1+k_2})\cdots$$
+and
+$$\sigma_2=(b_1b_2... b_{k_1})(b_{k_1+1}b_{k_1+2}... b_{k_1+k_2})\cdots$$
+where the cycles are disjoint. Let define the permutation $\tau\in S_n$ by $\tau(a_i)=b_i$ for all $i$. Then $\tau\sigma_1\tau^{-1}=\sigma_2$, i.e., $\sigma_1$ and $\sigma_2$ are $\tau$-conjugate.
+\ee\end{proof}
+}
+
+\paragraph{Ex. 13.4.10}
+
+{\it Let G be a subgroup of $S_n$. For a fixed cycle type $d_1,...,d_r$, consider the set (13.44) of all elements of G with this cycle type.
+\be
+\item[(a)] Prove that this set is either empty or a union of conjugacy classes of G.
+\item[(b)] Give an example where the set is empty, and give another example where it is a union of two conjugacy classes of G.
+\ee
+\begin{proof}
+\be
+\item[(a)] For an element $g$ of a subgroup $G$, its conjugacy class is the set of elements conjugate to it: $$\{xgx^{-1} : x \in G\}.$$
+Suppose the conjugacy classes of $g$ and $h$ overlap, i.e., $xgx^{-1} = yhy^{-1}$ for some $x$ and $y$ in the subgroup. Therefore
+$$g = x^{-1}yhy^{-1}x = (x^{-1}y)h(x^{-1}y)^{-1},$$
+which shows each element of $G$ that is conjugate to $g$ is also conjugate to $h$. In the other way, from $xgx^{-1} = yhy^{-1}$ write $h = (y^{-1}x)h(y^{-1}x)^{-1},$ and  similar calculation shows that each element of $G$ that is conjugate to $h$ is also conjugate to $g$.
+
+Hence the conjugacy classes are equal, which means that subgroup $G$ is the set of distinct conjugacy classes $\{S_1,S_2,...,S_l\}$ and any element $x\in G$ belongs to one of the conjugacy class. 
+
+Let $S=\{\sigma\in G \mid \sigma \rm ~has~ cycle~ type~\it d_1,...,d_r\} $. If $G$ does not have element with cycle type $d_1,...,d_r$, then $S$ is empty.
+
+If $S$ is not empty, then any $\sigma\in S$ belongs to some conjugacy class. Let the subset $\{S_{k_1},S_{k_2},...,S_{k_m}\} \subset\{S_1,S_2,...,S_l\}$ is such that any element of $S$ belongs to one of subset in $\{S_{k_1},S_{k_2},...,S_{k_m}\}$.
+
+In Ex. 13.4.9 has been showed that all elements of conjugate class have the same cycle type. It means that if $\tau\in S_{k_i}$, then $\tau$ has cycle type $d_1,...,d_r$, i.e., $\tau\in S$, and this is valid for all $S_{k_i}, k_i\in(k_1,...,k_m)$.  
+
+Therefore, $S=\cup_{i=1}^{m} S_{k_i}$, i.e., the set of elements of $G$ with the same cycle type is either empty or a union of conjugacy classes of $G$.
+\item[(b)] Consider subgroup $A_3\subset S_3$. Since $A_3$ doesn't have transpositions,  the cycle type $(d_1,d_2)=(1,2)$ is not possible and set of $A_3$ elements with cycle type (1,2) is empty.
+
+Consider subgroup $A_4\subset S_4$.
+
+The 3-cycle (123) and its inverse (132) are not conjugate in A4. To see this, let's determine all possible $\sigma\in S_4$ that
+conjugate (123) to (132). For $\sigma\in S_4$, the condition $\sigma(123)\sigma^{-1} = (132)$ is the same as
+$(\sigma(1)\sigma(2)\sigma(3)) = (132)$. There are three possibilities:
+ \item[$\bullet$] $\sigma(1) = 1$, so $\sigma(2) = 3$ and $\sigma(3) = 2$, and necessarily $\sigma(4) = 4$. Thus $\sigma = (23)$.
+ \item[$\bullet$] $ \sigma(1) = 3$, so $ \sigma(2) = 2$ and $ \sigma(3) = 1$, and necessarily $ \sigma(4) = 4$. Thus $ \sigma = (13)$.
+ \item[$\bullet$] $\sigma(1) = 2$, so $ \sigma(2) = 1$ and $ \sigma(3) = 3$, and necessarily $ \sigma(4) = 4$. Thus $ \sigma = (12)$.
+ 
+Therefore the only possible $ \sigma$'s are transpositions, which are not in $A_4$. It is obvious that all other 3-cycles are conjugate to (123) or (132).
+
+Hence, all elements of $A_4$ with cycle type $(d_1,d_2)=(1,3)$ are in the union of two conjugacy classes with the representatives $\{(123),(132)\}$. 
+
+\ee\end{proof}
+}
+
+\paragraph{Ex. 13.4.11}
+
+{\it This exercise will explore the ideas introduced in Example 13.4.8.
+\be
+\item[(a)] For each transitive subgroup of $S_4$, make a table similar to (13.46) that lists the number of elements of each possible cycle type for that subgroup.
+\item[(b)] For each polynomial in Exercise 14 of Section 13.1, compute its factorization modulo 200 primes, and record your results in a table similar to (13.45). Use this to guess the Galois group of each polynomial. 
+\ee
+\begin{proof}
+\be
+\item[(a)] There are five transitive subgroups of $S_4$ - $\{S_4,A_4,C_2\times C_2,C_4,D_8\}$. The following Sage instructions produce the similar to (13.46) table with the percentage of elements of each possible cycle for each subgroup:
+\begin{verbatim}
+S4 = SymmetricGroup(4)
+A4 = AlternatingGroup(4)
+C2C2 = PermutationGroup(["(1,3)(2,4)","(1,2)(3,4)"])
+C4 = CyclicPermutationGroup(4)
+D8 = DihedralGroup(4)
+G =[S4,A4,C2C2,C4,D8]
+
+for j in range(5):
+    V =[g.cycle_type() for g in G[j]]
+    K=[0,0,0,0,0]
+    for i in range(len(V)):
+        if V[i]==[1,1,1,1] : K[0]=K[i]+1
+        elif V[i]==[2,1,1] : K[1]=K[1]+1
+        elif V[i]==[3,1] : K[2]=K[2]+1
+        elif V[i]==[2,2] : K[3]=K[3]+1
+        elif V[i]==[4] : K[4]=K[4]+1
+        else : print("Error")
+        Sm=sum(K)
+    if j==0 :
+        row = matrix([round(K[0]/Sm*100.0,1), round(K[1]/Sm*100.0,1)
+            ,round(K[2]/Sm*100.0,1)*1,round(K[3]/Sm*100.0,1)
+            ,round(K[4]/Sm*100.0,1)])
+    else :
+        U = [round(K[0]/Sm*100.0,1), round(K[1]/Sm*100.0,1)
+            ,round(K[2]/Sm*100.0,1)*1,round(K[3]/Sm*100.0,1)
+            ,round(K[4]/Sm*100.0,1)]]
+        row = matrix(row.rows()+[U])
+C=[["1,1,1,1","1,1,2","1,3","2,2","4"]]+[list(row) for row in row] 
+A = ["cycle type","S_4","A_4","C_2xC_2","C_4","D_8"]
+C = [[a] + u for a, u in zip(A, C)]
+(table(C, header_row=True, frame=True))
+\end{verbatim}
+\begin{tabular}{|l|l|l|l|l|l|} \hline
+cycle type & 1,1,1,1 & 1,1,2 & 1,3 & 2,2 & 4 \\ \hline \hline
+S_4 & $4.2$ & $25.0$ & $33.3$ & $12.5$ & $25.0$ \\ \hline
+A_4 & $8.3$ & $0.0$ & $66.7$ & $25.0$ & $0.0$ \\ \hline
+C_2\times C_2 & $25.0$ & $0.0$ & $0.0$ & $75.0$ & $0.0$ \\ \hline
+C_4 & $25.0$ & $0.0$ & $0.0$ & $25.0$ & $50.0$ \\ \hline
+D_8 & $12.5$ & $25.0$ & $0.0$ & $37.5$ & $25.0$ \\ \hline
+\end{tabular}
+\\ \\
+\item[(b)] The following Sage instructions produce the similar to (13.45) table. The percentage of primes corresponding to each possible cycle for 200 primes $7\leq p\leq 1237$ is calculated for each polynomial in Exercise 13.1.14 and the polynomial from Example 13.4.8:
+\begin{verbatim}
+R.<X> = PolynomialRing(ZZ)
+P = Primes()
+f=[X^4 - 7*X^3 + 19*X^2 - 23*X + 11,X^4 + 4*X + 2,X^4 + 8*X + 12
+    ,X^4 + 1,X^4 + X^3 + X^2 + X + 1,X^4 - 2]
+for r in range(6):
+    K=[0,0,0,0,0]
+    for i in range(2,203):
+        R11.<x> = PolynomialRing(GF(P.unrank(i)))
+        S=[0,0,0,0]
+        for j in range(len(R11(f[r]).factor())):
+            d=R11(f[r]).factor()[j][0].degree()
+            m=R11(f[r]).factor()[j][1]
+            S[d-1]=S[d-1]+m
+        if S[0]==4: K[0]=K[0]+1
+        elif S[0]==2 and S[1]==1: K[1]=K[1]+1
+        elif S[0]==1 and S[2]==1: K[2]=K[2]+1
+        elif S[1]==2 : K[3]=K[3]+1
+        elif S[3]==1 : K[4]=K[4]+1
+        else : print("Error")
+        Sm=sum(K)
+    if r==0 :
+        row = matrix([round(K[0]/Sm*100.0,1), round(K[1]/Sm*100.0,1)
+            ,round(K[2]/Sm*100.0,1)*1,round(K[3]/Sm*100.0,1)
+            ,round(K[4]/Sm*100.0,1)])
+    else :
+        U = [round(K[0]/Sm*100.0,1), round(K[1]/Sm*100.0,1)
+            ,round(K[2]/Sm*100.0,1)*1,round(K[3]/Sm*100.0,1)
+            ,round(K[4]/Sm*100.0,1)]
+        row = matrix(row.rows()+[U])
+C=[["1,1,1,1","1,1,2","1,3","2,2","4"]]+[list(row) for row in row]
+A = ["cycle type"]+f
+C = [[a] + u for a, u in zip(A, C)]
+B = ["Galois group","C_4","S_4","A_4","C_2xC_2","C_4","D_8"]
+C = [a + [u] for a, u in zip(C, B)]
+(table(C, header_row=True, frame=True))
+\end{verbatim}
+\begin{tabular}{|l|l|l|l|l|l|l|} \hline
+cycle type & 1,1,1,1 & 1,1,2 & 1,3 & 2,2 & 4 & Galois group \\ \hline \hline
+$X^{4} - 7X^{3} + 19X^{2} - 23X + 11$ & $25.4$ & $0.0$ & $0.0$ & $22.9$ & $51.7$ & C_4 \\ \hline
+$X^{4} + 4X + 2$ & $3.0$ & $26.9$ & $33.8$ & $13.4$ & $22.9$ & S_4 \\ \hline
+$X^{4} + 8X + 12$ & $6.5$ & $0.0$ & $67.2$ & $26.4$ & $0.0$ & A_4 \\ \hline
+$X^{4} + 1$ & $22.9$ & $0.0$ & $0.0$ & $77.1$ & $0.0$ & C_2\times C_2 \\ \hline
+$X^{4} + X^{3} + X^{2} + X + 1$ & $25.4$ & $0.0$ & $0.0$ & $22.9$ & $51.7$ & C_4 \\ \hline
+$X^{4} - 2$ & $10.4$ & $25.4$ & $0.0$ & $37.3$ & $26.9$ & D_8 \\ \hline
+\end{tabular}
+\\ \\ \\
+The last column provides the guess about the Galois group of each polynomial. The comparison with Exercise 14 of Section 13.1 and Example 13.4.8 results supports the Chebotarev Density Theorem. 
+\begin{align*}
+\end{align*}
+\ee\end{proof}
+}
+
 \end{document}
