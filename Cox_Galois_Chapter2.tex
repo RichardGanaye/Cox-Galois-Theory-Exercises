@@ -48,8 +48,6 @@
 
 \begin{document}
 
-\maketitle
-
 \section{Chapter 2}
 
 \subsection{POLYNOMIALS OF SEVERAL VARIABLES}
@@ -102,7 +100,7 @@ p &= x^2 y + 3 y^2 - x y^2 + 3x + x y^2 + 7 x^3 y^3\\
 \end{align*}
 
 \item[(b)] 
-let 
+Let 
 \begin{align*}
 q &= (y -(x_1+x_2))(y-(x_1+x_3))(y-(x_2+x_3)).\\
 \end{align*}
@@ -457,9 +455,9 @@ So the application $f : \mathbb{Z}^n \to \mathbb{Z}^n$ defined by $$(b_1,b_2,\cd
 
 \item[(c)]
 
-As $h\neq 0$, there exists a term  $cu_1^{b_1}u_2^{b_2}\cdots u_n^{b_n}$ of $h$ such that the leading term $cx_1^{a_1}\cdots x_n^{a_n}$ of  $c\sigma_1^{b_1}\sigma_2^{b_2}\cdots \sigma_n^{b_n}$ is maximal. Then every other term $c'u_1^{d_1}u_2^{d_2}\cdots u_n^{d_n}$ of $h$  verifies $(b'_1,b'_2,\cdots,b'_n) \neq (b_1,b_2,\cdots,b_n)$ and the leading term  $c'x_1^{a'_1}\cdots x_n^{a'_n}$ of $c'\sigma_1^{d_1}\sigma_2^{b_2}\cdots \sigma_n^{d_n}$ is less than $cx_1^{a_1}\cdots x_n^{a_n}$ : it can not be greater because this term is maximal, and $(a_1,a_2,\cdots,a_n) \neq (a'_1,a'_2,\cdots,a'_n)$, since the application $f$ in (b) is bijective. The graded lexicographic order defined on the monomials $x_1^{a_1}\cdots x_n^{a_n}$ being a total order, $x_1^{a_1}\cdots x_n^{a_n} > x_1^{a'_1}\cdots x_n^{a'_n}$.
+As $h\neq 0$, there exists a term  $cu_1^{b_1}u_2^{b_2}\cdots u_n^{b_n}$ of $h$ such that the leading term $cx_1^{a_1}\cdots x_n^{a_n}$ of  $c\sigma_1^{b_1}\sigma_2^{b_2}\cdots \sigma_n^{b_n}$ is maximal. Then every other term $c'u_1^{b'_1}u_2^{b'_2}\cdots u_n^{b'_n}$ of $h$  verifies $(b'_1,b'_2,\cdots,b'_n) \neq (b_1,b_2,\cdots,b_n)$ and the leading term  $c'x_1^{a'_1}\cdots x_n^{a'_n}$ of $c'\sigma_1^{b'_1}\sigma_2^{b'_2}\cdots \sigma_n^{b'_n}$ is less than $cx_1^{a_1}\cdots x_n^{a_n}$ : it can not be greater because this term is maximal, and $(a_1,a_2,\cdots,a_n) \neq (a'_1,a'_2,\cdots,a'_n)$, since the application $f$ in (b) is bijective. The graded lexicographic order defined on the monomials $x_1^{a_1}\cdots x_n^{a_n}$ being a total order, $x_1^{a_1}\cdots x_n^{a_n} > x_1^{a'_1}\cdots x_n^{a'_n}$.
 
-So $cx_1^{a_1}\cdots x_n^{a_n}$ is greater than the leading terms of every other term $c'\sigma_1^{d_1}\sigma_2^{d_2}\cdots \sigma_n^{d_n}$ of $h(\sigma_1,\cdots,\sigma_n) \neq 0$, so is a fortiori greater than every other term of $h(\sigma_1,\cdots,\sigma_n)$.
+So $cx_1^{a_1}\cdots x_n^{a_n}$ is greater than the leading terms of every other term $c'\sigma_1^{a'_1}\sigma_2^{a'_2}\cdots \sigma_n^{a'_n}$ of $h(\sigma_1,\cdots,\sigma_n) \neq 0$, so is a fortiori greater than every other term of $h(\sigma_1,\cdots,\sigma_n)$.
 
  It can't be cancelled in the sum of these terms, and consequently $h(\sigma_1,\cdots,\sigma_n) \neq 0$.
 \end{enumerate}
@@ -506,7 +504,7 @@ Then, if $\tau \in S_n$, using \eqref{eq2.2.7:3} and \eqref{eq2.2.7:4}
 \end{align*}
 
 As the application $S_n \to S_n, \sigma \mapsto \tau \sigma$ is bijective, the index change $\sigma' = \tau \sigma$ gives 
-$$\prod_{\sigma \in S_n} (\tau \sigma) \cdot f = \prod_{\sigma' \in S_n} \sigma' \cdot f = \prod_{\sigma \in S_n} \sigma \cdot f= g$$.
+$$\prod_{\sigma \in S_n} (\tau \sigma) \cdot f = \prod_{\sigma' \in S_n} \sigma' \cdot f = \prod_{\sigma \in S_n} \sigma \cdot f= g.$$
 
 So,  for all $\tau \in S_n, \tau \cdot g = g$ : thus $g$ is a symmetric polynomial.
 
@@ -717,9 +715,9 @@ As $\vert {\cal O}_t \vert = \vert S_n \vert /  \vert \mathrm{Stab}_{S_n}(t) \ve
 
 $$S = \{ \sigma \in S_n \ \vert \  x_{\sigma(1)}^{a_1}\cdots x_{\sigma(n)}^{a_n}=x_{1}^{a_1}\cdots x_{n}^{a_n} \}.$$
 
-Note that $\sigma \in S$ iff $\sigma$  applies $I_k$ on itself : $$\sigma(I_k) = I_k, k=1,\ldots,r.$$
+Note that $\sigma \in S$ iff $\sigma$  applies $I_k$ on itself : $$\sigma(I_k) = I_k,\  k=1,\ldots,r.$$
 
-Let $\psi$ the application
+Let $\psi$ be the application
 $$\psi: 
 \begin{array}{ccc}
 S  & \to  &S(I_1) \times S(I_2)\times \cdots S(I_r)  \\
@@ -1205,9 +1203,10 @@ Verification with Sage:
     J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3)
     G = J.groebner_basis()
     D = x1^3*x2^2;
-    u=D+D.subs(x1=x2,x2=x1)+D.subs(x1=x3,x2=x2)+D.subs(x1=x2,x2=x3)+D.subs(x1=x3,x2=x1)+D.subs(x1=x1,x2=x3)
-    var('sigma_1,sigma_2,sigma_3')
-    u.reduce(G).subs(y1=sigma_1, y2 = sigma_2,y3=sigma_3)
+    u = D + D.subs(x1=x2, x2=x1) + D.subs(x1=x3, x2=x2) + \
+    	D.subs(x1=x2, x2=x3) + D.subs(x1=x3, x2=x1)+D.subs(x1=x1, x2=x3)
+    var('sigma_1, sigma_2, sigma_3')
+    u.reduce(G).subs(y1 = sigma_1, y2 = sigma_2,y3 = sigma_3)
 \end{verbatim}
 $$\sigma_1 \sigma_2^2-2\sigma_1^2\sigma_3 - \sigma_2 \sigma_3$$
 \end{proof}
@@ -1286,7 +1285,7 @@ Then
 Thus $x_1,x_2,x_3$ are the roots of $(x-x_1)(x-x_2)(x-x_3) = x^3 -\sigma_1x^2+\sigma_2x-\sigma_3 = x^3+bx^2+cx+d$, and $x_3 = \frac{x_1+x_2}{2}$.
 
 
-Conclusion : one of the roots of $x^3+bx^2+cx+d$ the average of the other two iff $2b^3 - 9bc + 27d = 0.$
+Conclusion : one of the roots of $x^3+bx^2+cx+d$ is the average of the other two iff $2b^3 - 9bc + 27d = 0.$
 \end{proof}
 
 \paragraph{Ex. 2.3.5}
@@ -1482,7 +1481,7 @@ $$f = A+B\sqrt{\Delta}.$$
 Therefore $-f = \tau \cdot f = \tau \cdot A + (\tau\cdot B)(\tau \cdot \sqrt{\Delta}) = A - B\sqrt{\Delta}$ (by 2.31).
 
 So $f = A + B\sqrt{\Delta}$ and  $f = -A+B\sqrt{\Delta}$, thus $2A=0$. Since the characteristic is not 2, $A=0$, therefore
-$$f = B\sqrt{\Delta}, B \in F[\sigma_1,\cdots,\sigma_n].$$
+$$f = B\sqrt{\Delta},\ B \in F[\sigma_1,\cdots,\sigma_n].$$
 \end{proof}
 
 \paragraph{Ex. 2.4.3}
@@ -1546,7 +1545,7 @@ so $\sqrt{\Delta}$ is not symmetric.
 Show that $\beta$ is unique and that $\beta$ is the unique root of $x^2+b$. Because of this, we denote $\beta$ by $\sqrt{b}$.
 \item[(b)] Now suppose that $f = x^2+ax+b$ is a quadratic polynomial in $F[x]$ with $a\ne 0$. Suppose also that $f$ is irreducible over $F$, so that it has no roots in $F$. We will see in Chapter 3 that $f$ has a root $\alpha$ in a field $L$ containing $F$. Prove that $\alpha$ cannot be written in the form $\alpha = u + v \sqrt{w}$, where $u,v,w \in F$.
 \item[(c)] Part (b) shows that solving a quadratic equation with nonzero $x$-coefficient requires more than square roots. We do this as follows. If $b\in F$, let $R(b)$ denote a root of $x^2+x+b$ (possibly lying in some larger field). We call $R(b)$ and $R(b)+1$ the $2$-roots of $b$. Prove that the roots of $x^2+x+b$ are $R(b)$ and $R(b)+1$, and explain why adding 1 to the second $2$-root gives the first. 
-\item[(d)] Show that the roots of $f = x^2 + ax+b, a\ne 0$, are $aR(b/a^2)$ and $a(R(b/a^2)+1$.
+\item[(d)] Show that the roots of $f = x^2 + ax+b, a\ne 0$, are $aR(b/a^2)$ and $a(R(b/a^2)+1)$.
 \end{enumerate}
 }
 
@@ -1582,7 +1581,7 @@ Write $R(b)$ a root of $x^2+x+b$ in an extension of $F$.
 
 As $R(b)^2+R(b)+b=0$, $(R(b)+1)^2 + (R(b) +1)+b = R(b)^2+1 + R(b)+1+b = R(b)^2+R(b)+b=0$.
 
-As $R(b)+1+1 = R(b)$, the two (distinct) roots of  $x^2+x+b$ are $R(b),R(b+1)$, and  $\sigma : x\mapsto x+1$ exchanges the two roots.
+As $R(b)+1+1 = R(b)$, the two (distinct) roots of  $x^2+x+b$ are $R(b),R(b)+1$, and  $\sigma : x\mapsto x+1$ exchanges the two roots.
 
 \item[(d)]
 
@@ -1650,7 +1649,7 @@ There exists $\sigma \in S_n$ such that $\sigma(i) = l, \sigma(j)=m$.
 
 \item[(c)] 
 By (a),
-$A = (x_i-x_j) C, C \in k[x_1,\cdots x_n]$. 
+$A = (x_i-x_j) C,\ C \in k[x_1,\cdots x_n]$. 
 
 As $A$ is symmetric, using the permutation $\sigma$ of (b), 
 \begin{align*}
@@ -1660,7 +1659,7 @@ A &=\sigma\cdot A\\
 &=(x_l-x_m) (\sigma\cdot C).
 \end{align*}
 
-So $A$ is divisible by $x_l-x_m,\ 1\leq l<m\leq m$.
+So $A$ is divisible by $x_l-x_m,\ 1\leq l<m\leq n$.
 
 
 \item[(d)] 
@@ -1728,7 +1727,7 @@ If $p$ is an irreducible factor in $F[\sigma_1,\cdots,\sigma_n]$ which divides $
 
 
 \item[(b)]
-If $p$ is an irreducible factor in $F[x_1,\cdots,x_n]$ which divides $C$ and $D$ , then $C = p E, E \in F[x_1,\cdots,x_n]$.
+If $p$ is an irreducible factor in $F[x_1,\cdots,x_n]$ which divides $C$ and $D$, then $C = p E,\ E \in F[x_1,\cdots,x_n]$.
 As $C$ is symmetric, we obtain, using 2.31:
 \begin{align}
 C = \sigma\cdot C = (\sigma\cdot p) (\sigma\cdot E).\label{eq2.4.10:1}
@@ -1736,12 +1735,11 @@ C = \sigma\cdot C = (\sigma\cdot p) (\sigma\cdot E).\label{eq2.4.10:1}
 Therefore $\sigma \cdot p$ divides $C$ for all $\sigma \in S_n$, and it is the same for $D$.
 
 
-\item[(c)] The product, for all $\sigma \in S_n$ of the relations \eqref{eq2.4.10:1} gives :
+\item[(c)] The product, for all $\sigma \in S_n$, of the relations \eqref{eq2.4.10:1} gives:
 $$C^{n!} =  \prod_{\sigma \in S_n} \sigma \cdot p \  \prod_{\sigma \in S_n} \sigma \cdot  E.$$
 Therefore $P= \prod\limits_{\sigma \in S_n} \sigma \cdot  p$ divides  $C^{n!} $ in $F[x_1,\cdots,x_n]$, and similarly for $D$.
 
 
-\item[(d)]
 By Exercise 2.2.7, $P$ is symmetric, and $C^{n!} = P Q, D^{n!} = P S,\ Q,S \in F[x_1,\cdots,x_n]$.
 
 As $C^{n!},D^{n!},P$ are symmetric, $Q,S$ are also symmetric. Indeed, for all $\sigma \in S_n$, 
@@ -1749,7 +1747,7 @@ $P Q = C^{n!} = \sigma \cdot C^{n!} = (\sigma \cdot P)( \sigma \cdot Q )= P (\si
 
 Therefore $P=P_1(\sigma_1,\cdots,\sigma_n)$, and $P_1 \in F[\sigma_1,\cdots,\sigma_n]$ divides $C^{n!},D^{n!}$ in $F[\sigma_1,\cdots,\sigma_n]$. As the irreducible polynomial  $p$ divides $P$, $P_1$ is not a constant. Therefore the two polynomials  $C^{n!},D^{n!}$ are not relatively prime in $F[\sigma_1,\ldots,\sigma_n]$, and by (a), $C,D$ are not relatively prime in $F[\sigma_1,\ldots,\sigma_n]$, in contradiction with the hypothesis.
 
-Conclusion : two relatively prime polynomials in  $F[\sigma_1,\cdots,\sigma_n]$ are also relatively prime in  $F[x_1,\cdots,x_n]$.
+Conclusion : two relatively prime polynomials in  $F[\sigma_1,\cdots,\sigma_n]$ remain relatively prime when regarded as elements of $F[x_1,\cdots,x_n]$.
 \end{enumerate}
 \end{proof}
 
