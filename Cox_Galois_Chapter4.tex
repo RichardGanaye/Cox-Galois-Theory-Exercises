@@ -48,8 +48,6 @@
 
 \begin{document}
 
-\maketitle
-
 
 \section{Chapter 4}
 
@@ -61,7 +59,7 @@
 }
 
 \begin{proof}
-Suppose that $\alpha \in L \setminus \{0\}$ be algebraic over a subfield $F$ of $L$. Then there exists a polynomial $p = \sum\limits_{k=0}^d a_k x^k \in F[x]$, with $a_d \neq 0$, whose $\alpha$ is a root:
+Suppose that $\alpha \in L \setminus \{0\}$ is algebraic over a subfield $F$ of $L$. Then there exists a polynomial $p = \sum\limits_{k=0}^d a_k x^k \in F[x]$, with $a_d \neq 0$, whose $\alpha$ is a root:
 $$\sum\limits_{k=0}^d a_k \alpha^k = 0.$$
 Dividing by $\alpha^d$, we obtain $\sum\limits_{k=0}^d a_k\left(\frac{1}{\alpha}\right)^{d-k} = 0$, which we can write
 $\sum\limits_{i=0}^d a_{d-i}\left(\frac{1}{\alpha}\right)^{i} = 0$.
@@ -185,13 +183,13 @@ By definition of $F(\alpha_1,\ldots,\alpha_n)$, $\varphi$ is surjective.
 
 Let $f = p/q \in F(x_1,\ldots,x_n)$, with $p,q \in F[x_1,\ldots,x_n], q\neq 0$. If $f \in \ker(\varphi)$, then $p(\alpha_1,\ldots,\alpha_n)/q(\alpha_1,\ldots,\alpha_n) =0$, thus $p(\alpha_1,\ldots,\alpha_n)=0$. Since $\alpha_1,\ldots,\alpha_n$ are algebraically independent, $p=0$. Consequently $\ker(\varphi) = \{0\}$, and so $\varphi$ is a ring isomorphism between two fields: it is a field isomorphism.
 
-Conclusion: If $\alpha_1,\ldots,\alpha_n \in L$ are algebraically independent over $F$,then
+Conclusion: If $\alpha_1,\ldots,\alpha_n \in L$ are algebraically independent over $F$, then
 $$F(\alpha_1,\ldots,\alpha_n) \simeq  F(x_1,\ldots,x_n).$$
 \end{proof}
 
 \paragraph{Ex. 4.1.7}
 
-{\it In the proof of Proposition 4.1.14, we used the quotient ring $F[x]/\langle p\rangle$ to show that $F[\alpha]$ is a field when $\alpha$ is algebraic over $F$ with minimal polynomial $p \in F[x]$.Here, you will prove that $F[\alpha]$ is a field without using quotient rings. Since we know that $F[\alpha]$ is a ring, it suffices to show that every nonzero element $\beta \in F[\alpha]$ has a multiplicative inverse in $F[\alpha]$. So pick $\beta \ne 0$ in $F[\alpha]$ Then $\beta = g(\alpha)$ for some $g \in F[x]$.
+{\it In the proof of Proposition 4.1.14, we used the quotient ring $F[x]/\langle p\rangle$ to show that $F[\alpha]$ is a field when $\alpha$ is algebraic over $F$ with minimal polynomial $p \in F[x]$. Here, you will prove that $F[\alpha]$ is a field without using quotient rings. Since we know that $F[\alpha]$ is a ring, it suffices to show that every nonzero element $\beta \in F[\alpha]$ has a multiplicative inverse in $F[\alpha]$. So pick $\beta \ne 0$ in $F[\alpha]$ Then $\beta = g(\alpha)$ for some $g \in F[x]$.
 \begin{enumerate}
 \item[(a)] Show that $g$ and $p$ are relatively prime in $F[x]$.
 \item[(b)] By part (a) and the Euclidean algorithm, we have $Ap+Bg = 1$ for some $A,B \in F[x]$. Prove that $B(\alpha) \in F[\alpha]$ is the multiplicative inverse of $g(\alpha)$.
@@ -240,7 +238,7 @@ Note: We have proved in Exercise 3.5.1 that $F[x]/\langle f\rangle$, where $f$ i
 
 Suppose on the contrary that $f$ is reducible over $F$:  $f = x^2 - 3 = u v,\ u v \in \mathbb{Q}[\sqrt{2}][x]$, where $u,v$ are nonconstant polynomials. Then $\deg(u)\geq 1, \deg(v) \geq 1$, and as $\deg(u) + \deg(v) = \deg(f) = 2$, $\deg(u) = \deg(v)=1$, 
 
-$$u = ax+b, a,b\in \mathbb{Q}[\sqrt{2}], a\neq 0.$$
+$$u = ax+b,\ a,b\in \mathbb{Q}[\sqrt{2}], a\neq 0.$$
 
 Then $\alpha = -b/a \in \mathbb{Q}[\sqrt{2}]$ is a root of $u$, thus is a root of $f = x^2-3$. Since $\sqrt{2}^{2n} = 2^n$ and $\sqrt{2}^{2n+1} = 2^n \sqrt{2}$, every element of $\mathbb{Q}[\sqrt{2}]$  is of the form $c+ d\sqrt{2} , \ c,d \in \mathbb{Q}$.
 
@@ -347,7 +345,7 @@ Let $f(x) = (x-a)^n + pF(x)$, where $a\in \mathbb{Z}$, and $p$ is prime. We show
 
 As $\deg(F) \leq n$, $\deg(f)\leq n$, and as the coefficient of $x^n$ in $f$ is congruent to 1 modulo $p$, it is nonzero, so $\deg(f) = n$, and $k+l=n$.
 
-Write $\overline{f} \in \mathbb{F}_p[x]$ the reductio modulo $p$ of $f$, and write $\overline{a} = [a]_p$ the class of $a\in \mathbb{Z}$ modulo $p$. 
+Write $\overline{f} \in \mathbb{F}_p[x]$ the reduction modulo $p$ of $f$, and write $\overline{a} = [a]_p$ the class of $a\in \mathbb{Z}$ modulo $p$. 
 
 The application 
 \begin{align*}
@@ -435,7 +433,7 @@ Applying the lemma, we obtain
 \end{align*}
 since every coefficient $\left[ 1 - (-1)^{k} \binom{p-1}{k} \right]$ is divisible by $p$, of the form $p a_k, a_k \in \mathbb{Z}$.
 
-Consequently $$\Phi_p(x) = (x-1)^{p-1} + pF(x), F(x) = \sum_{k=0}^{p-1} a_k x^k \in \mathbb{Z}[x], \deg(F) \leq p-1.$$
+Consequently $$\Phi_p(x) = (x-1)^{p-1} + pF(x),\quad F(x) = \sum_{k=0}^{p-1} a_k x^k \in \mathbb{Z}[x],\quad \deg(F) \leq p-1.$$
 Moreover 
 $$F(1) = \sum_{k=0}^{p-1} a_k =  \sum_{k=0}^{p-1} \frac{ 1 - (-1)^{k} \binom{p-1}{k} }{p} = 1 -  \frac{1}{p} \sum_{k=0}^{p-1}(-1)^{k} \binom{p-1}{k} = 1 - \frac{1}{p}(1-1)^{p-1} = 1.$$
 
@@ -735,7 +733,7 @@ Then $\alpha^2 = 2 + \sqrt{2}, \alpha^2-2 = \sqrt{2}, (\alpha^2-2)^2 - 2= 0, \al
  $\alpha$ is a root of
 $$f= x^4-4x^2+2.$$
 
-We show that $f$ is irreducible $\Q$.
+We show that $f$ is irreducible over $\Q$.
 $f= x^4-4x^2+2 = a_4x^4+a_3x^3+a_2x^2+a_1x+a_0$ satisfies
 $2 \nmid a_4 =1, 2 \mid a_3=0,2\mid a_2=-4, 2 \mid a_1=0,2 \mid a_0=2,  2^2 \nmid a_0 = 2$, so 
 the Sch\"onemann-Eisenstein Criterion with $p=2$ implies that $f$ is irreducible over $\mathbb{Q}$.
@@ -773,7 +771,7 @@ is a basis of $\Q(\sqrt{3},\sqrt[3]{2})$ over $\Q$.
 $$\left(1,\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2}}^{\, 2}= 2+\sqrt{2}, \sqrt{2+\sqrt{2}}^{\, 3} =(2+\sqrt{2})\sqrt{2+\sqrt{2}} \right)$$
 is a basis of $\Q\left(\sqrt{2+\sqrt{2}}\right)$ over $\Q$.
 
-\item[(d)]
+\item[(d)]w
 A basis of $\Q\left(i,\sqrt{2+\sqrt{2}}\right)/ \Q\left(\sqrt{2+\sqrt{2}}\right)$ being $(1,i)$, 
 $$(1,\alpha,\alpha^2,\alpha^3,i,i\alpha,i\alpha^2,i\alpha^3),\qquad \mathrm{where}\ \alpha = \sqrt{2+\sqrt{2}},$$
 is a basis of $\Q\left(i,\sqrt{2+\sqrt{2}}\right)$ over $\Q$.
@@ -865,7 +863,7 @@ Then $f$ is the minimal polynomial of  $\alpha$ over $F(\beta)$, thus $$ \delta_
 
 $\delta_2 = d_1$, combined with the relation \eqref{eq:4.3.6}, gives $\delta_1= d_2$.
 
-Let $G$ the minimal polynomial of  $\beta$ over $F(\alpha)$.
+Let $G$ be the minimal polynomial of  $\beta$ over $F(\alpha)$.
 
 As $g \in F[x] \subset F(\alpha)[x]$, and $g(\beta)=0$, then $G \mid g$, and $\deg(g) = d_2 = \delta_1 = \deg(G)$, where $g$ and  $G$ are monic, thus $g=G$.
 
@@ -965,7 +963,7 @@ $\overline{\Q}$ is an algebraic extension of $\Q$, with infinite dimension.
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-Let $\alpha \in \C$ a root of 
+Let $\alpha \in \C$ be a root of 
 $$f = x^{11}-(\sqrt{2}+\sqrt{5}) x^5+3\sqrt[4]{12}x^3+(1+3i) x +\sqrt[5]{17}.$$
 Let $L = \Q(\sqrt{2},\sqrt{5},\sqrt[4]{12},i,\sqrt[5]{17},\alpha)$, and $K = \Q(\sqrt{2},\sqrt{5},\sqrt[4]{12},i,\sqrt[5]{17})$.
 
@@ -1063,7 +1061,7 @@ At least one of the numbers $\pi+e,\pi-e$ is transcendental over $\Q$.
 \begin{proof}
 Let $f \in F(x), f\neq 0$. Then $f =p/q,\  p,q \in F[x], \ p \wedge q = 1,\  p\neq 0, q\neq 0$.
 
-If $f$ is algebraic over $F$, let $P  = \sum_{i=0}^n a_i x^i \in F[x]$ the minimal polynomial $f$ over $F$, of degree $n$. Then $a_n = 1 \neq 0$, and $a_0 \neq 0$ (if $a_0 = 0$,  $P/x$ has the root $f$ and so $P$ should not be the minimal polynomial). Then 
+If $f$ is algebraic over $F$, let $P  = \sum_{i=0}^n a_i x^i \in F[x]$ be the minimal polynomial of $f$ over $F$, with $\deg(P) = n$. Then $a_n = 1 \neq 0$, and $a_0 \neq 0$ (if $a_0 = 0$,  $P/x$ has the root $f$ and so $P$ should not be the minimal polynomial). Then 
 $$a_{n}\left ( \frac{p}{q}\right )^n+a_{n-1}\left ( \frac{p}{q}\right )^{n-1}+\cdots+a_0 = 0,$$
 thus   $$a_n p^n + a_{n-1} p^{n-1}q+\cdots+a_0 q^n = 0.$$
 
@@ -1078,7 +1076,7 @@ The only elements of $F(x)$ which are algebraic over $F$ are the elements of $F$
 }
 
 \begin{proof}
-Let $\alpha \in L$. As $L$ is algebraic over $F$, $\alpha$ is algebraic over $F$. Let $f\in F[x]$ the minimal polynomial of $\alpha$ over $F$.
+Let $\alpha \in L$. As $L$ is algebraic over $F$, $\alpha$ is algebraic over $F$. Let $f\in F[x]$ be the minimal polynomial of $\alpha$ over $F$.
 
 As $F$ is an algebraically closed field, $f$ is a product of linear factors in $F[x]$, thus all the roots of $f$ are in $F$. In particular, $\alpha \in F$ (and so $f$ has degree 1). This proves the inclusion $L \subset F$, and as  $F \subset L$, $F=L$.
 
@@ -1098,7 +1096,7 @@ An algebraically closed field has no proper algebraic extension.
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-Let $\R \subset L$ is an algebraic extension. 
+Let $\R \subset L$ be an algebraic extension. 
 
 If  $x^2+1$ has a root $\alpha$ in $L$, we can take  $K=L$. Otherwise $x^2+1$, being of degree 2, is irreducible over $L$, thus $K = L[x]/\langle x^2 +1\rangle$ is an extension of $L$ containing $\alpha = \overline{x} = x +\langle x^2 +1\rangle $, root of $x^2+1$ in $K$. 
 
@@ -1125,7 +1123,7 @@ By~\eqref{eq:4.4.8},
 &\iff L(\alpha) = L\\
 &\ \ \Rightarrow\  \C\simeq L
 \end{align*}
-Conversely, if $\C \simeq L$, then $L(\alpha) \simeq L$. Let $\varphi : L(\alpha) \to L$ an isomorphism. Then $\beta = \varphi(\alpha)\in L$ satisfies $\beta^2 +1 = 0$, thus $\beta \not \in \R$. Consequently $\R \subsetneq L$, $1<[L : \R]\leq 2$, thus $[L:\R]= 2$.
+Conversely, if $\C \simeq L$, then $L(\alpha) \simeq L$. Let $\varphi : L(\alpha) \to L$ be an isomorphism. Then $\beta = \varphi(\alpha)\in L$ satisfies $\beta^2 +1 = 0$, thus $\beta \not \in \R$. Consequently $\R \subsetneq L$, $1<[L : \R]\leq 2$, thus $[L:\R]= 2$.
 
 $$[L:\R] = 2 \iff L \simeq \C.$$
 \end{enumerate}
@@ -1139,7 +1137,7 @@ $$[L:\R] = 2 \iff L \simeq \C.$$
 \begin{proof}
 $\bullet$ If $\alpha \in \Z$, $\alpha$ is a root of  the monic polynomial $x-\alpha \in \Z[x]$, thus  $\alpha$ is an algebraic integer.
 
-$\bullet$ Conversely, let $\alpha \in \Q$ an algebraic integer.
+$\bullet$ Conversely, let $\alpha \in \Q$ be an algebraic integer.
 $$\alpha = p/q, \qquad(p,q) \in \Z\times \N^*, \ p\wedge q = 1.$$
  
  $\alpha$ is a root of $f = x^n+a_{n-1}x^{n-1}+\cdots+a_0$, where the coefficients $a_i$ are integers. Thus
