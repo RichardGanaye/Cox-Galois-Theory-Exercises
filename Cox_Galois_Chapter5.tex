@@ -49,8 +49,6 @@
 
 \begin{document}
 
-\maketitle
-
 \section{Chapter 5}
 
 \subsection{NORMAL AND SEPARABLE EXTENSIONS}
@@ -174,7 +172,7 @@ Then $\alpha^2 = 2 + \sqrt{2}, \alpha^2-2 = \sqrt{2}, (\alpha^2-2)^2 - 2= 0, \al
 
  So $\alpha$ is a root of
 $$f= x^4-4x^2+2.$$
-The computing of the roots in $\C$ of $f$ gives (cf Ex. 4.3.2) : 
+The calculation of the roots in $\C$ of $f$ gives (cf Ex. 4.3.2) : 
 \begin{align*}
 f(\beta) = 0 &\iff (\beta^2-2)^2 = 2\\
 &\iff \beta^2 = 2 +\varepsilon \sqrt{2}, \ \varepsilon \in \{-1,1\}\\
@@ -747,7 +745,7 @@ $$
 }
 
 \begin{proof}
-Let $F\subset L$ the splitting field of a separable polynomial $f \in F[x]$ : $L=F(\alpha_1,\ldots,\alpha_n)$, where $\alpha_1,\ldots,\alpha_n$ are the roots of $f$, and
+Let $F\subset L$ be the splitting field of a separable polynomial $f \in F[x]$ : $L=F(\alpha_1,\ldots,\alpha_n)$, where $\alpha_1,\ldots,\alpha_n$ are the distinct roots of $f$ in $L$, and
 $$f = c(x-\alpha_1)\cdots(x-\alpha_n).$$
 
 Let $f_i$ be the minimal polynomial of $\alpha_i$ over $F$. Then $f_i$ divides $f$, thus $f_i \in F[x]$ is a separable polynomial, since the unicity of the decomposition in irreducible factors in $L[x]$ shows that the only irreducible factors of $f_i$ in $L[x]$ are associate to $x-\alpha_j$. Consequently the $\alpha_i$ are separable for all $i,\ 1\leq i \leq n$. Part (a) of Theorem 5.3.15 shows then that $F\subset L$ is a separable extension.
@@ -765,7 +763,7 @@ Let $f_i$ be the minimal polynomial of $\alpha_i$ over $F$. Then $f_i$ divides $
 }
 
 \begin{proof}
-Let $F$ is a field of characteristic $p$, and $f \in F[x]$ irrŽductible over $F$, de degrŽ $n\geq 1$.
+Let $F$ be a field of characteristic $p$, and $f \in F[x]$ irreducible over $F$, with degree $n\geq 1$.
 \begin{enumerate}
 \item[(a)]
 We suppose first that $f'\neq 0$.
@@ -858,9 +856,9 @@ Then  (by Lemma 5.3.10), $$\beta^p =  \sum_{i=0}^d a_i^p \alpha^{ip} =  \sum_{i=
 \item[(c)]
 Write $b = \beta^p \in F$. Then $\beta$ is a root of $x^p -b \in F[x]$.
 
-As $x^p-b = (x-\beta)^p$, with $\beta \not \in F$, $x^p -b$ has no root in $F$ : by Proposition 4.2.6 $x^p - b$ is irreducible over $F$. Thus $x^p -b = x^p -\beta^p$ is so the minimal polynomial of $\beta$ over $F$.
+As $x^p-b = (x-\beta)^p$, with $\beta \not \in F$, $x^p -b$ has no root in $F$ : by Proposition 4.2.6 $x^p - b$ is irreducible over $F$. Thus $x^p -b = x^p -\beta^p$ is the minimal polynomial of $\beta$ over $F$.
 
-\item[(d)] Every element $\beta \in F(\alpha) \setminus F$ has so a inseparable minimal polynomial, thus every $\beta\in F(\alpha) \setminus F$ is inseparable. By definition, the extension $F\subset F(\alpha)$ is purely inseparable.
+\item[(d)] So every element $\beta \in F(\alpha) \setminus F$ has an inseparable minimal polynomial, thus every $\beta\in F(\alpha) \setminus F$ is inseparable. By definition, the extension $F\subset F(\alpha)$ is purely inseparable.
 \end{enumerate}
 \end{proof}
 
@@ -886,7 +884,7 @@ Suppose now that $\alpha \not \in F$. By definition of a purely inseparable exte
 
 By Proposition 5.3.16 (see Ex. 7),  $${f = g(x^{p^e})},\ g \in F[x], e\geq 1,$$where $g$ is a separable irreducible polynomial.
 
-If $\deg(g)>1$, then $g$ has the root $\beta = \alpha^{p^e} \in L$, and $\beta \not \in F$, otherwise $g$ would be divisible by $x-\beta$ and would so be reducible over $F$. As $g$ is irreducible, the minimal polynomial of $\beta$ over $F$ is $g$, which is separable. Thus $\beta$ is separable, and $\beta \not \in F$, in contradiction with the hypothesis "$F \subset L$ is purely inseparable". Hence $\deg(g) = 1$. As $f$ is monic, $g$ is also monic, thus $g = x-a, a \in F$, and $f = x^{p^e} -a$.
+If $\deg(g)>1$, then $g$ has the root $\beta = \alpha^{p^e} \in L$, and $\beta \not \in F$, otherwise $g$ would be divisible by $x-\beta$ and so would be reducible over $F$. As $g$ is irreducible, the minimal polynomial of $\beta$ over $F$ is $g$, which is separable. Thus $\beta$ is separable, and $\beta \not \in F$, in contradiction with the hypothesis "$F \subset L$ is purely inseparable". Hence $\deg(g) = 1$. As $f$ is monic, $g$ is also monic, thus $g = x-a, a \in F$, and $f = x^{p^e} -a$.
 
 So the minimal polynomial over $F$ of every $\alpha \in L$ is of the form $x^{p^e} -a,\  a\in F, e\geq 0$.
 
@@ -901,7 +899,7 @@ Conclusion : $F \subset L$ is purely inseparable if and only if the minimal poly
 \item[(b)]
 {\bf Lemma.} {\it If $F \subset L$ is a finite purely inseparable extension,  and if $F \subset K \subset L$, then $K \subset L$ is purely inseparable.}
 
-{\it Proof (of Lemma)}. Let $\beta \in L\setminus K$, and  $f\in F[x]$ the minimal polynomial of $\beta$ over $F$, and $f_K \in K[x]$ the minimal polynomial of $\beta$ over $K$. As $f \in F[x] \subset K[x]$ and $f(\beta) = 0$, $f_K$ divides $f$.
+{\it Proof (of Lemma)}. Let $\beta \in L\setminus K$, and  let $f\in F[x]$ be the minimal polynomial of $\beta$ over $F$, and $f_K \in K[x]$ be the minimal polynomial of $\beta$ over $K$. As $f \in F[x] \subset K[x]$ and $f(\beta) = 0$, $f_K$ divides $f$.
 
 By part (a), $f$ is of the form $f = x^{p^e} -a, a\in F, e\geq 1$. As $f = x^{p^e} - a = x^{p^e} - \beta^{p^e} = (x-\beta)^{p^e}$, $x-\beta$ is the only monic irreducible factor of $f$. Since $f_K \mid f$, $f_K = (x- \beta)^k,\ k\geq 1$. As $\beta \not \in K$, $k\geq 2$, thus $\beta$ is not separable over $K$, and this is true for every $\beta \in L \setminus K$, so $K \subset L$ is a purely inseparable extension.$\qed$.
 
@@ -911,7 +909,7 @@ Suppose now that $F \subset L$ is a purely inseparable extension. As $F \subset 
 
 Reasoning by induction, suppose that $[F_i : F]$ is a power of $p$. This is true for $i=0$ since $[F_0:F] = [F:F] = 1 = p^0$.
 
-By the preceding Lemma, $L$ is purely inseparable over $F_i$. By part (a) applied to $F_i$, we know that the minimal polynomial $f_{i+1}$ of $\alpha_{i+1}$ over $F_i$ is of the form $f = x^{p^e} -a, a\in F_i, e\geq 0$. Thus $[F_{i+1} : F_i] = [F_{i}(\alpha_{i+1}) : F_i] = \deg(f_{i+1}) = p^e$. Consequently, $[F_{i+1}:F] = [F_{i+1}:F_i][F_i:F] $ is a power of $p$, which conclude the induction.
+By the preceding Lemma, $L$ is purely inseparable over $F_i$. By part (a) applied to $F_i$, we know that the minimal polynomial $f_{i+1}$ of $\alpha_{i+1}$ over $F_i$ is of the form $f_{i+1} = x^{p^e} -a, a\in F_i, e\geq 0$. Thus $[F_{i+1} : F_i] = [F_{i}(\alpha_{i+1}) : F_i] = \deg(f_{i+1}) = p^e$. Consequently, $[F_{i+1}:F] = [F_{i+1}:F_i][F_i:F] $ is a power of $p$, which conclude the induction.
 
 Finally, $[L:F] = [F(\alpha_1,\ldots,\alpha_n) : F]$ is a power of $p$.
 \end{enumerate}
@@ -952,7 +950,7 @@ By part (a), this is equivalent to $f$ is squarefree.
 
 Note: this equivalence remains true in a finite field. 
 
-Counterexample in $F = \F_3(t)$: the polynomial $f= x^3 - t \in \F_3(t)[x]$ is irreducible over $F$, so is squarefree, but if $\alpha$ is a root of $f$ in a splitting field $L$, $x^3 - t = x- \alpha^3  = (x-\alpha)^3$ is not separable. This is due to the fact that  "squarefree" is a notion which depends of the field: $f$ is squarefree over $F$, not over $L$.
+Counterexample in $F = \F_3(t)$: the polynomial $f= x^3 - t \in \F_3(t)[x]$ is irreducible over $F$, so is squarefree, but if $\alpha$ is a root of $f$ in a splitting field $L$, $x^3 - t = x^3- \alpha^3  = (x-\alpha)^3$ is not separable. This is due to the fact that  "squarefree" is a notion which depends on the field: $f$ is squarefree over $F$, not over $L$.
 \end{proof}
 
 \paragraph{Ex. 5.3.12}
@@ -1135,7 +1133,7 @@ f^{(k+1)}(x) &= (m-k) (x-\beta)^{m-k-1} h_k(x) +(x-\beta)^{m-k}h'_k(x)\\
 &= (x-\beta)^{m-k-1} h_{k+1}(x)
 \end{align*}
 where $h_{k+1}(x) = (m-k) h_k(x) + (x-\beta) h'_k(x)$, thus $$h_{k+1}(\beta) = (m-k)h_k(\beta) = (m-k)  \frac{m!}{(m-k)!} h(\beta) =  \frac{m!}{(m-k-1)!} h(\beta),$$
-and the induction is done.The property is so true up to rank $k=m$, so
+and the induction is done. The property ist true up to rank $k=m$, which gives
 $$f^{(m)}(x) = h_m(x),\qquad f^{(m)}(\beta) = h_m(\beta) = m! h(\beta).$$
 Conclusion : if $f(x) =(x-\beta)^m h(x)$, then $f^{(m)}(\beta) = m! h(\beta)$.
 
@@ -1183,7 +1181,7 @@ So we can state:
 $s(x)$ is defined in (5.18) by
  $$s(x) =\prod_{j=1}^m f(x-\lambda \gamma_j).$$
 
-Let $g= \prod\limits_{j=1}^m f(x-\lambda x_j) \in F[x_1,\ldots,x_m][x]$.
+Let $h= \prod\limits_{j=1}^m f(x-\lambda x_j) \in F[x_1,\ldots,x_m][x]$.
 
 If $u = u(x_1,\ldots,x_m) \in F[x_1,\ldots,x_m]$, and $\sigma \in S_m$, we define $\sigma \cdot u =u(x_{\sigma(1)},\ldots,x_{\sigma(m)})$. If $v =u(x_1,\ldots,x_m,x) \in F[x_1,\ldots,x_m][x]$, where $v = \sum\limits_{i=0}^d p_i x^i, p_i \in F[x_1,\ldots,x_m]$, we write $\sigma \cdot v = \sum (\sigma \cdot p_i) x^i$. 
 
@@ -1191,15 +1189,15 @@ Then $\sigma\cdot(\tau \cdot  v )= (\sigma \tau) \cdot v$, and $\sigma\cdot (vw)
 
 For every permutation $\sigma \in S_n$, 
 \begin{align*}
-\sigma \cdot g &= \sigma \cdot  \prod_{j=1}^m f(x-\lambda x_j)\\
+\sigma \cdot h &= \sigma \cdot  \prod_{j=1}^m f(x-\lambda x_j)\\
 &= \prod_{j=1}^m \sigma \cdot f(x-\lambda x_j)\\
 &=\prod_{j=1}^m f(x-\lambda x_{\sigma(j)})\\
 &=\prod_{j=1}^m f(x-\lambda x_j)\\
-&=g.
+&=h.
 \end{align*}
-As $g = \sum\limits_{i=0}^d p_i(x_1,\ldots,x_m) x^i$ ($d = lm$), and $g = \sigma \cdot g = \sum\limits_{i=0}^d \sigma \cdot p_i(x_1,\cdots,x_m) x^i$, every coefficient $p_i(x_1,\ldots,x_m)\in F[x_1,\ldots,x_m]$ is a symmetric polynomial. 
+As $h = \sum\limits_{i=0}^d p_i(x_1,\ldots,x_m) x^i$ ($d = lm$), and $g = \sigma \cdot h = \sum\limits_{i=0}^d \sigma \cdot p_i(x_1,\cdots,x_m) x^i$, every coefficient $p_i(x_1,\ldots,x_m)\in F[x_1,\ldots,x_m]$ is a symmetric polynomial. 
 
-The evaluation homomorphism $\varphi$ defined by $x_1\mapsto \gamma_1,\ldots, x_m \mapsto \gamma_m$, where $\gamma_1,\ldots,\gamma_m$ are the roots of $g \in F[x]$ sends the coefficients of $g$ on the coefficients of $s$. Corollary 2.2.5 show that $p_i(\gamma_1,\dots,\gamma_m) \in F,\  i=0,\ldots d$, thus $$s(x) =\sum\limits_{i=0}^d p_i(\gamma_1,\ldots,\gamma_m) x^i \in F[x].$$
+The evaluation homomorphism $\varphi$ defined by $x_1\mapsto \gamma_1,\ldots, x_m \mapsto \gamma_m$, where $\gamma_1,\ldots,\gamma_m$ are the roots of $h \in F[x]$ sends the coefficients of $h$ on the coefficients of $s$. Corollary 2.2.5 shows that $p_i(\gamma_1,\dots,\gamma_m) \in F,\  i=0,\ldots d$, thus $$s(x) =\sum\limits_{i=0}^d p_i(\gamma_1,\ldots,\gamma_m) x^i \in F[x].$$
 \end{proof}
 
 \paragraph{Ex. 5.4.2}
@@ -1218,11 +1216,11 @@ $$x^m-1 = (x-1)(x-\alpha)(x-\alpha^2)\cdots(x-\alpha^{m-1}).$$
 Let $F$ a finite field, and $F\subset L$ a finite extension.
 \begin{enumerate}
 \item[(a)]
-As $n = [L:F]<\infty$, there exists a basis $(l_1,\cdots,l_n)$ of $L$  over $F$, thus every element $\alpha \in L$ is of the form $\alpha = \gamma_1 l_1+\cdots +\gamma_n l_n$,  with a unique $(\gamma_1,\ldots,\gamma_n) \in F^n$. Therefore $L$ is isomorphic to $F^n$ as vector space, thus $\vert L \vert = \vert F \vert^n <\infty$. $L$ is so a finite field.
+As $n = [L:F]<\infty$, there exists a basis $(l_1,\cdots,l_n)$ of $L$  over $F$, thus every element $\alpha \in L$ is of the form $\alpha = \gamma_1 l_1+\cdots +\gamma_n l_n$,  with a unique $(\gamma_1,\ldots,\gamma_n) \in F^n$. Therefore $L$ is isomorphic to $F^n$ as a vector space, thus $\vert L \vert = \vert F \vert^n <\infty$. $L$ is a finite field.
 
 \item[(b)] $L^*$ being the finite multiplicative group of a field is cyclic (Proposition A.5.3), with a generator $\alpha \in L$: 
-$$L^* = \{1,\alpha,\alpha^2,\cdots,\alpha^{m-1}\}.$$
-Every $\gamma$ in $L^*$ is so of the form $\gamma = \alpha^k, k\in \mathbb{N}$, thus $L^* \subset F(\alpha)$, and $0 \in F[\alpha]$, so $L \subset F(\alpha)$. Moreover $F\subset L$, and $\alpha \in L$, thus $F(\alpha) \subset L$.
+$$L^* = \{1,\alpha,\alpha^2,\cdots,\alpha^{m-1}\},\quad  \text{where } m = |L|-1.$$
+So every $\gamma$ in $L^*$ is of the form $\gamma = \alpha^k, k\in \mathbb{N}$, thus $L^* \subset F(\alpha)$, and $0 \in F[\alpha]$, thus $L \subset F(\alpha)$. Moreover $F\subset L$, and $\alpha \in L$, thus $F(\alpha) \subset L$.
 
 $$L = F(\alpha).$$ 
 
@@ -1244,7 +1242,7 @@ The minimal polynomial $f$ of $\alpha$ over $F$ divides  $x^m-1$, which is separ
 }
 
 \begin{proof}
-Here we suppose that $F$ has characteristic 0. So $F$ has $\Q$ as subfield, and $\Z$ as subring.
+Here we suppose that $F$ has characteristic 0. So $F$ has $\Q$ as a subfield, and $\Z$ as a subring.
 
 As $\Z$ is infinite, we can find in $\Z$ an integer $\lambda$ which satisfies (5.16):
 $$\beta_r + \lambda \gamma_s \neq \beta_i + \lambda \gamma_j\ \mathrm{pour}\ (r,s) \neq(i,j).$$
@@ -1281,7 +1279,7 @@ Finally
 \item[(b)]
 Let $\gamma \in L\setminus F$.
 
-We have proved in Example 5.3.4 that the extension $F \subset L$ has no primitive element, thus $F(\gamma) \neq L$ :
+We have proved in Example 5.4.4 that the extension $F \subset L$ has no primitive element, thus $F(\gamma) \neq L$ :
 $$F \subsetneq F(\gamma)\subsetneq L.$$
 
 So $d= [F(\gamma) : F]$ divides $p^2 = [L:F]$. Moreover $d\ne 1$, otherwise $F(\gamma) = F, \gamma \in F$, and $d \ne p^2$, otherwise $F(\gamma) = L$, thus
@@ -1327,7 +1325,7 @@ Moreover, by part (a),  $\alpha,\beta \in F(\alpha+\lambda \beta)$, thus $F(\alp
 $$F(\alpha,\beta) = F(\alpha+\lambda \beta).$$
 But Example 5.4.4 shows that $F(\alpha,\beta)$ has no primitive element : this is a contradiction. 
 
-This reductio ad absurdum shows that all the fields $F(\alpha+\lambda \beta)$, where $\lambda$ varies over all elements of $F$, are distinct. $F$ being infinite, there exists infinitely many intermediate fields between $F$ and $L$.
+This shows that all the fields $F(\alpha+\lambda \beta)$, where $\lambda$ varies over all elements of $F$, are distinct. $F$ being infinite, there exists infinitely many intermediate fields between $F$ and $L$.
 \end{enumerate}
 \end{proof}
 
