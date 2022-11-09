@@ -50,8 +50,6 @@
 \refstepcounter{section}
 \begin{document}
 
-\maketitle
-
 \section{Chapter 6 : THE GALOIS GROUP}
 
 \subsection{DEFINITION OF THE GALOIS GROUP}
@@ -113,7 +111,7 @@ $$  \mathrm{Gal}(\Q(\sqrt{2},\sqrt{3})/\Q) =\{1_L, \sigma, \tau, \sigma \tau\}.$
 \item[(a)]
 If $\varphi : L_1 \to L_2$ is a field isomorphism, and $\sigma \in \mathrm{Gal}(L_1/F_1)$, then ${\sigma : L_1 \to L_1}$, and so $\varphi \circ \sigma \circ \varphi^{-1}$ is a map from $L_2$ to $L_2$, composed of three field isomorphisms. Therefore $\varphi \circ \sigma \circ \varphi^{-1}$ is an automorphism of $L_2$.
 
-Moreover, if $\alpha \in F_2$, then $\varphi^{-1}(\alpha) \in F_1$, since $F_2 = \varphi(F_1)$. As $\sigma \in \mathrm{Gal}(L_1/F_1)$, $\sigma$ is identity on $F_1$, thus $\sigma ( \varphi^{-1})(\alpha))  = \varphi^{-1}(\alpha)$, and $(\varphi \circ \sigma \circ \varphi^{-1}) (\alpha) = \alpha$. Consequently $$\varphi \circ \sigma \circ \varphi^{-1} 
+Moreover, if $\alpha \in F_2$, then $\varphi^{-1}(\alpha) \in F_1$, since $F_2 = \varphi(F_1)$. As $\sigma \in \mathrm{Gal}(L_1/F_1)$, $\sigma$ is identity on $F_1$, thus $\sigma ( \varphi^{-1})(\alpha) = \varphi^{-1}(\alpha)$, and $(\varphi \circ \sigma \circ \varphi^{-1}) (\alpha) = \alpha$. Consequently $$\varphi \circ \sigma \circ \varphi^{-1} 
 \in  \mathrm{Gal}(L_2/F_2).$$
 
 Let
@@ -127,15 +125,15 @@ $$
 \right.
 $$
 
-If $\sigma,\tau \in  \mathrm{Gal}(L_1/F_1)$, $$\chi(\sigma) \chi(\tau) = \varphi \circ \sigma \circ \varphi^{-1} \circ \varphi \circ \tau  \circ \varphi^{-1} =  \varphi \circ \sigma \circ \tau  \circ \varphi^{-1} = \chi(\sigma \circ \tau).$$
-$\chi$ is so a group homomorphism.
+If $\sigma,\tau \in  \mathrm{Gal}(L_1/F_1)$, $$\chi(\sigma) \chi(\tau) = \varphi \circ \sigma \circ \varphi^{-1} \circ \varphi \circ \tau  \circ \varphi^{-1} =  \varphi \circ \sigma \circ \tau  \circ \varphi^{-1} = \chi(\sigma \circ \tau),$$
+so $\chi$ is a group homomorphism.
 
 Moreover, if $\chi(\sigma) = \mathrm{id}$, then $\varphi \circ \sigma \circ \varphi^{-1} = \mathrm{id}$, 
 then $\sigma = \varphi^{-1} \circ \varphi = \mathrm{id}$ : $\ker(\chi) = \{\mathrm{id}\}$, so $\chi$ is injective.
 
 If $\tau \in  \mathrm{Gal}(L_2/F_2)$, let $\sigma = \varphi^{-1} \circ \tau \circ \varphi$, then $\sigma \in  \mathrm{Gal}(L_1/F_1)$ with the same arguments, and $\chi(\sigma) = \tau$, thus $\chi$ is surjective.
 
-Conclusion : $\chi : \mathrm{Gal}(L_1/F_1)  \to    \mathrm{Gal}(L_2/F_2)$ is a group isomorphism.
+Conclusion: $\chi : \mathrm{Gal}(L_1/F_1)  \to    \mathrm{Gal}(L_2/F_2)$ is a group isomorphism.
 
 \item[(b)]
 
@@ -253,7 +251,7 @@ $\Gal(L/\Q)\simeq \Z/2\Z \times \Z/2\Z.$
 We proved in Exercise 6.1.2 that $$ G:= \mathrm{Gal}(\Q(\sqrt{2},\sqrt{3})/\Q) =\{1_L, \sigma, \tau, \sigma \tau\}.$$
 Every group of order 4 is abelian, and isomorphic to $\Z/4\Z$ or $\Z/2\Z \times \Z/2\Z$.
 
-As $G$ has at least 2 elements of order 2, since $\sigma^2 = \tau^2 = 1_L$. This is not the case in  $\Z/4\Z$. Thus 
+We note that $G$ has at least 2 elements of order 2, since $\sigma^2 = \tau^2 = 1_L$. This is not the case in  $\Z/4\Z$. Thus 
 $$\mathrm{Gal}(\Q(\sqrt{2},\sqrt{3})/\Q) \simeq \Z/2\Z \times \Z/2\Z.$$
 \end{proof}
 
@@ -307,10 +305,12 @@ Moreover by Proposition 6.4.1(a), $\sigma(\zeta)$ is a root of $f = x^4+x^3+x^2+
 
 Then Exercice 6.1.1 shows that $$\vert \mathrm{Gal}(L/\Q)\vert \leq \deg(f)\deg(g)=20.$$
 
-\item[(b)]
-$L$ is the splitting field of the separable irreducible polynomial $g = x^5-2\in \Q[x]$ over $\Q$. Indeed,  $g$ is  irreducible over $\Q$ by Sch$\ddot o$nemann-Eisenstein Criterion with $p=2$, and separable since its roots in $\C$ are $\sqrt[5]{2}, \zeta\sqrt[5]{2},\zeta^2 \sqrt[5]{2},\zeta^3 \sqrt[5]{2},\zeta^4\sqrt[5]{2}$ which are distinct.
+Moreover, by Exercise 5.1.8, $[L:\Q]=4 \times 5 = 20$.
 
-By theorem 6.2.1, $\vert \mathrm{Gal}(L/\Q)\vert = [L:\Q]$, and by Exercise 5.1.8, $[L:\Q]=4 \times 5 = 20$, therefore
+\item[(b)]
+$L$ is the splitting field of the separable irreducible polynomial $g = x^5-2\in \Q[x]$ over $\Q$. Indeed,  $g$ is  irreducible over $\Q$ by Sch\"onemann-Eisenstein Criterion with $p=2$, and separable since its roots in $\C$ are $\sqrt[5]{2}, \zeta\sqrt[5]{2},\zeta^2 \sqrt[5]{2},\zeta^3 \sqrt[5]{2},\zeta^4\sqrt[5]{2}$ which are distinct.
+
+By theorem 6.2.1, $\vert \mathrm{Gal}(L/\Q)\vert = [L:\Q]$, therefore
 
 $$\vert \mathrm{Gal}(L/\Q)\vert = [L:\Q]=20.$$
 \end{enumerate}
@@ -336,7 +336,7 @@ In chapter 9 we will prove that $[\Q(\zeta_n):\Q] = \phi(n)$. By part (e), this 
  $\zeta_n$ is a root of $x^n-1\in \Q[x]$. Write $\U_n$ the set of $n$th  roots of unity in $\C$ : $$\U_n = \{\zeta_n^k,\  0\leq k \leq n-1\}$$ and $|\U_n| = n$.
 
 As $x^n-1 = \prod\limits_{\zeta \in \U_n}(x-\zeta)$, $x^n-1$ is separable, and the splitting field of $x^n-1$ over $\Q$ is 
-$\Q(\zeta,\ldots, \zeta^{n-1}) = \Q(\zeta)$
+$\Q(\zeta_n,\ldots, \zeta_n^{n-1}) = \Q(\zeta_n)$
 
 Conclusion: $\Q(\zeta_n)$ is the splitting field of the separable polynomial $x^n-1\in \Q[x]$ over $\Q$.
 
@@ -397,7 +397,7 @@ $$\varphi : \Gal(\Q(\zeta_n)/\Q)   \to   ( \Z/n\Z)^*.$$
 \item[(e)]
 As $\Q(\zeta_n)$ is the splitting field of a separable polynomial over  $\Q$, $$\vert  \Gal(\Q(\zeta_n)/\Q)\vert = [\Q(\zeta_n):\Q].$$
 
-If we suppose that $ [\Q(\zeta_n):\Q]= \phi(n)$,  $\varphi$ is an injection between two set of same cardinality, thus $\varphi$ is a bijection, and so $\varphi$ is a group isomorphism. Conversely, if $\varphi$ is a group isomorphism, then $ [\Q(\zeta_n):\Q] = \Gal(\Q(\zeta_n)/\Q)\vert = \phi(n)$
+If we suppose that $ [\Q(\zeta_n):\Q]= \phi(n)$,  $\varphi$ is an injection between two set of same cardinality, thus $\varphi$ is a bijection, and so $\varphi$ is a group isomorphism. Conversely, if $\varphi$ is a group isomorphism, then $ [\Q(\zeta_n):\Q] = \vert \Gal(\Q(\zeta_n)/\Q)\vert = \phi(n)$
 
 Conclusion: $ [\Q(\zeta_n):\Q] = \phi(n)$ if and only if $ \Gal(\Q(\zeta_n)/\Q)   \simeq   ( \Z/n\Z)^*$.
 
@@ -405,7 +405,7 @@ Conclusion: $ [\Q(\zeta_n):\Q] = \phi(n)$ if and only if $ \Gal(\Q(\zeta_n)/\Q) 
 \item[(f)]
 If $p$ is prime, we know  that $f = 1+x+\cdots+x^{p-1}$ is irreducible over $\Q$, so $f$ is the minimal polynomial of $\zeta_p$ over $\Q$. This implies that $[\Q(\zeta_p) : \Q] = p-1 = \phi(p)$.
 
-By part (e), we know then that $ \Gal(\Q(\zeta_p)/\Q)   \simeq   ( \Z/p\Z)^*$ (and so this group is cyclic).
+By part (e), we know then that $ \Gal(\Q(\zeta_p)/\Q)   \simeq   ( \Z/p\Z)^*$ (and so this group is cyclic with order $p-1$).
 \end{enumerate}
 \end{proof}
 
@@ -435,7 +435,7 @@ $$\Gal(L/F) \simeq \Z/p\Z.$$
 \item[(b)]
  $F \subset L$ is by part (a) a normal extension, and $f \in F[x]$  is irreducible over $F$ by hypothesis. The roots of $f$ in L are $\alpha,\alpha +1, \ldots, \alpha+p-1$. By Proposition 5.1.8 , there exists a field isomorphism $\sigma_i : L \to L$ which is identity on $F$ and which takes $\alpha$ on $\alpha+i, i \in \F_p$. Then $\sigma_i \in \Gal(L/F), \sigma(\alpha) = \alpha+i$. As $L=F(\alpha)$, $\sigma$ is uniquely determined by the image of $\alpha$.
  
- Conclusion: $\alpha$ being a fixed root of $f$, and $i\in \F_p$, there exist a unique $\sigma_i \in \Gal(L/F)$ such that $ \sigma_i(\alpha) = \alpha+i$.
+ Conclusion: $\alpha$ being a fixed root of $f$, and $i\in \F_p$, there exists a unique $\sigma_i \in \Gal(L/F)$ such that $ \sigma_i(\alpha) = \alpha+i$.
 
 \item[(c)]
  
@@ -460,7 +460,7 @@ $\bullet$ For all $\sigma \in \Gal(L/F)$, $\varphi(\sigma) \in \F_p$ since $\sig
  
  As $(\sigma \circ \tau)(\alpha) = \alpha+(i+j)$, $\varphi(\sigma \circ \tau) = i+j = \varphi(\sigma) + \varphi(\tau)$.
  
- $\varphi : \Gal(L/F) \to \F_p  $ is so a group isomorphism.
+ So $\varphi : \Gal(L/F) \to \F_p  $ is a group isomorphism.
 \end{enumerate}
 \end{proof}
 
@@ -476,7 +476,7 @@ Let $L$ a splitting field of  $f$ over $F$, where $f$ is a separable irreducible
 By Proposition 6.2.1 (using the separability of $f$) :
 $$\vert \Gal(L/F) \vert =[L:F].$$
 
-Let $\alpha$ a root of  $f$ in  $L$. As $f$ is irreducible, $f$ is the minimal polynomial of $\alpha$ over $F$, thus $[F(\alpha) : F] = \deg(f) = n$, and
+Let $\alpha$ be a root of  $f$ in  $L$. As $f$ is irreducible, $f$ is the minimal polynomial of $\alpha$ over $F$, thus $[F(\alpha) : F] = \deg(f) = n$, and
 $$[L:F] = [L:F(\alpha)]\, [F(\alpha) : F] = n [L:F(\alpha)] :$$
 So $n$ divides $\vert \Gal(L/F) \vert$.
 
@@ -506,7 +506,7 @@ Then $\sigma(\alpha_1) = \alpha_2, \sigma(\alpha_2) =\alpha_3, \sigma(\alpha_3) 
 
 $\tau(\alpha_1) = \alpha_1, \tau(\alpha_2) = \alpha_3, \tau(\alpha_3) = \alpha_2$, so $\tilde{\tau} = (2,3)$  corresponds to $\tau$.
 
-As $S_3$ is generated by $\tilde{\sigma}, \tilde{\tau}$, $ \Gal(L/\Q)$ is generated by $\sigma,\tau$.
+As $S_3$ is generated by $\tilde{\sigma}, \tilde{\tau}$, $ \Gal(L/\Q) \simeq S_3$ is generated by $\sigma,\tau$.
 \end{proof}
 
 \paragraph{Ex. 6.3.2}
@@ -522,11 +522,15 @@ As $S_3$ is generated by $\tilde{\sigma}, \tilde{\tau}$, $ \Gal(L/\Q)$ is genera
 \begin{enumerate}
 \item[(a)]
 $\Gal(\Q(i,\sqrt{2})/\Q) = \{1_{\Q}, \sigma, \tau, \sigma\tau\}$, where
-$$\sigma(i) = -i, \sigma(\sqrt{2}) = \sqrt{2},$$
-$$\tau(i) = i, \tau(\sqrt{2}) = -\sqrt(2).$$
+$$
+\begin{array}{ll}
+\sigma(i) = -i, &\sigma(\sqrt{2}) = \sqrt{2},\\
+\tau(i) = i, &\tau(\sqrt{2}) = -\sqrt{2}.
+\end{array}
+$$
 As every  $g \in \Gal(\Q(i,\sqrt{2})/\Q)$  satisfies $g^2 = 1_{\Q}$, 
 $$\Gal(\Q(i,\sqrt{2})/\Q) \simeq \Z/2\Z \times \Z/2\Z$$
-(Klein's ViertelGruppe: cf Exercise 6.2.1 and example 6.2.2 for more details).
+(Klein's ViertelGruppe: cf Exercise 6.2.1 and Example 6.2.2 for more details).
 
 If we number the roots by $\alpha_1 = i, \alpha_2 = -i, \alpha_3 = \sqrt{2}, \alpha_4 = -\sqrt{2}$, then $(1,2)$ corresponds to $\sigma$, and $(3,4)$ to $\tau$.
 
@@ -538,7 +542,7 @@ As subgroup of $S_4$, $\Gal(Q(i,\sqrt{2})/\Q)$ is represented by $$\{ (), (1,2),
  &=(x^2-\sqrt{2})(x^2+\sqrt{2})\\
  &=(x-\sqrt[4]{2})(x+\sqrt[4]{2})(x+i\sqrt[4]{2})(x-i\sqrt[4]{2})
 \end{align*}
-The splitting field of $f$ over $\Q$ is so $L = \Q(\sqrt[4]{2},i\sqrt[4]{2}) = \Q(i,\sqrt[4]{2})$. $f$ is separable, since $f$ has simple roots in its splitting field. $L$ is so the splitting field over $\Q$ of a separable  polynomial, therefore by Theorem 6.2.1,$$\vert \Gal(L:\Q) \vert= [L:\Q].$$
+The splitting field of $f$ over $\Q$ is thus $L = \Q(\sqrt[4]{2},i\sqrt[4]{2}) = \Q(i,\sqrt[4]{2})$. $f$ is separable, since $f$ has simple roots in its splitting field. $L$ is so the splitting field over $\Q$ of a separable  polynomial, therefore by Theorem 6.2.1,$$\vert \Gal(L:\Q) \vert= [L:\Q].$$
 
 $f$ is irreducible over $\Q$ by the Sch$\ddot o$nemann-Eisenstein Criterion with $p=2$.
 As $f$ is irreducible over $\Q$, $$[\Q(\sqrt[4]{2}) : \Q] = \deg(f) = 4,$$ and $x^2+1$ is irreducible over $\Q(\sqrt[4]{2})$, since it is of degree 2, without root in $\Q(\sqrt[4]{2}) \subset \R$, thus $${[\Q(i,\sqrt[4]{2}) : \Q(\sqrt[4]{2})] = 2}.$$
@@ -551,16 +555,16 @@ $$\vert \Gal(L:\Q) \vert = 8.$$
 If $\sigma \in \Gal(L/\Q)$, as $i$ is a root of $x^2+1 \in \Q[x]$, and $\sqrt[4]{2}$ a root of $x^4-2 \in \Q[x]$, then $\sigma(i) = \pm i$, and $\sigma(\sqrt[4]{2}) = i^k \sqrt[4]{2},k=0,1,2,3$.
 
 As $\sigma$ is uniquely determined by the images of $ i,\sqrt[4]{2}$, and as $\vert \Gal(L:\Q) \vert = 8$, these 8 possibilities occur, thus $G=\Gal(L/\Q) = \{\sigma_{j,k} \ \vert \ 0\leq j \leq1, 0 \leq k \leq 3 \}$, where $\sigma_{j,k}$, which is identity on $\Q$, is determined by
-$$\sigma_{j,k}(i) = (-1)^j i, \sigma_{j,k}(\sqrt[4]{2}) = i^k \sqrt[4]{2}.$$
+$$\sigma_{j,k}(i) = (-1)^j i,\quad \sigma_{j,k}(\sqrt[4]{2}) = i^k \sqrt[4]{2}.$$
 
 Write $\tau :L \to L, z \mapsto \overline{z}$ the complex conjugation restricted to $L$. $\tau$ is a ring homomorphism and an involution, thus $\tau$ is a field automorphism of $L$, which is identity on $\Q$, so $\tau \in G$. Moreover 
 
-$$ \tau(i) = -i, \tau(\sqrt[4]{2}) = \sqrt[4]{2},$$
+$$ \tau(i) = -i, \tau(\sqrt[4]{2}) = \sqrt[4]{2}.$$
 
 Let $\sigma \in \Gal(L/\Q)$ defined by $$\sigma(i)=i, \sigma(\sqrt[4]{2}) = i \sqrt[4]{2}.$$
 Then  $\tau = \sigma_{1,0}, \sigma = \sigma_{0,1}$.
 
-As $\tau^2 = 1_L$ and $\tau \neq e$, the order of $\tau$ is 2.
+As $\tau^2 = e$ and $\tau \neq e$ (where $e = 1_L$), the order of $\tau$ is 2.
 
 $\sigma^4(i) = i$ and $\sigma^4(\sqrt[4]{2}) = \sqrt[4]{2}$, thus $\sigma^4 = e$. As $\sigma^2(\sqrt[4]{2}) = i^2 \sqrt[4]{2}=-\sqrt[4]{2},\sigma_2 \neq e$, thus the order of $\sigma$ is 4.
 $$|\tau| = 2, \qquad |\sigma| = 4.$$
@@ -574,11 +578,11 @@ As the index of  $H = \langle \sigma \rangle$ in $G$ is 2, and $\tau \not \in H$
 If we number the roots of $f$ by  $\alpha_k=  i^{k-1} \sqrt[4]{2}$, for $k=1,2,3,4$, then $\tau$ corresponds to the transposition $(2,4)$, and $\sigma$ to the cycle $(1,2,3,4)$ :
 $$G\simeq \langle(1,2,3,4),(2,4)\rangle \subset S_4.$$
 
-If we number the 4 summits of a square by 1,2,3,4 in the direct orientation, then $\sigma$ corresponds to a rotation of angle $\pi/2$, and $\tau$ to a symmetry with respect to the diagonal $[1,3]$. They generate the group of isometry of the square, which is the dihedral group $D_8$, defined also by generators and relations :
+If we number the 4 summits of a square by 1,2,3,4 in the direct orientation, then $\sigma$ corresponds to a rotation of angle $\pi/2$, and $\tau$ to a symmetry with respect to the diagonal $[1,3]$. They generate the group of isometry of the square, which is the dihedral group $D_8$, defined also by generators and relations:
 
 $$G = \langle \sigma, \tau \rangle, \sigma^4 = \tau^2 = e, \tau \sigma = \sigma^{-1} \tau.$$
 
-(Since $\tilde{\sigma}^{-1} \tilde{\tau} = (1,4,3,2) (2,4)  = (4,3,2,1) =(2,4) (1,2,3,4)= \tilde{\tau} \tilde{\sigma}$.)
+(Since $\tilde{\sigma}^{-1} \tilde{\tau} = (1,4,3,2) (2,4)  = (1,4)(2,3) =(2,4) (1,2,3,4)= \tilde{\tau} \tilde{\sigma}$.)
 
 As a verification, the following GAP instruction confirm the result $D_8$ : 
 \begin{verbatim}
@@ -806,7 +810,7 @@ For a fixed $\alpha \in  S$, define $G_{\alpha}= \mathrm{Stab}_G(\alpha) = \{\si
 
 As $f$ is irreducible, by proposition 5.8.1, if $\alpha,\beta$ are two roots of $f$, there exists a field isomorphism $\sigma : L \to L$, which is identity on $F$ (so $\sigma \in \Gal(L/F)$,  and such that $\sigma(\alpha) = \beta$.
 
-Therefore the action of $G$ on $S$ is transitive, so there exists a unique orbit : for all $\alpha \in S$, $\cal{O}_\alpha = S$, thus
+Therefore the action of $G$ on $S$ is transitive, so there exists a unique orbit : for all $\alpha \in S$, ${\cal O}_\alpha = S$, thus
 $$|{\cal O}_\alpha| = |S| = n.$$
 Indeed the separability of $f$ implies that $f$ has $n = \deg(f)$ distinct roots in $L$.
 
@@ -929,7 +933,7 @@ Conclusion: $$\tau\cdot (\gamma \cdot f) = (\tau\gamma) \cdot f.$$
 }
 
 \begin{proof}
-We know (Exercise 6.4.3 (a)) that $\varphi : f\mapsto \tau \cdot f$ is a ring isomorphism. As $\tau \in S_n$, $\tau$ is bijective and so $\tau^{-1}$ exists.  Let $\psi : f\mapsto \tau^{-1} \cdot f$. Then for all $f \in F[x_1,\ldots,x_n]$, by Exercise 6.4.3 (b)
+We know (Exercise 6.4.3 (a)) that $\varphi : f\mapsto \tau \cdot f$ is a ring homomorphism. As $\tau \in S_n$, $\tau$ is bijective and so $\tau^{-1}$ exists.  Let $\psi : f\mapsto \tau^{-1} \cdot f$. Then for all $f \in F[x_1,\ldots,x_n]$, by Exercise 6.4.3 (b)
 \begin{align*}
 (\psi \circ \varphi)(f) &= \tau^{-1} \cdot (\tau \cdot f) = (\tau^{-1} \tau)\cdot f = 1_{[1,n]} \cdot f = f\\
 (\varphi \circ \psi)(f) &= \tau \cdot (\tau^{-1} \cdot f) = (\tau \tau^{-1})\cdot f = 1_{[1,n]} \cdot f = f\\
@@ -1047,7 +1051,7 @@ The subgroup of  $S_n$ of the permutations fixing $n$ is identified with $S_{n-1
 $$\mathrm{Stab}_{S_n}(n) = S_{n-1}.$$
 
 Let $\sigma \in S_n$ and $i = \sigma(n)$.
-By above conclusion, there exist $g \in G_n$ such that $g(n) = i$. 
+By the above conclusion, there exists $g \in G_n$ such that $g(n) = i$. 
 Then $$(g^{-1} \circ \sigma)(n) = n :  g' = g^{-1} \circ \sigma \in S_{n-1}.$$
 
 Thus $\sigma = g \circ g'$, where $g \in G_n, g' \in G_{n-1} \subset G_n$, therefore $\sigma \in G_n$.
@@ -1133,10 +1137,10 @@ Analysis: if $(h',g')$ is the inverse of $(h,g)$, then $(h(g\cdot h'),gg') = (1,
 
 Synthesis: we show that $( g^{-1} \cdot (h^{-1}),g^{-1})$ is the inverse of $(h,g)$ :
 \begin{align*}
-(h,g).( g^{-1} \cdot (h^{-1}),g^{-1}) &= (h (g.(g^{-1}\cdot (h^{-1}))), g g^{-1})\\
+(h,g).( g^{-1} \cdot (h^{-1}),g^{-1}) &= (h (g\cdot(g^{-1}\cdot (h^{-1}))), g g^{-1})\\
 &= (h (g g^{-1}\cdot (h^{-1})), 1)\\
 &=(hh^{-1},1) = (1,1)\\
-( g^{-1} \cdot (h^{-1}),g^{-1})(h,g) &= ((g^{-1} \cdot (h^{-1})) (g^{-1}.h), g^{-1}g)\\
+( g^{-1} \cdot (h^{-1}),g^{-1})(h,g) &= ((g^{-1} \cdot (h^{-1})) (g^{-1}\cdot h), g^{-1}g)\\
 &=(g^{-1}\cdot(h^{-1}h),1)\\
 &=(g^{-1}\cdot 1,1) = (1,1)
 \end{align*}
@@ -1269,8 +1273,10 @@ Conclusion :  $\sigma = \sigma_1$ is a $p$-cycle.
 {\it Let $L$ be the splitting field of $2x^5 - 10x+ 5$ over $\Q$. Prove that ${\Gal(L/\Q) \simeq S_5}$.
 }
 
-{\bf Lemma} : {\it  Let $p$ be a prime number. Let $\alpha = (i,j)\in S_p$ a transposition, and $\beta\in S_p$ a $p$-cycle. 
+{\bf Lemma} : {\it  Let $p$ be a prime number. Let $\alpha = (i,j)\in S_p$ be a transposition, and $\beta\in S_p$ a $p$-cycle. 
 Then $S_p = \langle \alpha,\beta \rangle$}.
+
+\bigskip
 
 {\it Proof of lemma.}  $\beta \in S_p$ is a $p$-cycle, so $\beta = (a_1,a_2,\ldots,a_p) = (a , \beta(a), \ldots, \beta^{p-1}(a))$, 
 
@@ -1282,23 +1288,22 @@ The support of $\beta$, $\mathrm{Supp}(\beta) = \{a_1,\cdots,a_p\}$ has so $p$ e
 
 $$\mathrm{Supp}(\beta) =\{1,2,\ldots,p\}.$$
 
-So there exists $r<p, s<p$ such that $i = \beta^r(a), j = \beta^s(a)$, thus $j = \beta^{s-r}(i)$.
+So there exist $r<p, s<p$ such that $i = \beta^r(a), j = \beta^s(a)$, thus $j = \beta^{s-r}(i)$.
 
-Let $k$ the remainder of the division of $s-r$ by $p$. Then $\beta^k(i) = j, 0 \leq k \leq p-1,$
-
-and as $i\neq j$ since $\alpha = (i j)$ is a transposition, $k\neq 0$, so
-$$\beta^k(i) = j, 1 \leq k \leq p-1.$$
+Let $k$ be the remainder of the division of $s-r$ by $p$. Then $\beta^k(i) = j,\ 0 \leq k \leq p-1.$
+Moreover $i\neq j$, since $\alpha = (i j)$ is a transposition, thus $k\neq 0$, so
+$$\beta^k(i) = j,\  1 \leq k \leq p-1.$$
 As $p$ is prime, and $1 \leq k \leq p-1$, $\beta^k$ is also a $p$-cycle.
 
  Indeed,  $H = \{n \in \mathbb{Z} \ \vert  \ (\beta^k)^n(a) = a\}$ is a subgroup of $\mathbb{Z}$, therefore it is of the form $H=d\mathbb{Z}, d>0$.
 
 As $p \in H$, $d$ divides $p$, and $d \neq 1$ (otherwise $\beta^k(a) = a, k<p $), thus $d = p$.
 
-Consequently $\beta^k = (a, \beta^k(a), \beta^{2k}(a), \ldots,\beta^{(p-1)k}(a))$ is a $p$-cycle, thus $i$ is in the support of $\beta^k$.
+Consequently $\beta^k = (a, \beta^k(a), \beta^{2k}(a), \ldots,\beta^{(p-1)k}(a))$ is a $p$-cycle, thus $i$ is in the support of $\beta^k$, hence $ \beta^k = (i , j = \beta^k(i), \cdots,\beta^{(p-1)k}(i) )$.
 
-$\alpha= (i,j), \beta^k = (i , j = \beta^k(i), \cdots,\beta^{(p-1)k}(i) )$ generate  $S_n$ as in Exercice 7 where we have proved that $\sigma = (1,2,\ldots,p)$ and $\tau = (1,2)$ generate $Sp$.
+Now we prove that $\alpha= (i,j), \beta^k = (i , j = \beta^k(i), \cdots,\beta^{(p-1)k}(i) )$ generate  $S_p$. In Exercice 7 where we have proved that $\tau = (1,2)$ and $\sigma = (1,2,\ldots,p)$ generate $S_p$.
 
- There is a simple relabeling of the roots. More formally, let 
+A simple relabeling of the roots permits to prove that $\alpha,\beta^k$ generate $S_p$. More formally, write
  $$\gamma =
 \left(
 \begin{array}{cccc}
@@ -1322,15 +1327,15 @@ $\qed$
 \bigskip 
 
 \begin{proof}
-Let $f=2x^5-10x+5 \in \Q[x]$, and $L$ the splitting field of $f$, $G = \Gal(L,\Q)$, and $G' \subset S_5$ the corresponding subgroup of $S_5$ isomorphic to $G$.
+Let $f=2x^5-10x+5 \in \Q[x]$, and $L$ the splitting field of $f$, $G = \Gal(L,\Q)$, and $\tilde{G}\subset S_5$ the corresponding subgroup of $S_5$ isomorphic to $G$.
 
-The  Sch$\ddot o$nemann-Eisenstein Criterion with $p=5$ shows that $f$ is irreducible over $\Q$ (if  $f= \sum_{k=0}^5 a_i x^i$, $5\nmid a_5=2, 5\mid a_i, i=0,\ldots 4, 5^2\nmid a_0 = 5$).
+The  Sch\"onemann-Eisenstein Criterion with $p=5$ shows that $f$ is irreducible over $\Q$ (if  $f= \sum_{k=0}^5 a_i x^i$, $5\nmid a_5=2, 5\mid a_i, i=0,\ldots 4, 5^2\nmid a_0 = 5$).
 
 Thus $G$ acts transitively on the roots of $f$ (Proposition 6.3.7). By Exercise 6.3.6, 5 divides $ \vert G \vert$.
 
-By Cauchy's Theorem, there exists an element $\sigma$ of order 5 in $G$, thus an element  $\tilde{\sigma}$ of order 5 in $G' \subset S_5$. Exercice 6.4.6(a) shows that $\tilde{\sigma}$ is a 5-cycle.
+By Cauchy's Theorem, there exists an element $\sigma$ of order 5 in $G$, thus an element  $\tilde{\sigma}$ of order 5 in $\tilde{G} \subset S_5$. Exercice 6.4.6(a) shows that $\tilde{\sigma}$ is a 5-cycle.
 
-For all $t \in \R, f'(t) <  0 \iff \vert t \vert < 1$, $f$ is strictly decreasing on $[-1,1]$,  strictly increasing on $]-\infty,-1]$ and on $[1,+\infty[$. As $f$ is continuous, $f(1) = -3<0, f(-1) = 13>0$, and $\lim_{+\infty} f= +\infty, \lim_{-\infty} f= -\infty$, the Intermediate Values Theorem shows that the polynomial $f$ has exactly 3 real roots, thus 2 non real conjugate complex roots. The restriction $\tau$ of complex conjugation to $L$ is a $\Q$-automorphism of $L$ (thus $\tau \in G$) who fixes three roots and exchanges the two others. The corresponding element  $\tilde{\tau}$ in $G' \subset S_5$ is so a transposition. By the above Lemma, $G' = S_5$, and so $$G = \Gal(L/\Q) \simeq S_5.$$
+For all $t \in \R, f'(t) <  0 \iff \vert t \vert < 1$, $f$ is strictly decreasing on $[-1,1]$,  strictly increasing on $]-\infty,-1]$ and on $[1,+\infty[$. As $f$ is continuous, $f(1) = -3<0, f(-1) = 13>0$, and $\lim_{+\infty} f= +\infty, \lim_{-\infty} f= -\infty$, the Intermediate Values Theorem shows that the polynomial $f$ has exactly 3 real roots, thus 2 non real conjugate complex roots. The restriction $\tau$ of complex conjugation to $L$ is a $\Q$-automorphism of $L$ (thus $\tau \in G$) who fixes three roots and exchanges the two others. The corresponding element  $\tilde{\tau}$ in $\tilde{G} \subset S_5$ is so a transposition. By the above Lemma, $\tilde{G} = S_5$, and so $$G = \Gal(L/\Q) \simeq S_5.$$
 \end{proof}
 
 \paragraph{Ex. 6.4.14}
@@ -1402,7 +1407,9 @@ Moreover, as $\alpha$ is algebraic over $F$, $F(\alpha) = F[\alpha]$, therefore 
 }
 
 \begin{proof}
-As in Example 6.5.1, let $\theta_1(x) = x, \theta_2(x) = -x, \theta_3(x) = 10x-x^3,\theta_4(x) = -10x+x^3$, so the solutions of the equations are $\alpha_i = \theta_i(\alpha), \ i=1,2,3,4$.
+As in Example 6.5.1, where
+$$x^4 - 10x^2 + 1 = (x-\alpha)(x+\alpha)(x-10\alpha + \alpha^3)(x+10\alpha - \alpha^3),$$
+let $\theta_1(x) = x, \theta_2(x) = -x, \theta_3(x) = 10x-x^3,\theta_4(x) = -10x+x^3$, so the solutions of the equation are $\alpha_i = \theta_i(\alpha), \ i=1,2,3,4$.
 
 The roots of $f$ being polynomials in $\alpha$, the splitting field of $f$ is $F(\alpha)$ (See  Exercise 1).
 
@@ -1464,7 +1471,7 @@ The roots of $f=x^n-1$ in $\C$ are $\zeta^k, 0\leq k < n$, where $\zeta = e^{2i\
 
 The splitting field of $f$ over $\Q$ is $Q(1,\zeta,\cdots,\zeta^{n-1}) = \Q(\zeta)$. Moreover, every root $\zeta^k$ is of the form $\zeta^k = \theta_k(\zeta)$, where $\theta_k = x^k,0\leq k \leq n-1$.
 
-$$\theta_i(\theta_j(\zeta)) = (\zeta^j)^i = \zeta^{ji} = (\zeta^i)^j = \theta_j(\theta_i(\zeta)),\ 0\leq i,j \leq n-1,$$ so by definition $x^n-1=0$ is an Abelian equation.
+$$\theta_i(\theta_j(\zeta)) = \theta_i(\zeta^j) = (\zeta^j)^i = \zeta^{ji} = (\zeta^i)^j = \theta_j(\theta_i(\zeta)),\ 0\leq i,j \leq n-1,$$ so by definition $x^n-1=0$ is an Abelian equation.
 \end{proof}
 
 \paragraph{Ex. 6.5.5}
@@ -1517,16 +1524,16 @@ Suppose that $F \subset L$ is normal and separable and that $G = \Gal(L/F)$ is a
 As $F \subset L$ is separable, the Theorem of the Primitive Element shows that there exists a separable element $\alpha \in L$ such that $L=F(\alpha)$.
 
 \item[(b)]
-Let $f$ the minimal polynomial of $\alpha$ over $F$. Then $f$ is irreducible and separable. As $F \subset L$ is normal, the roots $\alpha_1=\alpha,\ldots,\alpha_n$ of $f$ are all in $L$, so  $L = F(\alpha) = F(\alpha_1,\ldots,\alpha_n)$ is the splitting field of $f$. By Exercise 1, there exist polynomials $\theta_i\in F[x]$ such that $\alpha_i = \theta_i(\alpha),\ i= 1,\ldots,n$.
+Let $f$ be the minimal polynomial of $\alpha$ over $F$. Then $f$ is irreducible and separable. As $F \subset L$ is normal, the roots $\alpha_1=\alpha,\ldots,\alpha_n$ of $f$ are all in $L$, so  $L = F(\alpha) = F(\alpha_1,\ldots,\alpha_n)$ is the splitting field of $f$. By Exercise 1, there exist polynomials $\theta_i\in F[x]$ such that $\alpha_i = \theta_i(\alpha),\ i= 1,\ldots,n$.
 
 Let $1\leq i,j \leq n$. As $f$ is separable and irreducible, by Proposition 6.3.7, the Galois group $G$ acts transitively on the set of the roots of $f$, so there exists $\sigma, \tau \in G$ such that $\theta_i(\alpha) = \sigma(\alpha)$ and $\theta_j(\alpha) = \tau(\alpha)$.
 
-Exercise 3 shows that $(\sigma \tau)(\alpha) = \theta_j(\theta_i(\alpha))$ and $(\tau \sigma)(\alpha) = \theta_i(\theta_j(\alpha))$ . As $G$ is Abelian by hypothesis, $\sigma \tau = \tau \sigma$, so
+Exercise 3 shows that $(\sigma \tau)(\alpha) = \theta_j(\theta_i(\alpha))$ and $(\tau \sigma)(\alpha) = \theta_i(\theta_j(\alpha))$. As $G$ is Abelian by hypothesis, $\sigma \tau = \tau \sigma$, so
 
 $$ \theta_j(\theta_i(\alpha)) =  \theta_i(\theta_j(\alpha)), 1\leq i,j \leq n.$$
 The equation $f=0$ is Abelian.
 
-Conclusion: if the finite extension $F\subset L$ is normal and separable and has an Abelian Galois group, and if $f$ is the minimal polynomial of a primitive element $\alpha$, then $f=0$ is an Abelian equation.
+Conclusion: If the finite extension $F\subset L$ is normal and separable and has an Abelian Galois group, and if $f$ is the minimal polynomial of a primitive element $\alpha$, then $f=0$ is an Abelian equation.
 \end{enumerate}
 \end{proof}
 \paragraph{Ex. 6.5.7}
@@ -1542,7 +1549,7 @@ Let $f \in \Q[x]$ such that the equation $f=0$ is Abelian. Then $f$ has a root $
 Conversely, suppose that the roots $\alpha_1,\ldots,\alpha_n$ of any Abelian equation $f=0$ in the splitting field of $f$ can be expressed rationally in terms of a root of unity
  $\zeta_n$, and suppose also (a) : $\Q\subset L \subset \C$, the extension $\Q\subset L$ is normal, and $\Gal(L/\Q)$ is an Abellan group.
  
- As the characteristic of $\Q$ is 0, $\Q\subset L$  is also separable, and there exists a primitive element $\alpha$ for the extension  $\Q \subset L$. Let $f$ the minimal polynomial of $\alpha$ over $\Q$. By Exercise 6, since $\Q\subset L$ is normal and separable, the equation $f=0$ is Abelian. By hypothesis, the roots  $\alpha_1=\alpha,\ldots,\alpha_n$ of $f$ can be expressed rationally in terms of a root of unity $\zeta_n$, therefore $\alpha_i \in \Q(\zeta_n), 1\leq i \leq n$. In particular $\alpha \in \Q(\zeta_n)$, thus $L = \Q(\alpha) \subset \Q(\zeta_n)$. (b) is so proved under the hypothesis (a).
+ As the characteristic of $\Q$ is 0, $\Q\subset L$  is also separable, and there exists a primitive element $\alpha$ for the extension  $\Q \subset L$. Let $f$ be the minimal polynomial of $\alpha$ over $\Q$. By Exercise 6, since $\Q\subset L$ is normal and separable, the equation $f=0$ is Abelian. By hypothesis, the roots  $\alpha_1=\alpha,\ldots,\alpha_n$ of $f$ can be expressed rationally in terms of a root of unity $\zeta_n$, therefore $\alpha_i \in \Q(\zeta_n), 1\leq i \leq n$. In particular $\alpha \in \Q(\zeta_n)$, thus $L = \Q(\alpha) \subset \Q(\zeta_n)$. (b) is so proved under the hypothesis (a).
 
 
 Conclusion : (a)$\Rightarrow$(b) is equivalent to the assertion of Kronecker : the roots of an Abelian equation over $\Q$ can be expressed rationally in terms of a root of unity.
