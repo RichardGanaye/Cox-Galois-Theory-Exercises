@@ -51,7 +51,6 @@
 
 \begin{document}
 
-\maketitle
 
 \section{Chapter 7 : THE GALOIS CORRESPONDENCE}
 
@@ -92,7 +91,7 @@ By hypothesis, the extension $F \subset L$ is finite, normal and separable. As $
 
 We show that $L$ is the splitting field of $f$ over $F$.
 
-As $q_j = p_i$ for some $i,\ 1\leq i \leq n$ is the minimal polynomial of $\alpha_i \in L$ over $F$, and as $F \subset L$ is normal, then  all the roots of $p_i$ are in $L$, so $q_j$ splits completely over $L$, thus $f =\prod_{j=1}^r q_j$ splits completely over $L$. Write $\beta_1,\ldots,\beta_m \in L$ the roots of $f$, and $L'=F(\beta_1,\ldots,\beta_m) \subset L$ the splitting  field of $f$ over $F$. As $F \subset L$, and $\beta_1,\ldots,\beta_m \in L$, we know that $L' \subset L$.
+As $q_j = p_i$ for some $i,\ 1\leq i \leq n$, is the minimal polynomial of $\alpha_i \in L$ over $F$, and as $F \subset L$ is normal, then  all the roots of $p_i$ are in $L$, so $q_j$ splits completely over $L$, thus $f =\prod_{j=1}^r q_j$ splits completely over $L$. Write $\beta_1,\ldots,\beta_m \in L$ the roots of $f$, and $L'=F(\beta_1,\ldots,\beta_m) \subset L$ the splitting  field of $f$ over $F$. As $F \subset L$, and $\beta_1,\ldots,\beta_m \in L$, we know that $L' \subset L$.
 
 As every $\alpha_i,1\leq i \leq n$ is a root of a polynomial $p_i = q_j$, then $\alpha_i$ is a root of $f$, so $\alpha_i = \beta_k$ for some $k,\ 1\leq k \leq m$, thus $\alpha_i \in L'$. Consequently $\{\alpha_1,\ldots,\alpha_n\}\subset \{\beta_1,\ldots,\beta_m\}$ and 
 $$L = F(\alpha_1,\ldots,\alpha_n) \subset F(\beta_1,\ldots,\beta_m) = L' \subset  L :$$
@@ -130,13 +129,13 @@ Let $F\subset L$ a finite extension, where $F$ has characteristic $p$, and let
 \begin{center}
 $K = \{\alpha \in L \ \vert \ \alpha$ is separable over $F\}$.
 \end{center}
-By Theorem 7.1.6 and Exercise 3 (and $1$, root of $x-1$ is in $K$), $K$ is a subfield of $L$. Moreover, every $\alpha\in F$ is root of the irreducible separable polynomial $x-\alpha \in F[x]$,  so $\alpha$ is separable , thus $F\subset K$, and $F \subset K$ is a separable extension. 
+By Theorem 7.1.6 and Exercise 3 (noting that $1$, root of $x-1$ is in $K$), $K$ is a subfield of $L$. Moreover, every $\alpha\in F$ is root of the irreducible separable polynomial $x-\alpha \in F[x]$,  so $\alpha$ is separable , thus $F\subset K$, and $F \subset K$ is a separable extension. 
 
 \item[(b)] We show that the extension $K\subset L$ is purely inseparable.
 
 Let $\beta \in L \setminus K$. 
 
-If $\beta$ was separable over $K$, then by Theorem 7.1.6, $ K \subset K(\beta)$ would be a separable extension. But $F \subset K$ is also separable, thus by Theorem 5.3.15(c), $F \subset K(\beta)$ would be separable, and then $\beta$ would be separable over $F$, that is $\beta \in K$: this is a contradiction. Every $\beta \in L\setminus K$ is inseparable, so  the extension $K \subset L$ is purely inseparable.
+If $\beta$ was separable over $K$, then by Theorem 7.1.6, $ K \subset K(\beta)$ would be a separable extension. But $F \subset K$ is also separable, thus by Theorem 5.3.15(c), $F \subset K(\beta)$ would be separable, and then $\beta$ would be separable over $F$, that is $\beta \in K$: this is a contradiction. No $\beta \in L\setminus K$ is separable over $K$, so  the extension $K \subset L$ is purely inseparable.
 \end{enumerate}
 \end{proof}
 
@@ -149,7 +148,7 @@ If $\beta$ was separable over $K$, then by Theorem 7.1.6, $ K \subset K(\beta)$ 
 Let $M,M'$ two Galois closures of the separable extension $F \subset L$.
 By Proposition 7.1.7, there exists a field homomorphism  $\varphi : M\to M'$ that is identity on $L$.
 
-As every field homomorphism, $\varphi$ is injective, this is an embedding of $M$ in $M'$. Moreover $\varphi$ is the identity on $L$, so $\varphi$ is a $L$-linear injective application between  $M$ and $M'$ as $L$-vector spaces, thus $[M:L] \leq [M':L]$. Exchanging $M$ and $M'$, we prove similarly that $[M':L] \leq [M:L]$, thus $[M':L] = [M:L]$. An injective linear application between two same dimensional vector spaces is bijective, thus $\varphi$ is bijective. Therefore $\varphi$ is a field isomorphism that is identity on $L$.
+As every field homomorphism, $\varphi$ is injective, this is an embedding of $M$ in $M'$. Moreover $\varphi$ is the identity on $L$, so $\varphi$ is a $L$-linear injective application between  $M$ and $M'$ as $L$-vector spaces, thus $[M:L] \leq [M':L]$. Exchanging $M$ and $M'$, we prove similarly that $[M':L] \leq [M:L]$, thus $[M':L] = [M:L]$. An injective linear application between two same dimensional vector spaces is bijective, thus $\varphi$ is bijective. Therefore $\varphi$ is a field isomorphism that is the identity on $L$.
 
 The Galois closure of a finite separable extension $F \subset L$ is unique up to an isomorphism that is the identity on $L$.
 \end{proof}
@@ -165,7 +164,7 @@ The Galois closure of a finite separable extension $F \subset L$ is unique up to
 \begin{enumerate}
 \item[(a)] $F \subset M$ is a finite normal extension.
 
-\item[(b)]Given any other extension $L\subset M'$ such that $M'$ is normal over $F$, there is a field homomorphism $\varphi: M \to M'$ that is identity on $L$.
+\item[(b)]Given any other extension $L\subset M'$ such that $M'$ is normal over $F$, there is a field homomorphism $\varphi: M \to M'$ that is the identity on $L$.
 
 \end{enumerate}
 }
@@ -221,15 +220,15 @@ Consequently $\vert G_\alpha \vert = n/r$, so $G_\alpha$ is a subgroup of $G$ wi
 
 \bigskip
 
- (Note: For all $\sigma \in G$, 
+ Note that, or all $\sigma \in G$, 
 $$\sigma \in G_\alpha \iff \sigma(\alpha) = \alpha \iff \forall \gamma \in F(\alpha), \sigma(\gamma) = \gamma \iff \sigma \in \Gal(L/F(\alpha)).$$
 
 Therefore
-$$G_\alpha = \Gal(L/F(\alpha)).$$
+$$G_\alpha = \Gal(L/F(\alpha).$$
 As $h$ is the minimal  polynomial of $\alpha$ over $F$, $[F(\alpha) : F] = \deg(h) = r$. 
 
-As $F \subset L$ is a Galois extension, $F(\alpha) \subset L$ also, so we find again by the Tower Theorem: 
-$$\vert G_\alpha \vert  = \vert \Gal(L/F(\alpha))\vert = [L:F(\alpha)] = [L:F]\, / \,[F(\alpha):F] = n/r.)$$
+Since $F \subset L$ is a Galois extension, $F(\alpha) \subset L$ also, so we find again by the Tower Theorem: 
+$$\vert G_\alpha \vert  = \vert \Gal(L/F(\alpha))\vert = [L:F(\alpha)] = [L:F]\, / \,[F(\alpha):F] = n/r.$$
 
 \bigskip
 
@@ -283,7 +282,7 @@ The equation $f = x^p - t^p$ has so no root in $\F(t^p)$, where $p =\deg(f)$ is 
 The minimal polynomial of $t \in \F(t)$ is not separable, so $\F_p(t)/\F_p(t^p)$ is not a Galois extension.
 
 \item[(d)]
-Let $f = x^2-\left(t+\frac{1}{t}\right)x + 1 \in \C(t+t^{-1})[x]$. Then  $t$ and $t^{-1}$ are roots of $f$ in  $\C(t)$. Moreover $t^{-1} \in \C(t)$, therefore $\C(t) = \C(t,t^{-1})$ is the splitting field of $f$ over $C(t+t^{-1})$. $ \C(t+t^{-1}) \subset \C(t)$ is so a normal extension, and is separable since the characteristic of $\C$, and of $\C(t+t^{-1})$ is zero. 
+Let $f = x^2-\left(t+\frac{1}{t}\right)x + 1 \in \C(t+t^{-1})[x]$. Then  $t$ and $t^{-1}$ are roots of $f$ in  $\C(t)$. Moreover $t^{-1} \in \C(t)$, therefore $\C(t) = \C(t,t^{-1})$ is the splitting field of $f$ over $C(t+t^{-1})$. $ \C(t+t^{-1}) \subset \C(t)$ is so a normal extension, and is separable since the characteristic of $\C$, and of $\C(t+t^{-1})$, is zero. 
 
 $\C(t+t^{-1}) \subset \C(t)$ is a Galois extension.
 
@@ -382,7 +381,7 @@ Therefore $\gamma = \alpha - \frac{a}{2}$ satisfies $\gamma^2 = \frac{a^2+4b^2}{
 
 As $\gamma = \alpha - \frac{a}{2}$ with  $a\in F$,  $F(\gamma) =F(\alpha) = L$. Write $c = \gamma^2 \in F$, and $\sqrt{c} = \gamma$, then
 
-$$L = F(\gamma), \gamma^2 \in F , \qquad  L = F(\sqrt{c}) , c \in F$$
+$$L = F(\gamma), \gamma^2 \in F , \qquad  L = F(\sqrt{c}) , c \in F.$$
 \end{enumerate}
 \end{proof}
 
@@ -758,7 +757,7 @@ We compute $L_{\langle \sigma \tau \rangle}$:
 &\iff b=c=0\\
 &\iff \alpha \in \Q(\sqrt{6})
 \end{align*}
-We obtain the left diagram from the right diagram by the map $K \mapsto \Gal(L/K)$. By example, the only elements of $G$ who fix $\Q(\sqrt{2})$ are $e$ and $\sigma$.
+We obtain the left diagram from the right diagram by the map $K \mapsto \Gal(L/K)$. For instance, the only elements of $G$ who fix $\Q(\sqrt{2})$ are $e$ and $\sigma$.
 
 \item[(d)]
 $G$ is Abelian, so all its subgroups are normal.
@@ -862,16 +861,16 @@ for H in L do
 od;
 Print("inclusions : \n",IntermediateSubgroups(S,T).inclusions);
 \end{verbatim}
-On obtient :
+We obtain:
 \begin{verbatim}
-1 : 	C2	2	Group( [ (1,3)(2,4) ] )	
-2 : 	C2	2	Group( [ (2,4) ] )	
-3 : 	C2	2	Group( [ (1,3) ] )	
-4 : 	C2	2	Group( [ (1,2)(3,4) ] )	
-5 : 	C2	2	Group( [ (1,4)(2,3) ] )	
-6 : 	C2 x C2	4	Group( [ (1,3)(2,4), (2,4) ] )	
-7 : 	C4	4	Group( [ (1,3)(2,4), (1,2,3,4) ] )	
-8 : 	C2 x C2	4	Group( [ (1,3)(2,4), (1,2)(3,4) ] )	
+1 : 	C2	       2	Group( [ (1,3)(2,4) ] )	
+2 : 	C2	       2	Group( [ (2,4) ] )	
+3 : 	C2	       2	Group( [ (1,3) ] )	
+4 : 	C2	       2	Group( [ (1,2)(3,4) ] )	
+5 : 	C2	       2	Group( [ (1,4)(2,3) ] )	
+6 : 	C2 x C2   4	Group( [ (1,3)(2,4), (2,4) ] )	
+7 : 	C4	       4	Group( [ (1,3)(2,4), (1,2,3,4) ] )	
+8 : 	C2 x C2   4	Group( [ (1,3)(2,4), (1,2)(3,4) ] )
 inclusions : 
 [ [ 0, 1 ], [ 0, 2 ], [ 0, 3 ], [ 0, 4 ], [ 0, 5 ], [ 1, 6 ], [ 2, 6 ], 
 [ 3, 6 ], [ 1, 7 ], [ 1, 8 ], [ 4, 8 ], [ 5, 8 ], [ 6, 9 ], [ 7, 9 ],
@@ -884,13 +883,13 @@ We find again these results directly without computer in $$D_8 = \langle \sigma,
 $\sigma$ is of order 4 and generates $H =\langle  \sigma \rangle =\{e,\sigma, \sigma^2,\sigma^3\}$, $\tau$ is of order 2, and $\sigma \tau = \tau \sigma^{-1} =(1,4)(2,3)$ :
 $$\sigma^4 = \tau ^2 = e,\qquad \sigma \tau = \tau \sigma^{-1}.$$
 
-Note that $\tau \sigma = \sigma^{-1} \tau$ and $\tau \sigma^k = \sigma^{-k} \tau \Rightarrow \tau \sigma^{k+1} = \sigma^{-k} \tau \sigma = \sigma^{-k-1} \tau$. This induction proves that $\tau \sigma^k = \sigma^{-k} \tau$ for all $k \in \N$. Moreover $(\sigma^k \tau)^2 = \sigma^k \tau \sigma^k \tau = \sigma^k \sigma^{-k} \tau \tau =e$, so all the elements of the right coset $H\tau$ are of order 2.
+Note that $\tau \sigma = \sigma^{-1} \tau$ and that $\tau \sigma^k = \sigma^{-k} \tau \Rightarrow \tau \sigma^{k+1} = \sigma^{-k} \tau \sigma = \sigma^{-k-1} \tau$. This induction proves that $\tau \sigma^k = \sigma^{-k} \tau$ for all $k \in \N$. Moreover $(\sigma^k \tau)^2 = \sigma^k \tau \sigma^k \tau = \sigma^k \sigma^{-k} \tau \tau =e$, so all the elements of the right coset $H\tau$ are of order 2.
 
-We find all the subgroups of order 2 by checking the elements of order 2 in $D_8$. They are the elements of $H.\tau = \{\tau, \sigma \tau, \sigma^2 \tau, \sigma^3 \tau\}$, and also $\sigma^2 \in H$: this gives all the subgroups of level 2 in the first diagram.
+We find all the subgroups of order 2 by checking the elements of order 2 in $D_8$. They are the elements of $H \tau = \{\tau, \sigma \tau, \sigma^2 \tau, \sigma^3 \tau\}$, and also $\sigma^2 \in H$: this gives all the subgroups of level 2 in the first diagram.
 
 We know a subgroup of $G$ of order 4,  the subgroup $H = \langle \sigma \rangle$.
 
-Let $M$ any subgroup of $G$ of order 4. If $M$ is cyclic, it is generated by an element of order 4, so $M = H = \langle \sigma \rangle = \langle \sigma^3 \rangle$.
+Let $M$ be any subgroup of $G$ of order 4. If $M$ is cyclic, it is generated by an element of order 4, so $M = H = \langle \sigma \rangle = \langle \sigma^3 \rangle$.
 
 Otherwise $M$ is isomorphic to $\Z/2\Z \times \Z/2\Z$, generated by to distinct elements of order 2 in $D_8 \simeq G$.
 If one of these elements is $\sigma^2$, we obtain the two subgroups
@@ -898,18 +897,20 @@ If one of these elements is $\sigma^2$, we obtain the two subgroups
 H_1 &= \langle \sigma^2, \tau\rangle =\{e, \sigma^2,\tau,\sigma^2\tau\} = \langle \sigma^2, \sigma^2 \tau\rangle\\
 H_2 &= \langle \sigma^2, \sigma \tau\rangle =\{e, \sigma^2,\sigma \tau,\sigma^3\tau\}= \langle \sigma^2, \sigma^3 \tau\rangle.\\
 \end{align*}
-Otherwise $M = \langle \sigma^k \tau ,\sigma^l \tau\rangle,\ 1\leq k,l \leq 3,k\neq l$. As $\sigma^k\tau \sigma^l \tau = \sigma^{k-l} \in H$ is of order 2, $\sigma^{k-l} = \sigma^2$ and so 
+Otherwise $M = \langle \sigma^k \tau ,\sigma^l \tau\rangle,\ 0\leq k,l \leq 3,k\neq l$. As $\sigma^k\tau \sigma^l \tau = \sigma^{k-l} \in H$ is of order 2, $\sigma^{k-l} = \sigma^2$ and so 
 
 $$M = \{e, \sigma^k \tau, \sigma^l \tau, \sigma^{2} \}.$$
-Since $\Z/2\Z \times \Z/2\Z$ is generated by any pair of elements not equal to $e$, $M = \langle \sigma^2, \sigma^k \tau\rangle$, and so $M = H_1$ where $M = H_2$. We find again the subgroups of diagram 1.
+Since $\Z/2\Z \times \Z/2\Z$ is generated by any pair of elements not equal to $e$, $M = \langle \sigma^2, \sigma^k \tau\rangle$, thus $M = H_1$ or $M = H_2$. We find again the subgroups of diagram 1.
 
 \item[(b)]
-With find the fixed fields $L_M$ corresponding with the subgroups  $M$ of $G$.
+We find the fixed fields $L_M$ corresponding with the subgroups  $M$ of $G$.
 Consider the chain of fields going from $\Q$ to $L$ : 
 $$\Q\subset \Q(\sqrt{2}) \subset \Q(i\sqrt[4]{2}) \subset \Q(i\sqrt[4]{2}, \sqrt[4]{2})= \Q(i,\sqrt[4]{2}) = L,$$
-where each field is a quadratic extension of the preceding field. Write $$\alpha = \sqrt{2}, \beta = -i\sqrt[4]{2}, \gamma =\sqrt[4]{2}$$
+where each field is a quadratic extension of the preceding field. 
 
-(the symbol $-$ for $\beta$ is intended for obtaining $\sigma(\beta) = \gamma$. If we number the roots of $x^4-2$ by $x_1 = \beta, x_2 = \gamma, x_3 = -\beta, x_4 = -\gamma$, the permutations corresponding to $\sigma, \tau$ are $\tilde{\sigma} = (1,2,3,4), \tilde{\tau} = (2,4)$, with $D_8 = \langle(1,2,3,4),(2,4)\rangle$).
+Write $$\alpha = \sqrt{2}, \beta = -i\sqrt[4]{2}, \gamma =\sqrt[4]{2}$$
+
+(the symbol $-$ for $\beta$ is intended for obtaining $\sigma(\beta) = \gamma$). If we number the roots of $x^4-2$ by $x_1 = \beta, x_2 = \gamma, x_3 = -\beta, x_4 = -\gamma$, the permutations corresponding to $\sigma, \tau$ are $\tilde{\sigma} = (1,2,3,4), \tilde{\tau} = (1,3)$, with $D_8 = \langle(1,2,3,4),(1,3)\rangle$).
 
 Then $(1,\alpha)$ is a basis $\Q(\sqrt{2})$ over $\Q$, $(1,\beta)$ a basis of  $\Q(i\sqrt[4]{2})$ over $\Q(\sqrt{2})$, and $(1,\gamma)$ a basis of $\Q(i\sqrt[4]{2}, \sqrt[4]{2})$ over $\Q(i\sqrt[4]{2})$, thus
 $${\cal B} = (1,\alpha, \beta, \gamma, \alpha \beta, \alpha \gamma, \beta \gamma, \alpha \beta \gamma)$$
@@ -1087,7 +1088,7 @@ $\Q(\sqrt{2})$ is the splitting field of $x^2-2$ over $\Q$, $\Q(i)$ the splittin
 
 The subgroup $H = \langle \sigma^2 \rangle$ is normal in $G = \langle \sigma, \tau \rangle$, since
 
-$$\tilde \tau \tilde{\sigma}^2 \tilde{\tau}^{-1} = (2,4)(1,3)(2,4)(2,4) = (2,4)(1,3) = (1,3)(2,4) = \tilde{\sigma}^2,$$ thus $\tau \sigma^2 \tau^{-1} = \sigma^2 \in H$ (and of course $\sigma \sigma^2 \sigma^{-1} = \sigma^2 \in H$). $H$ corresponds with $\Q(i,\sqrt{2})$, which is so a Galois extension of $\Q$. $\Q(i,\sqrt{2})$ is the splitting field of the irreducible polynomial $$x^4-2x^2+9 = (x-i-\sqrt{2})(x-i+\sqrt{2})(x+i-\sqrt{2})(x+i+\sqrt{2})$$
+$$\tilde \tau \tilde{\sigma}^2 \tilde{\tau}^{-1} = (1,3)(1,3)(2,4)(1,3) = (2,4)(1,3) = (1,3)(2,4) = \tilde{\sigma}^2,$$ thus $\tau \sigma^2 \tau^{-1} = \sigma^2 \in H$ (and of course $\sigma \sigma^2 \sigma^{-1} = \sigma^2 \in H$). $H$ corresponds with $\Q(i,\sqrt{2})$, which is so a Galois extension of $\Q$. $\Q(i,\sqrt{2})$ is the splitting field of the irreducible polynomial $$x^4-2x^2+9 = (x-i-\sqrt{2})(x-i+\sqrt{2})(x+i-\sqrt{2})(x+i+\sqrt{2})$$
  (or of the reducible polynomial $(x^2-2)(x^2+1)$).
  
  These are the only normal subgroups of $G$, as we will see in part (d). 
@@ -1098,9 +1099,9 @@ $$\tilde \tau \tilde{\sigma}^2 \tilde{\tau}^{-1} = (2,4)(1,3)(2,4)(2,4) = (2,4)(
 As $ \tau \sigma^{-1}=\sigma \tau$,  then $  \sigma \tau \sigma^{-1} = \sigma^2 \tau$, so the subgroups $\langle \tau \rangle$ and $\langle \sigma^2 \tau \rangle$ are conjugate, thus are not normal subgroups of $G$.
 
  
-Similarly $\sigma^3 \tau = \sigma^{-1} \tau = \tau \sigma = \sigma^{-1}(\sigma) \tau) \sigma$, so the subgroups $\langle \sigma^3 \tau \rangle$ and $\langle \sigma \tau \rangle$ are conjugate, and are not normal subgroups.
+Similarly $\sigma^3 \tau = \sigma^{-1} \tau = \tau \sigma = \sigma^{-1}(\sigma \tau) \sigma$, so the subgroups $\langle \sigma^3 \tau \rangle$ and $\langle \sigma \tau \rangle$ are conjugate, and are not normal subgroups.
  
-The subgroups $\langle \tau \rangle$ and $\langle \sigma \tau \rangle$ are not conjugate, since $\tau$ corresponds to $(2,4)$, and $\sigma \tau$ to the permutation $(1,2)(3,4)$ which are not conjugate, since the conjugate of a transposition is a transposition.
+The subgroups $\langle \tau \rangle$ and $\langle \sigma \tau \rangle$ are not conjugate, since $\tau$ corresponds to $(1,3)$, and $\sigma \tau$ to the permutation $(1,4)(2,3)$ which are not conjugate, since the conjugate of a transposition is a transposition.
  
 So the corresponding extensions  $\Q(\sqrt[4]{2}), \Q(i\sqrt[4]{2}), \Q((1+i)\sqrt[4]{2}), \Q((1-i)\sqrt[4]{2})$ are not Galois extensions of $\Q$.
  
@@ -1159,7 +1160,7 @@ But then the coefficient of degree 0 in $x$, which is $i^{k+l} t^2$ is in $ F$, 
 $$t^2 = \frac{u(t^4)}{v(t^4)}, \ u,v \in F[x], v\neq 0, u\wedge v=1.$$
 Then  $s = t^2$ is transcendental over $\C$ (otherwise $t$ would be algebraic over $\C$) and satisfies
 $$s = \frac{u(s^2)}{v(s^2)}.$$
-The identity $u(s^2) -sv(s^2) = 0$, with $s$ transcendental, implies $u(x^2) -x v(x^2)$ where $x$ is a variable, so is impossible, since all the monomials in $u(x^2)$ have even degree, and all the monomial in $xv(x^2)\neq 0$ have odd degree.
+The identity $u(s^2) -sv(s^2) = 0$, with $s$ transcendental, implies $u(x^2)  = x v(x^2)$ where $x$ is a variable, so is impossible, since all the monomials in $u(x^2)$ have even degree, and all the monomial in $xv(x^2)\neq 0$ have odd degree.
 
 $f = x^4 - t^4$ is so irreducible over $\C(t^4)$.
 
@@ -1172,13 +1173,42 @@ Let $\sigma = \sigma_1 : t \mapsto i t$. Then $\sigma^k(t) = i^kt = \sigma_k(t)$
 $$G = \{e,\sigma,\sigma^2,\sigma^3\} \simeq \Z/4\Z.$$
 
 \item[(d)] The only non trivial subgroup of $G$ is $H = \langle \sigma^2 \rangle = \{e,\sigma^2\}$,where $G$ is an Abelian group, so $H$ is normal in $G$. Let $L_H$ its fixed field.
-By the Fundamental Theorem of Galois Theory, there exists so a unique intermediate field distinct of $\C(t^4)$ and $\C(t)$, which is so $\C(t^2)$ :
+By the Fundamental Theorem of Galois Theory, there exists thus a unique intermediate field distinct of $\C(t^4)$ and $\C(t)$, which is thus $\C(t^2)$ :
 $$L_H = \C(t^2).$$
 The Galois correspondence is between the two chains:
-$$ \C(t^4) \subset \C(t^2) \subset \C(t)$$
-$$G = \langle \sigma \rangle \supset \langle \sigma^2 \rangle \supset \{e\}.$$
-
+$$ 
+\begin{array}{lll}
+\C(t^4) &\subset \C(t^2) &\subset \C(t),\\
+G = \langle \sigma \rangle &\supset \langle \sigma^2 \rangle &\supset \{e\}.
+\end{array}
+$$
 \end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 7.3.6}
+{\it This exercise will work out the Galois correspondance for the splitting field of $x^4 - 4x^2 + 2$ over $\Q$. In Exercise 6 of section 5.1 you showed that $L = \Q(\sqrt{2+\sqrt{2}})$ and that $\Gal(L/\Q) \simeq \Z/4\Z$. Now, similar to Example 7.3.4, determine all subgroups of $\Gal(L/\Q)$ and the corresponding intermediate fields of $\Q \subset L$.
+}
+
+\begin{proof}
+Let $L$ be the splitting field of  $x^4 - 4x^2 + 2$ over $\Q$.
+We proved in Ex. 5.1.6 and Ex. 6.3.4 that $L = \Q(\alpha, \beta) = \Q(\alpha)$, where
+$$\alpha = \sqrt{2 + \sqrt{2}}, \beta = \sqrt{2 - \sqrt{2}},$$
+and
+$$\Gal(L/\Q) = \langle \sigma \rangle \simeq \Z/4\Z,$$
+where $\sigma$ is the only $\Q$-automorphisme of $L$ such that $\sigma(\alpha) = \beta$ (and then $\sigma(\beta) = -\alpha$).
+
+Since $\Gal(L/\Q) = \langle \sigma \rangle$ is cyclic of order 4, as in Ex. 7.3.5, the only non trivial subgroup $H$ is of order 2, and $H = \langle \sigma^2\rangle$.
+
+By the Fundamental Theorem of Galois Theory, there exists thus a unique intermediate field distinct of $L$ and $\Q$, which is thus $\Q(\sqrt{2})$ :
+$$L_H = L_{\langle \sigma^2 \rangle} = \Q(\sqrt{2}).$$
+The correspondance is between the two chains:
+$$
+\begin{array}{lll}
+\Q &\subset \Q(\sqrt{2}) &\subset \Q(\sqrt{2+ \sqrt{2}}) = L,\\
+G = \langle\sigma\rangle &\supset \langle \sigma^2 \rangle &\supset \{e\}.
+\end{array}
+$$
+
 \end{proof}
 
 \paragraph{Ex. 7.3.7}
@@ -1281,7 +1311,7 @@ Thus
  
  We could verify directly the irreducibility of $p$, but it is more simple to proceed so:
  
-$\bullet$ As $p(\alpha)=0$, the minimal polynomial of $q$ of $\alpha$ over $\mathbb{Q}$ divides $p$: $q \mid p$,
+$\bullet$ As $p(\alpha)=0$, the minimal polynomial $q$ of $\alpha$ over $\mathbb{Q}$ divides $p$: $q \mid p$,
 
 $\bullet$  $\Q(\alpha) =L_H$ is the fixed field of $H = \{e,\sigma\}$ (Exercice 6). Then $\Gal(L/L_H) = H$, and $[L:L_H] = \vert H \vert = 2$, so $$[\Q(\alpha) : \Q] = [L_H:\Q] = [L:\Q]/[L : L_H] = [L:\Q]/ \vert H \vert = 6/2 =3,$$ 
 
@@ -1345,7 +1375,7 @@ Consider the ascending chain of fields:
 $$F \subset F(\sqrt{a}) \subset F(\sqrt{a}, \sqrt{b}).$$
 As $\sqrt{a} \not \in F, [ F(\sqrt{a}):F]\neq 1$, and $[ F(\sqrt{a}):F] \leq 2$ since $\sqrt{a}$ is a root of $x^2-a \in F[x]$, thus $[ F(\sqrt{a}):F] = 2$.
 
-With a reduction ad absurdum, suppose that $\sqrt{b} \in F(\sqrt{a})$, then
+We prove that $\sqrt{b} \not \in F(\sqrt{a})$. Suppose, at the contrary, that $\sqrt{b} \in F(\sqrt{a})$. Then
 $$\sqrt{b} = u+v\sqrt{a}, \ u,v \in F.$$
 By squaring this equality, $b =u^2+av^2+2uv\sqrt{a}$.
 
@@ -1359,12 +1389,12 @@ This proves that $\sqrt{b} \not \in F(\sqrt{a})$, and $\sqrt{b}$ is a root of $x
 Finally
 $$[L:F] = [F(\sqrt{a},\sqrt{b}):F] = [F(\sqrt{a},\sqrt{b}):F(\sqrt{a})]\ [ F(\sqrt{a}):F] = 4.$$
 
-As the characteristic of $F$ is different from 2, $\sqrt{a} \neq -\sqrt{a}$, otherwise $\sqrt{a}=0 \in F$, and the same is true for $b$. Moreover $\sqrt{a} \ne \pm \sqrt{b}$, otherwise $\sqrt{ab} = \pm a \in F$, so
+As the characteristic of $F$ is not 2, $\sqrt{a} \neq -\sqrt{a}$, otherwise $\sqrt{a}=0 \in F$, and the same is true for $b$. Moreover $\sqrt{a} \ne \pm \sqrt{b}$, otherwise $\sqrt{ab} = \pm b \in F$, so
 $$f = (x-\sqrt{a})(x+\sqrt{a})(x-\sqrt{b})(x+\sqrt{b})$$
 is a separable polynomial, and the splitting field $L$ of the separable polynomial $f \in F[x]$ is a Galois extension of $F$. Therefore, 
 $$\vert \Gal(L/F) = [L:F] = 4.$$
 
-If $\sigma \in G = \Gal(L/F)$, as $a$ is a root of $x^2 -a \in F[x]$, $\sigma(a)$ also, thus $\sigma(\sqrt{a}) =(-1)^k \sqrt{a},\  0 \leq k \leq 1$. Similarly $\sigma(\sqrt{b}) =(-1)^l \sqrt{b}, \ 0 \leq l \leq 1$. As $\sigma$ is uniquely determined by the images of $\sqrt{a}, \sqrt{b}$, there are at most 4 $F$-automorphisms of $L$.
+If $\sigma \in G = \Gal(L/F)$, since $a$ is a root of $x^2 -a \in F[x]$, $\sigma(a)$ also, thus $\sigma(\sqrt{a}) =(-1)^k \sqrt{a},\  0 \leq k \leq 1$. Similarly $\sigma(\sqrt{b}) =(-1)^l \sqrt{b}, \ 0 \leq l \leq 1$. As $\sigma$ is uniquely determined by the images of $\sqrt{a}, \sqrt{b}$, there are at most 4 $F$-automorphisms of $L$.
 
 As $\vert \Gal(L/F) \vert = 4$,  these 4 possibilities occur, and give an element of the Galois group $\Gal(L/F)$, otherwise this group would have less than 4 elements. 
 
@@ -1473,14 +1503,14 @@ $\delta = \alpha + \beta = a+(b+1) \beta \in \Q(\beta)$. Therefore the list $(1,
 
 Let $f(x) = u x^2+vx+w \in \Q[x]$. Then $f(\alpha + \beta) = 0$, with $f\neq 0, \deg(f) \leq 2$. If $\deg(f)=2$, (c) is proved.
 
-But $\deg(f)<2$ is a possibility, for instance if $\beta = -\alpha$. As $f\neq 0$, then  $\deg(p)=0$  is in contradiction with $f(\delta) = 0$,  so in this case $\deg(f) = 1$: $f(x) = vx+w,\ v\neq 0$. Then $\delta=\alpha+ \beta$ is a root of the polynomial of degree 2 $x(vx+w)$. In both cases,
+But $\deg(f)<2$ is a possibility, for instance if $\beta = -\alpha$. As $f\neq 0$, then  $\deg(f)=0$  is in contradiction with $f(\delta) = 0$,  so in this case $\deg(f) = 1$: $f(x) = vx+w,\ v\neq 0$. Then $\delta=\alpha+ \beta$ is a root of the polynomial of degree 2 $x(vx+w)$. In both cases,
 
 $\alpha + \beta$ is the root of a quadratic polynomial in $\Q[x]$.
 
 \bigskip
 
 (c)$\Rightarrow$(a):
-Suppose that $\alpha + \beta$ is a root of a quadratic polynomial, and suppose on the contrary that $\Q(\alpha) \ne \Q(\beta)$.
+Suppose that $\alpha + \beta$ is a root of a quadratic polynomial, and suppose at the contrary that $\Q(\alpha) \ne \Q(\beta)$.
 By assumption, $[\Q(\alpha) : \Q] = [\Q(\beta):\Q] = 2$. Therefore $[\Q(\alpha,\beta) : \Q(\beta)] \leq 2$. If $[\Q(\alpha,\beta) : \Q(\beta)] = 1$, then $\alpha \in \Q(\beta)$, so $\alpha = a + b \beta$ for some $a,b \in \Q$, and $b\ne 0$ otherwise $\alpha \in \Q$.
 
  The implication (b) $\Rightarrow $ (a) shows that $\Q(\alpha) = \Q(\beta)$, and this is a contradiction. Therefore $[\Q(\alpha,\beta) : \Q(\beta)] = 2$, and
@@ -1522,9 +1552,11 @@ There exist exactly 3 subgroups of $G$ of index 2 : $\langle \sigma \rangle, \la
 
 \bigskip
 
-We show that $\Q(\alpha+\beta) = \Q(\gamma)$. $\alpha + \beta \not \in \Q$, otherwise $\Q(\alpha) = \Q(\beta)$, so $\Q(\alpha+\beta)$ is a quadratic extension of $\Q$, therefore  is equal to $\Q(\alpha), \Q(\beta)$ or $\Q(\gamma)$.
+We show that $\Q(\alpha+\beta) = \Q(\gamma)$. We know that $\alpha + \beta \not \in \Q$, otherwise $\Q(\alpha) = \Q(\beta)$. Hence $\Q(\alpha+\beta)$ is a quadratic extension of $\Q$, therefore  is equal to $\Q(\alpha), \Q(\beta)$ or $\Q(\gamma)$.
 
-$\Q(\alpha+\beta) \ne \Q(\beta)$, otherwise $\beta \in \Q(\beta)$, and so $\Q(\alpha) = \Q(\beta)$. Similarly $\Q(\alpha+\beta) \ne \Q(\alpha)$.
+$\Q(\alpha+\beta) \ne \Q(\beta)$, otherwise $\alpha \in \Q(\beta)$, and so $\Q(\alpha) \subset \Q(\beta)$, where $[\Q(\alpha) : \Q] = [\Q(\beta):\Q] = 2$, thus $\Q(\alpha) = \Q(\beta)$.
+
+Similarly $\Q(\alpha+\beta) \ne \Q(\alpha)$.
 It remains only the possibility $\Q(\alpha+ \beta) = \Q(\gamma)$, fixed field of $\zeta = \sigma \circ \tau$.
 
 Note that $\tau(\alpha) \neq \alpha$, otherwise $\alpha \in L_{\langle \tau \rangle} = \Q(\beta)$, which is excluded. 
@@ -1564,7 +1596,7 @@ $L_N \subset K$ is a Galois extension.
 \end{center}
 
 $\bullet$ 
-Let  $F \subset M \subset K$ an intermediate field,  such that $M \subset K$ is a Galois extension.
+Let  $F \subset M \subset K$ be an intermediate field,  such that $M \subset K$ is a Galois extension.
 
 Let $S = \Gal(L/M)$. $S$ is a subgroup of $G=\Gal(L/F)$ since $ F \subset M \subset K$.
 
@@ -1665,10 +1697,10 @@ where $\gamma_{a,b}(u) = au+b, u \in \F_p$. Let $T'$ and $D'$ be the correspondi
 }
 
 \begin{proof}
-let $L = \Q(\zeta_p,\sqrt[p]{2})$.
+Let $L = \Q(\zeta_p,\sqrt[p]{2})$.
 
 By the isomorphism $\psi : \Gal(L/\Q) \to \mathrm{AGL}(1,\F_p)$, $\gamma_{a,b} = \psi(\sigma_{a,b})$ corresponds to $\sigma_{a,b}$ uniquely determined by (see section 6.4)
-$$\sigma_{a,b}(\zeta_p) = \zeta_p^a, \sigma_{a,b}(\sqrt[p]{2}) = \zeta_p^b \sqrt[p]{2}.$$
+$$\sigma_{a,b}(\zeta_p) = \zeta_p^a,\qquad \sigma_{a,b}(\sqrt[p]{2}) = \zeta_p^b \sqrt[p]{2}.$$
 \begin{enumerate}
 \item[(a)]
 $T'$ is so the set of the $\sigma_{1,b},\  b \in \F_p$, where $\sigma_{1,b}(\zeta_p) = \zeta_p$. Therefore $$ \Q(\zeta_p) \subset L_{T'}.$$
@@ -1714,7 +1746,7 @@ Since $L$ is the splitting field of the separable polynomial $f$, $F \subset L$ 
 
 By Exercise 6.2.6, $f$ being irreducible and separable, $n = \vert \Gal(L/F) \vert $ is a multiple of $3 = \deg(f)$. Moreover $\Gal(L/F)$ is isomorphic to a subgroup $H$ of $S_3$, so $n \mid 6$: $n=3$ or $n=6$. Since $S_3$ has a unique subgroup of cardinality 3, namely $A_3 \simeq \Z/3\Z$,
 $$\Gal(L/F) \simeq A_3 \text{ or } \Gal(L/F) \simeq S_3.$$ 
-By Theorem 7.4.1, since the characteristic of $F$ is different from 2, $\Gal(L/F) \simeq H \subset A_3$ if and only if $\sqrt{\Delta} \in F$, therefore
+By Theorem 7.4.1, since the characteristic of $F$ is different from 2, $\Gal(L/F) \simeq H \subset A_3$ if and only if $\sqrt{\Delta(f)} \in F$, therefore
 $$
 \Gal(L/F) \simeq 
 \left\{
@@ -1756,7 +1788,7 @@ $$\Gal_{\Q(\sqrt{37})}( x^3-4x+2) = A_3.$$
 
 \item[(c)] $f=x^3-3x+1$.
 
-If $\alpha = p/q,\ p\wedge q=1$ is a root of $f$ in $\Q$, then $p^3 - 3 pq^2+q^3 = 0$, thus $p \mid q, q\mid p$ with $p\wedge q = 1$, therefore $\alpha = \pm1$, but nor 1 neither $-1$ is a root of $f$, thus $f$ has no rational root. As $\deg(f) = 3$, $f$ is irreducible over $\Q$.
+If $\alpha = p/q,\ p\wedge q=1$ is a root of $f$ in $\Q$, then $p^3 - 3 pq^2+q^3 = 0$, thus $p \mid q, q\mid p$ with $p\wedge q = 1$, therefore $\alpha = \pm1$, but neither 1 nor $-1$ is a root of $f$, thus $f$ has no rational root. As $\deg(f) = 3$, $f$ is irreducible over $\Q$.
 $\Delta(f) = -4(-3)^3 - 27 = 81 = 9^2$, thus $\Delta (f) \ne 0$ and so $f$ is separable. Moreover $\Delta(f) = 9^2$ is a square in  $\Q$. By Proposition 7.4.2,
 $$\Gal_{\Q}(x^3-3x+1) = A_3.$$
 
@@ -1791,7 +1823,7 @@ $$\Gal_{\Q(t)}(x^3-t) = S_3.$$
 Let  $f = f(x_1,\cdots,x_n) \in F[x_1,\cdots,x_n]$ that is invariant under $A_n$.
 By Theorem 7.4.4, $f=A + B\sqrt{\Delta}, \ A,B \in F(\sigma_1,\cdots,\sigma_n)$.
 \begin{enumerate}
-\item[(a)] Let $\tau = (1 2)$.
+\item[(a)] Let $\tau = (1\, 2)$.
 
 By (7.16),  $\tau \cdot\sqrt{\Delta} = \mathrm{sgn}(\tau) \sqrt{\Delta} = - \sqrt{\Delta}$.
 
@@ -1804,7 +1836,7 @@ $$f + \tau \cdot f = 2 A.$$
 
 Then $P = (B\sqrt{\Delta})(-B \sqrt{\Delta}) = -B^2 \Delta$.
 
-\item[(d)] Let $B = u/v, \ u,v \in F[\sigma_1,\cdots,\sigma_n]$, where $u,v$ are relatively prime. Then $v^2 P = -u^2 \Delta$.
+\item[(d)] Let $B = u/v, \ u,v \in F[\sigma_1,\cdots,\sigma_n]$, where $u,v$ are relatively prime. Then $$v^2 P = -u^2 \Delta.$$
 
 As $\tau \cdot P = (\tau\cdot(f-A))(\tau \cdot(\tau\cdot(f-A))) = (\tau\cdot(f-A))(f-A) = P$, $P$ is invariant under $A_n$ and also invariant under $\tau$, thus is invariant under $S_n$, and $P$ is a polynomial in $x_1,\cdots,x_n$, since $f, A \in F[x_1,\ldots,x_n]$. Therefore there exists a polynomial $g$ such that $P = g(\sigma_1, \cdots, \sigma_n)$, and 
 $v^2 g = -u^2 \Delta$ is an equality in $F[\sigma_1, \cdots \sigma_n]$: $u,v,g,\Delta \in F[\sigma_1,\cdots,\sigma_n]$.
@@ -1863,7 +1895,7 @@ Indeed, for all $g,h,k \in G$,
 
 $(\varphi(g) \circ \varphi(h))(k) = \varphi_g(\varphi_h(k)) = g(hk) = (gh)k = \varphi(gh)(k)$, thus $$\varphi(g) \circ \varphi(h) =  \varphi(gh).$$
 
-If $\varphi(g) = 1_G$, $\varphi(g)(e) = ge=g$, therefore $g=e$: $\ker(\varphi) = \{e\}$.
+If $\varphi(g) = 1_G$, $e = \varphi(g)(e) = ge=g$, therefore $g=e$: $\ker(\varphi) = \{e\}$.
 
 Moreover, if $f : \gcro 1,n \dcro \to G, i \mapsto g_i$ is the bijection representing the chosen numbering of $G$, we can associate to it the isomorphism
 $$
@@ -1973,7 +2005,7 @@ By the Galois correspondence, the extension $F(\sqrt{\Delta})$ of degree 2 over 
 
 $$\Gal(L/F(\sqrt{\Delta})) \simeq \Z/3\Z.$$
 
-Let $\alpha \in L$ a root of $f$. Since $f$ is irreducible over $F$, $f$ is the minimal polynomial of $\alpha$ over $F$. Let $p \in F(\sqrt{\Delta})[x]$ the minimal polynomial of $\alpha$ over $F(\sqrt{\Delta})$. As $\alpha$ is a root of $f \in F[x] \subset F(\sqrt{\Delta})[x]$, $p$ divides $f$ in $F(\sqrt{\Delta})[x]$. Moreover $\deg(p) = [L:F(\sqrt{\Delta})] = 3 = \deg(f)$.
+Let $\alpha \in L$ be a root of $f$. Since $f$ is irreducible over $F$, $f$ is the minimal polynomial of $\alpha$ over $F$. Let $p \in F(\sqrt{\Delta})[x]$ the minimal polynomial of $\alpha$ over $F(\sqrt{\Delta})$. As $\alpha$ is a root of $f \in F[x] \subset F(\sqrt{\Delta})[x]$, $p$ divides $f$ in $F(\sqrt{\Delta})[x]$. Moreover $\deg(p) = [L:F(\sqrt{\Delta})] = 3 = \deg(f)$.
 
 $p \mid f, \deg(p) = \deg(f)$, and $f,p$ are monic, thus $f = p$. Therefore $f$ is irreducible over $F(\sqrt{\Delta})$.
 \end{proof}
@@ -1982,7 +2014,7 @@ $p \mid f, \deg(p) = \deg(f)$, and $f,p$ are monic, thus $f = p$. Therefore $f$ 
 
 \paragraph{Ex. 7.5.1}
 
-{\it Let $P,Q \in F[x,y]$ be polynomials such that $P\mid Q$ and $P\in F[x]$, and write $Q= a_0(x)+a_1(x)y+a_(x)y^2+\cdots+a_m(x)y^m$. Prove that $P\mid a_i$ for $i=0,\ldots,m$.
+{\it Let $P,Q \in F[x,y]$ be polynomials such that $P\mid Q$ and $P\in F[x]$, and write $Q= a_0(x)+a_1(x)y+a_2(x)y^2+\cdots+a_m(x)y^m$. Prove that $P\mid a_i$ for $i=0,\ldots,m$.
 }
 
 \begin{proof}
@@ -2182,15 +2214,15 @@ defines an action of $\mathrm{GL}(2,F)$ on $\hat{F}$. Explain carefully what hap
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-The group $GL(2,F)$ of the matrix 
+The group $GL(2,F)$, whose elements are the matrices 
 $M =
 \left(
 \begin{array}{cc}
  a&   b   \\
  c&   d   
 \end{array}
-\right), \quad ad-bc\neq 0
-$
+\right)
+$ such that $ad-bc\neq 0$,
 acts on $F^2$, identified to the matrix columns of order 2, by the action defined by 
 $$(x',y') = M \cdot (x,y) \iff
  \left(
@@ -2378,9 +2410,9 @@ If $\gamma, \gamma'$ satisfy $[\gamma]  \cdot \alpha_i  = [\gamma']\cdot \alpha_
 Let $P = (a,b,c) \neq (0,0,1)$ be a point of $S_2$, so $a^2+b^2+c^2=1$. Then $c\neq 1$. Write $N = (0,0,1)$ the north pole.
 Any point $M = (x,y,z)$ lies on the line $(NP)$, if and only if $\overrightarrow{NM} = \lambda \overrightarrow{NP}, \ \lambda \in \R^*$, which gives the parametric system of equations
 \begin{align*}
-x &= \lambda a\\
-y &=\lambda b\\
-z&=\lambda(c-1)+1
+x &= \lambda a,\\
+y &=\lambda b,\\
+z&=\lambda(c-1)+1.
 \end{align*}
 The intersection with the equatorial plane is given by $z=0$, so $\lambda = 1/(1-c)$, which gives $x=a/(1-c), y=b/(1-c)$ :
 
@@ -2525,7 +2557,7 @@ $$S_4 = \langle \varphi(r_1), \varphi(r_2), \varphi(r_3) \rangle.$$
 \item[(f)] 
 As the subgroup $\varphi(G)$ contains $\varphi(r_1), \varphi(r_2), \varphi(r_3)$, it contains $S_4 = \langle \varphi(r_1), \varphi(r_2), \varphi(r_3) \rangle$. Therefore
 $$\varphi(G) = S_4.$$
-So $\varphi : G \to S_4$ is surjective. Moreover $\vert G \vert = \vert S_4 \vert = 24$, so $\varphi$ is bijective, $\varphi :G \to S_4$ is so an isomorphism.
+So $\varphi : G \to S_4$ is surjective. Moreover $\vert G \vert = \vert S_4 \vert = 24$, so $\varphi$ is bijective, $\varphi :G \to S_4$ is thus an isomorphism.
 $$G \simeq S_4.$$
 
 As $\varphi(G) = \langle \varphi(r_1), \varphi(r_2), \varphi(r_3) \rangle$, where $\varphi$  is an isomorphism,
@@ -2783,7 +2815,7 @@ In the case $n=4$, we have proved in Exercise 10 that $G \simeq S_4$.
 The modification of the polyhedron given in the text (or more simply the suppression of the south pole $S$) implies then $\rho(N) = N$, so it remains only the case 1 in the preceding discussion, so  $G = \langle r \rangle \simeq C_n$.
 
 \item[(c)]
-$\bullet$ The irregular tetrahedron  $T = \{(1,0,0), (0,1,0), (0,0,1), (\frac{1}{9},\frac{4}{9},\frac{8}{9})\}$, set of four non coplanar points 4, inscribed in $S_2$ (since $\left(\frac{1}{9}\right)^2 +\left(\frac{4}{9}\right)^2 +\left(\frac{8}{9}\right)^2  = 1$) and its symmetry group ist $G_T = \{e\}\simeq C_1$.
+$\bullet$ The irregular tetrahedron  $T = \{(1,0,0), (0,1,0), (0,0,1), (\frac{1}{9},\frac{4}{9},\frac{8}{9})\}$, set of four non coplanar points 4, inscribed in $S_2$ (since $\left(\frac{1}{9}\right)^2 +\left(\frac{4}{9}\right)^2 +\left(\frac{8}{9}\right)^2  = 1$) and its symmetry group is $G_T = \{e\}\simeq C_1$.
 
 $\bullet$ Complete an isosceles non equilateral triangle  in the equatorial plane by the two poles: 
 
@@ -2816,7 +2848,7 @@ For all $\alpha \in \C(t)$, for all $k \in \N$, $\sigma^k(\alpha(t)) =\alpha( \z
 
 By Theorem 7.5.3, the extension $L_G \subset \C(t)$ is a Galois extension of degree $n$, with Galois group $G = \langle \sigma \rangle$.
 
-We like to specify the field $L_G$.
+We want to specify the field $L_G$.
 
 $\sigma(t^n) = (\zeta_nt)^n=t^n$, thus $t^n\in L_G$ and so $\C(t^n) \subset L_G \subset \C(t)$.
 
