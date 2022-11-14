@@ -179,6 +179,33 @@ By part (a) of Lemma 14.1.2, $AGL(1,\mathbb{F}_p)$ is the normalizer of $\langle
 
 Thus $\tau$ normalizes $\langle\theta\rangle$ and hence $\tau\in AGL(1,\mathbb{F}_p)$.
 \end{proof}
+\paragraph{Ex. 14.1.8}
 
+{\it Let $f\in F[x]$ be irreducible of prime degree $p\geq 5$, where F has characteristic 0, and let $\alpha\ne\beta$ be roots of f in some splitting field. If $F(\alpha,\beta)$ contains all other roots of f, then f is solvable by radicals by Theorem 14.1.1. But suppose that there is some third root $\gamma$ such that $\gamma\in F(\alpha,\beta)$. Is this enough to force f to be solvable by radicals?
+\begin{enumerate}
+\item[(a)] Use the classification of transitive subgroups of $S_5$ from Section 13.2 to show that the answer is "yes" when p=5.
+\item[(b)] Use the polynomial $x^7-154x+99$ from Example 13.3.10 to show that the answer is "no" when p=7.
+\end{enumerate}
+}
+\begin{proof}
+\begin{enumerate}
+\item[(a)]  
+\item[(b)] 
+\end{enumerate}
+
+\end{proof}
+
+\subsection{IMPRIMITIVE POLYNOMIALS OF PRIME-SQUARED DEGREE}
+\paragraph{Ex. 14.2.1}
+
+{\it Prove (14.7).
+}
+
+\begin{proof}
+Given $\sigma'=(\tau';\mu_1',...,\mu_k'),\sigma=(\tau;\mu_1,...,\mu_k)\in A\wr B$. Since $\sigma'$ maps $R_i$ to $R_{\tau'(i)}$ via $\mu_i'$, if we set $j=\tau'(i)$, then $\sigma$ maps $R_j$ to $R_{\tau(j)}=R_{\tau(\tau'(i))}=R_{\tau\tau'(i)}$ via $\mu_j=\mu_{\tau'(i)}$.
+
+Hence $\sigma\sigma'$ maps $R_i$ to $R_{\tau\tau'(i)}$ via $\mu_{\tau'(i)}\mu_i'$, which gives the prove to (14.7):
+$$(\tau;\mu_1,...,\mu_k)(\tau';\mu_1',...,\mu_k')=(\tau\tau';\mu_{\tau'(1)}\mu_1',...,\mu_{\tau'(k)}\mu_k').$$
+\end{proof}
 
 \end{document}
