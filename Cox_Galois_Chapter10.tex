@@ -49,13 +49,11 @@
 \newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
 %\renewcommand\familydefault{cmss}
 \title{Solutions to David A.Cox  "Galois Theory''}
-\author{Richard Ganaye}
 \refstepcounter{section} \refstepcounter{section} \refstepcounter{section} \refstepcounter{section}
 \refstepcounter{section}\refstepcounter{section}\refstepcounter{section}\refstepcounter{section}
 \refstepcounter{section}
 
 \begin{document}
-\maketitle
 
 \section{Chapter 10 : GEOMETRIC CONSTRUCTIONS}
 
@@ -91,10 +89,16 @@ Example 10.1.2(b) shows then that $i \in \C$ is  constructible.
 
 \begin{proof}
 \be
-\item[(a)] $C(\alpha,1)$ is constructible by $C2$. Let $\gamma'$ the intersection point of the line $\alpha \gamma$ with $C(\alpha,1)$, then $\gamma'$ is constructible by $P2$. Let $\eta$ the orthogonal projection of $\gamma'$ on the line $\alpha \beta$. Then $\eta$ is constructible with the usual construction: the circle $C(\gamma',r)$, with $r=  |\gamma' \alpha|$,  has two intersection points $\alpha,\alpha'$ with the line $\alpha \beta$, and the intersection point $\gamma'' \ne \gamma'$ of $C(\alpha,r)$ with $C(\alpha',r)$ is constructible, so is the line $\gamma' \gamma''$, and $\eta$ the intersection of the line $\gamma' \gamma''$ with the orthogonal line $\alpha \beta$. Then the cosine of the angle $(\overrightarrow{\alpha \beta},\overrightarrow{\alpha \gamma})$ is $\pm | \eta \alpha| $.
+\item[(a)] First we construct a triangle $\alpha',\beta',\gamma'$ isometric to $\alpha,\beta,\gamma$, where $\alpha' = 0$. The circle $C(0,r)$, with $r =||\overrightarrow{\alpha \beta}||$ is constructible (rule C2). The intersection of $C(0,r)$ with the constructible $x$-axis contains two constructible points (rule P2), one of them, named $\beta'$, with positive $x$-coordinate.
 
-Write $\xi, \xi'$ the two intersection points of $C(0,| \eta \alpha|)$ with the $x$-axis. The  line passing trough $\xi$ and orthogonal to the $x$-axis intersect $C(0,1)$ in the point $\delta_1 $ with positive $y$-coordinate, and similarly  line passing trough $\xi'$ and orthogonal to the $x$-axis intersect $C(0,1)$ in the point $\delta_2 $ with positive $y$-coordinate, so both are constructible. Then the cosine of the angle formed by $0,1,\delta_1$ is the opposite of the cosine of the angle formed by $0,1,\delta_2$, and equal in absolute value to $ |\eta \alpha|$. So the angle formed by  $0,1,\delta_1$ or $0,1,\delta_2$ is congruent to the angle formed by $\alpha,\beta,\gamma$, so we can take $\delta = \delta_1$ or $\delta = \delta_2$ such that the angle formed by  $0,1,\delta$ is congruent to the angle formed by $\alpha,\beta,\gamma$, and $\delta$ is constructible.
+The circles $C(\alpha',r') = C(0,r')$ and $C(\beta',r'')$ where $r' = ||\overrightarrow{\alpha \gamma}||, r'' =  ||\overrightarrow{\beta \gamma}||$ are constructible (rule C2). Since 
+$$||\overrightarrow{\alpha' \beta'}|| = r =  ||\overrightarrow{\alpha \beta}|| <  ||\overrightarrow{\alpha \gamma}|| + ||\overrightarrow{ \beta \gamma}|| = r' + r'',$$
+the intersection $C(\alpha',r') \cap C(\beta',r'')$ is nonempty, so $C(\alpha',r') \cap C(\beta',r'') = \{\gamma', \gamma''\}$, where $\gamma'$ has positive $y$-coordinate, and $\gamma'$ is constructible by rule $P3$.
 
+Since $||\overrightarrow{\alpha \beta}|| = ||\overrightarrow{\alpha' \beta'}||, ||\overrightarrow{ \beta, \gamma}|| =|\overrightarrow{\beta', \gamma'}||, ||\overrightarrow{\alpha \gamma}|| = ||\overrightarrow{\alpha' \gamma'}||$, the two triangles $(\alpha, \beta, \gamma)$ and ($\alpha', \beta', \gamma')$ are isometric. Therefore the corresponding angles are equal :
+$$\widehat{(\overrightarrow{\alpha \beta}, \overrightarrow{\alpha \gamma})} = \pm \widehat{(\overrightarrow{\alpha' \beta'}, \overrightarrow{\alpha' \gamma'})}.$$
+
+If we take $\delta = \gamma'$, then the angle $\widehat{(\overrightarrow{\alpha \beta}, \overrightarrow{\alpha \gamma})}$ formed by $\alpha, \beta, \gamma$ is congruent to the angle formed by $0,1,\delta$.
 \item[(b)] $\bullet$ If $\zeta_n$ is constructible, so are $1,\zeta_n,\ldots, \zeta_n^{n-1}$ since $\mathscr{C}$ is a subfield of $\C$ (Theorem 10.1.4), and these points are the vertices of a regular $n$-gon.
 
 $\bullet$ Suppose that a regular $n$-gon can be constructed by straightedge and compass. Let $\beta, \gamma$ be two consecutive vertices. Then the center $\alpha$ of the $n$-gon is constructible, and the measure of the angle formed by $\alpha, \beta,\gamma$ has measure $\theta = 2\pi/n$ (see Example 10.1.3).
@@ -109,7 +113,7 @@ By part (a), we can construct $\delta$ with positive $y$-coordinate such that th
 \be
 \item[(a)] Let $\alpha,\beta$ be constructible numbers such that $0,\alpha,\beta$ are collinear. Prove that $\alpha+\beta$ is constructible.
 \item[(b)] Let $a\in {\mathscr{C}} \cap \{x\in \R\, | \, x>0\}$. Use Figure 2 in the proof of Theorem 10.1.4 to show that $1/a$ is constructible.
-\item[(c)] In the proof of Theorem 10.1.4, we showed that ${\mathscr{C}} \cap  \{x\in \R\, | \, x>0\}$ is closed under addition, mutiplication, and multiplicative inverses. Use this to prove that ${\mathscr{C}} \cap \R$ is a subfield of $\R$.
+\item[(c)] In the proof of Theorem 10.1.4, we showed that ${\mathscr{C}} \cap  \{x\in \R\, | \, x>0\}$ is closed under addition, multiplication, and multiplicative inverses. Use this to prove that ${\mathscr{C}} \cap \R$ is a subfield of $\R$.
 \item[(d)] Prove that the number $\beta$ pictured in (10.1) is constructible (assuming that $r$ is constructible).
 \ee
 }
@@ -125,7 +129,7 @@ Let $a,b\in {\mathscr{C}} \cap \R$. If $a = 0$ or $b = 0$ then $a+b \in  {\maths
 Let $a \in {\mathscr{C}} \cap \R, a\ne 0$. then $| a | \in {\mathscr{C}} \cap \R_+^*$, so $1/|a| \in {\mathscr{C}} \cap \R_+^*$. Therefore $1/a = \pm 1/|a| \in {\mathscr{C}} \cap \R$.
 
 Conclusion: ${\mathscr{C}} \cap \R$ is a subfield of $\R$.
-\item[(d)] We can construct the orthogonal line $D$ to the $x$-axis passing through $1$, the perpendicular bisector of $(0,2)$. As $r$ is constructible, so is $1+r$ (Exercise 10.1.3(a)). The intersection of the perpendicular bisector of $(0,1+r)$ with the $x$-axis gives the number $(1+r)/2$, which is so constructible. The intersection of the circle with radius $(1+r)/2$ centered in $(1+r)/2$ with $D$ give $\beta$ with positive $y$-coordinate, and so $\beta$ is constructible.
+\item[(d)] We can construct the orthogonal line $D$ to the $x$-axis passing through $1$, the perpendicular bisector of $(0,2)$. As $r$ is constructible, so is $1+r$ (Exercise 10.1.3(a)). The intersection of the perpendicular bisector of $(0,1+r)$ with the $x$-axis gives the number $(1+r)/2$, which is so constructible. The intersection of the circle with radius $(1+r)/2$ centered in $(1+r)/2$ with $D$ gives $\beta$ with positive $y$-coordinate, and so $\beta$ is constructible.
 
 The end of the proof of Theorem 10.1.4 shows that $\sqrt{r}$ is constructible.
 \ee
@@ -144,7 +148,7 @@ The end of the proof of Theorem 10.1.4 shows that $\sqrt{r}$ is constructible.
 \begin{proof}
 \be
 \item[(a)]
- Let $M = (x,y),A = (u_1,v_1),B = (u_2,,v_2)$ the points of $\R^2$ with affixes $z,\alpha_1,\beta_1$, where $\alpha_1\ne \beta_1$.
+ Let $M = (x,y),A = (u_1,v_1),B = (u_2,v_2)$ be the points of $\R^2$ with affixes $z,\alpha_1,\beta_1$, where $\alpha_1\ne \beta_1$.
 Then 
 \begin{align*}
 M \in (AB) &\iff \det(\overrightarrow{AM}, \overrightarrow{AB}) = 0\\
@@ -281,7 +285,7 @@ Therefore  $F_n \subset {\mathscr P} $, and $\alpha \in F_n$, so $\alpha \in {\m
 
 Now suppose that $\alpha$ is constructed in $N\geq1$ steps, where the last step use the intersection of two lines $l_1,l_2$. As in the proof of the Theorem 10.1.6, the coordinates of $\alpha$ lie in the same field $F_n$.
 
-If the last step uses the divider, then their exists four points $\beta,\gamma, \delta, \varepsilon \in \mathbb{P}$ such that $\delta,\varepsilon, \alpha$ are collinear and $|\alpha - \delta| = |\beta - \gamma|$. Moreover, by the induction hypothesis,  the coordinates $\beta_x, \beta_y,\gamma_x,\ldots$ of $\beta,\gamma,\delta,\varepsilon$ are in $F_n$.
+If the last step uses the divider, then their exist four points $\beta,\gamma, \delta, \varepsilon \in \mathbb{P}$ such that $\delta,\varepsilon, \alpha$ are collinear and $|\alpha - \delta| = |\beta - \gamma|$. Moreover, by the induction hypothesis,  the coordinates $\beta_x, \beta_y,\gamma_x,\ldots$ of $\beta,\gamma,\delta,\varepsilon$ are in $F_n$.
 
 Then $\alpha - \delta = \lambda(\varepsilon - \delta), \lambda \in \R$, with
 $$\lambda = \pm \frac{|\alpha - \delta|}{|\varepsilon - \delta|}=\pm \frac{|\beta - \gamma|}{|\varepsilon - \delta|}.$$
@@ -375,13 +379,15 @@ If $\pi/2 \leq \theta \leq \pi$ (obtuse angle), then we can trisect the construc
 
 \paragraph{Ex. 10.1.11}
 
-{\it Explain how the points of intersection of the parabolas $y=x^2$ and $x=y^2$ enable one to duplicate the cube. Your explanation should include a picture.
+{\it Explain how the points of intersection of the parabolas $y=x^2$ and $x=2y^2$ enable one to duplicate the cube. Your explanation should include a picture.
 }
 
 \begin{proof}
 Let $(a,b)$ the intersection point (other than (0,0)) at the intersection of the two parabolas $y =x^2$ and $x = 2y^2$. Then $ a^2 = b, a = 2 b^2$. Multiplying these two equalities, we obtain
 $$a^3 = 2 b^3.$$
-The volume of the cube with side $a$ is twice the volume of the cube of side $b$.
+The volume of the cube with side $a$ is twice the volume of the cube with side $b$.
+
+The solution of the system is $(a,b) = (\frac{1}{\sqrt[3]{2}}, \frac{1}{\sqrt[3]{2^2}})$, and $\sqrt[3]{2}$ is in the field of constructible points taking $0,1$ and the intersection point of these two parabolas as a starting configuration.
 \end{proof}
 
 \paragraph{Ex. 10.1.12}
@@ -411,11 +417,11 @@ So $\pi/2$ and $\pi$ is constructible, if we use the spiral of Archimede, and al
 {\it Suppose that $2^k+1$ is an odd prime. Prove that $k$ is a power of 2.
 }
 
-\begin{proof}Let $N = 2^k + 1, \ k\geq 1$ an odd prime. Suppose that there exists an odd divisor $q$ of $k$, so $k = ql$. Since $l$ is odd,
+\begin{proof}Let $N = 2^k + 1, \ k\geq 1$, an odd prime. Suppose that there exists an odd divisor $l$ of $k$, with $l>1$, so $k = ql, q\in \N$, and $1\leq q<k$. Since $l$ is odd,
 $$2^k+1 =2^{ql}+1 = (2^q + 1)(2^{q(l-1)} - 2^{q(l-2)}+ \cdots -2^q + 1) = (2^q+1)\sum_{j=0}^{l-1} (-1)^j 2^{qj},$$
-so $2^q + 1$ divides $2^k+1$, and $1\leq q \leq k$, hence $ 1< 3 \leq 2^q + 1 \leq 2^k < 2^k+1$, so $2^q + 1$ is a nontrivial divisor of $N = 2^k+1$. Therefore $N$ is composite: this is a contradiction.
+so $2^q + 1$ divides $2^k+1$, and $1\leq q < k$, hence $ 1< 3 \leq 2^q + 1 < 2^k+1$, so $2^q + 1$ is a nontrivial divisor of $N = 2^k+1$. Therefore $N$ is composite: this is a contradiction.
 
- Thus $k$ has no odd divisor, so $k = 2^n$ for some integer $n$, and $N = 2^{2^n}+ 1$ is a Fermat prime.
+ Thus $k$ has no odd non trivial divisor, so $k = 2^n$ for some integer $n$, and $N = 2^{2^n}+ 1$ is a Fermat prime.
 \end{proof}
 
 \paragraph{Ex. 10.2.2}
@@ -467,7 +473,7 @@ $$[L : \Q] = [\Q(\zeta_p) : \Q] = \deg(\Phi_p) = p-1.$$
 \be
 \item[$\bullet$] Suppose that $p$ is a Fermat prime, so $p=2^n +1$, where $n=2^k, k\in \N$. Then $[L:\Q] = 2^n$, where $L$ is the splitting field of $\Phi_p$ over $\Q$. By the authorized Theorem 10.1.12, $\zeta_p$ is constructible.
 
-\item[$\bullet$]  Conversely, if we suppose that $\zeta_p$ is constructible, by the same Theorem 10.1.12, $[L:\Q] = 2^n$ for some integer $n\geq 0$, so $p=2^n+1$. As $p$ is prime, by Exercise 1, $p=2^k,\ k\in \N$, so $ = 2^{2^k}+1$ is a Fermat prime.
+\item[$\bullet$]  Conversely, if we suppose that $\zeta_p$ is constructible, by the same Theorem 10.1.12, $[L:\Q] = 2^n$ for some integer $n\geq 0$, so $p=2^n+1$. As $p$ is prime, by Exercise 1, $n=2^k,\ k\in \N$, so $ = 2^{2^k}+1$ is a Fermat prime.
 \ee
 Conclusion: if $p$ is an odd prime, $\zeta_p$ is constructible if and only if $p$ is a Fermat prime.
 \end{proof}
@@ -587,7 +593,7 @@ The number of digits in the decimal expansion of $F_{2478782}$ is $$\lfloor \log
 {\it This exercise will use the diagram of page 284 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics [width=8cm,height=8cm] {Ex.10.3.1.png}
+\includegraphics [width=8cm,height=8cm] {Ex_10_3_1.png}
 \end{center}
 \end{figure}
 to prove that the origami construction described at the beginning of the section trisects the angle $\theta$ formed by the line $l_2$ and the bottom of the square.
@@ -602,7 +608,7 @@ to prove that the origami construction described at the beginning of the section
 
 \begin{proof}
 \be
-\item[(a)]The dashed line $l$ is the fold of the sheet that applies $P_1$ on $Q_1$ and $P_2$ on $Q_2$. Let $s$ the reflection (orthogonal symmetry) with regard to the line $l$. 
+\item[(a)]The dashed line $l$ is the fold of the sheet that applies $P_1$ on $Q_1$ and $P_2$ on $Q_2$. Let $s$ be the reflection (orthogonal symmetry) with regard to the line $l$. 
 
 Then $s(P_2) = Q_2$, and $s(Q_1) = P_1$, so $s$ applies the line $\overline{P_2 Q_1}$ on the line $\overline{P_1Q_2}$. Let $Q$ be the intersection point of these two lines. 
 
@@ -769,12 +775,12 @@ Since $2+3uv=0$,
 \begin{align*}
 0 &= \alpha^3+2\alpha+1\\
 &= u^3+v^3+1+ (2 + 3 uv)(u+v)\\
-&= u^3+v^3+1
+&= u^3+v^3+1.
 \end{align*}
 So $u^3,v^3$ satisfy
 \begin{align*}
--1 &=u^3 + v^3 \\
--\frac{8}{27} &=u^3v^3 
+-1 &=u^3 + v^3 ,\\
+-\frac{8}{27} &=u^3v^3.
 \end{align*}
 Therefore $u^3,v^3$ are the roots of $y^2 +y - \frac{8}{27}$:
 $$\{u^3,v^3\} = \left \{\frac{1}{18} \sqrt{177} - \frac{1}{2},\quad - \frac{1}{18} \sqrt{177} - \frac{1}{2}\right \}.$$
@@ -807,7 +813,7 @@ $$x_2 = m, \qquad y_2 = \frac{m^2}{2},$$ so there is at most one common tangent 
 
 Conversely, we must prove the existence of a common tangent.
 
-Let $D$ the line of slope $\alpha$ passing by $M_2(x_2,y_2)$, with $(x_2,y_2) = (\alpha,\frac{\alpha^2}{2})$. The equation of $D$ is given by $y-\frac{\alpha^2}{2} = \alpha (x-\alpha)$, so
+Let $D$ the line with slope $\alpha$ passing by $M_2(x_2,y_2)$, where $(x_2,y_2) = (\alpha,\frac{\alpha^2}{2})$. The equation of $D$ is given by $y-\frac{\alpha^2}{2} = \alpha (x-\alpha)$, so
 $$D : -\alpha x + y +\frac{\alpha^2}{2}.$$
 
 $D$ contains $M_1(x_1,y_1)$, where $(x_1,y_1) = (\frac{1}{2\alpha^2},1+\frac{1}{\alpha})$, since
@@ -821,7 +827,7 @@ Conclusion: there is exactly one way to take the focus of each parabola to a poi
 To obtain the corresponding line (the dotted line of the figure) by an origami fold, we take $F_1$ to $D_1$ (the left side of the sheet), and simultaneously $F_2$ to $D_2$. The slope $m$ of this line is the root $\alpha$ of $x^3 + 2x +1$.
 
 
-\item[(c)] Let $F'_2$ be the reflexion of the focus $F_2$ of ${\mathscr P} _2$ about the common tangent $D$, and $M_2$ the point of tangency. By Exercise 3, the line $(M_2F'_2)$ is parallel to the $y$-axis, so by (10.11) the abscissa of $F'_2$ is $$x_2 =m.$$
+\item[(c)] Let $F'_2$ be the reflection of the focus $F_2$ of ${\mathscr P} _2$ about the common tangent $D$, and $M_2$ the point of tangency. By Exercise 3, the line $(M_2F'_2)$ is parallel to the $y$-axis, so by (10.11) the $x$-coordinate of $F'_2$ is $$x_2 =m.$$
  The intersection of the vertical fold  passing by $F'_2$ with the $x$-axis gives the point $(m,0)$, with $m\approx -0.45$. 
  
  We have resolved the equation $x^3 + 2x + 1 = 0$ by origami !
@@ -904,8 +910,8 @@ So the second parabola $y = x^2/2$ has focus $\left(0,\frac{1}{2}\right)$ and di
 
 \begin{proof} 
 
-We first prove that $\Q \subset \cal O$ is a normal extension. 
-Let $\alpha \in {\cal O}$, and let $f(x)$ be the minimal polynomial of $\alpha$ over $\Q$. By Theorem 10.3.4, there are subfields
+We first prove that $\Q \subset \mathscr O$ is a normal extension. 
+Let $\alpha \in {\mathscr O}$, and let $f(x)$ be the minimal polynomial of $\alpha$ over $\Q$. By Theorem 10.3.4, there are subfields
 $$\Q=F_0\subset F_1\subset \cdots \subset F_{n-1} \subset F_n \subset \C$$
 such that $\alpha \in F_n$ and $[F_i:F_{i-1}] = 2$ or $3$ for $1\leq i \leq n$.
 
@@ -916,9 +922,9 @@ Now let $\beta \in M$ be any root of $f$. By Proposition 5.1.8, there is $\sigma
 $$\Q \subset \sigma(\Q)=\sigma(F_0) \subset \cdots \subset \sigma(F_n)$$
 such that $[\sigma(F_i):\sigma(F_{i-1}] = [F_i:F_{i-1}] = 2$ or $3$ for all $i$.
 
-By Theorem 10.3.4, $\beta = \sigma(\alpha) \in \sigma(F_n)$ is an origami number, so $\beta \in {\cal O}$, so we can conclude that $ \Q \subset \cal O$ is a normal extension.
+By Theorem 10.3.4, $\beta = \sigma(\alpha) \in \sigma(F_n)$ is an origami number, so $\beta \in {\mathscr O}$, so we can conclude that $ \Q \subset \mathscr O$ is a normal extension.
 \be
-\item[$\bullet$] Suppose that $\alpha \in {\cal O}$  and let $\Q \subset L$ be the splitting field of the minimal polynomial $f$ of $\alpha$ over $\Q$. Since $\Q \subset \cal O$ is normal, $L \subset {\cal O}$. By the theorem of the Primitive Element, we have $L = \Q(\gamma)$ for some $\gamma \in L$. Since $\gamma \in {\cal O}$, there are subfields
+\item[$\bullet$] Suppose that $\alpha \in {\mathscr O}$  and let $\Q \subset L$ be the splitting field of the minimal polynomial $f$ of $\alpha$ over $\Q$. Since $\Q \subset \mathscr O$ is normal, $L \subset {\mathscr O}$. By the theorem of the Primitive Element, we have $L = \Q(\gamma)$ for some $\gamma \in L$. Since $\gamma \in {\mathscr O}$, there are subfields
 $$\Q=F'_0\subset F'_1\subset \cdots \subset F'_{n-1} \subset F'_m \subset \C$$
 such that $\gamma \in F'_m$ and $[F'_i:F'_{i-1}] = 2$ or $3$ for $1\leq i \leq m$.
 
@@ -1087,7 +1093,7 @@ The discriminant of $f$ is $\Delta_f = 316 = 2^2 \times 79$, where $79$ is prime
  $$\angle PRO = \frac{\theta}{3}.$$
  \begin{figure}[htbp]
 \begin{center}
-\includegraphics [width=8cm,height=3cm] {Ex.10.3.12.png}
+\includegraphics [width=8cm,height=3cm] {Ex_10_3_12.png}
 \end{center}
 \end{figure}
 
@@ -1166,14 +1172,14 @@ In the example of the angle $\theta = 60^{\circ} = \pi/3$, where $\theta/3 = 20^
 \begin{proof}
 We follow the indication of David A. Cox and give the more geometric proof of [15] (G.E.Martin, Geometric Constructions):
 
-"Let $\angle AOR$ have measure $t$. Then $\angle PRO$ has measure $t$. Let $M$ be the midpoint of $Q$ and $R$. Since $\angle RPQ$ is right, then $P$ lies on the circle with diameter $\overline{RQ}$ by the converse of the Theorem of Thales. So $MQ = MP = MR = OP = 1/2$, and $\triangle MPR$ and $\triangle POM$ are isosceles triangles. Hence, $\angle MPR$ has measure $t$ by the Pons Asinorum, $\angle OMP$ has measure $2t$ by the Exterior Angle Theorem, and $\angle POM$ has measure $2t$ by the Pons Asinorum. Therefore, $\overrightarrow{OR}$ trisects $\angle POA$."
+``Let $\angle AOR$ have measure $t$. Then $\angle PRO$ has measure $t$. Let $M$ be the midpoint of $Q$ and $R$. Since $\angle RPQ$ is right, then $P$ lies on the circle with diameter $\overline{RQ}$ by the converse of the Theorem of Thales. So $MQ = MP = MR = OP = 1/2$, and $\triangle MPR$ and $\triangle POM$ are isosceles triangles. Hence, $\angle MPR$ has measure $t$ by the Pons Asinorum, $\angle OMP$ has measure $2t$ by the Exterior Angle Theorem, and $\angle POM$ has measure $2t$ by the Pons Asinorum. Therefore, $\overrightarrow{OR}$ trisects $\angle POA$."
 \end{proof}
 
 \paragraph{Ex. 10.3.14}
 
 {\it As explained in [21](C.R.Videla, {\it On points constructible from conics}), Pappus used intersections of conics to trisect angles as follows. Consider the unit circle centered at the origin, and let $0<\theta < \pi/2$. Then $P = (\cos \theta, \sin \theta)$ is the corresponding point on the unit circle. We assume that $P$ is known. Also let $O =(0,0)$ and set $A = (1,0)$. Thus $\theta = \angle POA$.
 \be
-\item[(a)] Consider the curve $C$ consisting of all points $Q = (x,y)$ such that the distance from $P$ to $Q$ is twice the distance from $Q$ to the $y$-axis. The curve $C$ intersects the unit circle at a point $R$ lying in the interior of $\angle POA$. Prove that $\angle ROA = \theta/3$.
+\item[(a)] Consider the curve $C$ consisting of all points $Q = (x,y)$ such that the distance from $P$ to $Q$ is twice the distance from $Q$ to the $x$-axis. The curve $C$ intersects the unit circle at a point $R$ lying in the interior of $\angle POA$. Prove that $\angle ROA = \theta/3$.
 \item[(b)] Show that the curve $C$ is a hyperbola. It follows that we have trisected an angle using the intersection of a hyperbola and a circle, i.e., an intersection of conics.
 \ee
 }
@@ -1181,7 +1187,7 @@ We follow the indication of David A. Cox and give the more geometric proof of [1
 \begin{proof}
 \be
 \item[(a)]
-Let $H$ the orthogonal projection of $R$ on the $x$-axis, and $S$ such that $H$ is the midpoint  of $RS$, so $S$ is the reflection of $R$ with regard to the $x$-axis. Since $R$ is on the curve $C$,
+Let $H$ be the orthogonal projection of $R$ on the $x$-axis, and $S$ such that $H$ is the midpoint  of $RS$, so $S$ is the reflection of $R$ with regard to the $x$-axis. Since $R$ is on the curve $C$,
 $$PR = 2 RH = RS,$$
 therefore the measures of $\angle ROP$ and $\angle SOR$ are equal, and is twice the measure of $\angle AOR$, so $\overrightarrow{OR}$ trisects the angle $\angle POA$ and a measure of $\angle ROA$ is $\theta/3$.
 
@@ -1201,7 +1207,7 @@ The discriminant of the quadratic form $a x^2 + bxy + cy^2 = x^2-3y^2$ is $\Delt
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics [width=8cm,height=6cm] {Ex.10.3.15.png}
+\includegraphics [width=8cm,height=6cm] {Ex_10_3_15.png}
 \end{center}
 \end{figure}
 
@@ -1267,7 +1273,7 @@ R \left |
 \right.
 .
 $$	
-Let $(X,Y)$ any point in the plane.
+Let $(X,Y)$ be any point in the plane.
 \begin{align*}
 (X,Y) \in l_1 = (DB) &\iff 0 = \begin{vmatrix} X - x_B & x_B - x_D \\Y-y_B & y_B - y_D \end{vmatrix} = \begin{vmatrix} X - \lambda & 3 \lambda \\Y&\mu \end{vmatrix}\\
 	&\iff \mu(X-\lambda) - 3\lambda Y= 0.\\
@@ -1326,17 +1332,17 @@ Note: the factorization is easy because $x = -2 \lambda = -k/4$ gives the partic
 The marked-ruler constructions of Pappus (for the trisection) and Nicomedes (for the cube root) give both a fourth degree equation with a known obvious solution.
 
 	\item[{\bf Solution2.}]  From  [15] (G.E. Martin, Geometric Constructions):
-
-" Let the parallel to $(AB)$ that passes through $C$ intersect $(DB)$ at $E$. So $\triangle ABD$ and $\triangle CDE$ are similar. Then, since $A$ bisects $CD$, we have $CE = 2 AB = k/2$. Also, since $\triangle QBR$ and $\triangle QCE$ are similar, we have $(k/2) / CQ = BR/1$. With $x = BR$, then $CQ = k/(2x)$. With $M$ the midpoint of $A$ and $B$, by two applications of the Pythagorean Theorem, we now have
+	
+`` Let the parallel to $(AB)$ that passes through $C$ intersect $(DB)$ at $E$. So $\triangle ABD$ and $\triangle CDE$ are similar. Then, since $A$ bisects $CD$, we have $CE = 2 AB = k/2$. Also, since $\triangle QBR$ and $\triangle QCE$ are similar, we have $(k/2) / CQ = BR/1$. With $x = BR$, then $CQ = k/(2x)$. With $M$ the midpoint of $A$ and $B$, by two applications of the Pythagorean Theorem, we now have
 \begin{align*}
 \left ( 1 + \frac{k}{2x} \right )^2 &= CR^2 = CM^2+MR^2 = (CA^2 - AM^2) + MR^2\\
 &=1^2 - \left ( \frac{k}{8} \right)^2  + \left( x + \frac{k}{8}\right)^2
 \end{align*}
-(So, multiplying the two members by $8^2x^2$,
+So, multiplying the two members by $8^2x^2$,
 \begin{align*}
-16(2x+k)^2 &= 8^2x^2 - k^2x^2 +x^2(8x+k)^2\\
-64 x^2 + 64 kx + 16 k^2 &= 64 x^2 - k^2 x^2 + 64 x^4 + 16kx^3 + k^2 x^2\\
-0 &= 64x^4 + 16kx^3 -64kx - 16k^2\\
+16(2x+k)^2 &= 8^2x^2 - k^2x^2 +x^2(8x+k)^2,\\
+64 x^2 + 64 kx + 16 k^2 &= 64 x^2 - k^2 x^2 + 64 x^4 + 16kx^3 + k^2 x^2,\\
+0 &= 64x^4 + 16kx^3 -64kx - 16k^2,\\
 0 &=4x^4 + kx^3 - 4kx -k^2. 
 \end{align*}
 Fortunately, this quartic easily factors as $(4x+k)(x^3-k) =0$. Since $4x+k>0$, then we must have $x^3 -k =0$. Therefore, $x$ is the real cube root of $k$, as desired."
@@ -1350,7 +1356,7 @@ Fortunately, this quartic easily factors as $(4x+k)(x^3-k) =0$. Since $4x+k>0$, 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics [width=12cm,height=6cm] {Ex.10.3.16.png}
+\includegraphics [width=12cm,height=6cm] {Ex_10_3_16.png}
 \end{center}
 \end{figure}
 
@@ -1441,7 +1447,7 @@ The sign $-$ in the text seems to be a misprint, if the equation of $l$ is $y = 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics [width=7cm,height=6cm] {Ex.10.3.17.png}
+\includegraphics [width=7cm,height=6cm] {Ex_10_3_17.png}
 \end{center}
 \end{figure}
 
@@ -1461,7 +1467,7 @@ $$(x^2+y^2 -2ax)^2 = x^2 + y^2.$$
 \end{figure}
 \begin{proof}
 \be
-\item[(a)]  As $QR = 1$, where $Q \in C$ and $R$ is on the line $(PQ)$, $R\in l$ is by definition on the lima\c con determined by $P$ and $C$,
+\item[(a)]  As $QR = 1$, where $Q \in C$ and $R$ is on the line $(PQ)$, $R\in l$ is by definition on the lima\c con determined by $P$ and $C$.
 
 \item[(b)] Let $l_1 : y = mx$ be any nonvertical line passing through $P = (0,0)$, with $m = \tan \theta, \ -\pi / 2 <\theta < \pi/2$, so the measure of the angle between the $x$-axis and $l_1$ is $\theta$.  Let $Q =(x_Q,y_Q),Q \ne P$, be the intersection point of $l_1$ with $C$. Then $x_Q \ne 0$.
 
@@ -1521,7 +1527,7 @@ A regular $n$-gon can be constructed by origami if and only if $\zeta_n = e^{2\p
 
 The splitting field of $\zeta_n$ over $\Q$ is $\Q(\zeta_n)$.
 By Theorem 10.3.6, $\zeta_n$ is an origami number if and only if $[\Q(\zeta_n):\Q] = 2^a 3 ^b$ for some integers $a,b \geq 0$, and the minimal polynomial of $\zeta_n$ over $\Q$ is $\Phi_n(x)$, so $[\Q(\zeta_n):\Q]  = \deg(\Phi_n) = \phi(n)$, so
-$$\zeta_n \in {\cal O} \iff \phi(n)=2^a 3^b,\ a,b \in \N.$$
+$$\zeta_n \in {\mathscr O} \iff \phi(n)=2^a 3^b,\ a,b \in \N.$$
 \be
 \item[$\bullet$] First suppose that $n=2^u3^v p_1\cdots p_s, \ u,v \geq 0$, where $p_1,\ldots,p_s$ are distinct Pierpont numbers.
 
