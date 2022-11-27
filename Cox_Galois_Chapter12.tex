@@ -46,34 +46,47 @@
 \newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
 
 \title{Solutions to David A.Cox  "Galois Theory''}
-\author{Richard Ganaye}
+
 \refstepcounter{section} \refstepcounter{section} \refstepcounter{section} \refstepcounter{section}
 \refstepcounter{section}\refstepcounter{section}\refstepcounter{section}\refstepcounter{section}
 \refstepcounter{section}\refstepcounter{section}\refstepcounter{section}
 
 \begin{document}
-\maketitle
 
 \section{Chapter 12 : LAGRANGE, GALOIS, AND KRONECKER}
 
 \subsection{LAGRANGE}
+
 \paragraph{Ex. 12.1.1}
 
 {\it Let $\theta(x)$ be the resolvent polynomial defined in (12.3). Use the second bullet following (12.1) to show that $\theta(x) \in K[x]$.
 }
 
-\begin{proof} Let $\sigma$ be any permutation of $S_n$. Since 
+\begin{proof} Let $\sigma$ be any permutation of $S_n$, and
 $$\theta(x) = \prod_{i=1}^r (x-\varphi_i),$$
-then
+where $\varphi_1 = \varphi, \varphi_2,\ldots \varphi_r$ are the {\it distinct} conjugates of $\varphi$:
+$$A := \{\tau \cdot \varphi\, | \, \tau \in S_n\} = \{\varphi_1,\ldots,\varphi_r\}.$$
+As in the proof of Theorem 7.1.1, we first show that $\sigma$ permute the $\varphi_i$.
+
+If $\varphi_i \in A$, then $\varphi_i = \tau \cdot \varphi$ for some $\tau \in S_n$. Therefore
+$$\sigma \cdot \varphi_i = \sigma \cdot (\tau \varphi) = (\sigma \tau) \cdot \varphi.$$
+Since $\sigma' = \sigma \tau \in S_n$, $\sigma' \cdot \varphi = (\sigma \tau) \cdot \varphi \in A$, therefore
+$$\{\sigma \cdot \varphi_1,\ldots, \sigma \cdot \varphi_r\} \subset \{\varphi_1,\ldots,\varphi_r\}.$$
+Since the map $\psi \mapsto \sigma \cdot \psi$ is injective, the elements $\sigma \cdot \varphi_i$ are distinct, and $A$ is finite, thus we can conclude that 
+$$\{\sigma \cdot \varphi_1,\ldots, \sigma \cdot \varphi_r\} = \{\varphi_1,\ldots,\varphi_r\}.$$
+Hence the exists some $\tau \in S_r$ such that, 
+$$\sigma \cdot \varphi_i =\varphi_{\tau(i)},\quad 1\leq i \leq r.$$
 \begin{align*}
 \sigma \cdot \theta(x) &= \sigma \cdot  \prod_{i=1}^r (x-\varphi_i)\\
 &= \prod_{i=1}^r \sigma \cdot (x-\varphi_i)\\
-&= \prod_{i=1}^r   (x-\varphi_{\sigma(i)})\\
-&= \prod_{j=1}^r   (x-\varphi_j) \qquad (j = \sigma(i))\\
+&= \prod_{i=1}^r (x-  \sigma \cdot \varphi_i)\\
+&= \prod_{i=1}^r   (x-\varphi_{\tau(i)})\\
+&= \prod_{j=1}^r   (x-\varphi_j) \qquad (j = \tau(i))\\
 &=\theta(x).
 \end{align*}
-By  Exercise 2.2.8, $\sigma \cdot \theta(x)  = \theta(x)$ implies that $\theta(x) \in K(x)$.
+Since $\sigma \cdot \theta(x)  = \theta(x)$ for all $\sigma \in S_n$, the coefficients of $\theta$ are in $K$ by theorem 2.2.7, so $\theta(x) \in K[x]$.
 \end{proof}
+
 
 \paragraph{Ex. 12.1.2}
 
