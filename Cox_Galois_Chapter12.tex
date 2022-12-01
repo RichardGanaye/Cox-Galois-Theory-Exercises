@@ -56,7 +56,6 @@
 \section{Chapter 12 : LAGRANGE, GALOIS, AND KRONECKER}
 
 \subsection{LAGRANGE}
-
 \paragraph{Ex. 12.1.1}
 
 {\it Let $\theta(x)$ be the resolvent polynomial defined in (12.3). Use the second bullet following (12.1) to show that $\theta(x) \in K[x]$.
@@ -86,7 +85,6 @@ $$\sigma \cdot \varphi_i =\varphi_{\tau(i)},\quad 1\leq i \leq r.$$
 \end{align*}
 Since $\sigma \cdot \theta(x)  = \theta(x)$ for all $\sigma \in S_n$, the coefficients of $\theta$ are in $K$ by theorem 2.2.7, so $\theta(x) \in K[x]$.
 \end{proof}
-
 
 \paragraph{Ex. 12.1.2}
 
@@ -224,7 +222,7 @@ $$H(y_1) \simeq D_8.$$
 \begin{proof}
 Starting from
 $$x^4 - \sigma_1x^3 = -\sigma_2x^2+\sigma_3x-\sigma_4,$$
-wee add the quantity
+we add the quantity
 $$yx^2+\frac{1}{4}(-\sigma_1x+y)^2 = \left(y+\frac{\sigma_1^2}{4}\right) x^2 -\frac{\sigma_1}{2} yx + \frac{y^2}{4},$$
 so
 $$x^4 - \sigma_1x^3 + yx^2+\frac{1}{4}(-\sigma_1x+y)^2 = -\sigma_2x^2+\sigma_3x-\sigma_4 + \left(y+\frac{\sigma_1^2}{4}\right) x^2 -\frac{\sigma_1}{2} yx + \frac{y^2}{4},$$
@@ -240,7 +238,7 @@ The discriminant of the right member $Ax^2+Bx+C$ is
 $$\Delta = B^2-4AC= \left(-\frac{\sigma_1}{2} y + \sigma_3 \right)^2 - 4 \left(y+\frac{\sigma_1^2}{4}-\sigma_2\right)\left(\frac{y^2}{4} - \sigma_4\right).$$
 \begin{align*}
 4\Delta &= (-\sigma_1 y + 2\sigma_3)^2 - (4y +\sigma_1^2-4\sigma_2)(y^2 -4 \sigma_4)\\
-&=(\sigma_1^2y^2-4\sigma_1\sigma_3 y + 4 \sigma_3^2) - (4y^3 - 16 \sigma_4 y + (\sigma_1^2 - 4 \sigma_2)y^2 - 4 \sigma_1^2 \sigma_4 + 16 \sigma_2 \sigma_4\\
+&=(\sigma_1^2y^2-4\sigma_1\sigma_3 y + 4 \sigma_3^2) - (4y^3 - 16 \sigma_4 y + (\sigma_1^2 - 4 \sigma_2)y^2 - 4 \sigma_1^2 \sigma_4 + 16 \sigma_2 \sigma_4)\\
 &= -4 y^3 + 4 \sigma_2y^2+(-4\sigma_1\sigma_3 + 16 \sigma_4)y+ (4\sigma_3^2+4\sigma_4\sigma_1^2-16\sigma_2 \sigma_4)\\
 &=-4(y^3 - \sigma_2 y^2 + (\sigma_1\sigma_3 - 4 \sigma_4)y - \sigma_3^2-\sigma_1^2\sigma_4 + 4 \sigma_2\sigma_4).
 \end{align*}
@@ -254,7 +252,7 @@ is zero for the chosen $y$.
 
 {\it This exercise will study the quadratic equations (12.11). Each quadratic has two roots, which together make up the four roots $x_1,x_2,x_2,x_4$ of our quadratic.
 \be
-\item[(a)] For the moment, forget all the theory developed so far, and let $y$ be some root of the Ferrari resolvent (12.10). Given only this, can we determine how $y$ relates to the $x_i$? This is surprisingly easy to do. Suppose $x_i,x_j$. are the roots of (12.11) for one choice of sign, and $x_k,x_l$ are the roots for the other. Thus $i,j,k,l$ are the number 1,2,3,4 in some order. Prove that $y$ is given by $y=x_ix_j + x_kx_l$.
+\item[(a)] For the moment, forget all the theory developed so far, and let $y$ be some root of the Ferrari resolvent (12.10). Given only this, can we determine how $y$ relates to the $x_i$? This is surprisingly easy to do. Suppose $x_i,x_j$ are the roots of (12.11) for one choice of sign, and $x_k,x_l$ are the roots for the other. Thus $i,j,k,l$ are the number 1,2,3,4 in some order. Prove that $y$ is given by $y=x_ix_j + x_kx_l$.
 
 \item[(b)] Now let $y_1 = x_1x_2 +x_3x_4$, and define the square root in (12.11) using (12.12). Show that the roots of (12.11) are $x_1,x_2$ for the plus sign and $x_3,x_4$ for the minus sign.
 \ee
@@ -338,7 +336,7 @@ Similarly,
 $$\sigma\cdot y_1 = x_2x_3+x_4x_1 = y_3,\quad \sigma\cdot y_2=x_2x_4+x_3x_1 = y_2,\quad \sigma \cdot y_3 = x_2x_1+x_3x_4 = y_1.$$
 Therefore $\sigma \cdot \theta(t) = \theta(t)$.
 
-Since $S_n = \langle \sigma, \tau \rangle$, every permutation in $S_n$ lets the coefficients of $\theta(t)$ unchanged, therefore $\theta(t)$ has coefficients in $K = F(\sigma_1,\sigma_2,\sigma_3,\sigma_4)$ and $\theta(t) \in K[t]$.
+Since $S_4 = \langle \sigma, \tau \rangle$, every permutation in $S_4$ lets the coefficients of $\theta(t)$ unchanged, therefore $\theta(t)$ has coefficients in $K = F(\sigma_1,\sigma_2,\sigma_3,\sigma_4)$ and $\theta(t) \in K[t]$.
 \end{proof}
 
 \paragraph{Ex. 12.1.7}
@@ -372,7 +370,7 @@ Finally, if $\zeta = (1\,4)(2\,3)$,
 $$\zeta \cdot x_1 = x_4,\quad  \zeta \cdot t_1 = -t_1,\quad  \zeta \cdot t_2 = -t_2,\quad \zeta \cdot t_3 = t_3.$$
 Therefore 
 $$x_4 = \frac{1}{4} \left(\sigma_1 - t_1 - t_2 + t_3 \right).$$
-In conclusion
+To conclude
 \begin{align*}
 x_1 &=\frac{1}{4} \left(\sigma_1 + t_1 + t_2 + t_3 \right),\\
 x_2 &= \frac{1}{4} \left(\sigma_1 + t_1 - t_2 - t_3 \right),\\
@@ -537,7 +535,7 @@ is the intersection of $r$ subgroups of $S_n$, so is a subgroup of $S_n$.
 }
 
 \begin{proof}
-As $H$ is a subgroup of $A_n$, by Exercise 9, there exists $\varphi \in A_n$ such that $H = H(\varphi)$. Let ${\cal O}_{\varphi}$ the orbit of $\varphi$ under the action of $A_n$:
+As $H$ is a subgroup of $A_n$, by Exercise 9, there exists $\varphi \in A_n$ such that $H = H(\varphi)$. Let ${\cal O}_{\varphi}$ be the orbit of $\varphi$ under the action of $A_n$:
 $${\cal O}_{\varphi} = \{\sigma \cdot \varphi\ | \ \sigma \in H\} = \{\varphi_1=\varphi, \varphi_2,\ldots,\varphi_s\},$$
 and let $G$ the subgroup of $A_n$ defined by
 $$G = \{\sigma \in A_n \ | \ \forall i \in \gcro 1, s \dcro,\, \sigma \varphi_i = \varphi_i\} = \bigcap_{1\leq i \leq s}\mathrm{Stab}_{A_n}(\varphi_i).$$
@@ -612,7 +610,7 @@ Then
 \end{align*}
 Therefore, for all $i=1,\ldots,n$,
 $$\xi\, \zeta^{i-1} = \zeta^{\sigma^{-1}(i)-1}$$
-For $i=1$, we obtain $\xi =\zeta^{\sigma^{-1}(1)-1}$, so $\zeta^{\sigma^{-1}(1)-1+ i-1} = \zeta^{\sigma^{-1}(i)-1}$.
+For $i=1$, we obtain $\xi =\zeta^{\sigma^{-1}(1)-1}$, thus $\zeta^{\sigma^{-1}(1)-1+ i-1} = \zeta^{\sigma^{-1}(i)-1}$.
 
 Since $\zeta$ is a primitive $n$th root of unity,
 $$\sigma^{-1}(1)+ i-1 \equiv \sigma^{-1}(i) \pmod n \qquad (1\leq i \leq n).$$
@@ -640,7 +638,7 @@ The quotation given in the discussion following (12.18) can be paraphrased as sa
 \begin{proof}
 \be
 \item[(a)]
-Write $\rho =  (1\, 2 \ldots n)  \in S_n$ and $H = \langle \rho \rangle$. Let $\tau H$ any coset relative to $H$, with $\tau \in S_n$. We must prove that there exists a unique $\sigma \in \tau H$ such that $\sigma(1) = 1$
+Write $\rho =  (1\, 2 \ldots n)  \in S_n$ and $H = \langle \rho \rangle$. Let $\tau H$ be any coset relative to $H$, with $\tau \in S_n$. We must prove that there exists a unique $\sigma \in \tau H$ such that $\sigma(1) = 1$.
 	\be
 	
 	\item[$\bullet$] Existence.
@@ -882,7 +880,7 @@ The formulas are NOT surprisingly different.
 \begin{proof}
 \be
 \item[(a)] 
-If $hH = h'H$, then $ghH = gh'H$. Indeed, if $u \in ghH$, then $u=ghx$, where $x \in H$. Since $hH = h'H$, then $hx \in hH$ implies $hx \in h'H$, so $hx = h'x'$ for some $x' \in H$. So $u = ghx = gh'x', x' \in H$, therefore $u \in gh'x'$, so $ghH \subset gh'H$, and similarly $gh'H \subset ghH$, so $ghH = gh'H$, and $g\cdot hH = gh H$ is well defined.
+If $hH = h'H$, then $ghH = gh'H$. Indeed, if $u \in ghH$, then $u=ghx$, where $x \in H$. Since $hH = h'H$, then $hx \in hH$ implies $hx \in h'H$, so $hx = h'x'$ for some $x' \in H$. So $u = ghx = gh'x', x' \in H$, therefore $u \in gh'H$, so $ghH \subset gh'H$, and similarly $gh'H \subset ghH$, so $ghH = gh'H$, and $g\cdot hH = gh H$ is well defined.
 
 Moreover $e\cdot hH = ehH = hH$ and $g\cdot (g' \cdot H) = g \cdot g'H = gg'H = (gg')\cdot H$, so $g\cdot hH = gh H$ defines a left action of $G$ on the set of left cosets.
 
@@ -933,15 +931,15 @@ $$[G:N] \mid m!.$$
    
    Let $N = \mathrm{Core}_{S_n}(H)$. Then $N\subset H \subset S_n$, and $N$ is normal in $S_n$, and $N\ne S_n$ (since $[S_n:H]>1$). By Proposition 8.4.6, $N = A_n$ or $N=\{e\}$.
    
-   If $N = A_n$, then $N=A_n \subset H \subset S_n$, thus $1< [S_n:H] \leq [S_n:A_n] = 2$, therefore$ [S_n:H] = 2 = [S_n:A_n]$, where $A_n \subset H$, so $H = A_n$.
+   If $N = A_n$, then $N=A_n \subset H \subset S_n$, thus $1< [S_n:H] \leq [S_n:A_n] = 2$, therefore $[S_n:H] = 2 = [S_n:A_n]$, where $A_n \subset H$, so $H = A_n$.
    
-   In the other case, $N = \{e\}$. By part (e), $[S_n : N] \mid [S_n:H]!$, thus $n! \mid m!$, where $m = [S_n:H]$. So $n\leq m =[S_n:H]$. This proves part (a) of Theorem 12.1.10.
+   In the other case, $N = \{e\}$. By part (e), $[S_n : N] \mid [S_n:H]!$, thus $n! \mid m!$, where $m = [S_n:H]$. Therefore $n\leq m =[S_n:H]$. This proves part (a) of Theorem 12.1.10.
    
    \item[$\bullet$] Let $H \subset A_n$ be a subgroup of index $[A_n:H]>1$.
    
    Let $N = \mathrm{Core}_{A_n}(H)$. Then $N \subset H \subset A_n$ and $N$ is normal in $A_n$. Since $A_n$ is simple for $n\geq 5$, and $N \subset H \ne A_n$, $N =\{e\}$.
    
-   By part (e), $[A_n:N] \mid [A_n:H] !$, so $n!/2 \mid m!$, where $m = [A_n:H]$.
+   By part (e), $[A_n:N] \mid [A_n:H] !$, thus $n!/2 \mid m!$, where $m = [A_n:H]$.
    
    If $m<n$ then $m \leq n-1, m! \leq (n-1)! < n!/2$ (since $n>2$), in contradiction with $n!/2 \mid m!$. Therefore 
    $$n \leq m = [A_n:H].$$
@@ -962,10 +960,10 @@ By Exercise 19 part (f),
 $$[G:N] \mid [G:H]! = p!.$$
 Moreover, 
 $$[G:N] = [G:H] [H:N] = p [H:N],$$
-so $$[H:N] \mid (p-1)!.$$
-If $[H:N] \ne 1$, there exists a prime $q$ such that $q\mid [H:N]$. Since $[H:N] \mid (p-1)!$, $q<p$. But $q$ divides $[H:N]$ , so $q$ divides $|H|$, which divides $|G|$. But $p$ is the smallest prime divisor of $|G|$: this is a contradiction.
+thus $$[H:N] \mid (p-1)!.$$
+If $[H:N] \ne 1$, there exists a prime $q$ such that $q\mid [H:N]$. Since $[H:N] \mid (p-1)!$, we see that $q<p$. But $q$ divides $[H:N]$ , so $q$ divides $|H|$, which divides $|G|$. But $p$ is the smallest prime divisor of $|G|$: this is a contradiction.
 
-So $[H:N] = 1$, $N = H$. Therefore $H = N$ is normal in $G$.
+Thus $[H:N] = 1$, $N = H$. Therefore $H = N$ is normal in $G$.
 \end{proof}
 
 \paragraph{Ex. 12.1.21}
@@ -1012,9 +1010,9 @@ Let $\mu_1,\ldots,\mu_{m+1}$ be $m+1$ distinct elements of $F$. Since $F$ is inf
 Since there are more $\mu_i$ than subspaces $W_j$, there exist two distinct values $\mu_j \ne \mu_k$ such that $\mu_j v + w, \mu_k v + w$ are in the same subspace $W_i$. If we write $\lambda_1 = \mu_i, \lambda_2 = \mu_j$, then
 $$\lambda_1 \ne \lambda_2, \qquad \lambda_1 v + w  = r  \in W_i, \quad  \lambda_2 v + w = s \in W_i \text{ for some } i, \ 1\leq i \leq m.$$
 
-\item[(c)] Note that $W_i \ne W_1$, otherwise $ w = r -\lambda_1 v \in W_1$, in contradiction with the definition of $w$. Therefore
+\item[(c)] Note that $W_i \ne W_1$, otherwise $ w = r -\lambda_1 v \in W_1$, and this is a contradiction with the definition of $w$. Therefore
 $$r-s = (\lambda_1 - \lambda_2) v \in W_i \text{ for some } i=2,\ldots,m. $$
-Since $\lambda_1 - \lambda_2 \ne 0$, $v \in W_2\cup \cdots W_m$, and this is in contradiction with the choice of $v$.
+Since $\lambda_1 - \lambda_2 \ne 0$, $v \in W_2\cup \cdots \cup W_m$, which is contradictory with the choice of $v$.
 
 Conclusion: a finite dimensional vector space over an infinite field cannot be the union of a finite number of proper subspaces.
 \ee
@@ -1039,6 +1037,8 @@ $W_{\sigma,\tau} =  \{(t_1,\ldots,t_n) \in F^n \ {\big | }\ \sum_{i=1}^n (\alpha
 $$0 =  \lambda \sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) t_i  + \mu\sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) s_i =  \sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) (\lambda t_i + \mu s_i),$$
 so $\lambda v + \mu w \in W_{\sigma,\tau}$. Thus $W_{\sigma,\tau}$ is a subspace of $F^n$.
 
+More shortly, $W_{\sigma,\tau}$ is the kernel of the linear map $$(t_1,\ldots,t_n) \mapsto \sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) t_i.$$
+
 Since $\sigma \ne \tau$, there exists $k \in \gcro 1, n \dcro$ such that $\sigma(k) \ne \tau(k)$. Moreover the $\alpha_i$ are distinct, so $\alpha_{\sigma(k)} \ne \alpha_{\tau(k)}$. Let $v = (t_1,\ldots,t_k, \ldots,t_n) = (0,\ldots,1,\ldots,0)$, where $t_k = 1$ and $t_i = 0$ if $i\ne k$. Then $v \in F^n$ satisfies $ \sum_{i=1}^n (\alpha_{\sigma(i)} - \alpha_{\tau(i)}) t_i  = \alpha_{\sigma(k)} - \alpha_{\tau(k)} \ne 0$, so $W_{\sigma,\tau} \ne F^n$.
 
 Therefore $W_{\sigma,\tau}$ is a proper subspace of $F^n$, for all $\sigma, \tau \in S_n$.
@@ -1059,7 +1059,7 @@ are distinct.
 }
 
 \begin{proof}
-We know from Section 12.2.B the Galois resolvent
+We know from Section 12.2.B the definition of the Galois resolvent
 $$s(y) = \prod_{\sigma \in S_n} (y - V_\sigma) \in F[y].$$
 
 Let $j \in \gcro 1, n\dcro$ be a fixed integer. We show that $\alpha_j \in F(V)$, where $V = V_e = t_1 \alpha_1+ \cdots + t_n \alpha_n$.
@@ -1069,7 +1069,7 @@ Let
 \psi_j(y) &= \sum_{\sigma \in S_n} \alpha_{\sigma(j)} \frac{s(y)}{y - V_\sigma}\\
 &= \sum_{\sigma \in S_n} \alpha_{\sigma(j)} \prod_{\tau \ne \sigma} (y - V_\tau).
 \end{align*}
-If $p_\sigma =  \prod_{\tau \ne \sigma} (y - V_\tau)$, then for $\varphi \in S_n$, $p_\sigma(V_\varphi) = 0$ if $\varphi \ne \sigma$, and $\prod_{\tau \ne \sigma} (V_\sigma - V_\tau)$ if $\varphi = \sigma$. Therefore
+If $p_\sigma =  \prod_{\tau \ne \sigma} (y - V_\tau)$, then for $\varphi \in S_n$, $p_\sigma(V_\varphi) = 0$ if $\varphi \ne \sigma$, and $\prod_{\tau \ne \sigma} (V_\sigma - V_\tau)$ if $\varphi = \sigma$. Therefore, for $\varphi = e$, 
 $$\psi_j(V) = \alpha_j \prod_{\tau \ne e} (V - V_\tau).$$
 Moreover $s'(y) = \sum_{\sigma \in S_n} \prod_{\tau \ne \sigma} (y - V_\tau)$, so
 $$s'(V)= \prod_{\tau \ne e} (V - V_\tau).$$
@@ -1102,7 +1102,7 @@ $$F(\alpha_1,\ldots,\alpha_n) = F(V).$$
 \begin{proof}
 Let $g$ be the minimal polynomial of $\beta$ over $F$, and $M$ a splitting field of $fg$ over $F$. Write $\alpha_1,\ldots,\alpha_n$ the roots of $f$ in $M$, and $\beta_1,\ldots,\beta_m$ the roots of $g$ in $M$. 
 
-Then $L_1 = F(\alpha_1,\ldots,\alpha_n)$ is a splitting field of $f$ over$ F$. Since $L,L_1$ are splitting fields of $f$ over $F$,  there exists by Corollary 5.1.7 an isomorphism $\varphi : L \simeq L_1$ which is the identity on $F$.
+Then $L_1 = F(\alpha_1,\ldots,\alpha_n)$ is a splitting field of $f$ over $F$. Since $L,L_1$ are splitting fields of $f$ over $F$,  there exists by Corollary 5.1.7 an isomorphism $\varphi : L \simeq L_1$ which is the identity on $F$.
 
 Write $K_1 = F(\beta_1)$. Since $g$ is irreducible over $F$, $K_1 \simeq F[x]/\langle g \rangle \simeq K$, where the isomorphisms are the identity on $F$. Here $K_1, L_1$ are subfields of $M$.
 
@@ -1139,7 +1139,9 @@ Since $\alpha_1,\ldots,\alpha_n$ are the roots of $f$ in $K$, a fortiori in $KL$
 \begin{proof}
 In the proof of Theorem 12.2.5, we cannot use Theorem 7.2.5, since we don't know if $F \subset KL$ is a Galois extension, so we prefer a direct argument. 
 
-If $\sigma \in \Gal(KL/K)$, then $\sigma$ fixes $F \subset K$. Let $\alpha \in L$, and $f \in F[x]$ the minimal polynomial of $\alpha$ over $F$. Then $0 = \sigma(f(\alpha)) = f(\sigma(\alpha))$, so $\sigma(\alpha)$ is a root of $f$. Since $F \subset L$ is a normal extension, $\sigma(\alpha) \in L$, thus $\sigma(L) \subset L$. Moreover, $\sigma$ is $F$-linear, injective, and $[L:F] < \infty$, therefore $$\sigma(L) = L.$$
+(Consider the following counterexample: $F = \Q$,  $L = \Q(\sqrt{2})$ is a Galois extension of $F$, and $K =\Q(\sqrt[3]{2})$. Then $F \subset KL = \Q(\sqrt{2},\sqrt[3]{2})$ is not a Galois extension.)
+
+If $\sigma \in \Gal(KL/K)$, then $\sigma$ fixes $F \subset K$. Let $\alpha \in L$, and let $f \in F[x]$ be the minimal polynomial of $\alpha$ over $F$. Then $0 = \sigma(f(\alpha)) = f(\sigma(\alpha))$, so $\sigma(\alpha)$ is a root of $f$. Since $F \subset L$ is a normal extension, $\sigma(\alpha) \in L$, thus $\sigma(L) \subset L$. Moreover, $\sigma$ is $F$-linear, injective, and $[L:F] < \infty$, therefore $$\sigma(L) = L.$$
 Write $\sigma|_L $ the map $\sigma|_L : L \to L$ defined by $ \alpha \mapsto \sigma(\alpha)$.
 
 \be
@@ -1162,7 +1164,7 @@ $$
 \end{array}
 \right.
 $$
-where $\sigma|_L$ lies in $\Gal(L/F)$, since $\sigma|_L : L \to L$ is a field automorphism, and for every $\alpha \in K \subset KL$, $\sigma|_L(\alpha) = \sigma(\alpha) = \alpha$.
+where $\sigma|_L$ lies in $\Gal(L/F)$, since $\sigma|_L : L \to L$ is a field automorphism, and for every $\alpha \in F \subset K \subset KL$, $\sigma|_L(\alpha) = \sigma(\alpha) = \alpha$.
 By part (a), if $\sigma, \tau \in \Gal(KL/K)$,
 $$\varphi(\sigma \tau) = (\sigma \tau)|_L = \sigma|_L\,  \tau|_L = \varphi(\sigma) \varphi(\tau),$$
 so $\varphi$ is a group homomorphism.
@@ -1216,15 +1218,15 @@ $K(\omega)$ contains all roots of $f$.
 Write $\chi : \Gal(KL/K) \to \Gal(L/F)$ the injective homomorphism (12.26) defined by $\sigma  \mapsto \sigma\vert_L$.
 
 
-Let $x_1,\ldots,x_n$ be a numbering of the roots of $f$, and 
+Let $\alpha_1,\ldots,\alpha_n$ be a numbering of the roots of $f$, and 
 $\varphi : \Gal(L/F) \to S_n,$ the isomorphism defined for every  $\tau \in \Gal(L/F)$ by 
-$$\tilde{\tau} = \varphi(\tau) \iff \tau(x_i) = x_{\tilde{\tau}(i)}, \quad i=1,\ldots,n.$$
+$$\tilde{\tau} = \varphi(\tau) \iff \tau(\alpha_i) = \alpha_{\tilde{\tau}(i)}, \quad i=1,\ldots,n.$$
 Similarly, since $KL$ is the splitting field over $K$ of the same polynomial $f$, the isomorphism $\psi : \Gal(KL/K) \to S_n$ is defined for every $\sigma \in \Gal(KL/K)$ by
-$$\tilde{\sigma} = \psi(\sigma) \iff \sigma(x_i) = x_{\tilde{\sigma}(i)}, \quad i=1,\ldots,n.$$
+$$\tilde{\sigma} = \psi(\sigma) \iff \sigma(\alpha_i) = \alpha_{\tilde{\sigma}(i)}, \quad i=1,\ldots,n.$$
 
-If $\tau = \sigma|_L$, and $\tilde{\tau} = \varphi(\tau), \tilde{\sigma}= \psi(\sigma)$, then for all $i$, $\tau(x_i) =(\sigma|_L)(x_i) = \sigma(x_i)$, therefore
-$$x_{\tilde{\tau}(i)} = \tau(x_i) = \sigma(x_i) = x_{\tilde{\sigma}(i)},\qquad i= 1,\ldots,n $$
-Since the roots $x_1,\ldots,x_n$ are distinct and $x_{\tilde{\tau}(i)} = x_{\tilde{\sigma}(i)}$ for every $i$, then $\tilde{\tau} = \tilde{\sigma}$, so 
+If $\tau = \sigma|_L$, and $\tilde{\tau} = \varphi(\tau), \tilde{\sigma}= \psi(\sigma)$, then for all $i$, $\tau(\alpha_i) =(\sigma|_L)(\alpha_i) = \sigma(\alpha_i)$, therefore
+$$\alpha_{\tilde{\tau}(i)} = \tau(\alpha_i) = \sigma(\alpha_i) = \alpha_{\tilde{\sigma}(i)},\qquad i= 1,\ldots,n $$
+Since the roots $\alpha_1,\ldots,\alpha_n$ are distinct and $\alpha_{\tilde{\tau}(i)} = \alpha_{\tilde{\sigma}(i)}$ for every $i$, then $\tilde{\tau} = \tilde{\sigma}$, so 
 $$\psi(\tau) = \varphi(\tau|_L),$$
 for every $\sigma \in \Gal(KL/K)$.  Hence $\psi = \varphi \circ \chi$.
 
@@ -1427,7 +1429,7 @@ This does not have distinct roots, so that $s(y)$ is not a Galois resolvent.
 }
 
 
-Note. The results in Example 12.2.1 are false for $(t_1,t_2,t_3,t_4) = (0,1,2,4)$. The first given factor of $s(y)$ is $900 -132 y^2 + y^4$, which  has root $\sqrt{66 + 24 \sqrt{6}} = 4\sqrt{2} + 3 \sqrt{3}$ and this root can't be written $t_{\sigma(1)}\sqrt{2} + t_{\sigma(2)}(-\sqrt{2}) + t_{\sigma(3)}\sqrt{3} + t_{\sigma(4)}(-\sqrt{3})$ for any permutation $\sigma \in S_4$. Idem for the second factor $25 - 118 y^2 + y^4$.
+Note. The results in Example 12.2.1 are false for $(t_1,t_2,t_3,t_4) = (0,1,2,4)$. The first given factor of $s(y)$ is $900 -132 y^2 + y^4$, which  has root $\sqrt{66 + 24 \sqrt{6}} = 3\sqrt{2} + 4 \sqrt{3}$ and this root can't be written $t_{\sigma(1)}\sqrt{2} + t_{\sigma(2)}(-\sqrt{2}) + t_{\sigma(3)}\sqrt{3} + t_{\sigma(4)}(-\sqrt{3})$ for any permutation $\sigma \in S_4$. Idem for the second factor $25 - 118 y^2 + y^4$.
 
 The following Sage instructions gives the right answer : 
 \begin{verbatim}
@@ -1764,9 +1766,9 @@ Let
 $$S(y) = \prod_{\sigma \in S_n} \left ( y - (t_1x_{\sigma(1)} + \cdots + t_n x_{\sigma(n)}) \right) = \prod_{\sigma \in S_n} ( y - \sigma \cdot \beta),$$
 where $\beta = t_1 x_1+ \cdots + t_n x_n$.
 
-As in (12.5), with $\psi = x_i, \varphi =  \beta,\varphi_i = \sigma_i \cdot \varphi = \sigma \cdot \beta, \psi_i = \sigma_i \cdot \psi = x_{\sigma(i)}, \theta = S$, define 
+As in (12.5), where here $\sigma \in S_n$ is the index of the sum,  and $\psi = x_i, \varphi =  \beta, \varphi_\sigma = \sigma \cdot \beta, \psi_\sigma= \sigma \cdot \psi = x_{\sigma(i)}, \theta = S$, define 
 $$\Phi_i(y) = \sum_{\sigma \in S_n} \frac{S(y) x_{\sigma(i)}}{y - \sigma \cdot \beta}.$$
-Since $\frac{S(y)}{y-\sigma \cdot \beta} = \prod\limits_{\tau \in S_n\setminus \{\sigma\}} (y - \tau \cdot \beta)$, $\Phi$ is a polynomial in $y$, with coefficients in $F[x_1,\ldots,x_n]$. Moreover, for all $\tau \in S_n$, since $\tau \cdot S(y) = S(y)$,
+Since $\frac{S(y)}{y-\sigma \cdot \beta} = \prod\limits_{\tau \in S_n\setminus \{\sigma\}} (y - \tau \cdot \beta)$, $\Phi_i$ is a polynomial in $y$, with coefficients in $F[x_1,\ldots,x_n]$. Moreover, for all $\tau \in S_n$, since $\tau \cdot S(y) = S(y)$,
 \begin{align*}
 \tau \cdot \Phi_i(y) &= \sum_{\sigma \in S_n} \frac {S(y) x_{(\tau \circ \sigma)(i)}}{y - (\tau \circ \sigma) \cdot \beta}\\
 &= \sum_{\sigma' \in S_n} \frac{S(y) x_{\sigma'(i)}}{y - \sigma' \cdot \beta}\hspace{1.cm} (\sigma' = \tau \circ \sigma)\\
