@@ -46,13 +46,13 @@
 \newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
 
 \title{Solutions to David A.Cox  "Galois Theory''}
-\author{Richard Ganaye}
+
 \refstepcounter{section} \refstepcounter{section} \refstepcounter{section} \refstepcounter{section}
 \refstepcounter{section}\refstepcounter{section}\refstepcounter{section}\refstepcounter{section}
 \refstepcounter{section}\refstepcounter{section}\refstepcounter{section}\refstepcounter{section}
 
 \begin{document}
-\maketitle
+
 
 \section{Chapter 13 : LAGRANGE, COMPUTING GALOIS GROUPS}
 
@@ -73,7 +73,7 @@ By definition of the isomorphism $\phi_1 : \Gal(L/F) \to S_n$ in Section 6.3, if
 \begin{align}
 \sigma(\alpha_i) = \alpha_{\tau_1(i)},\qquad i=1,\ldots,n.\label{eq:1}
 \end{align}
-As $\beta_1,\ldots,\beta_n$ are the same roots in a different order, there exist a permutation $\gamma \in S_n$ such that
+As $\beta_1,\ldots,\beta_n$ are the same roots in a different order, there exists a permutation $\gamma \in S_n$ such that
 \begin{align}
 \beta_i = \alpha_{\gamma(i)},\qquad i=1,\ldots,n.\label{eq:2}
 \end{align}
@@ -101,7 +101,7 @@ Similarly the image of $\phi_2$ is $G' = \{\phi_2(\sigma)\ | \ \sigma \in \Gal(L
 
 Since $\phi_2(\sigma) = \gamma^{-1} \phi_1(\sigma) \gamma$ for all $\sigma \in \Gal(L/F)$ by part (a),
 $$G' = \gamma^{-1} G \gamma.$$
-So, if we change the labels, then $G$ gets replaces with a conjugate subgroup.
+So, if we change the labels, then $G$ gets replaced with a conjugate subgroup.
 \ee
 \end{proof}
 
@@ -247,18 +247,13 @@ Since $\alpha_3 = \alpha_1$ or $\alpha_3 = \alpha_2$, $f$ is not separable.
 
 \item[(b)] If $\beta$ is a root of the resolvent $\theta_f$, we can relabel the roots of $f$ so that $\beta = \alpha_1\alpha_2 + \alpha_3\alpha_4$ and
 $$4 \beta + c_1^2-4c_2 = (\alpha_1+\alpha_2 - \alpha_3 - \alpha_4)^2.$$
-Since $\beta^2 - 4c_4 = (\alpha_1\alpha_2 - \alpha_3\alpha_4)^2$, if $4\beta+c_1^2-4c_2$ and $\beta^2 - 4 c_4$ both vanish, then $\alpha_1+\alpha_2 - \alpha_2 - \alpha_4 =0$ and $\alpha_1\alpha_2 - \alpha_3\alpha_4=0$. Then by part (a) $f$ is not separable.
+Since $\beta^2 - 4c_4 = (\alpha_1\alpha_2 - \alpha_3\alpha_4)^2$, if $4\beta+c_1^2-4c_2$ and $\beta^2 - 4 c_4$ both vanish, then $\alpha_1+\alpha_2 - \alpha_2 - \alpha_4 =0$ and $\alpha_1\alpha_2 - \alpha_3\alpha_4=0$. Then, by part (a), $f$ is not separable.
 
 Therefore $4\beta+c_1^2-4c_2$ and $\beta^2 - 4 c_4$ can't both vanish when $f$ is separable.
 
-\item[(c)] Suppose that $4\beta + c_1^2-4c_2 = 0$ in part (c) of Theorem 13.1.1, where $\theta_f(y)$ has a unique root $\beta$ in $F$. Therefore $\theta_f(y) = (y-\beta)(y-\beta')(y-\beta'')$, where $\beta' \not \in F, \beta'' \not \in F$.
+\item[(c)] Suppose that $4\beta + c_1^2-4c_2 = 0$ in part (c) of Theorem 13.1.1, where $\theta_f(y)$ has a unique root $\beta$ in $F$. We know that $f$ is separable by Lemme 5.3.5.
 
-If $\theta_f$ was not separable, then $\beta' = \beta''$, and $\theta_f(t) = (y-\beta)(y-\beta')^2 \in F[y], \beta \in F$, thus $(y-\beta')^2 = y^2 - 2 \beta' y + \beta'^2 \in F[y]$, which implies that 
-$2\beta' \in F$. 
-
-Since the characteristic of $F$ is not 2, $\beta' \in F$. This is a contradiction, so $\theta_f$ is separable. Since the discriminant of $\theta_f$ and $f$ are equal, $f$ is separable.
-
-Then by part (b), $\beta^2 - 4 c_4 \ne 0$, and since $f$ is separable, $\Delta(f) \ne 0$, so
+Therefore $\Delta(f) \ne 0$, and, by part (b), $\beta^2 - 4 c_4 \ne 0$, so
 $$\Delta(f) (\beta^2 - 4 c_4) \ne 0.$$
 We know that $G = \langle (1\,3\,2\,4)\rangle$ or $G = \langle (1\,3\,2\,4),(1,2)\rangle$.
 \be
@@ -285,6 +280,8 @@ Therefore $G$ is conjugate to $\langle (1\,3\,2\,4),(1\,2) \rangle$ if and only 
 \begin{proof}
 By Exercise 12.1.18,
 $$\theta_f(y) = y^3 - 2y^2-8y = y(y-4)(y+2).$$
+Moreover $f$ is irreducible over $\Q$ (from the instruction {\bf f.is\_irreducible()} in Sage).
+
 Since $\theta_f(y)$ splits completely over $F$, by Theorem 13.1.1,
 $$G = \langle(1\,2)(3\,4),(1\,3)(2\,4) \rangle \simeq \Z/2\Z \times \Z/2\Z.$$
 
@@ -475,7 +472,7 @@ If $\Delta(g) = 0$ then $a\Delta(g) = 0 \in F^2$. Suppose now that $g$ is irredu
 \item[$\bullet$] Suppose that $g$ splits completely over $F(\sqrt{a})$, so
 $$g = (y-y_1)(y-y_2),\qquad y_1,y_2\in F(\sqrt{a}).$$
 Then $\Delta(g) = (y_1-y_2)^2 = A^2 - 4B \in F$. We choose $\sqrt{\Delta(g)} = y_2-y_1 \in F(\sqrt{a})$.
-Here $\deg(g) =2$, and $g$ is irreducible over $G$, therefore the roots of $g$
+Here $\deg(g) =2$, and $g$ is irreducible over $F$, therefore the roots of $g$
 \begin{align*}
 y_1 &= \frac{1}{2}((y_1+y_2) + (y_1-y_2)) = \frac{1}{2} \left(-A - \sqrt{\Delta(g)}\right),\\
  y_2 &= \frac{1}{2}((y_1+y_2) - (y_1-y_2 ))= \frac{1}{2} \left (-A + \sqrt{\Delta(g)}\right),
@@ -517,7 +514,7 @@ $$ g \text{ splits completely over } F(\sqrt{a}) \iff a\Delta(g) \in F^2.$$
 &(y-(\alpha_1+\alpha_2))(y-(\alpha_3+\alpha_4))\\
 &= y^2 -(\alpha_1+\alpha_2+\alpha_3+\alpha_4)y + (\alpha_1\alpha_3+\alpha_1\alpha_4+\alpha_2\alpha_3+\alpha_2\alpha_4)\\
 &= y^2 - c_1y + (\alpha_1\alpha_2 + \alpha_1\alpha_3 + \alpha_1 \alpha_4 + \alpha_2 \alpha_3+\alpha_2\alpha_4+\alpha_3\alpha_4) - (\alpha_1\alpha_2+\alpha_3\alpha_4)\\
-&= y^2 -c_1 y +c_2 - \beta
+&= y^2 -c_1 y +c_2 - \beta,
 \end{align*}
 so
 $$h_1 =  y^2 -c_1 y +c_2 - \beta = (y-(\alpha_1+\alpha_2))(y-(\alpha_3+\alpha_4)).$$
@@ -734,7 +731,7 @@ where $y_1,y_2,y_3$ are the roots of the Ferrari resolvent
 $$\theta_f(y) = y^3 - c_2y^2+(c_1c_3-4c_4) y - c_3^2 -c_1^2c_4 + 4 c_2c_4,$$
 and the $\varepsilon_i = \pm 1$ are chosen so that the product of the radicals $t_i = + \varepsilon_i \sqrt{ 4y_i + c_1^2 - 4 c_2}$ is
 $$t_1t_2t_3 = c_1^3 - 4 c_1 c_2 + 8c_3.$$
-Let $L = F(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$ the splitting field of $F$.
+Let $L = F(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$ be the splitting field of $F$.
 
 Here $\theta_f(y)$ has a root in $F$, say $y_1$. Thus
 $$\theta_f(y) =(y-y_1)g(y),$$
@@ -794,7 +791,7 @@ Every conjugate of $(1\,2) \in H_1$ by $\sigma \in S_4$ is $(\sigma(1)\, \sigma(
 
 \begin{proof} 
 \be
-\item[(a)]Let $r:\F_5 \to \F_5, x \mapsto x+1$ and $s :\F_5 \to \F_5, x \mapsto 2x$, corresponding to the permutations $\rho = (1\,2\,3\,4\,5)$ and $\sigma = (1\,2\,4\,3)$. 
+\item[(a)]Let $r = \gamma_{1,1} :\F_5 \to \F_5, x \mapsto x+1$ and $s = \gamma_{2,0} :\F_5 \to \F_5, x \mapsto 2x$, corresponding to the permutations $\rho = (1\,2\,3\,4\,5)$ and $\sigma = (1\,2\,4\,3)$. 
 
 Since 2 is a generator of $\F_5^*$ ($2^2\equiv -1 \mod 5$), every $a \in \F_p^*$ is of the form $a = 2^k, \ k\in \N$, so every $f  \in \mathrm{AGL}(1,\F_5)$, defined by $x \mapsto ax+b,\ a=2^k\in \F_p^*,b\in \F_p$ is equal to $ f= r^b \circ s^k$. Therefore $\mathrm{AGL}(1,\F_5) = \langle r,s \rangle$, and the corresponding subgroup $G$ of $S_5$, isomorphic to $\mathrm{AGL}(1,\F_5)$, is generated by $\rho = (1\,2\,3\,4\,5)$ and $\sigma = (1\,2\,4\,3)$.
 
@@ -810,9 +807,9 @@ $$\mathrm{AGL}(1,\F_5) \cap A_5 =\langle \rho, \sigma^2 \rangle =  \langle (1\,2
 
 Write $\sigma' = \sigma^2$. Since $\mathrm{AGL}(1,\F_5) \cap A_5  = \langle \rho, \sigma' \rangle$, the relations 
 $$\rho^5 = e, \qquad \sigma'^2 = e, \qquad \sigma' \rho = \rho^{-1} \sigma'$$
-characterizes the dihedral group $D_{10}$.
+characterize the dihedral group $D_{10}$.
 
-\item[(d)] Let $H \supsetneq \langle (1\,2\,3\,4\,5)\rangle$ a subgroup of  $\mathrm{AGL}(1,\F_5) $. By part (a), $H$ contains an element $\rho^b  \sigma^k$, with $k \in \{1,2,3\}$.
+\item[(d)] Let $H \supsetneq \langle (1\,2\,3\,4\,5)\rangle$ be a subgroup of  $\mathrm{AGL}(1,\F_5) $. By part (a), $H$ contains an element $\rho^b  \sigma^k$, with $k \in \{1,2,3\}$.
 
 Since $\rho \in H$, $\sigma^k = \rho^{-b} ( \rho^b  \sigma^k) \in H$.
 
@@ -986,7 +983,7 @@ Then, for all $i \in \gcro 1,6\dcro$,
 \end{align*}
 So 
 $$\sigma_i(\beta_1) = \beta_i, \qquad i=1,\ldots,6.$$
-By assumption, some of the root $\beta_j$ is in $F$, therefore $\beta_1 = \sigma_j^{-1}(\beta_j) = \beta_j \in F$, and $\beta_i = \sigma_i(\beta_1) = \beta_1$ for all $i \in \gcro 1,6\dcro$.
+By assumption, some $\beta_j$ is in $F$, therefore $\beta_1 = \sigma_j^{-1}(\beta_j) = \beta_j \in F$, and $\beta_i = \sigma_i(\beta_1) = \beta_1$ for all $i \in \gcro 1,6\dcro$.
 We obtain the identity
 $$(y-\beta_1)^6 = (y^3+b_2y^2+b_4y+b_6)^2 - 2^{10} \Delta(f) y.$$
 Multiplying this out, we obtain
@@ -1018,14 +1015,15 @@ The precedent identity becomes
 \end{align*}
 Hence $2^{10} \Delta(f) = 0$. Yet $F$ has characteristic $\ne 2$, and $\Delta(f) \ne 0$, since $f$ is separable.
 This contradiction completes the proof of the theorem.
+
 \item[$\bullet$] We prove part (c) of Theorem 13.2.6.
 
-Suppose that $G$ is conjugate to $\langle (1\,2\,3\,4\,5) \rangle$. Let $L =F(\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5)$ be the splitting field of $f$. Then $\Gal(L/F) = \langle \sigma \rangle$, where $\sigma$ corresponds to $(1\,2\,3\,4\,5)$. 
+Suppose that $G$ is conjugate to $\langle (1\,2\,3\,4\,5) \rangle$. Let $L =F(\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5)$ be the splitting field of $f$. We choose the numbering of the roots such that $\Gal(L/F) = \langle \sigma \rangle$, where $\sigma$ corresponds to $(1\,2\,3\,4\,5)$. 
 
- $[L:F] = |\Gal(L/F)| =5$, so the tower Theorem implies that $[F(\alpha) : F]$ divides 5. 
+ $[L:F] = |\Gal(L/F)| =5$, so the Tower Theorem implies that $[F(\alpha) : F]$ divides 5. 
  
  Since $f$ is irreducible, $\alpha \not \in F$, so $[F(\alpha) : F] \ne 1$, $[F(\alpha) : F] = 5$ and 
-$L = F(\alpha)$. Therefore $\alpha_i \in F(\alpha), \ i=1,\ldots,5$ and so $f = (x-\alpha_1)(x-\alpha_2)(x-\alpha_3)(x-\alpha_4)(x-\alpha_5)$ splits completely over $F(\alpha)$.
+$L = F(\alpha)$. Therefore $\alpha_i \in F(\alpha), \ i=1,\ldots,5$, and so $f = (x-\alpha_1)(x-\alpha_2)(x-\alpha_3)(x-\alpha_4)(x-\alpha_5)$ splits completely over $F(\alpha)$.
 
 \medskip
 
@@ -1223,7 +1221,7 @@ $B_2,B_4,B_6$ are polynomials in $\sigma_1,\sigma_2,\sigma_3,\sigma_4,\sigma_5$.
 
 \item[(d)] For $i=1,3,5$, $\tau \cdot B_i = - B_i$, thus $B_i$ is invariant under $A_5$. Since the characteristic of $F$ is not 2, by Exercise 7.4.3, $B_i = C_i+D_i \sqrt{\Delta}$, where $C_i,D_i$ are polynomials in the $\sigma_i$. Then  $-C_i - D_i \sqrt{\Delta} = -B_i = \tau \cdot B_i  = C_i - D_i \sqrt{\Delta}$, so $C_i = 0$.
 $$B_i = D_i \sqrt{\Delta},\qquad D_i \in F[\sigma_1,\ldots,\sigma_5] \qquad \text{ for } i =1,3,5.$$
-\ee
+
 
 \item[(e)] Since $\sqrt{\Delta} = \prod_{1\leq i < j \leq 5} (x_i - x_j)$, $\sqrt{\Delta}$ has degree $1+2+3+4 = 10$ as a polynomial in $x_1,x_2,x_3,x_4,x_5$.
 $B_1 = u_1+u_2+u_3+u_4+u_5$, with $\deg(u_i) = 2$, thus $\deg(D_1 \sqrt{\Delta}) \leq 2$. Therefore $D_1 = 0$.
@@ -1234,6 +1232,7 @@ $B_5 = u_1u_2u_3u_4u_5+\cdots$, so $\deg(B_5)  \leq 10$. Therefore $\deg(D_5) \l
 $$\Theta(y) = y^6 + B_2 y^4 + B_4 y^2 + B_6 +c \sqrt{\Delta} y,\qquad B_2,B_4,B_6 \in F[\sigma_1,\ldots,\sigma_5], \qquad c \in F.$$
 
 By Exercise 7, $c = -2^5$.
+\ee
 \end{proof}
 
 \paragraph{Ex. 13.2.9}
@@ -1281,7 +1280,7 @@ $$\theta_f(y) = (x-\gamma_1)^m \cdots (x-\gamma_r)^m = p(y)^m.$$
 Since $6 = \deg(\theta_f(y)) = m \deg(p(y))$, $m \mid 6$, so $ m = 1,2,3$ or $6$.
 
 $m=6$ gives $\theta_f(y) = (x-\beta_1)^6$. Since the characteristic of $f$ is not 2, this is impossible by the proof of Theorem 13.2.6. It remains to prove the impossibility of $m=2$ or $m=3$.
-\ee
+
 
 \item[(d)] If $m=2$,
 $$\theta_f(y) = (y^3+ay^2+by+c)^2,\qquad a,b,c \in F.$$
@@ -1418,6 +1417,7 @@ q.expand().subs(b = a^2/4)
 $$-1024 \Delta$$
 
 We obtained $\Delta(f) = 0$.
+\ee
 \end{proof}
 
 \paragraph{Ex. 13.2.10}
@@ -1515,43 +1515,24 @@ b_{2} &= -\frac{1}{2} \, \beta_{1} - \frac{5}{2} \,
 
 Substituting these values in  the equation, we obtain
 \begin{align*}
-0 &=\frac{5}{64} \, {\left(\beta_{1}^{4}- 4 \, \beta_{1}^{3} \beta_{2} + 6 \, \beta_{1}^{2} \beta_{2}^{2} - 4 \,\beta_{1} \beta_{2}^{3} + \beta_{2}^{4}\right)} y^{2} + by + c,\\
-&=\frac{5}{64} \, {\left(\beta_{1} - \beta_{2}\right)}^{4} y^{2} + by +c,
+0 &= a y^2 + by +c,
 \end{align*}
-where $b,c \in F(\beta_1,\beta_2)$ are constant.
+where
+\begin{align*}
+a &= \frac{5}{64}(\beta_{1}^{4} - 4 \, \beta_{1}^{3} \beta_{2} + 6 \, \beta_{1}^{2} \beta_{2}^{2} - 4 \, \beta_{1} \beta_{2}^{3} + \beta_{2}^{4})
+ =  \frac{5}{64} (\beta_1 - \beta_2)^4,\\
+b &= \frac{1}{64} \, \beta_{1}^{5} - \frac{15}{64} \, \beta_{1}^{4} \beta_{2}
++ \frac{25}{32} \, \beta_{1}^{3} \beta_{2}^{2} - \frac{35}{32} \,
+\beta_{1}^{2} \beta_{2}^{3} + \frac{45}{64} \, \beta_{1} \beta_{2}^{4} -
+\frac{11}{64} \, \beta_{2}^{5} - 1024 \, \Delta(f),\\
+c&= \frac{1}{256} \, \beta_{1}^{6} - \frac{5}{128} \, \beta_{1}^{5}
+\beta_{2} + \frac{55}{256} \, \beta_{1}^{4} \beta_{2}^{2} -
+\frac{35}{64} \, \beta_{1}^{3} \beta_{2}^{3} + \frac{175}{256} \,
+\beta_{1}^{2} \beta_{2}^{4} - \frac{53}{128} \, \beta_{1} \beta_{2}^{5}
++ \frac{25}{256} \, \beta_{2}^{6}.\\
+\end{align*}
 
- If the characteristic is not 5, then $\beta_1 = \beta_2$, so $\theta_f(y) = (y-\beta_1)^6$. But the proof of Theorem 13.2.6 shows that this implies that $\Delta(f) = 0$, and this is a contradiction. Thus $m=1$ and $g$ is irreducible over $F$.  This proves Proposition 13.2.7. in characteristic $\ne 5$.
- 
- It remains the case where the characteristic is 5.
- Then the coefficients of $\theta_f(y) - (y-\beta_1)(y-\beta_2)^5$ give the system of equations
- \begin{align*}
- 0 & = 2b_2 + \beta_1\\
- 0 &= b_2^2 + 2 b_4\\
- 0 &= b_2 b_4 + b_6\\
- 0 &= b_4^2 + 2 b_2 b_6\\
- 0 &= \beta_2^5 + 2 b_4b_6 - 2^{10} \Delta(f)\\
- 0 &= -\beta_1 \beta_2^5 + b_6^2
- \end{align*}
- (where the fourth equation is useless, since in characteristic 5, the coefficient of $y^2$ is always 0).
- 
- We obtain
- \begin{align*}
- b_4 &= -\frac{1}{2} b_2^2\\
- b_6 &= +\frac{1}{2}b_2^3
- \end{align*}
- The first equation gives $\beta_1 = -2b_2$, and the last  gives
- $$-2b_2\beta_2^5 = \frac{1}{4}b_2^6.$$
- If $b_2 \ne 0$, $\beta_2^5 = -\frac{1}{8} b_2^5$, so
- $$2^{10} \Delta(f) = \beta_2^5 + 2 b_4 b_6 = -\frac{1}{8} b_2^5 -\frac{1}{2} b_2^5 = -\frac{5}{8} b_2^5 = 0.$$
- Therefore $\Delta(f) = 0$, and this is a contradiction.
- 
- If $b_2 = 0$, then $b_2=b_4=b_6=0$, so $\beta_1 = 0$, and the system reduces to a unique equation
- $$0 = \beta_2^5 - 2^{10} \Delta(f).$$
- In this case
- $$\theta_f(y) = y (y-\beta_2)^5 = y(y^5 - \beta_2^5) = y(y^5 - 2^{10} \Delta(f)).$$
- I don't see an immediate contradiction ...
- 
- The second part of Theorem 13.2.7 is proved here only if the characteristic is not 5.
+ Since $a=0$, if the characteristic is not 5, then $\beta_1 = \beta_2$, so $\theta_f(y) = (y-\beta_1)^6$. But the proof of Theorem 13.2.6 shows that this implies that $\Delta(f) = 0$, and this is a contradiction. Thus $m=1$ and $g$ is irreducible over $F$.  This proves Proposition 13.2.7. in characteristic $\ne 5$.
  
  Sage instructions for part (e):
 \begin{verbatim}
@@ -1569,6 +1550,47 @@ q=q.expand().collect(y)
 q.coefficient(y,2).factor()
  \end{verbatim}
  $$\frac{5}{64} \, {\left(\beta_{1} - \beta_{2}\right)}^{4}$$
+ It remains the case where the characteristic is 5. Then the equations $b=0, c = 0$ become, 
+ \begin{align*}
+ 0 &= \frac{1}{64}(\beta_1^5 - \beta_2^5) - 2^{10}\Delta(f),\\
+ 0 &= \frac {1}{256}\beta_1(\beta_1^5 - \beta_2^5).
+ \end{align*}
+If $\beta_1 \ne 0$, then $\beta_1^5 - \beta_2^5 = 0$, hence $2^{10} \Delta(f) = 0$. Since the characteristic is not 2, we obtain $\Delta(f) = 0$, which is impossible since $f$ is separable by hypothesis.
+
+If $\beta_1 = 0$, it remains a unique equation
+$$0 = \beta_2^5 + 2^{16} \Delta(f),$$
+ that is
+$$0 = \beta_2^5 + \Delta(f).$$
+In this case
+$$\theta_f(y) = y(y-\beta_2)^5 = y(y^5 - \beta_2^5) = y^6 + \Delta(f) y.$$
+
+Since $$\theta_f(y) = (y^3 + b_2y^2+b_4y+b_6)^2 - 2^{10} \Delta(f) y = (y^3 + b_2y^2+b_4y+b_6)^2 + \Delta(f) y,$$ this condition is equivalent to $b_2 = b_4 = b_6 = 0$.
+
+I don't see an immediate contradiction ...
+
+In fact, with this analysis, we can show a counterexample of Proposition 13.2.7:
+
+Let $f = x^5 - x + 1 \in \F_5[x]$, where $c_1 = c_2 = c_3 = 0, c_4 = -1,c_5 = -1$. Then $f$ is irreducible, separable, and the Sage instructions given in Exercise 6, where we replace the field $\Q$ by $\F_5$ show that $b_2 = b_4 = b_6 = 0$, and
+\begin{align*}
+\Delta(f) &= -1,\\
+\theta_f(y) &= y^6 - y.
+\end{align*}
+(We verify this directly on the formulas (13.24) : almost all the terms of $B_2,B_4,B_6$ contain $\sigma_1,\sigma_2$ or $\sigma_3$, if not,  the coefficient is a multiple of 5, so $b_2 = b_4 = b_6 = 0$.)
+
+
+Therefore $\beta = 0$ is a root of $\theta_f$, and $\theta_f(y) = (y -\beta) g(y)$, where $g(y) = y^5- 1 = (y-1)^5$ is {\bf not} irreducible over $\F_5$.
+
+The second equivalence of Proposition 13.2.7 is false if the characteristic of $F$ is 5.
+
+Note : Here we know explicitly the roots of $f$ in $\F_{5^5}[x]$. If $\alpha$ is a root of $f$ in this field, the roots of $f$ are $\alpha, \alpha +1, \alpha+2,\alpha+3,\alpha+4$ (see Ex. 6.2.5).
+If we substitute (with the help of Sage) these roots in $h_1,\ldots,h_6$, we obtain $0,1,1,1,1,1$, therefore 
+$$\theta_f(y) =\prod_{i=1}^6(y-h_i(\alpha_1,\ldots,\alpha_5)) = y(y-1)^5 = y^6 - y.$$
+
+This is a confirmation of the previous results.
+
+
+ 
+ 
  \ee
 \end{proof}
 
@@ -1601,7 +1623,7 @@ By theorem 13.2.6 (c), $G$ is conjugate to $\langle (1\,2\,3\,4\,5) \rangle$ if 
 \begin{proof}
 By the Sch\"onemann-Eisenstein Criterion for $p=3$, we know that $f$ is irreducible over $\Q$.
 
-The discriminant $f = x^5 +ax+b, a,b\in \Q$ is given by
+The discriminant $f = x^5 +ax+b, a,b\in \Q$ is given (see Ex. 15) by
 $$\Delta(f) = 256a^5+3125b^4,$$
 so 
 $$\Delta(f) = -256 \cdot 6^5 + 3125 \cdot 3^4 = -1737531.$$
@@ -1642,17 +1664,17 @@ Since $\Delta(f)<0$ is not a square in $\Q$, the Galois group of $f$ is $S_5$.
 
 \begin{proof}
 \be
-\item[(a)] We use the formulas of Exercise 12 for $f =x^5+ax+b$:
+\item[(a)] We use the formulas of Exercise 15 for $f =x^5+ax+b$:
 \begin{align*}
-\Delta(f) &= 256a^5+3125b^4\\
-\theta_f(y) &=  {\left(y^{3} - 20 \, a y^{2}  + 240 \,a^{2} y + 320 \, a^{3} \right)}^{2} - 2^{10}\Delta(f) y
+\Delta(f) &= 256a^5+3125b^4,\\
+\theta_f(y) &=  {\left(y^{3} - 20 \, a y^{2}  + 240 \,a^{2} y + 320 \, a^{3} \right)}^{2} - 2^{10}\Delta(f) y.
 \end{align*}
 With $a=0, b=-2$, we obtain
 \begin{align*}
-\Delta(f) &= 50000= 2^4\,  5^5\\
-\theta_f(y) &=  y^6- 2^{14}\, 5^5\, y
+\Delta(f) &= 50000= 2^4\,  5^5,\\
+\theta_f(y) &=  y^6- 2^{14}\, 5^5\, y.
 \end{align*}
-Let $L$ the splitting field of $x^5 - 2$ over $\Q$.
+Let $L$ be the splitting field of $x^5 - 2$ over $\Q$.
  $\Delta(f)$ is not a square in $\mathbb{Q}$, and $\theta_f(y)$ has a root 0 in $\Q$. So, by Theorem 13.2.6 and Exercise 11, $\Gal(L/\Q)$ is isomorphic to $\mathrm{AGL}(1,\F_5)$. This result is  already proved in Section 6.4.
  
  \item[(b)] 
@@ -1660,7 +1682,7 @@ Let $L$ the splitting field of $x^5 - 2$ over $\Q$.
   
  Since $\Q \subset \Q(\sqrt{5})$ is a quadratic extension, by the Galois correspondence, $\Gal(L / \Q(\sqrt{5}))$ is a subgroup of index 2 in $\Gal(L/\Q)$ and the subgroup $H \subset S_5$ corresponding to $\Gal(L/\Q(\sqrt{5}))$ has index 2 in $G \simeq \mathrm{AGL}(1,\F_5)$. Thus $|H| = 10$, and since $5 \mid |H|$, $H$ contains a 5-cycle and is a transitive subgroup of $S_5$.  By Theorem 13.2.2, $H$ is conjugate to $\langle (1\,2\,3\,4\,5) \rangle$ or to $ \mathrm{AGL}(1,\F_5) \cap A_5$. Since $(G:H) = 2$, $H$ is conjugate to  $\mathrm{AGL}(1,\F_5) \cap A_5$, so
  $$\Gal(L/\Q(\sqrt{5})) \simeq H \simeq \mathrm{AGL}(1,\F_5) \cap A_5.$$
- 
+ \ee
 \end{proof}
 
 \paragraph{Ex. 13.2.14}
@@ -1743,7 +1765,7 @@ We obtained the results given in the text.
 \item[(b)]
 To find the rational root of $f$ we write
 \begin{verbatim}
-theta_f.subs(Delta = Delta).factor()
+theta_f.subs(Delta = (1/5)^5*(4*p^5+3125*q^2)^2)).factor()
 \end{verbatim} 
 \begin{align*}
 &\frac{1}{3125} \, (5 \, p^{2} - y)\, (9 \, p^{10} - 1625 \, p^{8} y + 74250 \, p^{6} y^{2} + 600000 \, p^{5} q^{2} - 81250 \, p^{4} y^{3}\\
@@ -1767,7 +1789,7 @@ $$g(z) = f\left( z - \frac{p}{5z}\right) = z^5 - \frac{p^{5}}{5^5 \, z^{5}} +q.$
 \begin{align*}
 g(\beta) = 0 &\iff \beta^{10} +q\,\beta^5 -\left(\frac{p}{5}\right)^5 = 0\\
 &\iff\left(\beta^5 +\frac{q}{2} \right)^2 - \left[ \left(\frac{q}{2}\right)^2 + \left(\frac{p}{5}\right)^5\right] = 0\\
-&\iff \left[ \beta^5 + \frac{q}{2} - \sqrt{ \left(\frac{q}{2}\right)^2 + \left(\frac{p}{5}\right)^5 } \right]\left[ \beta^5 + \frac{q}{2} - \sqrt{ \left(\frac{q}{2}\right)^2 + \left(\frac{p}{5}\right)^5 } \right]
+&\iff \left[ \beta^5 + \frac{q}{2} - \sqrt{ \left(\frac{q}{2}\right)^2 + \left(\frac{p}{5}\right)^5 } \right]\left[ \beta^5 + \frac{q}{2} - \sqrt{ \left(\frac{q}{2}\right)^2 + \left(\frac{p}{5}\right)^5 } \right] = 0.
 \end{align*}
 So the $10$ roots of $g$ are
 $$\beta_{k,\varepsilon} = \zeta^k \sqrt[5]{- \frac{q}{2} + \varepsilon \sqrt{ \left(\frac{q}{2}\right)^2 + \left(\frac{p}{5}\right)^5 }},\qquad\varepsilon = \pm 1,\  k=0,1,2,3,4.$$
@@ -1863,13 +1885,13 @@ Let $L$ a splitting field of $x^4+a$, and choose
 $$\lambda = \sqrt[4]{-a}$$
  a fixed root of $x^4 +a$ in $L$.
 
-Since $L$ is a splitting field of $x^4 + a \in F[x]$ over $F$, $F \subset L$ is a Galois extension. The characteristic is 5, so $2^2 = -1$, and
+The characteristic is 5, so $2^2 = -1$, and
 $$x^4 + a = x^4 - \lambda^4 = (x^2 + \lambda^2)(x^2-\lambda^2) = (x + 2\lambda)(x-2\lambda)(x-\lambda)(x+\lambda)$$
-splits completely over $F$. Therefore $L = F(\lambda)$ is the splitting field of $x^4 +a$ over $F$.
+splits completely over $F$.  Since $\lambda \ne 0$, and since the characteristic is 5, the roots of $x^4+a$ are distinct. Therefore $L = F(\lambda)$ is the splitting field of the separable polynomial $x^4 +a$ over $F$. Hence $F \subset L = F(\lambda)$ is a Galois extension.
 
-So there exists $\lambda$ in some solvable Galois extension $L$ of $F$ such that $x^5 - x +b' = \lambda^{-5}((\lambda x)^5 + a (\lambda x) + b)$ with $b' = (\sqrt[4]{-a})^{-5} b$, where $\lambda,b \in L$.
+So there exists $\lambda$ in some solvable Galois extension $L$ of $F$ such that $x^5 - x +b' = \lambda^{-5}((\lambda x)^5 + a (\lambda x) + b)$ with $b' = (\sqrt[4]{-a})^{-5} b$, where $\lambda,b' \in L$.
 
-\item[(d)]  If $\beta \in L$, $\beta $ is a root of $f$  if and only if $ \lambda^{-1} \beta$ is a root of $x^5 - x +b'$. If $\alpha$ is a fixed root of $x^5-x+b'$, then by part (b) the roots of $x^5 -x+b'$ are $\alpha, \alpha+1,\alpha+2,\alpha+3,\alpha+4$, so the roots of $f$ are
+\item[(d)]  If $\beta$ is in some extension of $F$, $\beta $ is a root of $f$  if and only if $ \lambda^{-1} \beta$ is a root of $x^5 - x +b'$. If $\alpha$ is a fixed root of $x^5-x+b'$, then by part (b) the roots of $x^5 -x+b'$ are $\alpha, \alpha+1,\alpha+2,\alpha+3,\alpha+4$, so the roots of $f$ are
 $$\beta_0 = \lambda \alpha, \beta_1 = \lambda(\alpha+1),\beta_2 =  \lambda(\alpha +2),\beta_3= \lambda(\alpha +3), \beta_4 = \lambda (\alpha +4).$$
 A splitting field of $f$ over $F$ is 
 $$K = F(\beta_0,\ldots,\beta_4) = F(\lambda \alpha,\lambda(\alpha+1),\ldots,\lambda (\alpha +4)).$$
@@ -1877,7 +1899,7 @@ Since $\lambda = \lambda(\alpha +1) - \lambda \alpha = \beta_1 - \beta_0 \in K$,
 $$K = F(\lambda, \alpha)$$
 is the splitting field of $f =x^5 +ax +b$ over $F$.
 
-Since $F(\lambda) \subset L \subset K$, $K = L(\alpha)$.
+Since $F(\lambda) = L \subset K$, $K = L(\alpha)$.
 
 Since $f$ is irreducible over $F$, $5 = \deg(f) = [F(\beta_0):F] \mid [K:F]$.
 
@@ -2026,7 +2048,7 @@ are the roots of $f$. This is identical to the formulas obtained with Cardano's 
 
 \begin{proof}
 \be
-\item[(a)] As in Cardano's method, we substitute $u+v$ to $x$ in $$f(x)= x^5 - 5Px^2 - 5Qx - \frac{Q^{2}}{P} -\frac{P^{3}}{Q}.$$ We obtain
+\item[(a)] As in Cardan's method, we substitute $u+v$ to $x$ in $$f(x)= x^5 - 5Px^2 - 5Qx - \frac{Q^{2}}{P} -\frac{P^{3}}{Q}.$$ We obtain
 \begin{align*}
 f(u+v) &= u^{5} + 5 \, u^{4} v + 10 \, u^{3} v^{2} + 10 \, u^{2} v^{3} + 5 \, uv^{4} + v^{5} \\
 &\phantom{= }- 5 \, P u^{2} - 10 \, P u v - 5 \, P v^{2}  - 5 \, Q u - 5 \, Q v  - \frac{Q^{2}}{P} -\frac{P^{3}}{Q}\\
@@ -2039,13 +2061,9 @@ Then we verify that $u = \sqrt[5]{Q^2/P} = P^{-\frac{1}{5}} Q^{\frac{2}{5}}, v =
 \end{align*}
 Indeed
 $$u^5 +v^5 -\frac{Q^{2}}{P} -\frac{P^{3}}{Q} = \frac{Q^2}{P} + \frac{P^3}{Q}-  \frac{Q^{2}}{P} -\frac{P^{3}}{Q} = 0,$$
-and
+and, since $P = uv^2, Q = u^3v$,
 \begin{align*}
-&u^{3} v + u^{2} v^{2} + u v^{3} - P u - P v - Q\\
-& = P^{-\frac{3}{5}} Q^{\frac{6}{5}}P^{\frac{3}{5}} Q^{-\frac{1}{5}} + P^{-\frac{2}{5}} Q^{\frac{4}{5}} P^{\frac{6}{5}} Q^{-\frac{2}{5}} +P^{-\frac{1}{5}} Q^{\frac{2}{5}}P^{\frac{9}{5}} Q^{-\frac{3}{5}}\\
-&\qquad -P^{\frac{5}{5}} P^{-\frac{1}{5}} Q^{\frac{2}{5}} - P^{\frac{5}{5}} P^{\frac{3}{5}} Q^{-\frac{1}{5}} - Q\\
-&= Q + P^{\frac{4}{5}} Q^{\frac{2}{5}} + P^{\frac{8}{5}} Q^{-\frac{1}{5}} - P^{\frac{4}{5}} Q^{\frac{2}{5}} - P^{\frac{8}{5}} Q^{-\frac{1}{5}} - Q\\
-&= 0.
+u^{3} v + u^{2} v^{2} + u v^{3} - P u - P v - Q=u^3 v +u^2v^2+uv^3 - u^2v^2 - uv^3 - u^3v = 0.
 \end{align*}
 Therefore $$u + v = \sqrt[5]{Q^2/P} + (P/Q)\sqrt[5]{Q^2/P}^2$$ is a root of $x^5 - 5Px^2 - 5Qx - Q^2/P -P^3/Q$.
 If we replace $\sqrt[5]{Q}$ by another fifth root $\zeta^k \sqrt[5]{Q},\ k=1,2,3,4,$ (where $\zeta = e^{2i\pi/5}$), in the equation
@@ -2054,10 +2072,10 @@ then $u$ is replaced by $\zeta^{2k}u$, and $v$ is replace by $\zeta^{4k} v$, the
 So $$u+v,\quad \zeta^2 u + \zeta^4 v, \quad\zeta^4 u + \zeta^3 v,\quad \zeta u + \zeta^2 v,\quad \zeta^3 u + \zeta v,$$
 are roots of $f$, where 
 $$u = \sqrt[5]{Q^2/P} ,\qquad  v = (P/Q)\sqrt[5]{Q^2/P}^2 .$$ 
-This roots are the five roots of $f$, as proved in the following expansion:
+These roots are the five roots of $f$, as proved in the following expansion:
 \begin{align*}
 & (x - (u+v))(x- (\zeta^2 u + \zeta^4 v))(x- (\zeta^4 u + \zeta^3 v))(x-(\zeta u + \zeta^2 v))(x- (\zeta^3 u + \zeta v))\\
-& = x^5 -5 uv^2 x^2 -5 u^3v x -u^5-v^5.
+ &= x^5 -5 uv^2 x^2 -5 u^3v x -u^5-v^5.
 \end{align*}
 Since 
 $$P = uv^2, \qquad Q = u^3 v,$$
@@ -2523,11 +2541,17 @@ $$
 \item[(b)] Prove that f and g have isomorphic Galois groups over $\Q$.
 \ee
 \begin{proof}
-\item[(a)] Let $f(x)=\frac {a_0}{b_0}x^n+\frac {a_1}{b_1}x^{n-1}+...+\frac {a_n}{b_n}=\sum_{i=0}^n \frac {a_i}{b_i}x^{n-i}$, where $a_i,b_i \in \Z$, and $\nu=lcm(b_0,b_1,...,b_n)$, then $\nu f(x)=\sum_{i=0}^n \frac {a_i}{b_i}\nu x^{n-i}=\sum_{i=0}^n c_i x^{n-i}$, where $c_i=\frac {a_i}{b_i}\nu \in \Z$.
+\item[(a)] Let $f(x)=\frac {a_0}{b_0}x^n+\frac {a_1}{b_1}x^{n-1}+...+\frac {a_n}{b_n}=\sum_{i=0}^n \frac {a_i}{b_i}x^{n-i}$, where $a_i,b_i \in \Z$, and $\nu=\mathrm{lcm}(b_0,b_1,...,b_n)$, then $\nu f(x)=\sum_{i=0}^n \frac {a_i}{b_i}\nu x^{n-i}=\sum_{i=0}^n c_i x^{n-i}$, where $c_i=\frac {a_i}{b_i}\nu \in \Z$.
 
 After multiplication by $c_0^{n-1}$ we have $$c_0^{n-1}f(x)=\sum_{i=0}^n c_i c_0^{n-1} x^{n-i}=(c_0 x)^n+\sum_{i=1}^n c_i c_0^{i-1} (c_0 x)^{n-i}=g(c_0 x), ~ c_i c_0^{i-1} \in \Z.$$ Hence $g(x)$ is monic   and $g(x)=\lambda f(\mu x)\in\Z[x]$, where $\lambda=c_0^{n-1}\nu,\mu=1/c_0, c_0=\frac{a_0}{b_0} \nu$, i.e. $\lambda,\mu \in \Q^*$.
 
-\item[(b)] Let $\alpha_i, i=1,...,n$, are the roots of $f(x)$, then $\beta_i=\alpha_i/\mu, i=1,...,n$ are the roots of $g(x)$. If $\sigma,\sigma'$ are the elements of Galois groups of $f$ and $g$ over $\Q$ such that $\sigma(\alpha_i)=\alpha_j=\mu\beta_j=\mu\sigma'(\beta_i)$, then the bijection $$\sigma'=\frac{1}{\mu}\sigma \iff  \sigma(\alpha_i)=\alpha_j,\sigma'(\beta_i)=\beta_j,~i,j=1,...,n $$  is an isomorphism of these groups.  
+ \item[(b)] If $\alpha_1,\ldots,\alpha_n$ are the roots of $f$ in a splitting field $L = \Q(\alpha_1,\ldots,\alpha_n)$ of $f$ over $\Q$, then $\beta_1 = \alpha_1/\mu,\ldots,\beta_n = \alpha_n/\mu$ are the roots of $g$ in $L$, which splits completely over $L$, so $L$ is also a splitting field of $g$.
+ Then 
+ $$G_f \simeq \Gal(L/F) \simeq G_g.$$
+ Thus the Galois groups $G_f, G_g$ of $f,g$ over $\Q$ are isomorphic.
+ 
+Note: If $\tau \in G_f \subset S_n$ corresponds to $\sigma$ for a given numbering of the roots $\alpha_1,\ldots,\alpha_n$ of $f$, for the corresponding numbering $\beta_1,\ldots,\beta_n$,  $\tau \in G_g$, so $G_f = G_g$ for these chosen numbering.
+
 \end{proof}
 }
 
@@ -2536,10 +2560,10 @@ After multiplication by $c_0^{n-1}$ we have $$c_0^{n-1}f(x)=\sum_{i=0}^n c_i c_0
 {\it Let $f(x)=x^n-c_1x^{n-1}+...+(-1)^n c_n \in \Z[x]$, and let $\Theta_f(y)$ be the resolvent built from $\varphi \in \Z [x_1,...,x_n]$. Prove that $\Theta_f(y) \in \Z[y]$.
 
 \begin{proof}
-Let $G$ is the symmetry group of $\varphi$ and $\tau_1,...,\tau_l$ be representatives for the left cosets of $G$ in $S_n$. The universal resolvent is $\Theta(y)=\prod_{i=1}^l ( y - \tau_i\varphi(x_1,...,x_n))$. Since $\varphi \in \Z [x_1,...,x_n]$, for each $i, 1\leq i \leq l$, $\tau_i\varphi(x_1,...,x_n)\in \Z [x_1,...,x_n]  $, hence the coefficients of $\Theta(y)$ are in $\Z [x_1,...,x_n]  $, i.e., $\Theta(y)\in \Z [x_1,...,x_n][y]  $.
+Let $G$ be the symmetry group of $\varphi$ and $\tau_1,...,\tau_l$ be representatives for the left cosets of $G$ in $S_n$. The universal resolvent is $\Theta(y)=\prod_{i=1}^l ( y - (\tau_i \cdot\varphi)(x_1,...,x_n))$. Since $\varphi \in \Z [x_1,...,x_n]$, for each $i, 1\leq i \leq l$, $(\tau_i\cdot\varphi)(x_1,...,x_n)\in \Z [x_1,...,x_n]  $, hence the coefficients of $\Theta(y)$ are in $\Z [x_1,...,x_n]  $, i.e., $\Theta(y)\in \Z [x_1,...,x_n][y]  $.
 
-Suppose $\sigma \in S_n$, then $\sigma\Theta(y)=\prod_{i=1}^l ( y - \sigma\tau_i\varphi(x_1,...,x_n))$. But the set $\sigma\tau_1,...,\sigma\tau_l$ is also a set of left coset representatives of $G$ in $S_n$. Thus the application of $\sigma$ has merely permuted the roots of $\Theta(y)$ leaving the coefficients fixed. It means that coefficients of $\Theta(y)$ are symmetric and are polynomials in $\sigma_1,...,\sigma_n$ (cf. Ex.9.1.6), i.e., $\Theta(y)\in \Z [\sigma_1,...,\sigma_n][y]  $.
-The application of evaluation map $\sigma_i \mapsto c_i$ to $\Theta(y)$ gives $\Theta_f(y) \in \Z [c_1,...,c_n][y] = \Z[y]$.
+Suppose that $\sigma \in S_n$, then $(\sigma\cdot \Theta)(y)=\prod_{i=1}^l ( y - (\sigma\tau_i)\cdot \varphi(x_1,...,x_n))$. But the set $\sigma\tau_1,...,\sigma\tau_l$ is also a set of left coset representatives of $G$ in $S_n$. Thus the application of $\sigma$ has merely permuted the roots of $\Theta(y)$ leaving the coefficients fixed. It means that coefficients of $\Theta(y)$ are symmetric and are polynomials in $\sigma_1,...,\sigma_n$ with integers coefficients (cf. Ex.9.1.6), i.e., $\Theta(y)\in \Z [\sigma_1,...,\sigma_n][y]  $.
+The application of evaluation map $x_i \mapsto \alpha_i$ to $\Theta(y)$,  so that $\sigma_i \mapsto c_i$, gives $\Theta_f(y) \in \Z [c_1,...,c_n][y] = \Z[y]$.
 \end{proof}
 }
 
@@ -2548,9 +2572,15 @@ The application of evaluation map $\sigma_i \mapsto c_i$ to $\Theta(y)$ gives $\
 {\it In the proof of proposition 13.3.2, we asserted that $$\varphi (\alpha_1,...,\alpha_n)=\varphi (\alpha_{\tau(1)},...,\alpha_{\tau(n)})$$ follows from $\beta=\varphi (\alpha_1,...,\alpha_n) \in F$ and $\tau \in G_f$. Prove this.
 
 \begin{proof}
-Let $\sigma \in \Gal(L/F)$ corresponds to $\tau \in G_f$, and, since F is fixed for $\sigma$, 
-$$\sigma(\beta)=\sigma(\varphi (\alpha_1,...,\alpha_n))=\varphi (\alpha_1,...,\alpha_n), $$ 
-$$\sigma(\varphi (\alpha_1,...,\alpha_n))=\varphi (\alpha_{\tau(1)},...,\alpha_{\tau(n)}). $$
+Let $\sigma \in \Gal(L/F)$ corresponding to $\tau \in G_f$, so that  $\sigma(\alpha_i) = \alpha_{\tau(i)}, \ i= 1,\ldots,n$. 
+
+Since F is fixed for $\sigma$, and $\beta = \varphi (\alpha_1,...,\alpha_n)  \in F$, $\beta = \sigma(\beta)$, so that
+$$\varphi (\alpha_1,...,\alpha_n) = \sigma(\varphi (\alpha_1,...,\alpha_n)).$$ 
+Moreover
+\begin{align*}
+\sigma(\varphi (\alpha_1,...,\alpha_n))&= \varphi(\sigma(\alpha_1),\ldots,\sigma(\alpha_n)\\
+&=\varphi (\alpha_{\tau(1)},...,\alpha_{\tau(n)}). 
+\end{align*}
 Therefore, $\varphi (\alpha_1,...,\alpha_n)=\varphi (\alpha_{\tau(1)},...,\alpha_{\tau(n)})$ for $\varphi (\alpha_1,...,\alpha_n) \in F$ and $\tau \in G_f$.
 \end{proof}
 }
@@ -2563,88 +2593,118 @@ Therefore, $\varphi (\alpha_1,...,\alpha_n)=\varphi (\alpha_{\tau(1)},...,\alpha
 \item[(b)] Show that in the universal case, $\varphi$ leads to the resolvent $$\Theta(y)=\prod_{i=1}^3 ( y^2 - \Delta(4y_i+\sigma_1^2-4\sigma_2)) ,$$ where $y_1=x_1x_2+x_3x_4,y_2=x_1x_3+x_2x_4,y_3=x_1x_4+x_2x_3$ are the roots of the universal Ferrari resolvent $\theta(y)$.
 \item[(c)] Let $\Theta_f (y)$ be obtained by specializing the resolvent $\Theta (y)$ of part (b) to $f=x^4+bx^2+d$. Show that $$\Theta_f (y)=y^2((y^2+4b\Delta(f))^2-2^6 d\Delta(f)^2). $$
 \ee
+}
 \begin{proof}
-\item[(a)] Since $G=\langle(1324)\rangle=[(), (1,3,2,4), (1,3,2,4)^2, (1,3,2,4)^3]$, the direct calculation shows that $\varphi=(1,3,2,4)\varphi=(1,3,2,4)^2\varphi= (1,3,2,4)^3\varphi$, which means that $G$ is the symmetry group of $\varphi$.
 
-Sage verification:
-\begin{verbatim}
-    R.<x1,x2,x3,x4> = PolynomialRing(QQ, order = 'degrevlex')
+\item[(a)] Write $H(\varphi)$ the symmetry group of $\varphi = \sqrt{\Delta}\,(x_1+x_2 - x_3-x_4)$.
 
-    Delta = (x1-x2)*(x1-x3)*(x1-x4)*(x2-x3)*(x2-x4)*(x3-x4)
-    D=Delta*(x1+x2-x3-x4);
-    (D==D.subs(x1=x3,x2=x4,x3=x2,x4=x1)
-    ,D==D.subs(x1=x3,x2=x4,x3=x2,x4=x1).subs(x1=x3,x2=x4,x3=x2,x4=x1)
-    ,D==D.subs(x1=x3,x2=x4,x3=x2,x4=x1).subs(x1=x3,x2=x4,x3=x2,x4=x1)
-    .subs(x1=x3,x2=x4,x3=x2,x4=x1))
-    
-       (True, True, True)
-\end{verbatim}
+Since $(1\,3\,2\,4)$ is an odd permutation, $(1\,3\,2\,4)\cdot \sqrt{\Delta} = -\sqrt{\Delta}$, so
+$$(1\,3\,2\,4)\cdot \varphi = -\sqrt{\Delta}\, (x_3 +x_4 - x_2 - x_1) = \varphi.$$
+Therefore
+ $$\langle (1\,3\,2\,4)\rangle \subset H(\varphi).$$
+ 
+ To prove the converse, we show that the orbit ${\cal O}_\varphi$ of $\varphi$ under the action of $S_n$ contains at least 6 elements.
+ 
+ $$
+ \begin{array}{c|c|c|}
+ \sigma & \sigma \cdot (x_1+x_2 - x_3 - x_4) & \sigma \cdot \varphi\\
+ \hline
+()& x_1 + x_2 - x_3 - x_4 & \sqrt{\Delta}(x_1+x_2-x_3-x_4)\\
+ (3\, 4) & x_1 + x_2 -x_3 -x_4 & \sqrt{\Delta}(-x_1-x_2+x_3+x_4)\\
+ (2\,3) & x_1-x_2+x_3 - x_4 & \sqrt{\Delta} (-x_1+x_2 - x_3 +x_4)\\
+ (1\, 4) & -x_1 + x_2 -x_3 + x_4 & \sqrt{\Delta}(x_1 -x_2+x_3-x_4)\\
+ (1\, 3) & -x_1 + x_2 + x_3 -x_4 & \sqrt{\Delta} (x_1-x_2 -x_3 + x_4)\\
+ (2\, 4) &x_1 -x_2 -x_3 + x_4 & \sqrt{\Delta}(-x_1 + x_2 + x_3 -x_4)\\
+ \hline
+ \end{array}
+ $$
+Since the six elements in the right column are distinct (if the characteristic is not 2), we see that $|{\cal O}_\varphi| \geq 6$.
 
-Let $S_G=\{(),(1,2),(2,3),(1,4),(1,3),(2,4)\}$ is the complete system of coset representatives of $G$ in $S_4$. Since, in characteristic $\ne 2$, $\varphi \ne \tau \varphi$ for all $\tau \in S_G, \tau\ne ()$, only $G$ is the symmetry group of $\varphi$. In case of characteristic $2$, $\varphi = -(1,2) \varphi= (1,2) \varphi$ and the assertion of (a) is not valid.
-
-Sage verification:
-\begin{verbatim}
-    S4=SymmetricGroup(4);
-    H = S4.subgroup([S4("(1,3,2,4)")])
-    [S4.cosets(H)[i]  for i in range(S4.order()/H.order()) ]
-\end{verbatim}
+The stabilizer $G_\varphi$ of $\varphi$ in $S_n$ is $H(\varphi)$, which contains $\langle (1\,3\,2\,4)\rangle$, therefore $|G_\varphi| \geq 4$, and  $|{\cal O}_\varphi| =\frac{|S_n|}{|G_\varphi|} \leq \frac{24}{4} = 6$, so $|{\cal O}_\varphi| = 6$ and $|H(\varphi)| = |G_\varphi| = 4$, thus
+$$\langle (1\,3\,2\,4)\rangle \subset H(\varphi),$$
+and the orbit of $\varphi$ under $S_4$ is given by ${\cal O}_\varphi = \{\varphi_0= \varphi, \varphi_1,\ldots,\varphi_5\}$, where
 \begin{align*}
-&[(), (1,2)(3,4), (1,3,2,4), (1,4,2,3)], [(3,4), (1,2), (1,4)(2,3), (1,3)(2,4)],\\
-& [(2,3), (1,3,4,2), (1,2,4), (1,4,3)], [(2,3,4), (1,3,2), (1,4), (1,2,4,3)],\\
-& [(2,4,3), (1,4,2), (1,2,3,4), (1,3)], [(2,4), (1,4,3,2), (1,3,4), (1,2,3)]
+\varphi_0  = \phantom{3\,4}() \cdot \varphi &= \sqrt{\Delta}\, (x_1+x_2 - x_3-x_4),\\
+\varphi_1 = (3\,4)\cdot \varphi &= \sqrt{\Delta}\, ( - x_1-x_2 + x_3 +x_4),\\
+\varphi_2 = (2\,3)\cdot \varphi &= \sqrt{\Delta}\, ( - x_1+ x_2 -x_3+x_4),\\
+\varphi_3 = (1\,4) \cdot \varphi &= \sqrt{\Delta}\, (x_1- x_2 +x_3 -x_4),\\
+\varphi_4= (1\,3) \cdot \varphi &= \sqrt{\Delta}\, (x_1 - x_2   -x_3+x_4),\\
+\varphi_5= (2\,4) \cdot \varphi &= \sqrt{\Delta}\, ( - x_1+ x_2+x_3 -x_4).\\
 \end{align*}
-\begin{verbatim}
-    (D==D.subs(x1=x2,x2=x1),D==D.subs(x2=x3,x3=x2),
-    D==D.subs(x1=x4,x4=x1),D==D.subs(x1=x3,x3=x1),
-    D==D.subs(x2=x4,x4=x2))
 
-      (False, False, False, False, False)
-       
-    D==-D.subs(x1=x2,x2=x1)  
-    
-      True
-      
-\end{verbatim}
-\item[(b)] By the definition $\Theta(y)=\prod_{\tau\in S_G} ( y - \tau\varphi)$. 
-
-Since $(1,2)\varphi=-\varphi,(1,3)\varphi=-(2,4)\varphi$ and $(1,4)\varphi=-(2,3)\varphi,$ we have $$\Theta(y)=\prod_{\tau\in S'_G} ( y - \tau\varphi)( y + \tau\varphi)=\prod_{\tau\in S'_G} ( y^2 - \tau\varphi^2),$$ where $S'_G=\{(),(1,4),(1,3)\}$.
-
-Since $(x_1+x_2-x_3-x_4)^2=(\sigma_1 -2(x_3+x_4))^2=\sigma_1^2-4\sigma_1(x_3+x_4)+4(x_3+x_4)^2=\sigma_1^2-4(x_1+x_2)(x_3+x_4)=\sigma_1^2-4(\sigma_2-x_1x_2-x_3x_4)=4y_1+\sigma_1^2-4\sigma_2$ and $y_2=(1,4)y_1, y_3=(1,3)y_1$, we have  $$\Theta(y)=\prod_{\tau\in S'_G} ( y^2 - \tau \Delta(4y_1+\sigma_1^2-4\sigma_2))=\prod_{i=1}^3 ( y^2 - \Delta(4y_i+\sigma_1^2-4\sigma_2))$$
-
-\item[(c)] We have $\Sigma_3 y_1=y_1+y_2+y_3=\Sigma_4 x_1x_2=\sigma_2$. The Sage calculation shows that:
-\begin{verbatim}
-    R.<x1,x2,x3,x4,y1,y2,y3,y4> = PolynomialRing(QQ, order = 'degrevlex')
-    elt = SymmetricFunctions(QQ).e()
-    e = [elt([i]).expand(4).subs(x0=x1, x1=x2, x2=x3, x3 = x4) for i in range(5)]
-    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3,e[4]-y4)
-    G = J.groebner_basis()
-    d1=x1*x2+x3*x4;d2=d1.subs(x2=x3,x3=x2);d3=d1.subs(x1=x3,x3=x1);
-    S2=d1*d2+d1*d3+d2*d3;S3=d1*d2*d3
-    var('sigma_1,sigma_2,sigma_3,sigma_4')
-    S2.reduce(G).subs(y1=sigma_1, y2 = sigma_2,y3=sigma_3,y4=sigma_4)
-    S3.reduce(G).subs(y1=sigma_1, y2 = sigma_2,y3=sigma_3,y4=sigma_4)
-\end{verbatim}
-
-$$\Sigma_3 y_1y_2=\sigma_1\sigma_3-4\sigma_4, ~ y_1y_2y_3= \sigma_1^2\sigma_4+\sigma_3^2-4\sigma_2\sigma_4 $$
-
-Since $\sigma_1=\sigma_3=0$, $\sigma_2=b,\sigma_4=d$ for $f=x^4+bx^2+d$,
-$$\Sigma_3 y_1=b,~\Sigma_3 y_1y_2=-4d,~y_1y_2y_3=-4bd.$$
-Based on the formula for $\Theta(y)$ resolvent from (b), we have with $Z=y^2+4b\Delta(f)$:
+\item[(b)] Since $\varphi_1 = -\varphi_0, \varphi_3 = -\varphi_2, \varphi_5 = - \varphi_4$,
 \begin{align*}
-\Theta_f (y)&=\prod_{i=1}^3 ( y^2 - \Delta(f)(4y_i-4b))\\
-&=\prod_{i=1}^3 ( Z - 4\Delta(f)y_i) \\
-&=Z^3 - 4\Delta(f)\Sigma_3y_1Z^2+4^2\Delta(f)^2\Sigma_3y_1y_2Z-4^3\Delta(f)^3y_1y_2y_3 \\
-&=Z^3 - 4\Delta(f)bZ^2+4^2\Delta(f)^2(-4d)Z-4^3\Delta(f)^3(-4bd) \\
-&=(Z - 4b\Delta(f))Z^2-(Z-4b\Delta(f))4^3d\Delta(f)^2 \\
-& =y^2((y^2+4b\Delta(f))^2-2^6 d\Delta(f)^2).
+\Theta(y) &= \prod_{\psi \in {\cal O}_\varphi} (y - \psi) = \prod_{i=0}^5 (y- \varphi_i)\\
+&= (y^2- \varphi_0^2) (y^2- \varphi_2^2) (y^2 - \varphi_4^2).
 \end{align*}
+Moreover,
+\begin{align*}
+\varphi_0^2 &= \Delta(x_1+x_2-x_3-x_4)^2,\\
+\end{align*}
+where
+\begin{align*}
+(x_1+x_2-x_3-x_4)^2&= (x_1+x_2)^2 + (x_3 + x_4)^2 - 2(x_1+x_2)(x_3+x_4)\\
+&=(x_1+x_2+x_3+x_4)^2 - 4(x_1+x_2)(x_3+x_4)\\
+&=(x_1+x_2+x_3+x_4)^2 -4(x_1x_3 +x_1x_4 + x_2x_3+x_2x_4)\\
+&= 4(x_1x_2 + x_3x_4) + (x_1+x_2+x_3+x_4)^2 \\
+&\qquad - 4(x_1x_2+x_1x_3+x_1x_4+x_2x_3+x_2x_4+x_3x_4)\\
+&= 4y_1 +\sigma_1^2 - 4 \sigma_2.
+\end{align*}
+Thus
+$$(y-\varphi_0)^2 = y^2  -\Delta(4y_1 +\sigma_1^2 - 4 \sigma_2), $$
+where $y_1 = x_1x_2+x_3x_4$.
+
+If we apply the permutation $(2\,3)$ on this equality, we obtain
+$$(y - \varphi_2)^2 = y^2 - \Delta (4y_2 + \sigma_1^2 - 4\sigma_2),$$
+where $y_2 =  x_2x_4 + x_1x_3$.
+
+If we apply the permutation $(1\,3)$ on the same equality, we obtain
+$$(y - \varphi_4)^2 = y^2 - \Delta(4y_3 + \sigma_1^2 - 4 \sigma_2),$$
+where $y_3= x_4x_1 + x_3 x_2   $. 
+
+Finally,
+$$\Theta(y) = \prod_{i=1}^3 \left(y^2 - \Delta(4y_i+\sigma_1^2 - 4 \sigma_2)\right),$$
+where $y_1 = x_1x_2+x_3x_4, y_2 = x_1x_3 +x_2x_4,y_3 = x_1x_4+x_2x_3$ are the roots of the universal Ferrari resolvent $\theta(y)$.
+
+\item[(c)]
+Let $\Theta_f(y)$ is obtained by specializing the resolvent $\Theta(y)$ of part (b) to ${f = x^4+bx^2 + d}$. 
+Then $x_i$ maps to the root $\alpha_i,\ i= 1,\ldots,4$, $\sigma_1$ maps to $0$, $\sigma_2$ to $b$, $\Delta$ to $\Delta(f)$, and $y_i$ to $\beta_i$,where 
+$$\beta_1 = \alpha_1 \alpha_2 + \alpha_3\alpha_4,\qquad  \beta_2 = \alpha_2 \alpha_4 + \alpha_1 \alpha_3,\qquad \beta_3 = \alpha_4 \alpha_1 + \alpha_3\alpha_2$$
+are the roots of the Ferrari resolvent of $x^4 + bx^2 +d$.
+
+We obtain
+\begin{align*}
+\Theta_f(y) &= \prod_{i=1}^3 \left(y^2  - \Delta(f) (4\beta_i - 4b)\right)\\
+&=\prod_{i=1}^3 (y^2 + 4b\Delta(f) - 4 \Delta(f) \beta_i)
+\end{align*}
+If we write for simplicity
+$$ u = y^2 + 4b\Delta(f),\qquad v = 4 \Delta(f) \ne 0 ,$$
+then
+\begin{align*}
+\Theta_f(y) &=\prod_{i=1}^3 (u - v \beta_i)\\
+&=v^3 \prod_{i=1}^3 \left(\frac{u}{v} - \beta_i\right).
+\end{align*}
+We know from Exercise 13.1.10 that the Ferrari resolvent of $x^4+bx^2 + d$ is
+$$\Theta_f(y) = (y - \beta_1)(y-\beta_2)(y - \beta_3) =  (y-b)(y^2 - 4d).$$
+
+The substitution $y \mapsto \frac{u}{v}$ gives
+\begin{align*}
+\Theta_f(y) &=v^3\left(\frac{u}{v} - \beta_1\right)\left(\frac{u}{v} - \beta_2\right)\left(\frac{u}{v} - \beta_3\right)\\
+&= v^3\left(\frac{u}{v} - b\right) \left( \frac{u^2}{v^2} - 4d \right)\\
+&=(u-bv)(u^2 - 4d v^2)\\
+&= y^2 \left((y^2 + 4b \Delta(f))^2 -4d(4 \Delta(f))^2\right)\\
+&= y^2 \left((y^2 + 4b \Delta(f))^2 - 2^6 d \Delta(f)^2 \right).
+\end{align*}
+
 
 \end{proof}
-}
+
+
+
 
 \paragraph{Ex. 13.3.5}
 
-{\it This problem will state and prove a relative version of Proposition 13.3.2. Fix a subgroup $H\subset S_n$ and suppose that $f\in F[x]$ is separable of degree n and that $G_f \subset H$. Now let $G \subset H$ be a subgroup. We want to know whether or not $G_f$ lies in the smaller subgroup G. Let $\varphi \in F[x_1,...,x_n]$ have G as its symmetry group and let $\varphi_1=\varphi,\varphi_2,...,\varphi_l$ be the ordit of H acting on $\varphi$. Then set $$\Theta^H(y)=\prod_{i=1}^l ( y - \varphi_i) \in F[x_1,...,x_n][y].$$ Finally, if $\alpha_1,...,\alpha_n$ are the roots of f in the splitting field L, let $$\Theta_f^H(y)=\prod_{i=1}^l ( y - \varphi_i(\alpha_1,...,\alpha_n))\in L[y]$$  be the polynomial obtained by $x_i \mapsto \alpha_i$.
+{\it This problem will state and prove a relative version of Proposition 13.3.2. Fix a subgroup $H\subset S_n$ and suppose that $f\in F[x]$ is separable of degree n and that $G_f \subset H$. Now let $G \subset H$ be a subgroup. We want to know whether or not $G_f$ lies in the smaller subgroup G. Let $\varphi \in F[x_1,...,x_n]$ have G as its symmetry group and let $\varphi_1=\varphi,\varphi_2,...,\varphi_l$ be the orbit of H acting on $\varphi$. Then set $$\Theta^H(y)=\prod_{i=1}^l ( y - \varphi_i) \in F[x_1,...,x_n][y].$$ Finally, if $\alpha_1,...,\alpha_n$ are the roots of f in the splitting field L, let $$\Theta_f^H(y)=\prod_{i=1}^l ( y - \varphi_i(\alpha_1,...,\alpha_n))\in L[y]$$  be the polynomial obtained by $x_i \mapsto \alpha_i$.
 \be
 \item[(a)] Explain why the degree of $\Theta_f^H(y)$ is the index of G in H.
 \item[(b)] Prove that $\Theta_f^H(y) \in F[y]$.
@@ -2652,18 +2712,58 @@ Based on the formula for $\Theta(y)$ resolvent from (b), we have with $Z=y^2+4b\
 \item[(d)] Assume that $\Theta_f^H(y)$ has a simple root in F. Prove that $G_f$ is conjugate within H to a subgroup of G.
 \ee
 \begin{proof}
-\item[(a)] $G$ is the symmetry group of $\varphi$, therefore $G\subset H$ is the isotropy subgroup of $\varphi$ and $|H:G|=|H\cdot \varphi|=l$ (cf. Theorem A.4.9). The degree of $\Theta_f^H(y)$ is equal to $l$, hence $deg(\Theta_f^H(y))=|H:G|$. 
-\item[(b)] Let $\tau_1,...,\tau_l$ be representatives for the left cosets of $G$ in $H$. Then $$\Theta_f^H(y)=\prod_{i=1}^l ( y - \tau_i\varphi(\alpha_1,...,\alpha_n)).$$ Since $\varphi \in F [x_1,...,x_n]$, for each $i, 1\leq i \leq l$, $\tau_i\varphi((\alpha_1,...,\alpha_n))\in F [\alpha_1,...,\alpha_n]  $, hence the coefficients of $\Theta_f^H(y)$ are in $F [\alpha_1,...,\alpha_n]  $.
+\item[(a)] $G$ is the symmetry group of $\varphi$, therefore $G\subset H$ is the isotropy subgroup of $\varphi$ under the action of $H$ ($\mathrm{Stab}_H(\varphi) = H \cap \mathrm{Stab}_{S_n}(\varphi) = H \cap G = G$), and $[H:G]=|H\cdot \varphi|=l$ (cf. Theorem A.4.9). The degree of $\Theta_f^H(y)$ is equal to $l$, hence $\deg(\Theta_f^H(y))=[H:G]$. 
+\item[(b)] Let $\tau_1,...,\tau_l$ be representatives for the left cosets of $G$ in $H$. Then $$\Theta_f^H(y)=\prod_{i=1}^l ( y - (\tau_i\cdot \varphi)(\alpha_1,...,\alpha_n)).$$ Since $\varphi \in F [x_1,...,x_n]$, for each $i, 1\leq i \leq l$, $(\tau_i \cdot\varphi)(\alpha_1,...,\alpha_n) = \varphi(\alpha_{\tau_i(1)}, \ldots, \alpha_{\tau_i(n)}) \in F [\alpha_1,...,\alpha_n]  $, hence the coefficients of $\Theta_f^H(y)$ are in $F [\alpha_1,...,\alpha_n]  $.
 
-Suppose $\sigma \in G_f$, then $\sigma \in H$ and $\sigma\Theta_f^H(y)=\prod_{i=1}^l ( y - \sigma\tau_i\varphi(\alpha_1,...,\alpha_n))$. But the set $\sigma\tau_1,...,\sigma\tau_l$ is also a set of left coset representatives of $G$ in $H$. Thus the application of $\sigma$ has merely permuted the roots of $\Theta_f^H(y)$ leaving the coefficients fixed. It means that coefficients of $\Theta_f^H(y)$ are in $F$, i.e., $\Theta_f^H(y) \in F[y]$. 
+Suppose $\sigma \in G_f$, then $\sigma \in H$ and $\sigma\cdot \Theta_f^H(y)=\prod_{i=1}^l ( y - (\sigma\tau_i) \cdot \varphi(\alpha_1,...,\alpha_n))$. But the set $\sigma\tau_1,...,\sigma\tau_l$ is also a set of left coset representatives of $G$ in $H$. Thus the action of $\sigma$ has merely permuted the roots of $\Theta_f^H(y)$ leaving the coefficients fixed. It means that the coefficients of $\Theta_f^H(y)$ are in $F$, i.e., $\Theta_f^H(y) \in F[y]$. 
 
-\item[(c)] Suppose $\tau G_f \tau^{-1} \subset G$ for some $\tau \in H$ and $\tau_1,...,\tau_l$ be representatives for the left cosets of $G$ in $H$. Then $\tau G_f \tau^{-1}(\varphi)=\varphi$ and $G_f (\tau^{-1}\varphi)=\tau^{-1}\varphi$, i.e., $\tau^{-1}\varphi$ is fixed under the action of Galois group.
-Therefore $\tau^{-1}\varphi(\alpha_1,...,\alpha_n) \in F$.
+\item[(c)] Assume that $G_f$ is congugate within $H$ to a subgroup $K$ of $G$, so that $G_f = \tau K \tau^{-1}, \tau \in H$. Then $\tau^{-1} G_f \, \tau\subset G$.
 
-Since $\tau^{-1}\in \tau_i G$ for some $i=1,...,l$, exists $g\in G$ such that $\tau^{-1}\varphi(\alpha_1,...,\alpha_n)=\tau_i g \varphi(\alpha_1,...,\alpha_n) = \tau_i \varphi(\alpha_1,...,\alpha_n)  \in F$, i.e., $\Theta_f^H(y)$ has a root in F.
+Let $\tilde \sigma \in \Gal(L/F)$ (where $L = F(\alpha_1,\ldots,\alpha_n)$), and  $\sigma\in G_f$  the associated permutation, so that $\tilde{\sigma}(\alpha_i) = \alpha_{\sigma(i)},\ i=1,\ldots,n$. Since $\tau^{-1} \sigma \tau \in G$ fixes $\varphi$,  $(\tau^{-1} \sigma \tau) \cdot \varphi = \varphi$, so that
+\begin{align*}
+\tilde{\sigma}((\tau \cdot \varphi)(\alpha_1,\ldots,\alpha_n)) & = \tilde{\sigma}(\varphi(\alpha_{\tau(1)},\ldots,\alpha_{\tau(n)})\\
+&= \varphi(\tilde{\sigma}(\alpha_{\tau(1)}), \ldots,\tilde{\sigma}(\alpha_{\tau(n)}))\\
+&= \varphi(\alpha_{(\sigma \tau)(1)}, \ldots,\alpha_{(\sigma \tau)(n)})\\
+&= ((\sigma \tau) \cdot \varphi)(\alpha_1,\ldots, \alpha_n)\\
+&= (\tau\cdot ((\tau^{-1} \sigma \tau)\cdot \varphi))(\alpha_1,\ldots,\alpha_n)\\
+&= (\tau \cdot \varphi)(\alpha_1,\ldots,\alpha_n).
+\end{align*}
+Since this is true for any $\tilde{\sigma} \in \Gal(L/F)$, this proves that $(\tau \cdot \varphi)(\alpha_1,\ldots,\alpha_n) \in F$.
 
-\item[(d)]  Suppose $\tau_i\varphi(\alpha_1,...,\alpha_n) \in F$ is not repeated root of $\Theta_f^H(y)$. Then $G_f \tau_i \varphi(\alpha_1,...,\alpha_n) = \tau_i \varphi(\alpha_1,...,\alpha_n)$ and $\tau_i ^{-1} G_f \tau_i \varphi(\alpha_1,...,\alpha_n) = \varphi(\alpha_1,...,\alpha_n)$. Hence $\tau_i ^{-1} G_f \tau_i \subset G$, i.e., $G_f$ is conjugate within H to a subgroup of G. 
+Moreover $\tau \in H$, thus $\tau \cdot \varphi$ is in the orbit $H \cdot \varphi$, so $\beta = (\tau \cdot \varphi)(\alpha_1,\ldots,\alpha_n)$ is a root of $\Theta_\varphi^H(y) = \prod\limits_{\psi \in H \cdot \varphi}(y - \psi)$, and $\beta$ is in $F$. 
 
+\item[(d)]  We mimic the proof of Proposition 13.3.2, with an explicitation of the relabeling of the roots, as in part (c).
+
+Let $\beta$ be a simple root of $\Theta_f^H(y)$ in $F$. By definition of $\Theta_f^H(y)$, there is $\tau \in H$ such that  
+$$\beta = (\tau\cdot \varphi)(\alpha_1,\ldots, \alpha_n) = \varphi(\alpha_{\tau(1)},\ldots,\alpha_{\tau(n)}).$$
+
+We will prove that $\tau^{-1} G_f \tau \subset G$. If not, there is some $\sigma \in \tau^{-1} G_f \tau$ such that $\sigma \not \in G$.
+
+Then $\sigma' = \tau \sigma \tau^{-1} \in G_f$ corresponds to some $\rho \in \Gal(L/F)$, so that $\rho(\alpha_i) = \alpha_{\sigma'(i)}, \ i=1,\ldots,n$.
+
+Since $\beta \in F$, $\beta = \rho(\beta)$, so that
+\begin{align*}
+\beta &= \rho(\varphi(\alpha_{\tau(1)},\ldots,\alpha_{\tau(n)})\\
+&=\varphi(\rho(\alpha_{\tau(1)}), \ldots,\rho(\alpha_{\tau(n)}))\\
+&=\varphi(\alpha_{(\sigma'\tau)(1)},\ldots,\alpha_{(\sigma' \tau)(n)})\\
+&=\varphi(\alpha_{(\tau\sigma)(1)},\ldots,\alpha_{(\tau \sigma)(n)})\\
+&=((\tau \sigma )\cdot \varphi)(\alpha_1,\cdots, \alpha_n)
+\end{align*}
+We conclude that
+$$(\tau \cdot \varphi)(\alpha_1,\ldots,\alpha_n) = ((\tau \sigma )\cdot \varphi)(\alpha_1,\cdots, \alpha_n) \qquad (= \beta).$$
+
+Since $\beta$ is a root of $\Theta_f^H$, $ y - \beta = y - (\tau \cdot \varphi)(\alpha_1,\ldots,\alpha_n)$ is a factor of $\Theta_f^H(y)$.
+
+But $\sigma \not \in G$, thus $\varphi \ne \sigma \cdot \varphi$, therefore $\tau \cdot \varphi \ne (\tau \sigma )\cdot \varphi$.
+
+From $\tau \in H, G_f \subset H$, and $\sigma \in \tau^{-1} G_f \tau$, we know that $\tau\sigma \in  H$, thus 
+$$(y - ((\tau \sigma )\cdot \varphi)(\alpha_1,\cdots, \alpha_n)$$ is another factor of $\Theta_f^H(y)$, therefore the relative resolvent may be written
+\begin{align*}
+\Theta_f^H(y) &= (y - (\tau \cdot \varphi)(\alpha_1,\ldots,\alpha_n)) (y - ((\tau \sigma) \cdot\varphi(\alpha_1,\ldots,\alpha_n))\cdots\\
+&= (y- \beta)^2\cdots
+ \end{align*}
+ This is a contradiction, since by assumption $\beta$ is a simple root of $\Theta_f^H(y)$.
+ This proves that $\tau^{-1} G_f \tau \subset G$. If $K = \tau^{-1} G_f \tau$, $K$ is a subgroup of $G$, and $G_f = \tau K \tau^{-1}, \tau \in H$, is conjugate within $H$ to a subgroup of $G$.
 \end{proof}
 }
 
@@ -2700,9 +2800,10 @@ $$2D=2(\frac{1}{2}(\sigma_1\sigma_2\sigma_3 -3 \sigma_1^2 \sigma_4 -3\sigma_3^2 
 \begin{verbatim}
     Delta = (x1-x2)*(x1-x3)*(x1-x4)*(x2-x3)*(x2-x4)*(x3-x4)
     D-D.subs(x1=x2,x2=x1)-Delta==0
-    
-    True
 \end{verbatim}
+\begin{center}
+ {\it True}
+\end{center}
 Hence in all characteristics  $$\sqrt{\Delta}=D-(12)\cdot D.$$
 \end{proof}
 }
@@ -2716,17 +2817,51 @@ Hence in all characteristics  $$\sqrt{\Delta}=D-(12)\cdot D.$$
 \item[(c)] Show that $y^2+uy+1$ is irreducible over the splitting field of $D_f(y)$.
 \ee
 \begin{proof}
-\item[(a)] Let 
-$\bar f=x^4+x^2+1\in F_u[x]$ is obtained from $f$ by reducing all coefficients modulo $u$. Since $\bar f$ is irreducible (it is cyclotomic polynomial in $F_u[x^2]$) and since $F=\mathbb{F}_2[u]$ is a PID and $u \in F$ is prime, the Gauss's Lemma and Mod p test irreducibility is applicable, i.e., $f$ is irreducible over $F$.
+\item[(a)] $u$ is a prime of the PID $\F_2[u]$, but the reduction modulo $u$ is $\overline{f} = x^4 + x^2 + 1$, which is not irreducible, since $x^4+x^2+1 = (x^2+x+1)^2$. Nor the Sch\"onemann-Eisenstein not the reduction modulo $u$ applies here.
 
+We give a direct proof of the irreducibility of $f$, by proving that $f$ has no factor with degree 1 ou 2. By Gauss's Lemma, if $f$ has no factorisation in $\F_2[[u] [x]$, then $f$ is irreducible in $\F_2[u] (x)$.
+
+$\bullet$ If $f$ has a factor with degree 1, then $f$ has a root $\frac{a(u)}{b(u)} \in \F_2(u)$, where $a(u), b(u)$ are relatively prime. Then 
+$$a(u)^4 + (u+1)a(u)^2b(u)^2 + u a(u) b(u)^3 + b(u)^4 = 0,$$
+therefore $a \mid b^4$, and $a \wedge b = 1$, hence $a \mid 1$, and similarly $b \mid 1$. Thus $a, b \in \F_2$, where $a \ne 0, b \ne 0$, so that $a(u) = b(u) = 1$. But $f(1) = 1 \ne 0$, therefore $f$ has no factor with degree 1 in $F[x]$.
+
+$\bullet$ If $f$ has a factor with degree 2, then
+$$f = (a(u) x^2 + b(u) x + c(u))(d(u) x^2 +e(u) x + f(u),$$
+where $a,b,c,d,e,f$ are in $\F_2[u]$.
+Since $a(u) d(u) = 1$, $a(u)$ and $d(u)$ are units of $\F_2[u]$, so are in $F_2$, therefore $a(u) = d(u) = 1$, and similarly $c(u) = f(u) = 1$, so that
+$$f = (x^2 + b(u) x + 1)(x^2 + e(u) x + 1).$$
+The comparison of the terms in $x^3$ gives $b(u) + e(u) = 0$, so that
+\begin{align*}
+f &= (x^2 + b(u) x + 1)(x^2 -b(u) x + 1)\\
+&=(x^2+1)^2 - b(u)^2 x^2\\
+&= x^4 -b(u)^2 x^2 +1.
+\end{align*}
+This is a contradiction, since $f$ has a nonzero term $u x, u\ne 0$. Therefore $f$ is irreducible over $F$.
+
+Sage verification:
+\begin{verbatim}
+F = Frac(GF(2)['u']); u = F.gen()
+f = x^4 + (u+1)*x^2 + u*x +1
+f.is_irreducible()
+\end{verbatim}
+\begin{center}
+{\it True}
+\end{center}
+\begin{verbatim}
+gcd(f,f.derivative(x))
+\end{verbatim}
+\begin{center}
+1
+\end{center}
+This is a verification that $f$ is irreducible, separable.
 \item[(b)] For the given polynomial $c_1=\sigma_1=0,c_2=\sigma_2=u+1,c_3=\sigma_3=-u,c_4=\sigma_4=1$. For $D_f(y)$ we have (cf. Ex.13.3.6,13.3.4 and (13.3),(13.32)):
 \begin{align*}
-& A=D+(12)\cdot D =\sigma_1\sigma_2\sigma_3 -3 \sigma_1^2 \sigma_4 -3\sigma_3^2 + 4\sigma_2 \sigma_4=\sigma_3^2=c_3^2=u^2~ mod(2)\\
-& B=D\cdot (12)D=c_2^3c_3^2+c_3^4=(u+1)^3u^2+u^4=u^5+u^3+u^2~ mod(2)\\
+& A=D(f)+ D'(f) =\sigma_1\sigma_2\sigma_3 -3 \sigma_1^2 \sigma_4 -3\sigma_3^2 + 4\sigma_2 \sigma_4=\sigma_3^2=c_3^2=u^2 \pmod 2\\
+& B=D(f) D'(f)=c_2^3c_3^2+c_3^4=(u+1)^3u^2+u^4=u^5+u^3+u^2 \pmod 2\\
 & D_f(y)=y^2-Ay+B=y^2+u^2y+u^5+u^3+u^2\\
 & \\
 & a=\sigma_2=c_2=u+1,~b=\sigma_1\sigma_3-4\sigma_4=c_1c_3-4c_4=0,\\
-& c= \sigma_1^2\sigma_4+\sigma_3^2-4\sigma_2\sigma_4=c_1^2c_4+c_3^3-4c_2c_4=u^2\\
+& c= \sigma_1^2\sigma_4+\sigma_3^2-4\sigma_2\sigma_4=c_1^2c_4+c_3^2-4c_2c_4=u^2\\
 & \theta_f(y)=y^3-ay^2+by-c=y^3+(u+1)y^2+u^2=(y+u)(y^2+y+u)
 \end{align*}
 Sage verification:
@@ -2764,10 +2899,15 @@ $$a= u + 1,~b= 0,~ c= u^{2}$$
 $$(u + y) \cdot (y^{2} + u + y)$$
 \item[(c)] As per (b), $D_f(y)=y^2+u^2y+u^5+u^3+u^2=(y+u)^2+u^2(y+u)+u^5=u^4(Y^2+Y+u)$, where $Y=({y+u})/{u^2}$.
 
-Then the splitting field of $D_f(y)$ is $F(D_f(y))=\mathbb{F}_2(u,\alpha)$, where $\alpha^2+\alpha+u=0$. Since $u=\alpha^2+\alpha$, $\mathbb{F}_2(u,\alpha)=\mathbb{F}_2(\alpha)$ and $g(y)=y^2+uy+1=y^2+(\alpha^2+\alpha)y+1$. Then $g(y+1)=(y+1)^2+(\alpha^2+\alpha)(y+1)+1=y^2+(\alpha^2+\alpha)y+(\alpha^2+\alpha)$ is irreducible in $\mathbb{F}_2(\alpha)$ by the Sch\"onemann-Eisenstein criterion.
+Then the splitting field of $D_f(y)$ is $F(D(f))=\mathbb{F}_2(u,\alpha)$, where $\alpha^2+\alpha+u=0$. Since $u=\alpha^2+\alpha$, $\mathbb{F}_2(u,\alpha)=\mathbb{F}_2(\alpha)$ and $g(y)=y^2+uy+1=y^2+(\alpha^2+\alpha)y+1$. Then $g(y+1)=(y+1)^2+(\alpha^2+\alpha)(y+1)+1=y^2+(\alpha^2+\alpha)y+(\alpha^2+\alpha)$ is irreducible in $\mathbb{F}_2[\alpha][y]$  (and in $\F_2(\alpha)[y]$) by the Sch\"onemann-Eisenstein criterion. Therefore $g(y)$ is irreducible over the splitting field $\F_2(\alpha)$ of $D(f)$
 
+This criterion applies here because $[\F_2(\alpha) : \F_2] = [\F_2(u, \alpha) : \F_2] = [\F_2(u,\alpha) : \F_2(u)][\F_2(u):\F_2] = \infty$ ($u$ is a variable), therefore $\alpha$ is transcendental over $\F_2$, so that we may consider $\alpha$ as a variable $x$: $\F_2[\alpha] \simeq \F_2[x]$. Hence $\F_2[\alpha]$ is a PID, and $\alpha$ is a prime in $\F_2[\alpha]$. Gauss's Lemma and the Sch\"onemann-Eisenstein Criterion apply here.
 
-Thus $y^2+uy+1$ is irreducible over the splitting field of $D_f(y)$, therefore $D_f(y)\simeq D_8$ by Proposition 13.3.6.
+As an alternative proof of the irreducibility of $g(y) = y^2 + uy + 1$ over $F(D(f))$, without this criterion, it is sufficient to prove that $g(y)$ has no root in $F(D(f)) = \F_2(\alpha)$, where $\alpha^2 + \alpha + u = 0$ as above. Such a root is under the form $a(\alpha)/b(\alpha)$, where $a(\alpha)$ and $b(\alpha)$ are relatively prime in the PID $\F_2[\alpha]$. Then
+$$a(\alpha) ^2 +  (\alpha^2 + \alpha) a(\alpha) b(\alpha) + b^2(\alpha) = 0,$$
+hence $a(\alpha) \mid  b^2(\alpha)$, with $a(\alpha), b(\alpha)$ relatively prime, thus $a(\alpha) \mid 1$, $a(\alpha) = 1$, and similarly $b(\alpha) = 1$. But $g(1) = u \ne 0$, so $g$ has no root in $F(D(f))$.
+
+Thus $y^2+uy+1$ is irreducible over the splitting field of $D_f(y)$, therefore $G_f \simeq D_8$ by Proposition 13.3.6.
 \end{proof}
 }
 
@@ -2800,6 +2940,7 @@ Thus, $\Theta_f(y)=g_1(y)g_2(y)g_3(y)$, where $g_i(y)=( y^2 - \varphi_i)\in F[x]
 \item[(d)] Since  $\sqrt{\varphi_1}=(1324)\sqrt{\varphi_1}$, the root $\sqrt{\varphi_1}$ is fixed by $G_f=\langle (1324) \rangle$, therefore $\sqrt{\varphi_1} \in F$. Hence, $g_1(y)=(y-\sqrt{\varphi_1}),g_2(y)=(y+\sqrt{\varphi_1}) \in F[x]$ are degree 1. By the same reasons as in part (b), $g_3(y)=(y^4-(\varphi_2+\varphi_3)y^2+\varphi_2\varphi_3)\in F[x]$  is degree 4 and irreducible over $F$.
 
 Thus, $\Theta_f(y)=g_1(y)g_2(y)g_3(y)$, where $g_i(y)\in F[x]$, $i=1,2,3$, are irreducible of degree 1,1 and 4 respectively.
+
 \item[(e)] Using $\Theta_f(y)$ and $\Delta(f)$, we may identify how $\Theta_f(y)$ can be factorized in field $F$ and, depending on which case from (a) to (d) is applicable, the Galois group $G_f$ may be determined. Since $G_f$ depends on the enumeration of roots of $f$, $G_f$ can be identified up to conjugacy. 
 \ee\end{proof}
 }
@@ -2863,8 +3004,8 @@ By the definition for any field $F$, $PGL(n,F)=GL(n,F)/F^*I$ and $PSL(n,F)=SL(n,
 
 \begin{proof}
 Suppose $f=x^4-c_1x^3+c_2x^2-c_3x+c_4 \in F[x]$ is separable and irreducible.
-Let $H=\langle (1324),(12) \rangle$,  $G=\langle (1324)) \rangle \subset H$ and $\varphi=\sqrt{\Delta}(x_1+x_2-x_3-x_4)$. Since $\varphi=(1324)\varphi$, subgroup $G$ is the symmetry group of $\varphi$. Since $(12)\varphi=-\varphi$,  ($\varphi,-\varphi$) is the ordit of H acting on $\varphi$.  Then $$\Theta_f^H(y)=( y - \varphi(\alpha_1,...,\alpha_4))( y + \varphi(\alpha_1,...,\alpha_4))=( y^2 - \varphi^2(\alpha_1,...,\alpha_4)),$$
-where $\varphi^2(\alpha_1,...,\alpha_4)=\Delta(4\beta_1+c_1^2-4c_2)$, $\beta_1=\alpha_1\alpha_2+\alpha_3\alpha_4$. By the assumption of Example 13.3.4, $\beta_1 \in F$, therefore $\Theta_f^H(y) \in F[y]$ and is the relative resolvent in the sense of Exercise 5. 
+Let $H=\langle (1324),(12) \rangle$,  $G=\langle (1324)) \rangle \subset H$ and $\varphi=\sqrt{\Delta}(x_1+x_2-x_3-x_4)$. By Exercise 4, $G$ is the symmetry group of $\varphi$. Since $(12)\varphi=-\varphi$,  $\{\varphi,-\varphi\}$ is the orbit of H acting on $\varphi$.  Then $$\Theta_f^H(y)=( y - \varphi(\alpha_1,...,\alpha_4))( y + \varphi(\alpha_1,...,\alpha_4))=( y^2 - \varphi^2(\alpha_1,...,\alpha_4)),$$
+where $\varphi^2(\alpha_1,...,\alpha_4)=\Delta(f)(4\beta_1+c_1^2-4c_2)$, $\beta_1=\alpha_1\alpha_2+\alpha_3\alpha_4$. By the assumption of Example 13.3.4, $\beta_1 \in F$, therefore $\Theta_f^H(y) \in F[y]$ and is the relative resolvent in the sense of Exercise 5. 
 
 Since $G_f \subset H$ and, depending on whether $\Theta_f^H(y)$ is reducible or not in $F$, the conclusion about whether $G_f=\langle (1324)) \rangle$ or $G_f=\langle (1324),(12) \rangle$ can be done.  
 
@@ -2895,6 +3036,7 @@ Hence, $S_n$ and $A_n$ act transitively on the set of triples of {1,...,7}. Sinc
 \item[(b)] The one-dimensional affine linear group $AGL(1,\mathbb{F}_7)$ is the group of order $7*6=42$ consisting of maps $i\mapsto ai+b$ where $i,a,b \in \mathbb{F}_7$ and $a \ne 0$. The isotropy group of an unordered triple $x^3=(x_1,x_2,x_3)$ is the subgroup $G_{x^3}=\{g\in \mathbb{F}_7 | g\cdot x^3=x^3\}$. Solutions to the equations $ax_i+b=x_{\sigma(i)},~i\in(1,2,3), \sigma \in S_3$ are giving the elements of isotropy group.
 
 In matrix form the equations are:
+$$
 \left(\begin{array}{rr}
 x_{1} & 1 \\
 x_{2} & 1 \\
@@ -2909,24 +3051,26 @@ x_{\sigma(1)}  \\
 x_{\sigma(2)}  \\
 x_{\sigma(3)}  
 \end{array}\right)
-
+$$
 The extended matrix for all $\sigma \in S_3$ excluding identity permutation is: 
 
-
+$$
 \left(\begin{array}{rr|rrrrr}
 x_{1} & 1 & x_{1} & x_{2} & x_{2} & x_{3} & x_{3} \\
 x_{2} & 1 & x_{3} & x_{1} & x_{3} & x_{1} & x_{2} \\
 x_{3} & 1 & x_{2} & x_{3} & x_{1} & x_{2} & x_{1}
 \end{array}\right)
-
+$$
  \item[$\bullet$] Case $x^3=(0,1,2)$: Gauss transformation of extended matrix to bring the first two columns to 
+$$
 \left(\begin{array}{rr}
 0 & 1 \\
 1 & 0 \\
 0 & 1 
 \end{array}\right) 
+$$
 \rm gives:
-
+$$
 \left(\begin{array}{rrrrrrr}
 0 & 1 & 0 & 1 & 1 & 2 & 2 \\
 1 & 1 & 2 & 0 & 2 & 0 & 1 \\
@@ -2942,11 +3086,11 @@ x_{3} & 1 & x_{2} & x_{3} & x_{1} & x_{2} & x_{1}
 1 & 0 & 2 & 6 & 1 & 5 & 6 \\
 0 & 1 & 4 & 4 & 5 & 5 & 2
 \end{array}\right)
-
+$$
 There is only one solution corresponding to $a=6,b=2$, i.e., the order of isotropy group is $2$ and (cf. Theorem A.4.9) the appropriate orbit has $42/2=21$ elements.  
 
  \item[$\bullet$] Case $x^3=(0,1,3)$:
- 
+ $$
 \left(\begin{array}{rrrrrrr}
 0 & 1 & 0 & 1 & 1 & 3 & 3 \\
 1 & 1 & 3 & 0 & 3 & 0 & 1 \\
@@ -2962,7 +3106,7 @@ There is only one solution corresponding to $a=6,b=2$, i.e., the order of isotro
 1 & 0 & 3 & 6 & 2 & 4 & 5 \\
 0 & 1 & 6 & 6 & 1 & 3 & 6
 \end{array}\right)
-
+$$
 There are two solutions corresponding to $a=2,b=1$ and $a=4,b=3$, i.e., the order of isotropy group is $3$, hence the appropriate orbit has $42/3=14$ elements.
 \ee
 \end{proof}
@@ -3397,6 +3541,8 @@ Hence, all elements of $A_4$ with cycle type $(d_1,d_2)=(1,3)$ are in the union 
 \item[(a)] For each transitive subgroup of $S_4$, make a table similar to (13.46) that lists the number of elements of each possible cycle type for that subgroup.
 \item[(b)] For each polynomial in Exercise 14 of Section 13.1, compute its factorization modulo 200 primes, and record your results in a table similar to (13.45). Use this to guess the Galois group of each polynomial. 
 \ee
+}
+
 \begin{proof}
 \be
 \item[(a)] There are five transitive subgroups of $S_4$ - $\{S_4,A_4,C_2\times C_2,C_4,D_8\}$. The following Sage instructions produce the similar to (13.46) table with the percentage of elements of each possible cycle for each subgroup:
@@ -3433,15 +3579,17 @@ A = ["cycle type","S_4","A_4","C_2xC_2","C_4","D_8"]
 C = [[a] + u for a, u in zip(A, C)]
 (table(C, header_row=True, frame=True))
 \end{verbatim}
+
+
 \begin{tabular}{|l|l|l|l|l|l|} \hline
 cycle type & 1,1,1,1 & 1,1,2 & 1,3 & 2,2 & 4 \\ \hline \hline
-S_4 & $4.2$ & $25.0$ & $33.3$ & $12.5$ & $25.0$ \\ \hline
-A_4 & $8.3$ & $0.0$ & $66.7$ & $25.0$ & $0.0$ \\ \hline
-C_2\times C_2 & $25.0$ & $0.0$ & $0.0$ & $75.0$ & $0.0$ \\ \hline
-C_4 & $25.0$ & $0.0$ & $0.0$ & $25.0$ & $50.0$ \\ \hline
-D_8 & $12.5$ & $25.0$ & $0.0$ & $37.5$ & $25.0$ \\ \hline
+$S_4$ & $4.2$ & $25.0$ & $33.3$ & $12.5$ & $25.0$ \\ \hline
+$A_4$ & $8.3$ & $0.0$ & $66.7$ & $25.0$ & $0.0$ \\ \hline
+$C_2\times C_2$ & $25.0$ & $0.0$ & $0.0$ & $75.0$ & $0.0$ \\ \hline
+$C_4$ & $25.0$ & $0.0$ & $0.0$ & $25.0$ & $50.0$ \\ \hline
+$D_8$ & $12.5$ & $25.0$ & $0.0$ & $37.5$ & $25.0$ \\ \hline
 \end{tabular}
-\\ \\
+
 \item[(b)] The following Sage instructions produce the similar to (13.45) table. The percentage of primes corresponding to each possible cycle for 200 primes $7\leq p\leq 1237$ is calculated for each polynomial in Exercise 13.1.14 and the polynomial from Example 13.4.8:
 \begin{verbatim}
 R.<X> = PolynomialRing(ZZ)
@@ -3480,20 +3628,21 @@ B = ["Galois group","C_4","S_4","A_4","C_2xC_2","C_4","D_8"]
 C = [a + [u] for a, u in zip(C, B)]
 (table(C, header_row=True, frame=True))
 \end{verbatim}
+
 \begin{tabular}{|l|l|l|l|l|l|l|} \hline
 cycle type & 1,1,1,1 & 1,1,2 & 1,3 & 2,2 & 4 & Galois group \\ \hline \hline
-$X^{4} - 7X^{3} + 19X^{2} - 23X + 11$ & $25.4$ & $0.0$ & $0.0$ & $22.9$ & $51.7$ & C_4 \\ \hline
-$X^{4} + 4X + 2$ & $3.0$ & $26.9$ & $33.8$ & $13.4$ & $22.9$ & S_4 \\ \hline
-$X^{4} + 8X + 12$ & $6.5$ & $0.0$ & $67.2$ & $26.4$ & $0.0$ & A_4 \\ \hline
-$X^{4} + 1$ & $22.9$ & $0.0$ & $0.0$ & $77.1$ & $0.0$ & C_2\times C_2 \\ \hline
-$X^{4} + X^{3} + X^{2} + X + 1$ & $25.4$ & $0.0$ & $0.0$ & $22.9$ & $51.7$ & C_4 \\ \hline
-$X^{4} - 2$ & $10.4$ & $25.4$ & $0.0$ & $37.3$ & $26.9$ & D_8 \\ \hline
+$X^{4} - 7X^{3} + 19X^{2} - 23X + 11$ & $25.4$ & $0.0$ & $0.0$ & $22.9$ & $51.7$ & $C_4$ \\ \hline
+$X^{4} + 4X + 2$ & $3.0$ & $26.9$ & $33.8$ & $13.4$ & $22.9$ & $S_4$ \\ \hline
+$X^{4} + 8X + 12$ & $6.5$ & $0.0$ & $67.2$ & $26.4$ & $0.0$ & $A_4$ \\ \hline
+$X^{4} + 1$ & $22.9$ & $0.0$ & $0.0$ & $77.1$ & $0.0$ & $C_2\times C_2$ \\ \hline
+$X^{4} + X^{3} + X^{2} + X + 1$ & $25.4$ & $0.0$ & $0.0$ & $22.9$ & $51.7$ & $C_4$ \\ \hline
+$X^{4} - 2$ & $10.4$ & $25.4$ & $0.0$ & $37.3$ & $26.9$ & $D_8$ \\ \hline
 \end{tabular}
 \\ \\ \\
 The last column provides the guess about the Galois group of each polynomial. The comparison with Exercise 14 of Section 13.1 and Example 13.4.8 results supports the Chebotarev Density Theorem. 
-\begin{align*}
-\end{align*}
-\ee\end{proof}
-}
+%\begin{align*}
+%\end{align*}
 
+\ee
+\end{proof}
 \end{document}
