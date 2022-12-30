@@ -2922,47 +2922,160 @@ Thus $y^2+uy+1$ is irreducible over the splitting field of $D_f(y)$, therefore $
 \item[(e)] Explain why parts (a) through (d) enable one to determine $G_f$ up to conjugacy using only $\Theta_f(y)$ and $\Delta (f)$. 
 \ee
 \begin{proof}
-
-From Ex.13.3.4 $$\Theta_f(y)=\prod_{i=1}^3 ( y^2 - \varphi_i) ,$$ where $\varphi_i=\Delta(f)(4y_i+c_1^2-4c_2)$, $y_1=\alpha_1\alpha_2+\alpha_3\alpha_4,y_2=\alpha_1\alpha_3+\alpha_2\alpha_4,y_3=\alpha_1\alpha_4+\alpha_2\alpha_3$ and $\varphi_1=(\sqrt{\Delta(f)}(\alpha_1+\alpha_2-\alpha_3-\alpha_4))^2,~ f=x^4-c_1x^3+c_2x^2-c_3x+c_4,~\alpha_1,...,\alpha_4$ roots of $f$.
 \be
-\item[(a)] Since $\varphi_2=(23)\varphi_1$, $\varphi_3=(34)\varphi_2$, $\varphi_1=(24)\varphi_3$ and $\varphi_2=(123)\varphi_1$,~$\varphi_3=(134)\varphi_2$,~$\varphi_1=(324)\varphi_3$, both $A_4$ and $S_4$ act transitively on $\varphi_i$.
-Hence, in case when Galois group $G_f$ is $A_4$ or $S_4$, then $\Theta_f(y)$ is irreducible over $F$. 
+\item[(a)] Let $\varphi = \sqrt{\Delta}(x_1+x_2-x_3-x_4)$. We know by Ex. 13.3.4(a) that the orbit ${\cal O}_\varphi = S_n \cdot \varphi$ is 
 
-\item[(b)] Since $\varphi_1=(1324)\varphi_1=(12)\varphi_1$ and $\sqrt{\varphi_1}=-(12)\sqrt{\varphi_1}$, the root $\varphi_1$ is fixed by $G_f=\langle (1324),(12) \rangle$, but $\sqrt{\varphi_1}$ isn't,  therefore $\varphi_1 \in F$ and $\varphi_1 \notin F^2$. Hence, $g(y)=(y^2-\varphi_1) \in F[x]$ is degree 2 and irreducible over $F$.
 
-Since, $\varphi_3=(1324)\varphi_2=(12)\varphi_2$, $\varphi_2=(1324)\varphi_3=(12)\varphi_3$ and $\varphi_2+\varphi_3=(12)(\varphi_2+\varphi_3)=(1324)(\varphi_2+\varphi_3)$, $\varphi_2\varphi_3=(12)(\varphi_2\varphi_3)=(1324)(\varphi_2\varphi_3)$, the roots $\varphi_2,\varphi_3 \notin F$, but $\varphi_2+\varphi_3,\varphi_2\varphi_3 \in F$. Hence, $h(y)=(y^2-\varphi_2)(y^2-\varphi_3)=(y^4-(\varphi_2+\varphi_3)y^2+\varphi_2\varphi_3)\in F[x]$  is degree 4 and irreducible over $F$.
+$${\cal O}_\varphi = \{\varphi_0, \varphi_1,\ldots,\varphi_5\},$$
+where
+\begin{align*}
+\varphi_0  = \phantom{3\,4}() \cdot \varphi &= \sqrt{\Delta}\, (x_1+x_2 - x_3-x_4),\\
+\varphi_1 = (3\,4)\cdot \varphi &= \sqrt{\Delta}\, ( - x_1-x_2 + x_3 +x_4),\\
+\varphi_2 = (2\,3)\cdot \varphi &= \sqrt{\Delta}\, ( - x_1+ x_2 -x_3+x_4),\\
+\varphi_3 = (1\,4) \cdot \varphi &= \sqrt{\Delta}\, (x_1- x_2 +x_3 -x_4),\\
+\varphi_4= (1\,3) \cdot \varphi &= \sqrt{\Delta}\, (x_1 - x_2   -x_3+x_4),\\
+\varphi_5= (2\,4) \cdot \varphi &= \sqrt{\Delta}\, ( - x_1+ x_2+x_3 -x_4).\\
+\end{align*}
+We verify that the orbit $A_n\cdot \varphi$ is ${\cal O}_\varphi$. Since $A_n$ fixes $\sqrt{\Delta}$, we obtain
+$$
+ \begin{array}{c|c|}
+ \sigma & \sigma \cdot \varphi\\
+ \hline
+() & \sqrt{\Delta}(x_1+x_2-x_3-x_4)\\
+(1\, 3)(2\, 4)  & \sqrt{\Delta}(-x_1-x_2+x_3+x_4)\\
+ (1\,2\,4) & \sqrt{\Delta} (-x_1+x_2 - x_3 +x_4)\\
+ (2\,3\, 4)  & \sqrt{\Delta}(x_1 -x_2+x_3-x_4)\\
+ (2\,4\, 3)  & \sqrt{\Delta} (x_1-x_2 -x_3 + x_4)\\
+ (1\,3\, 4)  & \sqrt{\Delta}(-x_1 + x_2 + x_3 -x_4)\\
+ \hline
+ \end{array}
+ $$
+ This proves $A_n \cdot \varphi \supset S_n \cdot \varphi$, and since $A_n \subset S_n$, $A_n \cdot \varphi \subset S_n \cdot \varphi$, so that
+ $$A_n \cdot \varphi = S_n \cdot \varphi.$$
+Here $G_f = A_n$ or $G_f = S_n$. Therefore $G_f$ acts transitively over the roots $\varphi_i$ of the universal resolvent $\Theta(y) = \prod\limits_{i=0}^5 (y - \varphi_i)$.
 
-Thus, $\Theta_f(y)=g(y)h(y)$, where $g(y),h(y)\in F[x]$ are irreducible of degree 2 and 4 respectively.
+Write $L = F(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$ be the splitting field of $f$, and $\beta = \varphi_i(\alpha_1,\alpha_2,\alpha_3,\alpha_4) \in L, \beta_i =\varphi(\alpha_1,\alpha_2,\alpha_3,\alpha_4) \in L$.
 
-\item[(c)] Since, $\varphi_i=(12)(34)\varphi_i=(13)(24)\varphi_i$ for all $i=1,2,3$ and $\sqrt{\varphi_1}=-(13)(24)\sqrt{\varphi_1}$,$\sqrt{\varphi_i}=-(12)(34)\sqrt{\varphi_i}$, $i=2,3$, the roots $\varphi_i$ are fixed by $G_f=\langle (12)(34),(13)(24) \rangle$, but $\sqrt{\varphi_i}$ aren't,  therefore, $\varphi_i \in F$ and $\varphi_i \notin F^2$ for all $i=1,2,3$. 
+Since $\Theta_f(y) = \prod\limits_{i=0}^5 (y - \varphi_i(\alpha_1,\alpha_2,\alpha_3,\alpha_4)) \in F[y]$,  $\Gal(L/F)$ acts on the roots of $\Theta_f(y)$. We show that this action is transitive.
 
-Thus, $\Theta_f(y)=g_1(y)g_2(y)g_3(y)$, where $g_i(y)=( y^2 - \varphi_i)\in F[x]$, $i=1,2,3$, are irreducible of degree 2.
-\item[(d)] Since  $\sqrt{\varphi_1}=(1324)\sqrt{\varphi_1}$, the root $\sqrt{\varphi_1}$ is fixed by $G_f=\langle (1324) \rangle$, therefore $\sqrt{\varphi_1} \in F$. Hence, $g_1(y)=(y-\sqrt{\varphi_1}),g_2(y)=(y+\sqrt{\varphi_1}) \in F[x]$ are degree 1. By the same reasons as in part (b), $g_3(y)=(y^4-(\varphi_2+\varphi_3)y^2+\varphi_2\varphi_3)\in F[x]$  is degree 4 and irreducible over $F$.
+We know that $A_n\cdot \varphi = \{\varphi_0,\ldots,\varphi_5\}$, so that for each subscript $i \in\{0,\ldots,5\}$, there exists $\tau \in A_n$ such that $\tau \cdot \varphi = \varphi_i$. 
 
-Thus, $\Theta_f(y)=g_1(y)g_2(y)g_3(y)$, where $g_i(y)\in F[x]$, $i=1,2,3$, are irreducible of degree 1,1 and 4 respectively.
+Since $G_f \supset A_n$, $\tau \in G_f$, thus there is a corresponding $\sigma \in \Gal(L/F)$ such that $\sigma(\alpha_j) = \alpha_{\tau(j)},\ j = 1,2,3,4$. Then
+\begin{align*}
+\sigma(\beta) &= \sigma(\varphi(\alpha_1,\ldots,\alpha_4))\\
+ &= \varphi(\tau(\alpha_1),\ldots,\tau(\alpha_5))\\
+ &= (\tau \cdot \varphi)(\alpha_1,\ldots,\alpha_4) \\
+ &= \varphi_i(\alpha_1,\ldots,\alpha_4)\\
+ &= \beta_i.
+\end{align*}
+Therefore the orbit of $\beta$ under the action of $\Gal(L/F)$ is $\{\beta = \beta_0, \ldots, \beta_5\}$.
+ 
+ Then we prove that $\Theta_f(y)$ is irreducible with the same argument as in the proof of Theorem 7.1.1 or Proposition 6.3.7.
+ 
+ If $h$ is the minimal polynomial of $\beta$ over $F$, then $h$ divides $\Theta_f(y)$. $h \in F[y]$, and $\beta$ is a root of $h$, therefore $\beta_i = \sigma(\beta) , \sigma \in \Gal(L/F)$ is a root of $h$. The six $\beta_i$ are distinct, as $\Theta_f(y)$ is separable, so that $\deg(h) \geq 6$, where $h \mid \Theta_f$, thus $\Theta_f = h$ is irreducible.
 
-\item[(e)] Using $\Theta_f(y)$ and $\Delta(f)$, we may identify how $\Theta_f(y)$ can be factorized in field $F$ and, depending on which case from (a) to (d) is applicable, the Galois group $G_f$ may be determined. Since $G_f$ depends on the enumeration of roots of $f$, $G_f$ can be identified up to conjugacy. 
+
+\item[(b)] Write, as in part (a),
+\begin{align*}
+\varphi &= \sqrt{\Delta}(x_1+x_2-x_3-x_4),\\
+\varphi_2& = (1\,2\,4)\cdot \varphi = \sqrt{\Delta}(-x_1+x_2-x_3+x_4),\\
+\varphi_4 & = (2\,4\,3)\cdot \varphi = \sqrt{\Delta}(x_1 -x _2 -x_3 + x_4).
+\end{align*}
+Then the orbit of $\varphi$ is $S_n\cdot \varphi = \{\varphi, -\varphi, \varphi_2, -\varphi_2, \varphi_4,-\varphi_4\}$, and the universal resolvent is
+$$\Theta(y) = (y^2 - \varphi^2)(y^2 - \varphi_2^2)(y^2-\varphi_4^2).$$
+Here $G_f =\langle (1\,3\,2\,4),(1\, 2)\rangle$ is the dihedral group $D_8$. We compute the orbits of $\varphi$ and of $\varphi_2$ under the action of $G_f$.
+\begin{align*}
+(1\,3\,2\,4) \cdot \varphi &= (-\sqrt{\Delta)}(x_3+x_4 -x_2 -x_1)\\
+&=\sqrt{\Delta}(x_1+x_2-x_3 -x_4) = \varphi\\
+(1\,2)\cdot \varphi &= (-\sqrt{\Delta})(x_2 + x_1 -x_3 -x_4) = -\varphi,
+\end{align*}
+so that $G_f\cdot \varphi = \{\varphi, -\varphi\}$.
+
+Write $\beta = \varphi(\alpha_1,\alpha_2,\alpha_3,\alpha_4) = \sqrt{\Delta(f)}(\alpha_1+\alpha_2-\alpha_3-\alpha_4)$, and similarly $\beta_2 = \varphi_2(\alpha_1,\alpha_2,\alpha_3,\alpha_4),\beta_4 = \varphi_4(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$.Then
+$$\Theta_f(y) = (y^2 - \beta^2)(y^2-\beta_2^2)(y^2 - \beta_4^2).$$
+
+If $\sigma \in \Gal(L/F)$, and if $\tau \in G_f$ is the corresponding permutation, then, as in part (a),
+$$\sigma(\beta) = (\tau \cdot \varphi)(\alpha_1,\ldots,\alpha_4) = \pm \varphi(\alpha_1,\ldots,\alpha_4) = \pm \beta.$$
+We know that $\beta \ne 0$, as $\Theta_f$ is separable. Thus $\sigma(\beta) \ne \beta$, so that $\beta \not \in F$, but $\sigma(\beta^2) = (\pm \beta)^2 = \beta^2$, thus $\beta^2 \in F$.
+This proves that the factor $g(y) = y^2 - \beta^2 \in F[y]$, and $y^2 - \beta^2$ is irreducible over $F$.
+
+Moreover,
+\begin{align*}
+(1\,3\,2\,4)\cdot \varphi_2 &= (-\sqrt{\Delta})(-x_3+x_4-x_2+x_1)\\
+&=\sqrt{\Delta}(-x_1+x_2+x_3-x_4)\\
+&=-\varphi_4\\
+(1\,3\,2\,4)^2 \cdot \varphi_2&= -(1\,3\,2\,4)\cdot \varphi_4\\
+&=-(-\sqrt{\Delta})(x_3-x_4-x_2+x_1)\\
+&=\sqrt{\Delta}(x_1 - x_2+x_3-x_4)\\
+&=-\varphi_2\\
+(1\,3\,2\,4)^3 \cdot \varphi_2 &= -(1\,3\,2\,4)\cdot \varphi_2 = \varphi_4\\
+(1\,2)\cdot \varphi_2 &= (-\sqrt{\Delta})(-x_2+x_1-x_3+x_4)\\
+&=\sqrt{\Delta}(-x_1+x_2+x_3-x_4),
+\end{align*}
+so that $G_f\cdot \varphi_2 = \{\varphi_2,-\varphi_2,\varphi_4, -\varphi_4\}$. Therefore the orbit of $\beta_2$ under the action of $\Gal(L/F)$ is $\{\pm \beta_2, \pm \beta_4\}$.
+
+Write $h(y) = (y^2-\beta_2^2)(y^2 - \beta_4^2)$. Since $h(y) = \Theta_f(y)/g(y)$, $h(y) \in F[y]$. The action of $\Gal(L/F)$ on the roots of the separable polynomial $h$ is transitive, thus, as in part (a), $h$ is irreducible over $F$.
+
+$\Theta_f(y)=g(y)h(y)$, where $g(y),h(y)\in F[y]$ are irreducible of degree 2 and 4 respectively.
+
+\item[(c)] By computing the orbits of $\varphi,\varphi_2,\varphi_4$, we obtain
+\begin{align*}
+(1\,2)(3\,4)\cdot \varphi &= \varphi,\\
+(1\,3)(2\,4)\cdot \varphi &= -\varphi,\\
+(1\,2)(3\,4)\cdot \varphi_2 &= -\varphi_2,\\
+(1\,3)(2\,4)\cdot \varphi_2&= -\varphi_2,\\
+(1\,2)(3\,4)\cdot \varphi_4 &= -\varphi_4,\\
+(1\,3)(2\,4)\cdot \varphi_4 &= -\varphi_4.\\
+\end{align*}
+Therefore $$G_f\cdot \varphi = \{\varphi, - \varphi\},\qquad  G_f\cdot \varphi_2 = \{\varphi_2, - \varphi_2\}, \qquad G_f\cdot \varphi_4 = \{\varphi_4, - \varphi_4\},$$
+and the orbits of $\beta, \beta_2,\beta_4$ under the action of $G = \Gal(L/F)$ are
+$$G\cdot \beta = \{\beta, - \beta\},\qquad G\cdot \beta_2 = \{\beta_2, - \beta_2\}, \qquad G\cdot \beta_4 = \{\beta_4, - \beta_4\}.$$
+If $\sigma \in \Gal(L/F)$ corresponds to $(1\,2)(3\,4)$, then $\sigma(\beta) = - \beta \ne \beta$, and $\sigma(\beta^2) = \beta^2$, so that $\beta \not \in F, \beta^2 \in F$, and the factor $y^2-\beta^2 \in F[y]$ is irreducible over $F$. Similarly, the two other factors are irreducible in $F[y]$.
+
+$\Theta_f(y) = (y^2 - \beta^2)(y^2-\beta_2^2)(y^2 - \beta_4^2)$ is a decomposition in three irreducible factors of $F[y]$.
+
+\item[(d)] Suppose now that $G_f = \langle (1\,3\,2\,4)\rangle$. We know that
+\begin{align*}
+(1\,3\,2\,4) \cdot \varphi =\varphi,
+\end{align*}
+thus the corresponding $\sigma \in \Gal(L/F)$ fixes $\beta = \varphi(\alpha_1,\ldots,\alpha_4)$, so that $\beta \in F$.
+
+$g_1(y) = y- \beta, g_2(y) = y+ \beta$ are two factors of degree 1 of $\Theta_f(y)$.
+
+Moreover, we know from part (b) that
+\begin{align*}
+(1\,3\,2\,4)\cdot \varphi_2 = -\varphi_4, (1\,3\,2\,4)^2 \cdot \varphi_2 = -\varphi_2, (1\,3\,2\,4)^3 \cdot \varphi_2 = \varphi_4
+\end{align*}
+As in part $b$, $\Gal(L/F)$ acts transitively on the distinct roots of $(y^2 - \beta_2^2)(y^2 - \beta_4^2) \in F[y]$, thus this polynomial is irreducible over $F$:
+
+$\Theta_f(y)=g_1(y)g_2(y)g_3(y)$, where $g_1(y),g_2(y),g_3(y)\in F[y]$ are irreducible of degree 1,1 and 4 respectively.
+
+\item[(e)] By Theorem 13.1.1, $G_f$ is conjugate to a permutation group examined in parts (a),(b), (c) or (d), and the four conclusions are mutually exclusive, so the factorisation of $\Theta_f(y)$ over $F$ enables to determine this case. In part (a), $\Delta(f)$ enables in characteristic $\ne 2$ to distinguish the cases $G_f = A_4$ and $G_f = A_4$. Therefore the factorisation of $\Theta_f(y)$ and $\Delta(f)$ give an algorithm to determine $G_f$ up to conjugacy.
+
+
+
 \ee\end{proof}
 }
 
 \paragraph{Ex. 13.3.9}
 
-{\it The action of $GL(3,\mathbb{F}_2)$ on the nonzero vectors of $\mathbb{F}_2^3$ gives a group homomorphism $GL(3,\mathbb{F}_2) \rightarrow S_7$. Prove that this map is one-to-one. 
+{\it The action of $\mathrm{GL}(3,\mathbb{F}_2)$ on the nonzero vectors of $\mathbb{F}_2^3$ gives a group homomorphism $\mathrm{GL}(3,\mathbb{F}_2) \rightarrow S_7$. Prove that this map is one-to-one. 
 
 \begin{proof}
-There are total seven nonzero vectors $\{\nu_1,...,\nu_7\}\in \mathbb{F}_2^3$ and there are few subsets of three linear independent vectors. Any element $g \in GL(3,\mathbb{F}_2)$ acts on $\mathbb{F}_2^3$ as linear transformation of vector space, therefore is one-to-one and onto, i.e., action of $g$ on the ordered sequence $\{\nu_1,...,\nu_7\}$ permutes it to $\{\nu_{\sigma(1)},...,\nu_{\sigma(7)}\}$, where $\sigma \in S_3$ corresponds to $g$.
 
 Let 
 $$
 \psi 
 \left\{
 \begin{array}{ccl}
-  GL(3,\mathbb{F}_2)& \to  &  S_7 \\
+  \mathrm{GL}(3,\mathbb{F}_2)& \to  &  S_7 \\
   g& \mapsto  &   \sigma : \quad \forall i \in \{ 1,...,7\}, \ g \cdot \nu_i = \nu_{\sigma(i)}   
 \end{array}
 \right.
 $$
-Since, if $\ g \cdot \nu_i =\ g' \cdot \nu_i,\forall i \in \{ 1,...,7\} $, then $g=g'$, the $\psi:G \to S_m$ mapping is an one-to-one group homomorphism.
+If $\psi(g) = \psi(g')$, then $\ g \cdot \nu_i =\ g' \cdot \nu_i$ for all $i \in \{ 1,...,7\} $, then particularly $g \cdot e_1 = g' \cdot e_1, g \cdot e_2 = g' \cdot e_2, g \cdot e_3 = g' \cdot e_3$, where $e_1 =(1,0,0), e_2 = (0,1,0), e_3 = (0,0,1)$ is the standard basis of $\F_2^3$. Since a linear map (or its matrix) is determined by the images of the vectors of a base, $g = g'$
+
+ $\psi:G \to S_m$ is a one-to-one group homomorphism.
 \end{proof}
 }
 
@@ -2971,30 +3084,43 @@ Since, if $\ g \cdot \nu_i =\ g' \cdot \nu_i,\forall i \in \{ 1,...,7\} $, then 
 {\it Consider the vector space  $\mathbb{F}_2^3$.
 \be
 \item[(a)] Prove that $\mathbb{F}_2^3$ has exactly seven two-dimensional subspaces.
-\item[(b)] For a field F, let $B=\{\{ \nu_1,\nu_2,\nu_3\} \subset F^3| \nu_1,\nu_2,\nu_3$ are linearly independent over F\}. Prove that GL(3,F) acts transitively on B.
+\item[(b)] For a field F, let $B=\{\{ \nu_1,\nu_2,\nu_3\} \subset F^3\, |\,  \nu_1,\nu_2,\nu_3$ are linearly independent over F\}. Prove that $\mathrm{GL}(3,F)$ acts transitively on B.
 
-\item[(c)] Let F be as in part (b). Prove that GL(3,F) acts transitively on the set of two-dimensional subspaces of $F^3$.
+\item[(c)] Let F be as in part (b). Prove that $\mathrm{GL}(3,F)$ acts transitively on the set of two-dimensional subspaces of $F^3$.
 \ee
 \begin{proof}\be
-\item[(a)] Any unordered pair of non-zero vectors $(\nu_i,\nu_j) \in \mathbb{F}_2^3$ is a base for 2-dimensional subspace. Since  $\nu_i+\nu_j=\nu_k \in \mathbb{F}_2^3$ and $\nu_i+\nu_j+\nu_k=2(\nu_i+\nu_j)=0$, these three vectors $(\nu_i,\nu_j,\nu_k)$ and three pairs $(\nu_i,\nu_j),(\nu_i,\nu_k),(\nu_j,\nu_k)$ are on the same 2-dimensional subspace.
+\item[(a)] An orderer pair $(u,v) \in \F_2^2$ is a base of a vectorial plane if $u \ne 0$, and $v \not \in \langle u \rangle = \{0,u\}$, so there are $7 \times 6$ (ordered) bases of planes in $\F_3^2$.
 
-The total number of non-zero $\mathbb{F}_2^3$ vectors is equal to seven, hence the number of pairs is $C_2^7=21$. Each 2-dimensional subspace contains three vector pairs, therefore the number of 2-dimensional subspaces is 21/3=7.
+A vectorial plane $P$ of $ \F_3^2$, which contains 4 vectors, has $3 \times 2$ bases, with the same reasoning: 3 choices for the first non null vector, and 2 choices for the second vector.
 
-\item[(b)] Let $C=[\nu_1,\nu_2,\nu_3]$ be the matrix composed of three vectors as columns and $C'=[\nu_1',\nu_2',\nu_3']$, where $\{ \nu_1',\nu_2',\nu_3'\} \subset F^3$ are linearly independent. Both $C,C'$ matrices  have no-zero determinants due to linear independency of columns, hence matrix $A=C' C^{-1}$ has no-zero determinant, i.e., $A \in GL(3,F)$, and transforms vector $\nu_i$ to $\nu_i'$ for all $i=1,2,3$. Since this is valid for any linear independent $\{ \nu_1',\nu_2',\nu_3'\}$,it proves that $GL(3,F)$ acts transitively on $B=\{ \nu_1,\nu_2,\nu_3\}$. 
+Therefore the number of two-dimensional subspaces of $\F_2^3$ is $\frac{7 \times 6}{3 \times 2} = 7$.
 
-\item[(c)] Any two-dimensional subspace can be completed to a basis of $F^3$, i.e., 2-dimensional subspace can be associated with three linear independent vectors, where the two vectors are from 2-dimensional subspace. Since, as by part (b), $GL(3,F)$ acts transitively on three linearly independent vectors, any 2-dimensional subspace can be transformed to any other 2-dimensional subspace, i.e., $GL(3,F)$ acts transitively on the set of two-dimensional subspaces of $F^3$.   
+\item[(b)] 
+Let $\{e_1,e_2,e_3\}$ be the standard basis of $F^3$, where $e_1 =(1,0,0), e_2 = (0,1,0), e_3 = (0,0,1)$. Any element of $\mathrm{GL}(3,F)$ applies a base on a base, thus the orbit of $\{e_1,e_2,e_3\}$ is included in $B$.
+
+
+Conversely, let $\{\nu_1,\nu_2,\nu_3\}$ be any element of $B$. Define $g = [\nu_1,\nu_2,\nu_2]$ the matrix whose columns are $\nu_1,\nu_2,\nu_3$. Since $\nu_1,\nu_2,\nu_3$ are linearly independent, $g \in \mathrm{GL}(3,\F_2)$, and $g\cdot e_1 = \nu_1, g\cdot e_2 = \nu_2,g\cdot e_3 = \nu_3$, so that $\{\nu_1,\nu_2,\nu_3\} = g\cdot\{e_1,e_2,e_3\}$ is in the orbit of $\{e_1,e_2,e_3\}$. Therefore the orbit of $\{e_1,e_2,e_3\}$ is $B$, thus $ \mathrm{GL}(3,F)$ acts transitively over $B$.
+
+
+\item[(c)] Let $P,Q$ be two-dimensional subspaces of $F^3$. Take $\{\nu_1,\nu_2\}$ a basis of $P$, and $\{\nu'_1,\nu'_2\}$ a basis of $Q$. We can complete them into bases of $F^3$, say $b = \{\nu_1,\nu_2,\nu_3\}$ and $ b' = \{\nu'_1,\nu'_2,\nu'_3\}$. By part $b$, there exists $g \in  \mathrm{GL}(3,F)$ such that $g\cdot b = b'$. Since $g$ maps a basis of $P$ on a basis of $Q$, $g\cdot P = Q$. Therefore $\mathrm{GL}(3,F)$  acts transitively on the set of two-dimensional subspaces of $F^3$ 
 \ee
+
+\bigskip
+
+Note: Since there are exactly 3 nonzero vectors in a two-dimensional subspace of $\F_2^3$, each triple of distinct nonzero linearly dependant vectors in $\F_2^3$ determines a unique two-dimensional space. Therefore part (c) explains the statement in the proof of 13.3.9, that $ \mathrm{GL}(3,\F_2^3)$ acts transitively on this set of triples.
 \end{proof}
 }
 
 \paragraph{Ex. 13.3.11}
 
-{\it Prove that  $GL(3,\mathbb{F}_2)=SL(3,\mathbb{F}_2) \simeq PGL(3,\mathbb{F}_2)=PSL(3,\mathbb{F}_2)$. 
+{\it Prove that  $\mathrm{GL}(3,\mathbb{F}_2)=\mathrm{SL}(3,\mathbb{F}_2) \simeq \mathrm{PGL}(3,\mathbb{F}_2)=\mathrm{PSL}(3,\mathbb{F}_2)$. 
 
 \begin{proof}
-Any convertible $3\times 3$ matrix in field $\mathbb{F}_2$ has determinant 1. Indeed, by applying the rows transposition and rows summation transformations, these matrices can be brought to diagonal form with 1 in the main diagonal. Therefore, $GL(3,\mathbb{F}_2)=SL(3,\mathbb{F}_2)$ as groups with the same set of matrices.
+A matrix $M \in \mathrm{GL}(3,\mathbb{F}_2)$ is such that $\det(M)$ is invertible in $\F_2$, but only 1 is invertible in $\F_2$, so that $\det(M) = 1$ and $M \in \mathrm{SL}(3,\mathbb{F}_2)$. Therefore $\mathrm{GL}(3,\mathbb{F}_2) \subset \mathrm{SL}(3,\mathbb{F}_2)$, and $ \mathrm{SL}(3,F) \subset \mathrm{GL}(3,F)$ is true in every field $F$, thus
+$$\mathrm{GL}(3,\mathbb{F}_2)=\mathrm{SL}(3,\mathbb{F}_2).$$
 
-By the definition for any field $F$, $PGL(n,F)=GL(n,F)/F^*I$ and $PSL(n,F)=SL(n,F)/(F^*I\cap SL(n,F))$. In case when $F=\mathbb{F}_2$, then $\mathbb{F}_2^*=1$, i.e., $\mathbb{F}_2^*I=(\mathbb{F}_2^*I\cap SL(n,\mathbb{F}_2))=I$. Therefore, for n=3 we have $GL(3,\mathbb{F}_2)=SL(3,\mathbb{F}_2) \simeq GL(3,\mathbb{F}_2)/I=SL(3,\mathbb{F}_2)/I=PGL(3,\mathbb{F}_2)=PSL(3,\mathbb{F}_2)$.
+By definition, in any field $F$, $\mathrm{PGL}(n,F)=\mathrm{GL}(n,F)/F^*I$ and $\mathrm{PSL}(n,F)=\mathrm{SL}(n,F)/(F^*I\cap \mathrm{SL}(n,F))$. When $F=\mathbb{F}_2$, then $\mathbb{F}_2^*=\{1\}$, i.e., $\mathbb{F}_2^*I=(\mathbb{F}_2^*I\cap \mathrm{SL}(n,\mathbb{F}_2))=\{I\}$. Therefore, for n=3,
+$$\mathrm{GL}(3,\mathbb{F}_2)=\mathrm{SL}(3,\mathbb{F}_2) \simeq \mathrm{PGL}(3,\mathbb{F}_2)=\mathrm{PSL}(3,\mathbb{F}_2).$$
 \end{proof}
 }
 
@@ -3004,36 +3130,71 @@ By the definition for any field $F$, $PGL(n,F)=GL(n,F)/F^*I$ and $PSL(n,F)=SL(n,
 
 \begin{proof}
 Suppose $f=x^4-c_1x^3+c_2x^2-c_3x+c_4 \in F[x]$ is separable and irreducible.
-Let $H=\langle (1324),(12) \rangle$,  $G=\langle (1324)) \rangle \subset H$ and $\varphi=\sqrt{\Delta}(x_1+x_2-x_3-x_4)$. By Exercise 4, $G$ is the symmetry group of $\varphi$. Since $(12)\varphi=-\varphi$,  $\{\varphi,-\varphi\}$ is the orbit of H acting on $\varphi$.  Then $$\Theta_f^H(y)=( y - \varphi(\alpha_1,...,\alpha_4))( y + \varphi(\alpha_1,...,\alpha_4))=( y^2 - \varphi^2(\alpha_1,...,\alpha_4)),$$
-where $\varphi^2(\alpha_1,...,\alpha_4)=\Delta(f)(4\beta_1+c_1^2-4c_2)$, $\beta_1=\alpha_1\alpha_2+\alpha_3\alpha_4$. By the assumption of Example 13.3.4, $\beta_1 \in F$, therefore $\Theta_f^H(y) \in F[y]$ and is the relative resolvent in the sense of Exercise 5. 
+Let $H=\langle (1324),(12) \rangle$,  $G=\langle (1324)) \rangle \subset H$ and $\varphi=\sqrt{\Delta}(x_1+x_2-x_3-x_4)$. By Exercise 4, $G$ is the symmetry group of $\varphi$. Since $(12)\cdot \varphi=-\varphi$,  $H \cdot \varphi = \{\varphi,-\varphi\}$ is the orbit of $\varphi$ under the action of $H$.  Then $$\Theta_f^H(y)=( y - \varphi(\alpha_1,...,\alpha_4))( y + \varphi(\alpha_1,...,\alpha_4))=( y^2 - \varphi^2(\alpha_1,...,\alpha_4)),$$
+where $\varphi^2(\alpha_1,...,\alpha_4)=\Delta(f)(4\beta_1+c_1^2-4c_2)$, $\beta_1=\alpha_1\alpha_2+\alpha_3\alpha_4$. By the assumption of Example 13.3.4, $\beta_1 \in F$, therefore $\Theta_f^H(y) \in F[y]$ and it is the relative resolvent in the sense of Exercise 5. 
 
-Since $G_f \subset H$ and, depending on whether $\Theta_f^H(y)$ is reducible or not in $F$, the conclusion about whether $G_f=\langle (1324)) \rangle$ or $G_f=\langle (1324),(12) \rangle$ can be done.  
+Since $G_f \subset H$, depending on whether $\Theta_f^H(y)$ is reducible or not in $F$, the conclusion about whether $G_f=\langle (1324)) \rangle$ or $G_f=\langle (1324),(12) \rangle$ can be done.  
 
 \end{proof}
 }
 
 \paragraph{Ex. 13.3.13}
 
-{\it In the proof of Proposition 13.3.9, we showed that when $GL(3,\mathbb{F}_2) \subset S_7$ acts on three-element subsets of {1,...,7}, the orbits have lengths 7 and 28. We also asserted that up to conjugacy, $GL(3,\mathbb{F}_2)$ is the only subgroup of $S_7$ with this property. In this exercise, you will study the action of some other subgroups of $S_7$.
+{\it In the proof of Proposition 13.3.9, we showed that when $\mathrm{GL}(3,\mathbb{F}_2) \subset S_7$ acts on three-element subsets of $\{1,\ldots,7\}$, the orbits have lengths $7$ and $28$. We also asserted that up to conjugacy, $\mathrm{GL}(3,\mathbb{F}_2)$ is the only subgroup of $S_7$ with this property. In this exercise, you will study the action of some other subgroups of $S_7$.
 \be
-\item[(a)] Prove that $A_7$ and $S_7$ act transitively on three-element subsets of {1,...,7}. Thus there is one orbit of length 35 for these groups.
-\item[(b)] In Section 13.2, the group $AGL(1,\mathbb{F}_5) \subset S_5$ played an important role in understanding the Galois group of a quintic. In a similar way, we have $AGL(1,\mathbb{F}_7) \subset S_7$ provided we think of the indices as congruences classes modulo 7. Prove that the orbits of $AGL(1,\mathbb{F}_7)$ acting on the triples {0,1,2} and {0,1,3} have 21 and 14 elements, respectively.
+\item[(a)] Prove that $A_7$ and $S_7$ act transitively on three-element subsets of $\{1,\ldots,7\}$. Thus there is one orbit of length $35$ for these groups.
+\item[(b)] In Section 13.2, the group $\mathrm{AGL}(1,\mathbb{F}_5) \subset S_5$ played an important role in understanding the Galois group of a quintic. In a similar way, we have $\mathrm{AGL}(1,\mathbb{F}_7) \subset S_7$ provided we think of the indices as congruences classes modulo $7$. Prove that the orbits of $A\mathrm{GL}(1,\mathbb{F}_7)$ acting on the triples $\{0,1,2\}$ and $\{0,1,3\}$ have $21$ and $14$ elements, respectively.
 \ee
 
 \begin{proof}
+The action of a group G on the set of three-elements subsets of $\{1,\ldots,7\}$ is transitive when, for all triples of distinct elements $i,j,k$ and distinct elements $i',j',k'$, there is a $g\in G$ such that $\{g\cdot i,g\cdot j,g \cdot k\} = \{i',j',k'\}$ (which is less constraining that $\sigma(i) = i', \sigma(j) = j', \sigma(k) = k'$).
+
+The distinctness of elements means $i\ne j$ and $j\ne k$ and $i\ne k$. The possibilities $i=i'$ (or $j'$ or $k'$) or $j=j'$ (or $i'$ or $k'$) or $k=k'$ (or $i'$ or $j'$) is allowed.
 \be
-\item[(a)] An action of a group G on a set of three-elements subsets of 1,...,7 is transitive when, for all triples of distinct elements $i,j,k$ and $i',j',k'$, there is a $g\in G$ such that $i'=g(i),j'=g(j),k'=g(k)$.
+\item[(a)]  Let $A$ be the set of three-elements subsets of $\{1,\ldots,7\}$. If $\{i,j,k\} \in A$, we show the existence of $\sigma \in A_7$ such that ${\sigma(1),\sigma(2), \sigma(3)} = \{i,j,k\}$.
 
-The distinctness of elements means $i\ne i'$ and $j\ne j'$ and $k\ne k'$. The possibility $i=i'$ (or $j'$ or $k'$) or $j=j'$ (or $i'$ or $k'$) or $k=k'$ (or $i'$ or $j'$) is allowed. 
+Since $\mathrm{Card}(\{1,2,3\}) = \mathrm{Card}(\{i,j,k\}) = 3$, there exists some bijection $\sigma_1 :\{1,2,3\} \to \{i,j,k\}$, for instance $\sigma_1 : 1\mapsto k, 2 \mapsto i, 3 \mapsto j$.
 
-$\bullet$ Case when two triples of distinct numbers have no elements in common. We might write the triples as (1,2,3) and (4,5,6). Then odd permutation (14)(25)(36)$\in S_n$ and even permutation (147)(25)(36)$\in A_n$ takes the first triple to the second.
+Since $\mathrm{Card}(\{4,5,6,7\}) = \mathrm{Card}(\{1,\ldots,7\} \setminus \{i,j,k\}) = 4$, there exists a bijection $\sigma_2 : \{4,5,6,7\} \to \{1,\ldots,7\} \setminus \{i,j,k\}$. 
 
-$\bullet$ Case when two triples have one elements in common. We might write the triples as (1,2,3) and (1,5,6). Then odd permutation (257)(36)$\in S_n$ and even permutation (25)(36)$\in A_n$ sends the first triple to the second.
+Then the map $s$ defined by $s(i) = \sigma_{1}(i)$ if $i\in \{1,2,3\}$ and $s(i) = \sigma_2(i)$ if $i\in \{4,5,6,7\}$ is a bijection, so that $s \in S_7$. 
 
-$\bullet$ Case when two triples have two elements in common. We might write the triples as (1,2,3) and (1,2,6). Then odd permutation (36)$\in S_n$ and even permutation (367)$\in A_n$ sends the first triple to the second.
+If $s$ is even, take $\sigma = s$, and if $s$ is odd, take $\sigma = s \circ (1\, 2)$. In both cases $\sigma \in A_n$ and $\sigma(\{1,2,3\}) = \{i,j,k\}$.
 
-Hence, $S_n$ and $A_n$ act transitively on the set of triples of {1,...,7}. Since the number of such three-element subsets is $C_3^7=35$, this set of triples has one orbit for both $S_n$ and $A_n$ groups of length 35. 
-\item[(b)] The one-dimensional affine linear group $AGL(1,\mathbb{F}_7)$ is the group of order $7*6=42$ consisting of maps $i\mapsto ai+b$ where $i,a,b \in \mathbb{F}_7$ and $a \ne 0$. The isotropy group of an unordered triple $x^3=(x_1,x_2,x_3)$ is the subgroup $G_{x^3}=\{g\in \mathbb{F}_7 | g\cdot x^3=x^3\}$. Solutions to the equations $ax_i+b=x_{\sigma(i)},~i\in(1,2,3), \sigma \in S_3$ are giving the elements of isotropy group.
+Therefore the orbit of $\{1,2,3\}$ is $A_n \cdot \{1,2,3\} = A$, which  has 35 elements, so that $A_7$ acts transitively on three-element subsets of $\{1,\ldots,7\}$. A fortiori $S_n \supset A_n$ acts transitively on the same set.
+
+\item[(b)] 
+The following Sage instructions give the length of the orbits of $\{0,1,2\}$ and $\{0,1,3\}$
+\begin{verbatim}
+F = GF(7)
+
+def t(a,b,i):
+    return F(a*i + b)
+	
+def orbit(u,v,w):
+    """ returns the orbit of {u,v,w} """
+    orb = set()
+        for a in range(1,7):
+            for b in range(7):
+                l = [t(a,b,u), t(a,b,v), t(a,b,w)]
+                l.sort()
+                orb.add(tuple(l))
+    return orb
+	
+print(len(orbit(0,1,2)), len(orbit(0,1,3)))
+\end{verbatim}
+\begin{center}
+(21,14)
+\end{center}
+For instance, the orbit of $\{0,1,3\}$ is
+\begin{align*}
+\mathrm{AGL}(1,\F_7) \cdot \{0,1,3\} =\{&\{3, 4, 6\}, \{2, 3, 5\}, \{0, 4, 5\}, \{2, 4, 5\}, \{0, 2, 3\}, \{0, 2, 6\}, \{1, 5, 6\}, \\
+&\{3, 5, 6\}, \{1, 2, 4\}, \{1, 3, 4\}, \{0, 1, 5\}, \{1, 2, 6\}, \{0, 1, 3\}, \{0, 4, 6\} \}.
+\end{align*}
+
+Alternatively, one can find the isotropy group of these unordered triples :
+
+The one-dimensional affine linear group $\mathrm{AGL}(1,\mathbb{F}_7)$ is the group of order $7 \times 6=42$ consisting of maps $i\mapsto ai+b$ where $i,a,b \in \mathbb{F}_7$ and $a \ne 0$. The isotropy group of an unordered triple $x^3=\{x_1,x_2,x_3\}$ is the subgroup $G_{x^3}=\{g\in \mathbb{F}_7\, |\, g\cdot x^3=x^3\}$. Solutions to the equations $ax_i+b=x_{\sigma(i)},~i\in(1,2,3), \sigma \in S_3$ are giving the elements of isotropy group.
 
 In matrix form the equations are:
 $$
@@ -3127,44 +3288,76 @@ Prove that $D_f(y)\in F[y]$ and that the discriminant of $D_f(y)$ is $\Delta(f)=
 \ee
 \begin{proof}
 \be
-\item[(a)] Since for any $\tau,\sigma \in A_n$ we have $\tau\sigma \in A_n$, then $$\tau\cdot D=\sum_{\sigma \in A_n} \tau\sigma \cdot x_1^{n-1}x_2^{n-2} \dots x_{n-2}^2x_{n-1}=\sum_{\sigma' \in A_n} \sigma' \cdot \prod_{i=1}^n x_i^{n-i}=D.$$
-Thus, $A_n$ is the symmetry group of D.
-\item[(b)] Applying Leibniz formula that for any $n\times n$ matrix A with $a_{ij}$ as an entry in $i$-th row and $j$-th column 
-$$det(A)=\sum_{\sigma \in S_n}sgn(\sigma)  \prod_{i=1}^n a_{\sigma(i),j}$$
-we have 
-\begin{align*}
- D-D' & =\sum_{\sigma \in A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i}-(12)\sum_{\sigma \in A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i} \\
-& = \sum_{\sigma \in A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i}-\sum_{\sigma \in S_n \setminus A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i}\\
-& = \sum_{\sigma \in S_n}sgn(\sigma) \sigma \cdot \prod_{i=1}^n x_i^{n-i} \\
-& = \sum_{\sigma \in S_n}sgn(\sigma)  \prod_{i=1}^n x_{\sigma(i)}^{n-i} \\
-& = 
+\item[(a)] We proved in Exercise 12.1.9(b) that the symmetry group of
+ $$\sum_{\sigma \in H} \sigma \cdot x_1^{n-1}x_2^{n-2} \dots x_{n-2}^2x_{n-1}$$
+ is $H$.
+ 
+Thus, $A_n$ is the symmetry group of 
+$$D = \sum_{\sigma \in A_n} \sigma \cdot x_1^{n-1}x_2^{n-2} \dots x_{n-2}^2x_{n-1}.$$
+\item[(b)] 
+We proved in Ex. 2.4.1 the formula
+$$\sqrt{\Delta} =\prod\limits_{1 \leq i < j \leq n} (x_i- x_j) =
 \begin{vmatrix}
 x_1^{n-1}&  x_2^{n-1} &   \cdots   & x_n^{n-1}\\
 x_1^{n-2}&  x_2^{n-2} &   \cdots   & x_n^{n-2}\\
 \vdots & \vdots & \ddots & \vdots\\
 x_1&  x_2 &   \cdots   & x_n\\
 1    & 1     &   \cdots    & 1\\
-\end{vmatrix} \\
-& = \prod_{1\leq i<j\leq n}(x_i-x_j) 
- = \sqrt \Delta
-\end{align*}
-\item[(c)] Similar to part (b):
+\end{vmatrix}
+$$
+
+
+
+By definition of the determinant, if $A = (a_{i,j})_{1\leq i,j \leq n}$
+$$\det(A)=\sum_{\sigma \in S_n}\mathrm{sgn}(\sigma)  \prod_{i=1}^n a_{\sigma(i),i},
+$$
+and
+$$ 
+ \det(A) = \det(\,^t A) =\sum_{\sigma \in S_n}\mathrm{sgn}(\sigma)  \prod_{i=1}^n a_{i,\sigma(i)}.
+$$
+Applying this formula to $a_{i,j} = x_j^{n-i}$, with $\varphi = x_1^{n-1} x_2^{n-2}\cdots x_{n-1}$ and $\tau = (1\,2)$, we obtain
 \begin{align*}
- D+D' & =\sum_{\sigma \in A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i}+(12)\sum_{\sigma \in A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i} \\
-& = \sum_{\sigma \in A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i}+\sum_{\sigma \in S_n \setminus A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i}\\
-& = \sum_{\sigma \in S_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i} \\
- DD' & =\sum_{\sigma \in A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i}\times(12)\sum_{\sigma \in A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i} \\
-& = \sum_{\sigma \in A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i}\times\sum_{\sigma \in S_n \setminus A_n} \sigma \cdot \prod_{i=1}^n x_i^{n-i}\\
- \\
+\sqrt{\Delta} &= \sum_{\sigma \in S_n} \mathrm{sgn}(\sigma)  x_{\sigma(1)}^{n-1} x_{\sigma(2)}^{n-2}\cdots x_{\sigma(n-1)}\\
+&= \sum_{\sigma \in S_n} \mathrm{sgn}(\sigma)\  \sigma\cdot x_1^{n-1} x_2^{n-2}\cdots x_{n-1}\\
+&= \sum_{\sigma \in A_n}  \sigma\cdot \varphi-  \sum_{\sigma \in S_n\setminus A_n} \sigma\cdot \varphi\\
+&= \sum_{\sigma \in A_n} \sigma\cdot \varphi - \sum_{\sigma \in A_n} (\tau\sigma) \cdot \varphi\\
+&=D - \tau\cdot D = D - D'.
 \end{align*}
-Since for any $\tau,\sigma \in S_n$ we have $\tau\sigma \in A_n$ or $\tau\sigma \in S_n \setminus A_n$, the same reasons as in part (a) shows that $S_n$ is the symmetry group of $D+D'$ and $DD'$. Hence $D(f)+D'(f),D(f)D'(f) \in F$ and 
-$$D_f(y)=(y-D(f))(y-D'(f))=y^2-(D(f)+D'(f))y+D(f)D'(f)\in F[y].$$
-The discriminant of $D_f(y)$ is $(D(f)-D'(f))^2=\Delta(f)=\prod_{1\leq i<j\leq n}(\alpha_i-\alpha_j)^2$.
-\item[(d)] As per Theorem 7.4.1 and since, as per part (c), $D(f)+D'(f) \in F$, 
-\begin{align*}
-G_f \subset A_n & \iff \Delta (f) \in F^2 \iff (D(f)-D'(f)) \in F \iff D(f),D'(f) \in F\\
-& \iff D_f(y) \mathrm{~splits~over~F}.
-\end{align*}
+
+
+\item[(c)] Since $S_n = A_n \coprod \tau A_n$,
+$$D + D' =  \sum_{\sigma \in S_n} \sigma\cdot \varphi.$$
+For each $\chi \in S_n$, 
+$$\chi \cdot (D+D') = \sum_{\sigma \in S_n} (\chi\sigma) \cdot \varphi  = \sum_{\sigma' \in S_n} \sigma' \cdot \varphi  = D+D' \qquad (\sigma' = \chi \sigma).$$
+Therefore the symmetry group of $D+D'$ is $S_n$.
+
+Since $(D(f)+ D'(f)=  (D+D')(\alpha_1,\ldots,\alpha_n)$, where $D+D'$ is a symmetric polynomial, $D(f) + D'(f) \in F$.
+
+Moreover
+$$DD' = \sum_{\sigma \in A_n} \sigma\cdot \varphi \sum_{\sigma' \in A_n} (\tau \sigma')\cdot \varphi.$$
+
+Similarly, if $\chi \in A_n$, then $\chi \cdot D = D$. Since 
+$$D' =\sum_{\sigma' \in A_n} (\tau \sigma')\cdot \varphi = \sum_{\sigma'' \in A_n}(\sigma'' \tau) \cdot \varphi,$$
+$\chi \cdot D' = D'$.
+
+Therefore $\chi\cdot (DD') = DD'$ for all $\chi \in A_n$, and 
+$$\tau \cdot (DD') = \sum_{\sigma \in A_n} (\tau\sigma)\cdot \varphi \sum_{\sigma' \in A_n}  \sigma' \cdot \varphi = D'D = DD',$$
+so that $\chi\cdot (DD') = DD'$ for all $\chi \in S_n$, and $DD'$ is a symmetric polynomial. Thus $D(f) D'(f) = (DD')(\alpha_1,\ldots,\alpha_n) \in F$.
+
+This proves 
+$$D_f(y) = (y - D(f))(y - D'(f)) = y^2 - (D(f)+D'(f)) y + D(f)D'(f) \in F[y].$$
+
+Finally, the evaluation mapping $(x_1,\ldots,x_n) \mapsto (\alpha_1,\ldots,\alpha_n)$ gives
+$$\sqrt{\Delta(f)} = \prod_{1\leq i < j \leq n }(\alpha_i - \alpha_j),$$
+thus
+$$\Delta(f) =  \prod_{1\leq i < j \leq n} (\alpha_i - \alpha_j)^2.$$
+
+
+\item[(d)] 
+The discriminant of $D_f(y)$ is $(D(f) - D'(f))^2 = \sqrt{\Delta(f)} \ne 0$, since we assumed that $f$ is separable. Therefore $D_f(y)$ is separable, so that the roots $D(f) ,D'(f)$ are simple roots.
+
+Since $D_f(y)$ is the resolvent associated to $\varphi$ with symmetry group $A_n$, Proposition 13.3.2 shows that $G_f \subset A_n$ if and only if $D_f(y)$ has a root in $F$, if and only if $D_f(y)$ splits over $F$.
+
 \ee
 \end{proof}
 }
@@ -3179,22 +3372,50 @@ G_f \subset A_n & \iff \Delta (f) \in F^2 \iff (D(f)-D'(f)) \in F \iff D(f),D'(f
 
 \begin{proof}
 \be
-\item[(a)] As per (2.26)
-$$\sqrt{\Delta(f)}=-4c_2^3-27c_3^2+c_1^2c_2^2-4c_1^3c_3+18c_1c_2c_3.$$
-Since (cf. Ex.2.2.10) $$D+D'=\sum_{\sigma \in A_3}\sigma\cdot x_1^2x_2+(12)\sum_{\sigma \in A_3}\sigma\cdot x_1^2x_2=\sum_{\sigma \in S_3}\sigma\cdot x_1^2x_2=\sigma_1\sigma_2-3\sigma_3$$ 
-and, as per previous exercise, $D-D'=\sqrt\Delta$, we have $$D(f)=1/2(c_1c_2-3c_3+\sqrt{\Delta(f)}), ~ D'(f)=1/2(c_1c_2-3c_3-\sqrt{\Delta(f)}).$$
+\item[(a)] By (2.26), we obtain
+$$\Delta(f)=-4c_2^3-27c_3^2+c_1^2c_2^2-4c_1^3c_3+18c_1c_2c_3,$$
+and by Ex.2.2.10,
+ $$D+D'=\sum_{\sigma \in A_3}\sigma\cdot x_1^2x_2+(12)\sum_{\sigma \in A_3}\sigma\cdot x_1^2x_2=\sum_{\sigma \in S_3}\sigma\cdot x_1^2x_2=\sigma_1\sigma_2-3\sigma_3,$$ 
+ so that
+ $$D(f) + D'(f) = c_1c_2 - 3c_3.$$
+(Note: If the characteristic is not 2, we could write
+$$D(f) = \frac{1}{2}(D(f) + D'(f) + (D(f) - D'(f)) = \frac{1}{2}(c_1c_2 - 3c_3 \pm \sqrt{\Delta(f)}),$$
+and compute $D(f)D'(f)$, but here we compute in all characteristic.)
+
+But $DD'$ is symmetric, where
+\begin{align*}
+D D' &= \left(\sum_{\sigma \in A_3}\sigma\cdot x_1^2x_2\right)\left(\sum_{\sigma \in A_3}(\tau\sigma)\cdot x_1^2x_2\right)\\
+&=(x_1^2x_2+x_2^2x_3+x_3^2x_1)(x_2^2x_1+x_1^2x_3+x_3^2x_2)\\
+&=x_{1}^{3} x_{2}^{3} + x_{1}^{4} x_{2} x_{3} + x_{1} x_{2}^{4} x_{3} + 3 x_{1}^{2} x_{2}^{2} x_{3}^{2} + x_{1}^{3} x_{3}^{3} + x_{2}^{3}x_{3}^{3} + x_{1} x_{2} x_{3}^{4} 
+\end{align*}
+With the usual Sage instructions, we obtain $D(f)D'(f)$
+\begin{verbatim}
+R.<x1,x2,x3,y1,y2,y3> = PolynomialRing(QQ, order = 'degrevlex')
+elt = SymmetricFunctions(QQ).e()
+e = [elt([i]).expand(3).subs(x0=x1, x1=x2, x2=x3) for i in range(4)]
+J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3)
+G = J.groebner_basis()
+f = (x1^2*x2+x2^2*x3+x3^2*x1)*(x2^2*x1+x1^2*x3+x3^2*x2)
+var('sigma_1,sigma_2,sigma_3')
+var('c1,c2,c3')
+g=f.reduce(G).subs(y1=c1,y2=c2,y3=c3)
+g
+\end{verbatim}
+$$c_{1}^{3} c_{3} + c_{2}^{3} - 6 \, c_{1} c_{2} c_{3} + 9 \, c_{3}^{2}$$
 Then 
 \begin{align*}
- D(f)D'(f) & =1/4((c_1c_2-3c_3)^2-\Delta(f)) \\
-& =1/4(c_1^2c_2^2-6c_1c_2c_3+9c_3^2-(-4c_2^3-27c_3^2+c_1^2c_2^2-4c_1^3c_3+18c_1c_2c_3)) \\
-& = c_2^3+c_1^3c_3-6c_1c_2c_3+9c_3^2
+ D(f)D'(f) &= c_2^3+c_1^3c_3-6c_1c_2c_3+9c_3^2
 \end{align*}
 and 
 \begin{align*}
 D_f(y) &=y^2-(D(f)+D'(f))y+D(f)D'(f) \\
 & =y^2-(c_1c_2-3c_3)y+c_2^3+c_1^3c_3-6c_1c_2c_3+9c_3^2
 \end{align*}
-\item[(b)] The $D_f(y)$ irreducibility  over $F$ determines Galois group of $f$ - if $D_f(y)$ is irreducible over $F$, then  Galois group of $f$ is $S_n$, and $A_n$ otherwise.
+\item[(b)] By Ex.6.2.6, $f$ being irreducible and separable, we know that $3 \mid |G_f|$. Therefore $G_f = A_3$ or $G_f = S_3$. Then Ex.14(d) proves that
+\begin{align*}
+G_f &= A_3 \iff D_f(y)\text{ splits over } F,\\
+G_f &=S_3 \iff D_f(y) \text{ is irreducible over } F.
+\end{align*}
 \ee
 \end{proof}
 }
@@ -3206,45 +3427,37 @@ D_f(y) &=y^2-(D(f)+D'(f))y+D(f)D'(f) \\
 {\it Verify the computations given in Example 13.4.1.
 \begin{proof}
 \be
-The following Sage instruction :
+The following Sage instructions:
 \begin{verbatim}
-    R.<y,x1,x2,x3,y1,y2,y3,u_1,u_2,u_3> = PolynomialRing(QQ,10, order = 'lex')
-    elt = SymmetricFunctions(QQ).e()
-    e = [elt([i]).expand(3).subs(x0=x1, x1=x2, x2=x3) for i in range(4)]
-    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3)
-    G = J.groebner_basis()
-    S = y-(u_1*x1+u_2*x2+u_3*x3)
-    S1=S*S.subs(x1=x1,x2=x3,x3=x2)*S.subs(x1=x2,x2=x1,x3=x3)
-    S1=S1*S.subs(x1=x2,x2=x3,x3=x1)*S.subs(x1=x3,x2=x1,x3=x2)
-    S=S1*S.subs(x1=x3,x2=x2,x3=x1)
-    S=S.subs(u_1=-1,u_2=1,u_3=2)
-    var('sigma_1,sigma_2,sigma_3')
-    f=S.reduce(G).subs(y1=sigma_1, y2 = sigma_2,y3=sigma_3);
-    show(f.collect(y))
+R.<y,x1,x2,x3,sigma1,sigma2,sigma3,u1,u2,u3> = PolynomialRing(QQ, order = 'lex')
+elt = SymmetricFunctions(QQ).e()
+e = [elt([i]).expand(3).subs(x0=x1, x1=x2, x2=x3) for i in range(4)]
+J = R.ideal(e[1]-sigma1, e[2]-sigma2, e[3]-sigma3)
+G = J.groebner_basis()
+S = y-(u1*x1 + u2*x2 + u3*x3)
+S1 = S  * S.subs(x1=x1,x2=x3,x3=x2) * S.subs(x1=x2,x2=x1,x3=x3)
+S1 = S1 * S.subs(x1=x2,x2=x3,x3=x1) * S.subs(x1=x3,x2=x1,x3=x2)
+S = S1 * S.subs(x1=x3,x2=x2,x3=x1)
+S = S.subs(u1=-1,u2=1,u3=2)
+f = S.reduce(G).polynomial(y)
+f
 \end{verbatim}
-gives output:
+give output $S(y)$:
 \begin{align*}
-& 4\sigma_{1}^{6} - 4\sigma_{1}y^{5} + y^{6} - 32 \sigma_{1}^{4}\sigma_{2} + 2(\sigma_{1}^{2} + 7 \sigma_{2}) y^{4} + 55 \sigma_{1}^{2} \sigma_{2}^{2} + 76 \sigma_{1}^{3} \sigma_{3} + 4(2 \sigma_{1}^{3} - 11\sigma_{1} \sigma_{2} + 5\sigma_{3}) y^{3} \\
-& + 36\sigma_{2}^{3} - 322  \sigma_{1} \sigma_{2} \sigma_{3} - (7\sigma_{1}^{4} - 18 \sigma_{1}^{2} \sigma_{2} - 49 \sigma_{2}^{2} + 40\sigma_{1} \sigma_{3}) y^{2} + 343 \sigma_{3}^{2} \\
-& - 4 (\sigma_{1}^{5} - 11\sigma_{1}^{3} \sigma_{2} + 28\sigma_{1} \sigma_{2}^{2} + 5 \sigma_{1}^{2} \sigma_{3} - 35 \sigma_{2} \sigma_{3}) y
-\end{align*}
-After regrouping the terms we have the same result as in Example 13.4.1:
-\begin{align*}
-S(y)= & y^{6} - 4\sigma_{1}y^{5} + (2\sigma_{1}^{2} + 14\sigma_{2}) y^{4} + (8 \sigma_{1}^{3} - 44\sigma_{1} \sigma_{2} + 20\sigma_{3}) y^{3} \\
+& y^{6} - 4\sigma_{1}y^{5} + (2\sigma_{1}^{2} + 14\sigma_{2}) y^{4} + (8 \sigma_{1}^{3} - 44\sigma_{1} \sigma_{2} + 20\sigma_{3}) y^{3} \\
 & + (-7\sigma_{1}^{4} + 18 \sigma_{1}^{2} \sigma_{2} + 49 \sigma_{2}^{2} - 40\sigma_{1} \sigma_{3}) y^{2} + (-4 \sigma_{1}^{5} + 44\sigma_{1}^{3} \sigma_{2} \\ & - 112\sigma_{1} \sigma_{2}^{2} - 20\sigma_{1}^{2} \sigma_{3} + 140\sigma_{2} \sigma_{3}) y+4\sigma_{1}^{6}  - 32 \sigma_{1}^{4}\sigma_{2} + 55 \sigma_{1}^{2} \sigma_{2}^{2} \\
 & + 36\sigma_{2}^{3} + 76 \sigma_{1}^{3} \sigma_{3} - 322  \sigma_{1} \sigma_{2} \sigma_{3} + 343 \sigma_{3}^{2}. 
 \end{align*}
 Using $\sigma_1 \mapsto -1,\sigma_2 \mapsto -2,\sigma_3 \mapsto 1$, we obtain:
 \begin{verbatim}
-    f1=f.subs(sigma_1=-1, sigma_2=-2,sigma_3=1)
-    show("s(y)= ",f1)
-    show(f1.factor())
+f1 = f.subs(sigma_1=-1, sigma_2=-2, sigma_3=1); f1
 \end{verbatim}
+$$y^{6} + 4 y^{5} - 26 y^{4} - 76 y^{3} + 193 y^{2} + 240 y - 377$$
 The Sage output coincides with Example 13.4.1:
-\begin{align*}
-s(y)& = y^{6} + 4y^{5} - 26y^{4} - 76y^{3} + 193y^{2} + 240y - 377 \\
-& = (y^{3} + 2y^{2} - 15y + 13)(y^{3} + 2y^{2} - 15y - 29). 
-\end{align*}
+\begin{verbatim}
+factor(f1)
+\end{verbatim}
+$$(y^{3} + 2 y^{2} - 15 y - 29) \cdot (y^{3} + 2 y^{2} - 15 y + 13)$$
 \ee\end{proof}
 }
 
@@ -3255,12 +3468,13 @@ s(y)& = y^{6} + 4y^{5} - 26y^{4} - 76y^{3} + 193y^{2} + 240y - 377 \\
 \be
 Let $f(x)=x^n-c_1x^{n-1}+...+(-1)^n c_n \in K[x]$. The universal version of $s_u(y)$ is given by :
 $$S(y)=\prod_{\sigma\in S_n} ( y - (u_1x_{\sigma(1)}+...+u_nx_{\sigma(n)}))\in K[x_1,...,x_n,u_1,...,u_n,y]$$
-For any $\tau \in S_n$ 
+For any $\tau \in S_n$, 
 \begin{align*}
-\tau S(y)&=\prod_{\sigma\in S_n} ( y - (u_1x_{\tau\sigma(1)}+...+u_nx_{\tau\sigma(n)}))\\&=\prod_{\sigma'\in S_n} ( y - (u_1x_{\sigma'(1)}+...+u_nx_{\sigma'(n)}))=S(y)    
+\tau \cdot S(y)&=\prod_{\sigma\in S_n} ( y - (u_1x_{(\tau\sigma)(1)}+...+u_nx_{(\tau\sigma)(n)}))\\&=\prod_{\sigma'\in S_n} ( y - (u_1x_{\sigma'(1)}+...+u_nx_{\sigma'(n)}))=S(y).
 \end{align*}
 
-Thus the application of $\tau$ has merely permuted the roots of $S(y)$ leaving the coefficients fixed. It means that coefficients of $S(y)$ are symmetric and are polynomials in $\sigma_1,...,\sigma_n$ (cf. Ex.9.1.6), i.e., $S(y)\in K[\sigma_1,...,\sigma_n,u_1,...,u_n,y]$.
+Thus the application of $\tau$ has merely permuted the roots of $S(y)$ leaving the coefficients fixed. It means that the coefficients of $S(y)$ are symmetric and are polynomials in $\sigma_1,...,\sigma_n$ (cf. Ex.9.1.6), i.e., $S(y)\in K[\sigma_1,...,\sigma_n,u_1,...,u_n,y]$.
+
 The application of evaluation map $\sigma_i \mapsto c_i$ to $S(y)$ gives $s_u(y) \in K[c_1,...,c_n,u_1,...,u_n,y] = K[u_1,...,u_n,y]$. 
 
 \ee\end{proof}
@@ -3270,25 +3484,33 @@ The application of evaluation map $\sigma_i \mapsto c_i$ to $S(y)$ gives $s_u(y)
 
 {\it This exercise is concerned with the proof of Theorem 13.4.2.
 \be
-\item[(a)] Let $\beta_1,...,\beta_n\in L$. Prove that $y+\sum_{i=1}^r\beta_iu_i$ is irreducible in $L[u_1,...,u_n,y]$. (This implies that (13.41)is the irreducible factorization of $s_u(y)$ in $L[u_1,...,u_n,y]$.)
+\item[(a)] Let $\beta_1,...,\beta_n\in L$. Prove that $y+\sum_{i=1}^r\beta_iu_i$ is irreducible in $L[u_1,...,u_n,y]$. (This implies that (13.41) is the irreducible factorization of $s_u(y)$ in $L[u_1,...,u_n,y]$.)
 \item[(b)] Let $g,h\in F[u_1,...,u_n,y]$, and assume that in the larger ring $L[u_1,...,u_n,y]$ we have $h=gq$ for some $q\in L[u_1,...,u_n,y]$. Prove that $q\in F[u_1,...,u_n,y]$.
 \item[(c)] In the final part of the proof of Theorem 13.4.2, we showed that $G\subset\sigma^{-1}G_f\sigma$. Prove the opposite inclusion.
 \ee
 \begin{proof}
 \be
-\item[(a)] Assume that $h=y+\sum_{i=1}^r\beta_iu_i$ is reducible, i.e., $h=ge$ with $g,e\in L[u_1,...,u_n,y]$. In the ring $L[u_1,...,u_n][y]$ the polynomial $h$ is clearly irreducible as every polynomial of degree 1. Then $g$ or $e$ in $L[u_1,...,u_n]$. Case when $g\in L[u_1,...,u_n]$, gives $g\mid 1$ which is impossible. 
+\item[(a)] Assume that $h=y+\sum_{i=1}^r\beta_iu_i$ is reducible, i.e., $h=ge$ with $g,e\in L[u_1,...,u_n,y]$. In the ring $L[u_1,...,u_n][y]$ the polynomial $h$ is clearly irreducible as every polynomial of degree 1. Then $g$ or $e$ is in $L[u_1,...,u_n]$. In case $g\in L[u_1,...,u_n]$, the comparison of coefficients in $y$ gives $g\mid 1$, and then $g$ is a unit in $L[u_1,\ldots,u_n,y]$. 
 
 Hence the assumption is wrong and $h$ is irreducible in $L[u_1,...,u_n,y]$.
-\item[(b)] For any $\sigma\in Gal(L/F)$, since $g,h\in F[u_1,...,u_n,y]$, we have $\sigma \cdot g=g$ and $\sigma \cdot h=h$. Then $\sigma \cdot h=h=\sigma\cdot (gq)=g(\sigma\cdot q)$, i.e., $\sigma\cdot q=q$ for all $\sigma\in Gal(L/F)$.
+\item[(b)] The equality $h = gq$, where $h,g,q \in L[u_1,\ldots,u_n,y]$, is also true in the ring $L(u_1,\ldots,u_n)[y] = K[y]$, 
+where $K = L(u_1,\ldots,u_n)$ is a field, so that $K[y]$ is an Euclidean ring. Write $k = F(u_1,\ldots,u_n)$. 
 
-It proves that $q\in F[u_1,...,u_n,y]$.
-\item[(c)] Following the proof of Theorem 13.4.2, for the selected $\sigma\in S_n$, for any $\mu\in G_f$ and $\tau=\sigma^{-1}\mu^{-1}\sigma\in\sigma^{-1}G_f\sigma$, we have
-$$y-(u_{\tau(1)}\alpha_{\sigma(1)}+...+u_{\tau(n)}\alpha_{\sigma(n)})=y-(u_{1}\alpha_{\mu\sigma(1)}+...+u_{n}\alpha_{\mu\sigma(n)}).$$
-Then
-$$\tilde{h}=\prod_{\mu\in G_f}(y-(u_{1}\alpha_{\mu\sigma(1)}+...+u_{n}\alpha_{\mu\sigma(n)})) = \prod_{\tau\in\sigma^{-1}G_f\sigma}(y-(u_{\tau(1)}\alpha_{\sigma(1)}+...+u_{\tau(n)}\alpha_{\sigma(n)})). $$
-As per the proof of Theorem 13.4.2, $\tilde{h}=h$. Standard arguments imply that 
-$$h= \prod_{\tau\in\sigma^{-1}G_f\sigma}(y-(u_{\tau(1)}\alpha_{\sigma(1)}+...+u_{\tau(n)}\alpha_{\sigma(n)}))$$
-is invariant under the action of $\sigma^{-1}G_f\sigma$, so that $\tau\cdot h=h$ for $\tau\in\sigma^{-1}G_f\sigma$, which proves that $\sigma^{-1}G_f\sigma\subset G=\{\tau\in S_n \mid \tau\cdot h=h\}$. 
+The division in the Euclidean ring $k[y]$ gives $q_1,r_1 \in k[y]$ such that $h = gq_1+r_1$. The two equalities $f =g q = q_1 g +r_1$ in $K[y]$, and the unicity of the division in this ring proves $q = q_1 \in F(u_1,\ldots,u_n)[y]$. Moreover $q \in L[u_1,\ldots,u_n,y]$ is a polynomial, therefore $q \in F[u_1,\ldots,u_n,y]$.
+
+\item[(c)] 
+By the proof of Theorem 13.4.2, 
+$$h = \prod_{\mu \in G_f} \left(y - \prod_{i = 1}^n u_i \alpha_{\mu \sigma(i)} \right) \qquad (= \tilde{h}).$$
+Let $\tau \in \sigma^{-1} G_f \sigma$. There exists $\nu \in G_f$ such that $\tau = \sigma^{-1} \nu^{-1} \sigma$. Then
+\begin{align*}
+\tau \cdot h &= \prod_{\mu \in G_f}  \left(y - \prod_{i = 1}^n u_{(\sigma^{-1} \nu^{-1} \sigma)(i)} \alpha_{(\mu \sigma)(i)} \right) \\
+&=\prod_{\mu \in G_f}  \left(y - \prod_{j= 1}^n u_{(\sigma^{-1} \nu^{-1})(j) } \alpha_{\mu (j)} \right) \qquad (j = \sigma(i))\\
+&= \prod_{\mu \in G_f}  \left(y - \prod_{k= 1}^n u_k \alpha_{(\mu \nu \sigma)(k)} \right) \qquad (k =( \sigma^{-1} \nu^{-1})(j))\\
+&= \prod_{\lambda \in G_f}  \left(y - \prod_{k= 1}^n u_k \alpha_{(\lambda \sigma)(k)} \right) \qquad (\lambda = \mu \nu)\\
+&=  \prod_{\mu \in G_f} \left(y - \prod_{i = 1}^n u_i \alpha_{(\mu \sigma)(i)} \right)\\
+&= h.
+\end{align*}
+Therefore $\tau \in G$. We have proved $\sigma^{-1} G_f \sigma \subset G$.
 \ee\end{proof}
 }
 
@@ -3305,62 +3527,80 @@ This should give the formula for h given in Example 13.4.3.
 \ee
 \begin{proof}
 \be
-\item[(a)] The following Sage instruction :
+\item[(a)] The following Sage instructions:
 \begin{verbatim}
-    R.<y,x1,x2,x3,y1,y2,y3,u_1,u_2,u_3> = PolynomialRing(QQ)
-    elt = SymmetricFunctions(QQ).e()
-    e = [elt([i]).expand(3).subs(x0=x1, x1=x2, x2=x3) for i in range(4)]
-    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3)
-    G = J.groebner_basis()
-    S = y-(u_1*x1+u_2*x2+u_3*x3)
-    S1=S*S.subs(x1=x1,x2=x3,x3=x2)*S.subs(x1=x2,x2=x1,x3=x3)
-    S1=S1*S.subs(x1=x2,x2=x3,x3=x1)*S.subs(x1=x3,x2=x1,x3=x2)
-    S=S1*S.subs(x1=x3,x2=x2,x3=x1)
-    f=S.reduce(G).subs(y1=-1, y2 = -2,y3=1);show(f.factor())
+R.<y,x1,x2,x3,sigma1,sigma2,sigma3,u1,u2,u3> = PolynomialRing(QQ, order = 'lex')
+elt = SymmetricFunctions(QQ).e()
+e = [elt([i]).expand(3).subs(x0=x1, x1=x2,x2=x3) for i in range(4)]
+J = R.ideal(e[1]-sigma1, e[2]-sigma2, e[3]-sigma3)
+G = J.groebner_basis()
+S = y - (u1*x1 + u2*x2 + u3*x3)
+S1 = S * S.subs(x1=x1,x2=x3,x3=x2) *S .subs(x1=x2,x2=x1,x3=x3)
+S1 = S1 * S.subs(x1=x2,x2=x3,x3=x1) * S.subs(x1=x3,x2=x1,x3=x2)
+S = S1 * S.subs(x1=x3,x2=x2,x3=x1)
+s = S.reduce(G).polynomial(y)
+sf = s.subs(sigma1=-1,sigma2=-2,sigma3=1)
+dec = sf.factor(); dec
 \end{verbatim}
-gives output the same as in Example 13.4.3:
+give the same output as in Example 13.4.3:
 \begin{align*}
-s_u(y)=& (-y^3 - y^2u_1 + 2yu_1^2 + u_1^3 - y^2u_2 - 3yu_1u_2 - 4u_1^2u_2 + 2yu_2^2 + 3u_1u_2^2 + u_2^3 - y^2u_3\\ & - 3yu_1u_3 + 3u_1^2u_3 - 3yu_2u_3 - u_1u_2u_3 - 4u_2^2u_3 + 2yu_3^2 - 4u_1u_3^2 + 3u_2u_3^2 + u_3^3)\cdot \\
-&   (-y^3 - y^2u_1+ 2yu_1^2 + u_1^3 - y^2u_2 - 3yu_1u_2 + 3u_1^2u_2 + 2yu_2^2 - 4u_1u_2^2 + u_2^3 - y^2u_3\\
-& - 3yu_1u_3 - 4u_1^2u_3 - 3yu_2u_3  - u_1u_2u_3 + 3u_2^2u_3 + 2yu_3^2 + 3u_1u_3^2 - 4 u_2u_3^2 + u_3^3)\\
-&=(u_1^3+3u_1^2u_2-4u_1u_2^2+u_2^3-4u_1^2u_3-u_1u_2u_3+3u_2^2u_3+3u_1u_3^2\\&-4u_2u_3^2+u_3^3+2u_1^2y-3u_1u_2y+2u_2^2y-3u_1u_3y-3u_2u_3y+2u_3^2y\\&-u_1y^2-u_2y^2-u_3y^2-y^3) \times (u_1^3-4u_1^2u_2+3u_1u_2^2+u_2^3+3u_1^2u_3\\&-u_1u_2u_3-4u_2^2u_3-4u_1u_3^2+3u_2u_3^2+u_3^3+2u_1^2y-3u_1u_2y\\&+2u_2^2y-3u_1u_3y-3u_2u_3y+2yu_3^2-u_1y^2-u_2y^2-u_3y^2-y^3)
+s_u(y)&=       	
+(-y^{3} + \left(- u_{1} -  u_{2} -  u_{3}\right) y^{2} + \left(2
+u_{1}^{2} - 3 u_{1} u_{2} + 2 u_{2}^{2} - 3 u_{1} u_{3} - 3 u_{2} u_{3}
++ 2 u_{3}^{2}\right) y \\
+&+ u_{1}^{3} - 4 u_{1}^{2} u_{2} + 3 u_{1}
+u_{2}^{2} + u_{2}^{3} + 3 u_{1}^{2} u_{3} -  u_{1} u_{2} u_{3} - 4
+u_{2}^{2} u_{3} - 4 u_{1} u_{3}^{2} + 3 u_{2} u_{3}^{2} + u_{3}^{3})\\
+&\cdot (-y^{3} + \left(- u_{1} -  u_{2} -  u_{3}\right) y^{2} + \left(2
+u_{1}^{2} - 3 u_{1} u_{2} + 2 u_{2}^{2} - 3 u_{1} u_{3} - 3 u_{2} u_{3}
++ 2 u_{3}^{2}\right) y\\ 
+&+ u_{1}^{3} + 3 u_{1}^{2} u_{2} - 4 u_{1}
+u_{2}^{2} + u_{2}^{3} - 4 u_{1}^{2} u_{3} -  u_{1} u_{2} u_{3} + 3
+u_{2}^{2} u_{3} + 3 u_{1} u_{3}^{2} - 4 u_{2} u_{3}^{2} + u_{3}^{3})
 \end{align*}
-\item[(b)] The following Sage instruction :
+\item[(b)] The following Sage instruction:
 \begin{verbatim}
-    R.<y,x1,x2,x3,y1,y2,y3,u_1,u_2,u_3> = PolynomialRing(QQ)
-    elt = SymmetricFunctions(QQ).e()
-    e = [elt([i]).expand(3).subs(x0=x1, x1=x2, x2=x3) for i in range(4)]
-    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3)
-    G = J.groebner_basis()
-    S = y-(u_1*x1+u_2*x2+u_3*x3)
-    S1=S*S.subs(x1=x1,x2=x3,x3=x2)*S.subs(x1=x2,x2=x1,x3=x3)
-    S1=S1*S.subs(x1=x2,x2=x3,x3=x1)*S.subs(x1=x3,x2=x1,x3=x2)
-    S=S1*S.subs(x1=x3,x2=x2,x3=x1)
-    h=(-1)*S.reduce(G).subs(y1=-1, y2 = -2,y3=1).factor()[1][0]
-    show(h)
+h =  (-1)* dec[1][0]; h
 \end{verbatim}
-gives output for the first factor of $s_u(y)$, given in Example 13.4.3, multiplied by -1:
+gives the second (it's the good one) irreducible factor $h$ of $s_u(y)$, given in Example 13.4.3, multiplied by -1:
 \begin{align*}
-h=& y^{3} + y^{2} u_{1} - 2 y u_{1}^{2} - u_{1}^{3} + y^{2} u_{2} + 3 y u_{1} u_{2} - 3 u_{1}^{2} u_{2} - 2 y u_{2}^{2} + 4 u_{1} u_{2}^{2} - u_{2}^{3} + y^{2} u_{3}\\ & + 3 y u_{1} u_{3} + 4 u_{1}^{2} u_{3} + 3 y u_{2} u_{3} + u_{1} u_{2} u_{3} - 3 u_{2}^{2} u_{3} - 2 y u_{3}^{2} - 3 u_{1} u_{3}^{2} + 4 u_{2} u_{3}^{2} - u_{3}^{3}
+h=& y^{3} + \left(u_{1} + u_{2} + u_{3}\right) y^{2} + \left(-2 u_{1}^{2} +
+3 u_{1} u_{2} - 2 u_{2}^{2} + 3 u_{1} u_{3} + 3 u_{2} u_{3} - 2
+u_{3}^{2}\right) y \\
+&-  u_{1}^{3} - 3 u_{1}^{2} u_{2} + 4 u_{1} u_{2}^{2}
+-  u_{2}^{3} + 4 u_{1}^{2} u_{3} + u_{1} u_{2} u_{3} - 3 u_{2}^{2} u_{3}
+- 3 u_{1} u_{3}^{2} + 4 u_{2} u_{3}^{2} -  u_{3}^{3}
 \end{align*}
-The additional Sage instruction: 
+A second reduction doesn't give quite the expected result 
 \begin{verbatim}
-    h=h.subs(u_1=x1,u_2=x2,u_3=x3)
-    h=h.reduce(G).subs(y1=sigma_1, y2 = sigma_2,y3=sigma_3)
-        .subs(x1=u_1, x2=u_2,x3=u_3)
-    h=h-7*sigma_3+sigma_1^3
-    h=h.subs(sigma_1=u_1+u_2+u_3, sigma_2=u_1*u_2+u_2*u_3+u_3*u_1
-        ,sigma_3=u_1*u_2*u_3).collect(y)
-    h=h-h.subs(y=0)+h.subs(y=0).expand()+(7*sigma_3-sigma_1^3)
-        .subs(sigma_1=u_1+u_2+u_3,sigma_3=u_1*u_2*u_3)
-    show(h)
+R.<y,u1,u2,u3,sigma1,sigma2,sigma3> = PolynomialRing(QQ, order = 'lex')
+elt = SymmetricFunctions(QQ).e()
+e = [elt([i]).expand(3).subs(x0=u1, x1=u2,x2=u3) for i in range(4)]
+J = R.ideal(e[1]-sigma1, e[2]-sigma2, e[3]-sigma3)
+G = J.groebner_basis()
+g = R(h).reduce(G).polynomial(y); g
 \end{verbatim}
-gives the formula for h as a polynomial in y given in Example 13.4.3:
+$$y^{3} + \sigma_{1} y^{2} + \left(-2 \sigma_{1}^{2} + 7 \sigma_{2}\right)
+y + 21 u_{2} u_{3}^{2} - 14 u_{2} u_{3} \sigma_{1} - 7 u_{3}^{2}
+\sigma_{1} + 7 u_{3} \sigma_{1}^{2} -  \sigma_{1}^{3} + 7 u_{2}
+\sigma_{2} - 7 u_{3} \sigma_{2} + 7 \sigma_{3}
+$$
+But this last instructions verify the formula of the text:
+\begin{verbatim}
+S.<u1,u2,u3>=ZZ[]
+A=S(h(0))
+B = 7*sigma3 -sigma1^3 + 7*(u1*u2^2  + u1^2*u3 + u2*u3^2)
+B = B.subs(sigma1 = e[1],sigma2=e[2], sigma3=e[3])
+B = S(B)
+A-B
+\end{verbatim}
+$$0$$
+This is a verification of
 \begin{align*}
-h&= -(u_{1} + u_{2} + u_{3})^{3} + 7 u_{1} u_{2}^{2} + 7u_{1}^{2} u_{3} + 7u_{1} u_{2} u_{3} + 7u_{2} u_{3}^{2}\\ &  + (u_{1} + u_{2} + u_{3}) y^{2} + y^{3} - (2(u_{1} + u_{2} + u_{3})^{2} - 7u_{1} u_{2} - 7 u_{1} u_{3} - 7u_{2} u_{3}) y\\ 
-& =y^{3}+ (u_{1} + u_{2} + u_{3}) y^{2} + (7(u_{1} u_{2} + u_{1} u_{3} + u_{2} u_{3})-2(u_{1} + u_{2} + u_{3})^{2}) y\\ 
+h&=y^{3}+ (u_{1} + u_{2} + u_{3}) y^{2} + (7(u_{1} u_{2} + u_{1} u_{3} + u_{2} u_{3})-2(u_{1} + u_{2} + u_{3})^{2}) y\\ 
 & +7u_{1} u_{2} u_{3}-(u_{1} + u_{2} + u_{3})^{3}+ 7(u_{1} u_{2}^{2} + u_{1}^{2} u_{3} + u_{2} u_{3}^{2}).
 \end{align*}
+
 \ee\end{proof}
 }
 
@@ -3369,25 +3609,32 @@ h&= -(u_{1} + u_{2} + u_{3})^{3} + 7 u_{1} u_{2}^{2} + 7u_{1}^{2} u_{3} + 7u_{1}
 {\it Use the method of part (a) of Exercise 4 to derive the factorization of $s_u(y)$ given in Example 13.4.4.
 \begin{proof}
 \be
-The following Sage instruction :
+The following Sage instructions :
 \begin{verbatim}
-    R.<y,x1,x2,x3,y1,y2,y3,u_1,u_2,u_3> = PolynomialRing(QQ)
-    elt = SymmetricFunctions(QQ).e()
-    e = [elt([i]).expand(3).subs(x0=x1, x1=x2, x2=x3) for i in range(4)]
-    J = R.ideal(e[1]-y1, e[2]-y2, e[3]-y3)
-    G = J.groebner_basis()
-    S = y-(u_1*x1+u_2*x2+u_3*x3)
-    S1=S*S.subs(x1=x1,x2=x3,x3=x2)*S.subs(x1=x2,x2=x1,x3=x3)
-    S1=S1*S.subs(x1=x2,x2=x3,x3=x1)*S.subs(x1=x3,x2=x1,x3=x2)
-    S=S1*S.subs(x1=x3,x2=x2,x3=x1)
-    f=S.reduce(G).subs(y1=0, y2 = 0,y3=1);show(f.factor())
+R.<y,x1,x2,x3,sigma1,sigma2,sigma3,u1,u2,u3> = PolynomialRing(QQ, order = 'lex')
+elt = SymmetricFunctions(QQ).e()
+e = [elt([i]).expand(3).subs(x0=x1, x1=x2,x2=x3) for i in range(4)]
+J = R.ideal(e[1]-sigma1, e[2]-sigma2, e[3]-sigma3)
+G = J.groebner_basis()
+S = y - (u1*x1 + u2*x2 + u3*x3)
+S1 = S * S.subs(x1=x1,x2=x3,x3=x2) * S.subs(x1=x2,x2=x1,x3=x3)
+S1 = S1 * S.subs(x1=x2,x2=x3,x3=x1) * S.subs(x1=x3,x2=x1,x3=x2)
+S = S1 * S.subs(x1=x3,x2=x2,x3=x1)
+s = S.reduce(G).polynomial(y)
+sf = s.subs(sigma1=0,sigma2=0,sigma3=1)
+dec = sf.factor(); dec 
 \end{verbatim}
-gives output the same as in Example 13.4.4:
+give the same output as in Example 13.4.4:
 \begin{align*}
-s_u(y)=&(y^{2} - 2 y u_{1} + u_{1}^{2} + y u_{2} - u_{1} u_{2} + u_{2}^{2} + y u_{3} - u_{1} u_{3} - u_{2} u_{3} + u_{3}^{2}) \cdot \\&(y^{2} + y u_{1} + u_{1}^{2} - 2 y u_{2} - u_{1} u_{2} + u_{2}^{2} + y u_{3} - u_{1} u_{3} - u_{2} u_{3} + u_{3}^{2}) \cdot \\&(y^{2} + y u_{1} + u_{1}^{2} + y u_{2} - u_{1} u_{2} + u_{2}^{2} - 2 y u_{3} - u_{1} u_{3} - u_{2} u_{3} + u_{3}^{2})\\
-=&(y^{2} + (u_{2}+ u_{3}-2u_{1})y + u_{1}^{2} + u_{2}^{2} + u_{3}^{2}   - u_{1} u_{2} - u_{1} u_{3} - u_{2} u_{3}) \\
-\times&(y^{2} + (u_{1}+ u_{3}-2u_{2})y + u_{1}^{2} + u_{2}^{2} + u_{3}^{2}   - u_{1} u_{2} - u_{1} u_{3} - u_{2} u_{3})  \\
-\times&(y^{2} + (u_{1}+ u_{2}-2u_{3})y + u_{1}^{2} + u_{2}^{2} + u_{3}^{2}   - u_{1} u_{2} - u_{1} u_{3} - u_{2} u_{3})
+s_u(y)=&       	
+(y^{2} + \left(-2 u_{1} + u_{2} + u_{3}\right) y + u_{1}^{2} -  u_{1}
+u_{2} + u_{2}^{2} -  u_{1} u_{3} -  u_{2} u_{3} + u_{3}^{2}) \cdot\\
+& 
+(y^{2} + \left(u_{1} - 2 u_{2} + u_{3}\right) y + u_{1}^{2} -  u_{1}
+u_{2} + u_{2}^{2} -  u_{1} u_{3} -  u_{2} u_{3} + u_{3}^{2}) \cdot\\
+&
+(y^{2} + \left(u_{1} + u_{2} - 2 u_{3}\right) y + u_{1}^{2} -  u_{1}
+u_{2} + u_{2}^{2} -  u_{1} u_{3} -  u_{2} u_{3} + u_{3}^{2})
 \end{align*}
 
 \ee\end{proof}
@@ -3402,15 +3649,21 @@ s_u(y)=&(y^{2} - 2 y u_{1} + u_{1}^{2} + y u_{2} - u_{1} u_{2} + u_{2}^{2} + y u
 \ee
 \begin{proof}
 \be
-\item[(a)] Suppose by contradiction that $f$, regarded as an element of $\mathbb{Q}[x_1,...,x_n,y]$, is reducible in two irreducible factors, i.e., $f=gh$, where $g,h\in\mathbb{Q}[x_1,...,x_n,y]$. Let pick positive integers $r,s\in\mathbb{Z}$ small enough to get $rg,sh\in\mathbb{Z}[x_1,...,x_n,y]$ and both $rg,sh$ are  irreducible in  $\mathbb{Z}[x_1,...,x_n,y]$.
+\item[(a)] 
+Assume that $f\in\mathbb{Z}[x_1,...,x_n,y]$ is irreducible and nonconstant.
 
-Then $rsf=(rg)(sh)$. Since $rs\in\mathbb{Z}$ can be uniquely factorized to product of two or more primes $p\in\mathbb{Z}$, which are irreducible in $\mathbb{Z}[x_1,...,x_n,y]$ in the UFD sense, we have contradiction - one side of identity is uniquely factorized to three or more irreducible factors and the other side is factorized in only two irreducible factors. 
+ Suppose that $f = g h$, where $g,h$ are in $\Q[x_1,\ldots,x_n,y]$. There are positive integers $r,s$ such that $rg, sh \in \Z[x_1,\ldots,x_n,y]$ (it is not needed to take $r,s$ as small as possible). Then $rs f = (rg)(sh) =g_1 h_1$, where $g_1 = rg, h_1 = sh$ are in $\Z[x_1,\ldots,x_n,y]$.
+ 
+Write $rs = p_1^{a_1}\cdots p_r^{a_r}$ the decomposition of $rs$ in prime integers. Note that every prime in $\Z$ is irreducible in $\Z[x_1,\ldots,x_n]$, so that 
+$$rs f = p_1^{a_1}\cdots p_r^{a_r}f$$
+is a decomposition in irreducible factors in $\Z[x_1,\ldots,x_n]$. The only units of this UFD are $\pm 1$, so that the unicity of the decomposition in irreducible factors in $\Z[x_1,\ldots,x_n]$ shows that the decompositions of $g_1=rg,h_1=sh$ are in the form
+$$ g_1 = \pm p_1^{b_1}\cdots p_r^{b_r} f,\qquad  h_1 = \pm  p_1^{c_1}\cdots p_r^{c_r},$$
+or
+$$ g_1 = \pm p_1^{b_1}\cdots p_r^{b_r} ,\qquad h_1 = \pm  p_1^{c_1}\cdots p_r^{c_r} f.$$
+Therefore $h_1$ or $g_1$ is in $\Z$, thus $g$ or $h$ is in $\Q$, so is a unit in $\Q[x_1,\ldots,x_n,y]$. This proves that $f$ is irreducible in $\Q[x_1,\ldots,x_n,y]$.
 
-It proves that irreducible $f\in\mathbb{Z}[x_1,...,x_n,y]$  is also irreducible when regarded as an element of $\mathbb{Q}[x_1,...,x_n,y]$.
 
-\item[(b)] Since $\mathbb{Z}[x_1,...,x_n,y]$ is UFD, $s_u(y)$ can be uniquely factorized $s_u(y)=h_1\cdots h_n$, where $h_1,...,h_n\in\mathbb{Z}[x_1,...,x_n,y]$ and are irreducible. By the part (a), $h_1,...,h_n$ are irreducible when regarded as an elements of $\mathbb{Q}[x_1,...,x_n,y]$, hence for irreducible factor $h\in\mathbb{Q}[x_1,...,x_n,y]$ exists $i$, such that $h\mid h_i$. It follows that $h=h_i$ after multiplying $h_i$ by a suitable constant from $\mathbb{Q}$.
-
-Therefore an irreducible factor $h\in\mathbb{Q}[x_1,...,x_n,y]$ of $s_u(y)$, when $s_u(y)$ is regarded as an element of $\mathbb{Q}[u_1,...,u_n,y]$, is a $\mathbb{Q}$-multiple irreducible factor of $s_u(y)$, when $s_u(y)$ is regarded as an element of  $\mathbb{Z}[x_1,...,x_n,y]$.
+\item[(b)] Since $\mathbb{Z}[x_1,...,x_n,y]$ is UFD, $s_u(y)$ can be uniquely factorized $s_u(y)=h_1\cdots h_n$, where $h_1,...,h_n\in\mathbb{Z}[x_1,...,x_n,y]$ and are irreducible. By the part (a), $h_1,...,h_n$ are irreducible when regarded as elements of $\mathbb{Q}[x_1,...,x_n,y]$. Hence for any  irreducible factor $h\in\mathbb{Q}[x_1,...,x_n,y]$  of $s_u(y)$, there exists $i$ such that $h\mid h_i$. It follows that $h$ is associate to $h_i$, $h=\lambda h_i, \lambda \in \Q$, is the product of $h_i$ by a suitable constant from $\mathbb{Q}$, where $h_i$ is a factor of $s_u(y)$ irreducible in $\mathbb{Z}[x_1,...,x_n,y]$.
 \ee
 \end{proof}
 }
@@ -3428,7 +3681,7 @@ where $a=20,b=16$. Then
 \begin{align*}
 \Delta(f) &= 2^820^5+5^516^4=2^{18}5^5+5^52^{16}=2^{16}5^5(4+1)=2^{16}5^6.
 \end{align*}
-Reducing the polynomial by modulo 7 gives:
+Reducing the polynomial modulo 7 gives:
 $\bar f(x)=x^5+6x+2$. 
 
 We have $\bar f(4)=\bar f(5)=0$ and $\bar f(i)\ne 0$ for $i\in \{0,1,2,3,6\}$. Division of $\bar f$ by $(x-4)=(x+3)$ and $(x-5)=(x+2)$ gives:
@@ -3439,34 +3692,36 @@ $$\bar f=(x+2)(x+3)(x^3+2x^2+5x+5) ~~ in~\mathbb{F}_7.$$
 \paragraph{Ex. 13.4.8}
 
 {\it Compute the Galois group of  $f=x^5-6x+3$ over $\mathbb{Q}$ using reduction modulo 11 and the method of Example 13.4.6.
+}
 \begin{proof}
-\be
+
 The discriminant calculation (cf. Ex.13.2.15):
 $$\Delta(f) = 256a^5+3125b^4,$$
 where $a=-6,b=3$. Then
 \begin{align*}
 \Delta(f) &= 2^8(-6)^5+5^53^4=3^4(5^5-3\cdot 2^{13})=3^4(3125-256\cdot96)=-3^4\cdot19\cdot1129.
 \end{align*}
-Reducing the polynomial by modulo 11 gives:
+Reducing the polynomial modulo 11 gives:
 $\bar f(x)=x^5+5x+3$.
 
 The Sage instructions :
 \begin{verbatim}
-R.<X> = PolynomialRing(ZZ)
-R11.<x> = PolynomialRing(GF(11))
-f = X^5 - 6*X + 3
-R11(f)
-R11(f).factor()
+R.<x> = PolynomialRing(GF(11))
+f = x^5 - 6*x + 3
+f.factor()
 \end{verbatim}
 gives the irreducible factorization:
 \begin{align*}
-\bar f=(x^2 + 3x + 8)(x^3 + 8x^2 + x + 10)
+\bar f=(x^2 + 3x + 8)(x^3 + 8x^2 + x + 10).
 \end{align*}
-Since $\Delta(f)<0$, the Galois group $f$ over $\mathbb{Q}$ is isomorphic to a subgroup of $S_5$. Since $11\nmid \Delta(f)$, the order of the Galois group is divisible by 3 and 2.
+Since $\Delta(f)<0$, the Galois group $G_f\subset S_5$ of $f$ over $\mathbb{Q}$ is not a subgroup of $A_5$. The classification of transitive subgroups of $S_5$ given in (13.16) shows that $G_f =S_5$ or $G_f \simeq \mathrm{AGL}(1,\F_5)$.
 
-The classification of transitive subgroups of $S_5$ given in (13.16) shows that $S_5$ has no proper transitive subgroup of order divisible by 6. Hence the Galois group $f$ over $\mathbb{Q}$ is isomorphic to $S_5$.
-\ee\end{proof}
-}
+ Since $11\nmid \Delta(f)$, by Theorem 13.4.5, $G_f$ contains the disjoint product of a 3-cycle and a 2-cycle, which has order $6$, thus the order of the Galois group is divisible by 3 and 2.
+
+ The order of  $\mathrm{AGL}(1,\F_5)$ is $20$. Hence the Galois group $G_f$ of $f$ over $\mathbb{Q}$ is  $G_f = S_5$.
+
+\end{proof}
+
 
 \paragraph{Ex. 13.4.9}
 
