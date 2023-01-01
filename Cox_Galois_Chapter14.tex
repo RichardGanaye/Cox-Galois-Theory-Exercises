@@ -291,26 +291,6 @@ This last equality is not true in $L$, but true for the corresponding vectors in
 Moreover, let $\alpha\ne \beta$ be {\it any} pair of roots. The corresponding vectors $u,v$ are such that $u,v,u+v = -u-v$ is not a base, so that the root $\gamma$ corresponding to $u+v$ is such that $ y - (\alpha+\beta+\gamma)$ is a factor of $g$, and the preceding proof shows that $\gamma \in \Q(\alpha,\beta)$. For each pair $\alpha\ne \beta$ of roots of $f = x^7-154\, x+99$, there exists a third root $\gamma \not \in \{\alpha,\beta\}$ such that $\gamma \in F(\alpha,\beta)$.
 
 
-
-
-
-
-
-
-\end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
 \subsection{IMPRIMITIVE POLYNOMIALS OF PRIME-SQUARED DEGREE}
 \paragraph{Ex. 14.2.1}
 
@@ -320,7 +300,20 @@ Moreover, let $\alpha\ne \beta$ be {\it any} pair of roots. The corresponding ve
 \begin{proof}
 Given $\sigma'=(\tau';\mu_1',...,\mu_k'),\sigma=(\tau;\mu_1,...,\mu_k)\in A\wr B$. Since $\sigma'$ maps $R_i$ to $R_{\tau'(i)}$ via $\mu_i'$, if we set $j=\tau'(i)$, then $\sigma$ maps $R_j$ to $R_{\tau(j)}=R_{\tau(\tau'(i))}=R_{\tau\tau'(i)}$ via $\mu_j=\mu_{\tau'(i)}$.
 
-Hence $\sigma\sigma'$ maps $R_i$ to $R_{\tau\tau'(i)}$ via $\mu_{\tau'(i)}\mu_i'$, which gives the prove to (14.7):
+Hence $\sigma\sigma'$ maps $R_i$ to $R_{\tau\tau'(i)}$ via $\mu_{\tau'(i)}\mu_i'$.
+
+More explicitly, by the definition of $(\tau; \mu_1,\ldots,\mu_k)$, for all $(i,j) \in \{1,\ldots,k\} \times \{1,\ldots,l\}$,
+$$(\tau;\mu_1,\ldots,\mu_k)(i,j) = (\tau(i), \mu_i(j)).$$
+Applying three times this definition, we obtain
+\begin{align*}
+(\tau; \mu_1,\ldots,\mu_k)(\tau'; \mu'_1,\ldots,\mu'_k)&= (\tau; \mu_1,\ldots,\mu_k)(\tau'(i),\mu'_i(j))\\
+&= ((\tau \tau')(i), \mu_{\tau'(i)}(\mu'_i(j))\\
+&= ((\tau \tau')(i), (\mu_{\tau'(i)} \mu'_i)(j)\\
+&=(\tau\tau';\mu_{\tau'(1)}\mu_1',...,\mu_{\tau'(k)}\mu_k')(i,j)
+\end{align*}
+Since this equality is true for all $(i,j) \in \{1,\ldots,k\} \times \{1,\ldots,l\}$,
 $$(\tau;\mu_1,...,\mu_k)(\tau';\mu_1',...,\mu_k')=(\tau\tau';\mu_{\tau'(1)}\mu_1',...,\mu_{\tau'(k)}\mu_k').$$
 \end{proof}
 
+
+\end{document}
