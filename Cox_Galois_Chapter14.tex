@@ -315,5 +315,76 @@ Since this equality is true for all $(i,j) \in \{1,\ldots,k\} \times \{1,\ldots,
 $$(\tau;\mu_1,...,\mu_k)(\tau';\mu_1',...,\mu_k')=(\tau\tau';\mu_{\tau'(1)}\mu_1',...,\mu_{\tau'(k)}\mu_k').$$
 \end{proof}
 
+\paragraph{Ex. 14.2.2}
+{\it The wreath product $S_3 \wr S_2 \subset S_6$ can be thought of as the subgroup of all permutations that preserve the blocs $R_1 = \{1,2\}, R_2 = \{3,4\},R_3 = \{5,6\}$. As noted in Example 14.2.11, $S_3 \wr S_2$ has order $6\cdot3^3 = 48$.
+\be
+\item[(a)] Show that $(S_3 \wr S_2) \cap A_6$ has order $24$.
+\item[(b)] Show that $S_3 \wr S_2$ is the centralizer of $(1\,2)(3\,4)(5\,6)$ in $S_6$ (meaning that $S_3 \wr S_2$ consists of all permutations in $S_6$ that commute with $(1\,2)(3\,4)(5\,6)$).
+\item[(c)] Use part (b) to show that $S_3 \wr S_2$ is isomorphic to $((S_3 \wr S_2) \cap A_6) \times S_2$.
+\ee
+See the next exercise for more on $S_3 \wr S_2$ and $(S_3 \wr S_2) \cap A_6$.
+}
+\begin{proof}
+\item[(a)] Let $\varphi$ the restriction of the signature $\mathrm{sgn}$ to $(S_3 \wr S_2) \cap A_6$:
+$$
+\varphi \left\{
+\begin{array}{ccc}
+S_3 \wr S_2 & \to & \{-1,1\}\\
+\sigma & \mapsto & \mathrm{sgn}(\sigma)
+\end{array}
+\right.
+$$
+Since $\mathrm{sgn}$ is a morphism, its restriction $\varphi$ is also a morphism, and $\varphi$ is surjective (onto), because $\varphi(e) = 1$, and $\varphi((1\,2)) = -1$, where $(1\,2) \in S_3\wr S_2$. Moreover the kernel of $\varphi$ is $\ker(\varphi) =  (S_3 \wr S_2) \cap A_6$.
+
+\item[(b)] Let $\tau \in S_n$. Then $\tau$ is in the centralizer of $\sigma = (1\,2)(3\,4)(5\,6)$ if and only if
+$$\tau (1\,2)(3\,4)(5\,6) \tau^{-1} = (1\,2)(3\,4)(5\,6),$$
+which is equivalent to
+$$(\tau(1)\, \tau(2))(\tau(3)\, \tau(4))(\tau(5)\, \tau(6)) = (1\,2)(3\,4)(5\,6).$$
+Write $R_1 = \{1,2\}, R_2 = \{3,4\},R_3 = \{4,5\}$. Then $R_1, R_2,R_3$ are the three orbits  of $\sigma$ acting on $\{1,\ldots,6\}$, the supports of the decomposition of $\sigma$ in disjoint cycles.
+
+Since $\tau$ is a bijection, the 6 values $\tau(1),\tau(2),\tau(3), \tau(4),\tau(5), \tau(6)$ are distinct, so $(\tau(1)\, \tau(2)),(\tau(3)\, \tau(4)),(\tau(5)\, \tau(6))$ are disjoint $2$-cycles. 
+
+If $\tau$ is the centralizer of $\sigma$, the equality $(\tau(1)\, \tau(2))(\tau(3)\, \tau(4))(\tau(5)\, \tau(6)) = (1\,2)(3\,4)(5\,6)$ shows that $\tau(R_1),\tau(R_2),\tau(R_3)$ are also the three orbits of $\sigma$, so that
+$$\{\{1,2\},\{3,4\},\{5,6\}\} =\{\{ \tau(1), \tau(2)\},\{\tau(3), \tau(4)\},\{\tau(5), \tau(6)\}\},$$
+that is
+$$\{R_1,R_2,R_3\} = \{\tau(R_1),\tau(R_2),\tau(R_3)\},$$
+which means that there is some permutation $\tau'$ of $\{1,2,3\}$ such that $\tau(R_i) = R_{\tau'(i)}, \ i=1,2,3$. In other words, $\sigma$ preserves the blocks $R_1,R_2,R_3$, so that $\sigma \in S_3 \wr S_2$.
+
+To prove the converse, it is more convenient to use the other usual representation of $S_3\wr S_2$. Then $\sigma = (e; \mu,\mu,\mu)$, where $\mu = (1\, 2) \in S_2$. Let $\tau = (\lambda; \mu_1,\mu_2,\mu_3)$ be any element of $S_3 \wr S_2$ (then $\mu_i = ()$ or $\mu_i = \mu)$. Then (14.7) gives
+\begin{align*}
+\tau \sigma &= (\lambda; \mu_1,\mu_2,\mu_3)(e; \mu,\mu,\mu)\\
+&=(\lambda;\mu_1\mu, \mu_2 \mu,\mu_3\mu)\\
+\sigma \tau &= (e;\mu,\mu;\mu)(\lambda,\mu_2,\mu_2,\mu_3)\\
+&= (\lambda; \mu \mu_1, \mu \mu_2,\mu \mu_3)
+\end{align*}
+Since $S_2 = \{e,\mu\}$ is commutative, $\mu \mu_i = \mu_i \mu,\ i=1,2,3$, thus $\tau \sigma = \sigma \tau$.
+
+The centralizer of $(1\,2)(3\,4)(5\,6)$ in $S_n$ is $S_3 \wr S_2$.
+
+\item[(c)] Since the order of $\sigma = (1\,2)(3\,4)(5\,6)$ is $2$, $\langle \sigma \rangle = \{e,\sigma\} \simeq S_2$ and we can write $\sigma^{\varepsilon }, \varepsilon \in \{0,1\}$ the two elements of $\langle \sigma \rangle$.
+Let
+$$
+\varphi
+\left \{
+\begin{array}{ccc}
+(S_3 \wr S_2) \cap A_6 \times \langle \sigma \rangle & \to & S_3\wr S_2\\
+(\tau, \sigma^{\varepsilon}) & \mapsto &\tau \sigma^{\varepsilon}.
+\end{array}
+\right.
+$$
+$\bullet$ $\varphi$ is a morphism: For all $\tau, \tau' \in (S_3 \wr S_2) \cap A_6$ and $\sigma^{\varepsilon}, \sigma^{\varepsilon'} \in \langle \sigma \rangle $, $\sigma \tau' = \tau' \sigma$ by part (b), thus
+\begin{align*}
+\varphi(\tau \sigma^{\varepsilon}) \varphi(\tau' \sigma^{\varepsilon'})&= \tau \sigma^{\varepsilon} \tau' \sigma^{\varepsilon'}\\
+&= \tau \tau' \sigma^\varepsilon \sigma^{\varepsilon'}\\
+&= \varphi((\tau,\sigma^\varepsilon) (\tau', \sigma^{\varepsilon'}))
+\end{align*}
+
+$\bullet$ $\ker \varphi$ is trivial: if $\varphi(\tau \sigma^{\varepsilon}) = e$, then $\tau \sigma^{\varepsilon} = e$, so that $\tau  = \sigma^{-\varepsilon} \in \{e, \sigma\}$. $\tau = \sigma$ is impossible, since $\tau$ is an even permutation, and $\sigma$ is odd. Therefore $\tau = e$, and $\sigma^{\varepsilon} = e$. Thus $\varphi$ is injective (one to one).
+
+$\bullet$ Since $|(S_3 \wr S_2) \cap A_6 \times \langle \sigma \rangle | = |S_3\wr S_2|$, $\varphi$ is a bijection, thus is a group isomorphism.
+
+$$S_3 \wr S_2 \simeq ((S_3 \wr S_2) \cap A_6) \times \langle \sigma \rangle  \simeq  ((S_3 \wr S_2) \cap A_6) \times S_2 .$$
+\end{proof}
+
 
 \end{document}
