@@ -291,6 +291,11 @@ This last equality is not true in $L$, but true for the corresponding vectors in
 Moreover, let $\alpha\ne \beta$ be {\it any} pair of roots. The corresponding vectors $u,v$ are such that $u,v,u+v = -u-v$ is not a base, so that the root $\gamma$ corresponding to $u+v$ is such that $ y - (\alpha+\beta+\gamma)$ is a factor of $g$, and the preceding proof shows that $\gamma \in \Q(\alpha,\beta)$. For each pair $\alpha\ne \beta$ of roots of $f = x^7-154\, x+99$, there exists a third root $\gamma \not \in \{\alpha,\beta\}$ such that $\gamma \in F(\alpha,\beta)$.
 
 
+
+
+
+
+
 \subsection{IMPRIMITIVE POLYNOMIALS OF PRIME-SQUARED DEGREE}
 \paragraph{Ex. 14.2.1}
 
@@ -307,7 +312,7 @@ $$(\tau;\mu_1,\ldots,\mu_k)(i,j) = (\tau(i), \mu_i(j)).$$
 Applying three times this definition, we obtain
 \begin{align*}
 (\tau; \mu_1,\ldots,\mu_k)(\tau'; \mu'_1,\ldots,\mu'_k)&= (\tau; \mu_1,\ldots,\mu_k)(\tau'(i),\mu'_i(j))\\
-&= ((\tau \tau')(i), \mu_{\tau'(i)}(\mu'_i(j))\\
+&= (\tau( \tau'(i)), \mu_{\tau'(i)}(\mu'_i(j))\\
 &= ((\tau \tau')(i), (\mu_{\tau'(i)} \mu'_i)(j)\\
 &=(\tau\tau';\mu_{\tau'(1)}\mu_1',...,\mu_{\tau'(k)}\mu_k')(i,j)
 \end{align*}
@@ -325,7 +330,7 @@ $$(\tau;\mu_1,...,\mu_k)(\tau';\mu_1',...,\mu_k')=(\tau\tau';\mu_{\tau'(1)}\mu_1
 See the next exercise for more on $S_3 \wr S_2$ and $(S_3 \wr S_2) \cap A_6$.
 }
 \begin{proof}
-\item[(a)] Let $\varphi$ the restriction of the signature $\mathrm{sgn}$ to $(S_3 \wr S_2) \cap A_6$:
+\item[(a)] Let $\varphi$ the restriction of the sign $\mathrm{sgn}$ to $(S_3 \wr S_2) \cap A_6$:
 $$
 \varphi \left\{
 \begin{array}{ccc}
@@ -335,6 +340,8 @@ S_3 \wr S_2 & \to & \{-1,1\}\\
 \right.
 $$
 Since $\mathrm{sgn}$ is a morphism, its restriction $\varphi$ is also a morphism, and $\varphi$ is surjective (onto), because $\varphi(e) = 1$, and $\varphi((1\,2)) = -1$, where $(1\,2) \in S_3\wr S_2$. Moreover the kernel of $\varphi$ is $\ker(\varphi) =  (S_3 \wr S_2) \cap A_6$.
+
+Therefore $\mathrm{im}(\varphi)  \{-1,1\} \simeq (S_3 \wr S_2)/ ((S_3 \wr S_2) \cap A_6)$. This shows that $$|(S_3 \wr S_2) \cap A_6| = \frac{1}{2} |S_3 \wr S_2| = 24.$$
 
 \item[(b)] Let $\tau \in S_n$. Then $\tau$ is in the centralizer of $\sigma = (1\,2)(3\,4)(5\,6)$ if and only if
 $$\tau (1\,2)(3\,4)(5\,6) \tau^{-1} = (1\,2)(3\,4)(5\,6),$$
@@ -379,11 +386,254 @@ $\bullet$ $\varphi$ is a morphism: For all $\tau, \tau' \in (S_3 \wr S_2) \cap A
 &= \varphi((\tau,\sigma^\varepsilon) (\tau', \sigma^{\varepsilon'}))
 \end{align*}
 
-$\bullet$ $\ker \varphi$ is trivial: if $\varphi(\tau \sigma^{\varepsilon}) = e$, then $\tau \sigma^{\varepsilon} = e$, so that $\tau  = \sigma^{-\varepsilon} \in \{e, \sigma\}$. $\tau = \sigma$ is impossible, since $\tau$ is an even permutation, and $\sigma$ is odd. Therefore $\tau = e$, and $\sigma^{\varepsilon} = e$. Thus $\varphi$ is injective (one to one).
+$\bullet$ $\ker \varphi$ is trivial: if $\varphi(\tau, \sigma^{\varepsilon}) = e$, then $\tau \sigma^{\varepsilon} = e$, so that $\tau  = \sigma^{-\varepsilon} \in \{e, \sigma\}$. $\tau = \sigma$ is impossible, since $\tau$ is an even permutation, and $\sigma$ is odd. Therefore $\tau = e$, and $\sigma^{\varepsilon} = e$. Thus $\varphi$ is injective (one to one).
 
-$\bullet$ Since $|(S_3 \wr S_2) \cap A_6 \times \langle \sigma \rangle | = |S_3\wr S_2|$, $\varphi$ is a bijection, thus is a group isomorphism.
+$\bullet$ Since $|((S_3 \wr S_2) \cap A_6) \times \langle \sigma \rangle | = |S_3\wr S_2|$, $\varphi$ is a bijection, thus $\varphi$ is a group isomorphism.
 
 $$S_3 \wr S_2 \simeq ((S_3 \wr S_2) \cap A_6) \times \langle \sigma \rangle  \simeq  ((S_3 \wr S_2) \cap A_6) \times S_2 .$$
+\end{proof}
+
+\paragraph{Ex. 14.2.3}
+{\it One of the challenges of group theory is that the same group can have radically differnet descriptions. For instance, $S_4$ and the group $G = (S_3 \wr S_2) \cap A_6$ appearing in Example 14.2.11 both have order $24$. In this exercise, you will prove that they are isomorphic. We will use the notation of Exercise 2.
+\be
+\item[(a)] There is a natural homomorphism $G \to S_3$ given by how elements of $G$ permute the blocks $R_1,R_2,R_3$. Show that this map is onto, and express the elements of the kernel as products of disjoints cycles.
+\item[(b)] Use the Sylow Theorems to show that $G$ has one or four $3$-Sylow subgroups.
+\item[(c)] Show that $A_6$ has no element of order $6$.
+\item[(d)] Use part (c) and the kernel of the map $G \to S_3$ from part (a) to show that $G$ has four $3$-Sylow subgroups.
+\item[(e)] $G$ acts by conjugation on its four $3$-Sylow subgroups. Use this to prove that $G \simeq S_4$.
+\item[(f)] Using Exercise 2, conclude that $S_3 \wr S_2 \simeq S_4 \times S_2$.
+
+We note without proof that $S_3 \wr S_2 \simeq S_4 \times S_2$ is also isomorphic to the full symmetry group (rotations and reflexions) of the octahedron.
+\ee
+}
+
+\begin{proof}
+\item[(a)] Let $\varphi : G \to S_3$ defined by $\tau = \varphi(\sigma)$ iff $\sigma(R_i) = R_{\tau(i)}$. In other notations, this is the restriction to $G$ of the homomorphism of part (b) of Lemma 14.2.8, thus $\varphi$ is an homomorphism.
+
+$\bullet$ $\varphi$ is surjective: Let $\tau$ be any permutation in $S_3$. 
+
+If $\tau$ is even, $\tau = (1\,2\,3)^k,\ k = 0,1,2$. Let
+$$\sigma =
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+3 & 4 & & 5 & 6 & & 1& 2\\
+\end{array}
+\right)
+= (1\,3\,5)(2\,4\,6).
+$$
+$\sigma$ preserves the block structure defined by $R_1,R_2,R_3$, and $\sigma \in A_6$, so that $\sigma \in G = (S_3 \wr S_2) \cap A_6$. Moreover $\sigma(R_1) = R_2, \sigma(R_2) = R_3, \sigma(R_3) = R_1$, thus $\varphi(\sigma) = (1\,2\,3)$, and $\varphi(\sigma^k )= (1\,2\,3)^k = \tau$.
+
+If $\tau$ is odd, then $\tau \in \{(1\,2),(2\,3),(1\,3)\}$, and
+\begin{align*}
+(1\,2) = \varphi(\sigma_1), \qquad \sigma_1 = 
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+3 & 4 & & 1 & 2 & & 5& 6\\
+\end{array}
+\right) = (1\,3)(2\,4) \in G,\\
+(2\,3) = \varphi(\sigma_2), \qquad \sigma_2 = 
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+1 & 2 & & 5 & 6 & & 3& 4\\
+\end{array}
+\right) = (3\,5)(4\,6) \in G,\\
+(1\,3) = \varphi(\sigma_3), \qquad \sigma_3 = 
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+5 & 6 & & 3 & 4 & & 1& 2\\
+\end{array}
+\right) = (1\,5)(2\,6) \in G.\\
+\end{align*}
+Therefore $\varphi$ is surjective.
+
+$\bullet$ Let $\sigma \in S_6$. Then $\sigma \in \ker \varphi$ iff $\sigma \in A_6$ and $\sigma(R_1) = R_1, \sigma(R_2) = R_2, \sigma(R_3) = R_3$.
+
+Morerover, for all $\sigma \in A_6$,
+\begin{align*}
+&\sigma(R_1) = R_1, \sigma(R_2) = R_2, \sigma(R_3) = R_3\\
+\iff& \{\sigma(1), \sigma(2)\} = \{1,2\}, \{\sigma(3),\sigma(4)\} = \{3,4\}, \{\sigma(5),\sigma(6)\} = \{5,6\}\\
+\iff &\sigma \in \{e,(1\,2)(3\,4), (1\,2)(5\,6), (3\,4)(5\,6)\}.
+\end{align*}
+$$\ker \varphi = \{e,(1\,2)(3\,4), (1\,2)(5\,6), (3\,4)(5\,6)\}.$$
+Verification: $6 = |S_3| = |G/\ker(\varphi)| = 24/4$.
+
+\item[(b)] Let $N$ be the number of $3$-Sylow subgroups of $G$. By the third Slow Theorem,
+$$N \mid 24 = |G|, \qquad N \equiv 1 \pmod 3.$$
+Therefore $N = 1$ or $N = 4$.
+
+\item[(c)] Let $\tau \in S_6$ be a permutation of order 6. If $\tau = \tau_1\cdots \tau_k$ is the decomposition of $\tau$ in disjoint cycles, then the order of $\tau$ is the lcm of the order of$ \tau_1,\ldots,\tau_k$. Therefore $\tau$ is a $6$-cycle or a product of a $2$-cycle by a $3$-cycle. In both cases $\tau$ is odd. Therefore $A_6$ has no element of order $6$.
+
+
+\item[(d)] Reasoning by contradiction, suppose that $G$ has only one $3$-Sylow subgroup $H$. Then, for all $g \in G$, $gH g^{-1}$ is a $3$-Sylow, thus $gH g^{-1} = H$, and $H$ is a normal subgroup of $G$. 
+
+Moreover $K = \ker \varphi = \{e,(1\,2)(3\,4), (1\,2)(5\,6), (3\,4)(5\,6)\}$ is normal in $G$, and has order 4. Therefore $H \cap K = \{e\}$.
+
+The usual characterization of direct products (see Ex. 14.3.7) shows that, for all $h \in H$, all $k \in K$, $hk = kh$, and $HK$ is a normal subgroup of $G$ isomorphic to $H \times K$. 
+
+Take $h$ an element of order $3$ in $H,$ and $k$ and element of order 2 in $K$. Since $kh = hk$, the order of $hk \in A_6$ is 6, which is impossible by part (c).
+
+Therefore $G$ has exactly four $3$-Sylow subgroups.
+
+\item[(e)] Write $X = \{H_1,H_2,H_3,H_4\}$ the set of $3$-Sylow subgroups of $G$, and $S(X)$ the set of permutations of $X$. Then $S(X) \simeq S_4$, and $g\cdot H = g H g^{-1}$ defines a left action of $G$ on $X$, so that
+$$
+\psi 
+\left\{
+\begin{array}{ccc}
+G & \to & S(X)\\
+g & \mapsto & 
+\sigma = \left(
+    \begin{array}{cccc}
+      H_1&H_2&H_3&H_4\\
+      gH_1g^{-1} & gH_2 g^{-1} & gH_3g^{-1} & gH_4g^{-1}
+    \end{array}
+\right)
+\end{array}
+\right.
+$$
+is a group homomorphism.
+
+It is not obvious that $\psi$ is bijective. We prove first that $\psi$ is surjective (onto). We give explicitly the $3$-Sylow subgroups. Let
+\begin{align*}
+&\lambda_1 = 
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+ 3&4&&5&6&&1&2 \\
+\end{array}
+\right) = (1\,3\,5)(2\,4\,6),\\
+&\lambda_2 = 
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+ 3&4&&6&5&&2&1 \\
+\end{array}
+\right) = (1\,3\,6)(4\,5\,2),\\
+&\lambda_3 = 
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+ 6&5&&2&1&&3&4 \\
+\end{array}
+\right) = (1\,6\,4)(5\,3\,2),\\
+&\lambda_4 =
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+ 4&3&&6&5&&1&2 \\
+\end{array}
+\right) = (1\,4\,5)(3\,6\,2).
+\end{align*}
+Then $\lambda_1,\ldots,\lambda_4 \in G$ have order $3$, and $H_1 = \langle \lambda_1 \rangle = \{e,\lambda_1,\lambda_1^2\},\ldots,H_4 = \langle \lambda_1 \rangle = \{e,\lambda_4,\lambda_4^2\}$ are distinct, thus they are the four $3$-Sylow of $G$.
+
+Now take 
+\begin{align*}
+&g = 
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+ 4&3&&2&1&&5&6 \\
+\end{array}
+\right) = (1\,4)(2\,3)\\
+&h=
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+ 2&1&&5&6&&4&3 \\
+\end{array}
+\right) = (1\,2)(3\,5\,4\,6)
+\end{align*}
+(We give a geometrical explanation of this choice in the final note.)
+
+Then 
+\begin{align*}
+g \lambda_1 g^{-1} &= (1\,4)(2\,3)(1\,3\,5)(2\,4\,6)(1\,4)(2\,3)\\
+&=
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+ 6&5&&1&2&&4&3 \\
+\end{array}
+\right) = (1\,6\,3)(2\,5\,4) = \lambda_2^2,
+\end{align*}
+thus $gH_1g^{-1} = H_2$, and since $g = g^{-1}$, $g H_2 g^{-1} = H_1$.
+Moreover
+\begin{align*}
+g \lambda_3g^{-1} &=(1\,4)(2\,3)(1\,6\,4)(5\,3\,2)(1\,4)(2\,3)\\
+&= 
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+ 4&3&&5&6&&2&1 \\
+  \end{array}
+  \right)
+ =(1\,4\,6)(2\,3\,5)
+ =\lambda_3^2,
+\end{align*}
+thus $gH_3g^{-1} = H_3$, and since $\psi(g)$ is a permutation, $gH_4 g^{-1} = H_4$.
+
+Therefore $\psi(g) \in S(X)$ is the permutation 
+$ 
+\left(
+\begin{array}{cccc}
+H_1&H_2&H_3&H_4\\
+H_2&H_1&H_3&H_4
+\end{array}
+\right)
+$, which corresponds to the transposition $(1\,2) \in S_4$.
+Similarly
+\begin{align*}
+h\lambda_1h^{-1}&= (1\,2)(3\,4\,5\,6)(1\,3\,5)(2\,4\,6)(3\,6\,4\,5)(1\,2)\\
+&=
+\left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+ 6&5&&1&2&&4&3 \\
+  \end{array}
+  \right) =(1\,6\,3)(2\,5\,4) = \lambda_2^2,\\
+ h\lambda_2h^{-1} &= (1\,2)(3\,4\,5\,6)(1\,3\,6)(4\,5\,2)(3\,6\,4\,5)(1\,2)\\
+ &=
+ \left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+ 6&5&&2&1&&3&4 \\
+  \end{array}
+  \right) = (1\,6\,4)(2\,5\,3) = \lambda_3,\\
+   h\lambda_3h^{-1} &= (1\,2)(3\,4\,5\,6)(1\,6\,4)(5\,3\,2)(3\,6\,4\,5)(1\,2)\\
+ &=
+ \left(
+\begin{array}{cccccccc}
+1 & 2 & & 3 & 4 & & 5 & 6\\
+ 4&3&&6&5&&1&2 \\
+  \end{array}
+  \right) = (1\,4\,5)(2\,6\,4) = \lambda_4,
+\end{align*}
+thus $hH_1h^{-1} = H_2, hH_2h^{-1} = H_3, hH_1h^{-1} = H_4$, and since $\psi(g)$ is a permutation, $h H_4h^{-1} = H_1$. Therefore 
+$\psi(g) = \left(
+\begin{array}{cccc}
+H_1&H_2&H_3&H_4\\
+H_2&H_3&H_4&H_1
+\end{array}
+\right)
+$
+corresponds to the $4$-cycle $(1\,2 \,3 \,4)$. 
+
+Since $\{(1\,2), (1\,2\,3\,4)\}$ is a set of generators of $S_4$, $S(X)$ is generated by $\psi(g), \psi(h)$, so that $S(X) = \psi(G)$, and $\psi$ is surjective. Moreover, $|G| = |S(X)| = 24$, thus $\psi$ is a bijection, and a group isomorphism:
+$$G \simeq S(X) \simeq S_4.$$
+
+\item[(f)] To conclude, using Exercise 2, we obtain
+$$S_3\wr S_2 \simeq ((S_3 \wr S_2) \cap A_6) \times S_2  = G \times S_2 \simeq S_4 \times S_2.$$
+\bigskip
+
+Note: We have proved in Exercise 7.5.10 that the symmetry group $G_0$ of the cube (or octahedron), is isomorphic to $S_4$. By composition with the indirect isometry $\sigma : v\mapsto -v$, which commutes with all elements in the group, we obtain the full symmetry group, isomorphic to $S_4 \times S_2$.
+
+We have a geometrical description of $G = (S_3\wr S_2) \cap A_6$ by regrouping the opposite faces of a cube in blocs: stick $1$ on a face of a dice, $2$ on the opposite face, and so on (I sticked labels on my Rubik's cube). Then the $24$ rotations of the cube send opposite faces on opposite faces, so that the bloc structure $\{\{1,2\},\{3,4\},\{5,6\}\}$ is preserved by rotations.
+
+We have proved in Exercise 7.5.10 that $G_0$ acts on the 4 long diagonals $D_1,D_2,D_3,D_4$ of the cube, so that $G_0 \simeq S_4$. Each of the four $3$-Sylow of $G_0$ is generated by the rotation with angle $\frac{2\pi}{3}$ around such a  long diagonal. They correspond to the $3$-Sylow $H_1,\ldots,H_4$ of $G$: this was useful for the above description of the $H_i$. Each $3$-Sylow corresponds to a long diagonal, so that $gH_ig^{-1} = H_j$ is equivalent to $\sigma(D_i) = D_j$, where $\sigma$ corresponds to $g$. It remains to find a rotation which acts on these diagonals as some given permutation in $S_4$, such that $(1\,2)$ or $(1\,2\,3\,4)$. The corresponding permutations $g,h \in G $ are given in the text.
+
 \end{proof}
 
 
