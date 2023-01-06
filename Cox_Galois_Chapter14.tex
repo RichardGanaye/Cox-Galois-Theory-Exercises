@@ -636,5 +636,67 @@ We have proved in Exercise 7.5.10 that $G_0$ acts on the 4 long diagonals $D_1,D
 
 \end{proof}
 
+\paragraph{Ex. 14.2.4}
+{ \it
+Let $A$ and $B$ be solvable permutation groups. Prove that their wreath product $A\wr B$ is also solvable.
+}
+
+\medskip
+
+We first proof a lemma, which is not given in Chapter 8.
+
+\medskip
+
+{\bf Lemma.} {\it If $G,H$ are solvable groups, then $G \times H$ is solvable.}
+
+\medskip
+
+{\it Proof of Lemma.} We have subgroups 
+\begin{align*}
+&\{e\} \subset G_n \subset \cdots \subset G_1 \subset G_0 = G\\
+&\{e'\} \subset H_m \subset \cdots \subset H_1 \subset H_0 = H
+\end{align*}
+such that $G_i$ is normal in $G_{i-1}$ and $G_{i-1}/G_i$ is Abelian for $i=1,\ldots,n$, and $H_i$ is normal in $H_{i-1}$ and $H_{i-1}/H_i$ is Abelian for $i=1,\ldots,m$.
+
+If $n >m$, we can define $H_{m+1} = H_{m+2} =\cdots=H_n=\{e'\}$,  and proceed similarly if $n<m$, so we can assume that $n=m$: 
+\begin{align*}
+&\{e\} \subset G_n \subset \cdots \subset G_1 \subset G_0 = G\\
+&\{e'\} \subset H_n \subset \cdots \subset H_1 \subset H_0 = H
+\end{align*}
+Then
+$$
+\{(e,e')\} =G_n\times H_n \subset \cdots \subset G_1\times H_1 \subset G_0\times H_0 = G \times H.
+$$
+We prove 
+$$(G_{i-1}\times H_{i-1}) / (G_i \times H_i) \simeq G_{i-1}/G_i \times H_{i-1}/H_i.$$
+Indeed, 
+$$
+\psi
+\left\{
+\begin{array}{ccc}
+G_{i-1} \times H_{i-1} & \to  & G_{i-1}/G_i \times H_{i-1}/H_i\\
+(g,h) & \mapsto & (gG_i, hH_i)
+\end{array}
+\right.
+$$
+is surjective, and its kernel is $G_i \times H_i$. This proves our assertion.
+
+Therefore $(G_{i-1}\times H_{i-1}) / (G_i \times H_i)$ is Abelian. Then Exercise 8.1.8 shows that $G\times H $ is solvable.
+\qed
+\begin{proof} {\it (of Ex.14.2.4.)}
+Let 
+$$
+\varphi
+\left\{
+\begin{array}{ccc}
+A \wr B & \to & A\\
+(\tau; \mu_1,\ldots,\mu_k) & \mapsto &\tau.
+\end{array}
+\right.
+$$
+By Lemma 14.2.8, $\varphi$ is onto, and its kernel $H = \ker(\varphi)$ is isomorphic to $B^k$. Then $B^k$ is solvable by induction with the above Lemma, so that $H$ is solvable, and $(A \wr B) / H  = (A \wr B)/\ker(\varphi) \simeq A$ is solvable. By Theorem 8.1.4, $A\wr B$ is solvable.
+\end{proof}
+
+
 
 \end{document}
