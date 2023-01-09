@@ -761,5 +761,125 @@ thus
 $$\lambda_j = \mu_j^{-1} \theta \mu_j.$$
 \end{proof}
 
-\end{document}
 
+
+\paragraph{Ex. 14.2.6}
+{\it Let $A$ be a subgroup of $S_n$, and let $G$ be any group. Then define $A \wr G$ as in the Mathematical Notes.
+\be
+\item[(a)] Prove that $A \wr G$ is a group under the multiplication defined in the Mathematical Notes.
+\item[(b)] State and prove a version of part (b) of Lemma 14.2.8 for $A \wr G$.
+\item[(c)] Prove that $|A \wr G | = |A| |G|^n$ when $G$ is finite.
+\ee
+}
+
+\begin{proof}
+\be
+\item[(a)]
+Let $G$ be any group and let $A \subset S_n$ be a permutation group. Then set
+$$A \wr G = \{ (\tau; g_1,\ldots,g_n)\, | \, \tau \in A,\  g_1,\ldots,g_n \in G\},$$
+with an operation on this set defined by
+$$(\tau; g_1,\ldots,g_n)(\tau'; g'_1,\ldots,g'_n) = (\tau \tau'; g_{\tau'(1)}g'_1,\ldots,g_{\tau'(n)} g'_n) \in A \wr G.$$
+We write $e$ the identity of $G$, and $()$ the identity of $S_n$.
+
+\be
+\item[$\bullet$] Let $\lambda = (\tau; g_1,\ldots,g_n), \lambda' = (\tau';g'_1,\ldots,g'_n), \lambda''=(\tau'';g''_1,\ldots,g''_n)$ be elements of $A \wr G$. Then
+\begin{align*}
+\lambda(\lambda'\lambda'' )&=  (\tau; g_1,\ldots,g_n)(\tau' \tau''; g_{\tau''(1)}g''_1,\ldots,g_{\tau''(n)} g''_n) \\
+&= (\tau\tau'\tau''; g_{(\tau'\tau'')(1)} g'_{\tau''(1)} g''_1,\ldots,g_{(\tau'\tau'')(n)} g'_{\tau''(n)} g''_n)\\
+(\lambda \lambda')\lambda'' &= (\tau \tau'; g_{\tau'(1)}g'_1,\ldots,g_{\tau'(n)} g'_n)(\tau'';g''_1,\ldots,g''_n)\\
+&=(\tau\tau';h_1,\ldots,h_n)(\tau'';g''_1,\ldots,g''_n)\qquad (\text{where } h_k = g_{\tau'(k)}g'_k)\\
+&=(\tau\tau'\tau''; h_{\tau''(1)} g''_1,\ldots,h_{\tau''(n)} g''_n)\\
+&=(\tau\tau'\tau''; g_{\tau'(\tau''(1))}g'_{\tau''(1)}g''_1,\cdots,g_{\tau'(\tau''(n))}g'_{\tau''(n)}g''_n)\\
+&=(\tau\tau'\tau''; g_{(\tau'\tau'')(1)} g'_{\tau''(1)} g''_1,\ldots,g_{(\tau'\tau'')(n)} g'_{\tau''(n)} g''_n)
+\end{align*}
+thus $\lambda(\lambda'\lambda'' ) = (\lambda \lambda')\lambda'' $, and the law is associative.
+
+\item[$\bullet$] Write $\varepsilon = (();e,\ldots,e) = (\iota; e_1,\ldots, e_n)$, where $\iota = ()$, and $e_k = e, k=1,\ldots,n$. Then
+\begin{align*}
+\varepsilon \lambda &= (\iota;e_1,\ldots,e_n)(\tau; g_1,\ldots,g_n)\\
+&=(\tau; e_{\tau'(1)}g_1,\ldots,e_{\tau'(n)} g_n)\\
+&= (\tau; g_1,\ldots,g_n) = \lambda\qquad (\text{since } e_{\tau'(k)} = e)\\
+\lambda \varepsilon &= (\tau; g_{\iota(1)} e_1,\ldots,g_{\iota(n)} e_n)\\
+&= (\tau; g_1,\ldots,g_n) = \lambda \qquad(\text{since } \iota(k) = k, e_k = e).
+\end{align*}
+Therefore $\varepsilon =(();e,\ldots,e) $ is the identity of $A \wr G$.
+
+\item[$\bullet$] Set $\mu = (\tau^{-1}; h_1,\ldots,h_n) = (\tau^{-1}; g_{\tau^{-1}(1)}^{-1}, \ldots,g_{\tau^{-1}(n)}^{-1})$, with $h_k = g_{\tau^{-1}(k)}^{-1},\ k=1,\ldots,n$. Then
+\begin{align*}
+\lambda \mu &= (\tau; g_1,\ldots,g_n)(\tau^{-1}; h_1,\ldots,h_n)\\
+&=((); g_{\tau^{-1}(1)} h_1,\ldots,g_{\tau^{-1}(n)} h_n)\\
+&=((); g_{\tau^{-1}(1)} g_{\tau^{-1}(1)}^{-1}, \ldots,g_{\tau^{-1}(n)} g_{\tau^{-1}(n)}^{-1})\\
+&=((); e,\ldots,e) =\varepsilon\\
+\mu \lambda &= (\tau^{-1}; h_1,\ldots,h_n)(\tau; g_1,\ldots,g_n)\\
+&=((); h_{\tau(1)} g_1,\ldots,h_{\tau(n)} g_n\\
+&=((); g_{\tau^{-1}(\tau(1))}^{-1} g_1,\ldots,g_{\tau^{-1}(\tau(n))}^{-1} g_n)\\
+&=((); g_1^{-1}g_1,\ldots, g_n^{-1}g_n) = (();e,\ldots,e) = \varepsilon.
+\end{align*}
+Therefore every element in $A \wr G$ is invertible.
+
+$A \wr G$ is a group under the multiplication defined in the Mathematical Notes.
+\ee
+\item[(b)] For the group $A \wr G$ of part (a), where $A \subset S_n$ and $G$ is a group, we show the following lemma:
+
+{\bf Lemma.}
+{\it The map
+$$
+\varphi 
+\left\{
+\begin{array}{ccc}
+A \wr G & \to A\\
+(\tau; g_1,\ldots,g_n) & \mapsto \tau
+\end{array}
+\right.
+$$
+is a group homomorphism that is surjective and whose kernel is isomorphic to $G^n$.
+}
+
+\bigskip
+
+Let $\lambda = (\tau; g_1,\ldots,g_n) , \lambda' = (\tau'; g'_1,\ldots,g'_n)$ be any elements of $A \wr G$. By definition,
+$\lambda \lambda' = (\tau \tau'; g_{\tau'(1)}g'_1,\ldots,g_{\tau'(n)} g'_n),$
+so that
+$$\varphi(\lambda \lambda') = \tau \tau' = \varphi(\lambda) \varphi(\lambda').$$
+$\varphi$ is a group homormphism.
+
+If $\tau$ is any element of $A$, then $\varphi(\tau; e,\ldots,e) = \tau$, where $(\tau; e,\ldots,e) \in A \wr G$. Therefore $\varphi$ is surjective.
+
+Moreover $(\tau; g_1,\ldots,g_n) \in \ker \varphi$ if and only if $\tau = ()$, therefore
+$$\ker \varphi = \{\iota; g_1,\ldots, g_n)\, |\, (g_1,\ldots,g_n) \in G^n\}, \qquad \text{where } \iota = ().$$
+
+Consider
+$$
+\psi
+\left\{
+\begin{array}{ccc}
+\ker \varphi & \to & G^n\\
+(\iota; g_1,\ldots,g_n) & \mapsto &(g_1,\ldots, g_n)
+\end{array}
+\right.
+$$
+Then $\psi$ is bijective (with inverse map $(g_1,\ldots,g_n) \mapsto (\iota,g_1,\ldots,g_n)$). We verify that $\psi$ is a group homomorphism: if $\lambda = (\iota; g_1,\ldots,g_n) , \lambda' = (\iota; g'_1,\ldots,g'_n)$ are elements of $\ker \varphi$, then
+\begin{align*}
+\psi (\lambda \lambda') &= \psi((\iota; g_1,\ldots,g_n)(\iota; g'_1,\ldots,g'_n))\\
+&=\psi(\iota; g_{\iota(1)} g'_1,\ldots, g_{\iota(n)} g'_n)\\
+&=\psi(\iota; g_1 g'_1,\ldots, g_n g'_n)\qquad (\text{since } \iota(k) = k)\\
+&=(g_1 g'_1,\ldots, g_n g'_n)\\
+&=(g_1\ldots,g_n)(g'_1,\ldots,g'_n)\\
+&= \psi(\lambda) \psi(\lambda').
+\end{align*}
+So $\psi$ is an group isomorphism, and $\ker \varphi \simeq G^n$.
+
+\item[(c)] By part (b), since $\varphi$ is a surjective homomorphism,
+$$
+(A\wr G )/ \ker \varphi \simeq A,
+$$
+and $\ker \varphi \simeq G^n$. Therefore
+$$
+|A| = |A \wr G| / |\ker \varphi| = |A\wr G|/ |G|^n,
+$$
+which proves
+$$|A \wr G| = |A| |G|^n.$$
+\ee
+\end{proof}
+
+\end{document}
