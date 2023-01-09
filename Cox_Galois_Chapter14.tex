@@ -341,7 +341,7 @@ S_3 \wr S_2 & \to & \{-1,1\}\\
 $$
 Since $\mathrm{sgn}$ is a morphism, its restriction $\varphi$ is also a morphism, and $\varphi$ is surjective (onto), because $\varphi(e) = 1$, and $\varphi((1\,2)) = -1$, where $(1\,2) \in S_3\wr S_2$. Moreover the kernel of $\varphi$ is $\ker(\varphi) =  (S_3 \wr S_2) \cap A_6$.
 
-Therefore $\mathrm{im}(\varphi)  \{-1,1\} \simeq (S_3 \wr S_2)/ ((S_3 \wr S_2) \cap A_6)$. This shows that $$|(S_3 \wr S_2) \cap A_6| = \frac{1}{2} |S_3 \wr S_2| = 24.$$
+Therefore $\mathrm{im}(\varphi) =  \{-1,1\} \simeq (S_3 \wr S_2)/ ((S_3 \wr S_2) \cap A_6)$. This shows that $$|(S_3 \wr S_2) \cap A_6| = \frac{1}{2} |S_3 \wr S_2| = 24.$$
 
 \item[(b)] Let $\tau \in S_n$. Then $\tau$ is in the centralizer of $\sigma = (1\,2)(3\,4)(5\,6)$ if and only if
 $$\tau (1\,2)(3\,4)(5\,6) \tau^{-1} = (1\,2)(3\,4)(5\,6),$$
@@ -584,9 +584,9 @@ H_2&H_1&H_3&H_4
 \end{array}
 \right)
 $, which corresponds to the transposition $(1\,2) \in S_4$.
-Similarly
+Similarly,
 \begin{align*}
-h\lambda_1h^{-1}&= (1\,2)(3\,4\,5\,6)(1\,3\,5)(2\,4\,6)(3\,6\,4\,5)(1\,2)\\
+h\lambda_1h^{-1}&= (1\,2)(3\,5\,4\,6)(1\,3\,5)(2\,4\,6)(3\,6\,4\,5)(1\,2)\\
 &=
 \left(
 \begin{array}{cccccccc}
@@ -594,7 +594,7 @@ h\lambda_1h^{-1}&= (1\,2)(3\,4\,5\,6)(1\,3\,5)(2\,4\,6)(3\,6\,4\,5)(1\,2)\\
  6&5&&1&2&&4&3 \\
   \end{array}
   \right) =(1\,6\,3)(2\,5\,4) = \lambda_2^2,\\
- h\lambda_2h^{-1} &= (1\,2)(3\,4\,5\,6)(1\,3\,6)(4\,5\,2)(3\,6\,4\,5)(1\,2)\\
+ h\lambda_2h^{-1} &= (1\,2)(3\,5\,4\,6)(1\,3\,6)(4\,5\,2)(3\,6\,4\,5)(1\,2)\\
  &=
  \left(
 \begin{array}{cccccccc}
@@ -602,14 +602,14 @@ h\lambda_1h^{-1}&= (1\,2)(3\,4\,5\,6)(1\,3\,5)(2\,4\,6)(3\,6\,4\,5)(1\,2)\\
  6&5&&2&1&&3&4 \\
   \end{array}
   \right) = (1\,6\,4)(2\,5\,3) = \lambda_3,\\
-   h\lambda_3h^{-1} &= (1\,2)(3\,4\,5\,6)(1\,6\,4)(5\,3\,2)(3\,6\,4\,5)(1\,2)\\
+   h\lambda_3h^{-1} &= (1\,2)(3\,5\,4\,6)(1\,6\,4)(5\,3\,2)(3\,6\,4\,5)(1\,2)\\
  &=
  \left(
 \begin{array}{cccccccc}
 1 & 2 & & 3 & 4 & & 5 & 6\\
  4&3&&6&5&&1&2 \\
   \end{array}
-  \right) = (1\,4\,5)(2\,6\,4) = \lambda_4,
+  \right) = (1\,4\,5)(2\,3\,6) = \lambda_4,
 \end{align*}
 thus $hH_1h^{-1} = H_2, hH_2h^{-1} = H_3, hH_1h^{-1} = H_4$, and since $\psi(g)$ is a permutation, $h H_4h^{-1} = H_1$. Therefore 
 $\psi(g) = \left(
@@ -753,11 +753,13 @@ $$\lambda_k = \mu^{-1}_{(\tau^{-1}\rho \tau)(k)}\nu_{\tau(k)}\mu_k,\qquad k = 1,
 and at the index $j$, using $\theta = \nu_i = \nu_{\tau(j)}$,
 \begin{align*}
 \lambda_j &= \mu^{-1}_{(\tau^{-1}\rho \tau)(j)}\nu_{\tau(j)}\mu_j\\
-&=\mu^{-1}_{(\tau^{-1}\rho \tau)(j)}\theta\mu_j\\
+&=\mu^{-1}_{(\tau^{-1}\rho \tau)(j)}\theta\mu_j.\\
 \end{align*}
 Since $i = \tau(j)$ and $\rho(i) = i$, 
 $$(\tau^{-1} \rho\tau)(j) = (\tau^{-1} \rho)(i) = \tau^{-1} (i) = j,$$
 thus
 $$\lambda_j = \mu_j^{-1} \theta \mu_j.$$
 \end{proof}
+
 \end{document}
+
