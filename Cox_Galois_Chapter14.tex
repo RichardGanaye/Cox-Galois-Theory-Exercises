@@ -882,4 +882,128 @@ $$|A \wr G| = |A| |G|^n.$$
 \ee
 \end{proof}
 
+\paragraph{Ex. 14.2.7}
+{\it Let $A \wr G$ be as in Exercise 6, and let $H$ be the set of all functions
+$$\phi:\{1,\ldots,n\} \to G.$$
+\be
+\item[(a)] Given $\phi,\chi \in H$, define $\phi \chi \in H$ by $(\phi \chi)(i) = \phi(i)\chi(i)$. Prove that this makes $H$ into a group isomorphic to the product group $G^n$.
+\item[(b)] Elements of $A \wr G$ can be written $(\tau,\phi)$, where $\phi \in H$. Prove that in this notation, (14.7) becomes
+$$(\tau,\phi)(\tau',\phi') = (\tau \tau',((\tau')^{-1} \cdot \varphi) \phi').$$
+\item[(c)] $A \subset S_n$ acts on $\{1,\ldots,n\}$. Show that this induces an action of $A$ on $H$ via $(\tau\cdot \phi)(i) = \phi(\tau^{-1}(i))$. Be sure you understand why the inverse is necessary.
+\item[(d)] The action of part (c) enable us to define the semidirect product $H \rtimes A$. Using the description of $A \wr G$ given in part (b), prove that the map
+$$(\tau, \phi) \mapsto (\tau \cdot \phi, \tau)$$
+defines a group isomorphism $A \wr G \simeq H \rtimes A$. This shows that wreath products can be represented as semidirect products.
+
+\ee
+}
+\begin{proof}
+\be
+\item[(a)] Consider the two maps
+$$
+\varphi
+\left\{
+\begin{array}{ccc}
+H & \to &G^n\\
+\phi & \mapsto &(\phi(1),\ldots,\phi(n)),
+\end{array}
+\right.
+\qquad
+\psi
+\left\{
+\begin{array}{ccc}
+G^n & \to &H\\
+(x_1,\ldots,x_n)& \mapsto &
+\xi
+\left\{
+   \begin{array}{ccc}
+   \{1,\ldots,n\} & \to & G\\
+   i& \mapsto & x_i.
+   \end{array}
+   \right.
+\end{array}
+\right.
+$$
+Then $\psi \circ \varphi = 1_H$ and $\varphi \circ \psi = 1_{G^n}$, therefore $\varphi$ is bijective.
+
+Moreover, for all $(\phi,\chi) \in H$,
+\begin{align*}
+\varphi(\phi \chi) &= ((\phi\chi)(1),\ldots, (\phi \chi)(n))\\
+&=(\phi(1) \chi(1), \ldots, \phi(n) \chi(n))\\
+&= (\phi(1),\ldots,\phi(n)) (\chi(1),\ldots,\chi(n))\\
+&= \varphi(\phi) \varphi(\chi)).
+\end{align*}
+Therefore $H \simeq G^n$ via $\varphi$.
+
+\item[(b,c)] If we define $\phi^\tau$, for $\tau \in S_n$ and $\phi \in H$, by $(\phi^\tau)(i) = \phi(\tau(i)),\ i=1,\ldots,n$, we obtain a right action: if $\tau, \tau' \in S_n$, for all $i\in\{1,\ldots,n\}$,
+$$((\phi^{\tau})^{\tau'})(i) =  (\phi^\tau)(\tau'(i)) = \phi(\tau(\tau'(i))) = \phi((\tau \tau')(i)) = \phi^{\tau \tau'}(i)),$$
+thus $(\phi^{\tau})^{\tau'} = \phi^{\tau \tau'}$. To obtain a left action, we must define, as in part (c),
+$$(\tau\cdot \phi)(i) = \phi(\tau^{-1}(i)),\ i=1,\ldots,n.$$
+Then
+$$(\tau' \cdot (\tau\cdot \phi))(i) = (\tau\cdot \phi)(\tau'^{-1}(i)) = \phi(\tau^{-1}(\tau'^{-1}(i))) = \phi(\tau'\tau)^{-1}(i) = ((\tau' \tau)\cdot \phi)(i),$$
+so that $\tau' \cdot (\tau\cdot \phi) = (\tau' \tau)\cdot \phi)$ (and $e \cdot \tau = \tau$).
+
+This is a proof of part (c), and this explains the recurrent and stressful injonction from D.A.Cox ``{\bf Be sure you understand} why the inverse is necessary''.
+
+Using this action for part (b), we define $(\tau, \phi)$ for $\tau \in S_n, \phi \in H = G^{\{1,\cdots,n\}}$,by
+$$(\tau, \phi) = (\tau; \phi(1),\ldots,\phi(n)),$$
+so that
+$$(\tau, \phi) = (\tau; g_1,\ldots,g_n) \iff  \phi(1) = g_1,\ldots,\phi(n) = g_n.$$
+If $(\tau, \phi) = (\tau; g_1,\ldots,g_n), (\tau', \phi') = (\tau; g'_1,\ldots,g'_n)$, then
+\begin{align*}
+(\tau, \phi) (\tau', \phi') &= (\tau; g_1,\ldots,g_n)(\tau; g'_1,\ldots,g'_n)\\
+&=(\tau \tau'; g_{\tau'(1)}g'_1,\ldots,g_{\tau'(n)} g'_n) \\
+&=(\tau \tau'; \phi(\tau'(1))\phi'(1),\ldots,\phi(\tau'(n)) \phi'(n)\\
+&=(\tau \tau'; ((\tau')^{-1}\cdot\phi)(1)\phi'(1),\ldots,((\tau')^{-1}\cdot\phi)(n))\phi'(n)\\
+&= (\tau \tau'; ((\tau')^{-1}\cdot\phi)\phi').
+\end{align*}
+
+\item[(d)] Consider the map
+$$
+\varphi
+\left\{
+\begin{array}{ccc}
+A \wr G & \to & H \rtimes A\\
+(\tau,\phi) & \mapsto & (\tau\cdot \phi, \tau).
+\end{array}
+\right.
+$$
+If $\psi : H \rtimes A \to A \wr G$ is defined by $\psi(\chi, \tau) = (\tau, \tau^{-1} \cdot \chi)$, then, for all $\tau \in S_n, \phi,\chi \in H$,
+\begin{align*}
+(\psi \circ \varphi)(\tau, \phi) &= \psi(\tau\cdot \phi, \tau) = (\tau, \tau^{-1}\cdot (\tau \cdot \phi) = (\tau, \phi),\\
+(\varphi \circ \psi)(\chi, \tau) &= \varphi(\tau, \tau^{-1} \cdot \chi) = (\tau \cdot (\tau^{-1} \cdot \chi), \tau) = (\chi, \tau). 
+\end{align*}
+Thus $\psi \circ \varphi = 1_{A \wr G},\  \varphi \circ \psi = 1_{H \rtimes A}$. This proves that $\varphi$ is bijective.
+
+Recall that the binary operation in $ H \rtimes A$ is defined by (6.9):
+$$(\phi,\tau) (\phi',\tau') = (\phi(\tau\cdot \phi'), \tau \tau').
+$$
+We verify that $\varphi$ is a group homomorphism. Note first that, for $\tau \in S_n, \phi \chi \in H$, 
+$$\tau \cdot (\phi \chi) = (\tau \cdot \phi)(\tau \cdot \chi).$$
+Indeed, for all $i \in \{1,\ldots,n\}$,
+\begin{align*}(\tau \cdot (\phi \chi))(i) &= (\phi\chi)(\tau^{-1}(i))\\
+&=\phi(\tau^{-1}(i)) \chi(\tau^{-1}(i))\\
+&=(\tau \cdot \phi)(i) (\tau \cdot \chi)(i)\\
+&=((\tau \cdot \phi)(\tau \cdot \chi))(i).
+\end{align*}
+Using this rule, we obtain
+\begin{align*}
+\varphi((\tau,\phi) (\tau',\phi')) &= \varphi(\tau \tau'; ((\tau')^{-1}\cdot\phi)\phi')\\
+&= ((\tau\tau')\cdot((\tau')^{-1}\cdot\phi)\phi'),\tau \tau')\\
+&=  ((\tau\tau')\cdot((\tau')^{-1}\cdot\phi) (\tau\tau')\cdot\phi'), \tau \tau')\\
+&=((\tau \cdot\phi) ((\tau\tau' )\cdot \phi'), \tau \tau'),\\
+\end{align*}
+and using the binary operation in $H\rtimes A$,
+\begin{align*}
+\varphi(\tau, \phi) \varphi(\tau',\phi') &=(\tau\cdot \phi, \tau)((\tau'\cdot \phi', \tau')\\
+&= ((\tau \cdot \phi) (\tau \cdot (\tau' \cdot \phi')), \tau \tau')\\
+&=((\tau \cdot\phi) ((\tau\tau' )\cdot \phi'), \tau \tau'),
+\end{align*}
+thus $\varphi((\tau,\phi) (\tau',\phi')) = \varphi(\tau, \phi) \varphi(\tau',\phi') $.
+We have proved that $\varphi$ is a group isomorphism, so
+$$A \wr G \simeq H \rtimes A = G^{\{1,\ldots,n\} }\rtimes A.$$ 
+Wreath products can be represented by semidirect products.
+\ee
+\end{proof}
+
+
 \end{document}
