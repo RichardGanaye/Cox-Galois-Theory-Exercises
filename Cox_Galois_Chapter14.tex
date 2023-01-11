@@ -1005,5 +1005,73 @@ Wreath products can be represented by semidirect products.
 \ee
 \end{proof}
 
+\paragraph{Ex. 14.2.8}
+{\it
+The goal of this exercise is to relate Definition 14.2.2 to Galois's definition of not primitive. Let $f \in F[x]$ be monic, separable, and irreducible with splitting field $F \subset L$. Also assume that $f$ is imprimitive with blocks of roots given by $R_1,\ldots,R_m$, where each block has $n$ elements (thus $\deg(f) = mn$). Let $f_i$ be the monic polynomial whose roots are the elements of $R_i$, and let $K \subset L$ be the fixed field of $$\{\sigma \in \Gal(L/F)\, | \, \sigma(R_i) = R_i \text{ for all } i\}.$$
+\be
+\item[(a)] Show that $f = \prod_{i=1}^m f_i$ and that $f_i \in K[x]$ for all $i$.
+\item[(b)] In Galois' definition, $K$ is obtained by adjoining the roots of a separable polynomial of degree $m$. In modern terms, Galois wants $F \subset K$ to be Galois extension such that $\Gal(K/F)$ (*) is isomorphic to a subgroup of $S_m$. Prove that the field $K$ defined in part (a) has these properties.
+See Exercise 14 for some examples.
+
+[(*) misprint in Cox.]
+\ee
+}
+
+\begin{proof}
+\be
+\item[(a)] By Definition 14.2.2, $R = R_1 \cup \cdots \cup R_m$ (disjoint union) is the set of roots of $f$. Since $f$ is separable, by definition of $f_i$,
+$$f = \prod_{\alpha \in R} (x - \alpha) = \prod_{i=1}^m \prod_{\alpha \in R_i} (x - \alpha) = \prod_{i=1}^m f_i.$$
+Let 
+$$G = \{\sigma \in \Gal(L/F)\, | \, \forall i \in \gcro 1, m \dcro, \ \sigma(R_i) = R_i \}.$$
+If $G_i = \{\sigma \in \Gal(L/F)\, | \, \sigma(R_i) = R_i \}$ for $i = 1,\ldots,n$, then $G = \bigcap\limits_{i=1}^m G_i$.
+
+Each $G_i$ is a subgroup of $\Gal(L/F)$: $e(R_i) = R_i$, and if $\sigma, \tau \in R_i$, then  $(\sigma \tau)(R_i) = \sigma(R_i) = R_i$ and $R_i = \sigma^{-1}(R_i)$. Therefore $G = \bigcap\limits_{i=1}^m G_i$ is a subgroup of $\Gal(L/F)$.
+
+Let $K = L_G$ be the fixed field of $G$. By the Galois correspondence, $G = \Gal(L/K)$.
+
+If $\sigma \in G_i$, since $\sigma(R_i) = R_i$, where le restriction of $\sigma$ to $R_i$ is bijective, then 
+$$\sigma \cdot f_i = \prod_{\alpha \in R_i} (x - \sigma(\alpha)) = \prod_{\beta \in R_i} (x - \beta) = f_i, \qquad (\beta = \sigma(\alpha)).$$
+Therefore, if $\sigma \in G = \bigcap\limits_{i=1}^m G_i$, then for all $i \in \{1,\ldots,m\}$, $\sigma\cdot f_i = f_i$. The coefficients of $f_i$ are in the fixed field $K$ of $G$, so that
+$$f_i\in K[x],\ i=1,\ldots,m.$$
+To give a first example, $f = x^4 - 2$ is imprimitive with blocks $$R_1 =\{\sqrt[4]{2},-\sqrt[4]{2}\},R_2 = \{i \sqrt[4]{2},-i\sqrt[4]{2}\}.$$
+
+If $\tau,\sigma$ are defined by $\tau(\sqrt[4]{2}) = \sqrt[4]{2}, \tau(i) = -i$, and $\sigma(\sqrt[4]{2}) = i \sqrt[4]{2}, \sigma(i) = i$, then
+$$\Gal(L/F) = \{e,\sigma,\sigma^2,\sigma^3, \tau, \sigma \tau, \sigma^2 \tau, \sigma^3\tau\} \simeq D_8.$$
+Here $G = G_1 = G_2 = \{e,\sigma^2,\tau,\sigma^2 \tau\}$, and $K = L_G = \Q(\sqrt{2})$ (see Ex. 6.3.2 and Ex. 7.3.3).
+
+We verify $f_1(x) = x^2 -\sqrt{2}, f_2(x) = x^2 + \sqrt{2} \in K[x]$.
+
+\item[(b)] We prove that $G$ is a normal subgroup of $\Gal(L/F)$. 
+
+Let $\lambda \in \Gal(L/F)$, and $\sigma \in G$. Since $f$ is imprimitive, $\lambda \in \Gal(L/F)$ permutes the blocks $R_i$: there exists $\tau \in S_m$ such that
+$$\lambda(R_i) = R_{\tau(i)},\ i=1,\ldots,m.$$
+Let $j$ be any fixed index in $\{1,\ldots,m\}$, and $i$ such that $\tau(i) = j$. Since $\sigma \in G \supset G_i$, $\sigma(R_i) = R_i$, thus
+$$(\lambda \sigma \lambda^{-1})(R_j) = (\lambda \sigma)(R_i) = \lambda(R_i) = R_j.$$
+Since this is true for all $j \in \{1,\ldots,m\}$, $\lambda \sigma \lambda^{-1} \in G$. This proves that $G$ is a normal subgroup of $\Gal(L/F)$. Therefore $F \subset K$ is a Galois extension (Theorem 7.2.5). 
+
+Now we prove that $\Gal(K/F)$ is isomorphic to a subgroup of $S_m$.
+
+Since $f$ is imprimitive with blocks of roots given by $R_1,\ldots,R_m$, for each $\sigma \in \Gal(L/F)$, there exists $\tau \in S_m$ such that $\sigma(R_i) = R_{\tau(i)},\ i=1,\ldots,m$.
+Consider the map $\varphi$ sending $\sigma$ to $\tau$:
+$$
+\varphi
+\left\{
+\begin{array}{ccl}
+\Gal(L/F) & \to & S_m\\
+\sigma & \mapsto &\tau : \forall i \in \gcro 1,m \dcro,\ \sigma(R_i) = R_{\tau(i)}.
+\end{array}
+\right.
+$$
+Then , for all $\sigma \in \Gal(L/F)$,
+$$\varphi(\sigma) = ()  \iff \forall i \in \gcro 1,m \dcro,\ \sigma(R_i) = R_i \iff \sigma \in G.$$
+Therefore, $\ker(\varphi) = G$, and by the Galois correspondence (see part (a)) $G = \Gal(L/K)$, so that
+$$\ker(\varphi) = G = \Gal(L/K).$$
+Then, by Theorem 7.3.2, since $K$ is Galois over $F$,
+$$ S_m \supset \mathrm{im}(\varphi) \simeq \Gal(L/F)/ \ker(\varphi) = \Gal(L/F)/\Gal(L/K) \simeq \Gal(K/F).$$
+Therefore $\Gal(K/F)$ is isomorphic to the subgroup $\mathrm{im}(\varphi)$ of $S_m$.
+\ee
+\end{proof}
+
+
 
 \end{document}
