@@ -954,7 +954,7 @@ If $(\tau, \phi) = (\tau; g_1,\ldots,g_n), (\tau', \phi') = (\tau; g'_1,\ldots,g
 &=(\tau \tau'; g_{\tau'(1)}g'_1,\ldots,g_{\tau'(n)} g'_n) \\
 &=(\tau \tau'; \phi(\tau'(1))\phi'(1),\ldots,\phi(\tau'(n)) \phi'(n)\\
 &=(\tau \tau'; ((\tau')^{-1}\cdot\phi)(1)\phi'(1),\ldots,((\tau')^{-1}\cdot\phi)(n))\phi'(n)\\
-&= (\tau \tau'; ((\tau')^{-1}\cdot\phi)\phi').
+&= (\tau \tau', ((\tau')^{-1}\cdot\phi)\phi').
 \end{align*}
 
 \item[(d)] Consider the map
@@ -989,7 +989,7 @@ Using this rule, we obtain
 \begin{align*}
 \varphi((\tau,\phi) (\tau',\phi')) &= \varphi(\tau \tau'; ((\tau')^{-1}\cdot\phi)\phi')\\
 &= ((\tau\tau')\cdot((\tau')^{-1}\cdot\phi)\phi'),\tau \tau')\\
-&=  ((\tau\tau')\cdot((\tau')^{-1}\cdot\phi) (\tau\tau')\cdot\phi'), \tau \tau')\\
+&=  ((\tau\tau')\cdot((\tau')^{-1}\cdot\phi) ((\tau\tau')\cdot\phi'), \tau \tau')\\
 &=((\tau \cdot\phi) ((\tau\tau' )\cdot \phi'), \tau \tau'),\\
 \end{align*}
 and using the binary operation in $H\rtimes A$,
@@ -1072,6 +1072,74 @@ Therefore $\Gal(K/F)$ is isomorphic to the subgroup $\mathrm{im}(\varphi)$ of $S
 \ee
 \end{proof}
 
+\paragraph{Ex.14.2.14} {\it Here are some examples to illustrate Galois's definition of imprimitive. We will use the notation of Exercise 8. Let $F$ be a field of characteristic different from 2 or 3.
+\be
+\item[(a)] Let $f = x^6 + bx^4+cx^2 +d \in F[x]$ be irreducible with splitting field $F \subset L$. Show that the splitting field of $x^3+bx^2+cx+d$ gives an intermediate field $F\subset K \subset L$ such that $F \subset K$ is Galois and $f=f_1f_2f_3$, where $f_i \in K[x]$ has degree 2 for $i=1,2,3$. Also explain how $K$ relates to the field $K$ constructed in Exercise 8.
+\item[(b)] Work out the analogous theory when $f = x^6 + bx^3+c \in F[x]$ is irreducible.
+\ee
+}
+\begin{proof}
 
+\item[(a)] By hypothesis, $f = x^6 + bx^4+cx^2 +d$ is irreducible. Since the characteristic of $F$ is different from 2 or 3, $f' = 6x^5+\cdots \ne 0$, thus $\gcd(f,f') =1$, and $f$ is separable.
 
+If $\alpha$ is a root of $f$, then $-\alpha$ is a root of $f$. Moreover $\alpha \ne 0$, otherwise $d= 0$ and $f$ would not be irreducible, therefore $\alpha \ne -\alpha$. Since $f$ is separable, the roots of $f$ can be partitioned into three blocks
+$$R_1 = \{\alpha,-\alpha\},\qquad R_2 = \{\beta,-\beta\},\qquad R_3 = \{\gamma, -\gamma\}.$$
+If $\sigma \in \Gal(L/F)$ and if $\lambda \in R_i$ is a root of $f$, then $\sigma(\lambda) \in R_j$ for some index $\lambda$, and $\sigma(-\lambda) = - \sigma(\lambda) \in R_j$, thus $\sigma(R_i) = R_j$. Therefore $f$ is imprimitive, with blocks $R_1,R_2,R_3$. By Corollary 14.2.10, $\Gal(L/F)$ is isomorphic to a subgroup of $S_3 \wr S_2$.
+
+Since $\alpha,-\alpha, \beta,-\beta,\gamma,-\gamma$ are the distinct roots of $f$, then $\alpha^2,\beta^2,\gamma^2$ are distinct and they are the roots of $g = x^3 +bx^2+cx+d$. Therefore
+$$g =  x^3 +bx^2+cx+d = (x-\alpha^2)(x-\beta^2)(x-\gamma^2),$$
+so that a splitting field $K$ of $g$ over $F$ is 
+$$K = F(\alpha^2,\beta^2,\gamma^2),\qquad F \subset K \subset L.$$
+Since $K$ is the splitting field of the separable polynomial $g$, $F \subset K$ is a Galois extension. Note that $g$ is irreducible over $F$, otherwise any non trivial factorization of $g$ over $F$ gives a factorisation of $f$ over $F$. Therefore $K \ne F$.
+
+Moreover,
+$$f = g(x^2) = (x^2-\alpha^2)(x^2-\beta^2)(x^2-\gamma^2) = f_1f_2f_3,$$
+where $f_1 = x^2 - \alpha^2, f_2 = x^2 - \beta^2,f_3 = x^2 -\gamma^2 \in K[x]$. This proves the first assertion of part (a).
+
+\bigskip
+
+It remains to prove that $K$ is the fixed field of the subgroup $G$ of $\Gal(L/F)$ defined in Exercise 8:
+$$G = \{\sigma \in \Gal(L/F)\, | \, \forall i \in \gcro 1, 3 \dcro, \ \sigma(R_i) = R_i \}.$$
+To give an explicit description of $G$, note that
+\begin{align*}
+\sigma \in G &\iff \sigma(\alpha) = \pm \alpha,\ \sigma(\beta) = \pm \beta, \ \sigma(\gamma) = \pm \gamma\\
+&\iff \sigma(\alpha^2) = \alpha^2,\ \sigma(\beta^2) = \beta^2, \sigma(\gamma^2) = \gamma^2\\
+&\iff \forall \lambda \in K,\ \sigma(\lambda) = \lambda,
+\end{align*}
+where the last equivalence is explained by the fact that every $\lambda \in K = F(\alpha^2,\beta^2,\gamma^2)$ is a polynomial in $\alpha^2,\beta^2,\gamma^2$.
+
+This proves that every element of $K$ is fixed by every $\sigma \in G$, thus $K \subset L_G$, where $L_G$ is the fixed field of $G$.
+
+Since the Galois correspondence is order reversing, $K \subset L_G$ implies $\Gal(L/K) \supset G$. To prove the inverse inclusion, take $\sigma \in \Gal(L/K)$. Then $\sigma(\lambda) = \lambda$ for all $\lambda \in K$, and the preceding equivalence shows that $\sigma \in G$. Thus $\Gal(L/K) = G$. Applying the Galois correspondence once more, the fixed fields of $\Gal(L/K)$ and $G$ are equal, that is
+$$K = L_G.$$
+$K$ is the fixed field of $G =  \{\sigma \in \Gal(L/F)\, | \, \sigma(R_1) = R_1,\sigma(R_2) = R_2, \sigma(R_3) = R_3 \}$.
+
+\item[(b)] The same first argument as in part (a) shows that the irreducible polynomial $f = x^6 + bx^3 + c \in F[x]$ is separable.
+ If $\alpha$ is a root of $f$ in $L$, then $ \lambda = \alpha^3 \in L $ is a root of $g = x^2 +bx+c$. Let $\mu = -b-\lambda \in L$. Then $\mu$ is a root of $g$: 
+ $$\mu^2+b\mu+c = (-b-\lambda)^2 + b(-b-\lambda)+c = \lambda^2 + b\lambda + c = 0.$$
+Moreover $\lambda \ne \mu$, otherwise $b = -2\lambda, c = -\lambda^2 - b\lambda = \lambda^2$, and $g = (x-\lambda)^2$, where $\lambda = -b/2 \in F$, so that  $f =g(x^3) = (x^3-\lambda)^2$ would not be irreducible over $f$. Therefore
+$$g = (x- \lambda)(x-\mu),\qquad \lambda\ne \mu.$$
+Write $K = F(\lambda,\mu)$. Then $F\subset K \subset L$ is an intermediate field which is a splitting field of $g$ over $F$.
+If $\lambda \in F$, then $\mu \in F$ and $f = g(x^3) = (x^3 - \lambda)(x^3 - \mu)$ would not be irreducible over $F$. Therefore $\lambda \not \in F,\mu \not \in F$, $g$ is irreducible over $F$. $K$ is the splitting field of the separable polynomial $g$, thus $F \subset K$ is a Galois extension, where $F \subsetneq K \subset L$.
+
+Moreover,
+$$f = g(x^2) = (x^3 - \lambda)(x^3 - \mu) = f_1 f_2,$$
+where $f_1 = x^3 - \lambda, f_2 = x^3 - \mu \in K[x]$.
+Therefore three roots $\alpha,\beta,\gamma$ of $f$ are the roots of $x^3 -\lambda$, and three other roots $\alpha',\beta',\gamma'$ of $f$ are the roots of $x^3 - \mu$ :
+$$\alpha^3 = \beta^3 = \gamma^3 = \lambda,\qquad \alpha'^3 = \beta'^3 = \gamma'^3 = \mu.$$
+This gives the blocks
+$$R_1 = \{\alpha, \beta, \gamma\},\qquad R_2 = \{\alpha',\beta',\gamma'\}.$$
+If $\sigma \in \Gal(L/F)$, then $g = \sigma\cdot g = (x -\sigma(\lambda))(x - \sigma(\mu))$, thus $\{\lambda, \mu\} = \{\sigma(\lambda), \sigma(\mu)\}$: $\sigma$ fixes $\lambda, \mu$, or exchanges $\lambda, \mu$. Since $\alpha,\beta,\gamma$ are the roots of $x^3 - \lambda$, $\sigma(\alpha), \sigma(\beta), \sigma(\gamma)$ are the roots of $x^3 - \sigma(\lambda)$, thus $\sigma(R_1) = R_1$ or $\sigma(R_1) = R_2$, and similarly $\sigma(R_2) = R_1$ or $R_2$. This proves that $f$ is imprimitive, with blocks $R_1,R_2$, and $\Gal(L/F)$ is isomorphic to a subgroup of $S_2 \wr S_3$, whose order is $2(3!)^2 = 72$.
+
+Here 
+$$G = \{\sigma \in \Gal(L/F) \,|\, \sigma(R_1) = R_1,\ \sigma(R_2) = R_2\}.$$
+Since $\alpha,\beta,\gamma$ are the roots of $x^3 -\lambda$, and $\alpha',\beta',\gamma'$ the roots of $x^3 -\mu$, where $\{\lambda, \mu\} = \{\sigma(\lambda), \sigma(\mu)\}$, then, for all $\sigma \in \Gal(L/F)$,
+\begin{align*}
+\sigma \in G &\iff \sigma(\{\alpha,\beta, \gamma\} = \{\alpha,\beta,\gamma\},\  \sigma(\{\alpha',\beta', \gamma'\}) = \{\alpha',\beta',\gamma'\}\\
+&\iff \sigma(\lambda) = \lambda,\ \sigma(\mu) = \mu\\
+&\iff \forall \xi \in K,\ \sigma(\xi) \in K.
+\end{align*}
+This proves as in part (a) that $K = L_G$.
+
+\end{proof}
 \end{document}
