@@ -1072,6 +1072,110 @@ Therefore $\Gal(K/F)$ is isomorphic to the subgroup $\mathrm{im}(\varphi)$ of $S
 \ee
 \end{proof}
 
+\paragraph{Ex.14.2.9}
+Assume that $G \subset S_n$ is transitive and Abelian.
+\be
+\item[(a)] Prove that $|G| = n$ by considering the isotropy subgroups of $G$.
+\item[(b)] Prove that $G$ is primitive if and only if $|G|$ is prime.
+\ee
+Thus a transitive Abelian permutation group is imprimitive unless it is cyclic of prime order.
+
+\begin{proof}
+\item[(a)] $G \subset S_n$ acts on $\{1,\ldots,n\}$ by the action defined by $\sigma\cdot k = \sigma(k),\ \sigma \in G, k \in \{1,\ldots,n\}$.
+
+Consider the isotropy group $G_1$ of $1$: $G_1 = \{\sigma \in G\, |\, \sigma(1) = 1\}$. Let $\sigma$ be any permutation in $G_1$, and let $i$ be any element in $\{1,\ldots,n\}$. Since $G$ is transitive, there exists $\tau \in G$ such that $\tau(1) = i$. By hypothesis, $G$ is Abelian, therefore
+$$\sigma(i) = (\sigma \tau)(1) = (\tau \sigma)(1) = \tau(1) = i.$$
+Since this is true for all $i\in \{1,\ldots,n\}$, $\sigma = e$. This proves $G_1 = \{e\}$.
+
+Moreover, since $G$ is transitive, the orbit of $1$ is $G\cdot 1 =\{1,\ldots,n\}$, thus $|G\cdot 1| = n$.
+
+By the Fundamental Theorem of Group Actions,
+$$|G\cdot 1 | = (G:G_1) = |G|,$$
+thus $|G| = n$.
+\item[(b)] By Lemma 14.2.7, if $G \subset S_n$ is transitive and imprimitive, then $n =kl,\ k>1,l>1$, is composite. Thus, if $n$ is prime, a transitive subgroup of $S_n$ is primitive.
+
+Conversely, let $G$ be a transitive Abelian subgroup of $S_n$, where $n$ is composite. By part (a), $|G| = n$. We must prove that $G$ is imprimitive.
+
+By the Kronecker's Theorem on the structure of Abelian groups, 
+$$G \simeq C_{n_1} \times \cdots \times C_{n_r}$$
+is a product of cyclic groups.
+
+Therefore, either $G$ is cyclic of order $n$, or $G = HK \simeq H\times K, H\ne\{e\},K \ne \{e\}$ is a direct product of two non trivial subgroups (take for instance $H \simeq C_{n_1}, K \simeq C_{n_2} \times \cdots \times C_{n_r}$). We will deal with these two cases.
+
+$\bullet$ Case 1.  We assume that $G \simeq C_n$ is cyclic, where $n = ml, \ m>1, l>1$. Then $G = \langle \sigma \rangle$, where the permutation $\sigma$ has order $n$. Take
+\begin{align*}
+R_1 &= \{1,\sigma^m(1),\ldots, \sigma^{(l-1)m}(1)\},\\
+R_2 &= \{\sigma(1), \sigma^{m+1}(1), \ldots,\sigma^{(l-1)m + 1}(1)\} = \sigma(R_1),\\
+\cdots\\
+R_m&=\{\sigma^{m-1}(1),\sigma^{m + m-1}(1), \ldots,\sigma^{lm - 1}(1)\} = \sigma^{m-1}(R_1).
+\end{align*}
+Since $G$ is transitive, $$R_1\cup\cdots\cup R_m =\{1,\sigma(1),\ldots,\sigma^{n-1}(1)\} = G\cdot 1 = \{1,\ldots,n\}.$$ Moreover, if $\tau \in G$, then $\tau = \sigma^{j},\ j=0,\ldots,n-1$, thus, using $\sigma^n = e$, if $k$ is the remainder of $i+j-1$ modulo $n$,
+$$\tau(R_i) = (\sigma^j \sigma^{i-1})(R_1) = \sigma^{i+j-1}(R_1) = \sigma^{k}(R_1) = R_{k+1}.$$
+
+This proves that $G$ is imprimitive, with blocks $R_1,\ldots,R_m$.
+
+\bigskip
+
+$\bullet$ Case 2. Now, assume that $G = HK \simeq H \times K, |H| = l>1, |K| = m>1$. Then $n = ml$. Write
+\begin{align*}
+H &= \{\sigma_1 =e,\ldots,\sigma_l\},\\
+K &= \{\tau_1 = e,\ldots,\tau_m\},
+\end{align*}
+and take
+\begin{align*}
+R_1 &=\{ (\sigma_1 \tau_1)(1), \ldots, (\sigma_l \tau_1)(1) \},\\
+R_2 &=\{ (\sigma_1 \tau_2)(1),\ldots, (\sigma_l \tau_2)(1)\},\\
+\cdots\\
+R_m&= \{ (\sigma_1 \tau_m)(1), \ldots, (\sigma_l \tau_m)(1)\}.
+\end{align*}
+Since $G = HK$, every permutation $\lambda \in G$ is a product $\lambda = \sigma_i \tau_j,\ 1\leq i\leq l, 1 \leq j \leq m$, and since $G$ is transitive,
+$$R_1 \cup \cdots \cup R_m = G\cdot 1 = \{1,\ldots,n\}.$$
+Take $\lambda = \sigma_i \tau_j \in G$, and $R_k = \{\sigma_u \tau_k, 1\leq u \leq n\}$. Then $\tau_j \tau_k = \tau_r$ for some fixed $r \in \{1,\ldots,m\}$. Since $G$ is Abelian,
+$$\lambda(R_k) = \{(\sigma_i \sigma_u \tau_j \tau_k)(1) , 1 \leq u \leq n\} = \{(\sigma_i \sigma_u \tau_r)(1) , 1 \leq u \leq n\} =  \{(\sigma_v \tau_r)(1) , 1 \leq v \leq n\} = R_r,$$
+because the map $H \to H$, $\sigma_u \mapsto \sigma_i \sigma_u$ is bijective.
+
+This proves that $G$ is imprimitive, with blocks $R_1,\ldots,R_m$. 
+
+To conclude, $G$ is primitive if and only if $|G|$ is prime. Thus a transitive Abelian permutation group is imprimitive unless it is cyclic of prime order.
+
+\bigskip
+
+Examples: $G = \{(), (1\,2)(3\,4), (1\,3)(2\,4),(1\,4)(2\,3)\}$ is a transitive Abelian subgroup of $S_4$, and an example of Case 2. If $H, K$ are two distinct subgroups of $G$ with order 2, then $G = HK \simeq C_2 \times C_2$. We can take $R_1 = \{1,2\}, R_2 = \{3,4\}$, but we can also take $R'_1 = \{1,3\},R'_2 = \{2,4\}$. G is imprimitive with blocks $R_1,R_2$, or with blocks $R'_1,R'_2$.
+
+$G' = \langle (1\,2\,3\,4) \rangle$ is a another transitive Abelian subgroup of $S_4$, and an example of Case 1. This times, we can take only $R_1 = \{1,3\},R_2 = \{2,4\}$.
+\end{proof}
+
+\paragraph{Ex.14.2.13}{\it Let $f = x^6 + bx^3 + c \in F[x]$ be irreducible, where $F$ has characteristic different from 2 or 3. We will study the size of the Galois group of $f$ over $F$.
+\be
+\item[(a)] Show that $f$ is separable. So we can think of the Galois group as a subgroup of $S_6$.
+\item[(b)] Show that $x^6+bx^3 + c$ is imprimitive and that its Galois group lies in $S_2 \wr S_3$. Also show that $|S_2 \wr S_3| = 72$. Thus the Galois group has order $\leq 72$.
+\item[(c)] Let $F \subset L $ be the splitting field of $f$ over $F$. Use the Tower Theorem to show that $[L:F] \leq 36$. Hence the Galois group has order at most $36$.
+\ee
+Using Maple or Sage, one can show that the Galois group of $x^6 + 2x^3 - 2$ over $\Q$ has order $36$ and hence is as large as possible.
+}
+\begin{proof}
+\item[(a)] Since $F$ has characteristic different from 2 or 3, $f' = 6x^5 + 3bx^2 \ne 0$. By hypothesis, $f$ is irreducible, thus any factor of $f$ is associate to $f$ or $1$. Since $f' \ne 0$, $gcd(f,f')$ divides $f'$, thus $\deg(\gcd(f,f')) \leq \deg(f') = 5$, and $\gcd(f,f')$ is a factor of $f$, which cannot be associate to $f$, therefore $\gcd(f,f') = 1$. This proves that $f$ is separable.
+\item[(b)]  If $\alpha$ is a root of $f$ in $L$, then $ \lambda = \alpha^3 \in L $ is a root of $g = x^2 +bx+c$. Let $\mu = -b-\lambda \in L$. Then $\mu$ is a root of $g$: 
+ $$\mu^2+b\mu+c = (-b-\lambda)^2 + b(-b-\lambda)+c = \lambda^2 + b\lambda + c = 0.$$
+Moreover $\lambda \ne \mu$, otherwise $b = -2\lambda, c = -\lambda^2 - b\lambda = \lambda^2$, and $g = (x-\lambda)^2$, where $\lambda = -b/2 \in F$, so that  $f =g(x^3) = (x^3-\lambda)^2$ would not be irreducible over $f$. Therefore
+$$g = (x- \lambda)(x-\mu),\qquad \lambda\ne \mu.$$
+Write $K = F(\lambda,\mu)$. Then $F\subset K \subset L$ is an intermediate field which is a splitting field of $g$ over $F$.
+If $\lambda \in F$, then $\mu \in F$ and $f = g(x^3) = (x^3 - \lambda)(x^3 - \mu)$ would not be irreducible over $F$. Therefore $\lambda \not \in F,\mu \not \in F$, $g$ is irreducible over $F$. $K$ is the splitting field of the separable polynomial $g$, thus $F \subset K$ is a Galois extension, where $F \subsetneq K \subset L$.
+
+Moreover,
+$$f = g(x^2) = (x^3 - \lambda)(x^3 - \mu) = f_1 f_2,$$
+where $f_1 = x^3 - \lambda, f_2 = x^3 - \mu \in K[x]$.
+Therefore three roots $\alpha,\beta,\gamma$ of $f$ are the roots of $x^3 -\lambda$, and three other roots $\alpha',\beta',\gamma'$ of $f$ are the roots of $x^3 - \mu$ :
+$$\alpha^3 = \beta^3 = \gamma^3 = \lambda,\qquad \alpha'^3 = \beta'^3 = \gamma'^3 = \mu.$$
+This gives the blocks
+$$R_1 = \{\alpha, \beta, \gamma\},\qquad R_2 = \{\alpha',\beta',\gamma'\}.$$
+If $\sigma \in \Gal(L/F)$, then $g = \sigma\cdot g = (x -\sigma(\lambda))(x - \sigma(\mu))$, thus $\{\lambda, \mu\} = \{\sigma(\lambda), \sigma(\mu)\}$: $\sigma$ fixes $\lambda, \mu$, or exchanges $\lambda, \mu$. Since $\alpha,\beta,\gamma$ are the roots of $x^3 - \lambda$, $\sigma(\alpha), \sigma(\beta), \sigma(\gamma)$ are the roots of $x^3 - \sigma(\lambda)$, thus $\sigma(R_1) = R_1$ or $\sigma(R_1) = R_2$, and similarly $\sigma(R_2) = R_1$ or $R_2$. This proves that $f$ is imprimitive, with blocks $R_1,R_2$, and $\Gal(L/F)$ is isomorphic to a subgroup of $S_2 \wr S_3$(Corollary 14.2.10), whose order is $2(3!)^2 = 72$ (see Ex. 6 (c)).
+
+\item[(c)] 
+\end{proof}
+
+
+
 \paragraph{Ex.14.2.14} {\it Here are some examples to illustrate Galois's definition of imprimitive. We will use the notation of Exercise 8. Let $F$ be a field of characteristic different from 2 or 3.
 \be
 \item[(a)] Let $f = x^6 + bx^4+cx^2 +d \in F[x]$ be irreducible with splitting field $F \subset L$. Show that the splitting field of $x^3+bx^2+cx+d$ gives an intermediate field $F\subset K \subset L$ such that $F \subset K$ is Galois and $f=f_1f_2f_3$, where $f_i \in K[x]$ has degree 2 for $i=1,2,3$. Also explain how $K$ relates to the field $K$ constructed in Exercise 8.
@@ -1114,24 +1218,9 @@ Since the Galois correspondence is order reversing, $K \subset L_G$ implies $\Ga
 $$K = L_G.$$
 $K$ is the fixed field of $G =  \{\sigma \in \Gal(L/F)\, | \, \sigma(R_1) = R_1,\sigma(R_2) = R_2, \sigma(R_3) = R_3 \}$.
 
-\item[(b)] The same first argument as in part (a) shows that the irreducible polynomial $f = x^6 + bx^3 + c \in F[x]$ is separable.
- If $\alpha$ is a root of $f$ in $L$, then $ \lambda = \alpha^3 \in L $ is a root of $g = x^2 +bx+c$. Let $\mu = -b-\lambda \in L$. Then $\mu$ is a root of $g$: 
- $$\mu^2+b\mu+c = (-b-\lambda)^2 + b(-b-\lambda)+c = \lambda^2 + b\lambda + c = 0.$$
-Moreover $\lambda \ne \mu$, otherwise $b = -2\lambda, c = -\lambda^2 - b\lambda = \lambda^2$, and $g = (x-\lambda)^2$, where $\lambda = -b/2 \in F$, so that  $f =g(x^3) = (x^3-\lambda)^2$ would not be irreducible over $f$. Therefore
-$$g = (x- \lambda)(x-\mu),\qquad \lambda\ne \mu.$$
-Write $K = F(\lambda,\mu)$. Then $F\subset K \subset L$ is an intermediate field which is a splitting field of $g$ over $F$.
-If $\lambda \in F$, then $\mu \in F$ and $f = g(x^3) = (x^3 - \lambda)(x^3 - \mu)$ would not be irreducible over $F$. Therefore $\lambda \not \in F,\mu \not \in F$, $g$ is irreducible over $F$. $K$ is the splitting field of the separable polynomial $g$, thus $F \subset K$ is a Galois extension, where $F \subsetneq K \subset L$.
-
-Moreover,
-$$f = g(x^2) = (x^3 - \lambda)(x^3 - \mu) = f_1 f_2,$$
-where $f_1 = x^3 - \lambda, f_2 = x^3 - \mu \in K[x]$.
-Therefore three roots $\alpha,\beta,\gamma$ of $f$ are the roots of $x^3 -\lambda$, and three other roots $\alpha',\beta',\gamma'$ of $f$ are the roots of $x^3 - \mu$ :
-$$\alpha^3 = \beta^3 = \gamma^3 = \lambda,\qquad \alpha'^3 = \beta'^3 = \gamma'^3 = \mu.$$
-This gives the blocks
+\item[(b)] We have proved in Exercise 13 that $f$ is imprimitive, with blocks
 $$R_1 = \{\alpha, \beta, \gamma\},\qquad R_2 = \{\alpha',\beta',\gamma'\}.$$
-If $\sigma \in \Gal(L/F)$, then $g = \sigma\cdot g = (x -\sigma(\lambda))(x - \sigma(\mu))$, thus $\{\lambda, \mu\} = \{\sigma(\lambda), \sigma(\mu)\}$: $\sigma$ fixes $\lambda, \mu$, or exchanges $\lambda, \mu$. Since $\alpha,\beta,\gamma$ are the roots of $x^3 - \lambda$, $\sigma(\alpha), \sigma(\beta), \sigma(\gamma)$ are the roots of $x^3 - \sigma(\lambda)$, thus $\sigma(R_1) = R_1$ or $\sigma(R_1) = R_2$, and similarly $\sigma(R_2) = R_1$ or $R_2$. This proves that $f$ is imprimitive, with blocks $R_1,R_2$, and $\Gal(L/F)$ is isomorphic to a subgroup of $S_2 \wr S_3$, whose order is $2(3!)^2 = 72$.
-
-Here 
+With the same notations as in Exercise 13 and 8, we have 
 $$G = \{\sigma \in \Gal(L/F) \,|\, \sigma(R_1) = R_1,\ \sigma(R_2) = R_2\}.$$
 Since $\alpha,\beta,\gamma$ are the roots of $x^3 -\lambda$, and $\alpha',\beta',\gamma'$ the roots of $x^3 -\mu$, where $\{\lambda, \mu\} = \{\sigma(\lambda), \sigma(\mu)\}$, then, for all $\sigma \in \Gal(L/F)$,
 \begin{align*}
@@ -1140,6 +1229,7 @@ Since $\alpha,\beta,\gamma$ are the roots of $x^3 -\lambda$, and $\alpha',\beta'
 &\iff \forall \xi \in K,\ \sigma(\xi) \in K.
 \end{align*}
 This proves as in part (a) that $K = L_G$.
+
 
 \end{proof}
 \end{document}
