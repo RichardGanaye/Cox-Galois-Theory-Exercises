@@ -1301,6 +1301,68 @@ Since $\alpha,\beta,\gamma$ are the roots of $x^3 -\lambda$, and $\alpha',\beta'
 \end{align*}
 This proves as in part (a) that $K = L_G$.
 
+\end{proof}
+
+\paragraph{Ex. 14.2.15}{\it
+Let $G \subset S_n$ be transitive. Prove that $G$ is primitive if and only if the isotropy subgroups of $G$ are maximal with respect to inclusion.
+}
+
+\begin{proof}
+
+Let $i$ be a fixed integer in $\{1,\ldots,n\}$. Since $G$ is transitive, $G\cdot i = \{1,\ldots,n\}$. The Fundamental Theorem of group actions gives
+$n = |G\cdot i| = (G:G_i),$
+thus $|G_i| n = |G|$.
+
+Given a subgroup $G_i \subset H \subset G$, let $\{\tau_1=e,\ldots,\tau_m\}$ be a complete system of representatives of the left cosets $\tau H, \tau \in G$, where $m = (G:H)$, so that $\tau_1H,\ldots,\tau_mH$ partition $G$.
+
+Consider
+$$R_1 = (\tau_1H)\cdot i,\ldots,R_m = (\tau_m H)\cdot i.$$
+As $G =\tau_1H \cup \cdots \cup \tau_m H$, then
+$$R_1 \cup \cdots\cup R_m = (\tau_1H)\cdot i \cup \cdots \cup (\tau_mH)\cdot I =  G\cdot i = \{1,\ldots,n\}.$$
+Now we show that this union is disjoint.
+
+If $u \in R_j \cap R_k = (\tau_j H)\cdot i \cap (\tau_kH)\cdot i$, then
+$$u = (\tau_j h)(i) = (\tau_k h')(i),\quad h,h'\in H.$$
+Then $h'^{-1}\tau_k^{-1} \tau_j h)(i) = i$, thus
+$$h'' = h'^{-1} \tau_k^{-1} \tau_j h \in G_i \subset H,$$
+hence $\tau_j h = \tau_k h'h'',\ h,h',h'' \in H$. This shows that $\tau_j H =\tau_k H$, thus $j=k$. This proves
+$$j \ne k \Rightarrow R_j \cap R_k = (\tau_j H)\cdot i \cap (\tau_kH)\cdot i = \varnothing.$$
+
+Now we prove that every $\sigma \in G$ preserves the block structure:
+
+If $\sigma \in G$ and $R_j = (\tau_j H)\cdot i$, then $\sigma \tau_j H$ is a left coset, thus $\sigma \tau_j H = \tau_k H$ for some index $k$, and
+$$\sigma(R_j) =  (\sigma (\tau_j H \cdot i)) = (\sigma \tau_j H)\cdot i = (\tau_kH)\cdot i = R_k.$$
+Since $G$ is transitive, all $R_j$ have same cardinality $l$, and $n = l m$.
+
+To conclude, $R_1,\ldots,R_m$ have same cardinality, partition $\{1,\ldots,n\}$, and every $\sigma \in G$ preserves the block structure. If $l>1$ and $m>1$, then $G$ is imprimitive.
+
+Hence, if we assume that $G$ is primitive, either $l= 1$ or $m=1$.
+
+$\bullet$ If $l=1$, then for all indices $k$,  $(\tau_k H) \cdot i = \{\tau_k(i)\}$. With $k=1$ and $\tau_k = e$, we obtain $H\cdot i = \{i\}$, which shows that $H \subset G_i$, thus $H = G_i$.
+
+$\bullet$ If $m=1$, then $(G:H) = m = 1$, thus $H = G$.
+
+This proves that there is no subgroup $H$ such that $G_i \subsetneq H \subsetneq G$ : $G_i$ is maximal with respect to inclusion.
+
+\bigskip
+
+Conversely, suppose that $G$ is imprimitive, with respect to the blocks $R_1,\ldots,R_m$, where $m>1$. Since $G$ is transitive, all $R_j$ have the same cardinality $|R_j| = l >1$. 
+
+If $i \in \{1,\ldots,n\}$ is some fixed integer, there is some index $j, 1\leq j \leq m$ such that $i \in R_j$. Now, consider the subgroup
+$$H = \{\sigma\in G\, |\, \sigma(R_j) = R_j\}.$$
+Then $G_i \subset H$: if $\sigma \in G_i$, then $\sigma(i) = i \in R_j$, thus $\sigma(R_j) = R_j$. Moreover
+
+$\bullet$ $H\ne G$: Since $m>1$, there is some $R_k \ne R_j$, and some $w \in R_k$. Since $G$ is transitive, there is some $\sigma \in G$ such that $\sigma(i) = w$, so that $\sigma(R_j) = R_k$. Then $\sigma \not \in H$, and $H \ne G$.
+
+$\bullet$ $G_i \ne H$: Since $|R_j|>1$, there is some $i'\ne i$ in the same block $R_j$. Since $G$ is transitive, there is some $\sigma' \in G$ such that $\sigma'(i) = i'$, so that $\sigma(R_j) = R_j$. Then $\sigma \in H$, but $\sigma \not \in G_i$, so $G_i \ne H$.
+
+To conclude, the subgroup $H$ satisfies
+$$G_i \subsetneq H \subsetneq G.$$
+This proves that $G$ is not maximal with respect to inclusion.
+
+We have proved that $G$ is primitive if and only if the isotropy subgroups of $G$ are maximal with respect to inclusion.
 
 \end{proof}
+
+
 \end{document}
