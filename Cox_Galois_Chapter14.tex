@@ -1217,7 +1217,7 @@ So $S_k \wr S_l$ has only two prime factors 2 and 3. By Burnside's Theorem (Theo
 
 
 
-\paragraph{Ex.14.2.13}{\it Let $f = x^6 + bx^3 + c \in F[x]$ be irreducible, where $F$ has characteristic different from 2 or 3. We will study the size of the Galois group of $f$ over $F$.
+\paragraph{Ex. 14.2.13}{\it Let $f = x^6 + bx^3 + c \in F[x]$ be irreducible, where $F$ has characteristic different from 2 or 3. We will study the size of the Galois group of $f$ over $F$.
 \be
 \item[(a)] Show that $f$ is separable. So we can think of the Galois group as a subgroup of $S_6$.
 \item[(b)] Show that $x^6+bx^3 + c$ is imprimitive and that its Galois group lies in $S_2 \wr S_3$. Also show that $|S_2 \wr S_3| = 72$. Thus the Galois group has order $\leq 72$.
@@ -1226,7 +1226,7 @@ So $S_k \wr S_l$ has only two prime factors 2 and 3. By Burnside's Theorem (Theo
 Using Maple or Sage, one can show that the Galois group of $x^6 + 2x^3 - 2$ over $\Q$ has order $36$ and hence is as large as possible.
 }
 \begin{proof}
-\item[(a)] Since $F$ has characteristic different from 2 or 3, $f' = 6x^5 + 3bx^2 \ne 0$. By hypothesis, $f$ is irreducible, thus any factor of $f$ is associate to $f$ or $1$. Since $f' \ne 0$, $gcd(f,f')$ divides $f'$, thus $\deg(\gcd(f,f')) \leq \deg(f') = 5$, and $\gcd(f,f')$ is a factor of $f$, which cannot be associate to $f$, therefore $\gcd(f,f') = 1$. This proves that $f$ is separable.
+\item[(a)] Since $F$ has characteristic different from 2 or 3, $f' = 6x^5 + 3bx^2 \ne 0$. By hypothesis, $f$ is irreducible, thus any factor of $f$ is associate to $f$ or $1$. Since $f' \ne 0$, $\gcd(f,f')$ divides $f'$, thus $\deg(\gcd(f,f')) \leq \deg(f') = 5$, and $\gcd(f,f')$ is a factor of $f$, which cannot be associate to $f$, therefore $\gcd(f,f') = 1$. This proves that $f$ is separable.
 \item[(b)]  If $\alpha$ is a root of $f$ in $L$, then $ \lambda = \alpha^3 \in L $ is a root of $g = x^2 +bx+c$. Let $\mu = -b-\lambda \in L$. Then $\mu$ is a root of $g$: 
  $$\mu^2+b\mu+c = (-b-\lambda)^2 + b(-b-\lambda)+c = \lambda^2 + b\lambda + c = 0.$$
 Moreover $\lambda \ne \mu$, otherwise $b = -2\lambda, c = -\lambda^2 - b\lambda = \lambda^2$, and $g = (x-\lambda)^2$, where $\lambda = -b/2 \in F$, so that  $f =g(x^3) = (x^3-\lambda)^2$ would not be irreducible over $f$. Therefore
@@ -1237,17 +1237,74 @@ If $\lambda \in F$, then $\mu \in F$ and $f = g(x^3) = (x^3 - \lambda)(x^3 - \mu
 Moreover,
 $$f = g(x^2) = (x^3 - \lambda)(x^3 - \mu) = f_1 f_2,$$
 where $f_1 = x^3 - \lambda, f_2 = x^3 - \mu \in K[x]$.
-Therefore three roots $\alpha,\beta,\gamma$ of $f$ are the roots of $x^3 -\lambda$, and three other roots $\alpha',\beta',\gamma'$ of $f$ are the roots of $x^3 - \mu$ :
-$$\alpha^3 = \beta^3 = \gamma^3 = \lambda,\qquad \alpha'^3 = \beta'^3 = \gamma'^3 = \mu.$$
+Therefore three roots $\alpha,\alpha',\alpha''$ of $f$ are the roots of $x^3 -\lambda$, and three other roots $\beta,\beta',\beta''$ of $f$ are the roots of $x^3 - \mu$ :
+$$\alpha^3 = \alpha'^3 = \alpha''^3 = \lambda,\qquad \beta^3 = \beta'^3 = \beta''^3 = \mu.$$
 This gives the blocks
-$$R_1 = \{\alpha, \beta, \gamma\},\qquad R_2 = \{\alpha',\beta',\gamma'\}.$$
+$$R_1 = \{\alpha, \alpha', \alpha''\},\qquad R_2 = \{\beta,\beta',\beta''\}.$$
 If $\sigma \in \Gal(L/F)$, then $g = \sigma\cdot g = (x -\sigma(\lambda))(x - \sigma(\mu))$, thus $\{\lambda, \mu\} = \{\sigma(\lambda), \sigma(\mu)\}$: $\sigma$ fixes $\lambda, \mu$, or exchanges $\lambda, \mu$. Since $\alpha,\beta,\gamma$ are the roots of $x^3 - \lambda$, $\sigma(\alpha), \sigma(\beta), \sigma(\gamma)$ are the roots of $x^3 - \sigma(\lambda)$, thus $\sigma(R_1) = R_1$ or $\sigma(R_1) = R_2$, and similarly $\sigma(R_2) = R_1$ or $R_2$. This proves that $f$ is imprimitive, with blocks $R_1,R_2$, and $\Gal(L/F)$ is isomorphic to a subgroup of $S_2 \wr S_3$(Corollary 14.2.10), whose order is $2(3!)^2 = 72$ (see Ex. 6 (c)).
 
-\item[(c)] ???  "Mysteriouser and mysteriouser" said Alice.
+\item[(c)] We don't know if $F$ or $K$ contains the cubic roots of unity, but $L$ does: since $\alpha, \alpha'$ are two distinct roots of $x^3 - \lambda$ (where $\alpha \ne 0$, otherwise $\lambda = 0 \in F$), then $(\frac{\alpha'}{\alpha})^3 = 1$. If we write $\omega = \frac{\alpha'}{\alpha}$, then $\omega \in L$ and $\omega^3 = 1, \omega\ne 1$, thus $1,\omega, \omega^2$ are three distinct roots of $x^3 - 1$, and $1 + \omega + \omega^2 = 0$, so that $[K(\omega) : K ] = 1$ or $2$. 
+
+Then the six roots of $f$ are 
+$$\alpha_1 = \alpha, \alpha_2 = \omega \alpha, \alpha_3 = \omega^2 \alpha, \alpha_4 = \alpha', \alpha_5 = \omega \alpha', \alpha_6 = \omega^2 \alpha'.$$
+Therefore
+$$L = F(\alpha,\omega \alpha, \omega^2 \alpha, \beta, \omega \beta, \beta^2) = F(\omega,\alpha,\beta) = K(\omega, \alpha, \beta). $$
+
+Consider the chain of fields
+$$F \subset K = F(\lambda, \mu) \subset K(\omega,\alpha) \subset L = K(\omega, \alpha, \beta).$$
+
+\begin{center}
+\begin{tikzpicture}
+    \node (L) at (4,8) {$L = K(\omega,\alpha,\beta)$};
+    \node (A3) at (1,6) {$K(\omega,\alpha)$};
+    \node (t23) at (7,6) {$K(\omega,\beta)$};
+    \node (id) at (4,4) {$K(\omega)$};
+    \node (K) at (4,2) {$K = F(\lambda,\mu)$};
+    \node (F) at (4,0) {$F$};
+    \draw[<-] (L) edge (A3)   edge (t23);
+    \draw[->] (id) edge (A3)  edge (t23);
+    \draw[->] (K) edge (id);
+     \draw[->] (F) edge (K);
+\end{tikzpicture}
+\end{center}
+
+
+$\bullet$ Since $\lambda,\mu$ are the roots of the irreducible polynomial $f$, $K=F(\lambda,\mu)$ is a quadratic extension of $F$, so $[K:F] = 2$.
+
+$\bullet$ Since $\omega^2 + \omega + 1 = 0$, $[K(\omega) : K] \leq 2$.
+
+$\bullet$ Since $\alpha^3 - \lambda = 0$, where $\lambda \in K \subset K(\omega)$, $[K(\omega,\alpha) : K(\omega)] \leq 3$.
+
+$\bullet$ Since $\beta^3 - \mu = 0$, where $\beta \in K \subset K(\omega, \alpha)$,  $[K(\omega, \alpha,\beta) : K(\omega, \alpha)] \leq 3$.
+
+By the Tower Theorem,
+$$[L:K] = [K(\omega, \alpha,\beta) : K] = [K(\omega, \alpha,\beta) : K(\omega, \alpha)] [K(\omega,\alpha) : K(\omega)][K(\omega) : K]  \leq 3\times3 \times2 \times 2 = 36.$$
+Therefore,
+$$|\Gal(L/K) | = [L:K] \leq 36.$$
 \end{proof}
+Note : Some permutations of $S_2\wr S_3$ can't lie in the Galois group $G \subset S_6$ of $f$, for instance if the transposition $(4\,5)$ corresponds to $\sigma \in \Gal(L/F)$, given by
+$$
+\left(
+\begin{array}{cccccc}
+\alpha & \omega\alpha &\omega^2\alpha & \beta & \omega \beta & \omega^2 \beta\\
+\alpha & \omega\alpha &\omega^2\alpha & \omega\beta &  \beta & \omega^2 \beta
+\end{array}
+\right),
+$$
+then $\sigma(\alpha) = \alpha$ and $\sigma(\omega \alpha) = \omega \alpha$ show that $\sigma(\omega) = \omega$, and $\sigma(\beta) = \omega \beta$ implies $\sigma(\omega \beta) = \omega^2 \beta \ne \beta$. This contradiction proves that $(4\,5) \not \in G$ (but $(4\, 5) \in S_3 \wr S_2 \subset S_6$). More generally, all odd permutations are impossible, so that $G$ is a subgroup of $(S_2\wr S_3) \cap A_6$.
 
 
-\paragraph{Ex.14.2.14} {\it Here are some examples to illustrate Galois's definition of imprimitive. We will use the notation of Exercise 8. Let $F$ be a field of characteristic different from 2 or 3.
+
+
+
+
+
+
+
+
+
+
+\paragraph{Ex. 14.2.14} {\it Here are some examples to illustrate Galois's definition of imprimitive. We will use the notation of Exercise 8. Let $F$ be a field of characteristic different from 2 or 3.
 \be
 \item[(a)] Let $f = x^6 + bx^4+cx^2 +d \in F[x]$ be irreducible with splitting field $F \subset L$. Show that the splitting field of $x^3+bx^2+cx+d$ gives an intermediate field $F\subset K \subset L$ such that $F \subset K$ is Galois and $f=f_1f_2f_3$, where $f_i \in K[x]$ has degree 2 for $i=1,2,3$. Also explain how $K$ relates to the field $K$ constructed in Exercise 8.
 \item[(b)] Work out the analogous theory when $f = x^6 + bx^3+c \in F[x]$ is irreducible.
@@ -1300,8 +1357,8 @@ Since $\alpha,\beta,\gamma$ are the roots of $x^3 -\lambda$, and $\alpha',\beta'
 &\iff \forall \xi \in K,\ \sigma(\xi) \in K.
 \end{align*}
 This proves as in part (a) that $K = L_G$.
-
 \end{proof}
+
 
 \paragraph{Ex. 14.2.15}{\it
 Let $G \subset S_n$ be transitive. Prove that $G$ is primitive if and only if the isotropy subgroups of $G$ are maximal with respect to inclusion.
@@ -1358,7 +1415,7 @@ $\bullet$ $G_i \ne H$: Since $|R_j|>1$, there is some $i'\ne i$ in the same bloc
 
 To conclude, the subgroup $H$ satisfies
 $$G_i \subsetneq H \subsetneq G.$$
-This proves that $G$ is not maximal with respect to inclusion.
+This proves that $G_i$ is not maximal with respect to inclusion.
 
 We have proved that $G$ is primitive if and only if the isotropy subgroups of $G$ are maximal with respect to inclusion.
 
