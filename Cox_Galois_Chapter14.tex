@@ -1210,10 +1210,8 @@ whose cardinalities are
  |S_2 \wr S_4| &= 2!4^2 = 2^5,\\
  |S_3\wr S_3| &=3!3^3 = 2 \times 3^4. 
 \end{align*}
-So $S_k \wr S_l$ has only two prime factors 2 and 3. By Burnside's Theorem (Theorem 8.1.8), $S_k \wr S_l$ solvable for these values of $k,r$, thus the subgroup $G$ is solvable. Since the characteristic of $F$ is 0, this proves that $f$ is solvable by radicals over $f$.
+So $S_k \wr S_l$ has only two prime factors 2 and 3. By Burnside's Theorem (Theorem 8.1.8), $S_k \wr S_l$ solvable for these values of $k,l$, thus the subgroup $G$ is solvable. Since the characteristic of $F$ is 0, this proves that $f$ is solvable by radicals over $f$.
 \end{proof}
-
-
 
 
 
@@ -1251,7 +1249,7 @@ Therefore
 $$L = F(\alpha,\omega \alpha, \omega^2 \alpha, \beta, \omega \beta, \beta^2) = F(\omega,\alpha,\beta) = K(\omega, \alpha, \beta). $$
 
 Consider the chain of fields
-$$F \subset K = F(\lambda, \mu) \subset K(\omega) \subset K(\omega,\alpha) \subset L = K(\omega, \alpha, \beta).$$
+$$F \subset K = F(\lambda, \mu) \subset  K(\omega) \subset K(\omega,\alpha) \subset L = K(\omega, \alpha, \beta).$$
 
 \begin{center}
 \begin{tikzpicture}
@@ -1292,14 +1290,6 @@ $$
 \right),
 $$
 then $\sigma(\alpha) = \alpha$ and $\sigma(\omega \alpha) = \omega \alpha$ show that $\sigma(\omega) = \omega$, and $\sigma(\beta) = \omega \beta$ implies $\sigma(\omega \beta) = \omega^2 \beta \ne \beta$. This contradiction proves that $(4\,5) \not \in G$ (but $(4\, 5) \in S_3 \wr S_2 \subset S_6$). More generally, all odd permutations are impossible, so that $G$ is a subgroup of $(S_2\wr S_3) \cap A_6$.
-
-
-
-
-
-
-
-
 
 
 
@@ -1421,5 +1411,91 @@ We have proved that $G$ is primitive if and only if the isotropy subgroups of $G
 
 \end{proof}
 
+ \paragraph{Ex. 14.2.16}{\it Let $p$ be prime. The ring $\Z/p^2\Z$ is not a field, but one can still define the group $\mathrm{AGL}(1,\Z/p^2\Z)$. Its action on $\Z/p^2\Z$ allows us to write $\mathrm{AGL}(1,\Z/p^2\Z) \subset S_{p^2}$.
+ \be
+\item[(a)] Prove that $\mathrm{AGL}(1,\Z/p^2\Z)$ is solvable and transitive of order $p^3(p-1)$.
+\item[(b)] Prove that $\mathrm{AGL}(1,\Z/p^2\Z) \subset S_{p^2}$ is imprimitive.
+\ee
+}
+\begin{proof}
+\item[(a)] Recall that the group of invertible elements of $\Z/p^2\Z$ is $(\Z/p^2\Z)^*$, where $$|(\Z/p^2\Z)^*| = \phi(p^2) = p^2 - p.$$
+As in section 6.4, if $a,b \in \Z/p^2\Z$, we define $\gamma_{a,b} : \Z/p^2\Z \to \Z/p^2\Z$ by $\gamma_{a,b}(x) = ax +b$. Note that $\gamma_{a,b}$ is bijective if and only if $a \in (\Z/p^2\Z)^*$.
+We define
+$$G = \mathrm{AGL}(1,\Z/p^2\Z) = \{\gamma_{a,b} \, | \, a \in (\Z/p^2\Z)^*, b \in \Z/p^2\Z\}.$$
+We note that $\gamma_{a,b} = \gamma_{c,d}$ implies $\gamma_{a,b} (0)= \gamma_{c,d}(0)$, thus $b = d$, and then $\gamma_{a,b} (1)= \gamma_{c,d}(1)$ gives $a =c$:
+$$\gamma_{a,b} = \gamma_{c,d} \Rightarrow (a,b) = (c,d).$$
+Therefore the map
+$$
+\left\{
+\begin{array}{ccc}
+(\Z/p^2\Z)^* \times  \Z/p^2\Z & \to & G\\
+(a,b) &\mapsto & \gamma_{a,b}
+\end{array}
+\right.
+$$
+is bijective, which proves $|G| = \phi(p^2) p^2 = (p^2-p)p^2 = p^3(p-1)$.
+
+As in section 6.4 (and Exercise 6.4.1), we obtain, if $a,c \in (\Z/p^2\Z)^*$,
+$$\gamma_{a,b} \circ \gamma_{c,d} = \gamma_{ac,ad+c} \in G,$$
+since $ac \in (\Z/p^2\Z)^*$. Moreover, $\gamma_{a,b}^{-1} = \gamma_{a^{-1}, -a^{-1}b} \in G$, so that $G$ is a subgroup of $S(\Z/p^2\Z) \simeq S_{p^2}$.
+
+The map 
+$$
+\varphi \left\{
+\begin{array}{ccc}
+G & \to & (\Z/p^2\Z)^*\\
+\gamma_{a,b} &\mapsto & a
+\end{array}
+\right.
+$$
+is well-defined, and is a surjective homomorphism by definition of $G$. Moreover, the kernel of $\varphi$ is the subgroup
+$$T = \{\gamma_{1,b}\, | \, b \in \Z/p^2\Z\}.$$
+Therefore $ \mathrm{AGL}(1,\Z/p^2\Z)/T \simeq (\Z/p^2\Z)^*$. Since $T$ and $ (\Z/p^2\Z)^*$ are Abelian, this proves that $G = \mathrm{AGL}(1,\Z/p^2\Z)$ is solvable.
+
+To prove that $G$ acts transitively on $\Z/p^2\Z$, for all $\alpha,\beta \in \Z/p^2 \Z$, we must find $\gamma_{a,b} \in G$ such that $\gamma_{a,b}(\alpha) = \beta$.
+
+Write $\alpha = [u]_{p^2},  \beta = [v]_{p^2}, a = [A]_{p^2}, b = [B]_{p^2}$, where $u,v,A,B \in \Z$, and $\gcd(p,A) = 1$. Then
+$$\gamma_{a,b}(\alpha) = \beta \iff a\alpha + b =\beta \iff A u + B \equiv v \pmod {p^2}.$$
+If $\alpha \in (\Z/p^2\Z)^*$, $b = 0$ and $a = \alpha^{-1}\beta$ give a solution $\gamma_{a,b} = \gamma_{\alpha^{-1}\beta , 0}$.
+
+Otherwise, $p \mid u$. If $p^2 \nmid u$, then $u = kp, k\in \Z, p \nmid k$. We can take $B = v-p$, so that
+ \begin{align*}
+ A u + B \equiv v \pmod {p^2} &\iff Akp + v-p \equiv v \pmod {p^2}\\
+ & \iff Ak \equiv 1 \pmod p,
+ \end{align*}
+which has a solution $A \in \Z$ since $p \nmid A$. 
+
+Finally, if $p^2 \mid u$, then $\alpha = 0$, and $a=1, b = \beta$ gives a solution $\gamma_{1,\beta}$. 
+
+Thus $G$, viewed as a subgroup of $S_{p^2}$, is transitive.
+
+\item[(b)] Consider the subgroup $H$ of $G$ defined by
+$$H = p\Z/p^2 Z = \{\overline{0}, \overline{p},\overline{2p},\ldots,\overline{(p-1)p}\},$$
+where we write, for every integer $a$, $\overline{a} = [a]_{p^2}$ the class of $a$ modulo $p^2$.
+
+Then the cosets $R_i = \overline{i} + H, 0 \leq i \leq p-1$, partition $G$:
+\begin{align*}
+&R_0 = H = \{\overline{0}, \overline{p},\overline{2p},\ldots,\overline{(p-1)p}\},\\
+&R_1 = \overline{1}+H =  \{\overline{1}, \overline{1+p},\overline{1+2p},\ldots,\overline{1+(p-1)p}\},\\
+&\ldots\\
+&R_{p-1} = \overline{p-1}+H = \{\overline{p-1}, \overline{p-1 + p},\overline{p-1+ 2p},\ldots,\overline{p^2-1}\}.
+\end{align*}
+Note that $R_i = \gamma_{1,i}(R_0)$ for all $i$ (here $\gamma_{1,i}$ refers to $\gamma_{\overline1 ,\overline i}$, and $i+H$ to $\overline{i} + H = R_i$).
+
+ We prove
+$$\gamma_{a,b}(R_0) = R_b.$$
+Indeed, if $\alpha = \overline{kp} \in R_0$, then $\gamma_{a,b}(\overline{kp}) = a\overline{kp} + b \in b+ H = R_b$, thus $\gamma_{a,b}(R_0) \subset R_b$. 
+Moreover the cosets $R_0, R_b$ have same cardinality, so that $\gamma_{a,b}(R_0) = R_b$.
+
+Using this result, for all index $i$, since $R_i = i + R_0 = \gamma_{1,i}(R_0)$,
+\begin{align*}
+\gamma_{a,b}(R_i) &= (\gamma_{a,b}\,  \gamma_{1,i})(R_0)\\
+&=\gamma_{a,a+ib}(R_0)\\
+&=R_{ai+b}.
+\end{align*}
+Therefore $G$ permutes the blocks $R_0,\ldots,R_{p-1}$. 
+
+This proves that $G = \mathrm{AGL}(1,\Z/p^2\Z)$ is imprimitive.
+\end{proof}
 
 \end{document}
