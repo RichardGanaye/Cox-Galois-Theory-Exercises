@@ -1498,4 +1498,275 @@ Therefore $G$ permutes the blocks $R_0,\ldots,R_{p-1}$.
 This proves that $G = \mathrm{AGL}(1,\Z/p^2\Z)$ is imprimitive.
 \end{proof}
 
+\subsection{PRIMITIVE PERMUTATION GROUPS}
+
+ \paragraph{Ex. 14.3.1}{\it The goal of this exercise is to prove that primitive permutation groups are transitive. Assume that $G \subset S_n$ is primitive but not transitive, and derive a contradiction as follows.
+ \be
+ \item[(a)] Explain why $n>1$.
+ \item[(b)] Let the orbits of $G$ acting on $\{1,\ldots,n\}$ be $R_1,\ldots,R_k$ (see Section A.4 if you have forgotten about orbits). Explain why $k>1$ and why elements of $G$ map every orbit to itself.
+ \item[(c)] Conclude that $G$ is imprimitive. Be sure to take into account the case when every orbit consists of a single element.
+ \ee
+ }
+ \begin{proof}
+
+ \item[(a)] If $n = 1$, then $S_n=\{e\}$ and $G = \{e\}$. Then $G$ is primitive (we can't partition $\{1,\ldots,n\} = \{1\}$ with classes $R_i$ such that $|R_i|>1$ for some $i$), but $G$ is transitive, since $e(1) = 1$. So the assumption $G \subset S_n$ is primitive but not transitive implies $n>1$.
+ \item[(b)] If $k=1$, there is only one orbit $R_1 = G\cdot 1$. Then $G$ is transitive: if $i,j \in \{1,n\}$, $i = \sigma(1), j = \tau(1),\ \sigma, \tau \in G$, thus $(\tau \sigma^{-1})(i) = j$, where $\tau \sigma^{-1} \in G$. This shows that $G$ is transitive. Since $G$ is not transitive, then $k>1$.
+ 
+ 
+ Now we prove that, if $\sigma \in G$ and $R_i$ is an orbit, then $\sigma(R_i)$ is an orbit $R_j$.
+ 
+ We know that the orbits partition $\{1,\ldots,n\}$. Let $u$ a fixed element in $R_i$, and $v = \sigma(u)$. Then $v \in R_j$ for some index $j$.  We prove $\sigma(R_i) = R_j$.
+ 
+ If $s \in R_i$, since $u,r$ are in the same orbit, there is some $\tau \in G$ such that $\tau(i) = s$. Then $\sigma(s) = (\sigma \tau \sigma^{-1})(v)$, where $\sigma \tau \sigma^{-1} \in G$, so that $\sigma(s) \in R_j$ and $v \in R_j$. This proves $\sigma(R_i) \subset R_j$. 
+ 
+ Conversely, since $\sigma^{-1}(v) = u \in R_i$, the same reasoning shows that $\sigma^{-1}(R_j) \subset R_i$: if $t \in R_j$: there is some $\lambda \in G$ such that $\lambda(v) = t$, thus $\sigma^{-1}(t) = (\sigma^{-1} \lambda \sigma)(u)$, where $\sigma^{-1} \lambda \sigma \in G$ and $u \in R_i$, so that $t \in R_i$. The two inclusions $\sigma(R_i) \subset R_j$ and $\sigma^{-1}(R_j) \subset R_i$ show that $\sigma(R_i) = R_j$.
+ 
+ \item[(c)] If $|R_i|>1$ for some $i$, then $G$ is imprimitive by Definition 14.2.5. By assumption, $G$ is primitive, thus $|R_i| = 1$ for all $i$, so that every orbit consists of a single element. This means that for all $\sigma \in G$, and for all $i \in \{1,\ldots,n\}$, $\sigma(i) = i$. Therefore $\sigma = e$ for all $\sigma \in G$, $G = \{e\}$. Since $n>1$ by part (a), 
+ $G$ is imprimitive, because there are partitions with at least two classes, and several elements in a class, for instance $R_1 = \{1,2\},R_2 =\{1,\ldots,n\} \setminus R_1$, is preserved by $G = \{e\}$. This proves that $G = \{e\}$ is imprimitive when $n>1$, in contradiction with the assumption.
+ 
+This contradiction proves $|R_i|>i$ for some index $i$, thus $G$ is imprimitive.
+ 
+ To conclude, all primitive permutation groups are transitive.
+ \end{proof}
+ 
+ \paragraph{Ex. 14.3.2}
+ {\it Let $\gamma_{I_n,v} \in \mathrm{AGL}(n,\F_q)$ be translation by $v \in \F_{q}^n$, and let $\gamma_{A,w} \in \mathrm{AGL}(n,\F_q)$ be arbitrary.}
+ \be
+ \item[(a)] Prove that $\gamma_{A,w}^{-1} = \gamma_{A^{-1},-A^{-1}w}$.
+ \item[(b)] Prove that $\gamma_{A,w} \circ \gamma_{I_n,v} \circ \gamma_{A,w}^{-1} = \gamma_{I_n,Av}$.
+ \item[(c)] Part (b) shows that the translation subgroup $\F_q^n \subset \mathrm{AGL}(n,\F_q)$ is normal. Prove that the quotient group $\mathrm{AGL}(n,\F_q)/\F_q^n$ is isomorphic to $\mathrm{GL}(n,\F_q)$.
+ \item[(d)] Prove that $\mathrm{AGL}(n,\F_q)$ is isomorphic to the semidirect product $\F_q^n \rtimes \mathrm{GL}(n,\F_q)$, where $\mathrm{GL}(n,\F_q)$ acts on $\F_q^n$ by matrix multiplication.
+ \ee
+ 
+\begin{proof}
+We give first the product of two elements in $\mathrm{AGL}(n,\F_q)$, to generalize the results of Section 6.4A. Using the definition $\gamma_{A,v}(u) = Au+v$, we obtain, for all $u \in \F_q^n$,
+\begin{align*}
+(\gamma_{A,v} \circ \gamma_{B,w})(u) &= \gamma_{A,v}(Bu + w)\\
+&= A(Bu + w) + v\\
+&= ABu + Aw +v\\
+&= \gamma_{AB,Aw+v}(u),
+\end{align*}
+thus
+\begin{align}
+\gamma_{A,v} \circ \gamma_{B,w} = \gamma_{AB,Aw+v}
+\end{align}
+\item[(a)] For all $u,v \in \F_q^n$,
+\begin{align*}
+v = \gamma_{A,w}(u) &\iff v = Au + w\\
+&\iff u = A^{-1}(v - w) = A^{-1} v - A^{-1}w,
+\end{align*}
+thus
+\begin{align}
+\gamma_{A,w}^{-1} = \gamma_{A^{-1}, - A^{-1}w}.
+\end{align}
+\item[(b)]
+Using the formulas (1) and (2), we obtain
+\begin{align*}
+\gamma_{A,w} \circ \gamma_{I_n,v} \circ \gamma_{A,w}^{-1} &= \gamma_{A,w} \circ \gamma_{I_n,v} \circ \gamma_{A^{-1}, - A^{-1}w}\\
+&= \gamma_{A,w} \circ \gamma_{A^{-1}, -A^{-1}w + v}\\
+&=\gamma_{I_n,A(-A^{-1}w + v) + w}\\
+&=\gamma_{I_n,Av}.
+\end{align*}
+We have proved
+\begin{align}
+\gamma_{A,w} \circ \gamma_{I_n,v} \circ \gamma_{A,w}^{-1}  = \gamma_{I_n,Av}.
+\end{align}
+
+
+\item[(c)] Consider the map
+$$
+\varphi
+\left\{
+\begin{array}{ccc}
+\mathrm{AGL}(n,\F_q) & \to &\mathrm{GL}(n,\F_q)\\
+\gamma_{A,v} & \mapsto &A.
+\end{array}
+\right.
+$$
+The map $\varphi$ is well defined, since for all $A,B \in \mathrm{GL}(n,\F_q)$ and for all $v,w \in \F_q^n$,
+\begin{align}
+\gamma_{A,v} = \gamma_{B,w} \iff (A,v) = (B,w).
+\end{align}
+Then 
+$$
+\varphi(\gamma_{A,v} \circ \gamma_{B,w}) =\varphi( \gamma_{AB,Aw+v}) = AB = \varphi(\gamma_{A,v} \varphi(\gamma_{B,w})),
+$$
+thus $\varphi$ is a group homomorphism.
+
+Since every $A \in \mathrm{GL}(n,\F_q)$ is the image of $\gamma_{A,0}$, $\varphi$ is surjective, and
+$$\ker \varphi = \{\gamma_{I,w} \, |\, w \in \F_q^*\} \simeq \F_q^n.$$
+Therefore, the first Isomorphism Theorem gives
+$$\mathrm{AGL}(n,\F_q)/ \F_q^n \simeq \mathrm{GL}(n,\F_q),$$
+with the identification of vectors $w$ with the translations $\gamma_{I,w}$.
+
+\item[(d)] Consider
+$$
+\psi
+\left\{
+\begin{array}{ccc}
+\mathrm{AGL}(n,\F_q) & \to & \F_q^n \rtimes \mathrm{GL}(n,\F_q)\\
+\gamma_{A,v} & \mapsto & (v,A).
+\end{array}
+\right.
+$$
+By formula (4), the map $\psi$ is well defined. It is a bijection, with inverse $(v,A) \mapsto \gamma_{A,v}$.
+
+Following the formula (6.9), $(h,g)\, (h',g') = (h(g\cdot h'), gg')$, which defines the product in $H \rtimes G$, the product in $\F_q^n \rtimes \mathrm{GL}(n,\F_q)$ is given by
+\begin{align}
+(v,A)\, (w,B) = (v+ Aw,AB),\qquad v,w \in \F_q^n, \quad A,B \in \mathrm{GL}(n,\F_q).
+\end{align}
+Therefore, using (5) and (1),
+\begin{align*}
+\psi(\gamma_{A,v})  \psi(\gamma_{B,w}) &= (v,A)(w,B)\\
+&= (v+ Aw,AB)\\
+&=\psi(\gamma_{AB,Aw+v})\\
+&=\psi(\gamma_{A,v}) \circ \psi(\gamma_{B,w}), 
+\end{align*}
+thus $\psi$ is a group isomorphism, and
+$$\mathrm{AGL}(n,\F_q) \simeq \F_q^n \rtimes \mathrm{GL}(n,\F_q).$$
+\end{proof}
+
+ \paragraph{Ex. 14.3.3}{\it
+ Consider the affine semilinear group $\mathrm{A\Gamma L}(n,\F_q)$ for $q = p^m$.
+ \be
+ \item[(a)] Prove that $\mathrm{AGL}(n,\F_q)$ is a normal subgroup of $\mathrm{A\Gamma L}(n,\F_q)$ of index $m$.
+ \item[(b)] Prove that $\F_q^n$ is a normal subgroup of $\mathrm{A\Gamma L}(n,\F_q)$.
+ \item[(c)] Prove that elements of $\mathrm{A\Gamma L}(n,\F_q)$ give maps $\F_q^n \to \F_q^n$ that are affine linear over $\F_p$.
+ \ee
+ }
+ 
+ \bigskip
+ 
+ We give some preliminary formulas.
+ 
+Note that $\gamma_{A,v} = \gamma_{A,e,v}, \ A \in \mathrm{GL}(n,\F_q), v \in \F_q$, where $e$ is the identity element of $\Gal(F_{q^m}/\F_p)$, thus $\mathrm{AGL}(n,\F_q) \subset \mathrm{A\Gamma L}(n,\F_q)$.
+
+For all $u = (\alpha_1,\ldots,\alpha_n) \in \F_q^n$, we write $\sigma(u) = (\sigma(\alpha_1),\ldots,\sigma(\alpha_n))$. 
+
+If $A =(a_{ij})_{1\leq i,j \leq n} \in \mathrm{GL}(n,\F_q)$, then 
+\begin{align*}
+\sigma(A\cdot u) &= \sigma\left(\sum_{j=1}^n a_{1j} \alpha_j,\ldots,\sum_{j=i}^n a_{ij} \alpha_j,\ldots,\sum_{j=1}^n a_{nj} \alpha_k\right)\\
+&=\left(\sum_{j=1}^n \sigma(a_{1j}) \sigma(\alpha_j),\ldots,\sum_{j=i}^n \sigma(a_{ij})\sigma( \alpha_j),\ldots,\sum_{j=1}^n \sigma(a_{nj})\sigma( \alpha_j)\right)\\
+&=\sigma(A)\cdot \sigma(u),
+\end{align*}
+where $\sigma(A) = (\sigma(a_{ij}))_{1\leq i,j \leq n}$, and similarly 
+$$\sigma(A\cdot u + v) = \sigma(A)\cdot  \sigma(u) + \sigma(v).$$
+Then, for all $u \in \F_q^n$,
+\begin{align*}
+(\gamma_{A,\sigma,v} \circ \gamma_{B,\tau,w})(u) &= A\sigma(B\tau(u)+w) + v\\
+&=A\sigma(B) (\sigma\tau)(u) + A\sigma(w) + v\\
+&=\gamma_{A\sigma(B),\sigma \tau,A \sigma(w) + v}(u),
+\end{align*}
+thus
+\begin{align}
+\gamma_{A,\sigma,v} \circ \gamma_{B,\tau,w} = \gamma_{A\sigma(B),\sigma \tau,A \sigma(w) + v}.
+\end{align}
+
+For all $u,s \in \F_q^n$,
+\begin{align*}
+s = \gamma_{A,\sigma,v}(u) &\iff s = A \sigma(u) + v\\
+&\iff \sigma(u) = A^{-1}(s -v)\\
+&\iff u = \sigma^{-1}(A^{-1} s - A^{-1}v)\\
+&\iff u = \sigma^{-1}(A^{-1}) \sigma^{-1}(s) - \sigma^{-1}(A^{-1})\sigma^{-1}(v)\\
+&\iff u = \gamma_{\sigma^{-1}(A^{-1}),\sigma^{-1},- \sigma^{-1}(A^{-1})\sigma^{-1}(v)},
+\end{align*}
+thus
+\begin{align}
+\gamma_{A,\sigma,v}^{-1} = \gamma_{\sigma^{-1}(A^{-1}),\sigma^{-1},- \sigma^{-1}(A^{-1})\sigma^{-1}(v)}.
+\end{align}
+By (6) and (7), $\mathrm{A\Gamma L}(n,\F_q)$ is a subgroup of $S(\F_q^n)$.
+Moreover, if $\gamma_{A,\sigma,v}, \gamma_{B,\tau,w} \in  \mathrm{A\Gamma L}(n,\F_q)$, then
+\begin{align}
+ \gamma_{A,\sigma,v} =  \gamma_{B,\tau,w} \Rightarrow (A,\sigma,v) = (B,\tau,w).
+\end{align}
+ Indeed, if $\gamma_{A,\sigma,v} =  \gamma_{B,\tau,w}$, then for all $u \in \F_q^n$, $A \sigma(u) + v = B \tau(u) + w$. With $u=0$, we obtain $v = w$. If we take $u =e_i =(0,\ldots,0,1,0,\ldots,0)$, where $(e_1,\ldots,e_n)$ is the standard base of $\F_q^n$, then $\sigma(e_i) = e_i = \tau(e_i)$, so that $Ae_i = Be_i,\ i=1,\ldots,n$. This implies $A = B$, and $\sigma(u) = \tau(u)$ for all $u\in \F_q^n$. Therefore, with $u = (\alpha,0,\ldots,0),\ \alpha \in \F_q$, we obtain $\sigma(\alpha) = \tau(\alpha)$, thus $\sigma = \tau$.
+
+ \begin{proof}
+ \item[(a)] 
+ By (8),
+ $$
+ \varphi
+ \left\{
+ \begin{array}{ccc}
+ \mathrm{A\Gamma L}(n,\F_q) &\to & \Gal(\F_{p^m},\F_p)\\
+ \gamma_{A,\sigma,v} & \mapsto & \sigma
+ \end{array}
+ \right.
+ $$
+ is well defined. Moreover, by (6), if $\gamma_{A,\sigma,v}, \gamma_{B,\tau,w} \in \mathrm{AGL}(n,\F_q)$,
+ $$\varphi(\gamma_{A,\sigma,v} \circ \gamma_{B,\tau,w} ) = \varphi( \gamma_{A\sigma(B),\sigma \tau,A \sigma(w) + v}) =\sigma \tau = \varphi(\gamma_{A,\sigma,v})\varphi( \gamma_{B,\tau,w}),
+ $$
+ thus $\varphi$ is a group homomorphism. If $\sigma$ is any element of $\Gal(\F_{p^n},\F_p)$, then $\sigma = \varphi(\gamma_{I_n, \sigma,0}$, thus $\varphi$ is surjective. The kernel of $\varphi$ is
+ $$\ker \varphi = \{\gamma_{A,e,v}\, | \, A\in \mathrm{GL}(n,\F_q), v \in \F_q^n\} = \{\gamma_{A,v}\, | \, A\in \mathrm{GL}(n,\F_q), v \in \F_q^n\}  \subset \mathrm{AGL}(n,\F_q).$$
+
+This shows that $\mathrm{AGL}(n,\F_q)$ is a normal subgroup of $\mathrm{A\Gamma L}(n,\F_q)$, and the first Isomorphism Theorem gives
+$$ \mathrm{A\Gamma L}(n,\F_q)/ \mathrm{AGL}(n,\F_q) \simeq \Gal(\F_{p^m},\F_p).$$
+Since $\Gal(\F_{p^m},\F_p)$ is a cyclic group of order $m$, $\mathrm{AGL}(n,\F_q)$ is a normal subgroup of $\mathrm{A\Gamma L}(n,\F_q)$ of index $m$.
+
+\item[(b)] Here, $\F_q^n$ is identified with the group of translations $\{\gamma_{I_n,e,w}\,|\, w \in \F_q^n\}$, and, using (6) and (7),
+\begin{align*}
+\gamma_{A,\sigma,v} \circ \gamma_{I_n,e,w} \circ \gamma_{A,\sigma,v}^{-1} &= \gamma_{A,\sigma,v} \circ \gamma_{I_n,e,w}  \circ \gamma_{\sigma^{-1}(A^{-1}),\sigma^{-1},- \sigma^{-1}(A^{-1})\sigma^{-1}(v)}\\
+&= \gamma_{A,\sigma,v} \circ  \gamma_{\sigma^{-1}(A^{-1}),\sigma^{-1},-\sigma^{-1}(A^{-1}) \sigma^{-1}(v) + w}\\
+&=\gamma_{A \sigma \sigma^{-1}(A^{-1}),\sigma \sigma^{-1}, A\sigma(-\sigma^{-1}(A^{-1}) \sigma^{-1}(v) + w) + v}\\
+&= \gamma_{I_n,e,A\sigma(w)}.
+\end{align*}
+We have proved
+\begin{align}
+\gamma_{A,\sigma,v} \circ \gamma_{I_n,e,w} \circ \gamma_{A,\sigma,v}^{-1} = \gamma_{I_n,e,A\sigma(w)} \in \F_q^n,
+\end{align}
+therefore $\F_q^n$ is a normal subgroup of $\mathrm{A\Gamma L}(n,\F_q)$.
+
+\item[(c)]  $\F_q^n$, which is a vector space over $\F_q$, is also a vector space over $\F_p$, by restriction of the extern operation 
+$
+\left\{
+\begin{array}{ccc}
+\F_q \times \F_q^n & \to & \F_q^n\\
+u & \mapsto &\lambda u
+\end{array}
+\right.
+$
+to $\F_p \times \F_q^n$.
+
+Let ${\cal B} = (e_1,\ldots,e_m)$ be a base of $\F_q$ over $\F_p$.
+As $\F_p$-vector spaces, $\F_q^n$ and $\F_p^{nm}$ are isomorphic, where an isomorphism $\varphi$ is given by
+$$
+\varphi \left\{
+\begin{array}{ccc}
+\F_q^n & \to & \F_p^{nm}\\
+(\alpha_1,\ldots,\alpha_n)& \mapsto &(x_1^1,\ldots,x_m^1;\ldots;x_1^n,\ldots,x_m^n),
+\end{array}
+\right.
+$$
+where $\alpha_i = \sum_{j=1}^m x_j^i e_j,\ i=1,\ldots,n.$ (this isomorphism depends of the choice of the base $\cal B$). This proves $\dim_{\F_p} \F_q^n = nm$.
+Consider the two maps
+$$
+\psi
+\left\{
+\begin{array}{ccc}
+\F_q^n &\to &\F_q^n\\
+u  = (\alpha_1,\ldots,\alpha_n)& \mapsto &\sigma(u) = (\sigma(\alpha_1),\ldots,\sigma(\alpha_n)),
+\end{array}
+\right.
+\qquad 
+\chi
+\left\{
+\begin{array}{ccc}
+\F_q^n &\to &\F_q^n\\
+v& \mapsto &A \cdot v.
+\end{array}
+\right.
+$$
+The automorphism $\sigma \in \Gal(\F_q/\F_p)$ is $\F_q$-linear: if $\lambda \in \F_p, \alpha \in \F_q$, $\sigma(\lambda \alpha) = \sigma(\lambda) \sigma(\alpha) = \lambda \sigma(\alpha)$. Thus $\psi$ is $\F_p$-linear. Moreover, $\chi$ is $\F_q$-linear, a fortiori $\F_p$-linear. Therefore, $\chi \circ \psi = u \mapsto A\cdot \sigma(u)$ is $\F_p$-linear, so that
+$$
+\gamma_{A,\sigma,v}
+\left\{
+\begin{array}{ccc}
+\F_q^n & \to & \F_q^n\\
+u &\mapsto & A\cdot \sigma(u) + v
+\end{array}
+\right.
+$$
+is affine linear over $\F_p$.
+ \end{proof}
+
 \end{document}
