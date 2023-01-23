@@ -1768,5 +1768,78 @@ u &\mapsto & A\cdot \sigma(u) + v
 $$
 is affine linear over $\F_p$.
  \end{proof}
+\paragraph{Ex. 14.3.4}{\it Let $F$ be any field. The definition of $\mathrm{AGL}(n,\F_q)$ given in the text extend to $\mathrm{AGL}(n,F)$.
+The goal of this exercise is to prove that $\mathrm{AGL}(n,F)$ is doubly transitive when we regard elements of $\mathrm{AGL}(n,F)$ as permutations of the vector space $F^n$.
+\be
+\item[(a)] Use $F^n \subset \mathrm{AGL}(n,F)$ to show that $\mathrm{AGL}(n,F)$ acts transitively on $F_n$.
+\item[(b)] Inside $\mathrm{AGL}(n,F)$, we have the isotropy subgroup of $\,0\in F_n$. Prove that this isotropy subgroup is $\mathrm{GL}(n,F)$.
+\item[(c)] Prove that $\mathrm{GL}(n,F)$ acts transitively on $F^n\setminus \{0\}$.
+\item[(d)]Use Exercise 19 below to conclude that $\mathrm{AGL}(n,F)$ is doubly transitive.
+\ee
+}
+\begin{proof}
+\item[(a)] Let $u,u'$ be any vectors in $F^n$. The equality $I_n\cdot u  + (u'- u) = u'$ shows that $\gamma_{I_n,u'-u}(u) = u'$, where $\gamma_{I_n,u'-u} \in \mathrm{AGL}(n,F)$.
+
+Therefore $\mathrm{AGL}(n,F)$ acts transitively on $F^n$.
+
+\item[(b)] Write $G_0$ the isotropy group of $0$. Then
+$$\gamma_{A,v} \in G_0 \iff A\cdot 0 + v = 0 \iff v = 0.$$
+Therefore $G_0 = \{\gamma_{A,0}\, | \,  A \in \mathrm{GL}(n,F)\} \simeq \mathrm{GL}(n,F)$.
+
+In section 14.3.B, we identified $\{\gamma_{A,0}\, \ A \in \mathrm{GL}(n,F)\} $ with $\mathrm{GL}(n,F)$, so that
+$$G_0 = \mathrm{GL}(n,F).$$
+
+\item[(c)]
+
+ Let $u,v \in F^n \setminus \{0\}$. Since $u \ne 0$, we can compete $u$ in a base ${\cal B} = (u_1,\ldots,u_n)$ of $F_n$, where $u_1 = u$. Similarly, we can complete $v\ne 0$ in a base ${\cal B}' = (v_1,\ldots,v_n)$, where $v1 = v$. 
+
+Since ${\cal B},{\cal B}' $ are two bases, there exists some bijective linear map $f : F^n \to F^n$ such that $f(u_i) = v_i,\ i=1,\ldots,n$.
+
+Then the matrix $A = {\cal M}_{{\cal B},{\cal B}'}(f)$ of $f$ in the bases ${\cal B},{\cal B}' $  satisfies $A \in \mathrm{GL}(n,F)$, and $A \cdot u = v$. This proves that $\mathrm{GL}(n,F)$ acts transitively on $F^n \setminus\{0\}$.
+
+\item[(d)] Since  the isotropy group $G_0$ acts transitively on $F^n\setminus \{0\}$, Exercise 14.3.19 (a) shows that $\mathrm{AGL}(n,F)$ acts transitively on $F^n$, using that  $\mathrm{AGL}(n,F)$ can be viewed as a subgroup $G$ of $S_{|F^n|}$.
+\end{proof} 
+ 
+
+ 
+ \paragraph{Ex. 14.3.19}{\it Let $G \subset S_n$ be transitive, and let $G_i$ be the isotropy subgroup of $i\in \{1,\ldots,n\}$. Thus $G_i = \{\sigma \in G \, | \, \sigma(i) = i\}$.
+ \be
+ \item[(a)] Prove that $G$ is doubly transitive if and only if $G_i$ acts transitively on $\{1,\ldots,n\} \setminus \{i\}$.
+ \item[(b)] More generally, let $k\geq 2$. Prove that $G$ is $k$-transitive if and only if $G_i$ acts $k-1$-transitively on $\{1,\ldots,n\} \setminus \{i\}$.
+ \ee
+ }
+ \begin{proof}
+ \item[(a)] Suppose that $G$ is doubly transitive. If  $j,k\in \{1,\ldots,n\} \setminus \{i\}$, as $i \ne j, i\ne k$, there exists $\sigma \in G$ such that $\sigma(i) = i, \sigma(j) = k$, so that $\sigma \in G_i$  and $\sigma(j) = k$. This proves that $G_i$ acts transitively on $\{1,\ldots,n\} \setminus \{i\}$.
+ 
+ Conversely, suppose that $G_i$ acts transitively on $\{1,\ldots,n\} \setminus \{i\}$ for some $i \in \{1,\ldots,n\}$.
+We first show that $G_{i'}$ acts also transitively on $\{1,\ldots,n\} \setminus \{i'\}$ for all $i' \in \{1,\ldots,n\}$. 
+
+First, since $G$ is transitive, there is some $\tau \in G$ such that $\tau(i) = i'$.
+
+Let $j' , k' \in \{1,\ldots,n\} \setminus \{i'\}$, and define $j = \tau^{-1}(j'), k = \tau^{-1}(k')$. Then $j \ne i, k \ne i$, otherwise $j'= i'$ or $k' =i'$.
+Then the hypothesis gives $\sigma \in G_i$ such that $\sigma(j) =k$, that is $\sigma(\tau^{-1}(j')) =\tau^{-1}(k')$.
+
+Therefore
+\begin{align*}
+(\tau \sigma \tau^{-1})(i') &= i'\\
+(\tau \sigma \tau^{-1})(j') &= k',
+\end{align*}
+ which shows that $\sigma'  = \tau \sigma \tau^{-1}\in G_{i'}$ satisfies $\sigma'(j') = k'$, thus $G_{i'}$ acts transitively on $\{1,\ldots,n\} \setminus \{i'\}$, and this is true for all $i'$.
+
+Now we prove that $G$ is doubly transitive. Let $(r,s),(r',s'),r\ne s, r'\ne s'$ be pairs of distinct elements of $\{1,\ldots,n\}$. 	
+Since $G_{r}$ acts transitively on $\{1,\ldots,n\} \setminus \{r\}$, and $r\ne s$, there exists $\sigma_1 \in G_r$ such that $\sigma_1(r) = r, \sigma_1(s) = s'$. Note that $r \ne s'$, otherwise $\sigma_1(r) = \sigma_1(s) ,r\ne s$, which is impossible since $\sigma_1$ is a permutation. Thus there exists $\sigma_2 \in G_{s'}$ such that $\sigma_2(r) = r', \sigma_2(s') = s'$, where $r'\ne s'$. Then $\sigma = \sigma_2\sigma_1$ satisfies $\sigma(r) = r', \sigma(s) = s'$. This proves that $G$ is doubly transitive.
+
+\item[(b)] Suppose first that $G$ is $k$ transitive, and let $(i_1,\ldots,i_{k-1}), (j_1,\ldots,j_{k-1})$ be any ${(k-1)}$-tuples of distinct elements of $\{1,\ldots,n\}\setminus \{i\}$. Then $(i, i_1,\ldots,i_{k-1}), (i, j_1,\ldots,j_{k-1})$ are $k$-tuples of distinct elements of $\{1,\ldots,n\}$, thus there is some $\sigma \in G$ such that $\sigma\cdot(i,i, i_1,\ldots,i_{k-1}) = (i, j_1,\ldots,j_{k-1})$, so that $\sigma \in G_i$ and $\sigma(i_1) = j_1,\ldots,\sigma(i_{k-1}) = j_{k-1}$. This proves that $G_i$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i\}$.
+
+Conversely, suppose that $G_i$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i\}$ for some $i \in \{1,\ldots,n\}$. As in part (a), we first show that $G_{i'}$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i'\}$ for all $i' \in \{1,\ldots,n\}$, using a permutation $\tau \in G$ satisfying $\tau(i) = '$. Take $(i'_1,\ldots,i'_{k-1}), (j'_1,\ldots,j'_{k-1})$ two $(k-1)$-tuples of distinct elements in $\{1,\ldots,n\} \setminus \{i'\}$. We define $i_l= \tau^{-1}(i'_l), j_l = \tau^{-1}(j'_l),\ l=1,\ldots,k-1$. Since $\tau^{-1}$ is a permutation, $(i,i_1,\ldots,i_{k-1})$ and $(i,j_1,\ldots,j_{k-1})$ are $k$-tuples of distinct elements. The hypothesis gives $\sigma \in G_i$ such that $\sigma(i_l) = j_l,\ l=1,\ldots,k-1$. Then $\sigma'= \tau \sigma \tau^{-1}$ satisfies
+$$(\tau \sigma \tau^{-1})(i'_l) = j'_l,\ l=1,\ldots,k-1,\text { and } \sigma'(i') = i'.$$
+Therefore $G_{i'}$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i'\}$, for all $i' \in \{1,\ldots,n\}$.
+
+Now let $(r_1,\ldots,r_k), (s_1,\ldots,s_k)$ be any $k$-tuples of distinct elements. There exists $\sigma_1 \in G_{r_k}$ such that
+$$\sigma_1\cdot (r_1,\ldots,r_{k-1},r_k) = (s_1,\ldots,s_{k-1},r_k),$$
+where $s_1,\ldots,s_{k-1},r_k$ are distinct, since $r_k =s_i$ for some $i\ne k$ implies $\sigma_1^{-1}(r_k) = \sigma_1^{-1}(s_i)$, that is $r_k = r_i$, which is false. Thus there exists $\sigma_2  \in G_{s_1}$ such that
+$$\sigma_2\cdot (s_1,s_2,\ldots,s_{k-1}, r_k) = (s_1,s_2,\ldots,s_{k-1},s_k).$$
+Then $\sigma = \sigma_2\sigma_1$ satisfies $\sigma \cdot (r_1,\ldots,r_k) = (s_1,\ldots,s_k)$. This proves that $G$ is $k$-transitive.
+ \end{proof}
 
 \end{document}
