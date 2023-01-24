@@ -1768,6 +1768,8 @@ u &\mapsto & A\cdot \sigma(u) + v
 $$
 is affine linear over $\F_p$.
  \end{proof}
+ 
+ 
 \paragraph{Ex. 14.3.4}{\it Let $F$ be any field. The definition of $\mathrm{AGL}(n,\F_q)$ given in the text extend to $\mathrm{AGL}(n,F)$.
 The goal of this exercise is to prove that $\mathrm{AGL}(n,F)$ is doubly transitive when we regard elements of $\mathrm{AGL}(n,F)$ as permutations of the vector space $F^n$.
 \be
@@ -1791,15 +1793,96 @@ $$G_0 = \mathrm{GL}(n,F).$$
 
 \item[(c)]
 
- Let $u,v \in F^n \setminus \{0\}$. Since $u \ne 0$, we can compete $u$ in a base ${\cal B} = (u_1,\ldots,u_n)$ of $F_n$, where $u_1 = u$. Similarly, we can complete $v\ne 0$ in a base ${\cal B}' = (v_1,\ldots,v_n)$, where $v1 = v$. 
+ Let $u,v \in F^n \setminus \{0\}$. Since $u \ne 0$, we can compete $u$ in a base ${\cal B} _1= (u_1,\ldots,u_n)$ of $F_n$, where $u_1 = u$. Similarly, we can complete $v\ne 0$ in a base ${\cal B}_2 = (v_1,\ldots,v_n)$, where $v_1 = v$. 
 
-Since ${\cal B},{\cal B}' $ are two bases, there exists some bijective linear map $f : F^n \to F^n$ such that $f(u_i) = v_i,\ i=1,\ldots,n$.
+Since ${\cal B}_1,{\cal B}_2$ are two bases, there exists some bijective linear map $f : F^n \to F^n$ such that $f(u_i) = v_i,\ i=1,\ldots,n$, so that $f(u) = v$.
 
-Then the matrix $A = {\cal M}_{{\cal B},{\cal B}'}(f)$ of $f$ in the bases ${\cal B},{\cal B}' $  satisfies $A \in \mathrm{GL}(n,F)$, and $A \cdot u = v$. This proves that $\mathrm{GL}(n,F)$ acts transitively on $F^n \setminus\{0\}$.
+Let ${\cal B} = (e_1,\ldots,e_n)$ be the standard base of $F^n$. Then the matrix $A = {\cal M}_{\cal B}(f)$ of $f$ satisfies $A \in \mathrm{GL}(n,F)$, and $A \cdot u = v$. This proves that $\mathrm{GL}(n,F)$ acts transitively on $F^n \setminus\{0\}$.
 
 \item[(d)] Since  the isotropy group $G_0$ acts transitively on $F^n\setminus \{0\}$, Exercise 14.3.19 (a) shows that $\mathrm{AGL}(n,F)$ acts transitively on $F^n$, using that  $\mathrm{AGL}(n,F)$ can be viewed as a subgroup $G$ of $S_{|F^n|}$.
 \end{proof} 
  
+\paragraph{Ex. 14.3.5}{\it Let $A$ and $B$ be non-Abelian simple groups. You will show that $A \times \{e_B\}$ and $\{e_A\}\times B$ are the only nontrivial normal subgroups of $A \times B$. Let $N \subset A \times B$ be a normal subgroup different from $\{(e_A,e_B)\},A \times\{e_B\}$, and $\{e_A\} \times B$.
+\be
+\item[(a)] Prove that $A \times\{e_B\}$ and $\{e_A\}\times B$ are normal in $A \times B$. Hence, if we can show that $N = A\times B$, then we will be done.
+\item[(b)] Prove that we can find $(a,b)\in N$ such that $e_A \ne a \in A$ and $e_B \ne b\in B$.
+\item[(c)] Let $(a,b)\in N$ be as in part (b). Show that $(aa_1a^{-1}a_1^{-1}, e_B) \in N$ for any $a_1 \in A$.
+\item[(d)] Given $e_A\ne a \in A$, prove that there is $a_1\in A$ such that $aa_1\ne a_1a$. Then combine this with parts (b) and (c) to show that $N\cap(A\times\{e_B\}) = A \times\{e_B\}$.
+\item[(e)] Part (d) implies that $A \times \{e_B\} \subset N$, and the inclusion $\{e_A\} \times B \subset N$ is proved similarly. Use this to prove that $N = A\times B$.
+\ee
+Exercise 18 will explore various aspects of this argument.
+}
+
+\begin{proof}
+\item[(a)] Take $(a_0,e_B)$ in $A\times\{e_B\}$, and $(a,b) \in A\times B$. Then
+\begin{align*}
+(a,b)(a_0,e_B)(a,b)^{-1} &= (a,b)(a_0,e_B)(a,b)^{-1}\\
+&=(a,b)(a_0,e_B)(a^{-1},b^{-1})\\
+&=(aa_0a^{-1},be_Bb^{-1}\\
+&=(aa_0a^{-1}, e_B) \in A \times\{e_B\},
+\end{align*}
+thus $A\times \{e_B\}$ is normal in $A \times B$, and similarly $\{e_A\} \times B$ is normal in $A \times B$.
+
+\item[(b)] Reasoning by contradiction, suppose that we can't find $(a,b) \in N$ such that $a \ne e_A,b\ne e_B $ , then $N \subset (A \times \{e_B\}) \cup (\{e_A\} \times B)$. 
+
+Note that $A\times \{e_B\} \simeq A$ is simple. If $N \subset A \times \{e_B\}$, then $N$ is normal in $A \times \{e_B\} \subset A \times B$, thus $N = A\times\{e_A\}$ or $N = \{(e_A,e_B)\}$, but this contradicts the assumptions on $N$. Therefore $N \not \subset A \times \{e_B\}$, and similarly $N \not \subset \{e_A\} \times B$, so that
+\begin{align}
+&N \subset (A \times \{e_B\}) \cup (\{e_A\} \times B), \quad N \ne \{(e_A,e_B)\}\\
+&N \not \subset A \times \{e_B\}, \quad N \not \subset \{e_A\} \times B.
+\end{align}
+By (10), there are two symmetrical cases.
+
+$\bullet$ Case 1: There is some $e_A \ne a \in A$ such that $n_1 = (a,0) \in N$. Since $N \not \subset A \times \{e_B\}$, there is some $b \in B, b\ne e_B$, such that $n_2 = (e_A,b) \in N$. Then $n = n_1n_2 = (a,b) \in N, a\ne e_A,b\ne e_B$, but this contradicts (10).
+
+$\bullet$ Case 2: There is some $e_B \ne b \in B$ such that $n_2 = (0,b) \in N$: same contradiction.
+
+Therefore
+$$N \not \subset (A \times \{e_B\}) \cup (\{e_A\} \times B).$$
+We can find $(a,b) \in N$ such that $a \ne e_A,b\ne e_B $.
+
+\item[(c)] $N$ is normal, and  $(a^{-1},b^{-1}) = (a,b)^{-1} \in N$, thus
+$$(a_1,e_B)(a,b)^{-1}(a_1,e_B)^{-1} = (a_1 a^{-1}a_1^{-1},b^{-1}) \in N.$$
+Left multiplication by $(a,b) \in N$ gives
+$$(a,b)[(a_1,e_B)(a,b)^{-1}(a_1,e_B)^{-1} ] = (aa_1a^{-1}a_1^{-1}, e_B) \in N.$$
+
+\item[(d)] Let $a\ne e_A$ be a fixed element in $A$.
+
+Consider the center of $A$:
+$$Z(A) = \{x \in A\, | \, \forall y \in A, xy = yx\}.$$
+$Z(A)$ is a normal subgroup of $A$ (it is the kernel of $f : A \to \mathrm{Aut(A)}$ defined by $f(y) =\phi_y$, where $\phi_y(x) = yxy^{-1}$ for all $x\in A$). Since $A$ is non-Abelian, $Z(A) \ne A$, and since $A$ is simple, $Z(A) = \{e_A\}$.
+
+Therefore, $a\ne e_A$ implies $a \not \in Z(A)$, thus there exists $a_1 \in A$ such that $aa_1 \ne a_1 a$.
+
+Since $N$ and $A\times \{e_B\}$ are normal subgroups of $A\times B$, the intersection $N \cap (A\times \{e_B\})$ is normal in $A\times B$, a fortiori in the simple group $A\times \{e_B\}$. Therefore  $N \cap (A\times \{e_B\}) =\{(e_A,e_B)\}$ or $N \cap (A\times \{e_B\}) = A \times \{e_B\}$. But $N \cap (A\times \{e_B\}) =\{(e_A,e_B)\}$ is impossible, because $(e_A,e_B) \ne (aa_1a^{-1}a_1^{-1}, e_B) \in N$. Hence $N \cap (A\times \{e_B\}) = A \times \{e_B\}$.
+
+\item[(e)] Part (d) implies that $A \times \{e_B\} \subset N$, and the inclusion $\{e_A\} \times B \subset N$ is proved similarly. Let $(a,b)$ be any element in $A\times B$. Then 
+$n_1 = (a,e_B) \in A\times\{e_B\} \subset N$, and $n_2 = (e_A,b) \in \{e_A\} \times B \subset N$, thus $n_1 \in N, n_2 \in N$, so that $n =n_1n_2 = (a,b) \in N$. This proves $A\times B \subset N$, where $N \subset A\times B$. Therefore $N = A \times B$.
+
+To conclude, if $A,B$ are non-Abelian simple groups, the only non trivial normal subgroups of $A\times B$ are $A \times \{e_B\}$ and $\{e_A\} \times B$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
  \paragraph{Ex. 14.3.19}{\it Let $G \subset S_n$ be transitive, and let $G_i$ be the isotropy subgroup of $i\in \{1,\ldots,n\}$. Thus $G_i = \{\sigma \in G \, | \, \sigma(i) = i\}$.
@@ -1841,5 +1924,4 @@ where $s_1,\ldots,s_{k-1},r_k$ are distinct, since $r_k =s_i$ for some $i\ne k$ 
 $$\sigma_2\cdot (s_1,s_2,\ldots,s_{k-1}, r_k) = (s_1,s_2,\ldots,s_{k-1},s_k).$$
 Then $\sigma = \sigma_2\sigma_1$ satisfies $\sigma \cdot (r_1,\ldots,r_k) = (s_1,\ldots,s_k)$. This proves that $G$ is $k$-transitive.
  \end{proof}
-
 \end{document}
