@@ -1861,28 +1861,116 @@ $n_1 = (a,e_B) \in A\times\{e_B\} \subset N$, and $n_2 = (e_A,b) \in \{e_A\} \ti
 To conclude, if $A,B$ are non-Abelian simple groups, the only non trivial normal subgroups of $A\times B$ are $A \times \{e_B\}$ and $\{e_A\} \times B$.
 \end{proof}
 
+\paragraph{Ex 14.3.6}{\it Let $A \subset N$ be a minimal normal subgroup, where $N$ is normal in a larger group $G$. Given $g \in G$, we set $A_g = gAg^{-1}$.
+\be
+\item[(a)] Prove that $A_g$ is isomorphic to $A$ and is a minimal normal subgroup of $N$.
+\item[(b)] Fix $g_1 \in G$ and consider $AA_{g_1}$. By Exercise 7, we know that $AA_{g_1}$ is a subgroup of $N$. Assume that $A_g \subset AA_{g_1}$ for all $g \in G$. Prove that $AA_{g_1}$ is normal in $G$.
+\item[(c)]Use the following idea to complete the proof of Proposition 14.3.10. Let $\cal A$ be the set of all subgroups of $N$ of the form $A_{g_1}\cdots A_{g_n}$ such that the map $(a_1,\ldots,a_n) \mapsto a_1\ldots a_n$ defines an isomorphism
+$$A_{g_1}\times\cdots\times A_{g_n} \simeq A_{g_1}\cdots A_{g_n}.$$
+Note that $A = A_e \in {\cal A}$. Then pick an element of $\cal A$ of maximal order.
+\ee
+}
+\begin{proof}
+\item[(a)] Consider
+$$
+\varphi_g
+\left\{
+\begin{array}{ccc}
+N & \mapsto & N\\
+a & \mapsto &gag^{-1}.
+\end{array}
+\right.
+$$
+For all $a,b \in N$, $\varphi_g(ab) = gabg^{-1} =gag^{-1} g bg^{-1} = \varphi_g(a) \varphi_g(b)$, thus $\varphi_g$ is a group homomorphism.
+
+Moreover, $\varphi_g \circ \varphi_{g^{-1}} =  1_N = \varphi_{g^{-1}} \circ \varphi_g$, so that $\varphi$  is bijective: $\varphi$ is a group automorphism.
+
+Since $A$ is normal subgroup of  $N$, $A_g = \varphi_g(A)$ is also a normal subgroup of $N$.
+
+Now take $H$ a non trivial subgroup of $A_g$. Reasoning by contradiction assume that $H$ is normal in $N$. Then  $K = \varphi_g^{-1}(H) = g^{-1}H g$ is a non trivial subgroup of $A$. Since $H$ is normal in $N$, and $\varphi_g$ is an automorphism of $N$, $K = \varphi_g^{-1}(H)$ is normal in $N$. This contradicts the fact that $A$ is a minimal normal subgroup of $N$. This  contradiction proves that $H$ is not normal in $N$. We can conclude that $A_g$ is a minimal normal subgroup of $N$.
+
+\item[(b)]  Let $g$ be any element of $G$. The hypothesis gives the inclusions $A_g = gAg^{-1} \subset AA_{g_1}$ and $A_{gg_1} = (gg_1) A (gg_1)^{-1} \subset AA_{g_1}$, therefore, since $AA_{g_1}$ is a subgroup,
+\begin{align*}
+gAA_{g_1} g^{-1} &= gA g^{-1}\ gA_{g_1} g^{-1}\\
+&= gAg^{-1}\ gg_1A g_1^{-1}g^{-1} \subset AA_{g_1}.
+\end{align*}
+This proves that $A A_{g_1}$ is a normal subgroup of $G$.
+
+\item[(c)] Let $\cal A$ be the set of all subgroups of $N$ of the form $A_{g_1}\cdots A_{g_n}$ such that the map $(a_1,\ldots,a_n) \mapsto a_1\ldots a_n$ defines an isomorphism
+$$A_{g_1}\times\cdots\times A_{g_n} \simeq A_{g_1}\cdots A_{g_n}.$$
+Note that $A = A_e \in {\cal A}$. Then pick an element $H$ of $\cal A$ of maximal order. Then 
+$$H = A_{g_1}\cdots A_{g_n},\qquad g_1,\ldots,g_n \in G  \subset N.$$
+If $H = N$, then we are done. Assume now that $H \ne N$.
+
+If $A_g \subset H$ for all $g\in G$, then $H$ is normal in $G$: 
+
+for all $g \in G$, $A_{gg_i}= (gg_i)A(gg_i)^{-1} \subset H$, thus
+$$gHg^{-1} = gA_{g_1}g^{-1} gA_{g_2}g^{-1} \cdots gA_{g_n}g^{-1} = A_{gg_1}\cdots A_{gg_n} \subset H.$$
+Since $H \ne N$, and $H \ne \{e\}$ ($|H| \geq |A|>1$), this is impossible by the minimality of $N$. Hence there is $g_{n+1} \in G$ such that $A_{g_{n+1}} \not \subset H$.
+
+We don't know if $H$ is normal in $G$, but $H = A_{g_1}\cdots A_{g_n}$ is normal in $N$, since all $A_{g_i}$ are normal in $N$ (see Exercise 7(a)). Hence $H \cap A_{g_{n+1}}$ is a normal subgroup in $N$, and lies in the minimal normal subgroup $A_{g_{n+1}}$ of $N$. Since $A_{g_{n+1}} \not \subset H$, $H \cap A_{g_{n+1}} \ne H$, therefore $H \cap A_{g_{n+1}} = \{e\}$. By Exercise 7, this proves that the map $(a_1,\ldots,a_{n+1}) \mapsto a_1\ldots a_n$ defines an isomorphism
+$$A_{g_1}\times\cdots\times A_{g_n}\times A_{g_{n+1}} \simeq A_{g_1}\cdots A_{g_n} A_{g_{n+1}} \subset N.$$
+But $A_{g_{n+1}} \not \subset H$, thus $H =  A_{g_1}\cdots A_{g_n} A_{g_{n+1}}   \subsetneq A_{g_1}\cdots A_{g_n} A_{g_{n+1}} A_{g_{n+1}}$, and this contradicts the maximality of $H$. This contradiction proves that $H = N$, so that
+$$N = A_{g_1}\cdots A_{g_n} \simeq A^n.$$
+\end{proof}
 
 
+\paragraph{Ex 14.3.7}{\it Let $H$ and $K$ be normal subgroups of a group $G$. 
 
+Let $HK =\{hk \mid h \in H, k \in K\}$.
+\be
+\item[(a)] Prove that $HK$ is a normal subgroup of $G$.
+\item[(b)] Assume that $H \cap K = \{e\}$. Prove that $hk = kh$ for all $h\in H, k \in K$.
+\item[(c)] As in part (b), assume that $H\cap K = \{e\}$. Prove that the map $H \times K \to HK$ defined by $(h,k) \mapsto hk$ is a group isomorphism.
+\ee
+}
+\begin{proof}
+\item[(a)] 
 
+  \item[$\bullet$] Since $e\in H, e \in K$, $e = e e \in HK$, thus $HK \ne \varnothing$.
+  \item[$\bullet$] Let $x = hk, y = h'k'$ be any elements of $HK$, where $h,h' \in H,\ k,k'\in K$. Then
+  \begin{align*}
+  xy &= hkh'k'\\
+  &= hh' h'^{-1}kh' k' = h''k'',
+  \end{align*}
+  where $h''= hh'\in H, k'' = (h'^{-1}kh' )k' $, and $h'^{-1}kh' \in K$, since $K$ is normal in $G$, so that $k'' =  (h'^{-1}kh' )k' \in K$. Thus $xy \in HK$
+  \item[$\bullet$] If $x = hk \in HK$, where $h \in H, k \in K$, then
+  $$x^{-1} = k^{-1}h^{-1} = h^{-1}(h k^{-1} h^{-1}),$$
+  where $h^{-1} \in H$, and $h k^{-1} h^{-1} \in K$, since $H$ is normal in $G$. Thus $x^{-1} \in HK$.
+  
+  We have proved that $HK$ is a subgroup of $G$. Moreover, if $x = hk \in HK$, and $g \in G$ then
+  $$gx g^{-1} = ghk g^{-1} = (ghg^{-1})(gkg^{-1}),$$
+  where $ghg^{-1} \in H, gkg^{-1}$ in $K$, since $H,K$ are normal subgroups. Therefore $HK$ is a normal subgroup of $G$.
 
+\item[(b)] Assume that $H \cap K = \{e\}$. If $h \in H,$ and $k \in K$, consider $z = hkh^{-1}k^{-1} \in G$. Then $z = h(kh^{-1}k^{-1})$, where $h \in H, k h^{-1} k^{-1} \in H$, so that $z \in H$. Similarly $z = (hkh^{-1}) k^{-1}$, where $hkh^{-1} \in H$ and $k^{-1} \in K$, so that $z \in H \cap K = \{e\}$. Thus $hkh^{-1}k^{-1} = e$, which proves $hk = kh$.
 
+$$(H \lhd G, K \lhd G, H \cap K = \{e\} ) \Rightarrow \forall h\in H, \forall k \in K, \ hk = kh.$$
 
+\item[(c)]  As in part (b), assume that $H\cap K = \{e\}$. Define
+$$
+\varphi
+\left\{
+\begin{array}{ccc}
+H \times K & \mapsto & HK\\
+(h,k) & \mapsto &hk.
+\end{array}
+\right.
+$$
+  \item[$\bullet$] If $u = (h,k) \in H\times K, v = (h',k' )\in H\times K$, then part (b) shows that $h'k = kh'$, thus
+  \begin{align*}
+  \varphi(uv) &=\varphi(hh',kk')\\
+  &= hh'kk'\\
+  &=hkh'k'\\
+  &=\varphi(u) \varphi(v),
+  \end{align*}
+thus $\varphi$ is a group homomorphism.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ \item[$\bullet$] If $x$ is any element of $HK$, then by definition there are some $h,k,\ h\in H,k \in K$ such that $x = hk = \varphi(h,k)$, where $(h,k) \in H\times K$. Therefore $\varphi$ is surjective.
+ 
+ \item[$\bullet$] if $u = (h,k) \in \ker \varphi$, then $hk = e$, thus $h = k^{-1} \in H\cap K = \{e\}$, and $(h,k) = (e,e)$. This proves $\ker \varphi = \{(e,e)\}$, and $\varphi$ injective.
+ 
+ We have proved that $\varphi$ is a group isomorphism.
+\end{proof}
 
  
  \paragraph{Ex. 14.3.19}{\it Let $G \subset S_n$ be transitive, and let $G_i$ be the isotropy subgroup of $i\in \{1,\ldots,n\}$. Thus $G_i = \{\sigma \in G \, | \, \sigma(i) = i\}$.
