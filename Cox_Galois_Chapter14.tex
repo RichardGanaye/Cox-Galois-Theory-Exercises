@@ -1861,7 +1861,7 @@ $n_1 = (a,e_B) \in A\times\{e_B\} \subset N$, and $n_2 = (e_A,b) \in \{e_A\} \ti
 To conclude, if $A,B$ are non-Abelian simple groups, the only non trivial normal subgroups of $A\times B$ are $A \times \{e_B\}$ and $\{e_A\} \times B$.
 \end{proof}
 
-\paragraph{Ex 14.3.6}{\it Let $A \subset N$ be a minimal normal subgroup, where $N$ is normal in a larger group $G$. Given $g \in G$, we set $A_g = gAg^{-1}$.
+\paragraph{Ex. 14.3.6}{\it Let $A \subset N$ be a minimal normal subgroup, where $N$ is normal in a larger group $G$. Given $g \in G$, we set $A_g = gAg^{-1}$.
 \be
 \item[(a)] Prove that $A_g$ is isomorphic to $A$ and is a minimal normal subgroup of $N$.
 \item[(b)] Fix $g_1 \in G$ and consider $AA_{g_1}$. By Exercise 7, we know that $AA_{g_1}$ is a subgroup of $N$. Assume that $A_g \subset AA_{g_1}$ for all $g \in G$. Prove that $AA_{g_1}$ is normal in $G$.
@@ -1915,7 +1915,7 @@ $$N = A_{g_1}\cdots A_{g_n} \simeq A^n.$$
 \end{proof}
 
 
-\paragraph{Ex 14.3.7}{\it Let $H$ and $K$ be normal subgroups of a group $G$. 
+\paragraph{Ex. 14.3.7}{\it Let $H$ and $K$ be normal subgroups of a group $G$. 
 
 Let $HK =\{hk \mid h \in H, k \in K\}$.
 \be
@@ -1972,7 +1972,95 @@ thus $\varphi$ is a group homomorphism.
  We have proved that $\varphi$ is a group isomorphism.
 \end{proof}
 
+ \paragraph{Ex. 14.3.8}{\it Suppose that $\gamma, \gamma' : T \to \{1,\ldots,l\}$ are one-to-one and onto. As explained in the text, these give isomorphisms $\hat{\gamma},\hat{\gamma}' : S(T)\simeq S_l$.
+ \be
+ \item[(a)] Explain why $\sigma = \gamma \circ (\gamma')^{-1}$ is an element of $S_l$.
+ \item[(b)] Let $\sigma \in S_l$ be as in part (a), and let $\hat{\sigma} : S_l \to S_l$ be conjugation by $\sigma$. Thus $\hat{\sigma}(\tau) = \sigma\tau\sigma^{-1}$ for $\tau \in S_l$. Prove that $\hat{\gamma} = \hat{\sigma} \circ \hat{\gamma}'$.
+ \ee
+ This proves that $\hat{\gamma}$ and $\hat{\gamma}' $ differ by conjugation by an element of $S_l$.
+ }
+ \begin{proof}
+ \item[(a)] Since $\gamma, \gamma' : T \to \{1,\ldots,l\}$ are bijective, then $\sigma =  \gamma \circ (\gamma')^{-1} : \{1,\ldots,l\} \to \{1,\ldots,l\}$ is bijective, so 
+ $\sigma \in S_l$.
  
+ \item[(b)] For all $\varphi \in S(T)$,
+ \begin{align*}
+ (\hat \sigma \circ \hat \gamma')(\varphi)&= \hat \sigma(\gamma' \circ \varphi \circ (\gamma')^{-1})\\
+ &= \sigma \circ \gamma' \circ \varphi \circ (\gamma')^{-1} \circ \sigma^{-1}\\
+ &= \gamma \circ (\gamma')^{-1} \circ \gamma' \circ \varphi \circ (\gamma')^{-1} \circ \gamma' \circ \gamma^{-1}\\
+ &=\gamma \circ \varphi \circ \gamma^{-1}\\
+ &= \hat \gamma(\varphi),
+ \end{align*}
+ thus $\hat \sigma \circ \hat \gamma' = \hat \gamma$.
+ 
+ Note: Let $G$ be a subgroup of $S(T)$, and $G_1 = \hat \gamma(G), G_2 = \hat\gamma'(G)$ the corresponding subgroups in $S_l$, then $G_1 = \hat \sigma(G_2) = \sigma G_2 \sigma^{-1}$ are conjugate subgroups.
+ \end{proof}       
+ 
+  \paragraph{Ex. 14.3.9}{\it Let $G$ be a group of order $n$. In Section 7.4 we constructed a subgroup $H \subset S_n$ isomorphic to $G$. Prove that $H$ is regular in $S_n$.
+  }
+  \begin{proof}
+  Recall the construction of $G \simeq H \subset S_n$ (see ex. 7.4.4, 7.4.6).
+  
+  Let $f : \{1,\ldots,n\} \to G$ be a bijection, and write $g_i = f(i)$, so that $G = \{g_1,\ldots,g_n\}$.
+  
+  For each $i \in \{1,\ldots,n\}$ there is some permutation $\sigma_i$ such that $$g_i g_j = g_{\sigma_i(j)}.$$
+  
+  Consider the maps
+  $$
+  \begin{array}{cclllll}
+  \{1,\ldots,n\} & \overset{f}{\to}  & G                          &\overset{\phi}{\to}               & G'=\{\phi_g \mid g \in G \}       & \overset{\psi} {\to}     & H\\
+  i                   & \mapsto            & g = g_i                  &\mapsto                             &\sigma = \phi_g 
+  \left\{
+  \begin{array}{ccc}
+  G & \to &G\\
+  h & \mapsto & gh
+  \end{array}
+  \right.
+                        & \mapsto                       &  f^{-1}\circ \phi_g \circ f,
+  \end{array}
+  $$
+where $G' = \{\phi_g \mid g\in G \} \subset S(G), H \subset S_n$, and $G \simeq H$. Here $f,\phi,\psi$ are bijective, and $\phi,\psi$ are group isomorphisms (Ex .7.4.4).
+
+Note that, as already seen in ex. 7.4.4, for all $j\in \{1,\ldots,n\}$,
+\begin{align*}
+(f^{-1} \circ \phi_{g_i} \circ f)(j) &= (f^{-1} \circ \phi_{g_i})(g_j)\\
+&= f^{-1}(g_i g_j)\\
+&= f^{-1}(g_{\sigma_i(j)}\\
+&= \sigma_i(j),
+\end{align*}
+thus
+$$\sigma_i = f^{-1} \circ \phi_{g_i} \circ f,$$
+and $H = \{\sigma_1,\ldots,\sigma_n\}$.
+
+Write $\delta = \psi \circ \phi \circ f$, so that $\delta(i) = ( \psi \circ \phi \circ f)(i)  =f^{-1} \circ \phi_{g_i} \circ f,\ i=1,\ldots,n.$
+
+We define $\gamma = \delta^{-1}$, thus for all $i \in \{1,\ldots,n\}$, 
+$$\gamma(f^{-1} \circ \phi_{g_i} \circ f) = i.$$
+
+Here $T = \{1,\ldots,n\}$, since $H \subset S(\{1,\ldots,n\}$. Then $\gamma : G \to T$ induces an isomorphism $\hat \gamma : S(G) \to S(T) = S_n$ defined by 
+$$\hat \gamma(\sigma) =\gamma \circ \sigma \circ \gamma^{-1}.$$
+Now we compute $\hat \gamma (\varphi_h)$, where $h \in H$ is a permutation, and $\varphi_h(k) = hk = h \circ k,\ k\in H$. 
+Since $h \in H$, there is some $i \in \{1,\ldots,n\}$ such that $h = f^{-1} \circ \phi_{g_i} \circ f$.
+
+For all $j \in \{1,\ldots,n\}$,
+\begin{align*}
+\hat \gamma (\varphi_h)(j) &= (\gamma \circ \varphi_h \circ \gamma^{-1})(j)\\
+&= (\gamma \circ \varphi_h)(f^{-1} \circ \phi_{g_j} \circ f)\\
+&= \gamma(h \circ f^{-1} \circ \phi_{g_j} \circ f)\\
+&= \gamma(f^{-1} \circ \phi_{g_i} \circ f \circ f^{-1} \circ \phi_{g_j} \circ f)\\
+&=\gamma(f^{-1}  \circ \phi_{g_i}\circ \phi_{g_j} \circ f)\\
+&= \gamma(f^{-1}  \circ \phi_{g_i g_j} \circ f)\\
+&= \gamma(f^{-1}  \circ \phi_{g_{\sigma_i(j)}} \circ f)\\
+&=\sigma_i(j).
+\end{align*}
+Therefore $\hat \gamma (\varphi_h) = \sigma_i = f^{-1} \circ \phi_{g_i} \circ f \in H$.
+
+We have proved that the isomorphism $\hat \gamma$ takes $\{\varphi_h \mid h \in H\}$ in $H$, and since these two subgroups have same order $n$,
+$$\hat \gamma(\{\varphi_h \mid h \in H\}) = H.$$
+The definition of a regular subgroup of $S(T)$ is satisfied, so $H$ is a regular subgroup of $S_n$.
+  \end{proof}
+ 
+
  \paragraph{Ex. 14.3.19}{\it Let $G \subset S_n$ be transitive, and let $G_i$ be the isotropy subgroup of $i\in \{1,\ldots,n\}$. Thus $G_i = \{\sigma \in G \, | \, \sigma(i) = i\}$.
  \be
  \item[(a)] Prove that $G$ is doubly transitive if and only if $G_i$ acts transitively on $\{1,\ldots,n\} \setminus \{i\}$.
