@@ -2040,7 +2040,7 @@ $$\gamma(f^{-1} \circ \phi_{g_i} \circ f) = i.$$
 Here $T = \{1,\ldots,n\}$, since $H \subset S(\{1,\ldots,n\}$. Then $\gamma : G \to T$ induces an isomorphism $\hat \gamma : S(G) \to S(T) = S_n$ defined by 
 $$\hat \gamma(\sigma) =\gamma \circ \sigma \circ \gamma^{-1}.$$
 Now we compute $\hat \gamma (\varphi_h)$, where $h \in H$ is a permutation, and $\varphi_h(k) = hk = h \circ k,\ k\in H$. 
-Since $h \in H$, there is some $i \in \{1,\ldots,n\}$ such that $h = f^{-1} \circ \phi_{g_i} \circ f$.
+Since $h \in H$, there is some $i \in \{1,\ldots,n\}$ such that $h = f^{-1} \circ \phi_{g_i} \circ f =\sigma_i$.
 
 For all $j \in \{1,\ldots,n\}$,
 \begin{align*}
@@ -2053,13 +2053,57 @@ For all $j \in \{1,\ldots,n\}$,
 &= \gamma(f^{-1}  \circ \phi_{g_{\sigma_i(j)}} \circ f)\\
 &=\sigma_i(j).
 \end{align*}
-Therefore $\hat \gamma (\varphi_h) = \sigma_i = f^{-1} \circ \phi_{g_i} \circ f \in H$.
+Therefore $\hat \gamma (\varphi_h) = \sigma_i = h\in H$.
 
 We have proved that the isomorphism $\hat \gamma$ takes $\{\varphi_h \mid h \in H\}$ in $H$, and since these two subgroups have same order $n$,
 $$\hat \gamma(\{\varphi_h \mid h \in H\}) = H.$$
 The definition of a regular subgroup of $S(T)$ is satisfied, so $H$ is a regular subgroup of $S_n$.
   \end{proof}
  
+  \paragraph{Ex. 14.3.10}{\it A permutation group $G \subset S_l$ is regular if there is a  one-to-one onto map $\gamma : G \to \{1,\ldots,l\}$ such that $\hat \gamma : S(G) \simeq S_l$ maps $\{\varphi_g \mid g \in G\} \subset S(G)$ to $G \subset S_l$. Recall that $\varphi_g \in S(G)$ is defined by $\varphi_g(h) = gh$ for $h\in G$. The goal of this exercise is to show that $G$ is regular if and only if it is transitive with trivial isotropy subgroups.
+  \be
+  \item[(a)] Let $G \subset S_l$ be regular. Prove that $G$ is transitive and that the isotropy subgroups of $G$ are trivial.
+  \item[(b)] For the rest of the exercise, assume that $G$ is transitive with trivial isotropy subgroups. Define $\gamma : G \to \{1,\ldots,l\}$ by $\gamma(\tau) = \tau(1)$ for $\tau \in G$. Prove that this map is one-to-one and onto.
+  \item[(c)] The map $\gamma$ of part (b) gives $\hat \gamma:S(G) \simeq S_l$. Show that $\hat \gamma(\varphi_g) = g$, and conclude that $G$ is regular.
+  \ee
+  }
+  \begin{proof}
+  \item[(a)] Recall that $\hat \gamma(\sigma) = \gamma \circ \sigma \circ \gamma^{-1}$ for all $\sigma \in S_l$.
+  
+  Let $i,j$ be any elements in $\{1,\ldots,l\}$. We must find $g' \in G$ such that $g'(i) = j$.
+  
+  Take $g = \gamma^{-1}(j) [\gamma^{-1}(i)]^{-1} \in G$, and $g' = \hat \gamma(\varphi_g)$. Then $g' \in G$ since $\hat \gamma$ maps ${\{\varphi_g \mid g \in G\}}$ to $G$.
+  
+  Then $g \gamma^{-1}(i) = \gamma^{-1}(j)$, thus $(\gamma \circ \varphi_g \circ \gamma^{-1})(i) = j$, that is $g' (i) = (\hat \gamma(\varphi_g))(i) = j$, where $g' \in G$. This proves that $G$ is transitive.
+  
+  Let $i$ be any element in $\{1,\ldots,l\}$, and take  $g' \in G_i$, where $G_i$ is the isotropy subgroup of $i$, so that $g'(i) = i$. Since $\hat \gamma$ maps $\{\varphi_g \mid g \in G\} \subset S(G)$ to $G$, there exists some $g \in G$ such that $g' = \hat \gamma(\varphi_g) =\gamma \circ \phi_g \circ \gamma^{-1}$.
+  
+  Then $g'(i) = i$ implies $g \gamma^{-1}(i) = \gamma^{-1}(i)$, thus $g = e , \phi_g = e$, and $g' = \gamma \circ \phi_g \circ \gamma^{-1} = e$, where $e = 1_G$ is the identity element of $G$. Therefore $G_i=\{e\}$ for all $i \in \{1,\ldots,l\}$.
+  
+ \item[(b)] We prove first that $\gamma$ is injective. Suppose that $\gamma(\tau) = \gamma(\tau')$, where $\tau,\tau' \in G$. Then $\tau(1) = \tau'(1)$, thus $(\tau^{-1} \circ \tau')(1) = 1$, and $\tau^{-1} \circ \tau' \in G_1$, where $G_1$ is the isotropy subgroup of $1$. But $G_1 = \{e\}$, thus $\tau^{-1} \circ \tau' = e$, and $\tau = \tau'$. We have proved that $\gamma$ is injective.
+ 
+ Now take $i$ be any element in $\{1,\ldots,l\}$. Since $G$ is transitive, there is some $\tau \in G$ such that $\tau(1) = i$, that is $\gamma(\tau) = i, \tau \in G$. This proves that $\gamma$ is surjective.
+ 
+ $\gamma : G \to \{1,\ldots,n\}$ is bijective.
+ 
+ \item[(c)] let $i$ be any element in $\{1,\ldots,l\}$. Since $G$ is transitive, there is some $\tau \in G$ such that $\tau(1) = i$, thus $\gamma(\tau) = i$. Therefore
+ \begin{align*}
+ [\hat \gamma(\varphi_g)](i) &= (\gamma \circ \varphi_g \circ \gamma^{-1})(i)\\
+ &= (\gamma \circ \varphi_g)(\tau)\\
+ &= \gamma(g\tau)\\
+ &= (g\tau)(1) = g(i).
+ \end{align*}
+ Since this is true for all $i$,
+ $$\hat \gamma(\varphi_g) = g.$$
+
+
+This proves that the isomorphism $\hat \gamma$ maps $\{\varphi \mid g \in G\}$ in $G$, and since these two subgroup have same order $l$, $\hat \gamma$ maps $\{\varphi_g\mid g \in G\}$ on $G$.
+
+$G$ is a regular subgroup of $S_l$.
+
+  \end{proof}
+
+Note: This proves also that $G \subset S_l$ is regular iff there is some bijective $\gamma : G \to \{1,\ldots l\}$ such that $\hat \gamma$ maps $\varphi_g$ to $g$, for every $g\in G$.
 
  \paragraph{Ex. 14.3.19}{\it Let $G \subset S_n$ be transitive, and let $G_i$ be the isotropy subgroup of $i\in \{1,\ldots,n\}$. Thus $G_i = \{\sigma \in G \, | \, \sigma(i) = i\}$.
  \be
