@@ -141,7 +141,7 @@ $$
 \left\{
 \begin{array}{lll}
 h \cdot x_0 &= &x_0,\\
-h \cdot (g\cdot x_0) &= & (g\cdot x_0).
+h \cdot (g\cdot x_0) &= & g\cdot x_0.
 \end{array}
 \right.
 $$
@@ -2105,6 +2105,140 @@ $G$ is a regular subgroup of $S_l$.
 
 Note: This proves also that $G \subset S_l$ is regular iff there is some bijective $\gamma : G \to \{1,\ldots l\}$ such that $\hat \gamma$ maps $\varphi_g$ to $g$, for every $g\in G$.
 
+ \paragraph{Ex. 14.3.11}{\it We can regard $\F_p^n$ as both a group (under addition) and a vector space over $\F_p$ (under addition and scalar multiplication). However, since we are over $\F_p$, scalar multiplication can be buildt out of addition. Use this observation to prove the following:
+ \be
+ \item[(a)] Any subgroup of $\F_p^n$ is a subspace.
+ \item[(b)] Any group homomorphism $\gamma : \F_p^n \to \F_p^n$ is linear.
+ \ee
+ }
+ 
+ \begin{proof}
+ \item[(a)] Let $H$ be a subgroup of $\F_p^n$.
+If $v = (\alpha_1,\ldots,\alpha_n) \in H$, we show by induction on $k \in \N$ that $[k]_p v \in H$.
+ First $[0]_p v = (0,\ldots,0) \in H$. If $[k]_p v \in H$, then $[k+1]_p v = [k]_pv + v \in H$. Therefore 
+ $$\forall k \in \N,\ [k]_p v \in H.$$
+ Since for every $\lambda \in \F_p$, there is some $k\in \N$ such that $\lambda =[k]_p$, we can conclude that, for all $v \in H$, for all $\lambda \in \F_p$, $\lambda v \in H$. Thus $H$ is a subspace of $\F_p^n$.
+ 
+ \item[(b)] Let $\gamma : \F_p^n \to \F_p^n$ a group homomorphism. if $v \in \F_p^n$, We show by induction that $\gamma([k]_p v) = [k]_p \gamma(v)$ for $k \in \N$.
+ 
+For $k = 0$, $ \gamma([0]_p v) = 0 =  [0]_p \gamma(v)$. If $\gamma([k]_p v) = [k]_p \gamma(v)$ for some $k\in \N$, then, since $\gamma$ is a group homomorphism,
+$$\gamma([k+1]_p v) = \gamma([k]_p v + v) = \gamma([k]_pv) + \gamma(v) = [k]_p \gamma(v) + \gamma(v) = ([k]_p + 1)\gamma(v) = [k+1]_p \gamma(v).$$
+Therefore $\gamma([k]_p v) = [k]_p \gamma(v)$  for all $k \in \N$. This proves that $\gamma(\lambda v) = \lambda f(v)$ for all $v \in \F_p^n$, for all $\lambda \in \F_p$, thus $\gamma$ is linear.
+ 
+ \end{proof}
+ 
+  \paragraph{Ex. 14.3.12}{\it This exercise will use the notation of the proof of Proposition 14.3.20.
+  \be
+  \item[(a)] Suppose that $V \subset \F_p^n$ is a nontrivial subspace such that $g(V) \subset V$ for all $g\in G_0$. Use the cosets of $V$ in $\F_p^n$ to prove that $G$ is imprimitive.
+  \item[(b)] Explain why $\F_p^n$ is normal in $G$, and prove that $G/\F_p^n \simeq G_0$. Use this to prove part (b) of Proposition 14.3.20.
+  \ee
+ }
+ \begin{proof}
+ Here
+ $$\F_p^n \subset G \subset \mathrm{AGL}(n,\F_p) \subset S_{p^n}.$$
+ \item[(a)] Consider a complete system $\{a_1,\ldots,a_n\}$ of representatives of cosets of $V$ in $\F_p^n$, so that the cosets of $V$ are the disjoint cosets $$R_1 = a_1+V, \ldots,R_k = a_k + V.$$
+ Then $\F_p^n = \bigcup\limits_{i=1}^k (a_i + V)$ is the disjoint union of parallel affine subspaces.
+ 
+ Let $g \in G \subset \mathrm{GL}(n,\F_p)$. Recall (see the text following Corollary 14.3.18) that
+ $$G = \{\gamma_{A,w} \mid w \in \F_p^n, A \in G_0\},$$
+ thus $g = \gamma_{A,w}$, for some $w\in \F_p^n$ and $A\in G_0$. For all $v \in V$
+ $$g\cdot (a_i + v) = A\cdot (a_i + v) + w =A\cdot a_i + w + A\cdot v.$$
+Since $A \in G_0$, $A \cdot V \subset V$, thus $g\cdot (a_i + v) \in (A\cdot a_i + w)+ V.$ The cosets $R_i,\ 1\leq i \leq k$, partition $\F_p^n$, thus there is some index $j$ such that $A\cdot a_i + w \in R_j = a_j + V$, so that $A\cdot a_i + w + V = a_j + V$, and 
+ $$g(a_i + V) \subset a_j + V.$$ 
+Moreover, the cosets $R_i = a_i +V$ have same cardinality, and $g$ is bijective, therefore $|a_j + V| = |a_i + V| = |g(a_i + V)|$. This proves
+  $$g(a_i + V) = a_j + V.$$ 
+  To conclude, there is a partition of $\F_p^n$ such that for every $1\leq i \leq k$, we have $g(R_i) = R_j$ for some $1\leq j \leq k$. Since $1<|V|<p^n$, then $k>1$ and $|R_1| =\cdots=|R_k|>1$. This proves that $G\subset S_{p^n}$ is imprimitive.
+  
+  \item[(b)] We have seen in Exercise 2 that the group homomorphism
+  $$
+\varphi
+\left\{
+\begin{array}{ccc}
+\mathrm{AGL}(n,\F_q) & \to &\mathrm{GL}(n,\F_q)\\
+\gamma_{A,v} & \mapsto &A.
+\end{array}
+\right.
+$$
+induces an isomorphism 
+$$\mathrm{AGL}(n,\F_q)/ \F_q^n \simeq \mathrm{GL}(n,\F_q).$$
+Consider the restriction $\varphi_0$ of $\varphi$, defined by
+ $$
+\varphi_0
+\left\{
+\begin{array}{ccc}
+G & \to &G_0\\
+\gamma_{A,v} & \mapsto &A.
+\end{array}
+\right.
+$$
+Since $G = \{\gamma_{A,w} \mid w \in \F_p^n, A \in G_0\}$, $\varphi_0$ is surjective, and $\ker \varphi_0 = \{\gamma_{I_n,w} \mid w \in \F_{p^n}\} \simeq \F_p^n$, thus, with the usual identification $ \{\gamma_{I_n,w} \mid w \in \F_{p^n}\} = \F_p^n$, $\F_p^n$  is a normal subgroup of $G$, and
+$$G/\F_p^n \simeq G_0.$$
+Now we prove (b).
+
+By Theorem 8.1.4, $G$ is solvable if and only if $\F_p^n$ and $G/\F_p^n$ are normal. Since we know that  $\F_p^n$  is a normal subgroup of $G$, we obtain the equivalence
+$$G \text{ is solvable } \iff G_0 \text { is solvable.}$$
+ \end{proof}
+ 
+ 
+  \paragraph{Ex. 14.3.13}{\it Consider the definition of $k$-transitive given in the Mathematical Notes.
+  \be
+  \item[(a)] Prove that $S_n$ is $n$-transitive.
+  \item[(b)] Prove that $A_n$ is $(n-2)$-transitive when $n\geq 3$.
+  \ee
+  }
+  \begin{proof}
+ \item[(a)] Take any ordered $n$-tuple $(a_1,\ldots,a_n)$ of distinct elements of $\{1,\ldots n\}$. Then consider the map 
+  $$
+  \sigma
+  \left\{
+  \begin{array}{ccc}
+  \{1,\ldots,n\} & \to &\{1,\ldots,n\}\\
+  i &\mapsto &a_i.
+  \end{array}
+  \right.
+  $$
+  Then $\{a_1,\ldots,a_n\} \subset \{1,\ldots,n\}$ and, since the $a_i$ are distinct, $|\{a_1,\ldots,a_n\}| = n$, so that $\{a_1,\ldots,a_n\} = \{1,\ldots,n\}$. This shows that $\sigma$ is surjective, and since the $a_i$ are distinct, $\sigma$ is injective, thus $\sigma$ is a permutation: $\sigma \in S_n$
+  
+   ($\sigma =
+   \left(
+   \begin{array}{cccc}
+   1&2&\cdots&n\\
+   a_1&a_2&\cdots&a_n
+   \end{array}
+   \right)
+   $ is the only permutation such that $\sigma(i) = a_i,\ i=1,\ldots,n$).
+ 
+ Since 
+$$\sigma\cdot(1,\ldots,n) = (a_1,\ldots,a_n),$$
+the orbit of $(1,\ldots,n)$ is the whole set $P_n$ of ordered $n$-tuples of distinct elements of $\{1,\ldots,n\}$. This proves that there is only one orbit, and that $G$ acts transtitively on $P_n$, i.e. $S_n$ is $n$-transitive.
+
+\item[(b)] Take any ordered $(n-2)$-tuple $(a_1,\ldots,a_{n-2})$ of distinct elements of $\{1,\ldots,n\}$. Name $a,b$ the two remaining elements:
+$$\{a,b\} = \{1,\ldots,n\} \setminus \{a_1,\ldots,a_{n-2}\}.$$
+Consider the two permutations
+$$
+\sigma =
+   \left(
+   \begin{array}{cccccc}
+   1&2&\cdots&n-2 & n-1&n\\
+   a_1&a_2&\cdots&a_{n-2}& a & b
+   \end{array}
+   \right),
+ $$
+ $$
+\tau =
+   \left(
+   \begin{array}{cccccc}
+   1&2&\cdots&n-2 & n-1&n\\
+   a_1&a_2&\cdots&a_{n-2}& b & a
+   \end{array}
+   \right).
+ $$
+ Then $\sigma\cdot (1,\ldots,n-2) = (a_1,\ldots,a_{n-2}) = \tau\cdot (1,\ldots,n-2)$.
+ 
+But $\tau = (a\, b) \sigma$, thus one of the two permutations $\sigma, \tau$ is in $A_n$, therefore $(a_1,\ldots,a_{n-2}) $ is in the orbit $A_n\cdot (1,\ldots,n-2)$ of $(1,\ldots,n-2) \in P_{n-2}$. Therefore $A_n$ acts transitively on $P_{n-2}$. $A_n$ is $(n-2)$-transitive.
+  \end{proof}
+ 
+ 
  \paragraph{Ex. 14.3.19}{\it Let $G \subset S_n$ be transitive, and let $G_i$ be the isotropy subgroup of $i\in \{1,\ldots,n\}$. Thus $G_i = \{\sigma \in G \, | \, \sigma(i) = i\}$.
  \be
  \item[(a)] Prove that $G$ is doubly transitive if and only if $G_i$ acts transitively on $\{1,\ldots,n\} \setminus \{i\}$.
