@@ -2239,6 +2239,353 @@ But $\tau = (a\, b) \sigma$, thus one of the two permutations $\sigma, \tau$ is 
   \end{proof}
  
  
+  \paragraph{Ex. 14.3.14}{\it Consider the groups $\mathrm{GL}(2,\F_q), \mathrm{SL}(2,\F_q), \mathrm{PGL}(2,\F_q)$, and $\mathrm{PSL}(2,\F_q)$ defined in the Mathematical Notes.
+  \be
+  \item[(a)] Prove that $|\mathrm{GL}(2,\F_q)| = q(q-1)(q^2-1)$.
+  \item[(b)] Prove that $|\mathrm{SL}(2,\F_q)\ = | \mathrm{PGL}(2,\F_q)| = q(q^2-1)$.
+  \item[(c)] Prove that $\mathrm{PSL}(2,\F_q) \simeq \mathrm{SL}(2,\F_q)/\{\pm I_2\}$, and conclude that
+  $$|\mathrm{PSL}(2,\F_q)| = 
+  \left\{
+  \begin{array}{ll}
+  \frac{1}{2} q (q^2-1),&q\ne 2^n\\
+  q(q^2-1), & q=2^n.
+  \end{array}
+  \right.
+  $$
+  \item[(d)] Compute $|\mathrm{PSL}(2,\F_q)|$ for $q=2,3,4,5,7$.
+  \item[(e)] Show that $|\mathrm{GL}(3,\F_2)| = |\mathrm{PSL}(3,\F_2)| = 168$.
+  \ee
+  }
+  \begin{proof}
+  \item[(a)] To build an $2\times 2$ matrix $A \in \mathrm{GL}(2,\F_q)$, we must first choose a nonzero vector $u \in \F_q^2$ (the first column of the matrix), then a vector $v \not \in \F_q u$ (the second column). Since $|\F_q^2 \setminus \{0\}| = q^2-1$, and $|\F_q^2 \setminus \F_q u| = q^2 -q$, we obtain
+  $$|\mathrm{GL}(2,\F_q)| = (q^2 - 1)(q^2 -q) =q(q-1)(q^2 - 1).$$
+  
+  \item[(b)] $\mathrm{SL}(2,\F_q)$ is the kernel of the surjective homomorphism $det : \mathrm{GL}(2,\F_q) \to \F_q^*$, so that
+  $$\mathrm{GL}(2,\F_q)/ \mathrm{SL}(2,\F_q) \simeq \F_q^*.$$
+  Therefore $|\mathrm{GL}(2,\F_q)|/| \mathrm{SL}(2,\F_q)| = |\F_q^*|$, thus
+  $$| \mathrm{SL}(2,\F_q)| = q(q-1)(q^2 - 1)/(q-1) = q(q^2-1).$$
+  The definition
+  $$\mathrm{PGL}(2,\F_q) = \mathrm{GL}(2,\F_q)/\F_q^* I_n$$
+  gives
+  $$|\mathrm{PGL}(2,\F_q)| = q(q-1)(q^2 - 1)/ (q-1) = q(q^2-1).$$
+  \item[(c)] Consider the restriction of the canonical projection $\pi : \mathrm{GL}(2,\F_q) \to \mathrm{GL}(2,\F_q)/\F_q^* I_n$ to $\mathrm{SL}(2,\F_q)$. We obtain
+  $$
+  \varphi
+  \left\{
+  \begin{array}{ccc}
+  \mathrm{SL}(2,\F_q) & \to & \mathrm{PGL}(2,\F_q)\\
+  A & \mapsto & [A].
+  \end{array}
+  \right.
+  $$
+  
+  If $A \in   \mathrm{SL}(2,\F_q) $ is such that $[A] = [I_2]$, then $A = \lambda I_2, \lambda \in \F_q^*$, and $\det(A) = \lambda^2 = 1$, so that $\lambda = \pm 1$. We have proved $\ker(\pi_1) = \{I_2,-I_2\}$ (where $I_2 = -I_2$ if the characteristic is 2). Therefore
+  $$\im(\varphi) \simeq \mathrm{SL}(2,\F_q)/\{I_2,-I_2\}.$$
+  
+  Note that $\varphi$ is not surjective.
+  
+  By the definition given in the mathematical notes, $\im \varphi = \mathrm{PSL}(2,\F_q)$, thus
+  $$\mathrm{PSL}(2,\F_q) \simeq \mathrm{SL}(2,\F_q)/\{I_2,-I_2\}.$$
+  
+  If $q=2^n$, then the characteristic of $\F_q$ is 2, and $I_2 = - I_2$, so that $|\mathrm{PGL}(2,\F_q) | = | \mathrm{SL}(2,\F_q)|$. Otherwise $|\mathrm{PGL}(2,\F_q) | = \frac{1}{2}| \mathrm{SL}(2,\F_q)|$. This proves
+   $$|\mathrm{PSL}(2,\F_q)| = 
+  \left\{
+  \begin{array}{ll}
+  \frac{1}{2} q (q^2-1),&q\ne 2^n\\
+  q(q^2-1), & q=2^n.
+  \end{array}
+  \right.
+  $$
+  \item[(d)]
+  $$
+  \begin{array}{c|ccccc}
+   q & 2 & 3 & 4 & 5 & 7\\
+   \hline
+  |\mathrm{PSL}(2,\F_q)| & 6 & 12 & 60 & 60 & 168
+  \end{array}
+   $$
+   \item[(e)]  The same reasoning as in part (a) shows that
+   $$|\mathrm{GL}(3,\F_q)| = (q^3 - 1)(q^3 -q)(q^3 -q^2),$$
+   thus, for $q=2$,
+      $$|\mathrm{GL}(3,\F_2)| = 168.$$
+     As in parts (b) and (c),
+      $$\mathrm{GL}(3,\F_q)/ \mathrm{SL}(3,\F_q) \simeq \F_q^*,\qquad  \mathrm{PSL}(3,\F_q) \simeq \mathrm{SL}(3,\F_q)/\{\pm I_2\}.$$
+    For $q=2$, $I_2 = -I_2$, and  $\F_q^* = \{1\}$, thus
+    $$|\mathrm{PSL}(3,\F_2)| = |\mathrm{SL}(3,\F_2)|  = |\mathrm{GL}(3,\F_2)| = 168.$$
+      
+  \end{proof}
+
+ 
+  \paragraph{Ex. 14.3.15}{\it Prove that $\mathrm{GL}(2,\F_2) = \mathrm{SL}(2,\F_2) \simeq \mathrm{PSL}(2,\F_2) \simeq S_3$, and ${\mathrm{PSL}(2,\F_3) \simeq A_4}$.
+ }
+ 
+ \begin{proof}
+ Since $\mathrm{SL}(2,\F_2)$ is the kernel of the surjective homomorphism $det : \mathrm{GL}(2,\F_2) \to \F_2^*$, where $\F_2^* = \{1\}$ is trivial, we obtain $\mathrm{SL}(2,\F_2) = \mathrm{GL}(2,\F_2)$. 
+ 
+ By part (c) of Exercise 14, $\mathrm{PGL}(2,\F_q) \simeq \mathrm{SL}(2,\F_q)/\{I_2,-I_2\}.$
+   For $q = 2$, $I_2 = -I_2$, thus 
+  $$\mathrm{PGL}(2,\F_2) \simeq \mathrm{SL}(2,\F_2) = \mathrm{GL}(2,\F_2).$$
+  Moreover,
+  $$\mathrm{GL}(2,\F_2) = \left\{
+   \begin{pmatrix}
+  1 & 0\\
+  0 & 1
+  \end{pmatrix},
+  \begin{pmatrix}
+  0 & 1\\
+  1 & 1
+  \end{pmatrix},
+   \begin{pmatrix}
+  0 & 1\\
+  1 & 0
+  \end{pmatrix},
+   \begin{pmatrix}
+  1 & 0\\
+  1 & 1
+  \end{pmatrix},
+   \begin{pmatrix}
+  1 & 1\\
+  0 & 1
+  \end{pmatrix},
+    \begin{pmatrix}
+  1 & 1\\
+  1 & 0
+  \end{pmatrix}
+  \right\},
+  $$
+  thus $|\mathrm{GL}(2,\F_2)| = 6$, and $\mathrm{GL}(2,\F_2) $ is not Abelian:
+  $$
+   \begin{pmatrix}
+  1 & 1\\
+  1 & 0
+  \end{pmatrix}
+  \begin{pmatrix}
+  1 & 1\\
+  0 & 1
+  \end{pmatrix}
+  =
+    \begin{pmatrix}
+  1 & 0\\
+  1 & 1
+  \end{pmatrix}
+  \ne
+    \begin{pmatrix}
+  0 & 1\\
+  1 & 0
+  \end{pmatrix}
+=
+ \begin{pmatrix}
+  1 & 1\\
+  0 & 1
+  \end{pmatrix}
+  \begin{pmatrix}
+  1 & 1\\
+  1 & 0
+  \end{pmatrix}.
+  $$
+Since there is only one non Abelian group of order 6, up to isomorphism,
+  $$\mathrm{GL}(2,\F_2) = \mathrm{SL}(2,\F_2) \simeq \mathrm{PSL}(2,\F_2) \simeq S_3.$$
+  
+ To prove the last inclusion we use the action of $\mathrm{PGL}(2,F)$ on the projective line $F \cup \{\infty\}$ (where $F$ is a field) which we describe below (if you already know projective planes and the Lemma proved here, you can pass this explanation).
+ 
+ 
+ $\mathrm{GL}(2,F)$ acts on $F^2$ with the action defined, for $M = \left(
+\begin{array}{cc}
+ a&   b  \\
+ c&   d   
+\end{array}
+\right)$,
+by
+ $$(x',y') = M \cdot (x,y) \iff
+ \left(
+\begin{array}{c}
+x'   \\
+y'  
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cc}
+ a&   b  \\
+ c&   d   
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+x   \\
+y   
+\end{array}
+\right)
+=\left(
+\begin{array}{c}
+ax +by  \\
+cx+dy  
+\end{array}
+\right).
+$$
+The binary relation on $F^2 \setminus \{(0,0)\}$ defined by
+  $$
+(x,y)
+\sim 
+(x',y')
+ \iff \exists \lambda \in \mathbb{F}^*, x'=\lambda x,y'=\lambda y
+ $$ 
+is an equivalence relation. 
+
+The quotient set is the projective line $\mathbb{P}_1(F)$. We write $[x,y] =\{ (\lambda x, \lambda y) \mid \lambda \in F^*\}$ the class of $(x,y)$ for the relation $\cal R$, in other words the projective point with homogenous coordinates $(x,y)$.
+  
+ If $(x,y) \sim (x',y')$, then $M\cdot (x,y) \sim M\cdot (x',y')$, and $M\cdot (x,y) \ne (0,0)$ if $(x,y) \ne (0,0)$. Thus we can define the action on a projective point $P = [x,y]$ by  $M\cdot P = M \cdot (x,y)$, where $(x,y)$ is any representative of $P$. This is an action of $\mathrm{GL}(2,F)$ on the set $\mathbb{P}_1(F)$.
+ 
+ The map 
+ $$
+ f 
+ \left\{
+ \begin{array}{ccc}
+ \mathbb{P}_1(F) & \to &\dot{F} = F \cup \{\infty\}\\
+ {[}x,y{]} & \mapsto & 
+      \left\{ 
+     \begin{array}{ll}
+      \frac{x}{y} & \text{if } y \ne 0,\\
+      \infty & \text{otherwise},
+     \end{array}
+     \right.
+ \end{array}
+ \right.
+ $$
+ is well defined, and $f$ is a bijection, with inverse $f^{-1} = g$, where $g(x) =[x,1]$ if $x \in F$, and $g(\infty) = [1,0]$.
+ 
+ If we represent a projective point $P$ by its coordinate $z = f(P) \in F \cup \{\infty\}$, we define for $M = \left(
+\begin{array}{cc}
+ a&   b  \\
+ c&   d   
+\end{array}
+\right)$
+$$M \cdot z = f(M \cdot f^{-1}(z)),$$
+that is, for $c \ne 0$ and $z \in F \setminus \{-d/c\}$,
+$$
+M \cdot z = f(M \cdot [z,1]) = f([az+b,cz+d]) = \frac{az+b}{cz+d},
+$$
+and also
+$$ M \cdot (-d/c) = \infty, \qquad M \cdot \infty = a/c \qquad (M \cdot \infty = \infty \text { if } c = 0).$$
+This is an action of $\mathrm{GL}(2,F)$ on $\dot F$: for all $z \in \dot F$, for all $M,N \in \mathrm{GL}(2,F)$, $I_2 \cdot z = z$, and
+\begin{align*}
+M\cdot (N\cdot z) &= f(M\cdot f^{-1}(f(N\cdot f^{-1}(z)))\\
+&=f(M\cdot (N\cdot f^{-1}(z)))=f((MN) \cdot f^{-1}(z))\\
+&=(MN) \cdot z.
+\end{align*}
+
+This action induces an action of $\mathrm{PGL}(2,F)$ on $\dot F$. Write $[M]$ the image of $M = \left (\begin{array}{cc}
+ a&   b  \\
+ c&   d   
+\end{array}
+\right)$ 
+
+under the canonical projection $\pi : \mathrm{GL}(2,F) \to \mathrm{PGL}(2,F) = \mathrm{GL}(2,F)/ F^* I_2$. If $[M] = [N]$, then $M = \lambda N, \lambda \in F^*$, and 
+$$N \cdot (x,y) = (\lambda M) \cdot(x,y) = (\lambda a x + \lambda b y, \lambda c x + \lambda d y) \sim M\cdot (x,y).$$ 
+Therefore, if $z \in \dot F$, $N\cdot z = M \cdot z$.
+This allows us to define $[M] \cdot P = [M \cdot P]$ for $P \in \mathbb{P}_1(F)$, and $[M] \cdot z = M\cdot z$ for $z \in \dot F$. We have proved the following lemma:
+
+\bigskip
+
+{\bf Lemma. }{\it The operation defined for all  $M = 
+\left(
+\begin{array}{cc}
+ a&   b  \\
+ c&   d   
+\end{array}
+\right)$ and $z \in \dot F$ by 
+$$
+[M] \cdot z = \frac{az+b}{cz+d}, \qquad (z \in F \setminus \{-d/c\}),
+$$
+and also
+$$ [M] \cdot (-d/c) = \infty, \qquad [M] \cdot \infty = a/c \qquad ([M] \cdot \infty = \infty \text { if } c = 0).$$
+is a (left) action of $\mathrm{PGL}(2, F)$ on the projective line $\dot F$.
+}
+
+\bigskip
+
+In this exercise,  $F = \F_3$. Consider the restriction of this action to the subgroup $\mathrm{PSL}(2,\F_3)$ on $\dot{\F}_3= \F_3 \cup \{\infty\} = \{0,1,2,\infty\}$. 
+
+ 
+
+ 
+ This action defines a group homomorphism
+ $$\varphi
+ \left\{
+ \begin{array}{ccc}
+ \mathrm{PSL}(2,\F_3) & \to & S(\dot{\F}_3)\\
+ {[}M{]} & \mapsto & 
+     \left \{
+     \begin{array}{ccc}
+      \dot{\F}_3 & \to & \dot{\F}_3\\
+      z & \mapsto &[M]\cdot z.
+     \end{array}
+     \right.
+  \end{array}
+ \right.
+ $$
+ We show that $\ker(\varphi)$ is trivial (the action is faithful): Let $[M] \in  \mathrm{PSL}(2,\F_3)$, with $M  =\left(
+\begin{array}{cc}
+ a&   b  \\
+ c&   d   
+\end{array}
+\right) \in  \mathrm{SL}(2,\F_3)$, such that $\varphi([M])$ is the identity of $\dot \F_3$. Then, for all $z \in \dot \F_3, [M]\cdot z = z$. The equality $[M]\cdot \infty = \infty$ shows that $c=0$. Thus for every $z\in \F_3$,
+$$\frac{az+b}{d} = z,$$
+thus $az + b = dz, (a-d)z + b = 0$. With $z = 0$, we obtain $b=0$, and with $z=1$, $a-d = 0$. Therefore $M  = a I_2, \ a \in \F_3$, and $[M] = [I_2]$. We have proved that the kernel of the action is trivial, in other words $\varphi$ is injective, and $ \mathrm{PSL}(2,\F_3) \simeq \im(\varphi) \subset S(\dot \F_3)$ is isomorphic to a subgroup of  $S(\dot \F_3) \simeq S_4$, therefore $  \mathrm{PSL}(2,\F_3)$ is isomorphic to a subgroup of $S_4$. By Exercise 14, parts (c) and (d), $| \mathrm{PSL}(2,\F_3) = 12$, and the only subgroup of $S_4$ of order $12$ is $A_4$. Therefore
+$$ \mathrm{PSL}(2,\F_3) \simeq A_4.$$
+
+  \end{proof}
+ Note:  We explain why the permutations corresponding to elements of $ \mathrm{PSL}(2,\F_3) \simeq A_4$ are even, with another proof of this isomorphism.
+ 
+ Let $[T],[S]$ the two elements of $\mathrm{PSL}(2,\F_3)$ defined by $[T ]\cdot z = z+1$ and $[S]\cdot z = -1/z$, corresponding to the matrices 
+ $$T = 
+ \begin{pmatrix}
+  1 & 1\\
+   0 & 1
+  \end{pmatrix},
+  \qquad 
+  S = 
+   \begin{pmatrix}
+  0 & -1\\
+   1 & 0
+  \end{pmatrix},
+  \qquad T,S \in \mathrm{SL}(2,\F_3).
+$$
+The permutation of $\dot \F_3$ corresponding to $[T],[S]$ by $\varphi$ are
+$$\varphi([T]) = 
+\left(
+\begin{array}{cccc}
+0 & 1 & 2 & \infty\\
+1 & 2 & 0 & \infty
+\end{array}
+\right) =(0\,1\,2), \qquad 
+\varphi([S]) = \left(
+\begin{array}{cccc}
+0 & 1 & 2 & \infty\\
+\infty & 2 & 1 & 0
+\end{array}
+\right) = (0\,\infty)(1\, 2)
+$$
+If we take a numbering of $\dot \F_3$ to $\{1,2,3,4\}$, for instance $ f : 0 \mapsto 1, 1 \mapsto 2, 2 \mapsto 3, \infty \mapsto 4$, the permutations corresponding to $T,S$ are 
+$(1\,2\,3) , (1\,4)(2\,3)$, both even.
+
+A well known theorem shows that the matrices $[T],[S]$ generate $\mathrm{PSL}(2,\Z)$ : every matrix $M \in \mathrm{SL}(2,\Z)$ is of the form
+$$M = \pm U_1\cdots U_k,\quad U_i \in \{T,S\}.$$
+
+Reducing modulo 3, every matrix $M \in \mathrm{SL}(2,\F_3)$ is of the same form, thus $[T],[S]$ generate $\mathrm{PSL}(3,\F_3).$ This proves the permutations corresponding to  $\mathrm{PSL}(3,\F_3)  = \langle [S], [T] \rangle$ are all even, and the argument of cardinality shows that $\mathrm{PSL}(3,\F_3) \simeq \im(\varphi) \simeq A_4$.
+
+With Sage:
+ \begin{verbatim}
+ G = PermutationGroup(['(1,4)(2,3)','(1,2,3)'])
+ G.order()
+ 		12
+ G.structure_description()
+	        'A4'		
+ \end{verbatim}
+ 
+ This confirms $A_4 = \langle (1\,4)(2\, 3), (1\,2\,3) \rangle$, and consequently $\mathrm{PSL}(3,\F_3)  = \langle [S], [T] \rangle$.
+ 
+ 
  \paragraph{Ex. 14.3.19}{\it Let $G \subset S_n$ be transitive, and let $G_i$ be the isotropy subgroup of $i\in \{1,\ldots,n\}$. Thus $G_i = \{\sigma \in G \, | \, \sigma(i) = i\}$.
  \be
  \item[(a)] Prove that $G$ is doubly transitive if and only if $G_i$ acts transitively on $\{1,\ldots,n\} \setminus \{i\}$.
