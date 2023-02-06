@@ -2386,106 +2386,10 @@ But $\tau = (a\, b) \sigma$, thus one of the two permutations $\sigma, \tau$ is 
 Since there is only one non Abelian group of order 6, up to isomorphism,
   $$\mathrm{GL}(2,\F_2) = \mathrm{SL}(2,\F_2) \simeq \mathrm{PSL}(2,\F_2) \simeq S_3.$$
   
- To prove the last inclusion we use the action of $\mathrm{PGL}(2,F)$ on the projective line $F \cup \{\infty\}$ (where $F$ is a field) which we describe below (if you already know projective planes and the Lemma proved here, you can pass this explanation).
- 
- 
- $\mathrm{GL}(2,F)$ acts on $F^2$ with the action defined, for $M = \left(
-\begin{array}{cc}
- a&   b  \\
- c&   d   
-\end{array}
-\right)$,
-by
- $$(x',y') = M \cdot (x,y) \iff
- \left(
-\begin{array}{c}
-x'   \\
-y'  
-\end{array}
-\right)
-=
-\left(
-\begin{array}{cc}
- a&   b  \\
- c&   d   
-\end{array}
-\right)
-\left(
-\begin{array}{c}
-x   \\
-y   
-\end{array}
-\right)
-=\left(
-\begin{array}{c}
-ax +by  \\
-cx+dy  
-\end{array}
-\right).
-$$
-The binary relation on $F^2 \setminus \{(0,0)\}$ defined by
-  $$
-(x,y)
-\sim 
-(x',y')
- \iff \exists \lambda \in \mathbb{F}^*, x'=\lambda x,y'=\lambda y
- $$ 
-is an equivalence relation. 
-
-The quotient set is the projective line $\mathbb{P}_1(F)$. We write $[x,y] =\{ (\lambda x, \lambda y) \mid \lambda \in F^*\}$ the class of $(x,y)$ for the relation $\cal R$, in other words the projective point with homogenous coordinates $(x,y)$.
+  \bigskip
   
- If $(x,y) \sim (x',y')$, then $M\cdot (x,y) \sim M\cdot (x',y')$, and $M\cdot (x,y) \ne (0,0)$ if $(x,y) \ne (0,0)$. Thus we can define the action on a projective point $P = [x,y]$ by  $M\cdot P = M \cdot (x,y)$, where $(x,y)$ is any representative of $P$. This is an action of $\mathrm{GL}(2,F)$ on the set $\mathbb{P}_1(F)$.
- 
- The map 
- $$
- f 
- \left\{
- \begin{array}{ccc}
- \mathbb{P}_1(F) & \to &\dot{F} = F \cup \{\infty\}\\
- {[}x,y{]} & \mapsto & 
-      \left\{ 
-     \begin{array}{ll}
-      \frac{x}{y} & \text{if } y \ne 0,\\
-      \infty & \text{otherwise},
-     \end{array}
-     \right.
- \end{array}
- \right.
- $$
- is well defined, and $f$ is a bijection, with inverse $f^{-1} = g$, where $g(x) =[x,1]$ if $x \in F$, and $g(\infty) = [1,0]$.
- 
- If we represent a projective point $P$ by its coordinate $z = f(P) \in F \cup \{\infty\}$, we define for $M = \left(
-\begin{array}{cc}
- a&   b  \\
- c&   d   
-\end{array}
-\right)$
-$$M \cdot z = f(M \cdot f^{-1}(z)),$$
-that is, for $c \ne 0$ and $z \in F \setminus \{-d/c\}$,
-$$
-M \cdot z = f(M \cdot [z,1]) = f([az+b,cz+d]) = \frac{az+b}{cz+d},
-$$
-and also
-$$ M \cdot (-d/c) = \infty, \qquad M \cdot \infty = a/c \qquad (M \cdot \infty = \infty \text { if } c = 0).$$
-This is an action of $\mathrm{GL}(2,F)$ on $\dot F$: for all $z \in \dot F$, for all $M,N \in \mathrm{GL}(2,F)$, $I_2 \cdot z = z$, and
-\begin{align*}
-M\cdot (N\cdot z) &= f(M\cdot f^{-1}(f(N\cdot f^{-1}(z)))\\
-&=f(M\cdot (N\cdot f^{-1}(z)))=f((MN) \cdot f^{-1}(z))\\
-&=(MN) \cdot z.
-\end{align*}
+To prove the last inclusion, we use the action of $\mathrm{PGL}(2,F)$ on $F \cup \{\infty\}$ described in section 7.5. We resume this description in the following lemma:
 
-This action induces an action of $\mathrm{PGL}(2,F)$ on $\dot F$. Write $[M]$ the image of $M = \left (\begin{array}{cc}
- a&   b  \\
- c&   d   
-\end{array}
-\right)$ 
-
-under the canonical projection $\pi : \mathrm{GL}(2,F) \to \mathrm{PGL}(2,F) = \mathrm{GL}(2,F)/ F^* I_2$. If $[M] = [N]$, then $M = \lambda N, \lambda \in F^*$, and 
-$$N \cdot (x,y) = (\lambda M) \cdot(x,y) = (\lambda a x + \lambda b y, \lambda c x + \lambda d y) \sim M\cdot (x,y).$$ 
-Therefore, if $z \in \dot F$, $N\cdot z = M \cdot z$.
-This allows us to define $[M] \cdot P = [M \cdot P]$ for $P \in \mathbb{P}_1(F)$, and $[M] \cdot z = M\cdot z$ for $z \in \dot F$. We have proved the following lemma:
-
-\bigskip
 
 {\bf Lemma. }{\it The operation defined for all  $M = 
 \left(
@@ -2506,16 +2410,14 @@ is a (left) action of $\mathrm{PGL}(2, F)$ on the projective line $\dot F$.
 
 In this exercise,  $F = \F_3$. Consider the restriction of this action to the subgroup $\mathrm{PSL}(2,\F_3)$ on $\dot{\F}_3= \F_3 \cup \{\infty\} = \{0,1,2,\infty\}$. 
 
- 
 
- 
  This action defines a group homomorphism
  $$\varphi
  \left\{
  \begin{array}{ccc}
  \mathrm{PSL}(2,\F_3) & \to & S(\dot{\F}_3)\\
  {[}M{]} & \mapsto & 
-     \left \{
+     \varphi([M]) \left \{
      \begin{array}{ccc}
       \dot{\F}_3 & \to & \dot{\F}_3\\
       z & \mapsto &[M]\cdot z.
@@ -2531,10 +2433,11 @@ In this exercise,  $F = \F_3$. Consider the restriction of this action to the su
 \end{array}
 \right) \in  \mathrm{SL}(2,\F_3)$, such that $\varphi([M])$ is the identity of $\dot \F_3$. Then, for all $z \in \dot \F_3, [M]\cdot z = z$. The equality $[M]\cdot \infty = \infty$ shows that $c=0$. Thus for every $z\in \F_3$,
 $$\frac{az+b}{d} = z,$$
-thus $az + b = dz, (a-d)z + b = 0$. With $z = 0$, we obtain $b=0$, and with $z=1$, $a-d = 0$. Therefore $M  = a I_2, \ a \in \F_3$, and $[M] = [I_2]$. We have proved that the kernel of the action is trivial, in other words $\varphi$ is injective, and $ \mathrm{PSL}(2,\F_3) \simeq \im(\varphi) \subset S(\dot \F_3)$ is isomorphic to a subgroup of  $S(\dot \F_3) \simeq S_4$, therefore $  \mathrm{PSL}(2,\F_3)$ is isomorphic to a subgroup of $S_4$. By Exercise 14, parts (c) and (d), $| \mathrm{PSL}(2,\F_3) = 12$, and the only subgroup of $S_4$ of order $12$ is $A_4$. Therefore
+and then $az + b = dz, (a-d)z + b = 0$. With $z = 0$, we obtain $b=0$, and with $z=1$, $a-d = 0$. Therefore $M  = a I_2, \ a \in \F_3$, and $[M] = [I_2]$. We have proved that the kernel of the action is trivial, in other words $\varphi$ is injective, and $ \mathrm{PSL}(2,\F_3) \simeq \im(\varphi) \subset S(\dot \F_3)$ is isomorphic to a subgroup of  $S(\dot \F_3) \simeq S_4$, therefore $  \mathrm{PSL}(2,\F_3)$ is isomorphic to a subgroup of $S_4$. By Exercise 14, parts (c) and (d), $| \mathrm{PSL}(2,\F_3) = 12$, and the only subgroup of $S_4$ of order $12$ is $A_4$. Therefore
 $$ \mathrm{PSL}(2,\F_3) \simeq A_4.$$
 
   \end{proof}
+  
  Note:  We explain why the permutations corresponding to elements of $ \mathrm{PSL}(2,\F_3) \simeq A_4$ are even, with another proof of this isomorphism.
  
  Let $[T],[S]$ the two elements of $\mathrm{PSL}(2,\F_3)$ defined by $[T ]\cdot z = z+1$ and $[S]\cdot z = -1/z$, corresponding to the matrices 
@@ -2572,7 +2475,7 @@ $(1\,2\,3) , (1\,4)(2\,3)$, both even.
 A well known theorem shows that the matrices $[T],[S]$ generate $\mathrm{PSL}(2,\Z)$ : every matrix $M \in \mathrm{SL}(2,\Z)$ is of the form
 $$M = \pm U_1\cdots U_k,\quad U_i \in \{T,S\}.$$
 
-Reducing modulo 3, every matrix $M \in \mathrm{SL}(2,\F_3)$ is of the same form, thus $[T],[S]$ generate $\mathrm{PSL}(3,\F_3).$ This proves the permutations corresponding to  $\mathrm{PSL}(3,\F_3)  = \langle [S], [T] \rangle$ are all even, and the argument of cardinality shows that $\mathrm{PSL}(3,\F_3) \simeq \im(\varphi) \simeq A_4$.
+Reducing modulo 3, every matrix $M \in \mathrm{SL}(2,\F_3)$ is of the same form, thus $[T],[S]$ generate $\mathrm{PSL}(3,\F_3).$ This proves that the permutations corresponding to  $\mathrm{PSL}(3,\F_3)  = \langle [S], [T] \rangle$ are all even, and the argument of cardinality shows that $\mathrm{PSL}(3,\F_3) \simeq \im(\varphi) \simeq A_4$.
 
 With Sage:
  \begin{verbatim}
@@ -2585,11 +2488,70 @@ With Sage:
  
  This confirms $A_4 = \langle (1\,4)(2\, 3), (1\,2\,3) \rangle$, and consequently $\mathrm{PSL}(3,\F_3)  = \langle [S], [T] \rangle$.
  
+ \bigskip
  
- \paragraph{Ex. 14.3.19}{\it Let $G \subset S_n$ be transitive, and let $G_i$ be the isotropy subgroup of $i\in \{1,\ldots,n\}$. Thus $G_i = \{\sigma \in G \, | \, \sigma(i) = i\}$.
+ Note 2: The same method can be applied to prove anew the first isomorphism $\mathrm{PSL}(2,\F_2) \simeq S_3$. Indeed, the action of $\mathrm{PGL}(2,\F_2)$ on $\F_2 \cup \{\infty\} = \{0,1,\infty\}$, restricted to $\mathrm{PSL}(2,\F_2)$, gives an injective group homomorphism
+ 
+ $$\varphi
+ \left\{
+ \begin{array}{ccc}
+ \mathrm{PSL}(2,\F_2) & \to & S(\dot{\F}_2)\simeq S_3\\
+ {[}M{]} & \mapsto & 
+     \varphi([M]) \left \{
+     \begin{array}{ccc}
+      \dot{\F}_2 & \to & \dot{\F}_2\\
+      z & \mapsto &[M]\cdot z.
+     \end{array}
+     \right.
+  \end{array}
+ \right.
+ $$
+ 
+ Moreover $| \mathrm{PSL}(2,\F_2)| = |S(\dot{\F}_2)| = 6$, thus $\varphi$ is bijective. Therefore $\mathrm{PSL}(2,\F_2) \simeq S_3$.
+ 
+ 
+ 
+  \paragraph{Ex. 14.3.16}{\it Let $G$ be a finite group with socle $H$. Prove that $H$ is isomorphic to a product of finite simple groups.
+ 
+ }
+ 
+ \begin{proof}
+ If $G$ has a unique minimal normal subgroup $N$, then the socle $H$ is $N$, and by Proposition 14.3.10, $H = N$ is a product of finite simple groups.
+  
+ 
+ Suppose now that $G$ contains two minimal normal subgroups $N_1\ne N_2$.  Then $N_1 \cap N_2$ is normal in $G$, and $N_1$ is a minimal normal subgroup, therefore $N_1 \cap N_2 = N_1$ or $N_1 \cap N_2 = \{e\}$, and using the minimality of $N_2$, $N_1 \cap N_2 = N_2$ or $N_1 \cap N_2 = \{e\}$. If $N_1 \cap N_2 \ne \{e\}$, then $N_1 = N_1 \cap N_2 = N_2$, in contradiction with the assumption, thus $N_1 \cap N_2 = \{e\}$.
+ 
+ By Exercise 7, $N_1N_2$ is a normal subgroup of $G$, such that $(x_1,x_2) \mapsto x_1x_2$ is an isomorphism from $N_1 \times N_2$ to $N_1N_2$.
+ 
+Consider $\cal A$ the set of all subgroups of $G$ of the form $N_1 \cdots N_k$ such that $N_1\cdots N_k$ is a normal subgroup of $G$, and such that the map $(x_1,\ldots,x_k) \mapsto x_1\cdots x_k$ is an isomorphism from $N_1 \times \cdots \times N_k$ to $N_1\cdots N_k$.
+ 
+Then pick $A =N_1 \cdots N_k$ an element of $\cal A$ of maximal order. Reasoning by contradiction, suppose that $A \ne H$. Then there is some minimal normal subgroup $N$ such that $N\not \subset A$, otherwise the socle, which is the subgroup $H$ generated by the minimal normal subgroups of $G$ would be $A = N_1\cdots N_k$. Write $N_{k+1} = N$.
+
+Then $N_1\cdots N_k \cap N_{k+1} \ne N_{k+1}$, thus the minimality of $N$ shows that $N_1\cdots N_k \cap N_{k+1} = \{e\}$. Then Exercise 7 shows that $(N_1\cdots N_k)N_{k+1}$ is normal, and the map $(x_1,\ldots,x_k) \mapsto x_1\cdots x_{k+1}$ is an isomorphism from $N_1 \times \cdots \times N_{k+1}$ to $N_1\cdots N_{k+1}$.
+
+Therefore $N_1\cdots N_{k+1} \in {\cal A}$, and since $|N_1\cdots N_{k+1}|> |N_1\cdots N_{k}| = |A|$, this contradicts the maximality of $A$.
+
+This proves $H = N_1\cdots N_k$, so that the socle $ H =N_1\cdots N_k \simeq N_1 \times \cdots N_k$ is a direct product of minimal normal subgroups, and by Proposition 14.3.10, each of them is isomorphic to a direct product of simple group. We have proved that $H$ is isomorphic to a product of finite simple groups.
+
+ \end{proof}
+ 
+ 
+\paragraph{Ex. 14.3.17}{\it  Prove Galois' formula (14.18) for $\mathrm{AGL}(n,\F_p)$:
+$$|\mathrm{AGL}(n,\F_p)| = p^n(p^n-1)(p^n-p)\cdots(p^n - p^{n-1}).$$
+ }
+ \begin{proof}
+We have seen in Exercise 2 that $\mathrm{AGL}(n,\F_p)/ \F_p^n \simeq \mathrm{GL}(n,\F_p)$, thus
+ $$|\mathrm{AGL}(n,\F_p)| = p^n |\mathrm{GL}(n,\F_p)|.$$
+ To construct a matrix $A \in \mathrm{GL}(n,\F_p)$, we must choose the successive columns $c_i$ of the matrix $A$, so that $(c_1,\ldots,c_n)$ is a base of $\F_p^n$. This is equivalent to take  $c_1 \ne 0$, then $c_2 \not \in \langle c_1 \rangle$, then $c_3 \not \in \langle c_1,c_2 \rangle$,$\ldots$, up to $c_n \not \in \langle c_1,\ldots,c_{n-1} \rangle $. Since $|\langle c_1,\ldots,c_{k} \rangle| = p^k$, when $c_1,\ldots,c_k$ are linearly independent, we obtain $|\mathrm{GL}(n,\F_p)| = (p^n-1)(p^n-p)\cdots(p^n - p^{n-1})$, thus
+ $$|\mathrm{AGL}(n,\F_p)| = p^n(p^n-1)(p^n-p)\cdots(p^n - p^{n-1}).$$
+ \end{proof}
+ 
+ 
+
+ \paragraph{Ex. 14.3.19}{\it Let $G \subset S_n$ be transitive, and let $G_i$ be the isotropy subgroup of $i\in \{1,\ldots,n\}$. Thus $G_i = \{\sigma \in G \mid  \sigma(i) = i\}$.
  \be
  \item[(a)] Prove that $G$ is doubly transitive if and only if $G_i$ acts transitively on $\{1,\ldots,n\} \setminus \{i\}$.
- \item[(b)] More generally, let $k\geq 2$. Prove that $G$ is $k$-transitive if and only if $G_i$ acts $k-1$-transitively on $\{1,\ldots,n\} \setminus \{i\}$.
+ \item[(b)] More generally, let $k\geq 2$. Prove that $G$ is $k$-transitive if and only if $G_i$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i\}$.
  \ee
  }
  \begin{proof}
