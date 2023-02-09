@@ -1816,7 +1816,7 @@ Exercise 18 will explore various aspects of this argument.
 \begin{proof}
 \item[(a)] Take $(a_0,e_B)$ in $A\times\{e_B\}$, and $(a,b) \in A\times B$. Then
 \begin{align*}
-(a,b)(a_0,e_B)(a,b)^{-1} &= (a,b)(a_0,e_B)(a,b)^{-1}\\
+(a,b)(a_0,e_B)(a,b)^{-1} 
 &=(a,b)(a_0,e_B)(a^{-1},b^{-1})\\
 &=(aa_0a^{-1},be_Bb^{-1}\\
 &=(aa_0a^{-1}, e_B) \in A \times\{e_B\},
@@ -1826,19 +1826,18 @@ thus $A\times \{e_B\}$ is normal in $A \times B$, and similarly $\{e_A\} \times 
 \item[(b)] Reasoning by contradiction, suppose that we can't find $(a,b) \in N$ such that $a \ne e_A,b\ne e_B $ , then $N \subset (A \times \{e_B\}) \cup (\{e_A\} \times B)$. 
 
 Note that $A\times \{e_B\} \simeq A$ is simple. If $N \subset A \times \{e_B\}$, then $N$ is normal in $A \times \{e_B\} \subset A \times B$, thus $N = A\times\{e_A\}$ or $N = \{(e_A,e_B)\}$, but this contradicts the assumptions on $N$. Therefore $N \not \subset A \times \{e_B\}$, and similarly $N \not \subset \{e_A\} \times B$, so that
-\begin{align}
-&N \subset (A \times \{e_B\}) \cup (\{e_A\} \times B), \quad N \ne \{(e_A,e_B)\}\\
+\begin{align*}
+&N \subset (A \times \{e_B\}) \cup (\{e_A\} \times B), \\
 &N \not \subset A \times \{e_B\}, \quad N \not \subset \{e_A\} \times B.
-\end{align}
-By (10), there are two symmetrical cases.
+\end{align*}
+Since $N \subset (A \times \{e_B\}) \cup (\{e_A\} \times B)$ and $N \not \subset A \times \{e_B\}$, there exists some $n_1 = (a',b) \in N$ such that $n_1 = (a',b) \in \{e_A\} \times B$ and $n_1 = (a',b) \not \in A\times \{e_B\}$. Thus $n_1 = (e_A,b) \in N, b \ne e_B$.
 
-$\bullet$ Case 1: There is some $e_A \ne a \in A$ such that $n_1 = (a,0) \in N$. Since $N \not \subset A \times \{e_B\}$, there is some $b \in B, b\ne e_B$, such that $n_2 = (e_A,b) \in N$. Then $n = n_1n_2 = (a,b) \in N, a\ne e_A,b\ne e_B$, but this contradicts (10).
+Similarly, since  $N \subset (A \times \{e_B\}) \cup (\{e_A\} \times B)$ and $N \not \subset \{e_A\} \times B$, there exists some $n_2 = (a,b') \in N$ such that $n_2 = (a,b') \in A \times
+ \{e_B\}$ and $n_2 = (a,b') \not \in \{e_A\} \times B$. Thus $n_2 = (a,e_B) \in N, a \ne e_A$.
 
-$\bullet$ Case 2: There is some $e_B \ne b \in B$ such that $n_2 = (0,b) \in N$: same contradiction.
+Then $n = n_1n_2 =(e_A,b)(a,e_B) = (a,b) \in N$, and $a \ne e_A,b \ne e_B$.
 
-Therefore
-$$N \not \subset (A \times \{e_B\}) \cup (\{e_A\} \times B).$$
-We can find $(a,b) \in N$ such that $a \ne e_A,b\ne e_B $.
+
 
 \item[(c)] $N$ is normal, and  $(a^{-1},b^{-1}) = (a,b)^{-1} \in N$, thus
 $$(a_1,e_B)(a,b)^{-1}(a_1,e_B)^{-1} = (a_1 a^{-1}a_1^{-1},b^{-1}) \in N.$$
@@ -2546,7 +2545,90 @@ We have seen in Exercise 2 that $\mathrm{AGL}(n,\F_p)/ \F_p^n \simeq \mathrm{GL}
  $$|\mathrm{AGL}(n,\F_p)| = p^n(p^n-1)(p^n-p)\cdots(p^n - p^{n-1}).$$
  \end{proof}
  
- 
+ \paragraph{Ex. 14.3.18}{\it Here are some observations related to Exercise 5.
+ \be
+ \item[(a)] Give an example to show that Exercise 5 is false if we drop the assumption that $A$ and $B$ are non-Abelian.
+ \item[(b)] Let $A_1,\ldots,A_r$ be non-Abelian simple groups. Determine all nontrivial normal subgroups of $A_1\times\cdots\times A_r$.
+ \ee
+}
+\begin{proof}
+\item[(a)] Consider the group $G = \Z/3\Z \times \Z/3\Z = A \times B$, where $A = B = \Z/3\Z$ is simple. This is the additive group of the vector space $\F_3^2$. If $v = (1,2)$ (for instance), the vectorial line 
+$$N = \F_3\cdot v = \{(0,0), (1,2),(2,1)\}$$
+ is a subspace of $\F_3^2$, therefore a subgroup  of $G$. Moreover $N$ is normal and not trivial, and $N \ne \{0\} \times B , N\ne A \times \{0\}$. This counterexample shows that Exercise 5 is false if we drop the assumption that $A$ and $B$ are non-Abelian.
+\item[(b)] We will follow the steps of Exercise 5.
+
+\item[$\bullet$]  First, note that the subsets $H_1\times \cdots H_r \subset G$, where $H_i = \{e_{A_i}\}$ or $H_i = A_i$ for all $i = 1,\ldots r$, are normal subgroups of $G = A_1\times\cdots \times A_{r}$:
+
+Take $h = (h_1,\ldots,h_r) \in N = H_1\times \cdots H_r$, and $a= (a_1,\ldots,a_r) \in G$, then $a h a^{-1} = (a_1h_1a_1^{-1},\ldots,a_rh_ra_r^{-1})$. If $H_i = \{e_{A_i}\}$, then $a_i h_i a_i^{-1} = a_i a_i^{-1} = e_{A_i}\in H_i$, and if $H_i = A_i$, then $a_i h_i a_i^{-1} \in H_i$, thus $a h a^{-1} \in N$.
+
+We will call these subgroups standard normal subgroups.
+
+\item[$\bullet$]  To prove that these standard subgroups are the only normal subgroups of $G$, we use induction on $r$. The case $r=2$ is done is Exercise 5.
+
+For simplicity, we write $e$ for the identity of each group $H_i$.
+
+Now suppose that for any $k<r$, and for any $k$-tuple $(A_1,\ldots,A_k)$ of non-Abelian simple groups, the only normal subgroups of $A = A_1 \times \cdots \times A_k$ are $H_1\times \cdots H_k$, where $H_i = \{e\}$ or $H_i = A_i$ for all $i = 1,\ldots k$. 
+
+Now let $A_1, \ldots,A_r$ be non-Abelian simple groups, and let $N$ be a normal subgroup of $A_1\times \cdots \times A_{r}$.
+
+\item[$\bullet$]  Consider first the case where, for some $i \in \{1,\ldots,n\}$,
+
+\begin{align*}
+N &\subset A_1\times \cdots \times A_{i-1} \times \{e\} \times A_{i+1} \cdots \times A_r \\
+    &\simeq   A_1\times \cdots \times A_{i-1}  \times A_{i+1}\cdots \times A_r,
+\end{align*}
+where the isomorphism is the map $(a_1,\ldots,a_{i-1},e,a_{i+1},\ldots,a_r) \mapsto (a_1,\ldots,a_{i-1},a_{i+1},\ldots,a_r)$. This isomorphism sends $N$ on a normal subgroup $N'$.
+
+$ A_1\times A_{i-1}  \times A_{i+1}\cdots \times A_r$ is a direct product of $r-1$ simple non-Abelian subgroups, thus we can apply the induction hypothesis: its only normal subgroups are standard subgroups, thus $N'$ is standard. This implies, via the isomorphism, that 
+$$N = H_1\times \cdots H_{i-1} \times \{e\} \times H_{i+1} \times \cdots \times H_r, \text{ where } H_j = \{e\} \text{ or } H_j = A_j \text{ for all } j.$$
+Therefore $N$ is standard in this case.
+
+\item[$\bullet$] In the remaining case,  $N \not \subset A_1\times \cdots \times A_{i-1} \times \{e\} \times A_{i+1}\times \cdots \times A_r $ for all $i=1,\ldots,r$. We want to prove that $N$ is the whole group $G$. 
+
+\item[$\bullet$]  First, we prove that there is some $n=(n_1,\ldots,n_r) \in N$ such that $a_i \ne e$ for all $i,\ 1 \leq i \leq r$. 
+
+Fix some $i \in \{1,\ldots,r\}$. Since $N \not \subset A_1\times \cdots \times A_{i-1} \times \{e\} \times A_{i+1}\times \cdots \times A_r $, there exists some
+$n_i = (a_1,\ldots,a_i,\ldots,a_r) \in N$ such that $a_i \ne e$.
+
+ Since  $A_i$ is non-Abelian and simple, the centers $Z_i$ of $A_i$ are different from $A_i$, and $Z_i$ is normal in the simple group $A_i$, thus $Z_i = \{e\}$. Using $a_i \ne e$, this shows that there is some $c \in A_i$ such that $a_i c \ne c a_i$. Now take $a = (e,\ldots,e,c,e,\ldots,e) \in G$. Since $N$ is normal, $n_i(an_i^{-1}a^{-1}) \in N$, and
+ \begin{align*}
+ n_ian_i^{-1}a^{-1} &= (a_1,\ldots,a_i, \ldots, a_r) (a,\ldots,c,\ldots,e)(a_1^{-1},\ldots,a_i^{-1},\ldots,a_r^{-1})(e,\ldots,b^{-1},\ldots,e)\\
+ &=(e,\ldots,a_ica_i^{-1}c^{-1},\ldots,e),
+ \end{align*}
+thus $ n_ian_i^{-1}a^{-1} =(e,\ldots,n_i,\ldots,e)\in N$, where $n_i = a_ica_i^{-1}c^{-1} \ne e$. Since we can find such $n_i\ne e$ for each index $i$,
+$$n= (n_1,\ldots,n_r) = (n_1,e,\ldots,e)(e,n_2,\ldots,e)\cdots (e,\ldots,n_r) \in N, \text{ where } n_1 \ne e,\ldots,n_r \ne e.$$
+$\bullet$ Write $b = n_r$. $N$ is normal in $G$, thus, for any $a= (a_1,\ldots,a_{r-1},e) \in A_1\times\cdots\times A_r$,
+\begin{align*}
+n (an^{-1}a^{-1}) &= (n_1,\ldots,n_{r-1},b)(a_1,\ldots,a_{r-1},e) (n_1^{-1},\ldots,n_{r-1}^{-1},b^{-1})(a_1^{-1},\ldots,a_{r-1}^{-1},e)\\
+&=(n_1a_1n_1^{-1}a_1^{-1},\ldots,n_{r-1}a_{r-1}n_{r-1}^{-1}a_{r-1}^{-1}, e) \in N
+\end{align*}
+Since $Z_i = \{e\}$, we can find $(a_1,\ldots,a_{r-1},e) \in A$ such that $n_ia_in_i^{-1}a_i^{-1} \ne e$ for every $i, 1\leq i \leq r-1$.
+
+Write for simplicity $A = A_1\times \cdots \times A_{r-1},B = A_r$, and $e_A = (e,\ldots,e)$ the identity of $A$.
+
+By the induction hypothesis, $N\cap (A\times \{e\})$ is a direct product of trivial subgroups $H_i \subset A_i$:
+$$\begin{array}{ll}
+N\cap (A\times \{e\}) = H_1\times \cdots \times H_{r-1}\times\{e\},  &H_i =\{e\} \text{ or } H_i=A_i,\  i=1,\ldots,r-1,\\
+\end{array} 
+$$
+
+Since $$nan^{-1}a^{-1} = (n_1a_1n_1^{-1}a_1^{-1},\ldots,n_{r-1}a_{r-1}n_{r-1}^{-1}a_{r-1}^{-1}, e) \in N \cap (A\times\{e\}) = H_1\times\cdots \times H_{r-1} \times \{e\},$$
+every $H_i$ contains an element $n_ia_in_i^{-1}a_i^{-1} \ne e$, thus $H_i = A_i$ for all $i,\ 1\leq i \leq r-1$.   This proves that
+$$N\cap (A\times \{e\})  = A\times \{e\},$$
+thus $A_1 \times \cdots \times A_{r-1} \times \{e\} \subset N$.
+
+With the same reasoning, $\{e\}\times A_2 \times \cdots \times A_r \subset N.$
+
+\item[$\bullet$]  If $a =(a_1,\ldots,a_r)$ is any element of $A_1\times \cdots \times A_r$, then
+$$a = (a_1,\ldots,a_{r-1},e)(e,\ldots,e,a_r),$$
+where $(a_1,\ldots,a_{r-1},e) \in A_1\times \cdots A_{r-1} \times \{e\} \subset N$, and $(e,\ldots,e,a_r) \in \{e\}\times A_2 \times\cdots \times A_r \subset N$. Therefore $a \in N$.
+
+This proves $N = A \times B = A_1\times \cdots \times A_r \times A_{r+1}$: for every normal subgroup $N$ of $G$ such that there is some $n=(n_1,\ldots,n_r) \in N$ where $n_i \ne e$ for all $i$, $N$ is the whole group $G$. In this case, $N$ is also standard, and the induction is done.
+
+To conclude, if $A_1,\ldots,A_r$ are non-Abelian simple groups, the only normal subgroups of $A_1\times\cdots \times A_r$ are the subgroups
+$$N = H_1\times \cdots \times H_r, \text{ where } H_i = \{e_{A_i}\} \text{ or } H_i = A_i \text { for all } i \in \{1,\ldots,r\}.$$
+
+\end{proof}
 
  \paragraph{Ex. 14.3.19}{\it Let $G \subset S_n$ be transitive, and let $G_i$ be the isotropy subgroup of $i\in \{1,\ldots,n\}$. Thus $G_i = \{\sigma \in G \mid  \sigma(i) = i\}$.
  \be
