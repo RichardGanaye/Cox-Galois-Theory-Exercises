@@ -1721,7 +1721,7 @@ $
 \left\{
 \begin{array}{ccc}
 \F_q \times \F_q^n & \to & \F_q^n\\
-u & \mapsto &\lambda u
+(\lambda,u) & \mapsto &\lambda u
 \end{array}
 \right.
 $
@@ -2630,6 +2630,7 @@ $$N = H_1\times \cdots \times H_r, \text{ where } H_i = \{e_{A_i}\} \text{ or } 
 
 \end{proof}
 
+
  \paragraph{Ex. 14.3.19}{\it Let $G \subset S_n$ be transitive, and let $G_i$ be the isotropy subgroup of $i\in \{1,\ldots,n\}$. Thus $G_i = \{\sigma \in G \mid  \sigma(i) = i\}$.
  \be
  \item[(a)] Prove that $G$ is doubly transitive if and only if $G_i$ acts transitively on $\{1,\ldots,n\} \setminus \{i\}$.
@@ -2659,7 +2660,7 @@ Since $G_{r}$ acts transitively on $\{1,\ldots,n\} \setminus \{r\}$, and $r\ne s
 
 \item[(b)] Suppose first that $G$ is $k$ transitive, and let $(i_1,\ldots,i_{k-1}), (j_1,\ldots,j_{k-1})$ be any ${(k-1)}$-tuples of distinct elements of $\{1,\ldots,n\}\setminus \{i\}$. Then $(i, i_1,\ldots,i_{k-1}), (i, j_1,\ldots,j_{k-1})$ are $k$-tuples of distinct elements of $\{1,\ldots,n\}$, thus there is some $\sigma \in G$ such that $\sigma\cdot(i,i, i_1,\ldots,i_{k-1}) = (i, j_1,\ldots,j_{k-1})$, so that $\sigma \in G_i$ and $\sigma(i_1) = j_1,\ldots,\sigma(i_{k-1}) = j_{k-1}$. This proves that $G_i$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i\}$.
 
-Conversely, suppose that $G_i$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i\}$ for some $i \in \{1,\ldots,n\}$. As in part (a), we first show that $G_{i'}$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i'\}$ for all $i' \in \{1,\ldots,n\}$, using a permutation $\tau \in G$ satisfying $\tau(i) = '$. Take $(i'_1,\ldots,i'_{k-1}), (j'_1,\ldots,j'_{k-1})$ two $(k-1)$-tuples of distinct elements in $\{1,\ldots,n\} \setminus \{i'\}$. We define $i_l= \tau^{-1}(i'_l), j_l = \tau^{-1}(j'_l),\ l=1,\ldots,k-1$. Since $\tau^{-1}$ is a permutation, $(i,i_1,\ldots,i_{k-1})$ and $(i,j_1,\ldots,j_{k-1})$ are $k$-tuples of distinct elements. The hypothesis gives $\sigma \in G_i$ such that $\sigma(i_l) = j_l,\ l=1,\ldots,k-1$. Then $\sigma'= \tau \sigma \tau^{-1}$ satisfies
+Conversely, suppose that $G_i$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i\}$ for some $i \in \{1,\ldots,n\}$. As in part (a), we first show that $G_{i'}$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i'\}$ for all $i' \in \{1,\ldots,n\}$, using a permutation $\tau \in G$ satisfying $\tau(i) = i'$. Take $(i'_1,\ldots,i'_{k-1}), (j'_1,\ldots,j'_{k-1})$ two $(k-1)$-tuples of distinct elements in $\{1,\ldots,n\} \setminus \{i'\}$. We define $i_l= \tau^{-1}(i'_l), j_l = \tau^{-1}(j'_l),\ l=1,\ldots,k-1$. Since $\tau^{-1}$ is a permutation, $(i,i_1,\ldots,i_{k-1})$ and $(i,j_1,\ldots,j_{k-1})$ are $k$-tuples of distinct elements. The hypothesis gives $\sigma \in G_i$ such that $\sigma(i_l) = j_l,\ l=1,\ldots,k-1$. Then $\sigma'= \tau \sigma \tau^{-1}$ satisfies
 $$(\tau \sigma \tau^{-1})(i'_l) = j'_l,\ l=1,\ldots,k-1,\text { and } \sigma'(i') = i'.$$
 Therefore $G_{i'}$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i'\}$, for all $i' \in \{1,\ldots,n\}$.
 
@@ -2669,4 +2670,178 @@ where $s_1,\ldots,s_{k-1},r_k$ are distinct, since $r_k =s_i$ for some $i\ne k$ 
 $$\sigma_2\cdot (s_1,s_2,\ldots,s_{k-1}, r_k) = (s_1,s_2,\ldots,s_{k-1},s_k).$$
 Then $\sigma = \sigma_2\sigma_1$ satisfies $\sigma \cdot (r_1,\ldots,r_k) = (s_1,\ldots,s_k)$. This proves that $G$ is $k$-transitive.
  \end{proof}
+ 
+  \paragraph{Ex. 14.3.20}{\it Let $G \subset S_n$ be doubly transitive. Proposition 14.3.3 implies that $G$ is transitive. Prove that $G$ is transitive directly from the definition of doubly transitive.
+  }
+  
+  \begin{proof}
+  If $n= 1$,then $G = \{e\}$ is transitive. Suppose now that $n\geq 2$, and that $G \subset S_n$ is doubly transitive.
+  
+   Let $i,j$ be any elements in $\{1,\ldots,n\}$. Since $n\geq 2$, there is some $i' \in \{1,\ldots,n\}$ such that $i\ne i'$, and some $j'$ such that $j \ne j'$. By definition of doubly transitive, there is $\sigma \in G$ such that $\sigma(i) =j$ and $\sigma(i') = j'$. We have proved
+   $$\forall i \in\{1,\ldots,n\},\ \forall j \in \{1,\ldots,n\},\ \exists \sigma \in G,\ \sigma(i) = j,$$
+   so that $G$ is transitive.
+  \end{proof}
+  
+   
+  \paragraph{Ex. 14.3.21}{\it Generalize (14.15) by showing that we have inclusions
+  $$\F_p^{mn} = \F_{p^m}^n \subset \mathrm{AGL}(n,\F_{p^m}) \subset \mathrm{A\Gamma L}(n,\F_{p^m}) \subset \mathrm{AGL}(nm,\F_p)\subset S_{p^{nm}}.$$
+  }
+  \begin{proof}
+  We write $q = p^m$.
+  \item[$\bullet$] 
+  Let ${\cal B} = (e_1,\ldots,e_m)$ be a base of $\F_q$ over $\F_p$.
+As $\F_p$-vector spaces, $\F_q^n$ and $\F_p^{nm}$ are isomorphic, where an isomorphism $\varphi$ is given by
+$$
+\varphi \left\{
+\begin{array}{ccc}
+\F_q^n & \to & \F_p^{nm}\\
+(\alpha_1,\ldots,\alpha_n)& \mapsto &(x_1^1,\ldots,x_m^1;\ldots;x_1^n,\ldots,x_m^n),
+\end{array}
+\right.
+$$
+where $\alpha_i = \sum_{j=1}^m x_j^i e_j,\ i=1,\ldots,n.$ (this isomorphism depends of the choice of the base $\cal B$).
+ So we can write $$\F_p^{mn} = \F_{p^m}^n.$$
+   \item[$\bullet$]  $ \F_{p^m}^n = \F_q^n$ is identified with $\{\gamma_{I_n,v} \mid v \in  \F_q^n\} \subset \mathrm{AGL}(n,\F_q)$, via the isomorphism
+     $$
+  \left\{
+  \begin{array}{ccc}
+  \F_{q}^n & \to  &\{\gamma_{I_n,v} \mid v \in  \F_q^n\}\\
+  v&\mapsto & \gamma_{I_n,v}.
+  \end{array}
+  \right.
+  $$
+  This shows that $$\F_{p^m}^n  \subset \mathrm{AGL}(n,\F_{p^m}).$$
+  
+  \item[$\bullet$] If $f = \gamma_{A,v}$ is any element of $\mathrm{AGL}(n,\F_{q})$, then $f = \gamma_{A,e,v} \in  \mathrm{A\Gamma L}(n,\F_{q})$ (where $e$ is the identity is $S_{q}$). Therefore
+  $$\mathrm{AGL}(n,\F_{p^m}) \subset \mathrm{A\Gamma L}(n,\F_{p^m}).$$
+  
+    \item[$\bullet$] By Exercise 3(c), we know that elements of $\mathrm{A\Gamma L}(n,\F_{q})$ give maps $\F_q^n = \F_p^{nm} \to \F_q^n = \F_p^{nm}$ that are affine linear over $\F_p$, so that these elements are in $\mathrm{AGL}(nm,\F_p)$.
+    $$\mathrm{A\Gamma L}(n,\F_{p^m}) \subset \mathrm{AGL}(nm,\F_p).$$
+  
+    \item[$\bullet$] The elements of $ \mathrm{AGL}(nm,\F_p)$ are bijective maps from $\F_p^{nm}$ to $\F_p^{nm}$, thus $ \mathrm{AGL}(nm,\F_p) \subset S(\F_p^{nm}).$ 
+    
+  Via an arbitrary numbering of $\F_p^{nm}$, say $\gamma : \{1,\ldots,p^{nm}\} \to \F_p^{nm}$, we obtain the isomorphism $\psi : S(\F_p^{nm}) \to S_{nm}$ defined by $\psi(\sigma) = \gamma^{-1} \circ \sigma \circ \gamma$,  which allows us to identify  $S(\F_p^{nm}) \simeq S_{nm}$. 
+  $$\mathrm{AGL}(nm,\F_p)\subset S_{p^{nm}}.$$
+  
+  To conclude, using several improper non-canonical identifications, we write
+    $$\F_p^{mn} = \F_{p^m}^n \subset \mathrm{AGL}(n,\F_{p^m}) \subset \mathrm{A\Gamma L}(n,\F_{p^m}) \subset \mathrm{AGL}(nm,\F_p)\subset S_{p^{nm}}.$$
+  \end{proof}
+  
+  \paragraph{Ex. 14.3.22}{\it  Show that $\mathrm{AGL}(n,\F_q)$ is isomorphic to the subgroup
+  $$
+  \left\{
+  \begin{pmatrix}
+  A & v\\
+  0 & 1
+  \end{pmatrix}
+  \mid A \in \mathrm{GL}(n,\F_q), v \in \F_q^n
+  \right\}
+  \subset \mathrm{GL}(n+1,\F_q),
+  $$
+  where $\begin{pmatrix}
+  A & v\\
+  0 & 1
+  \end{pmatrix}
+$ is the $(n+1) \times (n+1)$ matrix such that the upper left $n\times n$ corner is $A$, the first $n$ entries of the last column are $v$, and the first $n$ entries of the last row are all zero.
+
+  \begin{proof} Consider the map
+  $$
+  \varphi
+  \left\{
+  \begin{array}{ccc}
+  \mathrm{AGL}(n,\F_q)& \to & \mathrm{GL}(n+1,\F_q)\\
+  \gamma_{A,v} & \mapsto & 
+  \begin{pmatrix}
+  A & v\\
+  0 & 1
+  \end{pmatrix}
+  \end{array}
+  \right.
+  $$
+  This map is well defined, since $\gamma_{A,v} = \gamma_{B,w} \Rightarrow (A ,v) = (B,w)$. We verify first that $\varphi$ is an injective group homomorphism.
+  Since (see (1) in Exercise 2)
+ $$ \gamma_{A,v} \circ \gamma_{B,w} = \gamma_{AB,Aw+v}$$
+ (see (1) in Exercise 2), we obtain
+ \begin{align*}
+ \varphi(\gamma_{A,v} \circ \gamma_{B,w}) &= \varphi(\gamma_{AB,Aw+v})\\
+ &=
+ \begin{pmatrix}
+ AB & Aw+v\\
+ 0 & 1
+ \end{pmatrix}.
+ \end{align*}
+ Moreover,
+ \begin{align*}
+  \varphi(\gamma_{A,v} ) \varphi( \gamma_{B,w})&= 
+  \begin{pmatrix}
+  A & v\\
+  0 & 1
+  \end{pmatrix}
+\begin{pmatrix}
+  B & w\\
+  0 & 1
+  \end{pmatrix}\\
+&=
+\begin{pmatrix}
+  AB & Aw+v\\
+  0 & 1
+  \end{pmatrix}\\
+  &=  \varphi(\gamma_{A,v} \circ \gamma_{B,w}).
+ \end{align*}
+ $\varphi$ is a group homomorphism, and if $\gamma_{A,v} \in \ker(\varphi)$ then 
+ $$
+   \begin{pmatrix}
+  A & v\\
+  0 & 1
+  \end{pmatrix}=
+    \begin{pmatrix}
+  I_n & 0\\
+  0 & 1
+  \end{pmatrix},
+ $$
+ Therefore $A = I_n, v = 0$, so that $\gamma_{A,v} = \gamma_{I_n,0} = 1_{F_q}$. We have proved that $\varphi$ is an injective group homomorphism, thus
+ $$
+  \im(\varphi) = \left\{
+  \begin{pmatrix}
+  A & v\\
+  0 & 1
+  \end{pmatrix}
+\mid A \in \mathrm{GL}(n,\F_q), v \in \F_q^n
+  \right\},
+  $$
+  is a subgroup of $\mathrm{GL}(n+1,\F_q)$ isomorphic to $ \mathrm{AGL}(n,\F_q)$.
+  \end{proof}  
+  
+\paragraph{Ex. 14.3.23}{\it Use Theorem 14.3.21 to show that $\mathrm{AGL}(2,\F_p)$ is not solvable for $p>3$.
+ }
+    
+\begin{proof}
+Let $p$ be a prime such that $p>3$. By Theorem 14.3.21, we know that $\mathrm{PSL}(2,\F_p)$ is simple, and non-Abelian, therefore $\mathrm{PSL}(2,\F_p)$ is not solvable.
+
+Since  $$\mathrm{PSL}(2,\F_p) \subset \mathrm{PGL}(2,\F_p), $$
+$\mathrm{PGL}(2,\F_p)$ is not solvable.
+
+Moreover, $$\mathrm{PGL}(2,\F_p) = \mathrm{GL}(2,\F_p)/\F_p^* I_n.$$
+Since $\F_p^* I_n$ is cyclic, therefore solvable, $\mathrm{GL}(2,\F_p)$ is not solvable.
+
+But $\mathrm{AGL}(2,\F_p)$ contains the subgroup $\{\gamma_{A,0} \mid A \in \mathrm{GL}(2,\F_p)\} \simeq \mathrm{GL}(2,\F_p)$.
+
+This proves that $\mathrm{AGL}(2,\F_p)$ is not solvable if $p>3$.
+\end{proof}
+
+\paragraph{Ex. 14.3.24}{\it
+The action of $\mathrm{PGL}(2,F)$ on $\hat F = F \cup \{\infty\}$ was introduced in Section 7.5 In particular, Exercise 11 of that section implies that the isotropy subgroup of $\mathrm{PGL}(2,F)$ at the point $\infty$ can be identified with $\mathrm{AGL}(1,F)$. Use part (c) of Exercise 4 and Exercise 19 to prove that the action of $\mathrm{PGL}(2,F)$ on $\hat F$ is 3-transitive (also called triply transitive).
+}
+\begin{proof}
+By Exercise 4 (c), $\mathrm{GL}(2,F)$ acts transitively on $F^2 \setminus \{0\}$. This proves that $\mathrm{PGL}(2,F)$ acts transitively on the projective line $\mathbb{P}_1(F)$, so that the action of $\mathrm{PGL}(2,F)$ on $\hat F$ is transitive.
+
+This allows us to apply Exercise 19 (b). To prove that the action of $\mathrm{PGL}(2,F)$ on $\hat F$ is triply transitive, it is sufficient to prove that the isotropy group $G_{\infty} = \mathrm{AGL}(1,F)$ acts 2-transitively on $ \hat F \setminus \{\infty\} = F$. Example 14.3.2 shows that this is true. Therefore the action of $\mathrm{PGL}(2,F)$ on $\hat F$ is 3-transitive.
+\end{proof}
+
+\paragraph{Ex. 14.3.25}{\it Prove that $\mathrm{AGL}(1,\F_4) \simeq A_4$ and $\mathrm{A\Gamma L}(1,\F_4) \simeq S_4$.
+}
+
+\begin{proof}
+
+\end{proof}
 \end{document}
