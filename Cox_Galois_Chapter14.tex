@@ -2241,7 +2241,7 @@ But $\tau = (a\, b) \sigma$, thus one of the two permutations $\sigma, \tau$ is 
   \paragraph{Ex. 14.3.14}{\it Consider the groups $\mathrm{GL}(2,\F_q), \mathrm{SL}(2,\F_q), \mathrm{PGL}(2,\F_q)$, and $\mathrm{PSL}(2,\F_q)$ defined in the Mathematical Notes.
   \be
   \item[(a)] Prove that $|\mathrm{GL}(2,\F_q)| = q(q-1)(q^2-1)$.
-  \item[(b)] Prove that $|\mathrm{SL}(2,\F_q)\ = | \mathrm{PGL}(2,\F_q)| = q(q^2-1)$.
+  \item[(b)] Prove that $|\mathrm{SL}(2,\F_q)|= | \mathrm{PGL}(2,\F_q)| = q(q^2-1)$.
   \item[(c)] Prove that $\mathrm{PSL}(2,\F_q) \simeq \mathrm{SL}(2,\F_q)/\{\pm I_2\}$, and conclude that
   $$|\mathrm{PSL}(2,\F_q)| = 
   \left\{
@@ -2840,8 +2840,36 @@ This allows us to apply Exercise 19 (b). To prove that the action of $\mathrm{PG
 
 \paragraph{Ex. 14.3.25}{\it Prove that $\mathrm{AGL}(1,\F_4) \simeq A_4$ and $\mathrm{A\Gamma L}(1,\F_4) \simeq S_4$.
 }
-
 \begin{proof}
+$\mathrm{AGL}(1,\F_4)$ acts on $\F_4$, via the action defined by $$\gamma_{a,b} \cdot i = \gamma_{a,b}(i) = ai +b,$$ where $a \in \F_4^*, b \in \F_4$.
 
+Since $\gamma_{a,b}$ is bijective, $\mathrm{AGL}(1,\F_4) \subset S(\F_4) \simeq S_4$.
+
+Moreover, $|\mathrm{AGL}(1,\F_4)| = 3 \times 4 = 12$, and the only subgroup with $12$ elements of $S_4$ is $A_4$. Therefore 
+$$\mathrm{AGL}(1,\F_4) \simeq A_4.$$
+
+Similarly, $\mathrm{A\Gamma L}(1,\F_4)$ acts on $\F_4$, via the action defined by 
+$$\gamma_{a,\sigma,b} \cdot i = \gamma_{a,\sigma,b}(i) = a \sigma(i) + b,$$
+where $a \in \F_4^*, b \in F_4, \sigma \in \Gal(F_4/F_2) = \{e,F\}$, $F$ being the Frobenius isomorphism $i \mapsto i^2$.
+
+Since $\gamma_{a,\sigma,b}$ is bijective, $\mathrm{AGL}(1,\F_4) \subset S(\F_4) \simeq S_4$.
+
+By Exercise 3(a), $\mathrm{AGL}(2,\F_4)$ is a subgroup of $\mathrm{A\Gamma L}(2,\F_4)$ of index 2, therefore $|\mathrm{A\Gamma L}(2,\F_4) | = 24$. This proves that $\mathrm{A\Gamma L}(2,\F_4) = S(\F_4)$, thus
+$$\mathrm{AGL}(2,\F_4) \simeq S_4.$$
+\end{proof}
+
+\paragraph{Ex. 14.3.26}{\it Compute the orders of the groups in (14.15).
+}
+$$(14.15)\qquad \F_p^2 = \F_{p^2}  \subset \mathrm{AGL}(1,\F_{p^2}) \subset \mathrm{A\Gamma L}(1,\F_{p^2}) \subset \mathrm{AGL}(2,\F_p) \subset S_{p^2}.$$
+\begin{proof}
+ \item[$\bullet$] $|\F_p^2| = |\F_{p^2}| = p^2.$
+ \item[$\bullet$] Every element of $\mathrm{AGL}(1,\F_{p^2})$ is of the unique form $\gamma_{a,b},\  a \in \F_{p^2}^*, b \in \F_{p^2}$, thus
+  $$|\mathrm{AGL}(1,\F_{p^2})| = p^2(p^2-1).$$
+   \item[$\bullet$] By Exercise 3(a), $\mathrm{AGL}(1,\F_{p^2})$ has index 2 in  $\mathrm{A\Gamma L}(1,\F_{p^2})$, therefore
+   $$| \mathrm{A\Gamma L}(1,\F_{p^2})| = 2p^2(p^2-1).$$
+   \item[$\bullet$] Every element of $\mathrm{AGL}(2,\F_{p})$ is of the unique form $\gamma_{A,v},\  A \in \mathrm{GL}(2,\F_p), v \in \F_{p}^2$.
+   Moreover, by Exercise 14(a), $|\mathrm{GL}(2,\F_p)| = p(p-1)(p^2-1)$, therefore
+   $$|\mathrm{AGL}(2,\F_{p})| = p^3(p-1)(p^2-1).$$
+   \item[$\bullet$]  To complete, $|S_{p^2}| = (p^2)!$.
 \end{proof}
 \end{document}
