@@ -1512,14 +1512,17 @@ This proves that $G = \mathrm{AGL}(1,\Z/p^2\Z)$ is imprimitive.
  \item[(a)] If $n = 1$, then $S_n=\{e\}$ and $G = \{e\}$. Then $G$ is primitive (we can't partition $\{1,\ldots,n\} = \{1\}$ with classes $R_i$ such that $|R_i|>1$ for some $i$), but $G$ is transitive, since $e(1) = 1$. So the assumption $G \subset S_n$ is primitive but not transitive implies $n>1$.
  \item[(b)] If $k=1$, there is only one orbit $R_1 = G\cdot 1$. Then $G$ is transitive: if $i,j \in \{1,n\}$, $i = \sigma(1), j = \tau(1),\ \sigma, \tau \in G$, thus $(\tau \sigma^{-1})(i) = j$, where $\tau \sigma^{-1} \in G$. This shows that $G$ is transitive. Since $G$ is not transitive, then $k>1$.
  
+
+ We know that the orbits partition $\{1,\ldots,n\}$. 
+  
+ Now we prove that, if $\sigma \in G$ and $R_i$ is an orbit, then $\sigma(R_i) = R_i$ is the same orbit $R_i$.
  
- Now we prove that, if $\sigma \in G$ and $R_i$ is an orbit, then $\sigma(R_i)$ is an orbit $R_j$.
+ Fix $x \in R_i$, so that $R_i = {\cal O}_x = G\cdot x$ is the orbit of $x$.
  
- We know that the orbits partition $\{1,\ldots,n\}$. Let $u$ a fixed element in $R_i$, and $v = \sigma(u)$. Then $v \in R_j$ for some index $j$.  We prove $\sigma(R_i) = R_j$.
+ Let $u \in R_i$. Then  $u = \tau(x)$ for some $\tau \in G$. Then $\sigma(u) = (\sigma \tau)(x) \in R_i$. This proves $\sigma(R_i) \subset R_i$.
  
- If $s \in R_i$, since $u,r$ are in the same orbit, there is some $\tau \in G$ such that $\tau(i) = s$. Then $\sigma(s) = (\sigma \tau \sigma^{-1})(v)$, where $\sigma \tau \sigma^{-1} \in G$, so that $\sigma(s) \in R_j$ and $v \in R_j$. This proves $\sigma(R_i) \subset R_j$. 
- 
- Conversely, since $\sigma^{-1}(v) = u \in R_i$, the same reasoning shows that $\sigma^{-1}(R_j) \subset R_i$: if $t \in R_j$: there is some $\lambda \in G$ such that $\lambda(v) = t$, thus $\sigma^{-1}(t) = (\sigma^{-1} \lambda \sigma)(u)$, where $\sigma^{-1} \lambda \sigma \in G$ and $u \in R_i$, so that $t \in R_i$. The two inclusions $\sigma(R_i) \subset R_j$ and $\sigma^{-1}(R_j) \subset R_i$ show that $\sigma(R_i) = R_j$.
+ Conversely, for every $u = \tau(x) \in R_i$, $ u = \sigma((\sigma^{-1} \tau)(x))$ ,where $(\sigma^{-1} \tau)(x) \in R_i$, thus $u \in \sigma(R_i)$. Therefore $R_i \subset \sigma(R_i)$. For all $\sigma \in G$,
+ $$\sigma(R_i) = R_i.$$
  
  \item[(c)] If $|R_i|>1$ for some $i$, then $G$ is imprimitive by Definition 14.2.5. By assumption, $G$ is primitive, thus $|R_i| = 1$ for all $i$, so that every orbit consists of a single element. This means that for all $\sigma \in G$, and for all $i \in \{1,\ldots,n\}$, $\sigma(i) = i$. Therefore $\sigma = e$ for all $\sigma \in G$, $G = \{e\}$. Since $n>1$ by part (a), 
  $G$ is imprimitive, because there are partitions with at least two classes, and several elements in a class, for instance $R_1 = \{1,2\},R_2 =\{1,\ldots,n\} \setminus R_1$, is preserved by $G = \{e\}$. This proves that $G = \{e\}$ is imprimitive when $n>1$, in contradiction with the assumption.
@@ -1788,7 +1791,7 @@ Therefore $\mathrm{AGL}(n,F)$ acts transitively on $F^n$.
 $$\gamma_{A,v} \in G_0 \iff A\cdot 0 + v = 0 \iff v = 0.$$
 Therefore $G_0 = \{\gamma_{A,0}\, | \,  A \in \mathrm{GL}(n,F)\} \simeq \mathrm{GL}(n,F)$.
 
-In section 14.3.B, we identified $\{\gamma_{A,0}\, \ A \in \mathrm{GL}(n,F)\} $ with $\mathrm{GL}(n,F)$, so that
+In section 14.3.B, we identified $\{\gamma_{A,0}\mid A \in \mathrm{GL}(n,F)\} $ with $\mathrm{GL}(n,F)$, so that
 $$G_0 = \mathrm{GL}(n,F).$$
 
 \item[(c)]
@@ -2872,4 +2875,38 @@ $$(14.15)\qquad \F_p^2 = \F_{p^2}  \subset \mathrm{AGL}(1,\F_{p^2}) \subset \mat
    $$|\mathrm{AGL}(2,\F_{p})| = p^3(p-1)(p^2-1).$$
    \item[$\bullet$]  To complete, $|S_{p^2}| = (p^2)!$.
 \end{proof}
+
+\subsection{PRIMITIVE POLYNOMIALS OF PRIME-SQUARED DEGREE}
+\paragraph{Ex. 14.4.1}{\it Prove that $M_1 = \mathrm{A\Gamma L}(1,\F_{p^2})$ is solvable, and compute its order.
+}
+\begin{proof}
+Recall that $\mathrm{AGL}(1,\F_{p^2})/\F_p \simeq \F_p^*$, where $(\F_p,+)$ and $(\F_p^*,\times)$ are cyclic, thus solvable, hence $\mathrm{AGL}(1,\F_{p^2})$ is solvable by Theorem 8.1.4.
+
+By Exercise 14.3.3(a), $\mathrm{AGL}(1,\F_{p^2})$ has index 2 in  $\mathrm{A\Gamma L}(1,\F_{p^2})$, therefore $\mathrm{AGL}(1,\F_{p^2})$ is a normal subgroup of $\mathrm{AGL}(1,\F_{p^2})$, and
+$$\mathrm{A\Gamma L}(1,\F_{p^2})/  \mathrm{AGL}(1,\F_{p^2}) \simeq \{-1,1\}.$$
+The group $ \{-1,1\}$ is cyclic, of prime order $2$, therefore is solvable, and $\mathrm{AGL}(1,\F_{p^2})$ is solvable. The same Theorem 8.1.4 shows that $M_1 = \mathrm{A\Gamma L}(1,\F_{p^2})$ is solvable.
+
+By Exercise 14.3.26,
+$$| M_1| = 2p^2(p^2-1).$$
+\end{proof}
+
+\paragraph{Ex. 14.4.2}{\it This exercise will study the subgroup $M_2 \subset \mathrm{AGL}(2,\F_p)$ defined in (14.21).
+\be
+\item[(a)] Prove that the map $\delta$ defined in (14.2) gives an element of $\mathrm{AGL}(2,\F_p)$.
+\item[(b)] Prove that
+$\begin{pmatrix}
+0 & 1\\
+1 & 0
+\end{pmatrix}
+$
+has order $\,2$ and normalizes $\mathrm{AGL}(1,\F_p) \times \mathrm{AGL}(1,\F_p) \subset \mathrm{AGL}(2,\F_p)$.
+\item[(c)] Prove that $M_2$ is solvable, and compute its order.
+\item[(d)] Prove that $(M_2)_0$ is generated by the matrices in (14.22).
+\item[(e)] Prove that $\mathrm{AGL}(1,\F_p) \times \mathrm{AGL}(1,\F_p) \subset \mathrm{AGL}(2,\F_p)$ is imprimitive in $S_{p^2}$.
+\ee
+}
+\begin{proof}
+
+\end{proof}
+
 \end{document}
