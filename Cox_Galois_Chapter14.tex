@@ -461,11 +461,11 @@ Morerover, for all $\sigma \in A_6$,
 $$\ker \varphi = \{e,(1\,2)(3\,4), (1\,2)(5\,6), (3\,4)(5\,6)\}.$$
 Verification: $6 = |S_3| = |G/\ker(\varphi)| = 24/4$.
 
-\item[(b)] Let $N$ be the number of $3$-Sylow subgroups of $G$. By the third Slow Theorem,
+\item[(b)] Let $N$ be the number of $3$-Sylow subgroups of $G$. By the third Sylow Theorem,
 $$N \mid 24 = |G|, \qquad N \equiv 1 \pmod 3.$$
 Therefore $N = 1$ or $N = 4$.
 
-\item[(c)] Let $\tau \in S_6$ be a permutation of order 6. If $\tau = \tau_1\cdots \tau_k$ is the decomposition of $\tau$ in disjoint cycles, then the order of $\tau$ is the lcm of the order of$ \tau_1,\ldots,\tau_k$. Therefore $\tau$ is a $6$-cycle or a product of a $2$-cycle by a $3$-cycle. In both cases $\tau$ is odd. Therefore $A_6$ has no element of order $6$.
+\item[(c)] Let $\tau \in S_6$ be a permutation of order 6. If $\tau = \tau_1\cdots \tau_k$ is the decomposition of $\tau$ in disjoint cycles, then the order of $\tau$ is the lcm of the order of $ \tau_1,\ldots,\tau_k$. Therefore $\tau$ is a $6$-cycle or a product of a $2$-cycle by a $3$-cycle. In both cases $\tau$ is odd. Therefore $A_6$ has no element of order $6$.
 
 
 \item[(d)] Reasoning by contradiction, suppose that $G$ has only one $3$-Sylow subgroup $H$. Then, for all $g \in G$, $gH g^{-1}$ is a $3$-Sylow, thus $gH g^{-1} = H$, and $H$ is a normal subgroup of $G$. 
@@ -2873,7 +2873,7 @@ $$(14.15)\qquad \F_p^2 = \F_{p^2}  \subset \mathrm{AGL}(1,\F_{p^2}) \subset \mat
    \item[$\bullet$] Every element of $\mathrm{AGL}(2,\F_{p})$ is of the unique form $\gamma_{A,v},\  A \in \mathrm{GL}(2,\F_p), v \in \F_{p}^2$.
    Moreover, by Exercise 14(a), $|\mathrm{GL}(2,\F_p)| = p(p-1)(p^2-1)$, therefore
    $$|\mathrm{AGL}(2,\F_{p})| = p^3(p-1)(p^2-1).$$
-   \item[$\bullet$]  To complete, $|S_{p^2}| = (p^2)!$.
+   \item[$\bullet$]  To be complete, $|S_{p^2}| = (p^2)!$.
 \end{proof}
 
 \subsection{PRIMITIVE POLYNOMIALS OF PRIME-SQUARED DEGREE}
@@ -3095,6 +3095,7 @@ $, and $T$ would be a multiple of the identity, which is in contradiction with t
 This proves that there is some $v \in V$ such that $v,T(v)$ are linearly independent. Since the dimension of $V$ is $2$, $v$ and $T(v)$ form a basis of $V$ over $F$.
 \end{proof}
 
+Note: The hypothesis ``$\,T$ is an isomorphism'' was useless.
 
 \paragraph{Ex. 14.4.5}{\it Fix $a \in \F_p, p>2$. The goal of this exercise is to find $s,t \in \F_p$ with $s^2+t^2 =a$.
 \be
@@ -3142,4 +3143,196 @@ $$p + 1 = |S| + |S'| = |S \cup S'| \leq |\F_p| = p,$$
 and $p+1 \leq p$ gives a contradiction. Therefore $S \cap S' \ne \varnothing$, so that we can find some $c \in \F_p$ such that $c \in S \cap S'$. Such an element $c$ verifies
 $c = s^2$ and $c = a-t^2$ for some $s,t \in \F_p$. This proves that the equation $s^2 + t^2 = a$ has a solution $(s,t) \in \F_p \times \F_p$.
 \end{proof}
+
+\paragraph{Ex. 14.4.6}{\it Let $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$ be a $2 \times 2$ matrix with entries in a field $F$.
+\be
+\item[(a)] Prove that the characteristic polynomial of $A$ is $P(x) = x^2 - \mathrm{tr}(A) x + \det(A)$, where $\mathrm{tr}(A) = a+d$ and $\det(A) =ad-bc$ are the trace and determinant of $A$.
+\item[(b)] Prove that $P(A) = A^2 - \mathrm{tr}(A) A + \det(A) I_2$ is the zero matrix.
+\ee
+The Cayley-Hamilton Theorem generalizes part (b) by showing that $P(A)$ is the zero matrix when $P(x)$ is the characteristic polynomial of an $n\times n$ matrix $A$.
+}
+\begin{proof}
+\item[(a)] By definition of the characteristic polynomial,
+\begin{align*}
+P(x) &= 
+\begin{vmatrix}
+a - x & b\\
+c &d-x
+\end{vmatrix}\\
+&= (a-x)(d-x) - bc\\
+&= x^2 -(a+d) x + ad-bc\\
+&=x^2 - \mathrm{tr}(A) x + \det(A).
+\end{align*}
+\item[(b)] Moreover,
+\begin{align*}
+P(A) &=  A^2 - \mathrm{tr}(A) A + \det(A) I_2\\
+&=  \begin{pmatrix} a & b \\ c & d \end{pmatrix}^2 - (a+d)  \begin{pmatrix} a & b \\ c & d \end{pmatrix} + (ad- bc)I_2\\
+&=\begin{pmatrix} a^2 + bc & ab + bd\\ ca + dc & cb + d^2 \end{pmatrix} +\begin{pmatrix} -a^2 -da & -ab - db\\ -ac -dc& -ad - d^2\end{pmatrix} + \begin{pmatrix} ad-bc&0\\ 0 & ad-bc\end{pmatrix} \\
+&=0.
+\end{align*}
+
+\end{proof}
+
+\paragraph{Ex. 14.4.7}{\it Complete the proof of $C(H) = H$ from Proposition 14.4.4 begun in the text.
+}
+\begin{proof}
+Recall the context:
+
+Here $g,h \in \mathrm{GL}(2,\F_p)$ are such that
+\begin{align}
+gh = -hg, g^2 = h^2 = -I_2, \det(g) = \det(h) = 1.
+\end{align}
+$$H = \langle [g],[h]\rangle = \{[I_2],[g],[h],[g][h]\rangle \subset \mathrm{PGL}(2,\F_p).$$
+By (14.23),
+$$
+[m] \in C(H)  \iff 
+\left\{
+\begin{array}{ll}
+{[}m{]}{[}g{]} &= {[}g]{[}m{]}\\
+{[}m{]}{[}h{]} &= {[}h{]}{[}m{]}
+\end{array}
+\right.
+\iff
+\left\{
+\begin{array}{ll}
+mg &= \pm gm\\
+mh &= \pm hm.
+\end{array}
+\right.
+$$
+Let $[m] \in C(H)$. There are four cases.
+
+\item[$\bullet$] If $mg = gm, mh = hm$, then by Lemma 14.4.3,
+$$m = aI_2+bg =cI_2 + dh,\qquad a,b,c,d \in \F_p.$$
+If $b\ne 0$, then $g = b^{-1}(c-a)I_2 + b^{-1}dh) \in \mathrm{Vect}(I_2,h)$, thus $gh = hg$. This is impossible since $gh = -hg \ne 0$ and $p>2$. Thus $b=0$, and  $m = aI_2$, so that $[m] = [I_2] \in H$.
+
+\item[$\bullet$] If $mg = -gm, mh = hm$, then
+\begin{align*}
+&(mh) g = m(hg) = m(-gh) = (-mg)h = (gm)h = g(mh)\\
+&(mh) h = (hm)h = h(mh),
+\end{align*}
+thus $mh$ is in the centralizer of $g$ and $h$. By the first bullet, $[mh] = [I_2]$, and using $[h]^2 = [I_2]$, we obtain $[m] = [h] \in H$.
+
+\item[$\bullet$] If $mg = gm, mh = -hm$, exchanging $g$ and $h$ in the previous case, we obtain similarly $[m] = [g] \in H$.
+
+\item[$\bullet$] If $mg = -gm, mh = -hm$, then, using (10),
+\begin{align*}
+&(mgh) g = mg(hg) = mg(-gh) = m(-g^2) h = mh,\\
+&g(mgh) = (gm)(gh) = (-mg)gh = m(-g^2)h = mh,\\
+\\
+&(mgh) h = mg(h^2) = -mg,\\
+&h(mgh) = (hm)(gh) = (-mh)(-hg) = mh^2g = -mg.
+\end{align*}
+Therefore $mgh$ commutes with $g$ and $h$. By the first bullet, $[mgh] = [I_2]$, thus $[mg] = [-(mgh)h] = [-h]$, and $[m] = [-mg^2]= [mg][-g] = [-h][-g] = [h][g] = [g][h] \in H$. 
+
+We have proved $C(H) \subset H$. Since $H$ is Abelian $H \subset C(H)$. Thus $C(H) = H$.
+\end{proof}
+
+\paragraph{Ex. 14.4.8}{\it Let $G$ be a group with a normal subgroup $H \simeq (\Z/2\Z)^2$ such that $C_G(H) = H$ and the map $G \to \mathrm{Aut}(H)$ given by conjugation is onto. The goal of this exercise is to prove that $G \simeq S_4$. Note that $|G| = 24$ by the proof of Proposition 14.4.4. 
+\be
+\item[(a)] Use the Sylow Theorems to show that $G$ has one or four $3$-Sylow subgroups. Then use $C_G(H) = H$ to show that the number is four.
+\item[(b)] Let $H_1$ be a $3$-Sylow subgroup of $G$. Use part (a) and the Sylow Theorem to show that its normalizer has order $6$.
+\item[(c)] Now consider the homomorphism $\phi : G \to S_4$ given by the action of $G$ by conjugation on the $3$-Sylow subgroups. Use part (b) to prove that $\ker(\phi)$ cannot contain an element of order $3$.
+\item[(d)] Conclude that the image of $\phi$ contains $A_4$. It follows that if $\phi$ is not an isomorphism, then $G$ contains a normal subgroup of order $2$.
+\item[(e)] Prove that $G$ cannot contain a normal subgroup of order $2$. Thus $\phi : G \simeq S_4$.
+\ee
+This exercise is closely related to Exercise 3 of Section 14.2.
+}
+
+\begin{proof}
+First, we try to understand the first sentence, and why this is related to the proof of Proposition 14.4.4.
+
+Note that every permutation of $\Z/2\Z \times \Z/2\Z$ fixing $(0,0)$ is an outer automorphism (the Cayley tables are identical if we exchange the two elements of any pair of nonzero elements). Since $\Z/2\Z \times \Z/2\Z$ is Abelian, there is no non trivial inner automorphism. Thus $\mathrm{Aut}(H) \simeq S_3$.
+
+In the proof of Proposition 14.4.4, if we write $G = N(H) = N_{\mathrm{PGL}(2,\F_p)}(H)$, then we proved that
+$$
+\varphi
+\left\{
+\begin{array}{ccc}
+G &\to &\mathrm{Aut}(H) \simeq S_3\\
+g & \mapsto & \varphi_g 
+  \left\{
+  \begin{array}{ccc}
+  H &\to & H\\
+  g & \mapsto &  ghg^{-1}
+  \end{array}
+  \right.
+\end{array}
+\right.
+$$
+is surjective (onto). Note that $\varphi$ is well defined because $H$ is a normal subgroup of $G$, so $ghg^{-1} \subset H$ for all $g \in G$ and for all $h \in H$.
+
+By hypothesis, $\varphi$ is surjective. As in the text, $\ker(\varphi) = C_G(H) =  H$, thus
+$$S_3 \simeq \mathrm{Aut}(H) \simeq G/\ker(\varphi) = G/H.$$
+This proves $|G| = |H| \times |S_3| = 4 \times 6 = 24$.
+
+\item[(a)] Let $N$ be the number of $3$-Sylow subgroups of $G$. By the third Sylow Theorem,
+$$N \mid 24 = |G|, \qquad N \equiv 1 \pmod 3.$$
+Therefore $N = 1$ or $N = 4$.
+
+If $N = 1$, then there is only one $3$-Sylow subgroup, say $K$. Since  $gKg^{-1}$ is also a $3$-Sylow subgroup, $gKg^{-1} = K$, so $K$ is normal in $G$.
+
+Since $|K| = 3$ and $|H| =4$, then $|H\cap K|$ divides $4$ and $3$, thus $H\cap K = \{e\}$.
+
+By Exercise 14.3.7, knowing that $H,K$ are normal in $G$, and that $H\cap K = \{e\}$, then $HK$ is a normal subgroup of $G$, and $HK \simeq H \times K$. Moreover $H$ and $K$ are Abelian subgroups, thus $HK \simeq H \times K$ is abelian. This shows that $K \subset C_G(H)$, thus $H = C_G(H) \supset H K \supsetneq H$. This is a contradiction.
+
+We have proved that $G$ has four $3$-Sylow subgroups.
+
+\item[(b)] Let $H_1,H_2,H_3,H_4$ be the $3$-Sylow subgroup of $G$. For all $g \in G$, $gH_ig^{-1}$ is a $3$-Sylow of $G$, thus $G$ acts on the set $\{H_1,H_2,H_3,H_4\}$.
+
+By the second Sylow Theorem, all $3$-Sylow subgroups are conjugate, thus $G$ acts transitively on $\{H_1,H_2,H_3,H_4\}$, thus the orbit of $H_1$ is 
+$${\cal O}_{H_1} = \{H_1,H_2,H_3,H_4\}.$$
+By definition of the normalizer, the isotropy group of $H_1$ is $G_{H_1} = N_G(H_1)$. The Fundamental Theorem of Group Actions gives
+$$4 = |{\cal O}_{H_1} | = (G : N_G(H_1)),$$
+thus $|N_G(H_1)| = |G|/4 = 6$.
+
+\item[(c)] Write $E = \{H_1,H_2,H_3,H_4\}$. Consider the homomorphism
+$$
+\psi
+\left\{
+\begin{array}{ccc}
+G & \to & S(E) \simeq S_4\\
+g & \mapsto &\psi_g
+   \left\{
+    \begin{array}{ccc}
+ E & \to &E\\
+   M& \mapsto & gMg^{-1}.
+   \end{array}
+   \right.
+\end{array}
+\right.
+$$
+$(M = H_i,\ i=1,2,3,4).$
+
+Reasoning by contradiction, suppose that $\ker(\psi)$ contains an element $h$ of order $3$.
+
+ For all $g\in G$, $g \in \ker(\psi)$ if and only if $\psi_g$ is the identity of $S(E)$, thus $$\ker(\psi) =  N_G(H_1) \cap N_G(H_2)\cap N_G(H_3) \cap N_G(H_3).$$
+ Therefore  $\{e,h,h^2\}$ is a subgroup of $N_G(H_1)$. But $H_1 \subset N_G(H_1)$ is another subgroup of $N_G(H_1)$ of order $3$.
+ 
+ Since $N_G(H_1) = 6$, $N_G(H_1)$ has a unique subgroup of order $3$: the number $n$ of $3$-Sylow subgroups of $N_G(H_1)$ satisfies $n \mid 6, n \equiv 1 \pmod 3$, thus $n=1$. Therefore $H_1 = \{e,h,h^2\}$. Reasoning with $H_2\subset N_G(H_2)$, we obtain similarly $H_2 = \{e,h,h^2\}$. Thus $H_1 = H_2$. This is a contradiction since the $3$-Sylow subgroups $H_1,H_2,H_3,H_4$ are distinct. Therefore $\ker(\psi)$ cannot contain an element of order $3$.
+ 
+ \item[(d)] By part (b), $\ker(\psi)$ is a subgroup of the group $N_G(H_1)$, whose  order is $6$. By part (c), $\ker(\psi)$ has no element of order 3, hence the order of $\ker(\psi)$ is not $3$ or $6$, otherwise, by Cauchy Theorem, $\ker(\psi)$ would contain an element of order $3$. Thus the order of $\ker(\phi)$ is $1$ or $2$. This implies that
+ $$|\im(\psi)| = |G|/|\ker(\psi)| = 12 \text{ or } 24.$$
+ 
+ If we choose some numbering $\gamma$ of $E$, where $\gamma : \{1,2,3,4\} \to E$ is given by $\gamma(i) = H_i$, then $\hat \gamma : S(E) \to S_4$ defined by $\hat \gamma(\sigma) = \gamma^{-1} \circ \sigma \circ \gamma$ is an isomorphism. Thus $\phi = \hat \gamma \circ \psi$, $\phi :  G \to S_4$, is a group homomorphism, such that $|\im(\phi)| = |\im(\psi)| = 12$ or $24$.  Since $S_4$ has only one subgroup of order $12$, we obtain that
+ $$\im(\phi) = A_4 \text{ or } \im(\phi) = S_4.$$
+We have proved $\im(\phi) \supset A_4$.
+
+If $\im(\phi) = S_4$, then $\phi : G \to S_4$ is surjective, and since $|G| = |S_4|$, $\phi$ is bijective, thus $\phi$ is a group isomorphism and $G \simeq S_4$.
+
+It follows that if $\phi$ is not an isomorphism, then $\im(\phi) = A_4 $, and $|\ker(\varphi)| = 2$. Then $K= \ker(\varphi)$ is a normal subgroup of $G$ of order $2$.
+
+\item[(e)] It remains to show that $G$ cannot contain a normal subgroup $K$ of order $2$. Reasoning by contradiction, suppose that there exists such a subgroup $K$. Write $K = \{e,a\}, a \ne e$. 
+
+Since $K$ is normal in $G$, for every $g \in G$, $gag^{-1} \in K = \{e,a\}$, and $gag^{-1} \ne e$, otherwise $a = e$. Thus $gag^{-1} =a$.
+$$\forall g \in G, \ ga = ag.$$
+This means that $a$ in in the center of $G$, a fortiori, $a \in C_G(H)$. Since $C_G(H) = H$, it follows that
+$$K \subset H.$$
+Write $H = \{e,a,b,c\}$.
+
+Consider anew the homomorphism $\varphi : G \to \mathrm{Aut}(H) \simeq S_3$ described in the introduction. By hypothesis, $\varphi$ is surjective. But for all $g \in G$, $\varphi_g(a) = gag^{-1} =a$, thus any automorphism $\chi$ of $G$ such that $\chi(a) \ne a$ , for instance the automorphism defined by $\chi(e) = e, \chi(a) = b, \chi(b) = c, \chi(c) = a$, is not in $\im(\phi)$, in contradiction with the surjectivity of $\varphi$.
+
+This proves that $G$ has no normal subgroup of order 2. By part (d), it follows that $S(E) \simeq S_4$.
+\end{proof}
+
 \end{document}
