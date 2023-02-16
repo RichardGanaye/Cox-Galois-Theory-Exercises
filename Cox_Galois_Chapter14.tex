@@ -3335,4 +3335,137 @@ Consider anew the homomorphism $\varphi : G \to \mathrm{Aut}(H) \simeq S_3$ desc
 This proves that $G$ has no normal subgroup of order 2. By part (d), it follows that $S(E) \simeq S_4$.
 \end{proof}
 
+\paragraph{Ex. 14.4.9}{\it Let $g$ and $C(g)$ be as in the proof of part (c) of Proposition 14.4.4.
+\be
+\item[(a)] Show that $C(g)$ is Abelian and contains $\F_p^* I_2$.
+\item[(b)] If $m \in C(g)$, then it is easy to see that $\det(m) m^{-2} \in C(g)$. By part (a), it follows that $\phi(m) = \det(m) m^{-2}$ defines a group homomorphism $\phi : C(g) \to C(g)$. Prove that $\ker(\phi) = \F_p^* I_2$ and $|\im(\phi)| = |C(g)|/(p-1)$.
+\item[(c)] Prove that $\im(\phi) \subset \{w \in C(g) \mid \det(w) = 1\}$.
+\item[(d)] Explain why we may assume that $g = \begin{pmatrix} 0 & -1\\1 & 0 \end{pmatrix}$. Then use Lemma 14.4.3 and Exercise 5 to show that $\det:C(g) \to \F_p^*$ is onto. Conclude that
+$$\im(\phi) = \{w \in C(g) \mid \det(w) = 1\}.$$
+\ee
+The equality proved in part (d) shows that every element of $C(g)$ of determinant $1$ is of the form $\det(m)m^{-2}$ for some $m\in C(g)$. This will be used in the proof of part (c) of Proposition 14.4.4.
+}
+
+\begin{proof}
+\item[(a)] Since $g^2 = -I_2$, $g \in \mathrm{GL}(2,\F_p)$, and since $gh = -hg \ne hg (p>2)$, $g \not \in \F_p^* I_2$. Then Lemma 14.4.3 shows that
+$$C(g) = \{m \in \mathrm{GL}(2,\F_p) \mid \exists a \in \F_p, \ \exists b \in \F_p, \ m = aI_2 + bg\} = \mathrm{GL}(2,\F_p) \cap \mathrm{Vect}_{\F_p}(I_2,g).$$
+if $m, m' \in C(g)$, then $m = aI_2+bg, m' =a'I_2 + b'g,\ a,b,a,b,' \in F_p$, thus
+$$mm' =  (aI_2+bg)( a'I_2+b'g) = aa'I_2 + ba'g + a b' g + bb'g^2 = ( a'I_2+b'g)( aI_2+bg),$$
+so $C(g)$ is Abelian. 
+
+Moreover, $C(g)$ contains the matrices $aI_2 \in \mathrm{GL}(2,\F_p)$, which is equivalent to $a \in \F_p^*$.
+$$C(g)\supset \F_p^* I_2.$$
+
+\item[(b)] If $m\in C(g)$, then $m^2 g = gm^2$, thus $gm^{-2} = m^{-2} g$ and $(\det(m) m^{-2}) g = g (\det(m) m^{-2})$, so that $\det(m) m^{-2} \in C(g)$. This permits us to define
+$$
+\phi
+\left\{
+\begin{array}{ccc}
+C(g) & \to &C(g)\\
+m & \mapsto &\det(m) m^{-2}.
+\end{array}
+\right.
+$$
+For $m,m' \in C(g)$, $\phi(mm') = (\det(mm') (mm')^{-2} = (\det(m)m^{-2})(\det(m') m'^{-2})$, thus $\phi$ is a group homomorphism.
+
+If $m = \lambda I_2, \lambda \in \F_p^*$, then $\phi(m) = \lambda^2 (\lambda I_2)^{-2} = I_2$. Therefore $\F_p^* I_2 \subset \ker(\phi)$.
+
+Conversely, if $m\in \ker(\phi)$, $\det(m) m^{-2} = I_2$, thus $m^2 = \mu I_2$, where $\mu = \det(m) \in \F_p^*$.
+
+Reasoning by contradiction, suppose that $m \not \in \F_p^* I_2$. Since $m\in C(g)$, Lemma 14.4.3 shows that $m = aI_2 + bg$, where $b\ne 0$.
+
+Then $(aI_2 + bg)^2 = \mu I_2$, which gives, using $g^2 = -I_2$,
+$$(a^2 - b^2 - \mu) I_2 + 2ab g = 0.$$
+If $a \ne 0$, then $g = -(2ab)^{-1} (a^2 -b^2 - \mu) I_2 \in \F_p^* I_2$, which is false. Therefore $a= 0$, and $m= bg$. Then 
+\begin{align*}
+I_2 = \phi(m) &= \det(bg) (bg)^{-2}\\
+&= \det(g) g^{-2},
+\end{align*}
+thus $-I_2 = g^2 = \det(g) I^2$, and $\det(g) = -1$, which contradicts $\det(g) = 1\ (p>2)$. This contradiction shows that $m \in \F_p^* I_2$. To conclude,
+$$\ker(\phi) = \F_p^* I_2.$$
+
+Since $\im(\phi) \simeq C(g)/\ker(\phi) = C(g)/\F_p^* I_2$,
+$$|\im(\phi)| = |C(g)|/(p-1).$$
+
+\item[(c)] If $w \in \im(\phi)$, then $w = \det(m) m^{-2}$ for some $m \in C(g)$. Then
+\begin{align*}
+\det(w) &= \det(m)^2 \det(m)^{-2} = 1,
+\end{align*}
+thus
+$$\im(\phi) \subset \{w \in C(g) \mid \det(w) = 1\}.$$
+
+\item[(d)] In the proof of part (c) of Proposition 14.4.4, we saw that there is some $Q \in \mathrm{GL}(2,\F_p)$ such that
+$$g' = Q^{-1} g Q = \begin{pmatrix}0 & -1\\1 & 0 \end{pmatrix}.$$
+Note that $$C(g') = Q^{-1} C(g) Q.$$
+Indeed, if $m \in C(g)$, then $mg = gm$, thus
+\begin{align*}
+(Q^{-1} m Q) g' &= (Q^{-1} m Q )(Q^{-1} g Q)\\
+&= Q^{-1} mg Q = Q^{-1} g m Q\\
+&= (Q^{-1} g Q)(Q^{-1} m Q)\\
+&= g' (Q^{-1} m Q).
+\end{align*}
+This proves $Q^{-1} C(g) Q \subset C(g')$. Symmetrically,  $QC(g')Q^{-1} \subset  C(g)$, thus $C(g') = Q^{-1} C(g) Q.$
+
+Let $\phi' : C(g') \to C(g')$ the group homomorphism defined by $\phi'(m') = \det(m') m'^{-2}$. Suppose that we can prove that $\im(\phi') = \{w' \in C(g') \mid \det(w') = 1\}.$
+Now, take $w \in C(g)$ such that $\det(w) = 1$. Since $C(g) = Q C(g') Q^{-1}$,  there is some $w' \in C(g')$ such that
+$$w = Q w' Q^{-1},\qquad w' \in C(g'), \det(w') = 1.$$
+By our hypothesis, $w' \in \im(\phi')$, so that $w' = \det(m') m'^2, m' \in C(g')$. 
+
+Put $m = Qm' Q^{-1}$. Then $m \in C(g)$, and
+\begin{align*}                                                                                                                                                                                                                                                                                                                              
+w &= Qw' Q^{-1}\\
+&=\det(Qm'Q^{-1}) (Q m'Q^{-1})^2\\
+&=\det(m) m^2\\
+&= \phi(m)
+\end{align*}
+
+This proves that $\im(\phi) = \{w \in C(g) \mid \det(w) = 1\},$ if we can show first that $\im(\phi') = \{w' \in C(g') \mid \det(w') = 1\}.$
+This explain why we may assume now that $g = \begin{pmatrix} 0 & -1\\1 & 0 \end{pmatrix}$.
+
+For all $a,b \in \F_p$,
+$$\det(aI_2 + b g) = \begin{vmatrix} a & -b\\ b & a \end{vmatrix} = a^2 + b^2.$$
+By Exercise 5, for all $\lambda \in \F_p$, there is some pair $(a,b) \in \F_p^2$ such that $a^2  + b^2 = \lambda$. If $\lambda \in \F_p^*$, then $\det(aI + bg) = \lambda \ne 0$, thus 
+$aI_2 + bg \in \mathrm{GL}(2,\F_p)$. Moreover $aI_2 + bg  \in C(g)$ (this is the easy part of Lemma 14.4.3), thus $\det : C(g) \to \F_p^*$ is a surjective homomorphism.
+
+For any $w \in \mathrm{GL}(2,\F_p)$,
+\begin{align*}
+w \in C(g) &\iff \begin{pmatrix} r & t\\s & u \end{pmatrix}\begin{pmatrix} 0 & -1\\1 & 0 \end{pmatrix}  = \begin{pmatrix} 0 & -1\\1 & 0 \end{pmatrix} \begin{pmatrix} r & t\\s & u \end{pmatrix}\\
+&\iff \begin{pmatrix} t & -r\\ u & -s\end{pmatrix} =\begin{pmatrix}  -s & -u\\ r & t\end{pmatrix}\\
+&\iff
+\left\{
+\begin{array}{ll}
+t &= -s,\\
+u &=r.
+\end{array}
+\right.
+\end{align*}
+Thus
+$$C(g) = \left\{ w \in \mathrm{GL}(2,\F_p) \mid \exists r \in \F_p,\ \exists s \in \F_p,\  w = \begin{pmatrix} r & -s\\s & r \end{pmatrix} \right\}.$$
+
+Now take any $w = \begin{pmatrix} r & t\\s & u \end{pmatrix} \in C(g)$ such that $\det(w) = 1$. 
+
+Then  $w = \begin{pmatrix} r & -s\\s & r \end{pmatrix} , \ r^2 + s^2 = 1$, and $w^{-1} =  \begin{pmatrix} r & s\\-s & r \end{pmatrix}$.
+
+Put $m = \begin{pmatrix} 1+r & s\\- s & 1+r \end{pmatrix}$ (we found this matrix by trigonometrical analogy). By the previous remark, $m\in C(g)$, and $\det(m) = (1+r)^2 +s^2 = 2(1+r)$.
+
+Then, using $r^2+s^2 = 1$,
+\begin{align*}
+m^2 &= \begin{pmatrix} 1+r & s\\- s & 1+r \end{pmatrix}\begin{pmatrix} 1+r & s\\- s & 1+r \end{pmatrix}\\
+&=\begin{pmatrix} (1+r)^2 -s^2 & 2s(1+r)\\- 2s(1+r) & (1+r)^2 -s^2 \end{pmatrix}\\
+&=\begin{pmatrix} 2r^2 + 2r & 2s(1+r)\\- 2s(1+r) & 2r^2+2r \end{pmatrix}\\
+&=2(1+r) \begin{pmatrix} r & s\\- s & r \end{pmatrix}\\
+&= \det(m)w^{-1}
+\end{align*}
+Thus $w = \det(m) m^{-2} = \phi(m)$, where $m = \begin{pmatrix} 1+r & s\\- s & 1+r \end{pmatrix} \in C(g)$.
+
+(We have not used with this method the surjectivity of $\det : C(g) \to \F_p^*$.)
+
+We can conclude, using also part (c),
+$$\im(\phi) = \{w \in C(g) \mid \det(w) = 1\}.$$
+(for $g= \begin{pmatrix} 0 & -1\\1 & 0 \end{pmatrix}$, and by the above remark, for any $g \in \mathrm{GL}(2,\F_p)$ such that $g^2 = -I_2$.)
+
+This equality shows that every element of $C(g)$ of determinant $1$ is of the form $\det(m) m^{-2}$ for some $m \in C(g)$.
+\end{proof}
+
+
 \end{document}
