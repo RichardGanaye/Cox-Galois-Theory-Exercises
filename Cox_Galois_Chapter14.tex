@@ -3605,4 +3605,83 @@ $$N(H) = \left \langle
  \right \rangle.
 $$
 \end{proof}
+
+\paragraph{Ex. 14.4.11}{\it Let $M_3$ be as in Proposition 14.4.5. Show that $M_3$ is solvable of order $24p^2(p-1)$.
+}
+\begin{proof}
+By definition, $M_3 = \pi^{-1}(N(H))$, where
+$$
+\pi
+\left\{
+\begin{array}{ccc}
+\mathrm{AGL}(2,\F_p) & \to & \mathrm{PGL}(2,\F_p)\\
+\gamma_{A,v} & \mapsto &[A].
+\end{array}
+\right.
+$$
+
+Consider the restriction (and co-restriction) of $\pi$, given by
+$$
+\tilde{\pi}
+\left\{
+\begin{array}{ccc}
+M_3& \to &N(H)\\
+\gamma_{A,v} & \mapsto &[A].
+\end{array}
+\right.
+$$
+Since $M_3 = \pi^{-1}(N(H))$, $\tilde{\pi}$ is surjective.
+Moreover, $\gamma_{A,v} \in \ker(\tilde{\pi})$ if and only if $[A] = [I_2]$, that is $A \in \F_p* I_2$, thus
+$$\ker(\tilde{\pi}) = \{ \gamma_{\lambda I_2, v} \mid \lambda \in \F_p^*, v \in \F_p^2\}.$$
+We know that $\gamma_{A,v} = \gamma_{B,w} \Rightarrow A = B, v = w$, therefore the map
+$$
+\psi
+\left\{
+\begin{array}{ccc}
+ \F_p^2\times \F_p^* & \to &\ker(\tilde \pi)\\
+(v, \lambda) & \mapsto & \gamma_{\lambda I_2,v}
+\end{array} 
+\right.
+$$
+is bijective. This gives
+$$
+|\ker(\tilde{\pi})| = |\F_p^*| \times |\F_p^2| = (p-1)p^2\}.
+$$
+The First Isomorphism Theorem gives
+$$S_4 \simeq N(H) \simeq M_3/ \ker(\tilde{\pi}),$$
+therefore
+$$|M_3|= 24 p^2(p-1).$$
+
+Moreover, if we give the structure of semidirect product to $\F_p^2\times \F_p^*$, we see that
+$$
+\psi
+\left\{
+\begin{array}{ccc}
+ \F_p^2\rtimes \F_p^* & \to &\ker(\tilde \pi)\\
+(v, \lambda) & \mapsto & \gamma_{\lambda I_2,v}
+\end{array} 
+\right.
+$$
+is a group isomorphism:
+By formula (1) in Ex. 14.3.2, we obtain
+$$\gamma_{\lambda I_2,v} \circ \gamma_{\mu I_2,w} = \gamma_{\lambda \mu I_2, Aw+v}.$$
+We have seen that $\psi$ is bijective, and, following the formula (6.9) for the semidirect product, 
+$$(v,\lambda)(w, \mu) = (v + \lambda w, \lambda \mu).$$
+Therefore
+\begin{align*}
+\psi^{-1}(\gamma_{\lambda I_2,v}) \psi^{-1} (\gamma_{\mu I_2,w}) &= (v,\lambda)(w, \mu)\\
+&=(v + \lambda w, \lambda \mu)\\
+&= \psi^{-1}(\gamma_{\lambda \mu I_2, Aw+v})\\
+&=\psi^{-1}(\gamma_{\lambda I_2,v} \circ \gamma_{\mu I_2,w}).
+\end{align*}
+This proves that $\psi$ is a group isomorphism, and $\ker(\tilde \pi) \simeq \F_p^2 \rtimes \F_p^*$.
+
+By exercise 6.4.8, we know that $\F_p^2 \rtimes \F_p^*/ \F_p^2\times \{1\} \simeq \F_p^*$, where $\F_p^2 \times \{1\} \simeq \F_p^2$. Since $\F_p^*$ is cyclic, $\F_p^*$ is solvable, and $\F_p^2$ is also cyclic and solvable, Theorem 8.1.4 shows that the semidirect product $\F_p^2 \rtimes \F_p^*$ is solvable, thus $\ker(\tilde \pi)$ is solvable.
+
+We know that $S_4$ is solvable (Exercise 8.1.1), thus $N(H) \simeq S_4$ is solvable.
+
+Using again Theorem 8.1.4 with $N(H) \simeq M_3/ \ker(\tilde{\pi})$, we obtain that $M_3$ is solvable.
+
+\end{proof}
+
 \end{document}
