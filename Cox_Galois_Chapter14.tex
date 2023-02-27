@@ -1696,11 +1696,11 @@ Moreover, if $\gamma_{A,\sigma,v}, \gamma_{B,\tau,w} \in  \mathrm{A\Gamma L}(n,\
  \end{array}
  \right.
  $$
- is well defined. Moreover, by (6), if $\gamma_{A,\sigma,v}, \gamma_{B,\tau,w} \in \mathrm{AGL}(n,\F_q)$,
+ is well defined. Moreover, by (6), if $\gamma_{A,\sigma,v}, \gamma_{B,\tau,w} \in \mathrm{A\Gamma L}(n,\F_q)$,
  $$\varphi(\gamma_{A,\sigma,v} \circ \gamma_{B,\tau,w} ) = \varphi( \gamma_{A\sigma(B),\sigma \tau,A \sigma(w) + v}) =\sigma \tau = \varphi(\gamma_{A,\sigma,v})\varphi( \gamma_{B,\tau,w}),
  $$
- thus $\varphi$ is a group homomorphism. If $\sigma$ is any element of $\Gal(\F_{p^n},\F_p)$, then $\sigma = \varphi(\gamma_{I_n, \sigma,0}$, thus $\varphi$ is surjective. The kernel of $\varphi$ is
- $$\ker \varphi = \{\gamma_{A,e,v}\, | \, A\in \mathrm{GL}(n,\F_q), v \in \F_q^n\} = \{\gamma_{A,v}\, | \, A\in \mathrm{GL}(n,\F_q), v \in \F_q^n\}  \subset \mathrm{AGL}(n,\F_q).$$
+ thus $\varphi$ is a group homomorphism. If $\sigma$ is any element of $\Gal(\F_{p^n},\F_p)$, then $\sigma = \varphi(\gamma_{I_n, \sigma,0})$, thus $\varphi$ is surjective. The kernel of $\varphi$ is
+ $$\ker \varphi = \{\gamma_{A,e,v}\, | \, A\in \mathrm{GL}(n,\F_q), v \in \F_q^n\} = \{\gamma_{A,v}\, | \, A\in \mathrm{GL}(n,\F_q), v \in \F_q^n\} = \mathrm{AGL}(n,\F_q).$$
 
 This shows that $\mathrm{AGL}(n,\F_q)$ is a normal subgroup of $\mathrm{A\Gamma L}(n,\F_q)$, and the first Isomorphism Theorem gives
 $$ \mathrm{A\Gamma L}(n,\F_q)/ \mathrm{AGL}(n,\F_q) \simeq \Gal(\F_{p^m},\F_p).$$
@@ -2141,7 +2141,7 @@ Therefore $\gamma([k]_p v) = [k]_p \gamma(v)$  for all $k \in \N$. This proves t
  \item[(a)] Consider a complete system $\{a_1,\ldots,a_n\}$ of representatives of cosets of $V$ in $\F_p^n$, so that the cosets of $V$ are the disjoint cosets $$R_1 = a_1+V, \ldots,R_k = a_k + V.$$
  Then $\F_p^n = \bigcup\limits_{i=1}^k (a_i + V)$ is the disjoint union of parallel affine subspaces.
  
- Let $g \in G \subset \mathrm{GL}(n,\F_p)$. Recall (see the text following Corollary 14.3.18) that
+ Let $g \in G \subset \mathrm{AGL}(n,\F_p)$. Recall (see the text following Corollary 14.3.18) that
  $$G = \{\gamma_{A,w} \mid w \in \F_p^n, A \in G_0\},$$
  thus $g = \gamma_{A,w}$, for some $w\in \F_p^n$ and $A\in G_0$. For all $v \in V$
  $$g\cdot (a_i + v) = A\cdot (a_i + v) + w =A\cdot a_i + w + A\cdot v.$$
@@ -2980,7 +2980,7 @@ a & 0\\
 a' & 0\\
 0&a
 \end{pmatrix} 
-$$ normalize
+$$ 
 is diagonal, therefore $\gamma_{B,0} \circ \delta \circ \gamma_{B,0}^{-1} \in \mathrm{AGL}(1,\F_p) \times \mathrm{AGL}(1,\F_p)$. This proves that $B$ normalizes $\mathrm{AGL}(1,\F_p) \times \mathrm{AGL}(1,\F_p)$: 
 $$B \left(\mathrm{AGL}(1,\F_p) \times \mathrm{AGL}(1,\F_p)\right)B^{-1} = \mathrm{AGL}(1,\F_p) \times \mathrm{AGL}(1,\F_p).$$
 
@@ -3631,7 +3631,7 @@ M_3& \to &N(H)\\
 \right.
 $$
 Since $M_3 = \pi^{-1}(N(H))$, $\tilde{\pi}$ is surjective.
-Moreover, $\gamma_{A,v} \in \ker(\tilde{\pi})$ if and only if $[A] = [I_2]$, that is $A \in \F_p* I_2$, thus
+Moreover, $\gamma_{A,v} \in \ker(\tilde{\pi})$ if and only if $[A] = [I_2]$, that is $A \in \F_p^* I_2$, thus
 $$\ker(\tilde{\pi}) = \{ \gamma_{\lambda I_2, v} \mid \lambda \in \F_p^*, v \in \F_p^2\}.$$
 We know that $\gamma_{A,v} = \gamma_{B,w} \Rightarrow A = B, v = w$, therefore the map
 $$
@@ -3682,6 +3682,314 @@ We know that $S_4$ is solvable (Exercise 8.1.1), thus $N(H) \simeq S_4$ is solva
 
 Using again Theorem 8.1.4 with $N(H) \simeq M_3/ \ker(\tilde{\pi})$, we obtain that $M_3$ is solvable.
 
+\end{proof}
+
+
+\paragraph{Ex. 14.4.12}{\it Consider the subgroups $M_1,M_2$, and $M_3$ defined in the text.
+\be
+\item[(a)] Show that $(M_1)_0$ and $(M_2)_0$ have Abelian subgroups of index $2$, and use this to prove that neither can contain $(M_3)_0$. This proves that $M_3 \not \subset M_1$ and $M_3 \not \subset M_2$.
+\item[(b)] Explain why $M_3 = \mathrm{AGL}(2,\F_3)$ when $p = 3$.
+\item[(c)] Show that $(M_1)_0/\F_p^* I_2$ has an element of order $p+1$, and use this to prove that $M_1 \not \subset M_3$ when $p>3$.
+\item[(d)] Show that $M_2 \not \subset M_3$ when $p>5$.
+\item[(e)] Show that $M_2 \subset M_3$ when $p=5$.
+\ee
+It follows that the only exceptions to (14.27) are $M_1 \subset M_3$ and $M_2 \subset M_3$, when $p=3$ and $M_2 \subset M_3$ when $p=5$. This result is due to Jordan.
+}
+
+\begin{proof} We recall the Second and Third Isomorphism Theorems (see for instance [14] Rose, A course on Group Theory, p.  77-79).
+
+\bigskip
+
+{\bf Second Isomorphism Theorem.} If $H$ is a subgroup of $G$, and $N$ is a normal subgroup of $G$, then $N$ is a normal subgroup of $HN \subset G$, and
+$$H/H\cap N \simeq HN/N.$$
+\begin{center}
+\begin{tikzpicture}
+    \node (HcapN) at (1,4) {$H \cap N$};
+    \node (N) at (1,2) {$N$};
+    \node (H) at (4,4) {$H$};
+    \node (G) at (4,2) {$HN \subset G$};
+    \draw[->] (HcapN) edge (H);
+    \draw[->] (N) edge (G);
+    \draw[->] (HcapN) edge (N);
+    \draw[->] (H) edge (G);
+\end{tikzpicture}
+\end{center}
+
+{\bf Third Isomorphism Theorem.} If $K,H$ are normal subgroups of $G$ such that $K \subset H$, then $H/K$ is a normal subgroup of $G/K$, and
+$$G/H \simeq (G/K)/(H/K).$$
+
+\item[(a)] 
+ By (8) in Exercise 14.3.3, the map
+$$
+\left\{
+\begin{array}{ccc}
+\F_{p^2}^*  \times \Gal(\F_{p^2}/\F_p) & \to & (M_1)_0 = \{\gamma_{a,\sigma,v}\in M_1 \mid v=0 \}\\
+(a,\sigma) & \mapsto &\gamma_{a,\sigma,0}
+\end{array}
+\right.
+$$
+is bijective, thus
+$$|(M_1)_0| = 2(p^2-1).$$
+Note that $(M_1)_0 \cap \mathrm{AGL}(1,\F_{p^2}) = \{\gamma_{a,0} \in \mathrm{AGL}(1,\F_{p^2}) \mid a \in \F_{p^2}^*\}$. Indeed, if $\gamma_{a,\sigma,0} \in \mathrm{AGL}(1,\F_{p^2})$, where $\sigma \in \Gal(\F_{p^2}/\F_p) = \{e,F\}$. If $\sigma = F$ is the Frobenius isomorphism, there are some $c,d \in \F_{p^2}, c \ne 0$ such that $\gamma_{a,\sigma,0} = \gamma_{c,d}$, thus, for all $u \in \F_{p^2}$,
+$$ a u^p = c u +d.$$
+For $u = 0$, we obtain $d = 0$, and for $u = 1$, we obtain $a= c$, thus $u^p = u$, which implies $u \in \F_p$. Since $\F_p \subsetneq \F_{p^2}$, this is a contradiction, therefore $\sigma = e$, and $\gamma_{a,\sigma,0} = \gamma_{a,0} \in \mathrm{GL}(1,\F_{p^2}) \subset \mathrm{AGL}(1,\F_{p^2})$.
+
+We have proved
+$$K = (M_1)_0 \cap \mathrm{AGL}(1,\F_{p^2}) = \{\gamma_{a,0} \in \mathrm{AGL}(1,\F_{p^2}) \mid a \in \F_{p^2}^*\} \simeq \F_{p^2}^*,$$
+therefore the subgroup $K$ of $(M_1)_0$ is Abelian, with order $|\F_{p^2}^*|= p^2-1$, thus $K$ is an Abelian subgroup of index 2 in $(M_1)_0$.
+
+\bigskip
+
+Similarly, $(M_2)_0$ is the subgroup of $M_2$ generated by $\mathrm{GL}(1,\F_p) \times \mathrm{GL}(1,\F_p)$ and $B = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$, thus
+\begin{align*}
+(M_2)_0 &= \left \{  \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \mid a,b \in \F_p^* \right\} \cup \left \{  \begin{pmatrix} 0 & a \\ b & 0 \end{pmatrix} \mid a,b \in \F_p^* \right\} \\
+&= L \cup (B\cdot L),
+\end{align*}
+where $L$ is the group of diagonal matrices in $\mathrm{GL}(2,\F_p)$, with order $|L| = (p-1)^2$, and $L \simeq \F_p^* \times \F_p^*$ is Abelian, of index $2$ in $(M_2)_0$, where $|(M_2)_0| = 2(p-1)^2$.
+\bigskip
+
+Reasoning by contradiction, suppose that $(M_3)_0 \subset (M_1)_0$. The idea is to prove that this implies the existence of an Abelian subgroup of index $2$ in $S_4$, which is false.
+
+Consider the Abelian subgroup $K$ of index $2$ in $(M_1)_0$, whose existence is proved above, and the following diagram, where all arrows are inclusions. 
+
+\begin{center}
+\begin{tikzpicture}
+    \node (HcapN) at (1,4) {$K \cap (M_3)_0$};
+    \node (N) at (1,2) {$K$};
+    \node (H) at (4,4) {$(M_3)_0$};
+    \node (G) at (4,2) {$(M_1)_0$};
+    \draw[->] (HcapN) edge (H);
+    \draw[->] (N) edge (G);
+    \draw[->] (HcapN) edge (N);
+    \draw[->] (H) edge (G);
+\end{tikzpicture}
+\end{center}
+
+
+The subgroup $K$ has index $2$ in $(M_1)_0$, thus is a normal subgroup of $(M_1)_0$. Hence $K (M_3)_0$ is a subgroup of $(M_1)_0$, and
+$$K \subset K(M_3)_0 \subset (M_1)_0.$$
+Since 
+$$2 = ((M_1)_0 : K) = ((M_1)_0 : K(M_3)_0)(K(M_3)_0 : K),$$
+we obtain $(K(M_3)_0 : K) = 1$ or $2$. Moreover, if $(K(M_3)_0 : K) = 1$, then $K(M_3)_0 = K$ and $(M_3)_0 \subset K$. But this is impossible since $K$ is Abelian, but $(M_3)_0$ is not ($\gamma_{A,0} \mapsto [A]$ maps $(M_3)_0$ on $N(H) \simeq S_4$, which is not Abelian). Hence $(K(M_3)_0 : K) = 2$, thus $K(M_3)_0 = (M_1)_0$. Then the Second Isomorphism Theorem shows that
+$$(M_3)_0/ K \cap (M_3)_0 = (M_1)_0/K = 2.$$
+If we write $ M= K\cap (M_3)_0$, then $M$ is an Abelian subgroup of $(M_3)_0$ of index $2$ in $(M_3)_0$. 
+
+Note that $K = (M_1)_0 \cap \mathrm{AGL}(1,\F_{p^2})$, thus
+$$M = K \cap (M_3)_0 = ((M_1)_0 \cap \mathrm{AGL}(1,\F_{p^2})) \cap (M_3)_0 = (M_3)_0 \cap \mathrm{AGL}(1,\F_{p^2}).$$
+Moreover, if we identify $\gamma_{A,0}$ with $A \in \mathrm{GL}(2,\F_p)$, then $\{\gamma_{\lambda I_2,0} \mid \lambda \in \F_{p}^* \} \simeq \F_p^* I_2$, and for all $\lambda \in \F_{p^2}^*$, $\gamma_{\lambda I_2,0} \in (M_3)_0 \cap \mathrm{AGL}(1,\F_{p^2})$, therefore $\F_p^* I_2 \subset M$.
+
+
+$M$ is an Abelian subgroup of $(M_3)_0$ of index $2$ in $(M_3)_0$ containing $\F_p^* I_2$. It remains to prove that this is impossible.
+
+Consider the group homomorphism (where $A$ is identified with $\gamma_{A,0}$).
+$$
+\varphi
+\left\{
+\begin{array}{ccl}
+(M_3)_0 & \mapsto & N(H) \subset \mathrm{PGL}(2,\F_p)\\
+A & \mapsto &[A]
+\end{array}
+\right.
+$$
+
+Since $(M_3)_0 = \{A \in \mathrm{GL}(2,\F_p) \mid [A] \in N(H)\}$, $\varphi$  is surjective, and $\ker(\varphi) = \F_p^* I_2 \subset M$.
+
+
+In the following diagram, where $P = \varphi(M)$,
+\begin{center}
+\begin{tikzpicture}
+    \node(ker) at (2,4){$\ker(\varphi)$};
+     \node(e) at (2,2){$\{e\}$};
+    \node (HcapN) at (5,4) {$M$};
+    \node (N) at (5,2) {$P $};
+    \node (H) at (8,4) {$(M_3)_0$};
+    \node (G) at (8,2) {$N(H)\simeq S_4$};
+    \draw[->] (ker) edge (HcapN);
+    \draw[->] (e) edge (N);
+     \draw[->] (ker) edge (e);
+    \draw[->] (HcapN) edge (H);
+    \draw[->] (N) edge (G);
+    \draw[->] (HcapN) edge (N);
+    \draw[->] (H) edge (G);
+\end{tikzpicture}
+\end{center}
+the horizontal arrows are inclusions, and the vertical arrows are restrictions of $\varphi$.
+
+The  restriction
+$
+\varphi_1
+\left\{
+\begin{array}{ccl}
+M & \mapsto & P = \varphi(M)\\
+g & \mapsto &\varphi(g)
+\end{array}
+\right.
+$ is surjective, and $\ker(\varphi_1) = \ker(\varphi) \cap M = \ker(\varphi)$.
+
+By the First Isomorphism Theorem,
+$$ M/\ker(\varphi) \simeq P = \varphi(M),\qquad (M_3)_0/\ker(\varphi) \simeq N(H) = \varphi((M_3)_0).$$
+Then the Third Isomorphism Theorem gives
+$$N(H) / P \simeq ((M_3)_0/\ker(\varphi))/(M/\ker(\varphi) ) \simeq (M_3)_0/M \simeq \{-1,1\}.$$
+Since $\varphi(M) = P$, $P$ is Abelian, and is a subgroup of index $2$ in  $N(H) \simeq S_4$. Hence $S_4$ would contain an Abelian subgroup of index 2, but this is impossible, since the only subgroup of index 2 in $S_4$ is $A_4$, which is not Abelian.
+
+We have proved $(M_3)_0 \not \subset (M_1)_0$. Now, if $M_3 \subset M_1$, then $$\{g \in M_3 \mid g\cdot 0 = 0\} \subset \{g \in M_1 \mid g \cdot 0 = 0\},$$ so $(M_3)_0 \subset (M_1)_0$, which is false. Therefore
+$$M_3 \not \subset M_1.$$
+
+Since $M_2$ has also an Abelian subgroup of index 2 which contains $\F_p^* I_2$, we prove similarly that
+$$M_2 \not \subset M_1.$$
+
+\item[(b)] By Exercise 14.3.26, for $p=3$, we obtain
+\begin{align*}
+|\mathrm{AGL}(2,\F_3)| &= p^3(p-1)(p^2-1)\\
+&=27 \times 2 \times 8 =432,
+\end{align*}
+and by Exercise 14.4.11,
+\begin{align*}
+|M_3| &= 24 p^2(p-1)\\
+&= 24\times 9 \times 2 = 432.
+\end{align*}
+Since $M_3 \subset \mathrm{AGL}(2,\F_3)$ by definition, and $|M_3| = |\mathrm{AGL}(2,\F_3)|$, we obtain
+$$M_3 = \mathrm{AGL}(2,\F_3) \qquad (p=3).$$
+
+\item[(c)] We recall (see Cox, p. 453, and Ex. 16) that $(M_1)_0$ is the group $\mathrm{\Gamma L}(1,\F_{p^2})$ consisting of semi-linear maps $\gamma_{\alpha,\sigma} : \F_{p^2} \to \F_{p^2}, \alpha \in \F_{p^2}, \sigma \in \Gal(\F_{p^2}/\F_p) = \{e, F\}$, linear over $\F_p$, defined by
+$$\gamma_{\alpha,\sigma}(u) = \alpha \sigma(u),\qquad u\in\F_{p^2},$$
+so that $(M_1)_0 \subset \mathrm{GL}(2,\F_p),$ and we can consider the group $(M_1)_0/\F_p^* I_2$.
+
+Now, let $c$ be a generator of $\F_{p^2}^*$, and consider $f = \gamma_{c,e} \in (M_1)_0$ defined by $f(u) = c u$ for $u\in \F_{p^2}$, and $M \in \mathrm{GL}(2,\F_p)$ the matrix representing the $\F_p$-linear map $f$.
+
+Then for all $u \in \F_{p^2}$, $f^{p+1}(u) = c^{p+1} u = h u$, where $h^{p-1} = (c^{p+1})^{p-1} = 1$, which proves that $h = c^{p+1} \in \F_p^*$. Therefore the matrix representing $f^{p+1}$ is $\begin{pmatrix} h & 0 \\ 0 & h \end{pmatrix}$, so that $[M]^{p+1} = [I_2].$ The order of $[f]$ in $(M_1)_0/ \F_p^* I_2$ divides $p+1$.
+
+Conversely, if $[M]^k = [I_2]$ for some integer $k >0$, then $M^k = \lambda I_2$ for some $\lambda \in \F_p^*$, thus
+$$\forall u \in \F_{p^2},\ f^k(u) = c^k u = \lambda u.$$
+Therefore $c^k = \lambda \in \F_p^*$, which implies $c^{k(p-1)} = 1$. Since the order of $c$ is $o(c) = p^2-1$, we obtain $p^2 - 1 \mid k(p-1)$, thus $p+1 \mid k$. This proves that the order of $[f]$ (or [M]) in $(M_1)_0/ \F_p^* I_2$ is $p+1$.
+
+To conclude, $(M_1)_0/ \F_p^* I_2$ contains elements of order $p+1$.
+
+\bigskip
+
+It remains to prove that $M_1 \not \subset M_3$ when $p>3$.
+
+If $M_1 \subset M_3$, then $\F_p^* I_2 \subset (M_1)_0 \subset (M_3)_0$, therefore 
+$$(M_1)_0 / \F_p^* I_2 \subset (M_3)_0/ \F_p^*I_2.$$
+We proved in part (a) that $(M_3)_0/ \F_p^* I_2 \simeq N(H) \simeq S_4$.
+
+The first group $(M_1)_0 / \F_p^*I_2$ contains an element of order $p+1$, which is also in $(M_3)_0/ \F_p^* I_2\simeq S_4$, and this implies that
+$$p+1 \mid 24 =  |(M_3)_0/ \F_p^* I_2|,$$
+which gives $p = 5,7,11,23$ (if $p>3$). But in these cases we obtain in $S_4$ some elements of order $6,8,12$ or $24$. But all elements in $S_4$ have orders $1,2,3$ or $4$. This is a contradiction.
+
+To conclude, 
+$$M_1 \not \subset M_3 \text{ if } p>3.$$
+\bigskip
+
+{\bf Example.} Take $p=11$. Since $x^2 - 4d - 9$ is irreducible over $\F_{11}$, we use the basis ${\cal B} = (1,c)$ of $\F_{p^2}$ over $\F_p$, where $c$ is a generator of $\F_{11}^*$ such that $c^2 = 4c + 9$. Then the matrix of $f$ defined by $f(u) = c u$ in the basis $\cal B$ is
+$$A = \begin{pmatrix} 0 & 9\\1 & 4 \end{pmatrix}.$$
+The multiplicative order of $A$ is 120, but with Sage, we obtain
+$$A^{12} =  \begin{pmatrix} 2 & 0\\0 & 2 \end{pmatrix},$$
+(where $2 = c^{12}$), so that $[A]^{12} = [I_2]$.
+
+The matrix $S$ corresponding to the Frobenius isomorphism $\sigma = F$ is, using $\sigma(c) = c^{11} = 10c + 4$, 
+$$S = \begin{pmatrix} 1 & 4\\0 & 10 \end{pmatrix}.$$
+Then $S^2 = I_2$, and we can build the whole group $ (M_1)_0$ by
+$$(M_1)_0 = \{A^k \mid 0 \leq k < 120\} \cup \{A^k S \mid 0 \leq k < 120\}.$$
+The only elements of order $p+1$ in $(M_1)_0/ \F_p^* I_2$ are in the $[A^k]$, and not in the $[A^k S]$.
+
+\item[(d)] By Propositions 14.4.2 and 14.4.5, we know that
+\begin{align*}
+|M_2| &= 2p^2(p-1)^2,\\
+|M_3| &= 24p^2(p-1).
+\end{align*}
+If $M_2 \subset M_3$, by Lagrange Theorem, $|M_2| = 2 p^2(p-1)^2$ divides  $|M_3| = 24 p^2(p-1)$, therefore
+$$p-1 \mid 12.$$
+The only prime solution $p$ with $p>5$ are $p=7, p=13$. 
+
+If $p=13$, then $|M_2| = |M_3| = 48672 = 2^5 3^2 13^2$, and $M_2 \subset M_3$, thus $M_2 = M_3$. But this is impossible, since, by part (a), $(M_2)_0$ has a subgroup of index 2 containing $\F_p^* I_2$, but not $(M_3)_0$.
+
+It remains to prove that $M_2 \not \subset M_3$ if $p=7$. Then $|M_2| = 3528 = 2^3 3^2 7^2 = 3528, |M_3| = 2^4 3^2 7^2 =7056$, thus $(M_3 : M_2) = 2$, and $M_2$ would be a normal subgroup of index $2$ in $M_3$.
+
+Consider the surjective homomorphism
+$$\varphi
+\left\{
+\begin{array}{ccl}
+M_3 & \mapsto & N(H) \subset \mathrm{PGL}(2,\F_p)\\
+\gamma_{A,v} & \mapsto &[A].
+\end{array}
+\right.
+$$
+Note that $\ker(\varphi) = \{\gamma_{\lambda I_2, v} \mid \lambda \in \F_p^*, v \in \F_p^2\} \subset M_2$, since for all $u = (\alpha,\beta) \in \F_p^2$, and $v = (a,b)$
+$$\gamma_{\lambda I_2,v} = \begin{pmatrix}\lambda & 0\\ 0 & \lambda \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} + \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} \lambda \alpha + a \\ \lambda \beta + b \end{pmatrix},$$
+so that $\ker(\varphi) \subset  \mathrm{AGL}(1,\F_p) \times \mathrm{AGL}(1,\F_p)  \subset M_2$.
+
+Write $N = \mathrm{AGL}(1,\F_p) \times \mathrm{AGL}(1,\F_p)$, and $M = \varphi(N)$. In the following diagram, 
+\begin{center}
+\begin{tikzpicture}
+    \node(ker) at (-1,4){$\ker(\varphi)$};
+    \node(e) at (-1,2){$\{e\}$};
+    \node(N) at (2,4){$N$};
+    \node(M) at (2,2){$M$};
+    \node (M2) at (5,4) {$M_2$};
+    \node (L) at (5,2) {$L $};
+    \node (M3) at (8,4) {$M_3$};
+    \node (G) at (8,2) {$N(H)\simeq S_4$};
+    \draw[->] (ker) edge (N);
+    \draw[->] (N) edge (M2);
+    \draw[->] (M2) edge (M3);
+    \draw[->] (e) edge (M);
+    \draw[->] (M) edge (L);
+    \draw[->] (L) edge (G);
+    \draw[->] (ker) edge (e);
+    \draw[->] (N) edge (M);
+    \draw[->] (M2) edge (L);
+     \draw[->] (M3) edge (G);
+\end{tikzpicture}
+\end{center}
+the horizontal arrows are inclusions, and the vertical arrows are restrictions of $\varphi$, whose kernels are $\ker(\varphi)$, because $\ker(\varphi) \subset N$.  Therefore
+$$N(H)/L \simeq (M_3/\ker(\varphi))/ (M_2/\ker(\varphi)) \simeq M_3/M_2 \simeq \{-1,1\}.$$
+
+This proves that $L$ is a subgroup of index 2 in $N(H) \simeq S_4$. But $S_4$ has a unique subgroup of order 2, which is $A_4$. Thus $L \simeq A_4$.
+
+Similarly, $N$ has index 2 in $M_2$, thus $M$ has index 2 in $L \simeq A_4$. This is impossible, since $A_4$ has no subgroup of index $2$.
+
+To conclude: If $p>5$,
+$$M_2 \not \subset M_3.$$
+
+\item[(e)] If $p=5$, $|M_2| = 2p^2(p-1)^2 = 800, |M_3| = 24p^2(p-1) = 2400$. 
+
+Here $p \equiv 1 \pmod 4$, and $i=2$ is such that $i^2 = -1$. By definition of $H$, $H =\langle [g],[h] \rangle$, where
+$$ g = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, h =  \begin{pmatrix} 2 & 0  \\0 & -2 \end{pmatrix}$$
+(by Proposition 14.4.4, other choices of $g,h$ as in part (a) give conjugate subgroups). Thus
+$$H = \left \{ [I_2],  \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix},  \begin{bmatrix} 0 & 2  \\2 & 0 \end{bmatrix}, \begin{bmatrix} -2 & 0 \\ 0 & 2 \end{bmatrix}\right\} \simeq C_2\times C_2.$$
+We have seen in part (a) that
+$$
+\varphi
+\left\{
+\begin{array}{ccl}
+(M_3)_0 & \mapsto & N(H) \subset \mathrm{PGL}(2,\F_p)\\
+A & \mapsto &[A]
+\end{array}
+\right.
+$$
+satisfies $\varphi((M_3)_0) = N(H)$, and that
+\begin{align*}
+(M_2)_0 &= \left \{  \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \mid a,b \in \F_5^* \right\} \cup \left \{  \begin{pmatrix} 0 & a \\ b & 0 \end{pmatrix} \mid a,b \in \F_5^* \right\} \\
+&= L \cup (B\cdot L).
+\end{align*}
+Therefore
+\begin{align*}
+\varphi((M_2)_0 )&= \left \{  \begin{bmatrix} a & 0 \\ 0 & b \end{bmatrix} \mid a,b \in \F_5^* \right\} \cup \left \{  \begin{bmatrix} 0 & a \\ b & 0 \end{bmatrix} \mid a,b \in \F_5^* \right\} \\
+&= \varphi(L) \cup ([B]\cdot \varphi(L)).
+\end{align*}
+Since $[I_2], \begin{bmatrix} -2 & 0 \\ 0 & 2 \end{bmatrix}  \in \varphi(L)$, and $\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}, \begin{bmatrix} 0 & 2  \\2 & 0 \end{bmatrix} \in [B]\cdot \varphi(L)$, we obtain
+$$H \subset \varphi((M_2)_0 ),$$
+where $\varphi((M_2)_0 ) \simeq (M_2)_0 / \F_p^*I_2$ has order $|(M_2)_0|/|\F_p^*| = 32/4 = 8$.
+
+Since $H$ is a subgroup of index $2$ in  $\varphi((M_2)_0 )$, $H$ is a normal subgroup of $\varphi((M_2)_0 )$, so that $\varphi((M_2)_0 )$ normalizes $H$:
+$$\varphi((M_2)_0 ) \subset N(H) = \varphi((M_3)_0).$$
+If $A \in (M_2)_0$, then $[A] = \varphi(A) \in \varphi((M_2)_0 ) \subset \varphi((M_3)_0) = N(H)$, so that $A \in (M_3)_0$.
+$$(M_2)_0 \subset (M_3)_0.$$
+Then we can prove $M_2 \subset M_3$. 
+Let $\gamma = \gamma_{A,v}$ be any element in $M_2 \subset \mathrm{AGL}(2,\F_p)$. Then $\gamma = \gamma_{I_2,v} \gamma_{A,0}$, where $\gamma_{A,0} \in (M_2)_0 \subset (M_3)_0$, and $\gamma_{I_2,v} \in M_3$. Therefore $\gamma \in M_3$.
+
+If $p=5$, $$ M_2 \subset M_3.$$
 \end{proof}
 
 \end{document}
