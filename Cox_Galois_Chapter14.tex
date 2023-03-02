@@ -4061,4 +4061,52 @@ Thus, for all $c \in C(g)$, $mcm^{-1} \in C(g)$, therefore $m \in N(C(g))$.
 $$(M_2)_0 \subset N(C(g)).$$
 \end{proof}
 
+\paragraph{Ex. 14.4.15}{\it Prove (14.30) and (14.31).
+\begin{align*}
+C(g) &= \left\{\begin{pmatrix} \mu & \nu\\ 0 & \mu \end{pmatrix} \mid \mu,\nu \in \F_p, \ \mu \ne 0\right\}\\
+N(C(g)) &=  \left\{\begin{pmatrix} \mu & \nu\\ 0 & \lambda \end{pmatrix} \mid \mu,\nu,\lambda \in \F_p,\  \mu \lambda \ne 0\right\}
+\end{align*}
+}
+
+\begin{proof}
+\item[(a)]
+ Here $g = \begin{pmatrix} \alpha & \beta\\ 0 & \alpha \end{pmatrix} \in \mathrm{GL}(2,\F_p)$, where $\beta \ne 0$ since $g \not \in \F_p^* I_2$.
+
+Let $m=\begin{pmatrix} \mu & \nu\\ \xi  & \eta \end{pmatrix} \in \mathrm{GL}(2,\F_p)$.
+Since 
+\begin{align*}
+gm = \begin{pmatrix} \alpha & \beta\\ 0 & \alpha \end{pmatrix} \begin{pmatrix} \mu & \nu\\ \xi  & \eta \end{pmatrix}&= 
+\begin{pmatrix} \alpha \mu + \beta \xi & \alpha \nu+\beta \eta\\ \alpha \xi & \alpha \eta \end{pmatrix},\\
+mg = \begin{pmatrix} \mu & \nu\\ \xi  & \eta \end{pmatrix}\begin{pmatrix} \alpha & \beta\\ 0 & \alpha \end{pmatrix} &= 
+\begin{pmatrix} \alpha \mu& \alpha \nu + \beta \mu\\ \alpha \xi & \alpha \eta + \beta \xi, \end{pmatrix}
+\end{align*}
+we obtain, using $\beta \ne 0$,
+$$ m \in C(g) \iff \xi = 0, \mu = \nu.$$
+Therefore
+$$C(g) = \left\{\begin{pmatrix} \mu & \nu\\ 0 & \mu \end{pmatrix} \mid \mu,\nu \in \F_p, \mu \ne 0\right\}.$$
+\item[(b)] Let  $h = \begin{pmatrix} a & b\\ c & d \end{pmatrix} \in N(C(g))$. Since $g \in C(g)$, we obtain $hgh^{-1} \in C(g)$, thus there are some $\mu,\nu \in \F_p, \mu \ne 0,$ such that 
+$$hgh^{-1}  = h \begin{pmatrix} \alpha & \beta\\ 0 & \alpha \end{pmatrix} h^{-1} = \begin{pmatrix} \mu & \nu\\ 0 & \mu \end{pmatrix}.$$
+This gives
+$$ \begin{pmatrix} a & b\\ c & d \end{pmatrix}\begin{pmatrix} \alpha & \beta\\ 0 & \alpha \end{pmatrix}
+= \begin{pmatrix} \mu & \nu\\ 0 & \mu \end{pmatrix} \begin{pmatrix} a & b\\ c & d \end{pmatrix},
+$$
+that is
+$$
+\begin{pmatrix} a\alpha & a \beta + b \alpha\\ c\alpha & c\beta + d \alpha \end{pmatrix} = \begin{pmatrix} a \mu + c \nu& b\mu + d \nu \\ c \mu& d \mu \end{pmatrix}.
+$$
+If $c \ne 0$, then $\alpha = \mu$. Thus $c \beta + d\alpha = d \mu = d\alpha$, so $c\beta = 0$, which is impossible since $\beta \ne 0$. Therefore $c=0$, and every $h \in N(C(g))$ is of the form
+$$h = \begin{pmatrix} a & b\\ 0 & d \end{pmatrix}, \qquad ad \ne 0.$$
+Conversely, if $h = \begin{pmatrix} a & b\\ 0 & d \end{pmatrix},  ad \ne 0$, and $n = \begin{pmatrix} \mu & \nu\\ 0 & \mu \end{pmatrix} $ is any element in $C(g)$, then
+\begin{align*}
+h n h^{-1}&= (ad)^{-1} \begin{pmatrix} a & b\\ 0 & d \end{pmatrix} \begin{pmatrix} \mu & \nu\\ 0 & \mu \end{pmatrix}  \begin{pmatrix} d & -b\\ 0 & a \end{pmatrix}\\
+&=(ad)^{-1}\begin{pmatrix} a & b\\ 0 & d \end{pmatrix}  \begin{pmatrix} \mu d  & a \nu - b \mu\\ 0 & a \mu \end{pmatrix} \\
+&=(ad)^{-1}\begin{pmatrix} a d \mu  & a(a\nu - b \mu) + ab \mu\\ 0 & ad \mu \end{pmatrix}\\
+&=\begin{pmatrix} \mu  & ad^{-1}\nu\\ 0 & \mu  \end{pmatrix} \in C(g).
+\end{align*}
+We have proved
+$$N(C(g)) =  \left\{\begin{pmatrix} a & b \\0 & d \end{pmatrix} \mid a,b,d \in \F_p,\ ad\ne 0\right\},$$
+which is the same as (14.31):
+$$N(C(g)) =  \left\{\begin{pmatrix} \mu & \nu\\ 0 & \lambda \end{pmatrix} \mid \mu,\nu,\lambda \in \F_p,\  \mu \lambda \ne 0\right\}.$$
+\end{proof}
+
 \end{document}
