@@ -4109,4 +4109,140 @@ which is the same as (14.31):
 $$N(C(g)) =  \left\{\begin{pmatrix} \mu & \nu\\ 0 & \lambda \end{pmatrix} \mid \mu,\nu,\lambda \in \F_p,\  \mu \lambda \ne 0\right\}.$$
 \end{proof}
 
+\paragraph{Ex. 14.4.16}{\it Let $V,W$ be vector spaces over a field $F$, and let $\mathrm{Aut}_F(V)$ be the group of vector space isomorphisms $V \simeq V$. Also let $T : V \to W$ be a vector space isomorphism.
+\be
+\item[(a)] Prove that $\phi \mapsto T \circ \phi \circ T^{-1}$ induces a group isomorphism $\gamma_T : \mathrm{Aut}_F(V) \simeq \mathrm{Aut}_F(W)$.
+\item[(b)] Let $T' : V\to W$ be another isomorphism. Prove that there is $\Phi \in \mathrm{Aut}_F(W)$ such that $T'= \Phi \circ T$. In the notation of part (a), $\gamma_\Phi : \mathrm{Aut}_F(W) \simeq \mathrm{Aut}_F(W)$ is conjugation by $\Phi$.
+\item[(c)] In the situation of part (b), prove that $\gamma_{T'} = \gamma_\Phi \circ \gamma_T$.
+\ee
+}
+
+\begin{proof}
+\item[(a)] Let $ T : V \to W$ be a vector space isomorphism, and consider the map
+$$
+\gamma_T
+\left\{
+\begin{array}{ccc}
+\mathrm{Aut}_F(V) & \to &\mathrm{Aut}_F(W)\\
+\phi & \mapsto & T \circ \phi \circ T^{-1}.
+\end{array}
+\right.
+$$
+$\gamma_T$ is a group homomorphism: if $\phi,\psi \in \mathrm{Aut}_F(V)$,
+$$ \gamma_T(\phi)\circ \gamma_T(\psi) = T \circ \phi \circ T^{-1} \circ T \circ \psi \circ T^{-1} = T \circ \phi \circ \psi \circ T^{-1} = \gamma_T(\phi \circ \psi).$$
+Moreover $\gamma_{T^{-1} } : \mathrm{Aut}_F(W) \to \mathrm{Aut}_F(V)$ is such that, for all $\phi \in \mathrm{Aut}_F(V)$,
+$$(\gamma_{T_{-1}} \circ \gamma_T)(\phi) =  T^{-1} \circ (T \circ \phi \circ T^{-1}) \circ T = \phi,$$
+thus $\gamma_{T^{-1}} \circ \gamma_T = 1_{\mathrm{Aut}_F(V)}$, and similarly $\gamma_{T} \circ \gamma_{T^{-1}}= 1_{\mathrm{Aut}_F(W)}$. This proves that $\gamma_T$ is bijective, and that $\gamma_T^{-1} = \gamma_{T^{-1}}$. Thus $\gamma_T$ is a group isomorphism.
+
+\item[(b)] Let $T' : V \to W$ be another isomorphism, and put $\Phi =T' \circ T^{-1}$. Then $\Phi : W \to W$ is bijective and linear, so $\Phi \in \mathrm{Aut}_F(W)$, and $T' = \Phi \circ T$. 
+
+By definition,
+$$
+\gamma_\Phi
+\left\{
+\begin{array}{ccc}
+\mathrm{Aut}_F(W) & \to &\mathrm{Aut}_F(W)\\
+\psi  & \mapsto & \Phi \circ \psi \circ \Phi^{-1},
+\end{array}
+\right.
+$$
+and by part (a), $\gamma_\Phi$ is the conjugation by $\Phi$, so is an inner group automorphism: $$\gamma_\Phi \in \mathrm{Int}(\mathrm{Aut}_F(W)) \subset \mathrm{Aut}(\mathrm{Aut}_F(W)).$$
+\item[(c)] If $\phi \in \mathrm{Aut}_F(V)$, then
+\begin{align*}
+(\gamma_\Phi \circ \gamma_T)(\phi) &= \Phi \circ (T \circ \phi \circ T^{-1}) \circ \Phi^{-1}\\
+&= (\Phi \circ T) \circ \phi \circ (\Phi \circ T)^{-1}\\
+&= T' \circ \phi \circ (T')^{-1}\\
+&= \gamma_{T'}(\phi),
+\end{align*}
+so that
+$$\gamma_{T'} = \gamma_{\Phi} \circ \gamma_T.$$
+\end{proof}
+
+\paragraph{Ex. 14.4.17}{\it Fix $\alpha \in \F_{p^2} \setminus \F_p$, and let $\gamma_\alpha$ be as defined just before (14.35).
+\be
+\item[(a)] Prove (14.37) and (14.39). For (14.37), you should use the argument from the proof of Lemma 14.4.3.
+\item[(b)] Prove that $\mathrm{\Gamma L}(1,\F_{p^2}) \subset N(C(\gamma_\alpha))$.
+\ee
+}
+\begin{proof}
+\item[(a)] Write $e =1_{\F_{p^2}} \in \mathrm{Aut}_{\F_p}(\F_{p^2})$ the identity of $\F_{p^2}$, which corresponds to $I_2 \in \mathrm{GL}(2,\F_p)$. We want to show that
+$$C(\gamma_\alpha) = \{ ae + b \gamma_\alpha \in \mathrm{Aut}_{\F_p}\F_{p^2} \mid a,b \in \F_p\}.$$
+First $ae + b \gamma_\alpha \in C(\gamma_\alpha)$, since
+$$ (ae + b \gamma_\alpha)\gamma_\alpha =a\gamma_\alpha + b \gamma_\alpha^2  = \gamma_\alpha(ae + b \gamma_\alpha).$$
+As in the proof of Lemma 14.4.3, we take $m \in C(\gamma_\alpha)  \subset \mathrm{Aut}_{\F_p}(\F_{p^2})$.
+
+Since $\alpha \not \in \F_p$, $(1,\alpha)$ is a basis of $\F_{p^2}$ over $\F_p$, thus there are $r,s$ such that
+$$m(1) = a+ b\alpha,\qquad a,b \in \F_p.$$
+Then, using $m \circ \gamma_\alpha = \gamma_\alpha \circ m$, we obtain
+\begin{align*}
+m(\alpha) &= (m\circ \gamma_\alpha)(1)\\
+&=(\gamma_{\alpha} \circ m)(1)\\
+&= \gamma_{\alpha}(a + b \alpha)\\
+&=\alpha a+ b \alpha^2,
+\end{align*}
+therefore
+\begin{align*}
+m(1) &= \phantom{\alpha} a+ b\alpha\ = (ae + b \gamma_\alpha)(1),\\
+m(\alpha) &= \alpha a+ b \alpha^2 = (ae + b \gamma_\alpha)(\alpha).
+\end{align*}
+Since $m$ is $\F_p$-linear, and $(1,\alpha)$ is a basis, we obtain that $m = ae + b\gamma_\alpha$.
+We have proved that
+$$C(\gamma_\alpha) = \{ ae + b \gamma_\alpha \in \mathrm{Aut}_{\F_p}\F_{p^2} \mid a,b \in \F_p\}.$$
+Moreover, for all $u\in \F_{p^2}$,
+$$(ae + b \gamma_\alpha)(u) = a u + b \alpha u = (a+b\alpha) u = \beta u \text{ where } \beta = a+b \alpha \in \F_{p^2},$$
+and $\beta \ne 0$, since $ae + b \gamma_\alpha$ is a linear automorphism.
+Conversely, if $\beta \in \F_{p^2}^*$, $\gamma_\beta$ is a $\F_p$ linear automorphism. The decomposition of $\beta$ on the basis $(1,\alpha)$ gives $a,b\in \F_p$ such that $\beta = a + b \alpha$, and 
+$$\gamma_\beta(u) = (a+b\alpha)u = (ae + b\gamma_{\alpha})(u).$$
+To conclude,
+$$C(\gamma_\alpha) = \{ ae + b \gamma_\alpha \in \mathrm{Aut}_{\F_p}\F_{p^2} \mid a,b \in \F_p\} = \{\gamma_\beta \mid \beta \in \F_{p^2}^*\}.$$
+
+\bigskip
+
+Now we prove (14.39):
+\begin{align*}
+\beta = \alpha &\Rightarrow m = \gamma_\delta = \gamma_{\delta,e} \in \mathrm{\Gamma L}(1,\F_{p^2}),\\
+\beta = \sigma(\alpha) &\Rightarrow m = \gamma_\delta \circ \sigma = \gamma_{\delta,\sigma} \in \mathrm{\Gamma L}(1,\F_{p^2}).
+\end{align*}
+By the proof of Theorem 14.4.6 (p. 455), if $m \in N(C(\gamma_\alpha)$, we know that 
+$$m\circ \gamma_\alpha = \gamma_\beta \circ \gamma,\qquad \beta \in \{\alpha,\sigma(\alpha)\} = \mathrm{Gal}(\F_{p^2}/\F_p).$$
+  \be
+  \item[$\bullet$] If $\beta = \alpha$, then $m \circ \gamma_\alpha = \gamma_\alpha \circ \gamma$, thus $m \in C(\gamma_\alpha)$. We have proved above that $m = \gamma_\delta,$ where $\delta \in      \F_{p^2}$, and  $m(1) = \gamma_\delta(1) = \delta$. Therefore $m = \gamma_\delta = \gamma_{\delta,e} \in \mathrm{\Gamma L}(1,\F_{p^2})$.
+
+  \item[$\bullet$] If $\beta = \sigma(\alpha)$, then $m\circ \gamma_\alpha = \gamma_{\sigma(\alpha)} \circ m$. For all $u \in \F_{p^2}$, $m(\alpha u ) = \sigma(\alpha) m(u)$, thus, using $\sigma(1) = 1$, and $\delta = m(1)$,
+$$
+\begin{array}{lll}
+  m(1) &= \delta &=(\gamma_\delta \circ \sigma)(1),\\
+  m(\alpha) &= \sigma(\alpha) \delta &= (\gamma_\delta \circ \sigma)(\alpha).
+  \end{array}
+$$
+  This proves that $m = \gamma_\delta \circ \sigma$. Moreover, for all $u \in \F_{p^2}$, $m(u) = \delta \sigma(u) = \gamma_{\delta,\sigma}(u)$, therefore
+  $$m = \gamma_{\delta,\sigma} \in \mathrm{\Gamma L}(1,\F_{p^2}).$$
+  \ee
+
+\item[(b)] Let $m \in \mathrm{\Gamma L}(1,\F_{p^2})$, and $n \in C(\gamma_\alpha)$. By part (a), $n  =ae + b \gamma_\alpha,\ a,b \in \F_p$.
+
+Since $\Gal(\F_{p^2}/\F_p) = \{e,\sigma\}$, $m = \gamma_\delta$, or $m = \gamma_{\delta, \sigma} = \gamma_\delta \circ \sigma$ for some $\delta \in \F_{p^2}$.
+\be
+\item[$\bullet$] If $m = \gamma_\delta$, since $n \in C(\gamma_\alpha)$,  $m\circ n \circ m^{-1} = \gamma_\alpha \circ n \circ \gamma_\alpha^{-1} = n \in C(\gamma_\alpha)$.
+
+\item[$\bullet$] If $m = \gamma_\delta \circ \sigma$, then for all $u \in \F_{p^2}$, $m(u) = \delta \sigma(u)$, thus
+\begin{align*}
+(m \circ \gamma_\alpha)(u) &= \delta \sigma(\alpha u) = \delta \sigma(\alpha) \sigma(u),\\
+(\gamma_{\sigma(\alpha)} \circ m)(u) &= \sigma(\alpha) \delta \sigma(u),
+\end{align*}
+therefore $ m \circ \gamma_\alpha =\gamma_{\sigma(\alpha)} \circ m$, and $ m \circ \gamma_\alpha \circ m^{-1} = \gamma_{\sigma(\alpha)}.$ Then, using the linearity of $m,n$,
+\begin{align*}
+ m \circ n \circ m^{-1} &= m \circ (a\, e + b\,  \gamma_\alpha)\circ m^{-1} \\
+   &= a\,e + b\, m \circ \gamma_\alpha \circ m^{-1}\\
+   &= a\, e + b \, \gamma_{\sigma(\alpha)}  \\
+   &= \gamma_\beta,    
+\end{align*}
+where $\beta = a+b \sigma(\alpha) \in \F_{p^2}$. 
+
+By part (a), $ m \circ n \circ m^{-1} =\gamma_\beta \in C(\gamma_\alpha)$. We have proved
+$$\mathrm{\Gamma L}(1,\F_{p^2}) \subset N(C(\gamma_\alpha)).$$
+
+\ee
+\end{proof}
+
 \end{document}
