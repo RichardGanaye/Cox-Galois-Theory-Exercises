@@ -4304,6 +4304,16 @@ $$\frac{1}{i} g \in \mathrm{SL}(2,\F_p), \qquad \frac{1}{\zeta} h  \in \mathrm{S
 Thus $[g] = [\frac{1}{i} g], [h] = [ \frac{1}{\zeta} h], [k] = [ \frac{1}{\alpha} k]$ are in $\mathrm{PSL}(2,\F_p)$. Therefore
 $$S_4 \simeq N(H) = \langle [g],[h],[k]\rangle \subset \mathrm{PSL}(2,\F_p).$$
 $\mathrm{PSL}(2,\F_p)$ contains a copy of $S_4$ if $p\equiv 1 \pmod 8$.
+\item[(d)] We know that $\zeta_8$ is such that 
+$$\zeta_8 + \zeta_8^{-1} = \zeta_8 + \overline{\zeta_8} = 2 \cos(\pi/4) = \sqrt{2},$$
+so that $(\zeta_8 + \zeta_8^{-1})^2 = 2$ (draw a regular octagon).
+
+If $\zeta$ has order $8$ in $\F_p^*$, as $\zeta_8$ has order $8$ in $\C^*$, it is not surprising that $(\zeta + \zeta^{-1})^2 = 2$,
+
+To give a direct proof in these two groups, note that, since the order of $\zeta$ is $8$,  
+$(\zeta^4)^2 = 1$, and $\zeta^4 \ne 1$, thus $\zeta^4 = -1 = \zeta^{-4}$. Therefore $(\zeta^2 + \zeta^{-2})^2 = \zeta^4 + \zeta^{-4} + 2 = 0$, so that $\zeta^2 + \zeta^{-2} = 0$. Then 
+$$(\zeta + \zeta^{-1})^2 = \zeta^2 + \zeta^{-2} + 2 = 2.$$
+This equality is used to compute the quadratic character of $2$ modulo $p$, $\legendre{2}{p} = (-1)^{(p^2-1)/8}$.
 \end{proof}
 
 \end{document}
