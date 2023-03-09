@@ -158,4 +158,84 @@ M(x,y) \in \Gamma & \iff \sqrt{(x-a)^2 + y^2}   \sqrt{(x+a)^2 + y^2}  = b^2\\
 We obtain the formula of the ovals of Cassini.
 \end{proof}
 
+
+\subsection{THE LEMNISCATIC FUNCTION}
+\paragraph{Ex. 15.2.1}{\it Give a careful proof of (15.9) using the hints given in the text.
+}
+
+\begin{proof}
+By section 15.2, we know that $\varphi$ is $2\varpi$ periodic,
+$$\varphi(s + 2\varpi) = \varphi(s),\qquad (s \in \R).$$
+Moreover, for $-1 \leq r \leq 1$, and $\frac{-\varpi}{2} \leq s \leq \frac{\varpi}{2}$,
+$$r = \varphi(s) \iff s = \int_0^r \frac{1}{\sqrt{1-t^4}} \D t.$$
+
+Write $r' = \varphi(-s)\in [-1,1]$. Then for every $s \in [-\frac{\varpi}{2} ,\frac{\varpi}{2} ]$,
+\begin{align*}
+r' = \varphi(-s) & \iff -s = \int_0^{r'} \frac{1}{\sqrt{1-t^4}} \D t\\
+&\iff -s = -\int _0^{-r'} \frac{1}{\sqrt{1-\tau^4}} \D \tau\qquad (\tau = -t)\\
+&\iff s = \int _0^{-r'} \frac{1}{\sqrt{1-\tau^4}} \D \tau\\
+&\iff -r' = \varphi(s)
+\end{align*}
+This proves that
+\begin{align}
+\varphi(-s) = - \varphi(s) \qquad \left (-\frac{\varpi}{2} \leq s \leq \frac{\varpi}{2} \right).
+\end{align}
+
+Write $M(s)$ the point on the lemniscate with signed arc length $s$. Consider $M' = M(s')$ the symmetric point of $M(s)$ about the origin. Since the lemniscate is symmetric about the origin, 
+Consider first the case where $0 \leq s \leq \varpi$, then the signed arc length is the positive arc length. Let $M(s)$ the point on the lemniscate with arc length $s$. Then the symmetric point $M(s')$ about the $x$-axis is such that $r' = OM(s') = OM(s) = r$, thus, by definition of $\varphi$, $\varphi(s) = \varphi(s')$. The total arc length from $O = M(0)$ to $O = M(\varpi)$ in the first loop is $\varpi$, and the symmetry of the lemniscate about the $x$-axis implies that the arc length $\varpi - s$ between $M(s)$ and $O = M(\varpi)$ is equal to the arc length $s'$ between $O = M(0)$ and $M(s')$, thus
+$s' = \varpi - s$. This proves
+\begin{align}
+\varphi(\varpi -s) = \varphi(s)\qquad (0 \leq s \leq \varpi).
+\end{align} 
+
+Now, if $\frac{\varpi}{2} \leq s \leq \varpi$, then $0\leq \varpi-s \leq \frac{\varpi}{2}$, thus, using (1), (2), (3)
+$$
+\left\{
+\begin{array}{ll}
+\varphi(s) &= \varphi(\varpi - s) = -\varphi(s- \varpi) = -\varphi(s + \varpi),\\
+\varphi(-s) &= \varphi(\varpi- (-s)) =\varphi(s + \varpi).
+\end{array}
+\right.
+$$
+Therefore $\varphi(-s) = - \varphi(s)$ if $\frac{\varpi}{2} \leq s \leq \varpi$. Now, if we suppose $-\varpi \leq s \leq -\frac{\varpi}{2}$, then $\frac{\varpi}{2} \leq -s \leq \varpi$, so we can apply the last equality to $-s$: $\varphi(s) = \varphi(-(-s))= - \varphi(-s)$. This proves
+\begin{align}
+\varphi(-s) = \varphi(s) \qquad (-\varpi \leq s \leq \varpi).
+\end{align}
+Using the periodicity, if $s \in \R$, the is some $n \in \Z$ and $s' \in [-\varpi,\varpi[$ such that $s = 2n\varpi + s'$. Then 
+$$\varphi(-s) = \varphi(-s - 2n\varpi) = \varphi(-s') = - \varphi(s') = -\varphi(s-2n\varphi) = - \varphi(s).$$
+ We have proved
+$$\varphi(-s) = \varphi(s) \qquad (s \in \R).$$
+We can now complete (2) to $-\varpi \leq s \leq 0$. Then $0 \leq -s \leq \varpi$, and by (2) applied to $-s$, $\varphi(s + \varpi) = \varphi(-s) = -\varphi(s)$, thus
+$$\varphi(\varpi -s) =  - \varphi(s - \varpi) = - \varphi(s+ \varpi) = \varphi(s)$$.
+
+We have proved, for all $s \in \R$,
+\begin{align*}
+&\varphi(-s) = -\varphi(s)\\
+&\varphi(\varpi - s) = \varphi(s).
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 15.2.2}{\it Supply the details needed to complete the proof of Proposition 15.2.1.
+}
+
+\begin{proof}
+The proof of Proposition 15.2.1 shows that
+$$\varphi'(s)  = \sqrt{1 - \varphi^4(s)},\qquad 0 \leq s \leq \frac{\varpi}{2}.$$
+By Exercise 3, part (a) and (b), $\varphi'$ is even and has period $2 \varpi$. 
+Moreover, taking the derivative of $s \mapsto \varphi(\pi - s) = \varphi(s)$ on $\R$, we obtain $-\varphi'(\varpi - s) = \varphi'(s)$, thus
+$$\varphi'(\varpi - s) = - \varphi'(s), \qquad s \in \R.$$
+
+Therefore, if $-\frac{\varpi}{2} \leq s \leq 0$, then
+$$\varphi'(s) = - \varphi'(-s) =  -\sqrt{1 - \varphi^4(-s)} = - \sqrt{1 - \varphi^4(s)}.$$
+Now, if $\frac{\varpi}{2} \leq s \leq \varpi$, then $0 \leq \varpi -s \leq \frac{\varpi}{2}$, thus 
+$$\varphi'(s) = -\varphi'(\varpi - s) = -\sqrt{1 - \varphi^4(\varpi - s)} = - \sqrt{1 - \varphi^4(s)}.$$
+If $-\varpi \leq s \leq -\frac{\varpi}{2}$, then $\frac{\varpi}{2} \leq -s  \leq \varpi$. Using the above equality, we obtain
+$$\varphi'(s) = - \varphi(-s) = -  \sqrt{1 - \varphi^4(-s)} = - \sqrt{1 - \varphi^4(s)}.$$
+We have proved
+$$\varphi'^2(s) = 1 - \varphi^4(s), \qquad -\varpi \leq s \leq \varpi. $$
+Now if $s$ is any real number, there is some $n\in \Z$ and $s' \in [-\varpi, \varpi[$ such that $s = 2n \varpi + s'$. Since $2\varpi$ is a period of $\varphi$ and $\varphi'$,
+$$\varphi'^2(s) = \varphi'^2(s') = 1 -\varphi^4(s') = 1 - \varphi^4(s).$$
+This complete the proof of Proposition 15.2.1.
+\end{proof}
+
 \end{document}
