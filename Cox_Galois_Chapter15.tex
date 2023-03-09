@@ -221,8 +221,7 @@ We have proved, for all $s \in \R$,
 \begin{proof}
 The proof of Proposition 15.2.1 shows that
 $$\varphi'(s)  = \sqrt{1 - \varphi^4(s)},\qquad 0 \leq s \leq \frac{\varpi}{2}.$$
-By Exercise 3, part (a) and (b), $\varphi'$ is even and has period $2 \varpi$. 
-Moreover, taking the derivative of $s \mapsto \varphi(\pi - s) = \varphi(s)$ on $\R$, we obtain $-\varphi'(\varpi - s) = \varphi'(s)$, thus
+By Exercise 3, parts (a) and (b), $\varphi'$ is even and has period $2 \varpi$, and by part (c),
 $$\varphi'(\varpi - s) = - \varphi'(s), \qquad s \in \R.$$
 
 Therefore, if $-\frac{\varpi}{2} \leq s \leq 0$, then
@@ -236,6 +235,34 @@ $$\varphi'^2(s) = 1 - \varphi^4(s), \qquad -\varpi \leq s \leq \varpi. $$
 Now if $s$ is any real number, there is some $n\in \Z$ and $s' \in [-\varpi, \varpi[$ such that $s = 2n \varpi + s'$. Since $2\varpi$ is a period of $\varphi$ and $\varphi'$,
 $$\varphi'^2(s) = \varphi'^2(s') = 1 -\varphi^4(s') = 1 - \varphi^4(s).$$
 This complete the proof of Proposition 15.2.1.
+\end{proof}
+
+\paragraph{Ex. 15.2.3}{\it Here are some useful properties of $\varphi'$.
+\be
+\item[(a)] $\varphi$ has period $2\varpi$. Explain why this implies that the same is true for $\varphi'$.
+\item[(b)] $\varphi$ is an odd function by (15.9). Explain why this implies that $\varphi'$ is even.
+\item[(c)] Use (15.9) to prove that $\varphi'(\varpi -s) =  - \varphi'(s)$.
+\item[(d)] Use Proposition 15.2.1 to prove that $\varphi''(s) = -2 \varphi^3(s)$.
+\ee
+}
+
+\begin{proof}
+\item[(a)] For all $s \in \R$, $\varphi(s +2 \varpi) = \varphi(s)$. By differentiation, and the chain rule,  we obtain
+$$\varphi'(s + 2 \varphi)(s)= \varphi(s).$$
+$\varphi'$ has period $2 \varpi$.
+\item[(b)] Since $\varphi(-s) = - \varphi(s)$ for all $s \in \R$, the chain rule gives
+$$- \varphi'(-s) = - \varphi'(s),$$
+thus $\varphi'$ is even.
+\item[(c)] By (15.9), $\varphi(\varpi - s) = \varphi(s)$ for all $s \in \R$. Then the chain rule gives $-\varphi'(\varpi -s) = \varphi'(s)$, thus
+$$\varphi'(\varpi -s) = -\varphi'(s),\qquad s \in \R.$$
+\item[(d)] By differentiation of $\varphi'^2(s) = 1 - \varphi^4(s)\ (s \in \R)$, we obtain
+$$2 \varphi'(s) \varphi''(s) = -4 \varphi^3(s) \varphi'(s).$$
+If $s \ne \frac{\varpi}{2} + n \varpi, n \in \Z$, then $\varphi'(s) \ne 0$, so that
+$$\varphi''(s) = -2 \varphi^3(s),\qquad s \ne \frac{\varpi}{2} + n \varpi, n \in \Z.$$
+If $s=\frac{\varpi}{2} + n \varpi $ for some integer $n \in \Z$, since $\varphi$ is infinitely differentiable, $\varphi''$ is continuous, therefore
+$$\varphi''(s) = \lim_{t \to s, t\ne s} \varphi''(t) = \lim_{t \to s, t \ne s} (-2 \varphi^3(t)) = -2 \varphi^3(s).$$
+Therefore
+$$\varphi''(s) = -2 \varphi^3(s),\qquad s \in \R.$$
 \end{proof}
 
 \end{document}
