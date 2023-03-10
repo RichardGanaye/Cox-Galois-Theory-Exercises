@@ -265,4 +265,111 @@ Therefore
 $$\varphi''(s) = -2 \varphi^3(s),\qquad s \in \R.$$
 \end{proof}
 
+\paragraph{Ex. 15.2.4}{\it Suppose that we define $\sin(x)$ by $y = \sin(x) \iff x = \int_0^y(1-t^2)^{-1/2} \D t$. Then define $\cos (x)$ to be $sin'(x)$. Use the method of Proposition 15.2.1 to prove the standard trigonometric identity $\cos^2(x) = 1 - \sin^2(x)$.
+}
+
+\begin{proof}
+We obtain the analog of (15.9) as in Exercise 1: for all $x \in \R$,
+\begin{align*}
+\sin(-x) = - \sin(x),\\
+\sin(\pi-x) = \sin(x).
+\end{align*}
+
+Now we use the definition of $\sin$: for all $y\in [-1,1]$, for all $x \in [-\frac{\pi}{2}, \frac{\pi}{2}]$,
+$$y = \sin(x) \iff x = \int_0^y(1-t^2)^{-1/2} \D t,$$
+where $\int_0^1(1-t^2)^{-1/2} \D t$ and $ \int_0^{-1}(1-t^2)^{-1/2} \D t$ converge.
+
+If $x \in [0 , \frac{\pi}{2}[$, differentiating each side of
+$$s = \int_0^{\sin(x)} \frac{1}{\sqrt{1-t^2}} \D t,$$
+we obtain
+$$1 = \frac{1}{\sqrt{1 - \sin^2(x)}} \sin'(x).$$
+If $x = \frac{\pi}{2}$, then $\sin(x) = 1, \sin'(x) = 0$, thus $\sin'^2(x) = 1 - \sin^2(x)$.
+Therefore
+$$\cos(x) = \sin'(x) = \sqrt{1 - \sin^2(x)},\qquad 0 \leq x \leq \frac{\pi}{2}.$$
+We extend the equality $\sin^2(x) + \cos^2(x) = 1$ to all $x \in \R$ as in Exercise 2.
+\end{proof}
+
+\paragraph{Ex. 15.2.5}{\it Here is Abel's proof of the addition law for $\varphi$.
+\be
+\item[(a)]
+Let $g(x,y)$ be differentiable on $\R^2$, and set $h(u,v) = g\left(\frac{1}{2}(u+v), \frac{1}{2}(u-v)\right)$. Use the chain Rule to prove that
+$$\frac{\partial h}{\partial v}(u,v) = \frac{1}{2}\frac{\partial g}{\partial x}\left(\frac{1}{2}(u+v), \frac{1}{2}(u-v)\right)-\frac{1}{2}\frac{\partial g}{\partial y}\left(\frac{1}{2}(u+v), \frac{1}{2}(u-v).\right)$$
+\item[(b)] Use part (a) to show that $g(x,y) = g(x+y, 0)$ on, $\R^2$ if and only if $\frac{\partial g}{\partial x} = \frac{\partial g}{\partial y}$ on $\R^2$.
+\item[(c)] Prove the addition law for $\varphi$ by applying part (b) to
+$$g(x,y) = \frac{\varphi(x) \varphi'(y) + \varphi(y) \varphi'(x)}{1 + \varphi^2(x) \varphi^2(y)}.$$
+Part (d) of Exercise 3 will be useful.
+\ee
+}
+
+\begin{proof} 
+\item[(a)] To apply the Chain Rule, we suppose that $g$ is continuously differentiable ($g \in C_1(\R^2)$). Write $x,y : \R^2 \to \R^2$ the two maps defined by
+$$x(u,v) = \frac{1}{2}(u+v),\qquad y(u,v) = \frac{1}{2}(u-v),$$
+Then 
+$$\frac{\partial x}{\partial v}(u,v) = \frac{1}{2},\qquad \frac{\partial y}{\partial v}(u,v) = -\frac{1}{2},$$
+and
+$$h(u,v) = g(x(u,v),y(u,v)),\qquad (u,v)\in \R^2.$$
+The Chain Rule gives
+\begin{align*}
+\frac{\partial h}{\partial v}(u,v)&=\frac{\partial g}{\partial x}\left(x(u,v),y(u,v)\right)\frac{\partial x}{\partial v}(u,v)+\frac{\partial g}{\partial y}\left(x(u,v),y(u,v)\right)\frac{\partial y}{\partial v}(u,v)\\
+&=\frac{1}{2}\frac{\partial g}{\partial x}\left(\frac{1}{2}(u+v), \frac{1}{2}(u-v)\right)-\frac{1}{2}\frac{\partial g}{\partial y}\left(\frac{1}{2}(u+v), \frac{1}{2}(u-v)\right)
+\end{align*}
+
+\item[(b)] 
+
+Suppose that $g(x+y,0) = g(x,y)$ for all $x,y \in \R$. Write $f(x) = g(x,0)$. Then $f$ is continuously differentiable, and $g(x,y) = f(x+y)$. By the Chain Rule, for all $(x,y) \in \R^2$,
+$$
+\frac{\partial g}{\partial x}(x,y) = f'(x+y) = \frac{\partial g}{\partial y}(x,y),
+$$
+therefore $\frac{\partial g}{\partial x} = \frac{\partial g}{\partial y}$ on $\R^2$.
+
+\qquad
+
+Conversely, suppose that $\frac{\partial g}{\partial x} = \frac{\partial g}{\partial y}$ on $\R^2$. Then, for all $(u,v) \in \R^2$,
+$$\frac{\partial h}{\partial v}(u,v) = \frac{1}{2}\frac{\partial g}{\partial x}\left(\frac{1}{2}(u+v), \frac{1}{2}(u-v)\right)-\frac{1}{2}\frac{\partial g}{\partial y}\left(\frac{1}{2}(u+v), \frac{1}{2}(u-v) \right)= 0.$$
+This means that for every fixed $u_0 \in \R$, the map $v \mapsto h(u_0,v)$ has a null derivative, thus is constant: $h(u_0,v) = h(u_0,0)$ for all $v \in \R$. Since this is true for every $u_0$, we obtain 
+$$h(u,v) = h(u,0),\qquad \text{for all } u,v \in \R.$$
+Write $f(u) = h(u,0)$ for all $u\in \R$. Then $f$ is continuously differentiable, and for all $u,v \in \R$, $h(u,v) = f(u)$ depends only of $u$.
+
+By definition of $h$, this means that, for all $u,v \in \R$,
+$$g\left(\frac{1}{2}(u+v), \frac{1}{2}(u-v)\right) = f(u).$$
+Taking $v = u$ in $g\left(\frac{1}{2}(u+v), \frac{1}{2}(u-v)\right) = h(u,v) = h(u,0)$, we obtain $g(u,0) = h(u,u) = h(u,0)$, therefore
+$$g(u,0) = h(u,u) = h(u,0) = h(u,v) = g\left(\frac{1}{2}(u+v), \frac{1}{2}(u-v)\right),$$
+thus
+$$g(u,0) = g\left(\frac{1}{2}(u+v), \frac{1}{2}(u-v)\right),\qquad u,v \in \R.$$
+If $(x,y)$ is any pair in $\R^2$, there exists a unique pair $(u,v) \in \R^2$ such that $x = \frac{1}{2}(u+v), y = \frac{1}{2}(u-v)$, given by $u = x + y, v = x-y$. Therefore, the preceding equality implies that 
+$$g(x+y,0) = g(x,y) ,\qquad x,y \in \R.$$ 
+
+\item[(c)] Define $g : \R^2 \to \R$ by
+$$g(x,y) = \frac{\varphi(x) \varphi'(y) + \varphi(y) \varphi'(x)}{1 + \varphi^2(x) \varphi^2(y)}.$$
+The partial derivative of this quotient relative to the variable $x$ gives, using $\varphi''(x) = -2 \varphi^3(x)$ (see Exercise 3, part (d)), and $\varphi'(x)^2 = 1 -\varphi^4(x)$
+\begin{align*}
+&\left(1 + \varphi^2(x)\varphi^2(y)\right) \frac{\partial g}{\partial x} (x,y) \\
+&= \left(\varphi'(x) \varphi'(y) + \varphi(y) \varphi''(x)\right)\left(1+ \varphi^2(x)\varphi^2(y)\right) - 2 \varphi(x) \varphi'(x) \varphi^2(y) \left(\varphi(x) \varphi'(y)+ \varphi(y)\varphi'(x)\right)\\
+&= \left(\varphi'(x) \varphi'(y) -2 \varphi(y)\varphi^3(x)\right)\left(1+ \varphi^2(x)\varphi^2(y)\right) - 2 \varphi(x) \varphi'(x) \varphi^2(y) \left(\varphi(x) \varphi'(y)+ \varphi(y)\varphi'(x)\right)\\
+&=\varphi'(x) \varphi'(y) + \varphi'(x) \varphi'(y) \varphi^2(x) \varphi^2(y) - 2 \varphi(y) \varphi^3(x) - 2 \varphi^3(y)\varphi^5(x)\\
+&  \qquad - 2 \varphi^2(x) \varphi^2(y) \varphi'(x)\varphi'(y) - 2 \varphi(x) \varphi^3(y) \varphi'(x)^2\\
+&=\varphi'(x) \varphi'(y) + \varphi'(x) \varphi'(y) \varphi^2(x) \varphi^2(y) - 2 \varphi(y) \varphi^3(x) - 2 \varphi^3(y)\varphi^5(x)\\
+&  \qquad - 2 \varphi^2(x) \varphi^2(y) \varphi'(x)\varphi'(y) - 2 \varphi(x) \varphi^3(y) (1 - \varphi^4(x))\\
+&=\varphi'(x) \varphi'(y) + \varphi'(x) \varphi'(y) \varphi^2(x) \varphi^2(y) - 2 \varphi(y) \varphi^3(x) -2\varphi(x) \varphi^3(y)\\
+&  \qquad - 2 \varphi^2(x) \varphi^2(y) \varphi'(x)\varphi'(y).
+\end{align*}
+This last expression is symmetric relatively to $x,y$, and also the denominator $1 + \varphi^2(x)\varphi^2(y)$.  Since $g(x,y) = g(y,x) =  \frac{\varphi(y) \varphi'(x) + \varphi(x) \varphi'(y)}{1 + \varphi^2(y) \varphi^2(x)}$, this proves that 
+\begin{align*}
+&\left(1 + \varphi^2(y)\varphi^2(x)\right) \frac{\partial g}{\partial y} (x,y)\\
+&=\varphi'(y) \varphi'(x) + \varphi'(y) \varphi'(x) \varphi^2(y) \varphi^2(x) - 2 \varphi(x) \varphi^3(y) -2\varphi(y) \varphi^3(x)- 2 \varphi^2(y) \varphi^2(x) \varphi'(y)\varphi'(x)\\
+&= \left(1 + \varphi^2(x)\varphi^2(y)\right) \frac{\partial g}{\partial x} (x,y),
+\end{align*}
+where $1 + \varphi^2(y)\varphi^2(x)>0$.
+Therefore $\frac{\partial g}{\partial x} = \frac{\partial g}{\partial y}$ on $\R^2$. 
+
+By part (b), $g(x,y) =g(x+y,0)$. Using $\varphi(0) = 0$, and $\varphi'(0) = \sqrt{1 - \varphi^4(0)} = 1$, 
+\begin{align*}
+g(x,y) &=g(x+y,0)\\
+&= \varphi'(0) \varphi(x+y)\\
+&= \varphi(x+y).
+\end{align*}
+We have proved the addition law for $\varphi$:
+$$\varphi(x+y) = \frac{\varphi(x) \varphi'(y) + \varphi(y) \varphi'(x)}{1 + \varphi^2(x) \varphi^2(y)}, \qquad x,y \in \R.$$
+\end{proof}
+
 \end{document}
