@@ -96,7 +96,7 @@ Since $t \mapsto (1-t^4)^{-1/2}$ is even, the same is true in the neighborhood o
 
 \paragraph{Ex. 15.1.4}{\it  Prove the arc length formula stated in (15.6)}
 \begin{proof}
- Here the equation of th ellipse $E$ is
+ Here the equation of the ellipse $E$ is
  $$x^2 + \frac{y^2}{b^2} = 1,$$
  with eccentricity $k = \sqrt{1- b^2}$.
 
@@ -130,13 +130,23 @@ The arc length of the ellipse is given by an elliptic integral.
  $$(x^2 + y^2)^2 = x^2 - y^2,$$
  which is the equation of the Lemniscate.
 \end{proof}
-\paragraph{Ex. 15.1.6}{\it Let $n>0$ be an odd integer, and assume that the $n$-division points of the lemniscate can be constructed with straightedge and compass. prove that the same is true for the $2n$-division points. Your proof should include a picture.
+
+
+\paragraph{Ex. 15.1.6}{\it Let $n>0$ be an odd integer, and assume that the $n$-division points of the lemniscate can be constructed with straightedge and compass. Prove that the same is true for the $2n$-division points. Your proof should include a picture.
 }
 
-\begin{proof} Let $M_0=0, \ldots,M_{n-1}$ the $n$-divisions points
-If $n$ is odd, the middle segment $(M_{(n-1)/2}, M_{(n+1)/2})$ straddles the origin, The symmetry of the figure shows that the arc length between $O$ and $M_{(n-1)/2}$ is the same as the arc length between $O$ and $M_{(n-1)/2}$, so is half of the arc length $M_k M_{k+1}$. Therefore we can complete $M_0, M_1, \ldots,M_{n-1}$ by the symmetric points $M'_0 = O,\ldots,M'_{n-1}$ relative to the $x$-axis to obtain the $2n$-division points (the point $O$ is counted twice).
+\begin{proof} Suppose that $n = 2N+1$ is odd, and consider $M_0=0, \ldots,M_{n-1}$  the $n$-divisions points, where $M_k$ has positive arc length $s_k = k \frac{2\varpi}{n},\ k=0,\ldots,n-1$.
 
-Figure for $n=5$ : the $10$-division points are $0,M'_2,M_1,M'_1,M_2,0,M_3,M'_3,M_4,M'_3$.
+Then $s_k = (2k) \frac{2\varpi}{2n}$, so that $N_{2k} = M_k$ is also a $2n$-division point. The other $2n$-division points are the points $N_{2k+1}$ corresponding to the arc length $k \frac{2\varpi}{n} + \frac{\varpi}{n} = (2k+1) \frac{\varpi}{n}$. Then the symmetric point $N'_{2k+1}$ about the $x$-axis has arc length 
+$$\varpi - (2k+1) \frac{\varpi}{n} = \varpi - (2k+1) \frac{\varpi}{2N+1} = (N-k) \frac{2 \varpi}{n},$$
+thus is the $n$-division point $M_{2n+1-k}$. This proves that the symmetric points $M'_0 = 0,\ldots,M'_{n-1}$  of $M_0,\ldots,M_{n-1}$ about the $x$-axis are $2n$-divisions points.
+
+
+Therefore we can complete $M_0, M_1, \ldots,M_{n-1}$ by the symmetric points $M'_0 = O,\ldots,M'_{n-1}$ relative to the $x$-axis to obtain the $2n$-division points (the point $O$ is counted twice).
+
+Since the $M_k$ can be constructed with straightedge and compass, the symmetric points $M'_k$ are also constructible, thus the $2n$-division points are constructible. 
+
+Figure for $n=5$: the $10$-division points are $0,M'_2,M_1,M'_1,M_2,0,M_3,M'_3,M_4,M'_3$.
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics [width=8cm,height=4cm] {lemniscate.png}
@@ -370,6 +380,254 @@ g(x,y) &=g(x+y,0)\\
 \end{align*}
 We have proved the addition law for $\varphi$:
 $$\varphi(x+y) = \frac{\varphi(x) \varphi'(y) + \varphi(y) \varphi'(x)}{1 + \varphi^2(x) \varphi^2(y)}, \qquad x,y \in \R.$$
+\end{proof}
+
+\paragraph{Ex. 15.2.6}{\it Show that the subtraction law
+$$\varphi(x-y) = \frac{\varphi(x) \varphi'(y) - \varphi(y) \varphi'(x)}{1 + \varphi^2(x) \varphi^2(y)}.
+$$
+follows from the addition law together with (15.9) and Exercise 3.
+}
+
+\begin{proof} Starting from the Addition Law for $\varphi$
+$$\varphi(x+y) = \frac{\varphi(x) \varphi'(y) + \varphi(y) \varphi'(x)}{1 + \varphi^2(x) \varphi^2(y)}, \qquad x,y \in \R,$$
+we obtain for all $x,y \in \R$, substituting $-y$ to $y$,
+\begin{align*}
+&\varphi(x-y) = \frac{\varphi(x) \varphi'(-y) + \varphi(-y) \varphi'(x)}{1 + \varphi^2(x) \varphi^2(-y)}.
+\end{align*}
+Since $\varphi$ is odd, and $\varphi'$ even (see 15.9 and Exercise 3), we obtain
+$$\varphi(x-y) = \frac{\varphi(x) \varphi'(y) - \varphi(y) \varphi'(x)}{1 + \varphi^2(x) \varphi^2(y)}.
+$$
+\end{proof}
+
+\paragraph{Ex. 15.2.7}{\it The proof of Theorem 15.2.5 uses induction on $n$.
+\be
+\item[(a)] Assume that $n$ is even. In (15.18), we gave a formula for $Q_{n+1}(u)$ in terms of $Q_n(u)$ and $Q_{n-1}(u)$. Derive the corresponding formula for $P_{n+1}(u)$.
+\item[(b)] Suppose that polynomials $P_n(u),Q_n(u)$ satisfy all of the conditions of the theorem except for the requirement that they be relatively prime. Since $\Z[u]$ is a $UFD$, we can write $P_n(u) = C_n \tilde{P}_n(u), Q_n(u) = C_n(u) \tilde{Q}_n(u)$, where $C_n(u), \tilde P_n(u),\tilde Q_n(u) \in \Z[u]$ and $\tilde P_n(u), \tilde Q_n(u)$ are relatively prime. Prove that we can assume that $\tilde Q_n(0) = 1$ and that $\tilde P_n(u), \tilde Q_n(u)$ satisfy all conditions of Theorem 15.2.5.
+\item[(c)] Complete the inductive step of the proof when $n$ is odd.
+\ee
+}
+
+\begin{proof} 
+\item[(a,c)] We will prove the theorem by induction on $n$. The theorem holds for $n=1,n=2$  with $P_1(u) =  Q_1(u) = 1$, and $P_2(u) = 2,Q_2(u) = 1+u$ (misprint in Cox p. 477).
+Now assume that it holds for $n-1$ and $n$.
+
+$\bullet$
+If $n$ is even,
+\begin{align*}
+& \varphi((n-1)x) = \varphi(x)\frac{P_{n-1}\left(\varphi^4(x)\right)}{Q_{n-1}\left(\varphi^4(x)\right)}, \\
+ &\varphi(nx) = \varphi(x)\frac{P_{n}\left(\varphi^4(x)\right)}{Q_{n}\left(\varphi^4(x)\right)} \varphi'(x).
+  \end{align*}
+ Using (15.13), we obtain
+\begin{align*}
+\varphi\left((n+1)x\right) &= - \varphi\left( (n-1)x) \right) + \frac{2 \varphi(nx) \varphi'(x)}{1+\varphi^2(nx) \varphi^2(x)}\\
+&=- \varphi(x) \frac{P_{n-1}\left(\varphi^4(x)\right)}{Q_{n-1}\left(\varphi^4(x)\right)} + \frac{2 \left(\varphi(x)\frac{P_{n}\left(\varphi^4(x)\right)}{Q_{n}\left(\varphi^4(x)\right)} \varphi'(x) \right) \varphi'(x)}{1+\left(\varphi(x)\frac{P_{n}\left(\varphi^4(x)\right)}{Q_{n}\left(\varphi^4(x)\right)} \varphi'(x) \right)^2 \varphi^2(x)}.\\
+\end{align*}
+To simplify, we write $a = \varphi(x), p_n = P_n(\varphi^4(x)), q_n = Q_n(\varphi^4(x))$. 
+
+Then, using $\varphi'(x)^2 = 1 - \varphi^4(x)$,
+\begin{align*}
+\varphi\left((n+1)x\right) &= a \left[ -\frac{p_{n-1}}{q_{n-1}} + \frac{2 (1-a^4)\frac{p_n}{q_n} }{1 + a^4(1-a^4) \frac{p_n^2}{q_n^2}} \right] \\
+&=a \left[  -\frac{p_{n-1}}{q_{n-1}} + \frac{2(1-a^4)p_nq_n}{q_n^2+a^4(1-a^4)p_n^2}\right] \\
+&=a \frac {-p_{n-1}(q_n^2 + a^4(1-a^4) p_n^2) + 2(1-a^4) p_nq_nq_{n-1}}{q_{n-1}(q_n^2 + a^4(1-a^4)p_n^2)},
+\end{align*}
+that is
+$$\varphi\left((n+1)x\right) = \varphi(x) \frac{P_{n+1}(\varphi^4(x))}{Q_{n+1}(\varphi^4(x))},$$
+where
+\begin{align*}
+P_{n+1}(u) &= -P_{n-1}(u) (Q_n^2(u) + u(1-u) P_n^2(u)) + 2(1-u) P_n(u)Q_n(u) Q_{n-1}(u),\\
+Q_{n+1}(u) &=Q_{n-1}(u)(Q_n^2(u) + u(1-u) P_n^2(u)).
+\end{align*}
+Verification : with $n = 2$, we obtain $P_3(u) = 3 - 6u - u^2, Q_3(u) = 1 + 6u - 3u^2$, which gives the tripling formula (15.17).
+
+\qquad
+
+$\bullet$ If $n$ is odd,
+\begin{align*}
+& \varphi((n-1)x) = \varphi(x)\frac{P_{n-1}\left(\varphi^4(x)\right)}{Q_{n-1}\left(\varphi^4(x)\right)} \varphi'(x), \\
+ &\varphi(nx) = \varphi(x)\frac{P_{n}\left(\varphi^4(x)\right)}{Q_{n}\left(\varphi^4(x)\right)} .
+  \end{align*}
+  Then(15.13) gives
+  \begin{align*}
+\varphi\left((n+1)x\right) &= - \varphi\left( (n-1)x) \right) + \frac{2 \varphi(nx) \varphi'(x)}{1+\varphi^2(nx) \varphi^2(x)}\\
+&=- \varphi(x) \frac{P_{n-1}\left(\varphi^4(x)\right)}{Q_{n-1}\left(\varphi^4(x)\right)}  \varphi'(x)+ \frac{2 \left(\varphi(x)\frac{P_{n}\left(\varphi^4(x)\right)}{Q_{n}\left(\varphi^4(x)\right)}  \right) \varphi'(x)}{1+\left(\varphi(x)\frac{P_{n}\left(\varphi^4(x)\right)}{Q_{n}\left(\varphi^4(x)\right)}  \right)^2 \varphi^2(x)}\\
+&=\varphi(x) \left[ -  \frac{P_{n-1}\left(\varphi^4(x)\right)}{Q_{n-1}\left(\varphi^4(x)\right)} + \frac{2 \left(\frac{P_{n}\left(\varphi^4(x)\right)}{Q_{n}\left(\varphi^4(x)\right)}  \right) }{1+\left(\varphi(x)\frac{P_{n}\left(\varphi^4(x)\right)}{Q_{n}\left(\varphi^4(x)\right)}  \right)^2 \varphi^2(x)}\right] \varphi'(x)
+\end{align*}
+With the same notations as in the even case, and with $a' = \varphi'(x)$, 
+\begin{align*}
+\varphi\left((n+1)x\right)&= a \left[ -\frac{p_{n-1}}{q_{n-1}} + \frac{2 \frac{p_n}{q_n}}{1 + a^4 \frac{p_n^2}{q_n^2}}\right] a'\\
+&= a \left[ -\frac{p_{n-1}}{q_{n-1}}  +\frac{ 2 p_n q_n}{q_n^2 + a^4 p_n^2}\right] a' \\
+&=a\left[ \frac{-p_{n-1} (q_n^2 + a^4 p_n^2) + 2 p_nq_nq_{n-1}} {q_{n-1}(q_n^2 + a^4 p_n^2)}\right] a'
+\end{align*}
+that is
+$$\varphi\left((n+1)x\right) = \varphi(x) \frac{P_{n+1}(\varphi^4(x))}{Q_{n+1}(\varphi^4(x))}\varphi'(x),$$
+where
+\begin{align*}
+P_{n+1}(u) &= -P_{n-1}(u) (Q_n^2(u) + u P_n^2(u)) + 2 P_n(u)Q_n(u) Q_{n-1}(u),\\
+Q_{n+1}(u) &=Q_{n-1}(u)(Q_n^2(u) + u P_n^2(u)).
+\end{align*}
+The induction is done, and the induction formulas concerning $P_{n}, Q_{n}$ are
+$$\begin{array}{ll}
+&\text {for } n \text { even},\\
+P_{n+1}(u) &= -P_{n-1}(u) (Q_n^2(u) + u(1-u) P_n^2(u)) + 2(1-u) P_n(u)Q_n(u) Q_{n-1}(u),\\
+Q_{n+1}(u) &=Q_{n-1}(u)(Q_n^2(u) + u(1-u) P_n^2(u)),\\
+&\text {for } n \text { odd},\\
+P_{n+1}(u) &= -P_{n-1}(u) (Q_n^2(u) + u P_n^2(u)) + 2 P_n(u)Q_n(u) Q_{n-1}(u),\\
+Q_{n+1}(u) &=Q_{n-1}(u)(Q_n^2(u) + u P_n^2(u)).
+\end{array}
+$$
+Note that we can take $P_0 = 0, Q_1 = 1$ ( and $P_1 = 1, Q_1 = 1$).
+
+\bigskip
+
+We give a Sage function to compute $P_n,Q_n$:
+\begin{verbatim}
+R.<u> = ZZ[]
+
+def divisionPolynomial(n):
+    P0, Q0 = 0, 1
+    P1, Q1 = 1, 1
+    for i in range(n):
+        if i % 2 != 0:
+            S = Q1^2 + u * (1-u) *P1^2
+            P2 = -P0 * S + 2 * (1-u) * P1 * Q1 * Q0
+            Q2 = Q0  * S
+        else:
+            S = Q1^2 + u * P1^2
+            P2 = -P0 * S + 2 * P1 * Q1 * Q0
+            Q2 = Q0  * S
+        D = gcd(P2,Q2)
+        (P2, Q2) = (P2/D, Q2/D)
+        (P0, Q0) = (P1, Q1)
+        (P1, Q1) = (P2, Q2)
+    return (P0,Q0)
+    
+P5, Q5 = divisionPolynomial(5); P5,Q5
+\end{verbatim}
+$$u^{6} + 50u^{5} - 125u^{4} + 300u^{3} - 105u^{2} - 62u + 5,  5u^{6} - 62u^{5} - 105u^{4} + 300u^{3} - 125u^{2} + 50u + 1$$
+\begin{verbatim}
+P5.factor(), Q5.factor()
+\end{verbatim}
+$$(u^{2} - 2u + 5) \cdot (u^{4} + 52u^{3} - 26u^{2} - 12u + 1), (5u^{2} - 2u + 1) \cdot (u^{4} - 12u^{3} - 26u^{2} + 52u + 1)$$
+\item[(b)] We can write $P_n(u) = C_n \tilde{P}_n(u), Q_n(u) = C_n(u) \tilde{Q}_n(u)$, where $C_n(u), \tilde P_n(u),\tilde Q_n(u) \in \Z[u]$ and $\tilde P_n(u), \tilde Q_n(u)$ are relatively prime.
+
+Since $Q_n(0) = 1$, then $C_n(0) \tilde{Q}_n(0) = 1$, where $C_n(0), \tilde{Q}_n(0)$ are integers, thus $\tilde{Q}_n(0) = \pm 1$.
+
+If $\tilde{Q}_n(0) = 1$, we are done, and if $\tilde{Q}_n(0) = -1$ We replace $\tilde{P}_n, \tilde{Q}_n$ by $-\tilde{P}_n, - \tilde{Q}_n$, which satisfy all conditions of Theorem 15.2.5.
+\end{proof}
+
+\paragraph{Ex. 15.2.8}{\it Let $n$ be even, and let $P_n(u)$ be the polynomial from Theorem 15.2.5. Complete the proof of Corollary 15.2.6 by showing that the polar distances of the $n$-division points of the lemniscate are roots of $uP_n(u^4)(1-u^2)$.
+}
+
+\begin{proof} 
+The polar distances of the $n$-division points are
+$$u_m = \varphi\left( m \frac{2 \varpi}{n}\right),\qquad m=0,1,\ldots,n-1.$$
+If $n$ is even, then 
+$$\varphi(nx) = \varphi(x)\frac{P_{n}\left(\varphi^4(x)\right)}{Q_{n}\left(\varphi^4(x)\right)} \varphi'(x).$$
+With $x = \frac{2 \varpi}{n}$, we obtain
+$$0 = \varphi(m \cdot 2 \varpi) = \varphi\left(n\cdot  m \frac{2 \varpi}{n}\right) = \varphi\left( m \frac{2 \varpi}{n}\right)\frac{P_n\left(\varphi^4\left( m \frac{2 \varpi}{n}\right)\right)}{Q_n\left(\varphi^4\left( m \frac{2 \varpi}{n}\right)\right)}\varphi'\left(m \frac{2 \varpi}{n}\right),$$
+where, by Exercise 9, the denominator $Q_n\left(\varphi^4\left( m \frac{2 \varpi}{n}\right)\right)$ is non vanishing.
+
+Since $\varphi'\left(m \frac{2 \varpi}{n}\right) = \pm\sqrt{1 - \varphi^4\left(m \frac{2 \varpi}{n}\right)}$, we obtain
+$$0 = u_m P_n(u_m^4) \sqrt{1 - u_m^4}.$$
+$\sqrt{1 - u_m^4} = \sqrt{1 - u_m^2} \sqrt{1+u_m^2}$, where $1+ u_m^2 \ne 0$, thus $\sqrt{1 -u_m^4} = 0 \iff 1 - u_m^2 = 0$. Therefore $u_m= \varphi\left( m \frac{2 \varpi}{n}\right)$ is a root of 
+$$u P_n(u^4)(1-u^2).$$
+\end{proof}
+
+\paragraph{Ex. 15.2.9}{\it This exercise is concerned with the proof of Corollary 15.2.7.
+\be
+\item[(a)] Suppose that $P(u), Q(u) \in \Z[u]$ are relatively prime and $Q(0) = 1$. Prove that $uP(u^4)$ and $Q(u^4)$ have no common roots in any extension of $\Q$.
+\item[(b)] Fix $x$ in $\R$ and $m>0$ in $\Z$, and let $P_m(u),Q_m(u) \in \Z[u]$ be as in Theorem 15.2.5. Thus $\varphi(mx) Q_m(\varphi^4(x)) = \varphi(x) P_m(\varphi^4(x))$. Prove that $Q_m(\varphi^4(x)) \ne 0$ when $\varphi(x)\ne 0$.
+\item[(c)] Show that $\varphi\left(\frac{2 \varpi}{n}\right) \ne 0$ when $n>2$ is in $\Z$ and conclude that $Q_m\left(\varphi^4\left(\frac{2 \varpi}{n}\right)\right) \ne 0$.
+\ee
+}
+
+\begin{proof} 
+\item[(a)]
+Since $P(u),Q(u)$ are relatively prime in $\Q[u]$, there are some polynomials $A,B \in \Q[u]$ such that $A(u)P(u) + B(u) Q(u) = 1$, thus the substitution $u \to u^4$ gives $A(u^4) P(u^4) + B(u^4)Q(u^4) = 1$. Reasoning by contradiction, suppose that $uP(u^4)$ and $Q(u^4)$ have a common root $\alpha$ in some extension of $\Q$. Since $Q(0) = 1$, $\alpha \ne 0$, thus $P(\alpha^4) = 0$.  Then $P(\alpha^4)= Q(\alpha^4) = 0$ implies $1 = A(\alpha^4) P(\alpha^4) + B(\alpha^4)Q(\alpha^4) = 0$: this is a contradiction. 
+
+So $uP(u^4)$ and $Q(u^4)$ have no common roots in any extension of $\Q$.
+
+\item[(b)] If $m$ is odd, then $\varphi(mx) Q_m(\varphi^4)(x)) = \varphi(x) P_m(\varphi^4(x))$. Reasoning by contradiction, suppose that, for some $x \in \R$, $Q_m(\varphi^4(x)) = 0$. Then $\varphi(x) P_m(\varphi^4(x) = 0$, so that $\alpha = \varphi(x)$ is a common root of $Q_m(u^4)$ and $uP_m(u^4)$. Since $P_m,Q_m$ are relatively prime, and $Q_m(0) = 1$, this is impossible by part (a).
+
+If $m$ is even, then $\varphi(mx) Q_m(\varphi^4(x)) = \varphi(x) P_m(\varphi^4(x)) \varphi'(x)$. Suppose that, for some $x \in \R$, $Q_m(\varphi^4(x)) = 0$. Then $\varphi(x) P_m(\varphi^4(x) ) \varphi'(x)= 0$. If $\varphi'(x) =0$, then $\sqrt{1 - \varphi^4(x)} = 0$, thus $\varphi^4(x) = 1$, and $\varphi(x) = \pm 1$. If $\varphi(x) \not \in \{-1,1\}$, then $\varphi(x) P_m(\varphi(x)) =0$, so that $\alpha = \varphi(x)$ is a common root of $Q_m(u^4)$ and $uP_m(u^4)$, which is impossible by part (a).
+
+We have proved that $Q_m(\varphi^4(x)) \ne 0$ when $\varphi(x)\not \in \{-1,1\}$.
+
+(Misprint in the sentence of part (b) ? If $\varphi(x) = 0$, then $Q_m(\varphi^4(x)) = Q_m(0) = 1 \ne 0$, so there is no need to suppose $\varphi(x) \ne 0$.)
+\item[(c)] For all $x \in \R$, $\varphi(x) = 0 $ if and only if $x = k \varpi$ for some $k \in \Z$.
+
+We must verify that $\varphi\left(\frac{2\varpi}{n}\right) \not \in \{-1,1\}$. If $n>2$, then $0<\frac{2\varpi}{n}\ < \varpi$. This proves that $0 < \varphi\left(\frac{2\varpi}{n}\right) <1$, thus $\varphi\left(\frac{2\varpi}{n}\right) \not \in \{-1,0,1\}$.
+
+By our version of part (b), this implies that $$Q_m\left(\varphi^4\left(\frac{2\varpi}{n}\right)\right) \ne 0.$$
+
+Note: If we read the proof of Theorem 15.2.5, it is obvious that the denominators $Q_n(\varphi^4(x))$ never vanish, for all $x \in \R$, because $1 + \varphi^2(nx) \varphi^2(x) \ne 0$.
+\end{proof}
+
+\paragraph{Ex. 15.2.10}{\it The polar distances of the $5$-division points of the lemniscate satisfy the equation
+$$0 = r_0(r_0^{24} + 50 r_0^{20} - 125 r_0^{16} + 300 r_0^{12} - 105 r_0^8 - 62 r_0^4 + 5).$$
+This equation was first derived by Fagnano in 1718.
+\be
+\item[(a)] Show that the $r_0$ corresponding to the $10$-division points also satisfy this equation.
+\item[(b)] Use Maple or Mathematica (or Sage!) to show that this equation factors as
+$$0 = r_0(r_0^8 - 2 r_0^4 + 5)(r_0^{16}+52r_0^{12} - 26 r_0^8 - 12 r_0^4 + 1)$$
+and that the only positive real solutions are
+$$\sqrt[4]{-13 + 6 \sqrt{5} \pm 2 \sqrt{85-38 \sqrt{5}}}.$$
+Explain (with a picture) how these solutions relate to the $5$- and $10$-division points.
+\ee
+}
+
+\begin{proof} 
+\item[(a)] Since $5$ is odd, the $5$-division points are roots of $uP_5(u^4)$ by Corollary 15.2.6.
+We obtain $P_5$ with the Sage function given in Exercise 7:
+$$P_5(u) = u^{6} + 50u^{5} - 125u^{4} + 300u^{3} - 105u^{2} - 62u + 5.$$
+Therefore the polar distances $r_0$ of the $5$-divisions points of the lemniscate satisfy the equation
+$$0 = r_0(r_0^{24} + 50 r_0^{20} - 125 r_0^{16} + 300 r_0^{12} - 105 r_0^8 - 62 r_0^4 + 5).$$
+
+\bigskip
+
+We have seen in Exercise 6 that the $10$-division points are the $5$-divisions points, together with the symmetric points about the $x$-axis, which have same polar distances. Therefore the polar distance of any $10$-division point is also a polar distance of a $5$-division point, thus verify the given equation (see figure in Exercise 6).
+
+\item[(b)]  We saw in Exercise 7 that $P_5(u)$ factors as
+$$P_5(u) = (u^{2} - 2u + 5) (u^{4} + 52u^{3} - 26u^{2} - 12u + 1).$$
+Therefore the polar distances of the $5$-division points (and of the $10$-division points) satisfy
+$$0 = r_0P_5(r_0^4) =r_0 (r_0^{8} - 2r_0^{4} + 5)  (r_0^{16} + 52r_0^{12} - 26r_0^{8} - 12r_0^4 + 1).$$
+$r_0^{8} - 2r_0^{4} + 5 = (r_0^4-1)^2 + 4 >0$ thus $r_0^{8} - 2r_0^{4} + 5$ has no real root.
+
+We obtain the positive roots of $u^{4} + 52u^{3} - 26u^{2} - 12u + 1$ with Sage:
+\begin{verbatim}
+u = var('u')
+P = u^4+52*u^3-26*u^2-12*u+1;
+S = P.solve(u)
+S
+\end{verbatim}
+\begin{align*}\
+[u = -6 \, \sqrt{5} - \frac{1}{2} \, \sqrt{608 \, \sqrt{5} + 1360} - 13, \\
+u = -6 \, \sqrt{5} + \frac{1}{2} \, \sqrt{608 \, \sqrt{5} + 1360}- 13, \\
+u = 6 \, \sqrt{5} - \frac{1}{2} \, \sqrt{-608 \, \sqrt{5} + 1360}- 13,\\
+ u = 6 \, \sqrt{5} + \frac{1}{2} \, \sqrt{-608 \, \sqrt{5} + 1360}- 13]
+\end{align*}
+\begin{verbatim}
+[e.right().n() for e in S]
+\end{verbatim}
+$$\left[-52.4909612184115, -0.341854511585989, 0.0733810146911846,0.759434715306293\right]$$
+\begin{verbatim}
+S[2].right()^(1/4),S[3].right()^(1/4)
+\end{verbatim}
+$$\left({\left(6 \, \sqrt{5} - \frac{1}{2} \, \sqrt{-608 \, \sqrt{5} +
+1360} - 13\right)}^{\frac{1}{4}}, {\left(6 \, \sqrt{5} + \frac{1}{2} \,
+\sqrt{-608 \, \sqrt{5} + 1360} - 13\right)}^{\frac{1}{4}}\right)$$
+
+Since $1360 = 1 6 \times 85$, and $608 = 16 \times 38$, we obtain the two positive solutions of the equation
+$$\sqrt[4]{-13 + 6 \sqrt{5} \pm 2 \sqrt{85-38 \sqrt{5}}}.$$
+Since there are only two $5$-division points $M_1,M_2$ in the right loop of the lemniscate, the 5 division points have polar distances (using $OM_1 > OM_2$)
+\begin{align*}
+&OM_0   = 0 \\
+&OM_1  = OM_4= \left( \sqrt[4]{-13 + 6 \sqrt{5} +2 \sqrt{85-38 \sqrt{5}}} \right),\\
+ &OM_2  = OM_3  = \left( \sqrt[4]{-13 + 6 \sqrt{5} - 2 \sqrt{85-38 \sqrt{5}}} \right).\\
+ \end{align*}
+ (See the figure of Exercise 6). 
+ 
+ By Proposition 15.1.1, all these points are constructible. The $10$-division points have same polar distances, and are also constructible.
 \end{proof}
 
 \end{document}
