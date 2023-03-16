@@ -630,4 +630,74 @@ Since there are only two $5$-division points $M_1,M_2$ in the right loop of the 
  By Proposition 15.1.1, all these points are constructible. The $10$-division points have same polar distances, and are also constructible.
 \end{proof}
 
+\paragraph{Ex. 15.2.11}{\it Use $\sin(x+y) = \sin x \cos y + \sin y \cos x$ to show that if $\alpha,\beta \in [0,1]$, then
+$$\int_0^\alpha \frac{1}{\sqrt{1-t^2}} \D t + \int_0^\beta \frac{1}{\sqrt{1-t^2}} \D t  = \int_0^\gamma \frac{1}{\sqrt{1-t^2}} \D t,$$
+where $\gamma$ is the real number defined by
+$$\gamma = \alpha \sqrt{1-\beta^2} + \beta \sqrt{1- \alpha^2}.$$
+Note the similarity to (15.10).
+}
+
+\begin{proof} If $\alpha, \beta \in [0,1]$, then there are unique $x,y \in [0,\pi/2]$ such that $\alpha = \sin x$, $\beta = \sin y$. Then $x = \mathrm{arcsin}(\alpha), y = \mathrm{arcsin}(\beta))$, where $\mathrm{arcsin}$ is the reciprocal function of $f$, $f$ being the restriction of $\sin$ to $[0,\pi]$. For every $t \in ]-1,1[$, $f$ is differentiable at $f^{-1}(t) \in ]0,\pi[$, and $f'(f^{-1}(t) \ne 0$, thus $f^{-1} = \mathrm{arcsin} :[-1,1] \to [0,\pi]$ is differentiable on $]-1,1[$, and for all $t \in ]-1,1[$,
+$$\mathrm{arcsin}'(t) = (f^{-1})'(t) = \frac{1}{f'(f^{-1}(t))} = \frac{1}{\cos( \mathrm{arcsin}(t))} = \frac{1}{\sqrt{1 - \sin^2(\mathrm{arcsin}(t))}} = \frac{1}{\sqrt{1 -t^2}}.$$
+Since $t \mapsto  \frac{1}{\sqrt{1-t^2}}$ is continuous on $]-1,1[$, for all $z \in ]-1,1[$,
+$$\mathrm{arcsin}(x) = \int_0^x  \frac{1}{\sqrt{1-t^2}} \D t.$$
+(This equality remains true for $x = \pm 1$: 
+
+$\int_0^1  \frac{1}{\sqrt{1-t^2}} \D t$ is convergent, and $ \int_0^1  \frac{1}{\sqrt{1-t^2}} \D t = \lim\limits_{x \to 1} \int_0^x  \frac{1}{\sqrt{1-t^2}} \D t$, with value $\mathrm{arcsin}(1) = \pi/2$).
+
+Therefore, for all $\theta \in [0,\pi]$, and for all $z \in [-1,1]$,
+$$  z = \sin \theta \iff  \theta= \mathrm{arcsin}(z) \iff \theta = \int_0^z  \frac{1}{\sqrt{1-t^2}} \D t.$$
+(Alternatively, we can take this equivalence as a definition of $\sin \theta$, to continue Exercise 4.)
+
+Write $\gamma =\sin(x+y)$. Since $0 \leq x+y \leq \pi$, we obtain $x+y =\mathrm{arcsin}(\gamma)$, that is
+$$\int_0^\alpha \frac{1}{\sqrt{1-t^2}} \D t + \int_0^\beta \frac{1}{\sqrt{1-t^2}} \D t = \int_0^\gamma \frac{1}{\sqrt{1-t^2}} \D t.$$
+Moreover, since $x,y \in [0,\frac{\pi}{2}]$, $\cos x \geq 0, \cos y \geq 0$, thus 
+$$\cos x = \sqrt{1- \sin^2 x}, \qquad \cos y = \sqrt{1-\sin^2 y},$$
+and
+\begin{align*}
+\gamma &= \sin(x+y)\\
+&=\sin x \cos y + \sin y \cos x\\
+&=\sin x \sqrt{1-\sin^2 y}+ \sin y \sqrt{1-\sin^2 x}\\
+&=  \alpha \sqrt{1-\beta^2} + \beta \sqrt{1- \alpha^2}.
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 15.2.12}{\it Show that the substitution $t = \sin \theta$ transforms (15.20) into (15.21), and use this to prove carefully that $\varphi(u) = \sin \mathrm{am}(u)$ when the modulus is $k = i$.
+}
+
+\begin{proof} 
+Consider the integral
+$$I = \int_\gamma^\delta \frac{1}{\sqrt{1 - k^2 \sin^2 \theta}} \D \theta,$$
+where $\gamma, \delta$ are such that $[\gamma, \delta] \subset ]0,\pi[$ and $ \theta \mapsto  f(\theta) =  \frac{1}{\sqrt{1 - k^2 \sin^2 \theta}}$ is defined (and continuous) on $[\gamma, \delta]$: 
+
+if the modulus $k$ is real and positive, this requires $[\gamma,\delta] \subset  ]-\mathrm{arcsin}\left(\frac{1}{k}\right), \mathrm{arcsin}\left(\frac{1}{k}\right)[$.
+
+Write $\alpha = \sin(\gamma), \beta = \sin(\delta)$, and consider $\psi = \mathrm{arcsin} : [-1,1] \to [0,\pi]$ (so that $t = \sin \theta \iff \theta = \psi(t)$ if $-1<t<1$ and $\theta \in [0,\pi])$).
+
+Then $\psi$ is continuously differentiable, and is strictly increasing, thus $\psi([\alpha,\beta]) = [\psi(\alpha),\psi(\beta)]$, and $\psi$ induces a bijection $[\alpha, \beta] \to [\psi(\alpha),\psi(\beta)] = [\gamma, \delta]$. The Theorem of Integration by Substitution gives
+$$\int_\alpha^\beta f(\psi(t)) \psi'(t) \D t = \int_{\psi(\alpha)}^{\psi(\beta)} f(\theta) \D \theta,$$
+where
+\begin{align*}
+&f(\psi(t)) = \frac{1}{\sqrt{1-k^2 t^2}},\\
+&\psi'(t) = \frac{1}{\sqrt{1-t^2}}.
+\end{align*}
+Therefore, if $\int_\gamma^\delta \frac{1}{\sqrt{1 - k^2 \sin^2 \theta}} \D \theta$ make sense,
+$$\int_{\sin \gamma}^{\sin \delta} \frac{1}{\sqrt{(1-t^2)(1-k^2t^2)}} \D t = \int_\gamma^\delta \frac{1}{\sqrt{1 - k^2 \sin^2 \theta}} \D \theta,\qquad (\gamma, \delta \in [0,\pi]).$$
+
+\bigskip
+
+Suppose now that $k = i$. Then, for all $r \in ]-1,1[$, 
+$$\int_0^r \frac{1}{\sqrt{1-t^4}} \D t = \int_0^{\mathrm{arcsin}(r)}  \frac{1}{\sqrt{1 + \sin^2 \theta}} \D \theta.$$
+Therefore, for all $r \in ]-1,1[$, and for all $s \in ]-\frac{\varpi}{2}, \frac{\varpi}{2}[$,
+\begin{align*}
+r = \varphi(s) &\iff s = \int_0^r \frac{1}{\sqrt{1-t^4}} \D t \\
+&\iff s =  \int_0^{\mathrm{arcsin}(r)}  \frac{1}{\sqrt{1 + \sin^2 \theta}} \D \theta\\
+&\iff \mathrm{arcsin}(r) = \mathrm{am}(s) \Rightarrow r = \sin \mathrm{am}(s)
+\end{align*}
+Therefore, for all $s \in ]-\frac{\varpi}{2}, \frac{\varpi}{2}[$, $\varphi(s) = \sin \mathrm{am}(s) = \mathrm{sn}(s)$, for the modulus $k = i$.
+By continuity, this is also true for $s = \pm \frac{\varpi}{2}$:
+$$\varphi(s) =  \mathrm{sn}(s), \qquad -\frac{\varpi}{2}\leq s \leq\frac{\varpi}{2}.$$
+If we know the properties of symmetry (15.9) and periodicity of $\mathrm{sn}$, we can conclude $\varphi = \mathrm{sn}$ for the modulus $k=i$.
+\end{proof}
+
 \end{document}
