@@ -52,7 +52,8 @@
 \refstepcounter{section} \refstepcounter{section}
 \refstepcounter{section} \refstepcounter{section}
 \refstepcounter{section}\refstepcounter{section}\refstepcounter{section}\refstepcounter{section}
-\refstepcounter{section}\refstepcounter{section}\refstepcounter{section}\refstepcounter{section}\refstepcounter{section}
+\refstepcounter{section}\refstepcounter{section}\refstepcounter{section}\refstepcounter{section}
+\refstepcounter{section}\refstepcounter{section}
 
 
 \begin{document}
@@ -353,7 +354,7 @@ $$g(x+y,0) = g(x,y) ,\qquad x,y \in \R.$$
 $$g(x,y) = \frac{\varphi(x) \varphi'(y) + \varphi(y) \varphi'(x)}{1 + \varphi^2(x) \varphi^2(y)}.$$
 The partial derivative of this quotient relative to the variable $x$ gives, using $\varphi''(x) = -2 \varphi^3(x)$ (see Exercise 3, part (d)), and $\varphi'(x)^2 = 1 -\varphi^4(x)$
 \begin{align*}
-&\left(1 + \varphi^2(x)\varphi^2(y)\right) \frac{\partial g}{\partial x} (x,y) \\
+&\left(1 + \varphi^2(x)\varphi^2(y)\right)^2 \frac{\partial g}{\partial x} (x,y) \\
 &= \left(\varphi'(x) \varphi'(y) + \varphi(y) \varphi''(x)\right)\left(1+ \varphi^2(x)\varphi^2(y)\right) - 2 \varphi(x) \varphi'(x) \varphi^2(y) \left(\varphi(x) \varphi'(y)+ \varphi(y)\varphi'(x)\right)\\
 &= \left(\varphi'(x) \varphi'(y) -2 \varphi(y)\varphi^3(x)\right)\left(1+ \varphi^2(x)\varphi^2(y)\right) - 2 \varphi(x) \varphi'(x) \varphi^2(y) \left(\varphi(x) \varphi'(y)+ \varphi(y)\varphi'(x)\right)\\
 &=\varphi'(x) \varphi'(y) + \varphi'(x) \varphi'(y) \varphi^2(x) \varphi^2(y) - 2 \varphi(y) \varphi^3(x) - 2 \varphi^3(y)\varphi^5(x)\\
@@ -363,7 +364,7 @@ The partial derivative of this quotient relative to the variable $x$ gives, usin
 &=\varphi'(x) \varphi'(y) + \varphi'(x) \varphi'(y) \varphi^2(x) \varphi^2(y) - 2 \varphi(y) \varphi^3(x) -2\varphi(x) \varphi^3(y)\\
 &  \qquad - 2 \varphi^2(x) \varphi^2(y) \varphi'(x)\varphi'(y).
 \end{align*}
-This last expression is symmetric relatively to $x,y$, and also the denominator $1 + \varphi^2(x)\varphi^2(y)$.  Since $g(x,y) = g(y,x) =  \frac{\varphi(y) \varphi'(x) + \varphi(x) \varphi'(y)}{1 + \varphi^2(y) \varphi^2(x)}$, this proves that 
+This last expression is symmetric relatively to $x,y$, and also the denominator $(1 + \varphi^2(x)\varphi^2(y))^2$.  Since $g(x,y) = g(y,x) =  \frac{\varphi(y) \varphi'(x) + \varphi(x) \varphi'(y)}{1 + \varphi^2(y) \varphi^2(x)}$, this proves that 
 \begin{align*}
 &\left(1 + \varphi^2(y)\varphi^2(x)\right) \frac{\partial g}{\partial y} (x,y)\\
 &=\varphi'(y) \varphi'(x) + \varphi'(y) \varphi'(x) \varphi^2(y) \varphi^2(x) - 2 \varphi(x) \varphi^3(y) -2\varphi(y) \varphi^3(x)- 2 \varphi^2(y) \varphi^2(x) \varphi'(y)\varphi'(x)\\
@@ -698,6 +699,125 @@ Therefore, for all $s \in ]-\frac{\varpi}{2}, \frac{\varpi}{2}[$, $\varphi(s) = 
 By continuity, this is also true for $s = \pm \frac{\varpi}{2}$:
 $$\varphi(s) =  \mathrm{sn}(s), \qquad -\frac{\varpi}{2}\leq s \leq\frac{\varpi}{2}.$$
 If we know the properties of symmetry (15.9) and periodicity of $\mathrm{sn}$, we can conclude $\varphi = \mathrm{sn}$ for the modulus $k=i$.
+\end{proof}
+
+\subsection{THE COMPLEX LEMNISCATIC FUNCTION}
+
+\paragraph{Ex. 15.3.1}{\it Suppose that $g(z)$ is an analytic function satisfying $g(iz) = i g(z)$. Prove that $g'(iz) = g'(z)$.
+}
+
+\begin{proof} 
+By the Chain Rule, $g(iz) = i g(z)$ implies $ig'(iz) = ig'(z)$, thus $g'(iz) = g'(z)$.
+\end{proof}
+
+\paragraph{Ex. 15.3.2}{\it This exercise is concerned with the proof of Proposition 15.3.1.
+\be
+\item[(a)] Prove that $\varphi(x+iy)$, as defined by (15.22), satisfies the Cauchy-Riemann equations.
+\item[(b)] Prove (15.23), (15.24), (15.25) and (15.26).
+\ee
+}
+
+\begin{proof} 
+\item[(a)] By the definition of $\varphi$ on $\Omega = \{z \in \C \mid z \ne (m+in)\frac{\varpi}{2}, m\equiv n \equiv 1 \pmod 2\}$, for all $z = x+iy \in \Omega$,
+$$\varphi(x+iy) = \frac{\varphi(x) \varphi'(y) + i \varphi(y) \varphi'(x)}{1 - \varphi^2(x) \varphi^2(y)}=u(x,y) + i v(x,y) ,$$
+where
+$$u(x,y) = \frac{\varphi(x) \varphi'(y)}{1 - \varphi^2(x) \varphi^2(y)},\qquad v(x,y) =  \frac{\varphi(y) \varphi'(x)}{1 - \varphi^2(x) \varphi^2(y)} (= u(y,x)).$$
+If we write $d = 1 - \varphi^2(x) \varphi^2(y)$ the denominator, then $d \ne 0$ on $\Omega$. 
+
+Using $\varphi''(x) = -2 \varphi^3(x)$ (see Exercise 15.2.3),  and $\varphi'^2(x) = 1 - \varphi^4(x)$, we obtain
+\begin{align*}
+d^2\cdot  \frac{\partial u}{\partial x}(x,y) &= \varphi'(x) \varphi'(y) \left(1 - \varphi^2(x) \varphi^2(y)\right) + 2 \varphi'(x) \varphi'(y) \varphi^2(x) \varphi^2(y)\\
+&= \varphi'(x) \varphi'(y) \left( 1 + \varphi^2(x) \varphi^2(y)\right),\\
+d^2\cdot  \frac{\partial u}{\partial y}(x,y) &= \varphi(x) \varphi''(y)\left (1 - \varphi^2(x) \varphi^2(y) \right) + 2 \varphi^3(x) \varphi(y) \varphi'(y)^2\\
+&=-2\varphi(x) \varphi^3(y)\left (1 - \varphi^2(x) \varphi^2(y) \right) +2 \varphi^3(x) \varphi(y)\left(1 - \varphi^4(y)\right)  \\
+&=  -2\varphi(x) \varphi^3(y) + 2 \varphi^3(x) \varphi^5(y) + 2 \varphi^3(x) \varphi(y) - 2 \varphi^3(x) \varphi^5(y)\\
+&=  2 \varphi(x) \varphi(y) (\varphi^2(x) - \varphi^2(y)),\\
+\end{align*}
+and, using $v(x,y) = u(y,x)$,
+\begin{align*}
+d^2\cdot  \frac{\partial v}{\partial x}(x,y)  &= 2 \varphi(y) \varphi(x) (\varphi^2(y) - \varphi^2(x))\\
+d^2\cdot  \frac{\partial v}{\partial y}(x,y)  &= \varphi'(y) \varphi'(x) \left( 1 + \varphi^2(y) \varphi^2(x)\right).
+\end{align*}
+Therefore, using $d\ne 0$ on $\Omega$,
+$$ \frac{\partial u}{\partial x} =  \frac{\partial v}{\partial y},\qquad  \frac{\partial u}{\partial y} = -  \frac{\partial v}{\partial x},$$
+so that $\varphi$ satisfies the Cauchy-Riemann equations on $\Omega$. Thus $\varphi$ is analytic on $\Omega$.
+
+\item[(b)] For $s \in [0 , \frac{\varpi}{2}]$, and $r\in [0,1]$,
+$$r = \varphi(s) \iff s = \int_0^r  \frac{1}{\sqrt{1 - t^4}} \D t.$$
+Since $0 = \int_0^r  \frac{1}{\sqrt{1 - t^4}} \D t$, $\varphi(0) = 0$, and since $\frac{\varpi}{2} = \int_0^1\frac{1}{\sqrt{1 - t^4}} \D t$, $\varphi\left( \frac{\varpi}{2}\right) = 1$. Using $\phi'(x) = \sqrt{1 - \varphi^4(x)}$ for $0 \leq x \leq \frac{\varpi}{2}$ (see Section 15.2), we obtain $\varphi'(0) = 1, \varphi'\left (\frac{\varpi}{2}\right) = 0$. 
+
+By (15.9), for all real $s$, $\varphi(\varpi - s) = \varphi(s)$, which gives $- \varphi'(\varpi - s) = \varphi'(s)$,  thus $\varphi(\varpi) = 0$, and $\varphi'(\varpi) = -\varphi'(0) = -1$.
+
+Moreover $\varphi$ is odd, thus $\varphi\left( - \frac{\varpi}{2}\right) = -1, \varphi'\left(\frac{\varpi}{2}\right) = 0$. Since $\varphi$ has period $2 \varpi$,
+$\varphi \left( \frac{3 \varpi}{2}\right) = -1, \varphi'\left(\frac{3\varpi}{2}\right) = 0$.
+
+We have proved (15.23):
+$$
+\begin{array}{c|c|c}
+x & \varphi(x) & \varphi'(x)\\
+\hline
+\frac{\varpi}{2}  & 1 & 0\\
+\varpi & 0 & -1\\
+\frac{3\varpi}{2} & - 1 & 0\\
+0 & 0 & 1
+\end{array}
+$$
+
+By definition of $\varphi$ on $\Omega \subset \C$, for all $z = x + iy \in \Omega$,
+$$\varphi(x+iy) = \frac{\varphi(x) \varphi'(y) + i \varphi(y) \varphi'(x)}{1 - \varphi^2(x) \varphi^2(y)}.$$
+Therefore, since $\varphi$ is odd and $\varphi'$ is even,
+\begin{align*}
+\varphi(iz) &= \varphi(-y + ix)\\
+& = \frac{\varphi(-y) \varphi'(x) + i \varphi(x) \varphi'(-y)}{1 - \varphi^2(-y) \varphi^2(x)}\\
+&=   \frac{-\varphi(y) \varphi'(x) + i \varphi(x) \varphi'(y)}{1 - \varphi^2(x) \varphi^2(y)}\\
+&= i \frac{\varphi(x) \varphi'(y) + i \varphi(y) \varphi'(x)}{1 - \varphi^2(x) \varphi^2(y)}\\
+&= i \varphi(z).
+\end{align*}
+Using the Chain Rule (see Exercise 1), $i \varphi'(iz) = i \varphi'(z)$, thus $\varphi'(iz) = \varphi'(z)$, for all $z \in \Omega$. This proves (15.24):
+\begin{align*}
+\varphi(iz) &= i \varphi(z),\\
+\varphi'(iz) &= \varphi'(z)\qquad (z \in \Omega).
+\end{align*}
+
+Since $\varphi$ and $\varphi'$ have period $2 \omega$ on $\R$,if $k \in \Z$, $\varphi(2k \varpi) = \varphi(0) = 0$, and $\varphi((2k + 1)\varpi) = \varphi(\varpi) = 0$. Similarly, $\varphi'(2k \varpi) = \varphi(0) = 1, \varphi'((2k+1) \varpi) = \varphi'(\varpi) = -1$. Using (15.24), $\varphi(m\varpi i) = i \varphi(m \varpi), \varphi'(m \varpi i) = \varphi'(m\ \varpi)$.This shows (15.25):
+\begin{align*}
+\varphi(m \varpi) &=\varphi( m \varpi i) =  0,\\
+\varphi'(m \varpi) &= \varphi'(m \varpi i) =  (-1)^m \qquad (m \in \Z).
+\end{align*}
+
+Using the Addition Law, for all $z \in \Omega$ (then $ z + m\varpi + n \varpi i \in \Omega$ for $m,n \in \Z$),
+\begin{align*}
+\varphi(z + m \varpi) &= \frac{\varphi(z) \varphi'(m\varpi) + \varphi(m \varpi) \varphi'(z)}{1 + \varphi^2(z) \varphi^2(m \varpi)}\\
+&=(-1)^m \varphi(z),\\
+\varphi(z + n \varpi i) &= \frac{\varphi(z) \varphi'(n\varpi i) + \varphi(n \varpi i) \varphi'(z)}{1 + \varphi^2(z) \varphi^2(n \varpi) i}\\
+&=(-1)^n \varphi(z),
+\end{align*}
+This proves (15.26), and
+$$\varphi(z + m \varpi + n \varpi i) =  (-1)^{m+n} \varphi(z)\qquad (z \in \Omega).$$
+\end{proof}
+
+\paragraph{Ex. 15.3.3}{\it Prove the formula for $\varphi\left(z \pm \frac{\varpi}{2} i\right)$ stated in the proof of Theorem 15.3.2. 
+}
+
+\begin{proof} 
+By (15.24) and (15.23), 
+$$\varphi\left(\frac{\varpi}{2}i\right) = i \varphi\left(\frac{\varpi}{2}\right) = i, \qquad \varphi'\left(\frac{\varpi}{2}i\right) = \varphi'\left(\frac{\varpi}{2}\right) = 0,$$
+and
+$$\varphi\left(-\frac{\varpi}{2}i\right) = i\varphi\left(-\frac{\varpi}{2}\right) = -i,\qquad  \varphi'\left(-\frac{\varpi}{2}i\right) = \varphi'\left(-\frac{\varpi}{2}\right) = 0.$$
+Using the addition law (Proposition 15.3.1(b)), we see that
+\begin{align*}
+\varphi\left( z + \frac{\varpi}{2}i \right) &= 
+\frac{\varphi(z) \varphi'\left( \frac{\varpi}{2}i\right) + \varphi\left(\frac{\varpi}{2}i\right) \varphi'(z)}{1 + \varphi^2(z) \varphi^2\left(\frac{\varpi}{2}i\right)}\\
+&= \frac{i \varphi'(z)}{1 - \varphi^2(z)},
+\end{align*}
+and similarly, 
+\begin{align*}
+\varphi\left( z -\frac{\varpi}{2}i \right) &= 
+\frac{\varphi(z) \varphi'\left( -\frac{\varpi}{2}i\right) + \varphi\left(-\frac{\varpi}{2}i\right) \varphi'(z)}{1 + \varphi^2(z) \varphi^2\left(-\frac{\varpi}{2}i\right)}\\
+&= \frac{-i \varphi'(z)}{1 - \varphi^2(z)}.
+\end{align*}
+We have proved
+$$\varphi\left( z \pm \frac{\varpi}{2}i \right) = \pm  \frac{i \varphi'(z)}{1 - \varphi^2(z)}.$$
 \end{proof}
 
 \end{document}
