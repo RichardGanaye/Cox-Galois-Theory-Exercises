@@ -820,4 +820,161 @@ We have proved
 $$\varphi\left( z \pm \frac{\varpi}{2}i \right) = \pm  \frac{i \varphi'(z)}{1 - \varphi^2(z)}.$$
 \end{proof}
 
+\paragraph{Ex. 15.3.4}{\it Prove that $\varphi'(z)$ vanishes at all points of form $(m+in)\frac{\varpi}{2}$, $m+n$ odd.
+}
+
+\begin{proof} 
+Note that, since $\varphi(z + k \varpi + l \varpi i) = (-1)^{k+l}\varphi(z)$, we obtain by differentiation
+$$\varphi'(z + k \varpi + l \varpi i) = (-1)^{k+l}\varphi'(z), \qquad (z \in \Omega, \ k,l \in \Z).$$
+Suppose that $m+n$ is odd, where $m,n \in \Z$. 
+\item[$\bullet$] If $m$ is odd, and $n$ even, then $m = 2k+1, n = 2l$, where $k,l$ are integers. Then
+\begin{align*}
+\varphi'\left(( m +in)\frac{\varpi}{2}\right) &=  \varphi'\left( \frac{\varpi}{2} + k \varpi + l \varpi \right)\\
+&= (-1)^{k+l} \varphi'\left( \frac{\varpi}{2}\right) = 0.
+\end{align*}
+\item[$\bullet$] If $m$ is even , and $n$ odd, then $m = 2k, n = 2l + 1$, where $k,l$ are integers. Then, using (15.24),
+\begin{align*}
+\varphi'\left(( m +in)\frac{\varpi}{2}\right) &=  \varphi'\left( \frac{\varpi}{2}i + k \varpi + l \varpi \right)\\
+&= (-1)^{k+l} \varphi'\left( \frac{\varpi}{2}i\right) \\
+&= (-1)^{k+l} \varphi'\left( \frac{\varpi}{2}\right) = 0.
+\end{align*}
+Thus  $\varphi'(z)$ vanishes at all points of form $(m+in)\frac{\varpi}{2}$, $m+n$ odd.
+
+\bigskip
+
+But are these points the only zeros of $\varphi'(z)$ ? In Exercise 6, we need also the converse, which will prove now.
+
+Suppose that $\varphi'(z) = 0$. As in the proof of Theorem 15.3.2, for all $z \in \Omega$ such that $\varphi(z) \ne \pm i$,
+$$\varphi \left(z + \frac{\varpi}{2} \right) = \frac{\varphi(z) \varphi'\left(\frac{\varpi}{2}\right) + \varphi\left(\frac{\varpi}{2}\right) \varphi'(z)}{1 + \varphi^2(z) \varphi^2\left(\frac{\varpi}{2}\right)}=\frac{\varphi'(z)}{1 + \varphi^2(z)},$$
+thus
+$$\varphi'(z) = (1 + \varphi^2(z)) \varphi \left(z + \frac{\varpi}{2} \right).$$
+By the Principle of Analytic Continuation (see Exercise 5), since both members are analytic, this formula, which is true for all $z \in \R$, is true for all $z \in \Omega$ such that $z+ \frac{\varpi}{2}$ is not a pole of $\varphi$.
+
+Therefore, for all $z\in \omega$
+$$\varphi'(z) = 0 \Rightarrow \varphi \left(z + \frac{\varpi}{2} \right) = 0, \text { or } \varphi(z) = \pm i,  \text { or } z + \frac{\varpi}{2} \text{ is a pole}.$$
+
+$\bullet$ If $\varphi \left(z + \frac{\varpi}{2} \right) = 0$, by Proposition 15.3.2,
+$$z + \frac{\varpi}{2}  = (p+iq)\varpi,\qquad p,q\in \Z,$$
+thus $z = (2p-1 + i 2q)\frac{\varpi}{2} = (m +in)\frac{\varpi}{2}$, where $m = 2p-1, n = 2q$, and $m+n$ is odd.
+
+$\bullet$ If $\varphi(z) = -i$, then $\varphi(iz) = 1  = \varphi\left(\frac{\varpi}{2}\right) $, thus, using $\varphi'(iz) = \varphi'(z)$, and the addition formula,
+$$\varphi\left( iz - \frac{\varpi}{2} \right)= \frac{\varphi(iz) \varphi'\left(\frac{\varpi}{2}\right) - \varphi\left(\frac{\varpi}{2}\right) \varphi'(iz)}{1 + \varphi^2(iz) \varphi^2\left(\frac{\varpi}{2}\right)} = -\frac{\varphi'(iz)}{2} = - \frac{\varphi'(z)}{2} = 0.$$
+Therefore, by Proposition 15.3.2(a),
+$$iz - \frac{\varpi}{2}  = (p+iq)\varpi,\qquad p,q\in \Z,$$
+thus, multiplying by $-i$,
+$$ z + i \frac{\varpi}{2}  = (-ip +q) \varpi,$$
+and
+$$z = \left[2q + (-2p-1)i\right] \frac{\varpi}{2}  = (m+ni)  \frac{\varpi}{2}, \text{where } m = 2q,n=-2p-1 \in \Z,\ m+n \text{ odd}.$$
+
+$\bullet$ If $\varphi(z) = i$, then $\varphi(iz) = -1 =\varphi\left(-\frac{\varpi}{2}\right)$, thus
+$$\varphi\left( iz + \frac{\varpi}{2} \right)= \frac{\varphi(iz) \varphi'\left(\frac{\varpi}{2}\right) +\varphi\left(\frac{\varpi}{2}\right) \varphi'(iz)}{1 + \varphi^2(iz) \varphi^2\left(\frac{\varpi}{2}\right)} = \frac{\varphi'(iz)}{2} =  \frac{\varphi'(z)}{2} = 0.$$
+Therefore
+$$ iz + \frac{\varpi}{2} = (p+iq)\varpi,\qquad p,q\in \Z,$$
+thus
+$$z = i\frac{\varpi}{2} +(-ip +q)\varpi,$$
+and
+$$z = \left[2q + (-2p+1)i\right] \frac{\varpi}{2}  = (m+ni)  \frac{\varpi}{2}, \text{where } m = 2q,n=-2p+1 \in \Z,\ m+n \text{ odd}.$$
+
+$\bullet$ If $z + \frac{\varpi}{2}$ is a pole of $\varphi$, then
+$$z + \frac{\varpi}{2} = (p + iq) \frac{\varpi}{2}, \qquad p\equiv q \equiv 1 \pmod 2,$$
+thus
+\begin{align*}
+z&=(p-1 + i q)\frac{\varpi}{2}\\
+&= (m + in) \frac{\varpi}{2},\qquad \text{where } m = p-1,n=q,\text {and } m+n = p+q-1 \equiv 1 \pmod 2.
+\end{align*}
+(This case gives the same solutions that $\varphi(z) = i$, so that these two cases are equivalent.)
+
+In all cases, $z = (m+ni)  \frac{\varpi}{2}$, where $m+n$ is odd, thus all zeros of $\varphi'$ are our known zeros.
+\end{proof}
+
+
+\paragraph{Ex. 15.3.5}{\it A useful observation is that an identity for $\varphi$ proved over $\R$ automatically becomes an identity over $\C$.
+\be
+\item[(a)] Prove this carefully, using results from complex analysis such as [13,6.1.1]
+\item[(b)] Explain why $\varphi'^2(z) = 1 - \varphi^4(z)$ holds for all $z \in \Omega$.
+\ee
+}
+
+\begin{proof} 
+\item[(a)] We recall the Principle of Analytic Continuation (or Identity Theorem), given in [13,6.1.1] in some larger context:
+
+{\it
+`` Let $f,g$ be analytic in a region (connected open set) $\Omega \subset \C$. Suppose that there is some $a \in \Omega$, and a sequence $(z_n)_{n\in \N} \in (\Omega \setminus\{a\})^{\N}$ of  points of $\Omega$ distinct of $a$ converging to $a \in \Omega$, such that $f(z_n) = g(z_n)$ for all $n \in \N = \{0,1,2,\cdots\}$. Then $f(z) = g(z)$ for all $z \in \Omega$.''}
+
+Here $\Omega = \{z \in \C \mid z \ne (m+in)\frac{\varpi}{2}, m\equiv n \equiv 1 \pmod 2\}$. Then $\Omega \supset \R$ is open, and path-connected, thus is connected. Suppose that $f,g$ are analytic on $\Omega$, and $f(x) = g(x)$ for all $x \in \R$. Since any point $a$ of $\R$ is a limit of some sequence $(z_n)_{n \in \N} \in \R^\N$ (for instance $z_n = a + \frac{1}{n+1}, \ n \in \N = \{ 0,1,2,\cdots\}$), where $z_n \ne a$ for all $n \in \N$. Since $z_n \in \R$ for all $n$, $f(z_n) = g(z_n)$. The Principle of Analytic Continuation shows that $f(z) = g(z)$ for all $z \in \Omega$.
+
+\item[(b)] If we define $f,g : \Omega \to \C$ by $f(z) = \varphi'^2(z), g(z) = 1 - \varphi^4(z)$ for all $z \in \Omega$, then $f,g$ are analytic and $f(x) = g(x) $ for all $x \in \R$ by Section 15.2. Then part (b) shows that $f(z) = g(z)$ for all $z \in \Omega$, thus
+$$\varphi'^2(z) = 1 - \varphi^4(z),\qquad z \in \Omega.$$
+\end{proof} 
+
+\paragraph{Ex. 15.3.6}{\it By Theorem 15.3.3, $\varphi(z) = \varphi(z_0)$ if and only if $z = (-1)^{m+n} z_0 + (m + in) \varpi$. Following Abel, prove this using (15.13).
+}
+
+\begin{proof}
+If $z = (-1)^{m+n} z_0 + (m + in) \varpi$, then the periodicity and odd parity of $\varphi$ shows that
+$$\varphi(z) = \varphi\left((-1)^{m+n} z_0 + (m + in)\varpi\right) = (-1)^{m+n} \varphi\left((-1)^{m+n} z_0\right) = \varphi(z_0).$$
+Conversely, suppose that $\varphi(z) = \varphi(z_0)$ (where $z,z_0$ are not poles of $\varphi$). By Proposition 13.3.1, the addition law gives, for all $x,y \in \C$ such that both members are defined,
+$$\varphi(x+y) = \frac{\varphi(x) \varphi'(y) +  \varphi'(x)\varphi(y)}{1+ \varphi^2(x) \varphi^2(y)}, \qquad \varphi(x-y) = \frac{\varphi(x) \varphi'(y) -  \varphi'(x)\varphi(y)}{1+ \varphi^2(x) \varphi^2(y)},$$
+thus, by subtraction,
+$$\varphi(x+y)- \varphi(x-y) = \frac{ \varphi'(x) \varphi(y)}{1+ \varphi^2(x) \varphi^2(y)}.$$
+Take $x = \frac{z+z_0}{2}, y = \frac{z-z_0}{2}$ in this formula. We obtain
+$$\varphi(z)- \varphi(z_0) = \frac{\varphi'\left( \frac{z+z_0}{2}\right) \varphi\left(\frac{z-z_0}{2}\right) }{1+ \varphi^2\left( \frac{z+z_0}{2}\right) \varphi^2\left(\frac{z-z_0}{2}\right)}.$$
+(This formula is analogous to the trigonometric formula $\sin p - \sin q = 2 \cos \frac{p+q}{2} \sin \frac{p-q}{2}$.)
+Therefore,
+$$(\varphi(z)- \varphi(z_0))\left(1+ \varphi^2\left( \frac{z+z_0}{2}\right) \varphi^2\left(\frac{z-z_0}{2}\right)\right)= \varphi'\left( \frac{z+z_0}{2}\right) \varphi\left(\frac{z-z_0}{2}\right) .$$
+By the Principle of Analytic Continuation (as in the proof of Proposition 15.3.1), this formula is true for all $z$ such that both members are defined, including the points such that $1+\varphi^2\left( \frac{z+z_0}{2}\right) = 0$. In others words, this is true for all $z \in \Omega$ such that $\frac{z-z_0}{2}, \frac{z+z_0}{2}$ are not poles of $\varphi$.
+
+Thus $\varphi(z) = \varphi(z_0)$ implies that 
+$$ \varphi\left(\frac{z-z_0}{2}\right)=0, \text{ or } \varphi'\left( \frac{z+z_0}{2}\right) = 0, \text{ or } \frac{z-z_0}{2} \not \in \Omega,  \text{ or }  \frac{z+z_0}{2} \not \in \Omega.$$
+\be 
+\item[$\bullet$] Suppose that $\varphi\left(\frac{z-z_0}{2}\right)=0$. 
+ 
+ By Proposition 15.3.2, the zeros of $\varphi$ are $z = (p+iq)\varpi, \ p,q \in \Z$, thus
+\begin{align*}
+ \varphi\left(\frac{z-z_0}{2}\right)=0 & \iff \frac{z-z_0}{2} = (p+qi)\varpi,\qquad p,q \in \Z\\
+ &\iff z = z_0 + 2p\varpi+ 2q \varpi i,\qquad p,q \in \Z.\\
+  \end{align*}
+ This shows that
+ $$ z = (-1)^{m+n} z_0 + (m + in)\varpi, \qquad \text{where } m = 2p, n = 2q \in \Z.$$
+
+\item[$\bullet$]  Suppose that $\varphi'\left( \frac{z+z_0}{2}\right) = 0$.
+ 
+ By Exercise 4, we know that the points $(m+in)\frac{\varpi}{2}$, $m+n$ odd, are zeros of $\varphi'$, and we showed that they are the only zeros of $\varphi'$ (without using Theorem 15.3.3).
+Therefore,
+\begin{align*}
+\varphi'\left( \frac{z+z_0}{2}\right) = 0  \iff &\frac{z+z_0}{2} = (m+in)\frac{\varpi}{2},\ m+n \equiv 1 \pmod 2\\
+\iff &z = -z_0 + (m+in)\varpi,\ m+n \equiv 1 \pmod 2\\
+\end{align*}
+This shows that
+$$  z = (-1)^{m+n} z_0 + (m+in) \varpi, \qquad m,n \in \Z.$$
+
+
+
+\item[$\bullet$]  Suppose that $\frac{z - z_0}{2} \not \in \Omega$. Then $\frac{z - z_0}{2}$ is a pole. By Theorem 15.3.2,
+$$\frac{z - z_0}{2} =  (m+in) \frac{\varpi}{2}, \qquad m \equiv n \equiv 1 \pmod 2,$$
+thus
+$$z = z_0 + (m+in) \varpi,\qquad m\equiv n \equiv 1 \pmod 2,$$
+so that
+$$z = (-1)^{m+n}z_0 + (m+in)\varpi.$$
+
+\item[$\bullet$]  Suppose at last that $\frac{z + z_0}{2} \not \in \Omega$ (this case is more tricky). Then 
+$$\frac{z + z_0}{2} =  (m+in) \frac{\varpi}{2}, \qquad m \equiv n \equiv 1 \pmod 2,$$
+thus
+$$z = - z_0 + (m+in) \varpi,\qquad m\equiv n \equiv 1 \pmod 2,$$
+where the sign $(-1)$ before $z_0$ is not equal to $(-1)^{m+n}$ !?!
+
+But fortunately,  in this case, by Proposition 15.3.1,
+$$\varphi(z) = \varphi(-z_0 + (m+in)\varpi) = (-1)^{m+n} \varphi(-z_0) = \varphi(-z_0) = - \varphi(z_0).$$
+Since by hypothesis $\varphi(z) = \varphi(z_0)$, we obtain $\varphi(z_0) = -\varphi(z_0)$, thus $\varphi(z_0) = 0$, and $\varphi(z) = \varphi(z_0)$ is equivalent to $\varphi(z) = 0$.
+
+By Proposition 15.3.2, $z_0 = (p + iq) \varpi, z = (r+is) \varpi$, where $p,q,r,s$ are integers. Thus
+$$z = z_0 + (r-p + i(s -q))\varpi =z_0 + (m'+in')\varpi,\ \text{where } m'= r-p, n' = s-q \in \Z,$$
+and
+$$z = -z_0 + (r+p + i (s+q)\varpi = -z_0 + (m''+in''),\ \text{where } m'' = r+p, n '' = s+q \in \Z.$$
+Note that $m'+n' \equiv m''+n'' \pmod 2$. If $m'+n'$ is even then $z = (-1)^{m'+n'}z_0 + (m'+in')\varpi$, and if $m'+n'$ is odd, then $z = (-1)^{m''+n''}z_0 + (m''+in'')\varpi.$
+\ee
+
+In all cases $z = (-1)^{m+n} z_0 + (m+in)\varpi$, for some $m,n \in \Z$.
+\end{proof} 
+
 \end{document}
