@@ -977,4 +977,252 @@ Note that $m'+n' \equiv m''+n'' \pmod 2$. If $m'+n'$ is even then $z = (-1)^{m'+
 In all cases $z = (-1)^{m+n} z_0 + (m+in)\varpi$, for some $m,n \in \Z$.
 \end{proof} 
 
+\subsection{COMPLEX MULTIPLICATION}
+
+\paragraph{Ex. 15.4.1}{\it Prove (15.36).
+\begin{align*}
+\varphi\left((1+i)z\right) &= \frac{(1+i) \varphi(z) \varphi'(z)}{1 - \varphi^4(z)},\\
+\varphi\left((1-i)z\right) &= \frac{(1-i) \varphi(z) \varphi'(z)}{1 - \varphi^4(z)}.
+\end{align*}
+}
+
+\begin{proof} Using the addition law together with (15.24):
+$$\varphi(iz) = i \varphi(z), \qquad \varphi'(iz) = \varphi'(z),$$
+ we obtain
+\begin{align*}
+\varphi((1+i)z) &= \varphi(z+iz)\\
+&=\frac{\varphi(z) \varphi'(iz) + \varphi'(z) \varphi(iz)}{1 + \varphi^2(z) \varphi^2(iz)}\\
+&=\frac{\varphi(z) \varphi'(z) + i\varphi'(z) \varphi(z)}{1 - \varphi^4(z)}\\
+&=\frac{(1+i) \varphi(z) \varphi'(z)}{1 - \varphi^4(z)}.
+\end{align*}
+Similarly, using $\varphi(-z) = - \varphi(z), \varphi'(-z) = \varphi'(z)$, we have
+\begin{align*}
+\varphi((1+i)z) &= \varphi(z-iz)\\
+&=\frac{\varphi(z) \varphi'(iz) - \varphi'(z) \varphi(iz)}{1 + \varphi^2(z) \varphi^2(iz)}\\
+&=\frac{\varphi(z) \varphi'(z) - i\varphi'(z) \varphi(z)}{1 - \varphi^4(z)}\\
+&=\frac{(1-i) \varphi(z) \varphi'(z)}{1 - \varphi^4(z)}.
+\end{align*}
+\end{proof} 
+
+\paragraph{Ex. 15.4.2}{\it Let $\alpha \in \Z[i]$ be nonzero. The goal of this exercise is to prove part (a) of Lemma 15.4.2, which asserts that $|\Z[i]/\alpha \Z[i]| = N(\alpha)$. The idea is to forget multiplication and think of $\Z[i]$ and $\Z[i]/\alpha \Z[i]$ as groups under addition. let $m$ be the greatest common divisor of the real and imaginary parts of $\alpha$, so that $\alpha = m(a+bi)$, where $\gcd(a,b) = 1$. Then pick $c,d \in \Z$ such that $ad-bc = 1$.
+\be
+\item[(a)] Show that the map $\Z[i] \to \Z \oplus \Z$ defined by
+$$\mu + \nu i \mapsto \mu(d,-b) + \nu (-c,a) = (\mu d - \nu c, - \mu b + \nu a)$$
+is a group isomorphism under addition.
+\item[(b)] Show that the map of part (a) takes $\alpha$ and $i\alpha$ to $(m,0)$ and $-(m(ac+bd), m(a^2+b^2))$, respectively. Then use this to show that the map takes $\alpha \Z[i] \subset \Z[i]$ to the subgroup
+$$m\Z \oplus m(a^2+b^2)\Z \subset \Z \oplus \Z.$$
+\item[(c)] Use part (b) to conclude that $|\Z[i]/\alpha \Z[i]| = N(\alpha)$.
+\ee
+
+}
+
+\begin{proof} 
+\item[(a)] Consider
+$$
+\psi 
+\left\{
+\begin{array}{ccl}
+\Z[i] &\to& \Z \oplus \Z\\
+\mu + \nu i & \mapsto & \mu(d,-b) + \nu (-c,a) = (\mu d - \nu c, - \mu b + \nu a).
+\end{array}
+\right.
+$$
+We verify that $\varphi$ is a group homomorphism: if $z = \mu + \nu i, z' = \mu' + \nu' i \in \Z[i]$, then
+\begin{align*}
+\psi(z+ z') &= \psi((\mu+\mu') + i (\nu + \nu')\\
+&= (\mu + \mu')(d,-b) + (\nu + \nu')(-c,a)\\
+&= [\mu(d,-b) + \nu (-c,a)] + [\mu'(d,-b) + \nu' (-c,a) ]\\
+&= \psi(z) + \psi(z').
+\end{align*}
+Let $(u,v)$ be any element of $\Z \oplus \Z$. For all $\mu + i \nu \in \Z[i]$, since $ad - bc = 1$,
+\begin{align*}
+(u,v) = \psi(\mu + i \nu) & \iff
+\left\{
+\begin{array}{rl}
+\mu d - \nu c &= u,\\
+-\mu b + \nu a &= v,
+\end{array}
+\right.\\
+&\phantom{\Leftarrow}\Rightarrow 
+\left\{
+\begin{array}{rl}
+\mu(ad-bc) = au + cv,\\
+\nu(ad-bc) = bu + dv,
+\end{array}
+\right.\\
+&\phantom{\Leftarrow}\Rightarrow 
+\left\{
+\begin{array}{rl}
+\mu = au + cv,\\
+\nu = bu + dv.
+\end{array}
+\right.\\
+\end{align*}
+Conversely, if $\mu = au + cv, \nu = bu + dv$, then
+$$
+\left\{
+\begin{array}{rl}
+\mu d - \nu c &= \phantom{-}(au + cv) d - (bu + dv) c= u(ad-bc) = u, \\
+-\mu b + \nu a &= -(au + cv)b + (bu+dv)a = v(ad -bc) = v.
+\end{array}
+\right.\\
+$$
+We have proved, for all $z \in \Z[i]$, for all $(u,v) \in \Z \times \Z$, that
+$$(u,v) = \psi(z) \iff z = (au +cv) + i(bu+dv)$$
+This shows that $\psi$ is bijective, and for all $(u,v) \in \Z \oplus \Z$,$$\psi^{-1}(u,v) = (au+cv) + i (bu +dv)= (a+ib) u + (c + id) v.$$
+To conclude, $\psi$ is a group isomorphism.
+
+\item[(b)] We compute the images of $\alpha$ and $i\alpha$ by the homomorphism $\psi$:
+\begin{align*}
+\psi(\alpha) &=\psi(ma + mbi)\\
+&=ma(d,-b) + mb(-c,a)\\
+&= (m(ad-bc), 0)\\
+&=(m,0),\\
+\psi(i\alpha) &= \psi(-mb, ma)\\
+&=-mb(d,-b)+ ma(-c,a)\\
+&=(-m(ac+bd), m(a^2+b^2)).
+\end{align*}
+$(\alpha, i\alpha)$ is a $\Z$-basis of $\alpha \Z[i]$, i.e. every element of $\alpha\Z[i]$ writes uniquely as a linear combination of $\alpha, i \alpha$ with integer coefficients. Moreover $\psi(\alpha) = (m,0) \in m\Z \times m(a^2+b^2)\Z$, and $\psi(i\alpha) = (-m(ac+bd), m(a^2+b^2)) \in m\Z \times (a^2+b^2)\Z = m\Z \oplus (a^2+b^2)\Z$, therefore 
+$$\psi(\alpha\Z[i]) \subset m\Z \oplus (a^2+b^2)\Z.$$
+
+Conversely, let $(u,v)$ be any element of $m\Z \times (a^2+b^2)\Z$. There are some $\lambda, \mu \in \Z$ such that
+\begin{align*}
+u &= \lambda m,\\
+v &= \mu(a^2+b^2).
+\end{align*}
+Using the formula which gives $\psi^{-1}(u,v)$ in part (a), we obtain
+\begin{align*}
+\psi^{-1}(u,v) &=(a+ib) \lambda m + (c+id)\mu(a^2+b^2)\\
+&=(a+ib) \left[ \lambda m + \mu(c+id)(a-ib)\right],\\
+\end{align*}
+thus $\psi^{-1}(u,v) \in \alpha \Z[i]$, and $(u,v) \in \psi(\alpha \Z[i])$. This proves $m\Z \oplus (a^2+b^2)\Z  \subset \psi(\alpha\Z[i])$, thus
+$$\psi(\alpha\Z[i]) = m\Z \oplus (a^2+b^2)\Z .$$
+
+\item[(c)]
+If $A,B$ are Abelian groups, and $I,J$ are subgroups of $A,B$ respectively, the surjective homomorphism
+$$
+\begin{array}{ccc}
+A \times B & \to A/I \times B/J\\
+(a,b) & \mapsto A/I \times B/J
+\end{array}
+$$
+has kernel $I \times J$, so that 
+$$(A\times B) / (I \times J) \simeq A/I \times B/J.$$
+This general property gives here
+$$(\Z \oplus\Z)/(m\Z \oplus (a^2+b^2)\Z) \simeq (\Z/m\Z) \times (\Z/(a^2+b^2)\Z.$$
+Since the isomorphism $\psi$ maps $\Z[i]$ on $\Z \oplus\Z$, and $\alpha \Z[i]$ on $m\Z \oplus (a^2+b^2)\Z$, this implies
+$$\Z[i]/\alpha \Z[i] \simeq (\Z \oplus\Z)/(m\Z \oplus (a^2+b^2)\Z) \simeq \Z/m\Z \times \Z/(a^2+b^2)\Z.$$
+Therefore
+$$|\Z[i]/\alpha \Z[i] | = |\Z/m\Z|  \cdot |\Z/(a^2+b^2)\Z| = m(a^2+b^2) = N(\alpha).$$
+\end{proof}
+
+\paragraph{Ex. 15.4.3}{\it Prove part (b) of Lemma 15.4.2.
+
+}
+
+\begin{proof} 
+We prove that, assuming $\alpha$ is a prime in $\Z[i]$, that $\Z/\alpha\Z[i]$ is a field.
+
+Since  $\Z/\alpha\Z[i]$ is a ring, it is sufficient to prove that any nonzero $\overline{\beta} = \beta + \alpha \Z[i]$ has an inverse.
+
+$\overline{\beta} \ne \overline{0}$ is equivalent to $\beta \not \in \alpha \Z[i]$, so that $\alpha$ doesn't divide $\beta$ in $\Z[i]$. 
+
+Since $\alpha$ is a prime in the principal ideal domain $\Z[i]$, $\alpha$ is relatively prime to $\beta$: if $\gamma$ divides $\alpha$ and $\beta$, then $\gamma$ is associate to $1$ or $\alpha$, but if $\gamma$ is associate to $\alpha$, then $\alpha$ divides $\beta$, and this contradicts the hypothesis, therefore $\gamma$ is associate to $1$. This proves that $\alpha$ is relatively prime to $\beta$.
+
+Since $\Z[i]$ is a PID, this shows that there are some $\lambda, \mu \in \Z[i]$ such that
+$$1 = \lambda \beta + \mu \alpha,$$
+thus, using $\overline{\alpha} = \alpha + \alpha \Z[I] = \alpha \Z[i] = \overline{0}$,
+$$\overline{1} = \overline{\lambda}\, \overline{\beta} + \overline{\mu}\, \overline{\alpha} = \overline{\lambda}\, \overline{\beta}.$$
+This proves that $\overline{\beta} = \beta + \alpha \Z[i]$ has inverse $ \overline{\lambda} = \lambda + \alpha \Z[i]$ in $\Z[i]/\alpha\Z[i]$.
+
+If $\alpha$ is a prime in $\Z[i]$, then $\Z/\alpha\Z[i]$ is a field.
+
+Moreover, by Exercise 2,  $|\Z/\alpha\Z[i]| = N(\alpha)$, so that
+$$\Z[i]/\alpha\Z[i] \simeq \F_{N(\alpha)}.$$
+\end{proof} 
+
+\paragraph{Ex. 15.4.4}{\it Prove (15.38).
+\be
+\item[(a)] $\alpha \beta$  is odd  $\iff \alpha$ and $\beta$ are odd.
+\item[(b)] $\alpha + \beta$ is even $\iff$ $\alpha,\beta$ are both even or both odd.
+\item[(c)] $\alpha$ is even $\iff$ $1+i$ divides $\alpha$.
+\ee
+}
+
+\begin{proof} 
+We say that a Gaussian integer $a+bi \in \Z[i]$ is {\it odd} if $a+b$ is odd ($b \equiv a+1 \pmod 2$ )and {\it even} if $a+b$ is even ($b\equiv a \pmod 2$).
+
+
+\item[(a)] If $\alpha = a+bi$ and $\beta = c+di$ are odd, then $b \equiv a+1, d \equiv c+1 \pmod 2$, and $\alpha \beta = (a+bi)(c+di) = ac -bd + i (bc+ad) = A + Bi$, where
+\begin{align*}
+A + B &= ac - bd +bc +ad\\
+& \equiv ac - (a+1)(c+1) + (a+1)c +a(c+1)\\ 
+&\equiv  1 \pmod 2,\\
+\end{align*}
+thus $\alpha \beta$ is odd.
+
+If $\alpha$ is even, then $b\equiv a \pmod 2$, thus
+\begin{align*}
+A+B &= ac - bd +bc +ad\\
+&\equiv ac -a (c+1) + ac + a(c+1)\\
+&\equiv 0 \pmod 2,
+\end{align*}
+thus $\alpha \beta$ is even, and symmetrically the same is true if $\beta$ is even.
+
+This proves
+\begin{center}
+$\alpha \beta$  is odd  $\iff \alpha$ and $\beta$ are odd.
+\end{center}
+\item[(b)] Now $\alpha + \beta = (a+c) + (b+d)i = C + Di$. 
+If $\alpha, \beta$ are both even, then
+\begin{align*}
+C + D &= a + c + b + d\\
+&\equiv a + c + a + c \equiv 0 \pmod 2.
+\end{align*}
+If $\alpha + \beta$ are both odd, then
+\begin{align*}
+C + D &= a + c + b + d\\
+&\equiv a + c + a + 1  + c+ 1 \equiv 0 \pmod 2.
+\end{align*}
+If $\alpha$ is odd, and $\beta$ is even, or symmetrically, if $\alpha$ is even and $\beta$ odd,
+\begin{align*}
+C + D &= a + c + b + d\\
+&\equiv a + c + a + c + 1 \equiv 0 \pmod 2.
+\end{align*}
+This proves the equivalence
+\begin{center}
+$\alpha + \beta$ is even $\iff$ $\alpha,\beta$ are both even or both odd.
+\end{center}
+
+\item[(c)] If $\alpha$ is even, then $b \equiv a \pmod 2$, and $1 +i \mid 2 = (1+i)(1-i)$, therefore $b \equiv a \pmod {1+i}$, thus
+$$\alpha = a + ib \equiv (1+i)a \equiv 0 \pmod {1+i},$$
+thus $1+i \mid \alpha$.
+
+Conversely, if $1+i \mid \alpha$, then $\alpha = \lambda(1+i)$ for some $\lambda \in \Z[i]$. Therefore $N(\alpha) = N(\lambda) N(1+i)$, so that $a^2 +b^2 = \alpha \overline{\alpha} = 2 N(\lambda)$. Thus $a^2+b^2 \equiv 0 \pmod 2$, which proves that $a,b$ have same parity, thus $\alpha = a+bi$ is even. This shows the equivalence
+\begin{center}
+$\alpha$ is even $\iff$ $1+i$ divides $\alpha$.
+\end{center}
+\end{proof} 
+Note: The equivalence of part (c) gives a shorter proof of parts (a),(b). 
+
+Since $\Z[i]/(1+i)\Z[i] \simeq \F_2$ by Exercise 2, for every $\alpha \in \Z[i]$, 
+$$\alpha \equiv 0 \pmod {1+i} \quad  \text{ or }\quad  \alpha \equiv 1 \pmod {1+i}.$$
+Therefore, 
+\begin{center}
+$\alpha$ is even $\iff \alpha \equiv 0 \pmod {1+i}$,\\
+$\alpha$ is odd \,$\iff \alpha \equiv 1 \pmod {1+i}$.
+\end{center}
+Then 
+\begin{align*}
+\alpha \beta \text{ is odd} &\iff \alpha \beta \equiv 1 \pmod {1+i}\\
+&\iff \alpha \equiv 1 \text{ and } \beta \equiv 1 \pmod{1+i}\\
+&\iff \alpha \text { is odd and } \beta \text { is odd.}\\
+\end{align*}
+and similarly,
+\begin{align*}
+\alpha + \beta \text{ is even } &\iff \alpha + \beta \equiv 0 \pmod {1+i}\\
+&\iff \alpha \equiv \beta \equiv 0 \text{ or } \alpha \equiv \beta \equiv 1 \pmod {1+i}\\
+&\iff \alpha,\beta \text{ are both even or both odd}.
+\end{align*}
+
 \end{document}
