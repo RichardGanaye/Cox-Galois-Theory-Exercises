@@ -403,7 +403,7 @@ $$
 \paragraph{Ex. 15.2.7}{\it The proof of Theorem 15.2.5 uses induction on $n$.
 \be
 \item[(a)] Assume that $n$ is even. In (15.18), we gave a formula for $Q_{n+1}(u)$ in terms of $Q_n(u)$ and $Q_{n-1}(u)$. Derive the corresponding formula for $P_{n+1}(u)$.
-\item[(b)] Suppose that polynomials $P_n(u),Q_n(u)$ satisfy all of the conditions of the theorem except for the requirement that they be relatively prime. Since $\Z[u]$ is a $UFD$, we can write $P_n(u) = C_n \tilde{P}_n(u), Q_n(u) = C_n(u) \tilde{Q}_n(u)$, where $C_n(u), \tilde P_n(u),\tilde Q_n(u) \in \Z[u]$ and $\tilde P_n(u), \tilde Q_n(u)$ are relatively prime. Prove that we can assume that $\tilde Q_n(0) = 1$ and that $\tilde P_n(u), \tilde Q_n(u)$ satisfy all conditions of Theorem 15.2.5.
+\item[(b)] Suppose that polynomials $P_n(u),Q_n(u)$ satisfy all of the conditions of the theorem except for the requirement that they be relatively prime. Since $\Z[u]$ is a $UFD$, we can write $P_n(u) = C_n(u)\tilde{P}_n(u), Q_n(u) = C_n(u) \tilde{Q}_n(u)$, where $C_n(u), \tilde P_n(u),\tilde Q_n(u) \in \Z[u]$ and $\tilde P_n(u), \tilde Q_n(u)$ are relatively prime. Prove that we can assume that $\tilde Q_n(0) = 1$ and that $\tilde P_n(u), \tilde Q_n(u)$ satisfy all conditions of Theorem 15.2.5.
 \item[(c)] Complete the inductive step of the proof when $n$ is odd.
 \ee
 }
@@ -509,7 +509,10 @@ $$u^{6} + 50u^{5} - 125u^{4} + 300u^{3} - 105u^{2} - 62u + 5,  5u^{6} - 62u^{5} 
 P5.factor(), Q5.factor()
 \end{verbatim}
 $$(u^{2} - 2u + 5) \cdot (u^{4} + 52u^{3} - 26u^{2} - 12u + 1), (5u^{2} - 2u + 1) \cdot (u^{4} - 12u^{3} - 26u^{2} + 52u + 1)$$
-\item[(b)] We can write $P_n(u) = C_n \tilde{P}_n(u), Q_n(u) = C_n(u) \tilde{Q}_n(u)$, where $C_n(u), \tilde P_n(u),\tilde Q_n(u) \in \Z[u]$ and $\tilde P_n(u), \tilde Q_n(u)$ are relatively prime.
+
+\item[(b)] 
+Since $\Z$ is a UFD, the same is true for $\Z[u]$ by Theorem A.5.6.
+Thus we can write $P_n(u) = C_n(u) \tilde{P}_n(u), Q_n(u) = C_n(u) \tilde{Q}_n(u)$, where $C_n(u), \tilde P_n(u),\tilde Q_n(u) \in \Z[u]$ and $\tilde P_n(u), \tilde Q_n(u)$ are relatively prime.
 
 Since $Q_n(0) = 1$, then $C_n(0) \tilde{Q}_n(0) = 1$, where $C_n(0), \tilde{Q}_n(0)$ are integers, thus $\tilde{Q}_n(0) = \pm 1$.
 
@@ -1286,5 +1289,225 @@ h(u) &= u \frac{(-2+i)u^8 - 6i u^4 + 2+i}{ 5u^8 - 2 u^4 + 1} \\
 This gives (15.39):
 $$\varphi((2+i)z) = -i\varphi(z) \frac{\varphi^4(z) + (-1+2i)}{(-1+2i) \varphi^4(z) + 1}.$$
 \end{proof}
+
+\paragraph{Ex. 15.4.6}{\it Prove the third and fourth lines of (15.42):
+\begin{align*}
+\varphi((\beta + 1)z) &= -\varphi((\beta-1)z) + \frac{2 \varphi(\beta z)\varphi'(z)}{1 + \varphi^2(\beta z) \varphi^2(z)},\\
+\varphi((\beta + i )z) &= -\varphi((\beta-i)z) + \frac{2 \varphi(\beta z)\varphi'(z)}{1 - \varphi^2(\beta z) \varphi^2(z)}.
+\end{align*}
+}
+
+\begin{proof} 
+By (15.13),
+$$\varphi(x+y)+ \varphi(x-y) = \frac{2 \varphi(x) \varphi'(y)}{1 + \varphi^2(x) \varphi^2(y)},$$
+and, by the Principle of Analytic Continuation, this remains true for all $x,y$ such that both members are defined.
+
+If we use the substitution $(x,y) \leftarrow (\beta z, z)$, we obtain
+$$\varphi((\beta + 1)z) + \varphi((\beta-1)z) = \frac{2 \varphi(\beta z)\varphi'(z)}{1 + \varphi^2(\beta z) \varphi^2(z)},$$
+and the substitution $(x,y) \leftarrow (\beta z, iz)$ gives, using $\varphi(iz) = i \varphi(z), \varphi'(iz) = \varphi'(z)$,
+\begin{align*}
+\varphi((\beta + i)z) + \varphi((\beta-i)z) &= \frac{2 \varphi(\beta z)\varphi'(iz)}{1 + \varphi^2(\beta z) \varphi^2(iz)}\\
+&=\frac{2 \varphi(\beta z)\varphi'(z)}{1 - \varphi^2(\beta z) \varphi^2(z)}.
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 15.4.7}{\it Supply the details omitted in the proof of Step 1 of Theorem 15.4.4.
+}
+
+\begin{proof} 
+We want to prove that, given $\beta \in \Z[i]$, there are polynomials $P_\beta(u),Q_\beta(u) \in \Z[i][u]$ such that $Q_\beta(0) = 1$ and
+$$
+(15.40)\qquad \varphi(\beta z) = \varphi(z) \frac{P_\beta\left(\varphi^4(z)\right)}{Q_\beta\left(\varphi^4(z)\right)},\qquad \text{when } \beta \text{ is odd},
+$$
+and
+$$
+(15.41)\qquad \varphi(\beta z) = \varphi(z) \frac{P_\beta\left(\varphi^4(z)\right)}{Q_\beta\left(\varphi^4(z)\right)}\varphi'(z),\qquad \text{when } \beta \text{ is even}.
+$$
+To prove this theorem by induction for all Gaussian integers $\beta = n +mi, n\geq 0, m \geq 0$, it is sufficient to verify that it is true for $0,1,i,i+1$, and assuming that it is true for $\beta-1,\beta$ , prove that it is true for $\beta+1$, and also assuming that it is is true for $\beta -i,\beta$, prove that is is true for $\beta +i$.
+
+If $\beta = 0$, $\varphi(0z) = 0$, thus $P_0(u) = 0, Q_0(u) = 1$ satisfy the Theorem.
+
+If $\beta = 1$, $\varphi(1z) = \varphi(z)$, thus $P_1(u) = 1,Q_1(u) = 1$ are suitable.
+
+If $\beta = i$, $\beta$ is odd, and
+$$\varphi(iz) = i \varphi(z) = \varphi(z) \frac{P_i\left(\varphi^4(z)\right)}{Q_i\left(\varphi^4(z)\right)},$$
+ where $P_i(u) = i,Q_i(u) = 1$.
+ 
+If $\beta = 1+i$, $\beta$ is even, and by (15.36) (see Exercise 1),
+$$\varphi((1+i)z) = \frac{(1+i)\varphi(z)\varphi'(z)}{1 - \varphi^4(z)} = \varphi(z) \frac{P_{1+i}\left(\varphi^4(z)\right)}{Q_{1+i}\left(\varphi^4(z)\right)} \varphi'(z),$$
+ where $P_{1+i}(u) =1+ i,Q_{1+i}(u) = 1 -u$. 
+ 
+ In these four cases, $Q_\beta(0) = 1$.
+ 
+ Now suppose that the property holds for $\beta-1$ and $\beta$, $\beta \in \Z[i]$. The third line of (15.42) (see Exercise 6) gives, 
+ $$\varphi((\beta +1)z) = -\varphi((\beta - 1)z) + \frac{2 \varphi(\beta z)\varphi'(z)}{1 + \varphi^2(\beta z) \varphi^2(z)}.$$
+ 
+ $\bullet$ If $\beta$ is odd, then $\beta - 1$ is even, thus
+ $$\varphi(\beta z) = \varphi(z) \frac{P_\beta\left(\varphi^4(z)\right)}{Q_\beta\left(\varphi^4(z)\right)},\qquad 
+ \varphi((\beta - 1) z) = \varphi(z) \frac{P_{\beta - 1}\left(\varphi^4(z)\right)}{Q_{\beta - 1}\left(\varphi^4(z)\right)}\varphi'(z) ,
+ $$
+ so that, with the same computing as in the odd case of Exercise 15.2.7(a),
+ \begin{align*}
+ \varphi((\beta + 1) z) &=-\varphi(z) \frac{P_{\beta - 1}\left(\varphi^4(z)\right)}{Q_{\beta - 1}\left(\varphi^4(z)\right)}\varphi'(z) +\frac{2 \varphi(z) \frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)}\varphi'(z)}{1 +  \left(\varphi(z) \frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)}\right)^2 \varphi^2(z)}\\
+&=\varphi(z) \left[ -  \frac{P_{\beta - 1}\left(\varphi^4(z)\right)}{Q_{\beta - 1}\left(\varphi^4(z)\right)} + \frac{2 \left(\frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)}  \right) }{1+\left(\varphi(z)\frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)}  \right)^2 \varphi^2(z)}\right] \varphi'(z)
+\end{align*}
+Writing $a= \varphi(z), p_\beta = P_{\beta}(\varphi^4(z)), q_\beta  = Q_{\beta}(\varphi^4(z))$ and  $a' = \varphi'(z)$, this gives
+\begin{align*}
+\varphi\left((\beta + 1)z\right)&= a \left[ -\frac{p_{\beta-1}}{q_{\beta-1}} + \frac{2 \frac{p_\beta}{q_\beta}}{1 + a^4 \frac{p_\beta^2}{q_\beta^2}}\right] a'\\
+&= a \left[ -\frac{p_{\beta-1}}{q_{\beta-1}}  +\frac{ 2 p_\beta q_\beta}{q_\beta^2 + a^4 p_\beta^2}\right] a' \\
+&=a\left[ \frac{-p_{\beta-1} (q_\beta^2 + a^4 p_\beta^2) + 2 p_\beta q_\beta q_{\beta-1}} {q_{\beta-1}(q_\beta^2 + a^4 p_\beta^2)}\right] a'
+\end{align*}
+that is
+$$\varphi\left((\beta + 1) z\right) = \varphi(z) \frac{P_{\beta + 1}(\varphi^4(x))}{Q_{\beta + 1}(\varphi^4(z))}\varphi'(z),$$
+where
+\begin{align*}
+P_{\beta + 1}(u) &= -P_{\beta - 1}(u) (Q_{\beta}^2(u) + u P_{\beta}^2(u)) + 2 P_{\beta}(u)Q_{\beta}(u) Q_{\beta - 1}(u),\\
+Q_{\beta + 1}(u) &=Q_{\beta - 1}(u)(Q_{\beta}^2(u) + u P_{\beta}^2(u)).
+\end{align*}
+Moreover $Q_{\beta + 1}(0) = Q_{\beta - 1}(0)(Q_{\beta}^2(0) + 0 \times P_{\beta}^2(0)) = 1$.
+
+\bigskip 
+
+$\bullet$ If $\beta$ is even, $\beta - 1$ is odd, thus
+$$
+\varphi((\beta - 1)z) = \varphi(z)\frac{P_{\beta - 1}\left(\varphi^4(z)\right)}{Q_{\beta - 1}\left(\varphi^4(z)\right)}, \qquad \varphi(\beta z) = \varphi(z)\frac{P_{\beta}(z)\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)} \varphi'(z).
+$$
+so that, with the same computing as in the even case of Exercise 15.2.7 (a),
+\begin{align*}
+\varphi\left((\beta + 1)z\right) &= - \varphi\left( (\beta - 1)z \right) + \frac{2 \varphi(\beta z) \varphi'(z)}{1+\varphi^2(\beta z) \varphi^2(z)}\\
+&=- \varphi(z) \frac{P_{\beta - 1}\left(\varphi^4(z)\right)}{Q_{\beta - 1}\left(\varphi^4(z)\right)} + \frac{2 \left(\varphi(z)\frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)} \varphi'(z) \right) \varphi'(x)}{1+\left(\varphi(x)\frac{P_{n+i}\left(\varphi^4(x)\right)}{Q_{n+i}\left(\varphi^4(x)\right)} \varphi'(x) \right)^2 \varphi^2(x)}.\\
+\end{align*}
+
+With the same notations as in first case, using $\varphi'(x)^2 = 1 - \varphi^4(x)$,
+\begin{align*}
+\varphi\left((\beta + 1)z\right) &= a \left[ -\frac{p_{\beta-1}}{q_{\beta-1}} + \frac{2 (1-\beta^4)\frac{p_\beta}{q_\beta} }{1 + a^4(1-a^4) \frac{p_\beta^2}{q_\beta^2}} \right] \\
+&=a \left[  -\frac{p_{\beta-1}}{q_{\beta-1}} + \frac{2(1-a^4)p_\beta q_\beta}{q_\beta^2+a^4(1-a^4)p_\beta^2}\right] \\
+&=a \frac {-p_{\beta-1}(q_\beta^2 + a^4(1-a^4) p_\beta^2) + 2(1-a^4) p_\beta q_\beta q_{\beta-1}}{q_{\beta-1}(q_\beta^2 + a^4(1-a^4)p_\beta^2)},
+\end{align*}
+that is
+$$\varphi\left((\beta + 1)z\right) = \varphi(z) \frac{P_{n+1}(\varphi^4(z))}{Q_{n+1}(\varphi^4(z))},$$
+where
+\begin{align*}
+P_{\beta + 1}(u) &= -P_{\beta - 1}(u) (Q_n^2(u) + u(1-u) P_{\beta}^2(u)) + 2(1-u) P_{\beta}(u)Q_{\beta}(u) Q_{\beta - 1}(u),\\
+Q_{\beta + 1}(u) &=Q_{\beta - 1}(u)(Q_{\beta}^2(u) + u(1-u) P_{\beta}^2(u)).
+\end{align*}
+This gives also $Q_{n+1+i}(0) = 1$. 
+
+\bigskip
+
+Now consider $\varphi((\beta + i)z)$, where $\beta \in \Z[i]$.
+
+$\bullet$ If $\beta$ is even, $\beta - i$ is odd, thus
+$$
+\varphi((\beta - i)z) = \varphi(z) \frac{P_{\beta - i}\left(\varphi^4(z)\right)}{Q_{\beta - i}\left(\varphi^4(z)\right)},\qquad
+ \varphi(\beta z)= \varphi(z) \frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)}\varphi'(z).
+$$
+Then, using the fourth line of (15.42),
+\begin{align*}
+\varphi((\beta + i)z) &= -\varphi((\beta - i)z) + \frac{2i \varphi(\beta z) \varphi'(z)}{1 - \varphi^2(\beta z) \varphi^2(z)}\\
+&= - \varphi(z) \frac{P_{\beta - i}\left(\varphi^4(z)\right)}{Q_{\beta - i}\left(\varphi^4(z)\right)} + \frac{2i \left(\varphi(z) \frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)}\varphi'(z)\right) \varphi'(z)}{1 - \left(\varphi(z) \frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)}\varphi'(z)\right)^2 \varphi^2(z)}\\
+\end{align*}
+As usual, writing $a = \varphi(z), a' = \varphi'(z), p_\beta = P_{\beta}(\varphi^4(z)), q_\beta = Q_{n\beta}(\varphi^4(z))$, and using $\varphi'^2(z) = 1 - \varphi^4(z)$, we obtain
+\begin{align*}
+\varphi((\beta + i)z) &= a \left[ -\frac{p_{\beta-1}}{q_{\beta-1}} + \frac{2 i(1-a^4)\frac{p_\beta}{q_\beta} }{1 - a^4(1-a^4) \frac{p_\beta^2}{q_\beta^2}} \right] \\
+&=a \left[  -\frac{p_{\beta-1}}{q_{\beta-1}} + \frac{2i(1-a^4)p_\beta q_\beta}{q_\beta^2 - a^4(1-a^4)p_\beta^2}\right] \\
+&=a \frac {-p_{\beta-1}(q_\beta^2 - a^4(1-a^4) p_\beta^2) + 2i(1-a^4) p_\beta q_\beta q_{\beta -1}}{q_{\beta-1}(q_\beta^2 - a^4(1-a^4)p_\beta^2)},
+\end{align*}
+so that
+$$\varphi((\beta + i)z) = \varphi(z) \frac{P_{\beta + i}(\varphi^4(z))}{Q_{\beta + i}(\varphi^4(z))},$$
+where
+\begin{align*}
+P_{\beta + i}(u) &= -P_{\beta - i}(u) ( Q_{\beta}^2(u) - u(1-u)P_{\beta}^2(u)) + 2i(1 - u) P_{\beta}(u) Q_{\beta}(u) Q_{\beta - i}(u),\\
+Q_{\beta + i}(u) &=Q_{\beta - i}(u) (Q_{\beta}^2(u) - u(1-u) P_{\beta}^2(u)).
+\end{align*}
+This implies $Q_{\beta + i}(0) = 1$. 
+
+\bigskip
+
+$\bullet$ If $\beta$ is odd, $\beta - i$ is even, thus
+$$
+\varphi((\beta - i)z) = \varphi(z) \frac{P_{\beta - i}\left(\varphi^4(z)\right)}{Q_{\beta -i}\left(\varphi^4(z)\right)}\varphi'(z),\qquad
+ \varphi(\beta z) = \varphi(z) \frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)}.
+$$
+Then
+\begin{align*}
+\varphi((\beta + i)z) &= -\varphi((\beta - i)z) + \frac{2i \varphi(\beta z) \varphi'(z)}{1 - \varphi^2(\beta )z) \varphi^2(z)}\\
+&=- \varphi(z) \frac{P_{\beta - i}\left(\varphi^4(z)\right)}{Q_{\beta - i}\left(\varphi^4(z)\right)}\varphi'(z) + \frac{2i \varphi(z) \frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)} \varphi'(z)}{1 - \left(\varphi(z) \frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)}\right)^2\varphi^2(z)}\\
+&= \varphi(z) \left[ -\frac{P_{\beta - i}\left(\varphi^4(z)\right)}{Q_{\beta - i}\left(\varphi^4(z)\right)} + \frac{2i  \frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)}}{1 - \left(\varphi(z) \frac{P_{\beta}\left(\varphi^4(z)\right)}{Q_{\beta}\left(\varphi^4(z)\right)}\right)^2\varphi^2(z)}\right] \varphi'(z).
+\end{align*}
+With the same notations,
+\begin{align*}
+\varphi((\beta + i)z) &= a \left( - \frac{p_{\beta-i}}{q_{\beta-i}} + \frac{2i \frac{p_\beta}{q_\beta}}{1 - a^4 \frac{p_\beta^2}{q_\beta^2}}\right)a'\\
+&= a \left( - \frac{p_{\beta-i}}{q_{\beta-i}} + \frac{2ip_\beta q_\beta }{q_\beta ^2 - a^4 p_\beta^2}\right) a'\\
+&= a \left(\frac{ -p_{\beta-i}(q_\beta^2 - a^4 p_\beta^2) + 2ip_\beta q_\beta q_{\beta-i}}{q_{\beta - i}(q_\beta^2 - a^4 p_\beta^2)}\right) a',
+\end{align*}
+so that
+$$\varphi((\beta + i)z)  = \varphi(z) \frac{P_{\beta + i}(\varphi^4(z))}{Q_{\beta + i}(\varphi^4(z))} \varphi'(z),$$
+where
+\begin{align*}
+P_{\beta + i}(u) &= -P_{\beta - i}(u)(Q_{\beta}^2(u) - u P_{\beta}^2(u)) + 2i P_{\beta}(u) Q_{\beta}(u) Q_{\beta -i}(u),\\
+Q_{\beta + i}(u) &= Q_{\beta - i}^2(u) - u P_{\beta}^2(u).
+\end{align*}
+We obtain $Q_{\beta + i}(0) = 1$. The induction is done.
+\end{proof}
+
+\bigskip
+
+To resume the computing of $P_\beta(u), Q_\beta(u)$ with $\beta = n + mi \in \Z[i], n\geq 0, m \geq 0$, we have
+$$\begin{array}{llll}
+P_0(u) = 0, &Q_0(u) = 1, &\qquad P_1(u) = 1, &Q_{1}(u) = 1,\\
+P_i(u) = i, &Q_i(u) = 1, &\qquad P_{1+i}(u) = 1+i, &Q_{1+i}(u) = 1-u.
+\end{array}
+$$
+If $\beta$ odd,
+\begin{align*}
+P_{\beta + 1}(u) &= -P_{\beta - 1}(u) (Q_{\beta}^2(u) + u P_{\beta}^2(u)) + 2 P_{\beta}(u)Q_{\beta}(u) Q_{\beta - 1}(u),\\
+Q_{\beta + 1}(u) &=Q_{\beta - 1}(u)(Q_{\beta}^2(u) + u P_{\beta}^2(u)),\\
+\\
+P_{\beta + i}(u) &= -P_{\beta - i}(u)(Q_{\beta}^2(u) - u P_{\beta}^2(u)) + 2i P_{\beta}(u) Q_{\beta}(u) Q_{\beta -i}(u),\\
+Q_{\beta + i}(u) &= Q_{\beta - i}^2(u) - u P_{\beta}^2(u).
+\end{align*}
+If $\beta$ even,
+\begin{align*}
+P_{\beta + 1}(u) &= -P_{\beta - 1}(u) (Q_n^2(u) + u(1-u) P_{\beta}^2(u)) + 2(1-u) P_{\beta}(u)Q_{\beta}(u) Q_{\beta - 1}(u),\\
+Q_{\beta + 1}(u) &=Q_{\beta - 1}(u)(Q_{\beta}^2(u) + u(1-u) P_{\beta}^2(u)),\\
+\\
+P_{\beta + i}(u) &= -P_{\beta - i}(u) ( Q_{\beta}^2(u) - u(1-u)P_{\beta}^2(u)) + 2i(1 - u) P_{\beta}(u) Q_{\beta}(u) Q_{\beta - i}(u),\\
+Q_{\beta + i}(u) &=Q_{\beta - i}(u) (Q_{\beta}^2(u) - u(1-u) P_{\beta}^2(u)).
+\end{align*}
+
+By (15.43), if $n,m\geq 0$,
+$$
+\begin{array}{lll}
+\varphi((-m+in)z) &= \varphi(i(n+im)z) &= i \varphi((n+im)z),\\
+\varphi((-n-im)z) &= \varphi(-(n+im)z) &= -\varphi((n+im)z),\\
+\varphi((m-in)z) &= \varphi(-i(n+im)z) &= -i\varphi((n+im)z).
+\end{array}
+$$
+This gives, for $\beta = a + bi \in \Z[i]$ odd, where $a <0, b \geq 0$ ($a = -m, b = n, m\geq 0, n \geq 0$),
+\begin{align*}
+\varphi(\beta z) &= \varphi((a+bi)z)\\
+&= i \varphi((b-ai)z)\\
+&=i \varphi(z) \frac{P_{b-ai}(\varphi^4(z))}{Q_{b-ai}(\varphi^4(z)}\\
+&= \varphi(z) \frac{P_\beta(\varphi^4(z)}{Q_\beta(\varphi^4(z))},
+\end{align*}
+where 
+\begin{align*}
+P_\beta(u) &= i P_{-i\beta}(u),\\
+Q_\beta(u) &= Q_{-i\beta}(u) \qquad (\re(\beta)\leq 0, \im(\beta)\geq 0).
+\end{align*}
+(same formulas if $\beta$ is even.)
+
+Similarly,
+\begin{align*}
+P_\beta(u) &=  - P_{-\beta}(u),\\
+Q_\beta(u) &= Q_{- \beta}(u) \qquad (\re(\beta)\leq 0, \im(\beta)\leq 0),
+\end{align*}
+and
+\begin{align*}
+P_\beta(u) &=  - iP_{i \beta}(u),\\
+Q_\beta(u) &= Q_{i\beta}(u) \qquad (\re(\beta)\geq 0, \im(\beta)\leq 0).
+\end{align*}
+This gives an algorithm to compute $P_\beta, Q_\beta$ for all $\beta \in \Z[i]$.
 
 \end{document}
