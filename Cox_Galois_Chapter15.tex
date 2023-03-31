@@ -1510,4 +1510,47 @@ Q_\beta(u) &= Q_{i\beta}(u) \qquad (\re(\beta)\geq 0, \im(\beta)\leq 0).
 \end{align*}
 This gives an algorithm to compute $P_\beta, Q_\beta$ for all $\beta \in \Z[i]$.
 
+\paragraph{Ex. 15.4.8}{\it Consider the finite ring $\Z[i]/2(1+i)\Z[i]$, and let $\beta \in \Z[i]$ be odd.
+\be
+\item[(a)] Prove that $\left(\Z[i]/2(1+i)\Z[i]\right)^*= \{\pm[1],\pm[i]\}$, and then explain why this implies that $\beta \equiv i^\varepsilon \pmod {2(1+i)}$ for some $\varepsilon \in \{0,1,2,3\}$.
+\item[(b)] Prove that $\varphi\left(\beta \frac{\varpi}{2} \right) = i ^\varepsilon$.
+\ee
+}
+
+\begin{proof} 
+\item[(a)] By Exercise 1, $|\Z[i]/2(1+i)\Z[i]| = N(2(1+i)) = 8$.
+We want to find a complete system of representatives of the Gaussian integers modulo $2(1+i)$. 
+
+Note first that $2i \equiv -2 \pmod{2(1+i)}$, and $4 = (1-i)[2(1+i)] \equiv 0 \pmod{2(1+i)}$. 
+
+Let $z = a+ib$ be any Gaussian integer. The Euclidean division in $\Z$ gives  $b = 2q +r$ where $r \in \{0,1\}$. Then
+\begin{align*}
+z  &= a+ (2q + r)i\\
+&\equiv a- 2q +ri\\
+&\equiv c+ri \qquad \pmod {2(1+i)},
+\end{align*}
+where $c \in \Z, r \in \{0,1\}$. If we write $c = 4q' +s, 0\leq s <4$, then 
+$$z \equiv s +ri \pmod{2(1+i)}, \qquad s \in \{0,1,2,3\},\  r\in \{0,1\}.$$
+Two distinct  Gaussian integers among the set $\{s +ri \mid s \in \{0,1,2,3\}, r\in \{0,1\}\}$ are not congruent modulo $2(1+i)$, otherwise $|\Z[i]/2(1+i)\Z[i]| < 8$. Thus
+\begin{align*}
+\Z[i]/2(1+i)\Z[i] &= \{[0], [1],[2],[3], [i],[1+i],[2+i],[3+i]\}\\
+&=\{[0],[1],[2],-[1],[i],[1+i],[-i],[-1+i]\},
+\end{align*}
+since $-3 \equiv 1$ and $2 + i = -i + (2+2i)  \equiv -i \pmod{2(1+i)}$.
+
+A coset $[\alpha]$ , where $\alpha \in \Z[i]$, is invertible in $\Z[i]/2(1+i)\Z[i] $ if and only if $\alpha$ and $2(1+i)$ are relatively prime. Since $2(1+i) = -i(1+i)^3$, where $-i$ is a unit, and $1+i$ is prime. Thus  $\alpha$ and $2(1+i)$ are relatively prime if and only if $\alpha$ and $1+i$ are relatively prime. By Section A about Gaussian integers, this is equivalent to $\alpha$ is odd. Therefore
+$$\left(\Z[i]/2(1+i)\Z[i]\right)^* = \{\pm[1],\pm[i]\}.$$
+
+Since $\beta$ is odd, $\beta$ and $1+i$ are relatively prime. By the preceding reasoning, $\beta \in \left(\Z[i]/2(1+i)\Z[i]\right)^*$, therefore
+$$\beta \in \{\pm[1],\pm[i]\}.$$
+Thus $\beta = i^\varepsilon, \varepsilon \in\{0,1,2,3\}$.
+
+\item[(b)] By (15.44), when $\beta$ is odd,
+$$\varphi(\beta z) = i^\varepsilon \varphi(z) \frac{P_\beta\left(\varphi^4(z)\right))}{Q_\beta\left(\varphi^4(z)\right))}.$$
+Then 
+$$\varphi\left(\beta \frac{\varpi}{2}\right) = i^{\varepsilon} \varphi\left(\frac{\varpi}{2}\right)  \frac{P_\beta\left(\varphi^4(\frac{\varpi}{2})\right))}{Q_\beta\left(\varphi^4(\frac{\varpi}{2})\right))}.$$
+We know from Section (15.1) that $\varphi\left(\frac{\varpi}{2}\right) =1$. Moreover Theorem 15.4.4 shows that $Q_\beta(u) = u^dP_\beta(1/u)$. Taking $u=1$, we obtain $P(1) = Q(1)$, therefore
+$$\varphi\left(\beta \frac{\varpi}{2}\right) = i^{\varepsilon}.$$
+\end{proof}
+
 \end{document}
