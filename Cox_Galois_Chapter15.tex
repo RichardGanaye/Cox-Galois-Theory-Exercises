@@ -547,6 +547,9 @@ $$u P_n(u^4)(1-u^2).$$
 
 \begin{proof} 
 \item[(a)]
+
+The ring $\Z$ is principal, thus is a UFD with field of fractions $\Q$. By Gauss's Lemma (Theorem A.3.2, or Theorem A.5.8), if $P,Q \in \Z[u]$ are relatively prime in $\Z[u]$, then $P,Q$ are relatively prime in $\Q[u]$.
+
 Since $P(u),Q(u)$ are relatively prime in $\Q[u]$, there are some polynomials $A,B \in \Q[u]$ such that $A(u)P(u) + B(u) Q(u) = 1$, thus the substitution $u \to u^4$ gives $A(u^4) P(u^4) + B(u^4)Q(u^4) = 1$. Reasoning by contradiction, suppose that $uP(u^4)$ and $Q(u^4)$ have a common root $\alpha$ in some extension of $\Q$. Since $Q(0) = 1$, $\alpha \ne 0$, thus $P(\alpha^4) = 0$.  Then $P(\alpha^4)= Q(\alpha^4) = 0$ implies $1 = A(\alpha^4) P(\alpha^4) + B(\alpha^4)Q(\alpha^4) = 0$: this is a contradiction. 
 
 So $uP(u^4)$ and $Q(u^4)$ have no common roots in any extension of $\Q$.
@@ -1551,6 +1554,50 @@ Then
 $$\varphi\left(\beta \frac{\varpi}{2}\right) = i^{\varepsilon} \varphi\left(\frac{\varpi}{2}\right)  \frac{P_\beta\left(\varphi^4(\frac{\varpi}{2})\right))}{Q_\beta\left(\varphi^4(\frac{\varpi}{2})\right))}.$$
 We know from Section (15.1) that $\varphi\left(\frac{\varpi}{2}\right) =1$. Moreover Theorem 15.4.4 shows that $Q_\beta(u) = u^dP_\beta(1/u)$. Taking $u=1$, we obtain $P(1) = Q(1)$, therefore
 $$\varphi\left(\beta \frac{\varpi}{2}\right) = i^{\varepsilon}.$$
+\end{proof}
+
+\paragraph{Ex. 15.4.9}{\it Suppose that we have relatively prime polynomials $P_\beta(u),Q_\beta(u) \in \Z[i][u]$ such that $Q_\beta(0)= 1$. Prove that $uP_\beta(u)$ and $Q_\beta(u)$ have no common roots in $\C$.
+}
+
+\begin{proof} 
+The ring $\Z[i]$ is principal, thus is a UFD with field of fractions $\Q[i]$. By Gauss's Lemma (Theorem A.5.8), if $P,Q \in \Z[i][u]$ are relatively prime in $\Z[i][u]$, then $P,Q$ are relatively prime in $\Q[i][u]$. 
+
+Since $P_\beta(u),Q_\beta(u)$ are relatively prime in $\Q[i][u]$, there are some polynomials $A,B \in \Q[i][u]$ such that $A(u)P_\beta(u) + B(u) Q_\beta(u) = 1$. Reasoning by contradiction, suppose that $uP_\beta(u)$ and $Q_\beta(u)$ have a common root $\alpha$ in $\C$. Since $Q_\beta(0) = 1$, $\alpha \ne 0$, thus $P_\beta(\alpha) = 0$.  Then $P_\beta(\alpha)= Q_\beta(\alpha) = 0$ implies $1 = A(\alpha) P_\beta(\alpha) + B(\alpha)Q_\beta(\alpha) = 0$: this is a contradiction. 
+
+Thus $uP_\beta(u)$ and $Q_\beta(u)$ have no common roots in $\C$.
+\end{proof}
+
+\paragraph{Ex. 15.4.10}{\it Let $w = z + (1+i)\frac{\varpi}{2}$. Use (15.48) and $\beta \equiv i^{\varepsilon} \pmod {2(1+i)}$ to show that
+$$\varphi(\beta z) \varphi(\beta w) = i^{3+ 2 \varepsilon}.$$
+}
+
+\begin{proof} 
+The identity (15.29) implies that
+$$\varphi(z) \varphi\left(z + (1+i)\frac{\varpi}{2} \right) = -i = i^3.$$
+Setting $w = z + (1+i)\frac{\varpi}{2}$, we obtain (15.48)
+$$\varphi(z) \varphi(w) = i^3.$$
+Note that $\varphi(-z) = - \varphi(z)$, and $\varphi(iz) = i \varphi(z)$, so that
+$$\varphi(i^\varepsilon z) = i^\varepsilon \varphi(z), \qquad \varepsilon \in\{1,2,3,4\}.$$
+Since $\beta \equiv i^\varepsilon \pmod {2(1+i)}$, we can write $\beta = i^\varepsilon + 2(1+i) \alpha$, where $\alpha \in \Z[i]$. Then
+\begin{align*}
+\varphi(\beta z) \varphi(\beta w) &= \varphi(\beta z)\varphi\left(\beta\left (z + (1+i)\frac{\varpi}{2}\right)\right)\\
+&=\varphi(\beta z) \varphi\left(\beta z + (i^\varepsilon + 2(1+i) \alpha )(1+i)\frac{\varpi}{2}\right)\\
+&=\varphi(\beta z) \varphi\left(\beta z + i^\varepsilon (1+i)\frac{\varpi}{2} + (1+i)^2 \alpha \varpi\right).
+\end{align*}
+Since $1+i$ is even, $(1+i)^2 \alpha$ is even, thus $(1+i)^2 \alpha \varpi$ is a period of $\varphi$. Therefore
+\begin{align*}
+\varphi(\beta z) \varphi(\beta w) &=\varphi(\beta z) \varphi\left(\beta z + i^\varepsilon (1+i)\frac{\varpi}{2} \right)\\
+&=\varphi(\beta z) \varphi\left(i^\varepsilon\left( i^{-\varepsilon}\beta z +  (1+i)\frac{\varpi}{2}\right) \right)\\
+&=i^{\varepsilon} \varphi\left( i^{-\varepsilon} \beta z\right) i^\varepsilon  \varphi\left( i^{-\varepsilon}\beta z +  (1+i)\frac{\varpi}{2} \right)\\
+&= i^{2\varepsilon} \varphi(Z) \varphi\left(Z + (1+i)\frac{\varpi}{2} \right),
+\end{align*}
+where $Z = i^{-\varepsilon} \beta z$. 
+
+By (15.29), where we substitute $Z= i^{-\varepsilon} \beta z$ to $z$,
+$$\varphi(Z) \varphi\left(Z + (1+i)\frac{\varpi}{2} \right)= i^3,$$
+therefore
+$$\varphi(\beta z) \varphi(\beta w) = i^{2\varepsilon} i^3 = i^{3 + 2 \varepsilon}.$$
+
 \end{proof}
 
 \end{document}
