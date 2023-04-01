@@ -1597,7 +1597,50 @@ By (15.29), where we substitute $Z= i^{-\varepsilon} \beta z$ to $z$,
 $$\varphi(Z) \varphi\left(Z + (1+i)\frac{\varpi}{2} \right)= i^3,$$
 therefore
 $$\varphi(\beta z) \varphi(\beta w) = i^{2\varepsilon} i^3 = i^{3 + 2 \varepsilon}.$$
-
 \end{proof}
+
+\paragraph{Ex. 15.4.11}{\it  Let $F$ be a field, and let $A(u),B(u) \in F[u]$ be non zero relatively prime polynomials such that
+$$\frac{B(1/u)}{A(1/u)} = \frac{A(u)}{B(u)}$$
+in $F(u)$. Let $d = \deg(A)$. Prove that $d = \deg(B)$ and that there is a constant $\lambda \in F^*$ such that $u^dA(1/u) = \lambda B(u)$.
+}
+
+\begin{proof} Let $d= \deg(A)$, and $f = \det(B)$, so that
+\begin{align*}
+A(u) &= a_d u^d+\cdots+a_0,\qquad a_d \ne 0,\\
+B(u) &= b_f u^f+\cdots + b_0,\qquad b_f \ne 0.
+\end{align*}
+Then the hypothesis $\frac{B(1/u)}{A(1/u)} = \frac{A(u)}{B(u)}$ gives
+$$A(u)A(1/u) = B(u)B(1/u),$$
+where
+\begin{align*}
+A(u) A(1/u) &= \left(a_d u^d+ \cdots +a_0\right)\left(a^d\frac{1}{u^d}+\cdots + a_0\right)\\
+&= \frac{1}{u^d} \left(a_d u^d+ \cdots +a_0\right) \left( a_d+\cdots+a_0u^d\right),
+\end{align*}
+therefore
+$$u^f\left(a_d u^d+ \cdots +a_0\right) \left( a_d+\cdots+a_0u^d\right) = u^d\left(b_f u^f+ \cdots +b_0\right) \left( b_f+\cdots+b_0u^f\right).$$
+Note that $a_0 \ne 0$ or $b_0 \ne 0$, otherwise $A(u)$ and $B(u)$ have $u$ as common factor.
+
+Suppose that $a_0 \ne 0$ (since the problem is symmetric about $A,B$, the other case $b_0 \ne 0$ is similar). If we develop the preceding equality by decreasing powers, we obtain
+$$a_0a_d u^{2d+f} + \cdots +a_0a_d u^f = b_0b_f u^{d+2f} + \cdots + b_0b_f u^d,$$
+where $a_0a_d \ne 0$ (but perhaps $b_0b_f = 0$).
+
+Then $a_0a_d u^{2d+f}$ is a nonzero term of the right member, of degree less or equal to $d+2f$, thus $2d+f \leq d + 2f$. Moreover $a_0a_d u^f$ is a nonzero term of the right member, with valuation greater or equal to $d$, thus $f \geq d$. The inequalities $2d+f \geq d + 2f, f \geq d$ imply $d\geq f, f \geq d$, so that $d=f$:
+$$\deg(A) = \deg(B).$$
+
+We can rewrite, after simplification by $u^d$, the above polynomial equality under the form
+$$\left(a_d u^d+ \cdots +a_0\right) \left( a_d+\cdots+a_0u^d\right) = \left(b_d u^f+ \cdots +b_0\right) \left( b_d+\cdots+b_0u^f\right),$$
+where
+\begin{align*}
+A(u) &= a_d u^d+ \cdots +a_0,\qquad \qquad B(u) = b_d u^f+ \cdots +b_0,\\
+u^dA(1/u) &= a_d+\cdots+a_0u^d,\qquad u^dB(1/u) = b_d+\cdots+b_0u^f.
+\end{align*}
+If we define $\tilde{A}(u) = u^dA(1/u) = a_d+\cdots+a_0u^d, \tilde{B}(u) = u^dB(1/u) = b_d+\cdots+b_0u^f \in K[u]$, then
+$$A(u) \tilde{A}(u) = B(u) \tilde{B}(u).$$
+Therefore $B(u)$ divides $A(u)\tilde{A}(u)$ in $K[u]$, where $B(u),A(u)$ are relatively prime, therefore $B(u)$ divides $\tilde{A}(u)$.
+
+Moreover $\deg(\tilde{A}(u)) \leq d = \deg(B(u))$, and $\tilde{A}(u)\ne 0$, otherwise $A(u)=0$, thus $\deg(\tilde{A}(u)) = d$. Therefore there is some $\lambda \in K^*$ such that  $\tilde{A}(u)= \lambda B(u)$, that is
+$$u^dA(1/u) = \lambda B(u),\qquad \lambda \in K^*.$$
+\end{proof}
+
 
 \end{document}
