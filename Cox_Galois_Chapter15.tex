@@ -1642,5 +1642,161 @@ Moreover $\deg(\tilde{A}(u)) \leq d = \deg(B(u))$, and $\tilde{A}(u)\ne 0$, othe
 $$u^dA(1/u) = \lambda B(u),\qquad \lambda \in K^*.$$
 \end{proof}
 
+\paragraph{Ex. 15.4.12}{\it  Let $\beta \in \Z[i]$ be prime, and let $f = a_0u^d+a_1u^{d-1}+\cdots+a_d \in \Z[i][u]$. Prove the Schönemann-Eisenstein criterion over $\Z[i]$, which states that if ${\beta \nmid a_0}, {\beta \mid a_1},\ldots,{\beta \mid a_d}$, and $\beta^2 \nmid a_d$, then $f$ is irreducible over $\Q(i)$.
+}
+
+\begin{proof}
+Following the similar proof of Theorem 4.2.3 and Corollary 4.2.1, we reason by contradiction. Suppose that $f$ is not irreducible over $\Q(i)$. Then $f = v w$ where $v,w \in \Q(i)[u]$ have degrees less than $d = \deg(f)$. By Gauss' s Lemma over $\Z[i]$, which holds by Theorem A.5.8 because $\Z[i]$ is a UFD, with quotient field $\Q(i)$, there is $\delta \in \Q(i)$ such that $g = \delta v, h = \delta^{-1} w$ are in $\Z[i][u]$. Then
+$$f = gh, \qquad g,h \in \Z[i][u].$$ 
+Now consider the ring homomorphism
+$$
+\pi 
+\left\{
+\begin{array}{ccl}
+\Z[i][u] & \to & \left(\Z[i]/\beta \Z[i]\right)[u]\\
+q = b_m u^m+\cdots + b_0 & \mapsto &\overline{q} = [b_m] u^m + \cdots + [b_0],
+\end{array}
+\right.
+$$
+where $[b] = b + \beta \Z[i] \in  \Z[i]/\beta \Z[i]$ is the coset of $b \in \Z[i]$ modulo the ideal $\beta \Z[i]$.
+
+Then $f = gh$ implies that $[a_0]u^d = \overline{g} \overline{h}$, since $\beta \mid a_{1}, \ldots, \beta \mid a_d$. However, $\beta$ being prime, $\Z[i]/\beta \Z[i] = \F_{N(\beta)}$ is a field, which means that unique factorization holds in $\F_{N(\beta)}[u]$. Since $\beta \nmid a_0$, it follows that $\overline{g} = [a] u^r$ and $\overline{h} = [b] u^s$, where $[a][b] = [a_0]$ and $r+s = d$.
+
+If $r = 0$, then $\overline{g} = [a]$ and $\deg(g)>0$ would imply that the leading term of $g$ is divisible by $\beta$. Then $f = gh$ would imply that the same is true for the leading term $a_0$ of $f$. Thus $\beta \nmid a_0$ implies that $r>0$, and $s>0$ follows similarly.
+
+But then $\overline{g} = [a]u^r$ for $r>0$ implies that $\beta$ divides the constant term of $g$, and the same is true for the constant term of $h$, since $s>0$. Since the constant term $a_d$ of $f$ is the product of the constant terms of $g$ and $h$, it follows that $\beta^2 \mid a_d$. This contradicts $\beta^2 \nmid a_d$ and completes the proof.
+\end{proof}
+
+\paragraph{Ex. 15.4.13}{\it  Prove that the coefficients $b_k(\beta)$ defined in (15.54) lie in $\Z[i]$.
+}
+
+\begin{proof}
+We know (see p. 498) that, for an odd Gaussian integer $\beta \in \Z[i]$, 
+$$\varphi(\beta z) = i^\varepsilon \varphi(z) \frac{P_\beta(\varphi^4(z)}{Q_\beta(\varphi^4(z)},$$
+where
+\begin{align*}
+P_\beta(z) &= u^d + a_1(\beta)u^{d-1}+ \cdots + a_d(\beta),\\
+Q_\beta(z) &= 1 + a_1(\beta) u + \cdots + a_d(\beta) u^d.
+\end{align*}
+
+We have proved in Exercise 7 that $P_\beta, Q_\beta$ are in $\Z[i][u]$, thus the numbers $a_i$ are Gaussian integers.
+
+The numbers $b_k(\beta)$ are  defined for $k \in \N$ by
+\begin{align*}
+i^\varepsilon \frac{u^d + a_1(\beta)u^{d-1}+ \cdots + a_d(\beta)}{1 + a_1(\beta) u + \cdots + a_d(\beta) u^d} &= \sum_{k=0}^\infty b_k(\beta) u^k\\
+&= b_0(\beta) + b_1(\beta)u + b_2(\beta) u^2+\cdots.
+\end{align*}
+where the right member is a formal series of $\C[[u]]$, and $u$ a variable.
+
+Starting from the sum of geometric series $1/(1+x) = \sum_{k=0}^\infty(-1)^k x^k$, we obtain
+$$\frac{1}{1+a_1u+\cdots+a_d u^d} = \sum_{k=0}^\infty (-1)^k(a_1u + \cdots +a_du^d)^k,$$
+where the last sum makes sense in the ring $\C[[u]]$ of formal series, since 
+$$(a_1u+\cdots+a_d u^d)^k = u^k(a_1+\cdots+a_du^{d-1})^k,$$
+so a given power of $u$ appears in only finitely many terms.
+
+Therefore, writing $a_i = a_i(\beta)$, and $a_0 = 1$
+\begin{align*} 
+\sum_{l=0}^\infty b_l u^l&=i^\varepsilon \frac{u^d + a_1u^{d-1}+ \cdots + a_d}{1 + a_1 u + \cdots + a_d u^d}\\
+&=i^\varepsilon  \sum_{j=0}^d a_{d-j} u^j \ \sum_{k=0}^\infty (-1)^k(a_1u + \cdots +a_du^d)^k\\
+&= i^\varepsilon  \sum_{j=0}^d\sum_{k=0}^\infty  (-1)^ka_{d-j} u^{j} (a_1u+\cdots+a_du^{d})^k.
+\end{align*}
+Developing $(a_1+\cdots+a_du^{d-1})^k$ with the Multinomial Theorem, we obtain
+$$(a_1u+\cdots+a_du^{d})^k = \sum_{i_1+\cdots+ i_{d}= k} \binom{k}{i_1,i_2,\ldots,i_{d}} a_1^{i_1}\cdots a_d^{i_{d}} u^{i_1+2i_2+ \cdots+di_d},
+$$
+whose coefficients are Gaussian integers. Therefore the developing of the right member is a formal series with only Gaussian integer coefficients, and $b_k(\beta) \in \Z[i]$ for all  indices $k\geq 0$. 
+
+Since  $i^\varepsilon \frac{u^d + a_1(\beta)u^{d-1}+ \cdots + a_d(\beta)}{1 + a_1(\beta) u + \cdots + a_d(\beta) u^d}$ is analytic in the neighborhood of $0$, the radius of convergence of this series is nonzero.                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+\end{proof}
+
+
+\paragraph{Ex. 15.4.14}{\it  The function $\varphi(z)$ is analytic at $z=0$ and hence has a power series expansion.
+\be
+\item[(a)] In Exercise 3 of Section 15.2, you used $\varphi'^2(z) = 1 - \varphi^4(z)$ to show that $\varphi''(z) = -2 \varphi^3(z)$. Use these two identities to prove by induction that for every $n\geq 1$, there is a polynomial $G_n(u) \in \Z[u]$ such that $\varphi^{(n)}(z)$ equals $G_n(\varphi(z))$ if $n$ is even and $G_n(\varphi(z)) \varphi'(z)$ if $n$ is odd.
+\item[(b)] Use part (a) to prove that the coefficients of the power series expansion of $\varphi(z)$ at $z=0$ lie in $\Q$.
+\item[(c)] Use part (b) and $\varphi(iz) = i \varphi(z)$ to show that $\varphi(z) = \sum_{j=0}^\infty c_j z^{4j+1}, c_j \in \Q$.
+\item[(c)] Show that $c_0 = 1, c_1 = -\frac{1}{10}$, and $c_2 = \frac{1}{120}$.
+\ee
+}
+
+\begin{proof}
+\item[(a)] $\varphi^{(0)}(z) = \varphi(z)$, thus $\varphi^{(0)}(z) = G_0(\varphi(z))$, where  $G_0(z) = z$.
+
+Now assume that the property holds for all integers $k \leq n$, where $n\geq 2$.
+
+$\bullet$ If $n$ is even, there is a polynomial $G_n \in \Z[u]$ such that
+$$ \varphi^{(n)}(z) = G_n(\varphi(z)).$$
+Then $n+1$ is odd, and, for all $z\in \C$ such that both members are defined,
+\begin{align*}
+\varphi^{(n+1)}(z) &= G_n'(\varphi(z)) \varphi'(z)\\
+&=G_{n+1}(\varphi(z)) \varphi'(z),
+\end{align*}
+where $G_{n+1}(u) = G'_n(u) \in \Z[u]$, so that the property holds for $n+1$ if $n$ is odd.
+
+$\bullet$ If $n$ is odd, there is a polynomial $G_n\in \Z[u]$ such that
+$$\varphi^{(n)}(z) = G_n(\varphi(z))\varphi'(z).$$
+Then $n+1$ is even. Using $\varphi'^2(z) = 1 - \varphi^4(z)$ and $\varphi''(z) = -2 \varphi^3(z)$, we obtain
+\begin{align*}
+\varphi^{(n+1)}(z) &= G'_n(\varphi(z)) \varphi'^2(z) + G_n(\varphi(z)) \varphi''(z)\\
+&=G'_n(\varphi(z)) (1- \varphi^4(z)) -2 \varphi^3(z) G_n(\varphi(z))\\
+&=G_{n+1}(\varphi(z)),
+\end{align*}
+where $G_{n+1}(u) = G'_n(u)(1-u^4) - 2 u^3 G_n(u) \in \Z[u]$. The induction is done.
+
+To resume, for each integer $n  \geq 0$, there is a polynomial $G_n(u) \in \Z[u]$ such that
+$$\begin{array}{lll}
+\varphi^{(n)}(z) &= G_n(\varphi(z)) &(n \equiv 0 \pmod 2)\\
+		    &= G_n(\varphi(z))\varphi'(z) & (n \equiv 1 \pmod 2)
+\end{array}$$
+where
+$$\begin{array}{ll}
+G_0(u) = u,&\\
+G_{n+1}(u) = G'_n(u)  &\qquad (n \equiv 0 \pmod 2),\\
+G_{n+1}(u) = G'_n(u)(1-u^4) - 2 u^3 G_n(u) &\qquad (n \equiv 1 \pmod 2).
+\end{array}$$
+\item[(b)] The power series expansion of $\varphi(z)$ at $z=0$ is
+$$\varphi(z) = \sum_{k=0}^\infty \frac{\varphi^{(k)}(0)} {k!} z^k, \qquad (|z| < r,\ r>0),$$
+where $\varphi^{(k)}(0) = G_k(\varphi(0)) = G_k(0) \in \Z$ if $k$ is even, and $\varphi^{(k)}(0) = G_k(\varphi(0)) \varphi'(0) = G_k(0) \in \Z$ if $k$ is odd ($r$ is the radius of convergence, which is positive). Thus $\varphi_k(0) \in \Z$ for all $k\geq 0$, and $\frac{\varphi^{k}(0)}{k!} \in \Q$.  
+
+The coefficients of the power series expansion of $\varphi(z)$ at $z=0$ lie in $\Q$.
+\item[(c)]We write the power series expansion of $\varphi(z)$  at $z = 0$ under the form $$\varphi(z) = \sum_{k=0}^\infty a_k z^k.$$
+Then 
+$$\varphi(iz) = \sum_{k=0}^\infty a_k i^k z^k,\qquad (|z|<r)$$
+and 
+$$i \varphi(z) = \sum_{k=0}^\infty a_k i z^k.$$
+The identity $\varphi(iz) = i\varphi(z)$, and the unicity of the power series expansion of $\varphi(z)$ at $z=0$ gives, for all $k\geq 0$,
+$$a_k i^k = a_k i.$$
+If $a_k \ne 0$, then $i^k = i$, which implies $k \equiv 1 \pmod 4$. Thus $a_k = 0$ if $k \not \equiv 1 \pmod 4$. If we write $c_j = a_{4j+1}$, then 
+$$\varphi(z) = \sum_{j=0}^\infty c_j z^{4j+1},\qquad c_j \in \Q.$$
+\item[(d)] Here
+$$c_j = a_{4j+1} = \frac{\varphi^{(4j+1)}(0)}{(4j+1)!} = \frac{G_{4j+1}(\varphi(0)) \varphi'(0)}{(4j+1)!} = \frac{G_{4j+1}(0)}{(4j+1)!}.$$
+This gives
+$$c_0 = G_1(0) = 1,\qquad c_1 = \frac{G_5(0)}{5!}, \qquad c_2 = \frac{G_9(0)}{9!}.$$
+
+"Lazy day, Sunday afternoon", I use a small program to compute $G_5,G_9$.
+\begin{verbatim}
+R.<u> = ZZ['u'] 
+
+def G(n):
+    G0 = u
+    for k in range(n):
+        if k % 2 == 0:
+            G0 = G0.diff()
+        else:
+            G0 = G0.diff()*(1-u^4)-2*u^3*G0
+    return G0
+    
+G(5)(0)/5.factorial(), G(9)(0)/9.factorial()
+\end{verbatim}
+$$
+-\frac{1}{10}, \frac{1}{120}
+$$
+So
+$$c_0 = 1, c_1 = -\frac{1}{10}, c_2 =  \frac{1}{120}.$$
+With more effort,
+$$\varphi(z) = z -\frac{1}{10} z^5 + \frac{1}{120} z^9 -\frac{11}{15600}z^{13} +
+\frac{211}{3536000} z^{17} -\frac{1607}{318240000} z^{21}
++ \frac{1511}{3536000000}z^{25} + \cdots.
+$$
+\end{proof}
 
 \end{document}
