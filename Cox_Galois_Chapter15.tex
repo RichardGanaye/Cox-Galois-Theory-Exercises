@@ -1938,4 +1938,27 @@ This gives, for every odd integer $n \in \Z$,
 $$\varphi(nz) = (-1)^{(n-1)/2} \varphi(z) \frac{P_n\left(\varphi^4(z)\right)}{Q_n\left(\varphi^4(z)\right)}.$$
 \end{proof}
 
+\subsection{ABEL'S THEOREM}
+\paragraph{Ex. 15.5.1}{\it  Let $\beta \in \Z[i]$ be nonzero. Then $\alpha \in \Z[i]$ gives $[\alpha] \in \Z[i]/\beta \Z[i]$. Prove that $[\alpha] \in \left(\Z[i]/ \beta \Z[i] \right)^*$ if and only if $\alpha$ is relatively prime to $\beta$.
+}
+
+\begin{proof} 
+If $[\alpha] \in \left(\Z[i]/ \beta \Z[i] \right)^*$, there is some $\gamma \in \Z[i]$ such that $[\alpha] [\gamma ] = [1]$. This shows that $1 \in [\alpha] [\gamma] = [\alpha \gamma] = \alpha \gamma+ \beta \Z[i]$, so that
+$$\alpha \gamma = 1 + \beta \delta,\qquad \delta \in \Z[i].$$
+If $\xi \in \Z[i]$ divides $\alpha$ and $\beta$, then $\xi$ divides $1 = \alpha \gamma - \beta \delta$, thus $\xi$ is a unit. This proves that $\alpha, \beta$ are relatively prime.
+
+\bigskip
+
+Conversely, suppose that $\alpha, \beta$ are relatively prime. Since $\Z[i]$ is a principal ideal domain, the ideal $\alpha \Z[i] + \beta \Z[i]$ is equal to $\zeta \Z[i]$ for some $\zeta \in \Z[i]$:
+$$\alpha \Z[i] + \beta \Z[i] = \zeta \Z[i],\qquad \zeta \in \Z[i].$$
+Then $\alpha = \alpha\cdot 1 + \beta \cdot 0 \in \alpha \Z[i] + \beta \Z[i] = \zeta \Z[i]$, thus $\alpha = \zeta \lambda,\ \lambda \in \Z[i]$, and $\zeta \mid \alpha$. Similarly, $\beta  = \alpha \cdot 0 + \beta \cdot 1 \in \zeta \Z[i]$, so that $ \zeta \mid \beta $. 
+
+Since $\zeta \mid \alpha, \zeta \mid \beta$, were $\alpha$ and $\beta$ are relatively prime, this implies that $\zeta$ is a unit, so that $\zeta \Z[i] = \Z[i]$, and
+$$\alpha \Z[i] + \beta \Z[i] = \Z[i].$$
+Then $1 \in \Z[i] = \alpha \Z[i] + \beta \Z[i] $, thus there are some $\gamma, \delta \in \Z[i]$ such that $1 =\alpha \gamma + \beta \delta$. Since $[\beta] = [0]$,
+$$[1] = [\alpha \gamma + \beta \delta] = [\alpha][\gamma] + [\beta][\delta] = [\alpha][\gamma],$$
+where $[\gamma] \in \Z[i]/\beta \Z[i]$. This proves that $[\alpha]$ has an inverse $[\gamma] \in \Z[i]/\beta \Z[i]$:
+$$[\alpha] \in \left(\Z[i]/ \beta \Z[i] \right)^*.$$
+\end{proof}
+
 \end{document}
