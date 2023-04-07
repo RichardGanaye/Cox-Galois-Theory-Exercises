@@ -646,7 +646,7 @@ Note the similarity to (15.10).
 
 \begin{proof} If $\alpha, \beta \in [0,1]$, then there are unique $x,y \in [0,\pi/2]$ such that $\alpha = \sin x$, $\beta = \sin y$. Then $x = \mathrm{arcsin}(\alpha), y = \mathrm{arcsin}(\beta))$, where $\mathrm{arcsin}$ is the reciprocal function of $f$, $f$ being the restriction of $\sin$ to $[0,\pi]$. For every $t \in ]-1,1[$, $f$ is differentiable at $f^{-1}(t) \in ]0,\pi[$, and $f'(f^{-1}(t) \ne 0$, thus $f^{-1} = \mathrm{arcsin} :[-1,1] \to [0,\pi]$ is differentiable on $]-1,1[$, and for all $t \in ]-1,1[$,
 $$\mathrm{arcsin}'(t) = (f^{-1})'(t) = \frac{1}{f'(f^{-1}(t))} = \frac{1}{\cos( \mathrm{arcsin}(t))} = \frac{1}{\sqrt{1 - \sin^2(\mathrm{arcsin}(t))}} = \frac{1}{\sqrt{1 -t^2}}.$$
-Since $t \mapsto  \frac{1}{\sqrt{1-t^2}}$ is continuous on $]-1,1[$, for all $z \in ]-1,1[$,
+Since $t \mapsto  \frac{1}{\sqrt{1-t^2}}$ is continuous on $]-1,1[$, for all $x \in ]-1,1[$,
 $$\mathrm{arcsin}(x) = \int_0^x  \frac{1}{\sqrt{1-t^2}} \D t.$$
 (This equality remains true for $x = \pm 1$: 
 
@@ -1797,6 +1797,145 @@ $$\varphi(z) = z -\frac{1}{10} z^5 + \frac{1}{120} z^9 -\frac{11}{15600}z^{13} +
 \frac{211}{3536000} z^{17} -\frac{1607}{318240000} z^{21}
 + \frac{1511}{3536000000}z^{25} + \cdots.
 $$
+\end{proof}
+
+\paragraph{Ex. 15.4.15}{\it  Show carefully that (15.58) follows from (15.57).
+}
+
+\begin{proof} To know the first coefficients of the power series expansion of $\varphi(\beta z)$, it is sufficient to do an asymptotic expansion in the neighborhood of $0$ up to degree 9.
+
+By (15.54),
+\begin{align*}
+\varphi(\beta z)=\phantom{a}  
+& b_0(\beta)(z+c_1z^5+c_2z^9+\cdots)+\\
+& b_1(\beta)(z+c_1z^5+c_2z^9+\cdots)^5+\\
+& b_2(\beta)(z+c_1z^5+c_2z^9+ \cdots)^9 + \cdots\\
+= \phantom{a} 
+&b_0(\beta)(z+c_1z^5+c_2z^9+o(z^9))+\\
+& b_1(\beta)(z+c_1z^5+o(z^5))^5+\\
+& b_2(\beta)(z+o(1))^9 + o(z^9)\\
+\end{align*}
+The second line gives
+$$
+b_1(\beta)(z+c_1z^5+c_2z^9+o(z^9))^5 = b_1(\beta) z^5(1+ c_1z^4 + o(z^4))^5\\
+$$
+Since $(1+w)^5 = 1+5w + o(w)$,  where $w = c_1z^4 + o(z^4) \to 0$ when $z \to 0$, and $w \sim c_1z^4$, thus $o(w) = o(z^4)$, we obtain
+$$
+(1+ c_1z^4 + o(z^4))^5 = 1+ 5 c_1 z^4 + o(z^4),\\
+$$
+so that
+$$b_1(\beta)(z+c_1z^5+c_2z^9+o(z^9))^5 = b_1(\beta)(z^5 + 5c_1 z^9) + o(z^9).$$
+Moreover
+$$b_2(\beta)(z+o(1))^9 = b_2(\beta)z^9 + o(z^9).$$
+Therefore
+\begin{align*}
+\varphi(\beta z)&=b_0(\beta)(z+c_1z^5+c_2z^9) + b_1(\beta)(z^5 + 5c_1 z^9)  + b_2(\beta)z^9 +o(z^9)\\
+&=b_0(\beta)z + (b_0(\beta) c_1 + b_1(\beta))z^5 + (b_0(\beta) c_2 + 5 b_1(\beta) c_1 + b_2(\beta)) z^9 +o(z^9),
+\end{align*}
+thus the power series expansion of $\varphi(\beta z)$ begins with
+$$\varphi(\beta z) = b_0(\beta)z + (b_0(\beta) c_1 + b_1(\beta))z^5 + (b_0(\beta) c_2 + 5 b_1(\beta) c_1 + b_2(\beta)) z^9 + \cdots.$$
+This gives (15.58).
+\end{proof}
+
+\paragraph{Ex. 15.4.16}{\it  Prove that for each integer $k\geq 0$ there exists a polynomial $S_k(u) \in \Q[u]$ of degree $4k$ such that (15.59) holds for all $\beta \in \Z[i]$.
+}
+
+\begin{proof} 
+By (15.56) and (15.57),
+\begin{align*}
+\varphi(\beta z) &= \sum_{j=0}^\infty c_j \beta^{4j+1} z^{4j+1}\\
+&= \sum_{k=0}^\infty b_k(\beta) \left( \sum_{j=0}^\infty c_j z^{4j+1}\right)^{4k+1}\\
+&=  \sum_{k=0}^\infty b_k(\beta) S_k(z),
+\end{align*}
+where
+\begin{align*}
+S_k(z) &= \left( \sum_{j=0}^\infty c_j z^{4j+1}\right)^{4k+1}\\
+&=z^{4k+1}\left(1 + \sum_{j=1}^\infty c_j z^{4j}\right)^{4k+1}
+\end{align*}
+Consider
+$$g(u) = 1 + \sum_{j=1}^\infty c_ju^j, $$
+which verifies $S_k(z) = z^{4k+1} g^{4k+1}(z^4)$.
+
+Since $\varphi(z) = \sum_{j=0}^\infty c_jz^{4j+1}$ is analytic in the neighborhood of $0$, it is the same for $g(u)$, so that the radius of convergence of $ \sum_{j=0}^\infty c_ju^j$ doesn't vanish. Then
+\begin{align*}
+g^{4k+1}(u) &= \left(1 + \sum_{j=1}^\infty c_ju^j\right)^{4k+1}\\
+&=\sum_{l=0}^\infty \delta_{k,l}u^l.
+\end{align*}
+We want to prove that $\delta_{k,l} \in \Q$, knowing that $c_1,c_2,\cdots $ are rational.
+To consider only finite sums, we use an asymptotic expansion in the neighborhood of $0$, up to  degree $m$.
+If $v =\sum_{j=1}^\infty c_ju^j$, then $v \sim c_1u = \frac{-1}{10}u$, and
+$$v = \sum_{j=1}^m c_ju^j + o(u^m).$$
+Therefore
+\begin{align*}
+g^{4k+1}(u) &= (1+v)^{4k+1}\\
+&=1 + \sum_{r=1}^{4k+1} \binom{4k+1}{r} v^k\\
+&=1 + \sum_{r=1}^{4k+1} \binom{4k+1}{r} \left(\sum_{j=1}^m c_ju^j\right)^k  + o(u^m)\\
+&= 1 + \sum_{l=1}^m P_{k,l}(c_1,\ldots,c_m) u^l + o(u^m),
+\end{align*}
+where $P_{k,l}$ is a multivariate polynomial with coefficients in $\Z$. 
+
+The unicity of the asymptotic expansion shows that $\delta_{k,0} = 1$, and 
+$$\delta_{k,l} = P_{k,l}(c_1,\cdots,c_m) \in \Q.$$
+(Note that the unicity shows that $P_{k,l}(c_1,\cdots,c_m)$ depends only of $c_1,\ldots, c_l$, so we can write $P_{k,l}(c_1,\cdots,c_m) = P_{k,l}(c_1,\cdots,c_l)$.)
+
+Therefore
+$$S_k(z)  =  \sum_{l=0}^\infty \delta_{k,l} z^{4l+4k+1},\qquad \delta_{k,l} \in \Q,$$
+and
+\begin{align*}
+\varphi(\beta z)  &= \sum_{k=0}^\infty b_k(\beta) S_k(z)\\
+&= \sum_{k=0}^\infty \sum_{l=0}^\infty  b_k(\beta)  \delta_{k,l} z^{4l+4k+1}\\
+&= \sum_{j=0}^\infty \left( \sum_{k+l = j}  b_k(\beta)  \delta_{k,l}\right) z^{4j+1}\\
+&= \sum_{j=0}^\infty \left( \sum_{k=0}^j  \delta_{k,j-k} b_k(\beta)  \right) z^{4j+1}\\
+&=\sum_{j=0}^\infty \left( \sum_{k=0}^j  a_{j,k} b_k(\beta)  \right) z^{4j+1}
+\end{align*}
+where $a_{j,k} = \delta_{k,j-k} \in \Q,$ and $a_{j,j} = \delta_{j,0} = 1$.
+This gives the generalization of (15.58):
+$$c_j \beta^{4j+1} = \sum_{k=0}^j  a_{j,k}\,  b_k(\beta) = a_{j,0}\, b_0(\beta) + \cdots + a_{j,j-1}\, b_{j-1}(\beta) + b_j(\beta), \qquad a_{j,k} \in \Q,$$
+
+
+\bigskip
+
+We prove by induction that for any $j$, there is a polynomial $S_j(u) \in \Q[u]$ of degree $4k$ such that $b_j(\beta) = \beta S_j(\beta)$.
+
+Since $b_0(\beta) = \beta$, this is true for $k=0$ with $S_0(u) = 1, \deg(S_0) = 0$.
+
+Now we suppose that $b_i(\beta) = \beta S_{i}(\beta)$ for $0\leq i \leq j-1$. Then
+\begin{align*}
+b_j(\beta) &= c_j \beta^{4j+1} - \sum_{k=0}^{j-1} a_{j,k} b_k(\beta)\\
+&=c_j \beta^{4j+1} - \sum_{k=0}^{j-1} a_{j,k}  \beta S_k(\beta)\\
+&= \beta \left(c_j \beta^{4j} - \sum_{k=0}^{j-1} a_{j,k}  S_k(\beta)\right)\\
+&=\beta S_j(\beta),
+\end{align*}
+where $S_j(u) = c_j u^{4j} - \sum_{k=0}^{j-1} a_{j,k}  S_k(u) \in \Q[u]$.
+
+Since $c_j =\frac{ \varphi^{(4j+1)}(0)}{(4j+1)!} \ne 0$, and $\deg(S_k) = 4k < 4j$ for $k=0,\ldots,j-1$, we obtain $\deg(S_j )= 4j$, and the induction is done.
+
+For each integer $k\geq 0$, there exists a polynomial $S_k(u) \in \Q[u]$ of degree $4k$ such that $b_k(\beta) = \beta S_k(\beta)$ holds for all odd $\beta \in \Z[i]$.
+\end{proof}
+
+\paragraph{Ex. 15.4.17}{\it  Let $n \in \Z$ be an odd integer. Prove that $n \equiv (-1)^{(n-1)/2} \pmod{2(1+i)}$. This shows that when $n$ is an odd integer, we have $i^\varepsilon = (-1)^{(n-1)/2}$ in the formula for $\varphi(nz)$ given in theorem 15.4.4.
+}
+
+\begin{proof} 
+Let $n = 2k+1,\ k \in \Z$ an odd integer.
+\be
+\item[$\bullet$] If $k$ is even, $k = 2k'$ for some $k'\in \Z$. Then $n = 4k'+1 \equiv 1 \pmod 4$.
+
+Since $4 = 2(1+i)(1-i) \equiv 0 \pmod {2(1+i)}$, $$n = 4k'+1 \equiv 1 = (-1)^{(n-1)/2} \pmod{2(1+i)}.$$
+\item[$\bullet$]If $k$ is odd, $k = 2k'+1$ for some $k'\in \Z$. Then $n = 4k'+ 3 \equiv -1 \pmod 4$.
+
+Since $4 \equiv 0 \pmod {2(1+i)}$,
+$$n = 4k'+3 \equiv -1 = (-1)^{(n-1)/2} \pmod {2(1+i)}.$$
+\ee
+In both cases, 
+$$n \equiv (-1)^{(n-1)/2} \pmod {2(1+i)}.$$
+
+\bigskip
+
+This shows that when $n = \beta$ is an odd integer, since $n = \beta \equiv i^\varepsilon \pmod {2(1+i)}$ by Theorem 15.4.4, we have
+$$i^\varepsilon \equiv \beta = n \equiv (-1)^{(n-1)/2} \pmod {2(1+i)}.$$
+This gives, for every odd integer $n \in \Z$,
+$$\varphi(nz) = (-1)^{(n-1)/2} \varphi(z) \frac{P_n\left(\varphi^4(z)\right)}{Q_n\left(\varphi^4(z)\right)}.$$
 \end{proof}
 
 \end{document}
