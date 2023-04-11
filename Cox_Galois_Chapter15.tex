@@ -1961,4 +1961,60 @@ where $[\gamma] \in \Z[i]/\beta \Z[i]$. This proves that $[\alpha]$ has an inver
 $$[\alpha] \in \left(\Z[i]/ \beta \Z[i] \right)^*.$$
 \end{proof}
 
+\paragraph{Ex. 15.5.2}{\it As in the proof of Theorem 15.5.1, let $u_0 = \varphi \left(\frac{\varpi}{n} \right)$, and assume that $\sigma \in \Gal\left(L/\Q[i]\right)$ satisfies $\sigma(u_0) = \varphi\left(\alpha 
+\frac{\varpi}{n} \right)$, where $\alpha \in \Z[i]$ is odd. Use the multiplication formula for $\beta \in \Z[i]$ odd to prove (15.65):
+$$\sigma \left(\varphi\left(\beta \frac{\varpi}{n} \right) \right) = \varphi\left(\alpha \beta \frac{\varpi}{n} \right).$$
+}
+
+\begin{proof} $\sigma$ fixes the elements of $\Q[i]$, thus $\sigma(i^\varepsilon) = i^\varepsilon$, and since $P_\beta(u), Q_\beta(u) \in \Z[i][u]$, for all $\zeta  \in L$,
+$$\sigma \left(\frac{P_\beta(\zeta)}{Q_\beta(\zeta) } \right)= \frac{P_\beta(\sigma(\zeta))}{Q_\beta(\sigma(\zeta))}.$$
+Starting from the multiplication formula for $\beta \in \Z[i]$ odd, we obtain
+$$\varphi\left(\beta \frac{\varpi}{n}\right) = i^\varepsilon \varphi\left(\frac{\varpi}{n}\right) \frac{P_\beta\left(\varphi^4(\frac{\varpi}{n})\right))}{Q_\beta\left(\varphi^4(\frac{\varpi}{n})\right))}.$$
+Since $\sigma \left(\varphi \left(\frac{\varpi}{n} \right)\right) = \varphi\left(\alpha \frac{\varpi}{n} \right)$, using the multiplication formula for $\beta$ anew,
+\begin{align*}
+\sigma \left(\varphi\left(\beta \frac{\varpi}{n} \right) \right)&= \sigma(i^\varepsilon)\sigma\left( \varphi\left(\frac{\varpi}{n}\right)\right) \sigma \left( \frac{P_\beta\left(\varphi^4(\frac{\varpi}{n})\right)) }{Q_\beta\left(\varphi^4(\frac{\varpi}{n})\right))} \right)\\
+&= i^\varepsilon \varphi\left(\alpha \frac{\varpi}{n}\right) \frac{P_\beta\left(\varphi^4(\alpha \frac{\varpi}{n})\right))}{Q_\beta\left(\varphi^4( \alpha \frac{\varpi}{n})\right))}\\
+&= \varphi\left( \beta\left ( \alpha  \frac{\varpi}{n} \right)\right) 
+\end{align*}
+We have proved
+$$\sigma \left(\varphi\left(\beta \frac{\varpi}{n} \right) \right) = \varphi\left(\alpha \beta \frac{\varpi}{n} \right).$$
+\end{proof}
+
+\paragraph{Ex. 15.5.3}{\it Use Theorem 15.5.1 and Chapter 8 to prove that the $x$- and $y$-coordinates of the $n$-division points of the lemniscate are expressible by radicals over $\Q$.
+}
+\begin{proof} 
+Let $n \geq 1$ be an integer. Suppose first that $n$ is  odd.
+
+By the proof of Theorem 15.5.1, the splitting field of $A_n = uP_n(u^4)$ is $L = \Q\left(i,\varphi\left(\frac{\varpi}{n}\right)\right)$ and $\Gal(L/\Q(i))$  is Abelian by this Theorem 15.5.1, therefore $\Gal(L/\Q(i))$ is solvable. 
+
+Thus the Galois group of $A_n(u)  =  u P_n(u^4)\in \Q(i)[u]$ is solvable by radicals over $\Q(i)$. This implies that all the roots of $A_n(u)$ are solvable by radicals over $\Q(i)$, and since $\Q \subset \Q(i)$ is radical, all the roots of $A_n(u)$ are solvable by radicals over $\Q$. 
+
+ Section 15.2 shows that the polar distances of the $n$-division points are
+ $$r_m = \varphi\left( m \frac{2\varpi}{n} \right), \qquad m=0,1,\ldots,n-1,$$
+and, since $n$ is odd,
+$$0 = \varphi(m\cdot 2\varpi) = \varphi\left(n \cdot m \frac{2\varpi}{n} \right) = \varphi\left(m \frac{2\varpi}{n} \right) \frac{P_n\left( \varphi^4\left(m \frac{2\varpi}{n}\right)\right)}{Q_n\left( \varphi^4\left(m \frac{2\varpi}{n}\right)\right)},$$
+where $P_n$ and $Q_n$ have no common root, thus $r_m$ is a root of $A_n(u) = u P_n(u^4)$, and $r_m$ is expressible by radicals for all $m \in \Z$.
+
+If $x,y$ are the coordinates of the $m$-th division point, then the equation of the lemniscate $(x^2 + y^2)^2 = x^2 -y^2$ gives
+$$r_m^4 = x^2 - y^2 \text{ and }  r_m^2 = x^2 + y^2,$$
+thus
+$$x  = \pm \sqrt{\frac{1}{2}(r_m^2 + r_m^4)},\qquad y =  \pm \sqrt{\frac{1}{2}(r_m^2 + r_m^4)}$$
+so that $x^2,y^2 \in \Q(r_m)$. This proves that $x,y$ are expressible by radicals.
+
+\bigskip
+
+If $n$ is even, then $n = 2^s n'$, where $n'$ is odd. The first part shows that 
+ $$r'_m = \varphi\left( m \frac{2\varpi}{n'} \right), \qquad m \in \Z,$$
+ are expressible by radicals.
+
+
+If we replace the word ''constructible'' in the proof of Proposition 15.2.3 by ''expressible by radicals'', we see that $r_0 = \varphi\left(\frac{x_0}{2}\right)$ is expressible by radicals if $a = \varphi(x_0)$ is expressible by radicals: the equations (15.15) and (15.16) show that there is some $t \in \C$ such that
+$$t^2 = \frac{2ir_0^2}{1 - r_0^4},\qquad a^2 = \frac{-2it^2}{1-t^4}.$$
+Since $t^2$ in a quadratic extension of $\Q(a)$ and $r_0^2$ is in a quadratic extension of $\Q(t)$, the chain $\Q \subset \Q(i) \subset \Q(i,a) \subset \Q(i,a,t) \subset \Q(i,a,t,r_0)$ shows that $r_0$ is expressible by radicals over $\Q$.
+
+Repeating $s$ times this argument, we see that the polar distances of the $n$-division points
+$$r_m = \varphi\left( m \frac{2\varpi}{2^sn'} \right) = \varphi\left( m \frac{2\varpi}{n} \right)$$
+are expressible by radicals for all $m\in \Z$, and as above the coordinates of the $m$-division points are expressible by radicals.
+\end{proof}
+
 \end{document}
