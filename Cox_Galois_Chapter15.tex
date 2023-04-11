@@ -8,6 +8,7 @@
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{mathrsfs}
 \usepackage{tikz}
 \graphicspath{ {./figures/} }
 %\input{8bitdefs}
@@ -2015,6 +2016,75 @@ Since $t^2$ in a quadratic extension of $\Q(a)$ and $r_0^2$ is in a quadratic ex
 Repeating $s$ times this argument, we see that the polar distances of the $n$-division points
 $$r_m = \varphi\left( m \frac{2\varpi}{2^sn'} \right) = \varphi\left( m \frac{2\varpi}{n} \right)$$
 are expressible by radicals for all $m\in \Z$, and as above the coordinates of the $m$-division points are expressible by radicals.
+\end{proof}
+
+\paragraph{Ex. 15.5.4}{\it Give a careful proof that (15.67) 
+$$
+\left|  \left( \Z[i]/p\Z[i]\right)^*\right| = 2^k,\ k \in \N,
+$$
+implies that $\varphi\left( \frac{\varpi}{p}\right)$ is constructible.
+}
+\begin{proof} 
+If $L = \Q\left(i, \varphi\left(\frac{\varpi}{p}\right) \right)$, then, by Theorem 15.5.1, $\Q(i) \subset L$ is a Galois extension, and $\Gal(L/\Q(i))$ is isomorphic to a subgroup of $\left(\Z[i]/p\Z[i]\right)^*$, thus $\left|\Gal(L/\Q(i))\right| = 2^m$ for some integer $m\geq 0$. As in the proof of Theorem 10.1.12, Since $\Gal(L/\Q(i))$ is a $p$-group for $p=2$, $\Gal(L/\Q(i))$ is solvable. This means that we have subgroups
+$$\{e\} =G_m \subset G_{m-1} \subset\cdots \subset G_1 \subset G_0 = \Gal(L/\Q(i)]$$
+such that $G_i$ is normal in $G_{i-1}$ of index $2$. Then the Galois correspondence gives
+$$\Q(i) = L_{G_0} \subset L_{G_1} \subset \cdots \subset L_{G_m} = L,$$
+where $[L_{G_i} : L_{G_{i-1}}] = 2$ for all $i$. We can add at the beginning of the chain $\Q \subset \Q(i)$, where $[\Q(i) : \Q] = 2$.
+
+By Theorem 10.1.6, where $\alpha = \varphi\left( \frac{\varpi}{p}\right) \in L$, this proves that $\alpha = \varphi\left( \frac{\varpi}{p}\right)$ is constructible. We recall the proof:
+
+$i$ is constructible, and $\mathscr C$ is a subfield of $\C$, therefore $\Q \subset \Q(i) \subset \mathscr{C}$.
+
+Write $L_i = L_{G_i}$. By Exercise 7.1.12, $L_i = L_{i-1}(\sqrt{\alpha_i})$ for some $\alpha_i \in L_{i-1}$. If $L_{i-1} \subset \mathscr C$, then $\alpha_i \in L_{i-1}$ is constructible, which implies $\sqrt{\alpha_i} \in {\mathscr C}$ by Theorem 10.1.4. Thus $L_i = L_{i-1}(\sqrt{\alpha_i}) \subset \mathscr C$. This shows by induction that $L = L_n \subset \mathscr C$, thus $\alpha = \varphi\left( \frac{\varpi}{p}\right) \in L$ is constructible.
+\end{proof}
+
+\paragraph{Ex. 15.5.5}{\it  Prove that $\left |  \left (\Z[i]/3 \Z[i] \right) \right | = 8$.
+}
+\begin{proof} 
+Since $3 \equiv -1 \pmod 4$, $3$ is a prime in $\Z[i]$. By Lemma 15.4.2, $\Z[i]/3 \Z[i]$ is a field isomorphic to $\F_{N(3)} = \F_9$, with $9$ elements. This implies that 
+$$\left | \left( \Z[i]/3 \Z[i]\right)^* \right | = \left | \left( \Z[i]/3 \Z[i]\right ) \setminus \{0\} \right | = 8.$$
+\end{proof}
+
+\paragraph{Ex. 15.5.6}{\it  Let $\alpha,\beta \in \Z[i]$ be relatively prime. Prove the Chiese Remainder Theorem for $\Z[i]$, which asserts that there is a ring isomorphism
+$$\Z[i]/\alpha\beta \Z[i] \simeq \Z[i]/ \alpha \Z[i] \times \Z[i]/\beta \Z[i].$$
+}
+\begin{proof} 
+Consider the map
+$$
+\psi
+\left\{
+\begin{array}{ccc}
+\Z[i] & \to & \Z[i]/ \alpha \Z[i] \times \Z[i]/\beta \Z[i]\\
+\gamma & \mapsto & (\gamma + \alpha \Z[i], \gamma + \beta \Z[i]).
+\end{array}
+\right.
+$$
+Then $\varphi$ is a ring homomorphism:
+\begin{align*}
+\psi(\gamma) \psi(\delta) &= (\gamma + \alpha \Z[i], \gamma + \beta \Z[i]) \cdot (\delta + \alpha \Z[i], \delta + \beta \Z[i])\\
+&= ((\gamma + \alpha \Z[i])(\delta + \alpha \Z[i]), (\gamma + \beta \Z[i])(\delta + \beta \Z[i]))\\
+&=(\gamma \delta + \alpha \Z[i], \gamma \delta + \beta \Z[i]),\\
+&= \psi(\gamma \delta)
+\end{align*}
+and similarly $\psi(\gamma) + \psi(\delta) = \psi(\gamma + \delta)$.
+
+Moreover, since $\alpha, \beta$ are relatively prime, for all $\gamma \in \Z[i]$,
+\begin{align*}
+\gamma \in \ker(\psi) & \iff \gamma \in \alpha \Z[i] \text{ and } \gamma \in \beta \Z[i]\\
+ & \iff \alpha \mid \gamma \text{ and }\beta \mid \gamma\\
+ & \iff \alpha \beta \mid \gamma\\
+ & \iff  \gamma \in \alpha \beta \Z[i].
+ \end{align*}
+Thus 
+$$\ker(\psi) = \alpha \beta \Z[i].$$
+Therefore there is an injective ring homomorphism
+$$\overline{\psi}: \Z[i]/\alpha\beta \Z[i] \to  \Z[i]/ \alpha \Z[i] \times \Z[i]/\beta \Z[i]$$
+such that $\overline{\psi}(\gamma + \alpha \beta \Z[i]) = \psi(\gamma)$.
+
+Since
+$$\left |\Z[i]/\alpha\beta \Z[i] \right | = N(\alpha \beta) = N(\alpha) N(\beta) =\left |\Z[i]/ \alpha \Z[i] \times \Z[i]/\beta \Z[i] \right|,$$
+$\overline{\psi}$ is surjective, so $\overline{\psi}$ is a ring isomorphism.
+$$\Z[i]/\alpha\beta \Z[i] \simeq \Z[i]/ \alpha \Z[i] \times \Z[i]/\beta \Z[i].$$
 \end{proof}
 
 \end{document}
