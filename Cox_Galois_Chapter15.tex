@@ -2187,4 +2187,71 @@ This equality shows that
 $$\varphi\left(\frac{\varpi}{\beta^2} \right) \in \Q\left(i, \varphi\left(\frac{\varpi}{n}\right)\right).$$
 \end{proof}
 
+\paragraph{Ex. 15.5.8}{\it Let $\beta \in \Z[i]$ be an odd prime. Prove that $\varphi\left(\frac{\varpi}{\beta}\right) \ne 0$.
+}
+\begin{proof} 
+
+By Theorem 15.3.2, the zeros of $\varphi$ occur at $z = (m+in)\varpi$ for $m,n \in \Z$. 
+If $\beta=1$ then $\varphi(\varpi) = 0$, so we assume that $n\geq 2$.
+
+If $N(\beta) = 1$, then $\beta \in \{1,i,-1,-i\}$, thus $\frac{\varpi}{\beta} \in\{\varpi, -i \varpi, -\varpi, i \varpi\}$ so that
+$$N(\beta) = 1 \Rightarrow \varphi\left(\frac{\varpi}{\beta}\right) = 0.$$
+
+We must assume $N(\beta) \geq 2$ to obtain the conclusion.
+
+If we assume that $\varphi\left(\frac{\varpi}{\beta}\right) = 0$ with $N(\beta) \geq 2$, the same Theorem 15.3.2 shows that
+$$ 
+\frac{\varpi}{\beta} = (m+in)\varpi, \qquad m,n \in \Z.
+$$
+Then $1 = (m+in)\beta$, where $\beta \in \Z[i]$ . This shows that $\beta$ is invertible in $\Z[i]$, and $1 = N(1) = N(m+in) N(\beta)$ shows that  $N(\beta) \mid 1$, where $N(\beta) >0$, thus $N(\beta) = 1$, which contradicts our hypothesis $N(\beta) \geq 2$.
+
+We have proved
+$$N(\beta) >1 \Rightarrow \varphi\left(\frac{\varpi}{\beta}\right) \ne 0.$$
+This remains true when $\beta$ is even.
+\end{proof}
+
+\paragraph{Ex. 15.5.9}{\it Let $p\in \Z$ be prime. Prove that $p^2 - 1$ is a power of $2$ if and only if $p=3$.
+}
+\begin{proof} 
+Assume that $p^2-1 = 2^k$ for some integer $k \geq 0$. Then $(p+1)(p-1) = 2^k$, therefore the unicity of the decomposition in prime factors shows that $p-1$ and $p+1$ are powers of $2$. There are integers $s,t\geq 0$ such that
+\begin{align*}
+p+1 &= 2^t,\\
+p-1 &= 2^s,
+\end{align*}
+where $0 \leq s < t$, and $s+t = k$.
+
+Then $2 = (p+1) -(p-1) = 2^t - 2^s$, thus 
+$$1 = 2^{t-1} - 2^{s-1} = 2^{s-1}(2^{t-s} - 1).$$
+If $s = 0$, then $p=2$ and $p^2 - 1 = 3$, which is not a power of $2$, so $s\geq 1$, and $t-s \geq 1$, so that $2^{s-1}, 2^{t-s}-1$ are positive integers, whose product is $1$. This shows that $2^{s-1} = 1$, thus $s=1$, and $p = 1+2^s = 3$.
+
+Conversely, if $p=3$, then $p^2 - 1 = 8 = 2^3$.
+
+To conclude, $p^2 - 1$ is a power of $2$ if and only if $p=3$.
+\end{proof}
+
+\paragraph{Ex. 15.5.10}{\it Let $n \in \Z$ be odd and positive, and let $L = \Q\left(i,\varphi\left( \frac{\varpi}{n} \right) \right)$. Use (15.9) and the multiplication law for $\varphi((n-1)z)$ to prove that $\varphi'\left(\frac{\varpi}{n} \right) \in L$.
+}
+\begin{proof} 
+By Theorem 15.2.5, since $n-1$ is even, for all $x \in \R$,
+$$\varphi((n-1)x) = \varphi(x) \frac{P_{n-1}\left( \varphi^4(x) \right)}{Q_{n-1}\left( \varphi^4(x) \right)} \varphi'(x),$$
+Moreover, by (15.9),
+$$\varphi \left((n-1)  \frac{\varpi}{n}  \right) = \varphi\left(\varpi - \frac{\varpi}{n}\right)  =\varphi \left( \frac{\varpi}{n}  \right).
+$$
+Applying these two formula with $x = \frac{\varpi}{n}$, we obtain
+$$
+\varphi \left( \frac{\varpi}{n}  \right) = \varphi \left((n-1)  \frac{\varpi}{n}  \right) = \varphi\left( \frac{\varpi}{n}  \right) \frac{P_{n-1}\left( \varphi^4\left( \frac{\varpi}{n}  \right) \right)}{Q_{n-1}\left( \varphi^4\left( \frac{\varpi}{n}  \right) \right)} \varphi'\left( \frac{\varpi}{n}  \right).
+$$
+
+If $n = 1$, then $\varphi \left( \frac{\varpi}{n}  \right) = 0$, but in this case $\varphi'(\varpi) = -1 \in \Q \subset L$.
+
+If $n>1$, then $\varphi \left( \frac{\varpi}{n}  \right)  \ne 0$, thus the last equality shows that $P_{n-1}\left( \varphi^4\left( \frac{\varpi}{n}  \right) \right) \ne 0$. We obtain 
+$$\varphi'\left( \frac{\varpi}{n}  \right)= \frac{Q_{n-1}\left( \varphi^4\left( \frac{\varpi}{n}  \right) \right)}{P_{n-1}\left( \varphi^4\left( \frac{\varpi}{n}  \right) \right)}.$$
+This equality shows that
+$$\varphi'\left( \frac{\varpi}{n}  \right) \in \Q\left(\varphi \left( \frac{\varpi}{n}  \right) \right) \subset \Q\left(i,\varphi\left( \frac{\varpi}{n} \right) \right).
+$$
+For all $n \in \Z, n>0$,
+$$\varphi'\left(\frac{\varpi}{n} \right) \in \Q\left(i,\varphi\left( \frac{\varpi}{n} \right) \right).
+$$
+\end{proof}
+
 \end{document}
