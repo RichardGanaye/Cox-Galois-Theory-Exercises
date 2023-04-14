@@ -1550,9 +1550,9 @@ $$\beta \in \{\pm[1],\pm[i]\}.$$
 Thus $\beta = i^\varepsilon, \varepsilon \in\{0,1,2,3\}$.
 
 \item[(b)] By (15.44), when $\beta$ is odd,
-$$\varphi(\beta z) = i^\varepsilon \varphi(z) \frac{P_\beta\left(\varphi^4(z)\right))}{Q_\beta\left(\varphi^4(z)\right))}.$$
+$$\varphi(\beta z) = i^\varepsilon \varphi(z) \frac{P_\beta\left(\varphi^4(z)\right)}{Q_\beta\left(\varphi^4(z)\right)}.$$
 Then 
-$$\varphi\left(\beta \frac{\varpi}{2}\right) = i^{\varepsilon} \varphi\left(\frac{\varpi}{2}\right)  \frac{P_\beta\left(\varphi^4(\frac{\varpi}{2})\right))}{Q_\beta\left(\varphi^4(\frac{\varpi}{2})\right))}.$$
+$$\varphi\left(\beta \frac{\varpi}{2}\right) = i^{\varepsilon} \varphi\left(\frac{\varpi}{2}\right)  \frac{P_\beta\left(\varphi^4(\frac{\varpi}{2})\right)}{Q_\beta\left(\varphi^4(\frac{\varpi}{2})\right)}.$$
 We know from Section (15.1) that $\varphi\left(\frac{\varpi}{2}\right) =1$. Moreover Theorem 15.4.4 shows that $Q_\beta(u) = u^dP_\beta(1/u)$. Taking $u=1$, we obtain $P(1) = Q(1)$, therefore
 $$\varphi\left(\beta \frac{\varpi}{2}\right) = i^{\varepsilon}.$$
 \end{proof}
@@ -2085,6 +2085,106 @@ Since
 $$\left |\Z[i]/\alpha\beta \Z[i] \right | = N(\alpha \beta) = N(\alpha) N(\beta) =\left |\Z[i]/ \alpha \Z[i] \times \Z[i]/\beta \Z[i] \right|,$$
 $\overline{\psi}$ is surjective, so $\overline{\psi}$ is a ring isomorphism.
 $$\Z[i]/\alpha\beta \Z[i] \simeq \Z[i]/ \alpha \Z[i] \times \Z[i]/\beta \Z[i].$$
+\end{proof}
+
+\paragraph{Ex. 15.5.7}{\it When evaluating the multiplication formula for $\varphi(\alpha z)$ at a complex number $z_0$, one needs to worry about poles and vanishing denominators.
+\be
+\item[(a)] Let $\alpha \in \Z[i]$ be odd, and assume that $z_0$ is a pole of neither $\varphi(z)$ nor $\varphi(\alpha z)$. Prove carefully that $Q_\alpha(\varphi^4(z_0))\ne 0$ and that
+$$
+\varphi(\alpha z_0) = i^\varepsilon \varphi(z_0) \frac{P_\alpha(\varphi^4(z_0))}{Q_\alpha(\varphi^4(z_0))}.
+$$
+Exercise 9 of Section 5.4 will be useful.
+\item[(b)] Let $n$ be odd, and let $p$ be a prime dividing $n$. Then let $\beta$ be a Gaussian prime such that $p=\beta$ if $p \equiv 3 \pmod 4$ and $p = \beta \overline{\beta}$ if $p\equiv 1 \pmod 4$. Use part (a) to prove carefully that
+$$
+\varphi \left(  \frac{\varpi}{\beta} \right) \in \Q \left( i , \varphi \left(\frac{\varpi}{n} \right) \right).
+$$ 
+Theorem 15.3.2 will be helpful.
+
+\item[(c)] Let $n$ be odd, and let $p$ be a prime such that $p^2$ divides $n$. Also define $\beta$ as in part (b). Prove that
+$$
+\varphi \left(  \frac{\varpi}{\beta^2} \right) \in \Q \left( i , \varphi \left(\frac{\varpi}{n} \right) \right).
+$$
+\ee
+}
+\begin{proof} 
+\item[(a)] Assume  that $z_0$ is not a pole of $\varphi(z)$. We will prove that $Q_\alpha(\varphi^4(z_0)) = 0$ implies that $z_0$ is a pole of $\varphi(\alpha z)$. 
+
+Write $u_0 = \varphi(z_0) \in \C$, and $v_0 = u_0^4 = \varphi^4(z_0)$. Since $Q_\alpha(v_0) = 0$, there is some polynomial $R$ and some $k \in \Z,\ k\geq 1$ such that $Q_n(v) = (v-v_0)^k R(v)$ (we have not proved in the text that $Q_n$ has no multiple root) and $R(v_0) \ne 0$, so that, with $v = u^4$,
+$$Q_\alpha(u^4) = (u^4 - u_0^4)^k R(u^4), \qquad R(u_0^4) = R(\varphi^4(z_0)) \ne 0.$$
+
+For all $z \in \C$ such that both members are defined,
+\begin{align*}
+\varphi(\alpha z) &= i^\varepsilon \varphi(z) \frac{P_\alpha(\varphi^4(z))}{Q_\alpha(\varphi^4(z))}\\
+&= i^\varepsilon \varphi(z) \frac{P_\alpha(\varphi^4(z))}{(\varphi^4(z) - \varphi^4(z_0))^k R(\varphi^4(z))}\\
+&= \frac{v(z)}{(\varphi^4(z) - \varphi^4(z_0))^k},
+\end{align*}
+where $v(z) = i^\varepsilon \varphi(z) \frac{P_\alpha(\varphi^4(z))}{R(\varphi^4(z))}$ is analytic in some neighborhood $U_1$ of $z_0$, since $z_0$ is not a pole of $\varphi$, and since $R(\varphi^4(z_0)) \ne 0$.
+
+Moreover, by Exercise 9 of section 5.4, $u P_\alpha(u)$ and $Q_\alpha(u)$ have no common roots. Since $\varphi^4(u_0)$ is a root of $Q_\alpha(u)$, we have $\varphi^4(z_0) P_\alpha(\varphi^4(z_0)) \ne 0$, so that 
+$$v(z_0) \ne 0.$$
+
+\bigskip
+
+ If $z_0$ was a zero of $\varphi(z_0)$, then $\varphi(z_0) = 0$ and $Q_\alpha(\varphi^4(z_0)) = Q_\alpha(0) = 1 \ne 0$, in contradiction with the hypothesis, thus $\varphi(z_0) \ne 0$.
+
+We write
+$$\varphi(z) = \varphi(z_0) + (z-z_0)^l w(z), \qquad w(z_0) \ne 0,$$
+where $w(z)$ is analytic in a neighborhood $U_2$ of $z_0$, and $l$ is the order of the zero $z_0$ of $\varphi(z) - \varphi(z_0)$ (thus $l = 1$ or $l = 2$ by the proof of theorem 15.3.3).
+
+Then 
+\begin{align*}
+\varphi^4(z) - \varphi^4(z_0) &= (\varphi(z)- \varphi(z_0)) (\varphi^3(z) + \varphi(z_0) \varphi^2(z) + \varphi(z_0)^2 \varphi(z) + \varphi^3(z_0))\\
+&=(\varphi(z)- \varphi(z_0)) s(z)\\
+&= (z-z_0)^l w(z) s(z)\\
+&= (z-z_0)^l t(z)
+\end{align*}
+where $s(z) = \varphi^3(z) + \varphi(z_0) \varphi^2(z) + \varphi(z_0)^2 \varphi(z) + \varphi^3(z_0)$ and $t(z) = s(z) t(z)$. Then $s$ is analytic in a neighborhood $U_3$ of $z_0$, since $z_0$ is not a pole of $\varphi$.  Moreover $s(z_0) = 4 \varphi^3(z_0) \ne 0$. Therefore $t(z) = s(z) w(z)$ is analytic in $U_2 \cap U_3$, and $t(z_0) =s(z_0) w(z_0) \ne 0$.
+
+Since the poles of $\varphi(\alpha z)$ are isolated, there is a neighborhood $U_4$ of $z_0$ such that $\varphi(\alpha z)$ is defined on $U_4 \setminus\{z_0\}$.
+
+Then, for all $z$ in the neighborhood $U = U_1 \cap U_2 \cap U_3 \cap U_4$ of $z_0$ such that $z\ne z_0$, since both members are defined in $U$, 
+$$
+\varphi(\alpha z) = \frac{v(z)}{t^k(z)} \frac{1}{(z-z_0)^{kl}}, \qquad z \in U.
+$$
+Since $v,t$ are analytic, and $t(z_0)\ne 0$ , $r(z) = \frac{v(z)}{t^k(z)}$ is analytic in a neighborhood of $z_0$, and
+$$\varphi(\alpha z) = \frac{r(z)}{(z-z_0)^{kl}}.$$
+Moreover, since $v(z_0) \ne 0$, $r(z_0) =  \frac{v(z_0)}{t^k(z_0)} \ne 0$. This proves that $\varphi(\alpha z)$ has a pole of order $kl \geq 1$.
+
+This proves by contraposition that if $z_0$ is a pole of neither $\varphi(z)$ nor $\varphi(\alpha z)$, then $Q_\alpha(\varphi^4(z_0))\ne 0$.
+
+Moreover, since $z_0$ is not a pole of $\varphi(\alpha z)$, $\varphi(\alpha z_0)$ is defined, and since $Q_\alpha(\varphi^4(z_0)) \ne 0$, where $z_0$ is not a pole of $\varphi(z_0)$, the right member is defined, thus
+$$
+\varphi(\alpha z_0) = i^\varepsilon \varphi(z_0) \frac{P_\alpha(\varphi^4(z_0))}{Q_\alpha(\varphi^4(z_0))}.
+$$
+
+\item[(b)] In both cases of the sentence, $\beta$ is a Gaussian prime dividing $n$. Thus there is a Gaussian integer $\alpha$ such that 
+$$n = \beta \alpha, \qquad \alpha \in \Z[i].$$
+Since $n$ is odd, $\beta$ and $\alpha$ are odd. 
+
+To apply part (a), it remains to verify that $z_0 = \frac{\varpi}{n}$ is a pole of neither $\varphi(z)$ nor $\varphi(\alpha z)$.
+
+$\varphi(z)$ has no real poles, thus $ \frac{\varpi}{n} \in \R$ is not a pole of $\varphi(z)$.
+
+If $\frac{\varpi}{n}$ was a pole of $\varpi(\alpha z)$, then $\alpha \frac{\varpi}{n}$ would be a pole of $\varphi(z)$. The Theorem 15.3.2 shows that
+$$\alpha \frac{\varpi}{n} = (a+ib) \frac{\varpi}{2}, \qquad a,b \text{ odd}.$$
+But then $\alpha = \frac{n}{2}(a+ib) \not \in \Z[i]$, because $n,a$ and $b$ are odd. This contradicts $\alpha \in \Z[i]$, and this contradiction shows that $\frac{\varpi}{n}$ is not a pole of $\varphi(\alpha z)$.
+
+Therefore, by Theorem 15.4.4 and part (a),
+$$\varphi\left(\frac{\varpi}{\beta} \right) = \varphi\left(\alpha \frac {\varpi}{n} \right) = i^\varepsilon \varphi\left(\frac{\varpi}{n}\right) \frac{P_\alpha\left(\varphi^4\left(\frac{\varpi}{n}\right)\right)}{Q_\alpha\left(\varphi^4\left(\frac{\varpi}{n}\right)\right)}.
+$$
+This shows that $$\varphi\left(\frac{\varpi}{\beta} \right) \in \Q\left(i,\varphi\left( \frac{\varpi}{n}\right)\right).$$
+
+\item[(c)] Now $p^2 \mid n$.  Since $\beta$ is a Gaussian prime dividing $p$, $\beta^2$ divides $n$ in $\Z[i]$, thus there is some $\alpha$ such that
+$$n = \beta^2 \alpha,\qquad \alpha \in \Z[i].$$
+We know that $n$ and $\beta$ are odd, thus $\alpha$ is odd.
+
+Since $\alpha$ is odd, the same proof as in part (b) shows that  $ \frac{\varpi}{n} \in \R$ is a pole of neither$\varphi(z)$ nor $\varphi(\alpha z)$.
+
+Therefore, by Theorem 15.4.4 and part (a),
+$$\varphi\left(\frac{\varpi}{\beta^2} \right) = \varphi\left(\alpha \frac {\varpi}{n} \right) = i^\varepsilon \varphi\left(\frac{\varpi}{n}\right) \frac{P_\alpha\left(\varphi^4\left(\frac{\varpi}{n}\right)\right)}{Q_\alpha\left(\varphi^4\left(\frac{\varpi}{n}\right)\right)}.
+$$
+This equality shows that
+$$\varphi\left(\frac{\varpi}{\beta^2} \right) \in \Q\left(i, \varphi\left(\frac{\varpi}{n}\right)\right).$$
 \end{proof}
 
 \end{document}
