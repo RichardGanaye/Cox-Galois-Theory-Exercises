@@ -71,7 +71,7 @@
 \begin{proof}
 \begin{enumerate}
 \item[(a)]
-If $\theta$ lies in the normalizer of $\langle \theta\rangle = \{e,\theta,\theta^2,\ldots,\theta^{p-1}\}$, then
+If $\tau$ lies in the normalizer of $\langle \theta\rangle = \{e,\theta,\theta^2,\ldots,\theta^{p-1}\}$, then
 $$\tau \theta \tau^{-1} \in \tau \langle \theta \rangle \tau^{-1}= \langle \theta \rangle,$$
 hence
 $$\tau \theta \tau^{-1} =\theta^l \text{ for some } l = 0,1\ldots,p-1.$$
@@ -526,8 +526,8 @@ It is not obvious that $\psi$ is bijective. We prove first that $\psi$ is surjec
  4&3&&6&5&&1&2 \\
 \end{array}
 \right) = (1\,4\,5)(3\,6\,2).
-\end{align*}
-Then $\lambda_1,\ldots,\lambda_4 \in G$ have order $3$, and $H_1 = \langle \lambda_1 \rangle = \{e,\lambda_1,\lambda_1^2\},\ldots,H_4 = \langle \lambda_1 \rangle = \{e,\lambda_4,\lambda_4^2\}$ are distinct, thus they are the four $3$-Sylow of $G$.
+\end{align*}4
+Then $\lambda_1,\ldots,\lambda_4 \in G$ have order $3$, and $H_1 = \langle \lambda_1 \rangle = \{e,\lambda_1,\lambda_1^2\},\ldots,H_4 = \langle \lambda_4 \rangle = \{e,\lambda_4,\lambda_4^2\}$ are distinct, thus they are the four $3$-Sylow of $G$.
 
 Now take 
 \begin{align*}
@@ -948,12 +948,12 @@ Using this action for part (b), we define $(\tau, \phi)$ for $\tau \in S_n, \phi
 $$(\tau, \phi) = (\tau; \phi(1),\ldots,\phi(n)),$$
 so that
 $$(\tau, \phi) = (\tau; g_1,\ldots,g_n) \iff  \phi(1) = g_1,\ldots,\phi(n) = g_n.$$
-If $(\tau, \phi) = (\tau; g_1,\ldots,g_n), (\tau', \phi') = (\tau; g'_1,\ldots,g'_n)$, then
+If $(\tau, \phi) = (\tau; g_1,\ldots,g_n), (\tau', \phi') = (\tau'; g'_1,\ldots,g'_n)$, then
 \begin{align*}
-(\tau, \phi) (\tau', \phi') &= (\tau; g_1,\ldots,g_n)(\tau; g'_1,\ldots,g'_n)\\
+(\tau, \phi) (\tau', \phi') &= (\tau; g_1,\ldots,g_n)(\tau'; g'_1,\ldots,g'_n)\\
 &=(\tau \tau'; g_{\tau'(1)}g'_1,\ldots,g_{\tau'(n)} g'_n) \\
-&=(\tau \tau'; \phi(\tau'(1))\phi'(1),\ldots,\phi(\tau'(n)) \phi'(n)\\
-&=(\tau \tau'; ((\tau')^{-1}\cdot\phi)(1)\phi'(1),\ldots,((\tau')^{-1}\cdot\phi)(n))\phi'(n)\\
+&=(\tau \tau'; \phi(\tau'(1))\phi'(1),\ldots,\phi(\tau'(n)) \phi'(n))\\
+&=(\tau \tau'; ((\tau')^{-1}\cdot\phi)(1)\phi'(1),\ldots,((\tau')^{-1}\cdot\phi)(n)\phi'(n))\\
 &= (\tau \tau', ((\tau')^{-1}\cdot\phi)\phi').
 \end{align*}
 
@@ -1130,8 +1130,8 @@ R_m&= \{ (\sigma_1 \tau_m)(1), \ldots, (\sigma_l \tau_m)(1)\}.
 \end{align*}
 Since $G = HK$, every permutation $\lambda \in G$ is a product $\lambda = \sigma_i \tau_j,\ 1\leq i\leq l, 1 \leq j \leq m$, and since $G$ is transitive,
 $$R_1 \cup \cdots \cup R_m = G\cdot 1 = \{1,\ldots,n\}.$$
-Take $\lambda = \sigma_i \tau_j \in G$, and $R_k = \{\sigma_u \tau_k, 1\leq u \leq n\}$. Then $\tau_j \tau_k = \tau_r$ for some fixed $r \in \{1,\ldots,m\}$. Since $G$ is Abelian,
-$$\lambda(R_k) = \{(\sigma_i \sigma_u \tau_j \tau_k)(1) , 1 \leq u \leq n\} = \{(\sigma_i \sigma_u \tau_r)(1) , 1 \leq u \leq n\} =  \{(\sigma_v \tau_r)(1) , 1 \leq v \leq n\} = R_r,$$
+Take $\lambda = \sigma_i \tau_j \in G$, and $R_k = \{\sigma_u \tau_k, 1\leq u \leq l\}$. Then $\tau_j \tau_k = \tau_r$ for some fixed $r \in \{1,\ldots,m\}$. Since $G$ is Abelian,
+$$\lambda(R_k) = \{(\sigma_i \sigma_u \tau_j \tau_k)(1) , 1 \leq u \leq l\} = \{(\sigma_i \sigma_u \tau_r)(1) , 1 \leq u \leq l\} =  \{(\sigma_v \tau_r)(1) , 1 \leq v \leq l\} = R_r,$$
 because the map $H \to H$, $\sigma_u \mapsto \sigma_i \sigma_u$ is bijective.
 
 This proves that $G$ is imprimitive, with blocks $R_1,\ldots,R_m$. 
@@ -1164,7 +1164,7 @@ $$
 \end{array}
 \right.
 $$
-Therefore, $\Gal(L/\Q)$ is Abelian, and even cyclic with order $p-1$. Let $\Gal(L/\Q) \simeq G  \subset S_{p-1}$. If $p>3$, then $p-1$ is not prime, and Exercise 9 prove that  $G_n$ is imprimitive, so that $\Phi_p(x)$ is imprimitive.
+Therefore, $\Gal(L/\Q)$ is Abelian, and even cyclic with order $p-1$. Let $\Gal(L/\Q) \simeq G  \subset S_{p-1}$. If $p>3$, then $p-1$ is not prime, and Exercise 9 prove that  $G$ is imprimitive, so that $\Phi_p(x)$ is imprimitive.
 
 \item[(b)] If $p = 3$, $p-1 = 2$ is prime, and $(\Z/3\Z)^* = \{1 ,-1 \}$ is cyclic of prime order. Moreover $\Phi_3(x) = x^2+x + 1$ is not imprimitive, as every polynomial of degree 2: by Definition 14.2.2, if $f$ is imprimitive, since $k>1,l>1$, $\deg(f) \geq |R_1|+|R_2| >2$.
 
@@ -1233,7 +1233,7 @@ Write $K = F(\lambda,\mu)$. Then $F\subset K \subset L$ is an intermediate field
 If $\lambda \in F$, then $\mu \in F$ and $f = g(x^3) = (x^3 - \lambda)(x^3 - \mu)$ would not be irreducible over $F$. Therefore $\lambda \not \in F,\mu \not \in F$, $g$ is irreducible over $F$. $K$ is the splitting field of the separable polynomial $g$, thus $F \subset K$ is a Galois extension, where $F \subsetneq K \subset L$.
 
 Moreover,
-$$f = g(x^2) = (x^3 - \lambda)(x^3 - \mu) = f_1 f_2,$$
+$$f = g(x^3) = (x^3 - \lambda)(x^3 - \mu) = f_1 f_2,$$
 where $f_1 = x^3 - \lambda, f_2 = x^3 - \mu \in K[x]$.
 Therefore three roots $\alpha,\alpha',\alpha''$ of $f$ are the roots of $x^3 -\lambda$, and three other roots $\beta,\beta',\beta''$ of $f$ are the roots of $x^3 - \mu$ :
 $$\alpha^3 = \alpha'^3 = \alpha''^3 = \lambda,\qquad \beta^3 = \beta'^3 = \beta''^3 = \mu.$$
@@ -1306,7 +1306,7 @@ then $\sigma(\alpha) = \alpha$ and $\sigma(\omega \alpha) = \omega \alpha$ show 
 
 If $\alpha$ is a root of $f$, then $-\alpha$ is a root of $f$. Moreover $\alpha \ne 0$, otherwise $d= 0$ and $f$ would not be irreducible, therefore $\alpha \ne -\alpha$. Since $f$ is separable, the roots of $f$ can be partitioned into three blocks
 $$R_1 = \{\alpha,-\alpha\},\qquad R_2 = \{\beta,-\beta\},\qquad R_3 = \{\gamma, -\gamma\}.$$
-If $\sigma \in \Gal(L/F)$ and if $\lambda \in R_i$ is a root of $f$, then $\sigma(\lambda) \in R_j$ for some index $\lambda$, and $\sigma(-\lambda) = - \sigma(\lambda) \in R_j$, thus $\sigma(R_i) = R_j$. Therefore $f$ is imprimitive, with blocks $R_1,R_2,R_3$. By Corollary 14.2.10, $\Gal(L/F)$ is isomorphic to a subgroup of $S_3 \wr S_2$.
+If $\sigma \in \Gal(L/F)$ and if $\lambda \in R_i$ is a root of $f$, then $\sigma(\lambda) \in R_j$ for some index $j$, and $\sigma(-\lambda) = - \sigma(\lambda) \in R_j$, thus $\sigma(R_i) = R_j$. Therefore $f$ is imprimitive, with blocks $R_1,R_2,R_3$. By Corollary 14.2.10, $\Gal(L/F)$ is isomorphic to a subgroup of $S_3 \wr S_2$.
 
 Since $\alpha,-\alpha, \beta,-\beta,\gamma,-\gamma$ are the distinct roots of $f$, then $\alpha^2,\beta^2,\gamma^2$ are distinct and they are the roots of $g = x^3 +bx^2+cx+d$. Therefore
 $$g =  x^3 +bx^2+cx+d = (x-\alpha^2)(x-\beta^2)(x-\gamma^2),$$
@@ -1365,7 +1365,7 @@ Given a subgroup $G_i \subset H \subset G$, let $\{\tau_1=e,\ldots,\tau_m\}$ be 
 Consider
 $$R_1 = (\tau_1H)\cdot i,\ldots,R_m = (\tau_m H)\cdot i.$$
 As $G =\tau_1H \cup \cdots \cup \tau_m H$, then
-$$R_1 \cup \cdots\cup R_m = (\tau_1H)\cdot i \cup \cdots \cup (\tau_mH)\cdot I =  G\cdot i = \{1,\ldots,n\}.$$
+$$R_1 \cup \cdots\cup R_m = (\tau_1H)\cdot i \cup \cdots \cup (\tau_mH)\cdot i =  G\cdot i = \{1,\ldots,n\}.$$
 Now we show that this union is disjoint.
 
 If $u \in R_j \cap R_k = (\tau_j H)\cdot i \cap (\tau_kH)\cdot i$, then
@@ -1592,7 +1592,7 @@ The map $\varphi$ is well defined, since for all $A,B \in \mathrm{GL}(n,\F_q)$ a
 \end{align}
 Then 
 $$
-\varphi(\gamma_{A,v} \circ \gamma_{B,w}) =\varphi( \gamma_{AB,Aw+v}) = AB = \varphi(\gamma_{A,v} \varphi(\gamma_{B,w})),
+\varphi(\gamma_{A,v} \circ \gamma_{B,w}) =\varphi( \gamma_{AB,Aw+v}) = AB = \varphi(\gamma_{A,v}) \varphi(\gamma_{B,w}),
 $$
 thus $\varphi$ is a group homomorphism.
 
@@ -1623,7 +1623,7 @@ Therefore, using (5) and (1),
 \psi(\gamma_{A,v})  \psi(\gamma_{B,w}) &= (v,A)(w,B)\\
 &= (v+ Aw,AB)\\
 &=\psi(\gamma_{AB,Aw+v})\\
-&=\psi(\gamma_{A,v}) \circ \psi(\gamma_{B,w}), 
+&=\psi(\gamma_{A,v} \circ \gamma_{B,w}), 
 \end{align*}
 thus $\psi$ is a group isomorphism, and
 $$\mathrm{AGL}(n,\F_q) \simeq \F_q^n \rtimes \mathrm{GL}(n,\F_q).$$
@@ -1648,7 +1648,7 @@ For all $u = (\alpha_1,\ldots,\alpha_n) \in \F_q^n$, we write $\sigma(u) = (\sig
 
 If $A =(a_{ij})_{1\leq i,j \leq n} \in \mathrm{GL}(n,\F_q)$, then 
 \begin{align*}
-\sigma(A\cdot u) &= \sigma\left(\sum_{j=1}^n a_{1j} \alpha_j,\ldots,\sum_{j=i}^n a_{ij} \alpha_j,\ldots,\sum_{j=1}^n a_{nj} \alpha_k\right)\\
+\sigma(A\cdot u) &= \sigma\left(\sum_{j=1}^n a_{1j} \alpha_j,\ldots,\sum_{j=i}^n a_{ij} \alpha_j,\ldots,\sum_{j=1}^n a_{nj} \alpha_j\right)\\
 &=\left(\sum_{j=1}^n \sigma(a_{1j}) \sigma(\alpha_j),\ldots,\sum_{j=i}^n \sigma(a_{ij})\sigma( \alpha_j),\ldots,\sum_{j=1}^n \sigma(a_{nj})\sigma( \alpha_j)\right)\\
 &=\sigma(A)\cdot \sigma(u),
 \end{align*}
@@ -1671,7 +1671,7 @@ s = \gamma_{A,\sigma,v}(u) &\iff s = A \sigma(u) + v\\
 &\iff \sigma(u) = A^{-1}(s -v)\\
 &\iff u = \sigma^{-1}(A^{-1} s - A^{-1}v)\\
 &\iff u = \sigma^{-1}(A^{-1}) \sigma^{-1}(s) - \sigma^{-1}(A^{-1})\sigma^{-1}(v)\\
-&\iff u = \gamma_{\sigma^{-1}(A^{-1}),\sigma^{-1},- \sigma^{-1}(A^{-1})\sigma^{-1}(v)},
+&\iff u = \gamma_{\sigma^{-1}(A^{-1}),\sigma^{-1},- \sigma^{-1}(A^{-1})\sigma^{-1}(v)}(s),
 \end{align*}
 thus
 \begin{align}
@@ -1796,7 +1796,7 @@ $$G_0 = \mathrm{GL}(n,F).$$
 
 \item[(c)]
 
- Let $u,v \in F^n \setminus \{0\}$. Since $u \ne 0$, we can compete $u$ in a base ${\cal B} _1= (u_1,\ldots,u_n)$ of $F_n$, where $u_1 = u$. Similarly, we can complete $v\ne 0$ in a base ${\cal B}_2 = (v_1,\ldots,v_n)$, where $v_1 = v$. 
+ Let $u,v \in F^n \setminus \{0\}$. Since $u \ne 0$, we can complete $u$ in a base ${\cal B} _1= (u_1,\ldots,u_n)$ of $F_n$, where $u_1 = u$. Similarly, we can complete $v\ne 0$ in a base ${\cal B}_2 = (v_1,\ldots,v_n)$, where $v_1 = v$. 
 
 Since ${\cal B}_1,{\cal B}_2$ are two bases, there exists some bijective linear map $f : F^n \to F^n$ such that $f(u_i) = v_i,\ i=1,\ldots,n$, so that $f(u) = v$.
 
@@ -1821,14 +1821,14 @@ Exercise 18 will explore various aspects of this argument.
 \begin{align*}
 (a,b)(a_0,e_B)(a,b)^{-1} 
 &=(a,b)(a_0,e_B)(a^{-1},b^{-1})\\
-&=(aa_0a^{-1},be_Bb^{-1}\\
+&=(aa_0a^{-1},be_Bb^{-1})\\
 &=(aa_0a^{-1}, e_B) \in A \times\{e_B\},
 \end{align*}
 thus $A\times \{e_B\}$ is normal in $A \times B$, and similarly $\{e_A\} \times B$ is normal in $A \times B$.
 
 \item[(b)] Reasoning by contradiction, suppose that we can't find $(a,b) \in N$ such that $a \ne e_A,b\ne e_B $ , then $N \subset (A \times \{e_B\}) \cup (\{e_A\} \times B)$. 
 
-Note that $A\times \{e_B\} \simeq A$ is simple. If $N \subset A \times \{e_B\}$, then $N$ is normal in $A \times \{e_B\} \subset A \times B$, thus $N = A\times\{e_A\}$ or $N = \{(e_A,e_B)\}$, but this contradicts the assumptions on $N$. Therefore $N \not \subset A \times \{e_B\}$, and similarly $N \not \subset \{e_A\} \times B$, so that
+Note that $A\times \{e_B\} \simeq A$ is simple. If $N \subset A \times \{e_B\}$, then $N$ is normal in $A \times \{e_B\} \subset A \times B$, thus $N = A\times\{e_B\}$ or $N = \{(e_A,e_B)\}$, but this contradicts the assumptions on $N$. Therefore $N \not \subset A \times \{e_B\}$, and similarly $N \not \subset \{e_A\} \times B$, so that
 \begin{align*}
 &N \subset (A \times \{e_B\}) \cup (\{e_A\} \times B), \\
 &N \not \subset A \times \{e_B\}, \quad N \not \subset \{e_A\} \times B.
@@ -1938,13 +1938,13 @@ Let $HK =\{hk \mid h \in H, k \in K\}$.
   where $h''= hh'\in H, k'' = (h'^{-1}kh' )k' $, and $h'^{-1}kh' \in K$, since $K$ is normal in $G$, so that $k'' =  (h'^{-1}kh' )k' \in K$. Thus $xy \in HK$
   \item[$\bullet$] If $x = hk \in HK$, where $h \in H, k \in K$, then
   $$x^{-1} = k^{-1}h^{-1} = h^{-1}(h k^{-1} h^{-1}),$$
-  where $h^{-1} \in H$, and $h k^{-1} h^{-1} \in K$, since $H$ is normal in $G$. Thus $x^{-1} \in HK$.
+  where $h^{-1} \in H$, and $h k^{-1} h^{-1} \in K$, since $K$ is normal in $G$. Thus $x^{-1} \in HK$.
   
   We have proved that $HK$ is a subgroup of $G$. Moreover, if $x = hk \in HK$, and $g \in G$ then
   $$gx g^{-1} = ghk g^{-1} = (ghg^{-1})(gkg^{-1}),$$
   where $ghg^{-1} \in H, gkg^{-1}$ in $K$, since $H,K$ are normal subgroups. Therefore $HK$ is a normal subgroup of $G$.
 
-\item[(b)] Assume that $H \cap K = \{e\}$. If $h \in H,$ and $k \in K$, consider $z = hkh^{-1}k^{-1} \in G$. Then $z = h(kh^{-1}k^{-1})$, where $h \in H, k h^{-1} k^{-1} \in H$, so that $z \in H$. Similarly $z = (hkh^{-1}) k^{-1}$, where $hkh^{-1} \in H$ and $k^{-1} \in K$, so that $z \in H \cap K = \{e\}$. Thus $hkh^{-1}k^{-1} = e$, which proves $hk = kh$.
+\item[(b)] Assume that $H \cap K = \{e\}$. If $h \in H,$ and $k \in K$, consider $z = hkh^{-1}k^{-1} \in G$. Then $z = h(kh^{-1}k^{-1})$, where $h \in H, k h^{-1} k^{-1} \in H$, so that $z \in H$. Similarly $z = (hkh^{-1}) k^{-1}$, where $hkh^{-1} \in K$ and $k^{-1} \in K$, so that $z \in H \cap K = \{e\}$. Thus $hkh^{-1}k^{-1} = e$, which proves $hk = kh$.
 
 $$(H \lhd G, K \lhd G, H \cap K = \{e\} ) \Rightarrow \forall h\in H, \forall k \in K, \ hk = kh.$$
 
@@ -2027,7 +2027,7 @@ Note that, as already seen in ex. 7.4.4, for all $j\in \{1,\ldots,n\}$,
 \begin{align*}
 (f^{-1} \circ \phi_{g_i} \circ f)(j) &= (f^{-1} \circ \phi_{g_i})(g_j)\\
 &= f^{-1}(g_i g_j)\\
-&= f^{-1}(g_{\sigma_i(j)}\\
+&= f^{-1}(g_{\sigma_i(j)})\\
 &= \sigma_i(j),
 \end{align*}
 thus
@@ -2039,7 +2039,7 @@ Write $\delta = \psi \circ \phi \circ f$, so that $\delta(i) = ( \psi \circ \phi
 We define $\gamma = \delta^{-1}$, thus for all $i \in \{1,\ldots,n\}$, 
 $$\gamma(f^{-1} \circ \phi_{g_i} \circ f) = i.$$
 
-Here $T = \{1,\ldots,n\}$, since $H \subset S(\{1,\ldots,n\}$. Then $\gamma : G \to T$ induces an isomorphism $\hat \gamma : S(G) \to S(T) = S_n$ defined by 
+Here $T = \{1,\ldots,n\}$, since $H \subset S(\{1,\ldots,n\})$. Then $\gamma : G \to T$ induces an isomorphism $\hat \gamma : S(G) \to S(T) = S_n$ defined by 
 $$\hat \gamma(\sigma) =\gamma \circ \sigma \circ \gamma^{-1}.$$
 Now we compute $\hat \gamma (\varphi_h)$, where $h \in H$ is a permutation, and $\varphi_h(k) = hk = h \circ k,\ k\in H$. 
 Since $h \in H$, there is some $i \in \{1,\ldots,n\}$ such that $h = f^{-1} \circ \phi_{g_i} \circ f =\sigma_i$.
@@ -2107,7 +2107,7 @@ $G$ is a regular subgroup of $S_l$.
 
 Note: This proves also that $G \subset S_l$ is regular iff there is some bijective $\gamma : G \to \{1,\ldots l\}$ such that $\hat \gamma$ maps $\varphi_g$ to $g$, for every $g\in G$.
 
- \paragraph{Ex. 14.3.11}{\it We can regard $\F_p^n$ as both a group (under addition) and a vector space over $\F_p$ (under addition and scalar multiplication). However, since we are over $\F_p$, scalar multiplication can be buildt out of addition. Use this observation to prove the following:
+ \paragraph{Ex. 14.3.11}{\it We can regard $\F_p^n$ as both a group (under addition) and a vector space over $\F_p$ (under addition and scalar multiplication). However, since we are over $\F_p$, scalar multiplication can be build out of addition. Use this observation to prove the following:
  \be
  \item[(a)] Any subgroup of $\F_p^n$ is a subspace.
  \item[(b)] Any group homomorphism $\gamma : \F_p^n \to \F_p^n$ is linear.
@@ -2138,7 +2138,7 @@ Therefore $\gamma([k]_p v) = [k]_p \gamma(v)$  for all $k \in \N$. This proves t
  \begin{proof}
  Here
  $$\F_p^n \subset G \subset \mathrm{AGL}(n,\F_p) \subset S_{p^n}.$$
- \item[(a)] Consider a complete system $\{a_1,\ldots,a_n\}$ of representatives of cosets of $V$ in $\F_p^n$, so that the cosets of $V$ are the disjoint cosets $$R_1 = a_1+V, \ldots,R_k = a_k + V.$$
+ \item[(a)] Consider a complete system $\{a_1,\ldots,a_k\}$ of representatives of cosets of $V$ in $\F_p^n$, so that the cosets of $V$ are the disjoint cosets $$R_1 = a_1+V, \ldots,R_k = a_k + V.$$
  Then $\F_p^n = \bigcup\limits_{i=1}^k (a_i + V)$ is the disjoint union of parallel affine subspaces.
  
  Let $g \in G \subset \mathrm{AGL}(n,\F_p)$. Recall (see the text following Corollary 14.3.18) that
@@ -2435,7 +2435,7 @@ In this exercise,  $F = \F_3$. Consider the restriction of this action to the su
 \end{array}
 \right) \in  \mathrm{SL}(2,\F_3)$, such that $\varphi([M])$ is the identity of $\dot \F_3$. Then, for all $z \in \dot \F_3, [M]\cdot z = z$. The equality $[M]\cdot \infty = \infty$ shows that $c=0$. Thus for every $z\in \F_3$,
 $$\frac{az+b}{d} = z,$$
-and then $az + b = dz, (a-d)z + b = 0$. With $z = 0$, we obtain $b=0$, and with $z=1$, $a-d = 0$. Therefore $M  = a I_2, \ a \in \F_3$, and $[M] = [I_2]$. We have proved that the kernel of the action is trivial, in other words $\varphi$ is injective, and $ \mathrm{PSL}(2,\F_3) \simeq \im(\varphi) \subset S(\dot \F_3)$ is isomorphic to a subgroup of  $S(\dot \F_3) \simeq S_4$, therefore $  \mathrm{PSL}(2,\F_3)$ is isomorphic to a subgroup of $S_4$. By Exercise 14, parts (c) and (d), $| \mathrm{PSL}(2,\F_3) = 12$, and the only subgroup of $S_4$ of order $12$ is $A_4$. Therefore
+and then $az + b = dz, (a-d)z + b = 0$. With $z = 0$, we obtain $b=0$, and with $z=1$, $a-d = 0$. Therefore $M  = a I_2, \ a \in \F_3$, and $[M] = [I_2]$. We have proved that the kernel of the action is trivial, in other words $\varphi$ is injective, and $ \mathrm{PSL}(2,\F_3) \simeq \im(\varphi) \subset S(\dot \F_3)$ is isomorphic to a subgroup of  $S(\dot \F_3) \simeq S_4$, therefore $  \mathrm{PSL}(2,\F_3)$ is isomorphic to a subgroup of $S_4$. By Exercise 14, parts (c) and (d), $| \mathrm{PSL}(2,\F_3)| = 12$, and the only subgroup of $S_4$ of order $12$ is $A_4$. Therefore
 $$ \mathrm{PSL}(2,\F_3) \simeq A_4.$$
 
   \end{proof}
@@ -2595,7 +2595,7 @@ $n_i = (a_1,\ldots,a_i,\ldots,a_r) \in N$ such that $a_i \ne e$.
 
  Since  $A_i$ is non-Abelian and simple, the centers $Z_i$ of $A_i$ are different from $A_i$, and $Z_i$ is normal in the simple group $A_i$, thus $Z_i = \{e\}$. Using $a_i \ne e$, this shows that there is some $c \in A_i$ such that $a_i c \ne c a_i$. Now take $a = (e,\ldots,e,c,e,\ldots,e) \in G$. Since $N$ is normal, $n_i(an_i^{-1}a^{-1}) \in N$, and
  \begin{align*}
- n_ian_i^{-1}a^{-1} &= (a_1,\ldots,a_i, \ldots, a_r) (a,\ldots,c,\ldots,e)(a_1^{-1},\ldots,a_i^{-1},\ldots,a_r^{-1})(e,\ldots,b^{-1},\ldots,e)\\
+ n_ian_i^{-1}a^{-1} &= (a_1,\ldots,a_i, \ldots, a_r) (e,\ldots,c,\ldots,e)(a_1^{-1},\ldots,a_i^{-1},\ldots,a_r^{-1})(e,\ldots,c^{-1},\ldots,e)\\
  &=(e,\ldots,a_ica_i^{-1}c^{-1},\ldots,e),
  \end{align*}
 thus $ n_ian_i^{-1}a^{-1} =(e,\ldots,n_i,\ldots,e)\in N$, where $n_i = a_ica_i^{-1}c^{-1} \ne e$. Since we can find such $n_i\ne e$ for each index $i$,
@@ -2661,7 +2661,7 @@ Therefore
 Now we prove that $G$ is doubly transitive. Let $(r,s),(r',s'),r\ne s, r'\ne s'$ be pairs of distinct elements of $\{1,\ldots,n\}$. 	
 Since $G_{r}$ acts transitively on $\{1,\ldots,n\} \setminus \{r\}$, and $r\ne s$, there exists $\sigma_1 \in G_r$ such that $\sigma_1(r) = r, \sigma_1(s) = s'$. Note that $r \ne s'$, otherwise $\sigma_1(r) = \sigma_1(s) ,r\ne s$, which is impossible since $\sigma_1$ is a permutation. Thus there exists $\sigma_2 \in G_{s'}$ such that $\sigma_2(r) = r', \sigma_2(s') = s'$, where $r'\ne s'$. Then $\sigma = \sigma_2\sigma_1$ satisfies $\sigma(r) = r', \sigma(s) = s'$. This proves that $G$ is doubly transitive.
 
-\item[(b)] Suppose first that $G$ is $k$ transitive, and let $(i_1,\ldots,i_{k-1}), (j_1,\ldots,j_{k-1})$ be any ${(k-1)}$-tuples of distinct elements of $\{1,\ldots,n\}\setminus \{i\}$. Then $(i, i_1,\ldots,i_{k-1}), (i, j_1,\ldots,j_{k-1})$ are $k$-tuples of distinct elements of $\{1,\ldots,n\}$, thus there is some $\sigma \in G$ such that $\sigma\cdot(i,i, i_1,\ldots,i_{k-1}) = (i, j_1,\ldots,j_{k-1})$, so that $\sigma \in G_i$ and $\sigma(i_1) = j_1,\ldots,\sigma(i_{k-1}) = j_{k-1}$. This proves that $G_i$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i\}$.
+\item[(b)] Suppose first that $G$ is $k$ transitive, and let $(i_1,\ldots,i_{k-1}), (j_1,\ldots,j_{k-1})$ be any ${(k-1)}$-tuples of distinct elements of $\{1,\ldots,n\}\setminus \{i\}$. Then $(i, i_1,\ldots,i_{k-1}), (i, j_1,\ldots,j_{k-1})$ are $k$-tuples of distinct elements of $\{1,\ldots,n\}$, thus there is some $\sigma \in G$ such that $\sigma\cdot(i, i_1,\ldots,i_{k-1}) = (i, j_1,\ldots,j_{k-1})$, so that $\sigma \in G_i$ and $\sigma(i_1) = j_1,\ldots,\sigma(i_{k-1}) = j_{k-1}$. This proves that $G_i$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i\}$.
 
 Conversely, suppose that $G_i$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i\}$ for some $i \in \{1,\ldots,n\}$. As in part (a), we first show that $G_{i'}$ acts $(k-1)$-transitively on $\{1,\ldots,n\} \setminus \{i'\}$ for all $i' \in \{1,\ldots,n\}$, using a permutation $\tau \in G$ satisfying $\tau(i) = i'$. Take $(i'_1,\ldots,i'_{k-1}), (j'_1,\ldots,j'_{k-1})$ two $(k-1)$-tuples of distinct elements in $\{1,\ldots,n\} \setminus \{i'\}$. We define $i_l= \tau^{-1}(i'_l), j_l = \tau^{-1}(j'_l),\ l=1,\ldots,k-1$. Since $\tau^{-1}$ is a permutation, $(i,i_1,\ldots,i_{k-1})$ and $(i,j_1,\ldots,j_{k-1})$ are $k$-tuples of distinct elements. The hypothesis gives $\sigma \in G_i$ such that $\sigma(i_l) = j_l,\ l=1,\ldots,k-1$. Then $\sigma'= \tau \sigma \tau^{-1}$ satisfies
 $$(\tau \sigma \tau^{-1})(i'_l) = j'_l,\ l=1,\ldots,k-1,\text { and } \sigma'(i') = i'.$$
