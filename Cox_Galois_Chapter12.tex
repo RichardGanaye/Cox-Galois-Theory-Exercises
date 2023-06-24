@@ -1423,11 +1423,16 @@ $$\gamma \cdot(\sigma\cdot \alpha_1\cdots \alpha_n) \in \sigma H\cdot \alpha_1\c
 \paragraph{Ex. 12.2.13}
 
 {\it This exercise will show that not all choices of the $t_i$ in (12.21) give Galois resolvents. As in Example 12.2.1, $f = (x^2-2)(x^2-3)$ has roots $\sqrt{2},-\sqrt{2},\sqrt{3}$, and $-\sqrt{3}$. This time we will use $(t_1,t_2,t_3,t_4) = (0,1,2,3)$. Show that (12.21) gives the polynomial
-$$s(y) = 16
-$$
+\begin{align*}
+s(y) &= 1679616 - 45722880y^2 + 445417056y^4-1935550800y^6\\
+&+4169468065y^8-4504515400y^{10}+2268233020y^{12}-432170200y^{14}\\
+&+36781990y^{16}-1483000y^{18}+29596y^{20} -280y^{22} + y^{24}\\
+&=(81-90y^2+y^4)^2 (16-40y^2+y^4)^2(1-10y^2+y^4)^2.
+\end{align*}
 This does not have distinct roots, so that $s(y)$ is not a Galois resolvent.
 }
 
+\medskip
 
 Note. The results in Example 12.2.1 are false for $(t_1,t_2,t_3,t_4) = (0,1,2,4)$. The first given factor of $s(y)$ is $900 -132 y^2 + y^4$, which  has root $\sqrt{66 + 24 \sqrt{6}} = 3\sqrt{2} + 4 \sqrt{3}$ and this root can't be written $t_{\sigma(1)}\sqrt{2} + t_{\sigma(2)}(-\sqrt{2}) + t_{\sigma(3)}\sqrt{3} + t_{\sigma(4)}(-\sqrt{3})$ for any permutation $\sigma \in S_4$. Idem for the second factor $25 - 118 y^2 + y^4$.
 
